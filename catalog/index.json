@@ -2,7 +2,7 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 46,
+    "agents": 51,
     "skills": 9,
     "categories": 16
   },
@@ -211,6 +211,31 @@
       "path": "agents/engineering/code-reviewer.md"
     },
     {
+      "name": "contract-test-author",
+      "description": "Use when authoring consumer-driven contract tests (Pact or similar) at a service/API boundary to prevent integration breakage between independently-deployed services — capture consumer expectations as a contract, verify the provider against it, and wire the broker / can-i-deploy workflow. NOT for general in-process API or integration tests in the app's own framework (use engineering/test-author), NOT for load testing an API (use load-test-author), and NOT for browser-driven full-stack journey tests (use e2e-test-author).",
+      "category": "qa",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "testing",
+        "contract",
+        "pact",
+        "api",
+        "microservices"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/qa/contract-test-author.md"
+    },
+    {
       "name": "csharp-pro",
       "description": "Use for non-trivial C#/.NET work — async/await and Task pitfalls (deadlocks, ConfigureAwait), LINQ and IEnumerable/IAsyncEnumerable, nullable reference types, generics, and dotnet build/NuGet/csproj issues. Invoke for async or nullability bugs or idiomatic .NET API design.",
       "category": "languages",
@@ -333,6 +358,31 @@
       "path": "agents/devops/dockerfile-author.md"
     },
     {
+      "name": "e2e-test-author",
+      "description": "Use when writing end-to-end / browser UI tests (Playwright or Cypress) that drive a real browser through full-stack user flows — login, checkout, multi-page journeys — with resilient role/text selectors, auto-waiting, network mocking, and test isolation. NOT unit or integration tests in the app's own framework (use engineering/test-author); NOT load/performance tests (use load-test-author).",
+      "category": "qa",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "testing",
+        "e2e",
+        "playwright",
+        "cypress",
+        "browser"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/qa/e2e-test-author.md"
+    },
+    {
       "name": "etl-architect",
       "description": "Use when designing or reviewing a batch or streaming data pipeline (ELT/ETL) end to end — ingestion, orchestration (Airflow/Dagster/dbt run), idempotency and backfills, schema evolution, partitioning, and data contracts between producers and consumers. NOT for tuning a single slow query (use sql-optimizer) and NOT for authoring the dbt transformation models themselves (use dbt-modeler).",
       "category": "data",
@@ -383,6 +433,32 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/ai-ml/evals-author.md"
+    },
+    {
+      "name": "flake-hunter",
+      "description": "Use when an existing test passes sometimes and fails other times for no code reason — isolate the source of nondeterminism (timing/async, test ordering, shared mutable state, real network/clock/randomness), reproduce the failure reliably, and make the test deterministic. NOT for writing new test coverage (use test-author / e2e-test-author) and NOT for diagnosing a test that fails every time (that is a real bug — use reproduce-then-fix directly).",
+      "category": "qa",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "testing",
+        "flaky",
+        "debugging",
+        "determinism"
+      ],
+      "skills": [
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/qa/flake-hunter.md"
     },
     {
       "name": "flutter-pro",
@@ -638,6 +714,31 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/research/literature-reviewer.md"
+    },
+    {
+      "name": "load-test-author",
+      "description": "Use when authoring load / performance / stress / soak tests (k6, Locust, or JMeter) that generate traffic against a system and assert on SLAs — model realistic scenarios with ramp-up and think-time, set thresholds on p95/p99 latency, error rate, and throughput, then run and interpret the results. NOT single-query SQL/DB tuning (use data/sql-optimizer) and NOT building app metrics/dashboards/tracing (use devops/observability-engineer); this agent generates load and measures it.",
+      "category": "qa",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "testing",
+        "load",
+        "performance",
+        "k6",
+        "locust"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/qa/load-test-author.md"
     },
     {
       "name": "mobile-release-manager",
@@ -1102,6 +1203,30 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/engineering/test-author.md"
+    },
+    {
+      "name": "test-plan-designer",
+      "description": "Use when you need a test STRATEGY or plan rather than test code — risk-based prioritization, choosing test levels (unit/integration/e2e/manual), mapping coverage to requirements, defining entry/exit criteria, and deciding what to automate vs. test manually. Produces a document; it does NOT write or run tests (use test-author or e2e-test-author), NOT load/performance testing (use load-test-author), NOT contract testing (use contract-test-author), and NOT diagnosing flaky tests (use flake-hunter).",
+      "category": "qa",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "testing",
+        "strategy",
+        "planning",
+        "coverage"
+      ],
+      "skills": [
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/qa/test-plan-designer.md"
     },
     {
       "name": "threat-modeler",
