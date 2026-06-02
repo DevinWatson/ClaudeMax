@@ -3,7 +3,7 @@
   "taxonomyVersion": "1.0.0",
   "counts": {
     "agents": 71,
-    "skills": 42,
+    "skills": 54,
     "categories": 16
   },
   "agents": [
@@ -308,9 +308,11 @@
         "microservices"
       ],
       "skills": [
-        "verify-by-running"
+        "contract-testing",
+        "verify-by-running",
+        "match-project-conventions"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/qa/contract-test-author.md"
     },
@@ -490,9 +492,11 @@
         "security"
       ],
       "skills": [
+        "dockerfile-authoring",
+        "match-project-conventions",
         "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/devops/dockerfile-author.md"
     },
@@ -517,9 +521,11 @@
         "browser"
       ],
       "skills": [
-        "verify-by-running"
+        "e2e-test-authoring",
+        "verify-by-running",
+        "match-project-conventions"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/qa/e2e-test-author.md"
     },
@@ -650,9 +656,11 @@
         "determinism"
       ],
       "skills": [
-        "reproduce-then-fix"
+        "flaky-test-diagnosis",
+        "reproduce-then-fix",
+        "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/qa/flake-hunter.md"
     },
@@ -782,9 +790,12 @@
         "workflows"
       ],
       "skills": [
-        "yaml-manifest-review"
+        "github-actions-workflows",
+        "yaml-manifest-review",
+        "match-project-conventions",
+        "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/devops/github-actions-pro.md"
     },
@@ -836,9 +847,12 @@
         "releases"
       ],
       "skills": [
-        "yaml-manifest-review"
+        "helm-charting",
+        "yaml-manifest-review",
+        "match-project-conventions",
+        "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/devops/helm-chart-author.md"
     },
@@ -886,10 +900,11 @@
         "mitigation"
       ],
       "skills": [
+        "incident-response",
         "severity-triage",
         "reproduce-then-fix"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/devops/incident-responder.md"
     },
@@ -941,10 +956,13 @@
         "rollouts"
       ],
       "skills": [
+        "kubernetes-workloads",
         "yaml-manifest-review",
-        "reproduce-then-fix"
+        "reproduce-then-fix",
+        "match-project-conventions",
+        "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/devops/kubernetes-operator.md"
     },
@@ -1017,9 +1035,11 @@
         "locust"
       ],
       "skills": [
-        "verify-by-running"
+        "load-test-authoring",
+        "verify-by-running",
+        "match-project-conventions"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/qa/load-test-author.md"
     },
@@ -1170,9 +1190,11 @@
         "alerting"
       ],
       "skills": [
-        "verify-by-running"
+        "observability-instrumentation",
+        "verify-by-running",
+        "match-project-conventions"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/devops/observability-engineer.md"
     },
@@ -1690,9 +1712,11 @@
         "providers"
       ],
       "skills": [
+        "terraform-iac",
+        "match-project-conventions",
         "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/devops/terraform-architect.md"
     },
@@ -1741,9 +1765,10 @@
         "coverage"
       ],
       "skills": [
+        "test-strategy-design",
         "severity-triage"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/qa/test-plan-designer.md"
     },
@@ -1908,6 +1933,21 @@
       "path": "skills/engineering/code-review-method/SKILL.md"
     },
     {
+      "name": "contract-testing",
+      "description": "Use when authoring consumer-driven contract tests (Pact or similar) at a service/API boundary to prevent integration breakage between independently-deployed services — capturing consumer expectations as a contract with matchers, verifying the provider against it with provider-state handlers, and wiring the broker + can-i-deploy deployment gate. TRIGGER on protecting an API boundary between services. Any agent that authors or reviews contract tests (a contract-test author, an API-compatibility reviewer) can load it.",
+      "category": "qa",
+      "tags": [
+        "testing",
+        "contract",
+        "pact",
+        "api",
+        "microservices"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/qa/contract-testing/SKILL.md"
+    },
+    {
       "name": "csharp-idioms",
       "description": "Use when writing or fixing C#/.NET code — async/await and Task pitfalls (deadlocks from .Result/.Wait, ConfigureAwait by layer, CancellationToken), LINQ deferred execution and multiple enumeration, nullable reference types and flow analysis, generics, and dotnet build/NuGet/csproj issues. Verifies with dotnet build/test. Any agent touching C# (writer, reviewer, debugger) can load it.",
       "category": "languages",
@@ -1998,6 +2038,36 @@
       "path": "skills/creative/divergent-then-converge/SKILL.md"
     },
     {
+      "name": "dockerfile-authoring",
+      "description": "Use when writing or improving a Dockerfile — produce small, secure, well-cached multi-stage images with pinned minimal bases, cache-friendly layer ordering (deps before source), a non-root final stage, a .dockerignore, and a HEALTHCHECK where meaningful. TRIGGER when containerizing an app or fixing a bloated/insecure/slow-building image. Any agent that authors, reviews, or hardens container images (a Dockerfile author, a CI engineer, a container-image security reviewer) can load it.",
+      "category": "devops",
+      "tags": [
+        "docker",
+        "containers",
+        "multi-stage",
+        "caching",
+        "security"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/devops/dockerfile-authoring/SKILL.md"
+    },
+    {
+      "name": "e2e-test-authoring",
+      "description": "Use when writing end-to-end / browser UI tests (Playwright or Cypress) that drive a real browser through full-stack user journeys — using resilient role/text/testid selectors, framework auto-waiting instead of sleeps, network mocking for out-of-scope calls, per-test isolation, and the trace viewer to diagnose. TRIGGER on authoring or stabilizing a browser e2e spec. Any agent that writes or reviews browser tests (an e2e author, a flake reviewer) can load it.",
+      "category": "qa",
+      "tags": [
+        "testing",
+        "e2e",
+        "playwright",
+        "cypress",
+        "browser"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/qa/e2e-test-authoring/SKILL.md"
+    },
+    {
       "name": "eval-suite-design",
       "description": "Use when building or reviewing an evaluation for an LLM/ML system — selecting metrics (programmatic vs reference-based vs rubric/LLM-judge), constructing a representative dataset with holdout, setting pass/fail thresholds and a regression suite, and stress-testing the eval itself for leakage, gaming, and flaky judges. TRIGGER on standing up a ship-gate/regression eval, choosing metrics, or auditing an eval's integrity. An eval author or a reviewer auditing whether a suite can be trusted to gate a release can both load it. NOT for writing the prompt under test and NOT for designing the retrieval system.",
       "category": "ai-ml",
@@ -2011,6 +2081,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/ai-ml/eval-suite-design/SKILL.md"
+    },
+    {
+      "name": "flaky-test-diagnosis",
+      "description": "Use when an existing test passes sometimes and fails other times for no code reason — reproduce the failure under stress, isolate the source of nondeterminism (timing/async, test ordering, shared mutable state, real network/clock/randomness, resource limits), and make it deterministic with the smallest change. TRIGGER on an intermittently-failing test. NOT for a test that fails every time (that is a real bug). Any agent that stabilizes or reviews flaky tests (a flake hunter, a CI reliability reviewer) can load it.",
+      "category": "qa",
+      "tags": [
+        "testing",
+        "flaky",
+        "determinism",
+        "debugging",
+        "ci"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/qa/flaky-test-diagnosis/SKILL.md"
     },
     {
       "name": "flutter-development",
@@ -2028,6 +2113,21 @@
       "path": "skills/mobile/flutter-development/SKILL.md"
     },
     {
+      "name": "github-actions-workflows",
+      "description": "Use when authoring or fixing GitHub Actions workflows (.github/workflows) — structuring jobs and matrices, dependency/build caching, reusable/composite workflows, and CI security (SHA-pinned actions, least-privilege GITHUB_TOKEN, OIDC, pull_request_target / script-injection safety), validated with actionlint. TRIGGER on writing or repairing a workflow. Any agent that authors, reviews, or hardens CI/CD workflows (a CI engineer, a supply-chain security reviewer) can load it.",
+      "category": "devops",
+      "tags": [
+        "github-actions",
+        "ci",
+        "cd",
+        "workflows",
+        "security"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/devops/github-actions-workflows/SKILL.md"
+    },
+    {
       "name": "go-idioms",
       "description": "Use when writing or fixing Go — goroutine/channel/context concurrency correctness (data races, deadlocks, goroutine leaks, send-on-closed-channel), error wrapping, idiomatic interface design, and module/build issues. Reasons about happens-before, threads context properly, and verifies with go build/vet and go test -race. Any agent touching Go (writer, reviewer, debugger) can load it.",
       "category": "languages",
@@ -2041,6 +2141,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/go-idioms/SKILL.md"
+    },
+    {
+      "name": "helm-charting",
+      "description": "Use when packaging an application as a reusable Helm chart — writing templates, a values.yaml surface and values.schema.json, _helpers.tpl, chart dependencies, and release/upgrade hooks, and getting helm lint / helm template clean across configurations. TRIGGER on creating, refactoring, or fixing a chart's rendering or upgrade behavior. Any agent that authors, reviews, or audits Helm charts (a chart author, a platform reviewer) can load it.",
+      "category": "devops",
+      "tags": [
+        "helm",
+        "charts",
+        "packaging",
+        "releases",
+        "templates"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/devops/helm-charting/SKILL.md"
+    },
+    {
+      "name": "incident-response",
+      "description": "Use during a live production incident — establish impact and severity, stop the bleeding with the fastest safe reversible mitigation (rollback > feature-flag > scale > failover/load-shed), confirm recovery on the defining signal, then write a blameless postmortem with timeline and owned action items. TRIGGER when users may be affected right now. Any agent that drives or reviews incident handling (an incident responder, an on-call SRE, a postmortem facilitator) can load it.",
+      "category": "devops",
+      "tags": [
+        "incident",
+        "oncall",
+        "mitigation",
+        "postmortem",
+        "sre"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/devops/incident-response/SKILL.md"
     },
     {
       "name": "java-idioms",
@@ -2074,6 +2204,21 @@
       "path": "skills/mobile/jetpack-compose-development/SKILL.md"
     },
     {
+      "name": "kubernetes-workloads",
+      "description": "Use when authoring Kubernetes workload manifests (Deployments, StatefulSets, Services, Ingress, RBAC, ConfigMaps) or operating live workloads — setting resources/probes/securityContext and rollout strategy, and debugging CrashLoopBackOff/Pending/OOMKilled/ImagePullBackOff pods with kubectl, driving rollouts and rollbacks. TRIGGER on writing k8s manifests or diagnosing a sick workload on a cluster. Any agent that authors, reviews, operates, or debugs Kubernetes workloads (an operator, an SRE, a platform reviewer) can load it.",
+      "category": "devops",
+      "tags": [
+        "kubernetes",
+        "kubectl",
+        "workloads",
+        "rollouts",
+        "debugging"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/devops/kubernetes-workloads/SKILL.md"
+    },
+    {
       "name": "llm-eval-rubric",
       "description": "Use when building an LLM-as-judge or rubric-based evaluation of model output quality — defines scoring criteria, calibrates the judge against human labels, and guards against judge bias, gaming, and flaky scores. Use for the judging procedure itself, not for choosing task metrics or designing the system under test; skip it when a deterministic or programmatic check would suffice.",
       "category": "ai-ml",
@@ -2086,6 +2231,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/ai-ml/llm-eval-rubric/SKILL.md"
+    },
+    {
+      "name": "load-test-authoring",
+      "description": "Use when authoring load / performance / stress / soak tests (k6, Locust, or JMeter) that generate traffic against a system and assert on SLAs — modeling realistic scenarios with ramp-up and think-time, setting thresholds on p95/p99 latency, error rate, and throughput, then running headless and interpreting results (percentiles, saturation/knee). TRIGGER on writing a load test or measuring whether a system meets performance SLAs. Any agent that authors or reviews performance tests (a load-test author, a capacity/SRE reviewer) can load it.",
+      "category": "qa",
+      "tags": [
+        "testing",
+        "load",
+        "performance",
+        "k6",
+        "locust"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/qa/load-test-authoring/SKILL.md"
     },
     {
       "name": "match-project-conventions",
@@ -2147,6 +2307,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/business/not-professional-advice/SKILL.md"
+    },
+    {
+      "name": "observability-instrumentation",
+      "description": "Use when instrumenting or improving observability outside a live incident — adding RED/USE metrics, logs, and traces, writing correct PromQL and dashboards, defining SLOs and error budgets, and authoring multi-window multi-burn-rate alerts that page on symptoms not causes, validated with promtool/amtool. TRIGGER on adding instrumentation, dashboards, SLOs, or alert rules. Any agent that builds or reviews observability (an observability engineer, an SRE doing reliability review) can load it.",
+      "category": "devops",
+      "tags": [
+        "observability",
+        "metrics",
+        "tracing",
+        "slo",
+        "alerting",
+        "promql"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/devops/observability-instrumentation/SKILL.md"
     },
     {
       "name": "prompt-design",
@@ -2383,6 +2559,21 @@
       "path": "skills/mobile/swiftui-development/SKILL.md"
     },
     {
+      "name": "terraform-iac",
+      "description": "Use when writing or refactoring Terraform / OpenTofu — designing reusable modules, managing remote state and backends, enforcing safe plan/apply hygiene, pinning providers, using moved/import blocks, and running tflint/tfsec. TRIGGER on structuring IaC, reviewing a risky plan, or untangling state/drift. Any agent that authors, reviews, or audits Terraform (an architect, a plan reviewer, a cloud-security auditor) can load it.",
+      "category": "devops",
+      "tags": [
+        "terraform",
+        "opentofu",
+        "iac",
+        "state",
+        "providers"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/devops/terraform-iac/SKILL.md"
+    },
+    {
       "name": "test-design",
       "description": "Use when adding or expanding automated tests for existing code — how to map a unit's behaviors, enumerate the cases that catch real regressions (happy path, boundaries, invalid input, error paths, concurrency/ordering), and write deterministic tests that read like the project's existing suite. TRIGGER when asked to add/expand tests or raise meaningful coverage. Any agent that writes tests (a test author, a TDD-driven feature builder, a bug-fixer adding a regression guard) can load it.",
       "category": "engineering",
@@ -2395,6 +2586,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/engineering/test-design/SKILL.md"
+    },
+    {
+      "name": "test-strategy-design",
+      "description": "Use when you need a test STRATEGY or plan rather than test code — risk-based prioritization, choosing test levels (unit/integration/e2e/manual), mapping coverage to requirements with a traceability matrix, defining entry/exit criteria, and deciding what to automate vs. test manually. TRIGGER on planning how to test a feature/change before any tests are written. Produces a document; it does not write or run tests. Any agent that plans or reviews test coverage (a test planner, a release-readiness reviewer) can load it.",
+      "category": "qa",
+      "tags": [
+        "testing",
+        "strategy",
+        "planning",
+        "coverage",
+        "risk"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/qa/test-strategy-design/SKILL.md"
     },
     {
       "name": "typescript-type-system",
