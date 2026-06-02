@@ -2,7 +2,7 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 56,
+    "agents": 61,
     "skills": 9,
     "categories": 16
   },
@@ -209,6 +209,29 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/engineering/code-reviewer.md"
+    },
+    {
+      "name": "contract-reviewer",
+      "description": "Use when a non-lawyer needs to understand a business/commercial contract before signing — surfaces key terms, obligations, risks, and unusual/missing clauses. Informational review only, NOT legal advice.",
+      "category": "business",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "contracts",
+        "review",
+        "risk",
+        "legal"
+      ],
+      "skills": [
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/business/contract-reviewer.md"
     },
     {
       "name": "contract-test-author",
@@ -456,6 +479,28 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/ai-ml/evals-author.md"
+    },
+    {
+      "name": "financial-modeler",
+      "description": "Use to build or review a financial model — projections, unit economics (CAC/LTV/margins), scenario and sensitivity analysis, runway/burn, assumptions hygiene. NOT market sizing (use market-sizer).",
+      "category": "business",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "finance",
+        "modeling",
+        "projections",
+        "unit-economics"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/business/financial-modeler.md"
     },
     {
       "name": "flake-hunter",
@@ -764,6 +809,28 @@
       "path": "agents/qa/load-test-author.md"
     },
     {
+      "name": "market-sizer",
+      "description": "Use to estimate market size — TAM/SAM/SOM via top-down AND bottom-up methods, sourced assumptions, and sanity-checking. NOT full financial projections or unit economics (use financial-modeler).",
+      "category": "business",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "market-sizing",
+        "tam",
+        "sam",
+        "som"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/business/market-sizer.md"
+    },
+    {
       "name": "mobile-release-manager",
       "description": "Use when shipping a mobile app to stores — iOS code signing (provisioning/certs), Android keystore signing, App Store / Play Store submission and review pitfalls, version/build-number management, phased/staged rollout, and crash-rate gating. Release/distribution focused, NOT framework coding (route SwiftUI/Kotlin/RN/Flutter code to those agents).",
       "category": "mobile",
@@ -838,6 +905,28 @@
       "path": "agents/devops/observability-engineer.md"
     },
     {
+      "name": "okr-planner",
+      "description": "Use to define Objectives & Key Results — qualitative objectives plus measurable, outcome-based key results, with leading/lagging signals and 0.0-1.0 grading. Sets goals/outcomes, NOT the feature schedule (use product/roadmap-planner).",
+      "category": "business",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "okr",
+        "goals",
+        "outcomes",
+        "planning"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/business/okr-planner.md"
+    },
+    {
       "name": "prd-author",
       "description": "Use when you need a Product Requirements Document for ONE feature or initiative — problem statement, goals/non-goals, user stories, functional/non-functional requirements, success metrics, scope, and open questions. NOT cross-feature prioritization (use roadmap-planner).",
       "category": "product",
@@ -858,6 +947,28 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/product/prd-author.md"
+    },
+    {
+      "name": "process-optimizer",
+      "description": "Use to analyze and improve a business/operations process — map the current flow, find bottlenecks/waste/handoff failures, propose a streamlined flow and what to automate, with before/after metrics. Lean/value-stream thinking; NOT software CI/CD delivery (use github-actions-pro or the relevant devops agent).",
+      "category": "business",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "process",
+        "operations",
+        "lean",
+        "optimization"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/business/process-optimizer.md"
     },
     {
       "name": "prompt-engineer",
