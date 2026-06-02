@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://claudemax.dev/schemas/skill.schema.json",
+  "title": "ClaudeMax Skill Frontmatter",
+  "description": "Validates the YAML frontmatter of a SKILL.md file. 'name' and 'description' are consumed by Claude Code's skill loader; the rest are additive ClaudeMax metadata.",
+  "type": "object",
+  "required": ["name", "description", "category", "version"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Unique kebab-case identifier. Must match the skill's directory name.",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "minLength": 2,
+      "maxLength": 64
+    },
+    "description": {
+      "type": "string",
+      "description": "What the skill does AND when to use it. This is the ONLY text Claude sees when deciding whether to load the skill, so it must be precise. Prefer 'Use when ...' phrasing.",
+      "minLength": 20,
+      "maxLength": 1024
+    },
+    "allowed-tools": {
+      "type": "string",
+      "description": "Optional comma-separated tool allowlist applied while the skill is active."
+    },
+    "category": {
+      "type": "string",
+      "description": "Top-level taxonomy id (validated against taxonomy.json).",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+      "maxItems": 12
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "maintainer": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "license": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "status": {
+      "type": "string",
+      "enum": ["experimental", "stable", "deprecated"]
+    }
+  }
+}

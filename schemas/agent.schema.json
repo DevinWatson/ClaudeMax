@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://claudemax.dev/schemas/agent.schema.json",
+  "title": "ClaudeMax Agent Frontmatter",
+  "description": "Validates the YAML frontmatter of an agent markdown file. Fields under the 'Claude Code native' group are consumed by Claude Code; the rest are additive ClaudeMax metadata that Claude Code ignores.",
+  "type": "object",
+  "required": ["name", "description", "category", "version"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Unique kebab-case identifier. Must match the filename (without .md).",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "minLength": 2,
+      "maxLength": 64
+    },
+    "description": {
+      "type": "string",
+      "description": "When this agent should be invoked. Start with a trigger phrase ('Use when ...'); Claude uses this to route work. Keep it specific and outcome-oriented.",
+      "minLength": 20,
+      "maxLength": 1024
+    },
+    "model": {
+      "type": "string",
+      "description": "Model tier the subagent should run on.",
+      "enum": ["opus", "sonnet", "haiku", "inherit"]
+    },
+    "tools": {
+      "type": "string",
+      "description": "Comma-separated allowlist of tools the agent may use (e.g. 'Read, Grep, Glob'). Omit to inherit all tools. Narrow this to the minimum the agent needs."
+    },
+    "category": {
+      "type": "string",
+      "description": "Top-level taxonomy id (validated against taxonomy.json).",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "tags": {
+      "type": "array",
+      "description": "Free-form lowercase tags for search and catalog filtering.",
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+      "maxItems": 12
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version of this agent definition.",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "maintainer": {
+      "type": "string",
+      "description": "Email or handle of the primary maintainer.",
+      "maxLength": 128
+    },
+    "skills": {
+      "type": "array",
+      "description": "Names of backing skills (skill `name` fields) this agent relies on. Used to cross-link the catalog and verify dependencies exist.",
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+      "maxItems": 24
+    },
+    "status": {
+      "type": "string",
+      "description": "Lifecycle stage. 'experimental' agents are excluded from default installs.",
+      "enum": ["experimental", "stable", "deprecated"]
+    }
+  }
+}

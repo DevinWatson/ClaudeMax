@@ -1,0 +1,103 @@
+{
+  "$schema": "./schemas/taxonomy.schema.json",
+  "version": "1.0.0",
+  "description": "Canonical category taxonomy for ClaudeMax agents and skills. Adding a new top-level category requires a PR that updates this file. Subcategories are free-form folder names nested under a category and do not need to be registered here.",
+  "categories": [
+    {
+      "id": "engineering",
+      "title": "Software Engineering",
+      "summary": "General software craftsmanship: code review, refactoring, testing, debugging, architecture, performance.",
+      "examples": ["code-reviewer", "test-author", "refactoring-specialist", "performance-profiler"]
+    },
+    {
+      "id": "languages",
+      "title": "Languages & Runtimes",
+      "summary": "Deep, language-specific experts (idioms, tooling, ecosystem).",
+      "examples": ["typescript-pro", "python-pro", "rust-pro", "go-pro"]
+    },
+    {
+      "id": "web",
+      "title": "Web Development",
+      "summary": "Frontend, backend, and full-stack web engineering and frameworks.",
+      "examples": ["react-architect", "api-designer", "accessibility-auditor"]
+    },
+    {
+      "id": "mobile",
+      "title": "Mobile",
+      "summary": "iOS, Android, and cross-platform mobile development.",
+      "examples": ["swiftui-pro", "android-kotlin-pro", "react-native-pro"]
+    },
+    {
+      "id": "data",
+      "title": "Data & Analytics",
+      "summary": "Data engineering, SQL, pipelines, warehousing, analytics, visualization.",
+      "examples": ["sql-optimizer", "etl-architect", "dbt-modeler"]
+    },
+    {
+      "id": "ai-ml",
+      "title": "AI & Machine Learning",
+      "summary": "ML modeling, MLOps, prompt engineering, LLM application development.",
+      "examples": ["prompt-engineer", "ml-experiment-designer", "rag-architect"]
+    },
+    {
+      "id": "devops",
+      "title": "DevOps & Infrastructure",
+      "summary": "CI/CD, containers, orchestration, IaC, cloud platforms, observability.",
+      "examples": ["dockerfile-author", "kubernetes-operator", "terraform-architect"]
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "summary": "Application security, auditing, threat modeling, and authorized offensive testing.",
+      "examples": ["appsec-auditor", "threat-modeler", "dependency-scanner"]
+    },
+    {
+      "id": "qa",
+      "title": "Quality Assurance",
+      "summary": "Test strategy, automation, exploratory testing, and release verification.",
+      "examples": ["e2e-test-author", "test-plan-designer", "flake-hunter"]
+    },
+    {
+      "id": "product",
+      "title": "Product & Design",
+      "summary": "Product management, UX, design systems, user research.",
+      "examples": ["prd-author", "ux-reviewer", "design-system-curator"]
+    },
+    {
+      "id": "content",
+      "title": "Content & Documentation",
+      "summary": "Technical writing, documentation, editing, marketing copy.",
+      "examples": ["technical-writer", "api-docs-author", "changelog-writer"]
+    },
+    {
+      "id": "business",
+      "title": "Business & Operations",
+      "summary": "Finance, legal review, operations, project management, analytics.",
+      "examples": ["contract-reviewer", "okr-planner", "financial-modeler"]
+    },
+    {
+      "id": "research",
+      "title": "Research & Analysis",
+      "summary": "Literature review, competitive analysis, fact-checking, synthesis.",
+      "examples": ["literature-reviewer", "competitive-analyst", "fact-checker"]
+    },
+    {
+      "id": "creative",
+      "title": "Creative",
+      "summary": "Storytelling, naming, brainstorming, and other open-ended generative work.",
+      "examples": ["brainstorm-facilitator", "naming-specialist", "narrative-designer"]
+    },
+    {
+      "id": "domain",
+      "title": "Domain Specialists",
+      "summary": "Vertical / industry experts (healthcare, legal, finance, gaming, etc.) that do not fit a horizontal category.",
+      "examples": ["fhir-integration-expert", "tax-rules-analyst", "game-balance-designer"]
+    },
+    {
+      "id": "meta",
+      "title": "Meta",
+      "summary": "Agents and skills that build, evaluate, or maintain other agents and skills in this repo.",
+      "examples": ["agent-architect", "skill-author", "agent-evaluator"]
+    }
+  ]
+}

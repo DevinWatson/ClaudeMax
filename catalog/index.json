@@ -1,0 +1,363 @@
+{
+  "schema": "claudemax/catalog@1",
+  "taxonomyVersion": "1.0.0",
+  "counts": {
+    "agents": 11,
+    "skills": 6,
+    "categories": 16
+  },
+  "agents": [
+    {
+      "name": "agent-architect",
+      "description": "Use when designing new ClaudeMax agents or skills, especially in bulk — given a domain or a list of desired capabilities, it proposes names/categories, scaffolds the files with the cmx generator, writes the system prompts, factors shared procedures into backing skills, and validates the result. Invoke for \"add agents for X\", \"design a skill that does Y\", or expanding a category.",
+      "category": "meta",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Bash",
+        "Glob",
+        "Grep"
+      ],
+      "tags": [
+        "authoring",
+        "scaffolding",
+        "design",
+        "bulk"
+      ],
+      "skills": [
+        "agent-authoring",
+        "skill-authoring"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/meta/agent-architect.md"
+    },
+    {
+      "name": "agent-evaluator",
+      "description": "Use when reviewing an existing or proposed ClaudeMax agent or skill for quality before promoting it to stable — checks the description for routing clarity, the tool scope, the system-prompt structure, the output contract, and standards compliance, then returns a graded report with required fixes.",
+      "category": "meta",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "review",
+        "quality",
+        "evaluation",
+        "standards"
+      ],
+      "skills": [
+        "agent-authoring",
+        "skill-authoring",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/meta/agent-evaluator.md"
+    },
+    {
+      "name": "appsec-auditor",
+      "description": "Use for a defensive application-security review of code or a change — looks for injection, broken authn/authz, secrets exposure, insecure deserialization, SSRF, and crypto misuse, mapping findings to severity with concrete remediations. For authorized review of your own codebase; read-only and defensive.",
+      "category": "security",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "security",
+        "appsec",
+        "audit",
+        "owasp"
+      ],
+      "skills": [
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/security/appsec-auditor.md"
+    },
+    {
+      "name": "code-reviewer",
+      "description": "Use when reviewing a code change (a diff, branch, or PR) for correctness bugs, security issues, and maintainability problems before it merges. Returns severity-ranked findings with precise locations and minimal fixes. Read-only — it reviews, it does not edit.",
+      "category": "engineering",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "review",
+        "quality",
+        "bugs",
+        "security"
+      ],
+      "skills": [
+        "diff-summary",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/engineering/code-reviewer.md"
+    },
+    {
+      "name": "dockerfile-author",
+      "description": "Use when writing or improving a Dockerfile — produces small, secure, well-cached, multi-stage images that follow best practices (pinned bases, non-root user, minimal layers, good .dockerignore) for the project's stack. Invoke to containerize an app or fix a bloated/insecure image.",
+      "category": "devops",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "docker",
+        "containers",
+        "ci",
+        "security"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/devops/dockerfile-author.md"
+    },
+    {
+      "name": "literature-reviewer",
+      "description": "Use when synthesizing what is known about a topic from multiple sources — gathers and evaluates sources, weighs their credibility, reconciles conflicting claims, and produces a structured, cited summary that separates well-supported findings from contested or thin ones.",
+      "category": "research",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "WebSearch",
+        "WebFetch"
+      ],
+      "tags": [
+        "research",
+        "synthesis",
+        "sourcing",
+        "review"
+      ],
+      "skills": [
+        "source-evaluation"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/research/literature-reviewer.md"
+    },
+    {
+      "name": "refactoring-specialist",
+      "description": "Use when improving the structure of working code without changing its behavior — reduces duplication, clarifies naming, untangles complex functions, and improves cohesion, verifying behavior is preserved via the existing tests at each step. Not for adding features or fixing bugs.",
+      "category": "engineering",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "refactoring",
+        "cleanup",
+        "maintainability"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/engineering/refactoring-specialist.md"
+    },
+    {
+      "name": "sql-optimizer",
+      "description": "Use when a SQL query is slow or a query plan needs improving — diagnoses the execution plan, identifies the bottleneck (scans, joins, missing indexes, spills), proposes a specific fix, and verifies the improvement. Supports Postgres and MySQL idioms.",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "sql",
+        "performance",
+        "database",
+        "indexing"
+      ],
+      "skills": [
+        "sql-explain-analysis"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/sql-optimizer.md"
+    },
+    {
+      "name": "technical-writer",
+      "description": "Use when writing or improving developer-facing documentation — READMEs, API references, how-to guides, tutorials, and concept docs. Produces clear, accurate, well-structured prose grounded in the actual code, with runnable examples. Invoke to document a feature or fix confusing docs.",
+      "category": "content",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "documentation",
+        "writing",
+        "developer-docs"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/content/technical-writer.md"
+    },
+    {
+      "name": "test-author",
+      "description": "Use when adding or expanding automated tests for existing code — analyzes the target's behavior and edge cases, writes tests in the project's existing framework and style, and ensures they actually run and pass. Focuses on meaningful coverage, not coverage-number padding.",
+      "category": "engineering",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "testing",
+        "quality",
+        "coverage"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/engineering/test-author.md"
+    },
+    {
+      "name": "typescript-pro",
+      "description": "Use for non-trivial TypeScript work — advanced types (generics, conditional/mapped types, inference), strictness migration, tsconfig and module resolution issues, and idiomatic API design. Invoke when type errors are confusing, types need to be made safer, or a TS API needs designing.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "typescript",
+        "types",
+        "javascript"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/typescript-pro.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "agent-authoring",
+      "description": "Use when creating or revising a ClaudeMax custom agent — defines the file format, required frontmatter, model/tool selection, and the system-prompt structure that produces a reliable subagent. Load this before writing any new agents/*.md file.",
+      "category": "meta",
+      "tags": [
+        "authoring",
+        "agents",
+        "standards",
+        "scaffolding"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/meta/agent-authoring/SKILL.md"
+    },
+    {
+      "name": "diff-summary",
+      "description": "Use when you need a structured understanding of a code change before reviewing or describing it — produces a per-file summary of what changed, why it likely changed, and which areas carry the most risk, from a git diff or a set of edited files.",
+      "category": "engineering",
+      "tags": [
+        "git",
+        "diff",
+        "review",
+        "summarization"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/engineering/diff-summary/SKILL.md"
+    },
+    {
+      "name": "severity-triage",
+      "description": "Use when ranking or filtering code-review findings, bugs, or audit results — applies a consistent severity rubric (critical/high/medium/low) and confidence rating so the most important, most certain issues surface first and noise is suppressed.",
+      "category": "engineering",
+      "tags": [
+        "review",
+        "triage",
+        "severity",
+        "prioritization"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/engineering/severity-triage/SKILL.md"
+    },
+    {
+      "name": "skill-authoring",
+      "description": "Use when creating or revising a ClaudeMax skill — defines the SKILL.md format, how to write a discoverable description, when to bundle scripts/resources, and how skills back agents. Load this before writing any new skills/**/SKILL.md.",
+      "category": "meta",
+      "tags": [
+        "authoring",
+        "skills",
+        "standards"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/meta/skill-authoring/SKILL.md"
+    },
+    {
+      "name": "source-evaluation",
+      "description": "Use when assessing whether a source can be trusted and how much weight to give it — applies a rubric for authority, evidence, recency, and bias, and assigns a confidence level so claims are cited proportionally to their support.",
+      "category": "research",
+      "tags": [
+        "research",
+        "sourcing",
+        "credibility",
+        "fact-checking"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/research/source-evaluation/SKILL.md"
+    },
+    {
+      "name": "sql-explain-analysis",
+      "description": "Use when diagnosing why a SQL query is slow — guides reading an EXPLAIN/EXPLAIN ANALYZE plan, spotting the common culprits (full scans, bad join order, missing indexes, spills), and proposing targeted fixes. Database-agnostic with Postgres/MySQL notes.",
+      "category": "data",
+      "tags": [
+        "sql",
+        "performance",
+        "explain",
+        "indexing"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/data/sql-explain-analysis/SKILL.md"
+    }
+  ]
+}

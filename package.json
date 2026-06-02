@@ -1,0 +1,33 @@
+{
+  "name": "claudemax",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A scalable monorepo of custom Claude agents and their backing skills, with authoring, validation, and catalog tooling.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "bin": {
+    "cmx": "tools/bin/cmx.mjs"
+  },
+  "scripts": {
+    "cmx": "node --experimental-strip-types tools/src/cli.ts",
+    "new:agent": "node --experimental-strip-types tools/src/cli.ts new agent",
+    "new:skill": "node --experimental-strip-types tools/src/cli.ts new skill",
+    "validate": "node --experimental-strip-types tools/src/cli.ts validate",
+    "catalog": "node --experimental-strip-types tools/src/cli.ts catalog",
+    "catalog:check": "node --experimental-strip-types tools/src/cli.ts catalog --check",
+    "stats": "node --experimental-strip-types tools/src/cli.ts stats",
+    "list": "node --experimental-strip-types tools/src/cli.ts list",
+    "test": "node --experimental-strip-types tools/src/cli.ts validate && node --experimental-strip-types tools/src/cli.ts catalog --check"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "agents",
+    "subagents",
+    "skills",
+    "ai"
+  ],
+  "license": "MIT"
+}
