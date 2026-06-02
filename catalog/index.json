@@ -3,7 +3,7 @@
   "taxonomyVersion": "1.0.0",
   "counts": {
     "agents": 71,
-    "skills": 32,
+    "skills": 42,
     "categories": 16
   },
   "agents": [
@@ -125,9 +125,12 @@
         "gradle"
       ],
       "skills": [
-        "reproduce-then-fix"
+        "reproduce-then-fix",
+        "jetpack-compose-development",
+        "match-project-conventions",
+        "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/mobile/android-kotlin-pro.md"
     },
@@ -412,9 +415,11 @@
         "tests"
       ],
       "skills": [
-        "verify-by-running"
+        "verify-by-running",
+        "dbt-modeling",
+        "match-project-conventions"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/data/dbt-modeler.md"
     },
@@ -540,9 +545,11 @@
         "orchestration"
       ],
       "skills": [
-        "verify-by-running"
+        "verify-by-running",
+        "data-pipeline-design",
+        "match-project-conventions"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/data/etl-architect.md"
     },
@@ -566,9 +573,10 @@
         "testing"
       ],
       "skills": [
-        "llm-eval-rubric"
+        "llm-eval-rubric",
+        "eval-suite-design"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/ai-ml/evals-author.md"
     },
@@ -668,9 +676,12 @@
         "bloc"
       ],
       "skills": [
-        "reproduce-then-fix"
+        "reproduce-then-fix",
+        "flutter-development",
+        "match-project-conventions",
+        "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/mobile/flutter-pro.md"
     },
@@ -1056,8 +1067,11 @@
         "play-store",
         "signing"
       ],
-      "skills": [],
-      "version": "1.0.0",
+      "skills": [
+        "mobile-release-management",
+        "verify-by-running"
+      ],
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/mobile/mobile-release-manager.md"
     },
@@ -1251,8 +1265,10 @@
         "few-shot",
         "structured-output"
       ],
-      "skills": [],
-      "version": "1.0.0",
+      "skills": [
+        "prompt-design"
+      ],
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/ai-ml/prompt-engineer.md"
     },
@@ -1305,9 +1321,12 @@
         "reranking"
       ],
       "skills": [
-        "llm-eval-rubric"
+        "llm-eval-rubric",
+        "rag-system-design",
+        "match-project-conventions",
+        "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/ai-ml/rag-architect.md"
     },
@@ -1359,9 +1378,12 @@
         "hermes"
       ],
       "skills": [
-        "reproduce-then-fix"
+        "reproduce-then-fix",
+        "react-native-platform",
+        "match-project-conventions",
+        "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/mobile/react-native-pro.md"
     },
@@ -1538,9 +1560,10 @@
         "indexing"
       ],
       "skills": [
-        "sql-explain-analysis"
+        "sql-explain-analysis",
+        "match-project-conventions"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/data/sql-optimizer.md"
     },
@@ -1591,9 +1614,12 @@
         "xcode"
       ],
       "skills": [
-        "reproduce-then-fix"
+        "reproduce-then-fix",
+        "swiftui-development",
+        "match-project-conventions",
+        "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/mobile/swiftui-pro.md"
     },
@@ -1913,6 +1939,37 @@
       "path": "skills/web/css-layout-and-cascade/SKILL.md"
     },
     {
+      "name": "data-pipeline-design",
+      "description": "Use when designing or reviewing a batch/streaming data pipeline (ELT/ETL) — ingestion, orchestration (Airflow/Dagster/Prefect), idempotency and backfills, schema evolution, partitioning/file-sizing, and data contracts between producers and consumers. TRIGGER on pipeline design, non-idempotent or double-counting writes, backfill planning, schema-evolution/contract questions, or orchestration design. A pipeline reviewer or an on-call debugging a failed/duplicated run can both load it. NOT for tuning a single slow query and NOT for authoring the dbt transformation models themselves.",
+      "category": "data",
+      "tags": [
+        "etl",
+        "elt",
+        "pipelines",
+        "airflow",
+        "dagster",
+        "idempotency"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/data/data-pipeline-design/SKILL.md"
+    },
+    {
+      "name": "dbt-modeling",
+      "description": "Use when authoring or reviewing dbt models, tests, and docs — staging→intermediate→marts layering, materializations (view/table/incremental/ephemeral), schema tests (unique/not_null/relationships/accepted_values), sources/snapshots, ref()/source() wiring, and Jinja macros. TRIGGER on writing a dbt model, choosing a materialization, adding tests on a grain, or fixing ref/source wiring and fan-out. A dbt model author or a reviewer checking layering/test coverage can both load it. NOT for general pipeline orchestration/ingestion and NOT for raw query/index performance tuning.",
+      "category": "data",
+      "tags": [
+        "dbt",
+        "modeling",
+        "sql",
+        "transformations",
+        "tests"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/data/dbt-modeling/SKILL.md"
+    },
+    {
       "name": "diff-summary",
       "description": "Use when you need a structured understanding of a code change before reviewing or describing it — produces a per-file summary of what changed, why it likely changed, and which areas carry the most risk, from a git diff or a set of edited files.",
       "category": "engineering",
@@ -1939,6 +1996,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/creative/divergent-then-converge/SKILL.md"
+    },
+    {
+      "name": "eval-suite-design",
+      "description": "Use when building or reviewing an evaluation for an LLM/ML system — selecting metrics (programmatic vs reference-based vs rubric/LLM-judge), constructing a representative dataset with holdout, setting pass/fail thresholds and a regression suite, and stress-testing the eval itself for leakage, gaming, and flaky judges. TRIGGER on standing up a ship-gate/regression eval, choosing metrics, or auditing an eval's integrity. An eval author or a reviewer auditing whether a suite can be trusted to gate a release can both load it. NOT for writing the prompt under test and NOT for designing the retrieval system.",
+      "category": "ai-ml",
+      "tags": [
+        "evals",
+        "metrics",
+        "llm-as-judge",
+        "regression",
+        "integrity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/ai-ml/eval-suite-design/SKILL.md"
+    },
+    {
+      "name": "flutter-development",
+      "description": "Use when writing, reviewing, or debugging Flutter/Dart — widget/element/render-object tree composition, state management (Riverpod/Bloc/Provider/setState), build/layout/paint performance, and platform channels (MethodChannel/Pigeon). TRIGGER on wrong/stale UI or setState-after-dispose, a state-architecture choice, jank / excessive rebuilds, or native platform integration. Any agent touching Flutter (writer, reviewer, perf debugger) can load it. NOT for native SwiftUI/Kotlin or React Native.",
+      "category": "mobile",
+      "tags": [
+        "flutter",
+        "dart",
+        "riverpod",
+        "bloc",
+        "performance"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/mobile/flutter-development/SKILL.md"
     },
     {
       "name": "go-idioms",
@@ -1972,6 +2059,21 @@
       "path": "skills/languages/java-idioms/SKILL.md"
     },
     {
+      "name": "jetpack-compose-development",
+      "description": "Use when writing, reviewing, or debugging native Android in Kotlin + Jetpack Compose — composables and recomposition, state hoisting / UDF, the Android lifecycle and process death, coroutines/Flow, Navigation-Compose, and Gradle builds. TRIGGER on UI not updating, state lost on rotation/process death, leaked coroutines or main-thread work, or excessive recomposition / jank. Any agent touching Compose (writer, reviewer, performance debugger) can load it. NOT for cross-platform RN/Flutter or iOS/SwiftUI.",
+      "category": "mobile",
+      "tags": [
+        "android",
+        "kotlin",
+        "jetpack-compose",
+        "coroutines",
+        "gradle"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/mobile/jetpack-compose-development/SKILL.md"
+    },
+    {
       "name": "llm-eval-rubric",
       "description": "Use when building an LLM-as-judge or rubric-based evaluation of model output quality — defines scoring criteria, calibrates the judge against human labels, and guards against judge bias, gaming, and flaky scores. Use for the judging procedure itself, not for choosing task metrics or designing the system under test; skip it when a deterministic or programmatic check would suffice.",
       "category": "ai-ml",
@@ -1998,6 +2100,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/engineering/match-project-conventions/SKILL.md"
+    },
+    {
+      "name": "mobile-release-management",
+      "description": "Use when shipping a mobile app to the App Store / Play Store — iOS code signing (certs/provisioning/entitlements, Fastlane match), Android keystore + Play App Signing, store submission and the common review rejections, version vs build-number management, phased/staged rollout, and crash-free-sessions gating. TRIGGER on signing setup, building/uploading a store artifact, a submission/review checklist, or planning a staged rollout with abort criteria. A release engineer or a CI/Fastlane reviewer can both load it. NOT for writing app feature/UI code.",
+      "category": "mobile",
+      "tags": [
+        "release",
+        "fastlane",
+        "app-store",
+        "play-store",
+        "signing",
+        "rollout"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/mobile/mobile-release-management/SKILL.md"
     },
     {
       "name": "nextjs-app-router",
@@ -2031,6 +2149,20 @@
       "path": "skills/business/not-professional-advice/SKILL.md"
     },
     {
+      "name": "prompt-design",
+      "description": "Use when designing, debugging, or optimizing an LLM prompt — task decomposition, system- vs user-prompt design, zero-shot vs few-shot, structured/JSON output, and a one-variable-at-a-time tighten-then-test failure loop against real inputs. TRIGGER on a fuzzy task that needs a reliable prompt, format/constraint/hallucination/refusal failures, or choosing a prompting strategy. A prompt author or a reviewer triaging why a prompt regresses can both load it. NOT for designing the retrieval system feeding the prompt and NOT for building the eval/judge that scores quality.",
+      "category": "ai-ml",
+      "tags": [
+        "prompt",
+        "llm",
+        "few-shot",
+        "structured-output"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/ai-ml/prompt-design/SKILL.md"
+    },
+    {
       "name": "python-idioms",
       "description": "Use when writing or fixing Python — type hints and mypy/pyright errors, async/asyncio pitfalls, the data model (dunders, dataclasses, protocols), packaging/dependency questions (pip/poetry/uv), and idiomatic stdlib-first code. Diagnoses typing/import errors precisely, prefers the simplest Pythonic form, and verifies with ruff/mypy/pytest in the project's environment. Any agent touching Python (writer, reviewer, debugger) can load it.",
       "category": "languages",
@@ -2044,6 +2176,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/python-idioms/SKILL.md"
+    },
+    {
+      "name": "rag-system-design",
+      "description": "Use when designing or fixing a retrieval-augmented generation system — separating retrieval vs generation failure, chunking strategy, embedding choice, hybrid (BM25+dense) retrieval + reranking + filtering, context assembly, grounding/citation, and retrieval metrics (recall@k/MRR/nDCG). TRIGGER on RAG design, wrong/missing retrieved context, hallucinated or uncited answers, or ablating a retrieval knob. A RAG builder or a reviewer debugging poor answer grounding can both load it. NOT for wording the generation prompt alone and NOT for building a general eval harness.",
+      "category": "ai-ml",
+      "tags": [
+        "rag",
+        "retrieval",
+        "embeddings",
+        "vector-store",
+        "reranking"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/ai-ml/rag-system-design/SKILL.md"
+    },
+    {
+      "name": "react-native-platform",
+      "description": "Use when working on React Native mobile-platform specifics — the JS↔native boundary (TurboModules/Fabric/JSI vs legacy bridge), Metro/Hermes, platform-specific code, native navigation (react-navigation/native-stack), and Expo vs bare workflow. TRIGGER on native-module/bridging work, build/Metro/Hermes issues, platform divergence, or RN-specific runtime perf. Any agent touching RN at the native/build layer (writer, reviewer, perf debugger) can load it. NOT for plain web-React render/hook/state problems (that is generic React) and NOT for pure single-platform native UI.",
+      "category": "mobile",
+      "tags": [
+        "react-native",
+        "expo",
+        "hermes",
+        "turbomodules",
+        "metro"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/mobile/react-native-platform/SKILL.md"
     },
     {
       "name": "react-rendering-model",
@@ -2204,6 +2366,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/sql-query-design/SKILL.md"
+    },
+    {
+      "name": "swiftui-development",
+      "description": "Use when writing, reviewing, or debugging native iOS in Swift/SwiftUI — view composition and identity, @State/@Observable state ownership, NavigationStack navigation, Swift structured concurrency (async/await, actors, Sendable), and SwiftUI performance via Instruments. TRIGGER on stale/not-updating UI, lost state, main-actor/data-race warnings, dropped frames, or broken navigation. Any agent touching SwiftUI (writer, reviewer, performance debugger) can load it. NOT for cross-platform RN/Flutter or store submission.",
+      "category": "mobile",
+      "tags": [
+        "ios",
+        "swift",
+        "swiftui",
+        "concurrency",
+        "instruments"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/mobile/swiftui-development/SKILL.md"
     },
     {
       "name": "test-design",
