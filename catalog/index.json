@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 19,
-    "skills": 7,
+    "agents": 25,
+    "skills": 8,
     "categories": 16
   },
   "agents": [
@@ -184,6 +184,32 @@
       "path": "agents/devops/dockerfile-author.md"
     },
     {
+      "name": "github-actions-pro",
+      "description": "Use when authoring or fixing GitHub Actions workflows (.github/workflows) — structuring jobs and matrices, dependency/build caching, reusable/composite workflows, and CI security (pinned actions, least-privilege GITHUB_TOKEN, OIDC, untrusted-PR safety). NOT for the build steps inside a container image (use dockerfile-author) or Terraform/k8s deploy logic.",
+      "category": "devops",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "github-actions",
+        "ci",
+        "cd",
+        "workflows"
+      ],
+      "skills": [
+        "yaml-manifest-review"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/devops/github-actions-pro.md"
+    },
+    {
       "name": "go-pro",
       "description": "Use for non-trivial Go work — goroutines/channels and concurrency correctness (races, deadlocks), context propagation and cancellation, error wrapping, module/build issues, and idiomatic API design. Invoke for data races, go vet/build failures, or designing concurrent code.",
       "category": "languages",
@@ -207,6 +233,59 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/go-pro.md"
+    },
+    {
+      "name": "helm-chart-author",
+      "description": "Use when packaging an application as a reusable Helm chart — writing templates, values.yaml schemas, _helpers.tpl, dependencies, and release/upgrade hooks, and getting `helm lint`/`helm template` clean. NOT for operating live workloads or one-off manifests (use kubernetes-operator), and NOT for building the container image (use dockerfile-author).",
+      "category": "devops",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "helm",
+        "charts",
+        "packaging",
+        "releases"
+      ],
+      "skills": [
+        "yaml-manifest-review"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/devops/helm-chart-author.md"
+    },
+    {
+      "name": "incident-responder",
+      "description": "Use during a live production incident — establish impact and severity, stop the bleeding with the fastest safe mitigation (rollback/scale/feature-flag/failover), then write a blameless postmortem with timeline and action items. NOT for proactively building dashboards/SLOs/alerts (use observability-engineer).",
+      "category": "devops",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "incident",
+        "oncall",
+        "postmortem",
+        "mitigation"
+      ],
+      "skills": [
+        "severity-triage",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/devops/incident-responder.md"
     },
     {
       "name": "java-pro",
@@ -234,6 +313,33 @@
       "path": "agents/languages/java-pro.md"
     },
     {
+      "name": "kubernetes-operator",
+      "description": "Use when authoring Kubernetes workload manifests (Deployments, StatefulSets, Services, Ingress, RBAC, ConfigMaps) or operating live workloads — debugging CrashLoopBackOff/Pending/OOMKilled pods, driving rollouts and rollbacks, and tuning probes/resources. NOT for packaging reusable charts (use helm-chart-author) or building images (use dockerfile-author).",
+      "category": "devops",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kubernetes",
+        "kubectl",
+        "workloads",
+        "rollouts"
+      ],
+      "skills": [
+        "yaml-manifest-review",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/devops/kubernetes-operator.md"
+    },
+    {
       "name": "literature-reviewer",
       "description": "Use when synthesizing what is known about a topic from multiple sources — gathers and evaluates sources, weighs their credibility, reconciles conflicting claims, and produces a structured, cited summary that separates well-supported findings from contested or thin ones.",
       "category": "research",
@@ -257,6 +363,31 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/research/literature-reviewer.md"
+    },
+    {
+      "name": "observability-engineer",
+      "description": "Use when instrumenting or improving observability ahead of/outside an incident — adding metrics/logs/traces, writing PromQL and Grafana dashboards, defining SLOs and error budgets, and authoring alerting rules that page on symptoms not causes. NOT for triaging a live outage in progress (use incident-responder).",
+      "category": "devops",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "observability",
+        "metrics",
+        "tracing",
+        "slo",
+        "alerting"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/devops/observability-engineer.md"
     },
     {
       "name": "python-pro",
@@ -427,6 +558,30 @@
       "path": "agents/content/technical-writer.md"
     },
     {
+      "name": "terraform-architect",
+      "description": "Use when writing or refactoring Terraform / OpenTofu — designing reusable modules, managing state and backends, fixing drift, and enforcing safe plan/apply hygiene across providers (AWS/GCP/Azure/k8s). Invoke to structure IaC, review a risky plan, or untangle state. NOT for live kubectl operations (use kubernetes-operator) or Helm packaging.",
+      "category": "devops",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "terraform",
+        "iac",
+        "state",
+        "providers"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/devops/terraform-architect.md"
+    },
+    {
       "name": "test-author",
       "description": "Use when adding or expanding automated tests for existing code — analyzes the target's behavior and edge cases, writes tests in the project's existing framework and style, and ensures they actually run and pass. Focuses on meaningful coverage, not coverage-number padding.",
       "category": "engineering",
@@ -569,6 +724,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/data/sql-explain-analysis/SKILL.md"
+    },
+    {
+      "name": "yaml-manifest-review",
+      "description": "Use when reviewing or hardening declarative infra YAML (Kubernetes manifests, Helm-rendered output, GitHub Actions workflows) — checks schema validity, least-privilege, pinned versions, and resource limits before the YAML is applied or merged. Do NOT use to author YAML from scratch; this is a pre-flight review gate only.",
+      "category": "devops",
+      "tags": [
+        "kubernetes",
+        "helm",
+        "ci",
+        "yaml",
+        "security"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/devops/yaml-manifest-review/SKILL.md"
     }
   ]
 }
