@@ -12,8 +12,8 @@
     {
       "id": "languages",
       "title": "Languages & Runtimes",
-      "summary": "Deep, language-specific experts (idioms, tooling, ecosystem).",
-      "examples": ["typescript-pro", "python-pro", "rust-pro", "go-pro"]
+      "summary": "Per-language role teams (developer, architect, security-reviewer, sdet, …) organized in agents/languages/<lang>/ and composing a language capability skill.",
+      "examples": ["java-developer", "java-architect", "python-security-reviewer", "go-sdet", "rust-migration-engineer"]
     },
     {
       "id": "web",
