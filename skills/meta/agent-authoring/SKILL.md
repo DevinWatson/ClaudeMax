@@ -3,7 +3,7 @@ name: agent-authoring
 description: Use when creating or revising a ClaudeMax custom agent — defines the file format, required frontmatter, model/tool selection, and the system-prompt structure that produces a reliable subagent. Load this before writing any new agents/*.md file.
 category: meta
 tags: [authoring, agents, standards, scaffolding]
-version: 1.0.0
+version: 1.1.0
 maintainer: devinwatson@gmail.com
 license: MIT
 status: stable
@@ -61,22 +61,31 @@ Grant the minimum. A read-only reviewer should list `Read, Grep, Glob` and nothi
 that mutates files. Omit the field entirely only when the agent genuinely needs the
 full toolset. Narrow tools = safer, faster, more predictable agents.
 
-## System-prompt structure
+## System-prompt structure (thin agent + composed skill layer)
 
-Write the body as instructions to the agent. A dependable structure:
+ClaudeMax agents are **thin orchestrators**: the substantive procedures live in backing
+skills, and the agent composes them. Write the body as:
 
 1. **Identity + mandate** — one or two sentences restating who the agent is and its job.
-2. **When invoked** — what to read/confirm before acting.
-3. **Operating procedure** — numbered steps (gather → plan → execute → verify).
-4. **Output contract** — exactly what to return and in what shape.
-5. **Guardrails** — scope limits, what NOT to do, when to ask vs. proceed.
+2. **When you are invoked** — what to read/confirm before acting (context-gathering that is
+   the agent's own, not a skill's).
+3. **How you work** — one bullet per backing skill, naming the *intent* and linking the skill
+   via `[[skill-name]]` (e.g. "Write idiomatic Rust using [[rust-ownership]]; fit the codebase
+   via [[match-project-conventions]]; verify with [[verify-by-running]]"). The detailed how-to
+   lives in the skills — do **not** re-state their steps or command lists here.
+4. **Output contract** — exactly what to return and in what shape (this stays on the agent).
+5. **Guardrails** — agent-specific scope limits, what NOT to do, when to ask vs. proceed.
 
 Principles:
-- Be concrete and imperative. Prefer checklists over prose.
-- Bake in verification: tell the agent how to confirm its own output.
+- Decompose: an agent's distinctive expertise belongs in a **capability skill** it composes,
+  not inline. See [[skill-authoring]] for how to extract a coherent, reusable capability.
+- The agent keeps what is genuinely agent-level: routing (`description`), context-gathering,
+  the output contract, agent-specific guardrails, and any deliberate omissions (say *why* a
+  plausible skill is intentionally not composed).
+- Don't duplicate skill content. If a command/procedure lives in a skill, reference the skill
+  and name the intent — re-listing it in the agent drifts over time.
+- Bake in verification by composing a verify skill (e.g. [[verify-by-running]]).
 - Single responsibility: one agent, one clear job. Split rather than overload.
-- If the agent depends on a procedure that other agents also use, factor it into a
-  skill and list it under `skills:` instead of duplicating prose. See [[skill-authoring]].
 
 ## Workflow
 
@@ -90,6 +99,9 @@ Principles:
 
 - `description` makes the trigger unambiguous vs. sibling agents.
 - Tools are scoped to the minimum needed.
-- The body has an explicit output contract and guardrails.
-- Any `skills:` listed actually exist.
+- The agent is thin: it composes ≥1 backing skill and does not re-implement a procedure that
+  belongs in a skill. (Genuinely self-contained micro-agents are the rare exception, not the norm.)
+- The body has an explicit output contract and agent-specific guardrails.
+- Any `skills:` listed actually exist, and a `status: stable` agent lists only `stable` skills
+  (maturity must match — promote agent and skills together).
 - `name` matches the filename; `category` is in the taxonomy.

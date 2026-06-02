@@ -3,7 +3,7 @@ name: skill-authoring
 description: Use when creating or revising a ClaudeMax skill — defines the SKILL.md format, how to write a discoverable description, when to bundle scripts/resources, and how skills back agents. Load this before writing any new skills/**/SKILL.md.
 category: meta
 tags: [authoring, skills, standards]
-version: 1.0.0
+version: 1.1.0
 maintainer: devinwatson@gmail.com
 license: MIT
 status: stable
@@ -65,8 +65,18 @@ Principles:
   `references/` and tell Claude to read it only when needed.
 - Deterministic where possible: if a step is purely mechanical, provide a script under
   `scripts/` and instruct Claude to run it rather than re-deriving the logic each time.
-- A skill is shared infrastructure: write it so multiple agents can rely on it. Agents
-  reference it via their `skills:` frontmatter. See [[agent-authoring]].
+- Skills are where the substance lives. ClaudeMax agents are thin orchestrators that compose
+  skills (see [[agent-authoring]]); a skill carries the actual reproducible procedure.
+
+Two kinds of skill — both are first-class:
+- **Shared skills** back many agents (e.g. `severity-triage`, `verify-by-running`,
+  `match-project-conventions`). Prefer reusing an existing one over making a new one.
+- **Capability skills** capture one agent's distinctive expertise (e.g. `rust-ownership`,
+  `sql-query-design`). These may start with a single consumer — that is fine — but each MUST be
+  a coherent, nameable capability written so a *different* agent (a reviewer, a debugger, a
+  future specialist) could load it standalone. The test: can you name a plausible second
+  consumer? If not, you've sliced an agent's prompt rather than extracted a capability — rethink
+  the cut. Write the description for that broader audience, not just the one agent.
 
 ## Workflow
 
@@ -77,7 +87,10 @@ Principles:
 
 ## Quality bar
 
-- `description` states both what and when, specifically.
+- `description` states both what and when, specifically — and is written for any plausible
+  consumer, not just the one agent you extracted it from.
+- It is a coherent capability with a nameable second consumer (not a slice of one agent's prompt).
 - Instructions are reproducible by a fresh agent with no extra context.
 - Bundled scripts are referenced explicitly from the body.
+- A skill backing any `stable` agent is itself `stable` (maturity must match).
 - `name` matches the directory; `category` is in the taxonomy.

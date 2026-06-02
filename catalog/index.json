@@ -3,7 +3,7 @@
   "taxonomyVersion": "1.0.0",
   "counts": {
     "agents": 71,
-    "skills": 13,
+    "skills": 23,
     "categories": 16
   },
   "agents": [
@@ -35,7 +35,7 @@
     },
     {
       "name": "agent-architect",
-      "description": "Use when designing new ClaudeMax agents or skills, especially in bulk — given a domain or a list of desired capabilities, it proposes names/categories, scaffolds the files with the cmx generator, writes the system prompts, factors shared procedures into backing skills, and validates the result. Invoke for \"add agents for X\", \"design a skill that does Y\", or expanding a category.",
+      "description": "Use when designing new ClaudeMax agents or skills, especially in bulk — given a domain or a list of desired capabilities, it proposes names/categories, scaffolds the files with the cmx generator, decomposes each agent's substantive procedures into composable backing skills, writes thin orchestrating agents plus the skills they compose, and validates the result. Invoke for \"add agents for X\", \"design a skill that does Y\", or expanding a category.",
       "category": "meta",
       "model": "opus",
       "tools": [
@@ -56,7 +56,7 @@
         "agent-authoring",
         "skill-authoring"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/meta/agent-architect.md"
     },
@@ -200,9 +200,12 @@
         "posix"
       ],
       "skills": [
+        "shell-scripting-robustness",
+        "match-project-conventions",
+        "verify-by-running",
         "reproduce-then-fix"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/languages/bash-pro.md"
     },
@@ -348,9 +351,12 @@
         "async"
       ],
       "skills": [
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running",
         "reproduce-then-fix"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/languages/csharp-pro.md"
     },
@@ -783,9 +789,12 @@
         "concurrency"
       ],
       "skills": [
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running",
         "reproduce-then-fix"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/languages/go-pro.md"
     },
@@ -885,9 +894,12 @@
         "generics"
       ],
       "skills": [
+        "java-idioms",
+        "match-project-conventions",
+        "verify-by-running",
         "reproduce-then-fix"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/languages/java-pro.md"
     },
@@ -1254,9 +1266,12 @@
         "asyncio"
       ],
       "skills": [
+        "python-idioms",
+        "match-project-conventions",
+        "verify-by-running",
         "reproduce-then-fix"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/languages/python-pro.md"
     },
@@ -1407,9 +1422,12 @@
         "bundler"
       ],
       "skills": [
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running",
         "reproduce-then-fix"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/languages/ruby-pro.md"
     },
@@ -1432,9 +1450,12 @@
         "cargo"
       ],
       "skills": [
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running",
         "reproduce-then-fix"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/languages/rust-pro.md"
     },
@@ -1529,9 +1550,11 @@
         "dialects"
       ],
       "skills": [
+        "sql-query-design",
+        "match-project-conventions",
         "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/languages/sql-pro.md"
     },
@@ -1726,9 +1749,12 @@
         "javascript"
       ],
       "skills": [
-        "verify-by-running"
+        "typescript-type-system",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/languages/typescript-pro.md"
     },
@@ -1791,7 +1817,7 @@
         "standards",
         "scaffolding"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "skills/meta/agent-authoring/SKILL.md"
     },
@@ -1810,6 +1836,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/business/assumption-hygiene/SKILL.md"
+    },
+    {
+      "name": "csharp-idioms",
+      "description": "Use when writing or fixing C#/.NET code — async/await and Task pitfalls (deadlocks from .Result/.Wait, ConfigureAwait by layer, CancellationToken), LINQ deferred execution and multiple enumeration, nullable reference types and flow analysis, generics, and dotnet build/NuGet/csproj issues. Verifies with dotnet build/test. Any agent touching C# (writer, reviewer, debugger) can load it.",
+      "category": "languages",
+      "tags": [
+        "csharp",
+        "dotnet",
+        "async",
+        "linq",
+        "nullable"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/csharp-idioms/SKILL.md"
     },
     {
       "name": "diff-summary",
@@ -1840,6 +1881,37 @@
       "path": "skills/creative/divergent-then-converge/SKILL.md"
     },
     {
+      "name": "go-idioms",
+      "description": "Use when writing or fixing Go — goroutine/channel/context concurrency correctness (data races, deadlocks, goroutine leaks, send-on-closed-channel), error wrapping, idiomatic interface design, and module/build issues. Reasons about happens-before, threads context properly, and verifies with go build/vet and go test -race. Any agent touching Go (writer, reviewer, debugger) can load it.",
+      "category": "languages",
+      "tags": [
+        "go",
+        "golang",
+        "concurrency",
+        "context",
+        "errors"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/go-idioms/SKILL.md"
+    },
+    {
+      "name": "java-idioms",
+      "description": "Use when writing or fixing Java/JVM code — generics and bounded wildcards (PECS), concurrency under the Java Memory Model (visibility, happens-before, atomicity), modern Java idioms (records, sealed types, switch expressions, streams, Optional), and Maven/Gradle build and dependency-conflict issues. Verifies with the project's build (mvn verify / gradlew test). Any agent touching Java (writer, reviewer, debugger) can load it.",
+      "category": "languages",
+      "tags": [
+        "java",
+        "jvm",
+        "generics",
+        "concurrency",
+        "maven",
+        "gradle"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/java-idioms/SKILL.md"
+    },
+    {
       "name": "llm-eval-rubric",
       "description": "Use when building an LLM-as-judge or rubric-based evaluation of model output quality — defines scoring criteria, calibrates the judge against human labels, and guards against judge bias, gaming, and flaky scores. Use for the judging procedure itself, not for choosing task metrics or designing the system under test; skip it when a deterministic or programmatic check would suffice.",
       "category": "ai-ml",
@@ -1852,6 +1924,20 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/ai-ml/llm-eval-rubric/SKILL.md"
+    },
+    {
+      "name": "match-project-conventions",
+      "description": "Use before writing or editing code in an existing codebase — read the surrounding code first and match its established conventions (naming, error-handling approach, formatting/lint config, test framework, dependency and structural choices) instead of imposing your own. Do not introduce a new framework, pattern, or dependency without an explicit, stated reason. TRIGGER for any change to code you did not author.",
+      "category": "engineering",
+      "tags": [
+        "conventions",
+        "consistency",
+        "style",
+        "refactoring"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/engineering/match-project-conventions/SKILL.md"
     },
     {
       "name": "not-professional-advice",
@@ -1870,6 +1956,21 @@
       "path": "skills/business/not-professional-advice/SKILL.md"
     },
     {
+      "name": "python-idioms",
+      "description": "Use when writing or fixing Python — type hints and mypy/pyright errors, async/asyncio pitfalls, the data model (dunders, dataclasses, protocols), packaging/dependency questions (pip/poetry/uv), and idiomatic stdlib-first code. Diagnoses typing/import errors precisely, prefers the simplest Pythonic form, and verifies with ruff/mypy/pytest in the project's environment. Any agent touching Python (writer, reviewer, debugger) can load it.",
+      "category": "languages",
+      "tags": [
+        "python",
+        "typing",
+        "asyncio",
+        "packaging",
+        "pytest"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/python-idioms/SKILL.md"
+    },
+    {
       "name": "reproduce-then-fix",
       "description": "Use when fixing a reported bug or regression in any language — first reproduce it with a minimal failing case or test, confirm the failure, then make the smallest change that turns it green and guards against regression. Do not patch blind.",
       "category": "engineering",
@@ -1881,6 +1982,37 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/engineering/reproduce-then-fix/SKILL.md"
+    },
+    {
+      "name": "ruby-idioms",
+      "description": "Use when writing or fixing Ruby — metaprogramming behavior (method lookup, method_missing/respond_to_missing?, define_method), blocks vs. procs vs. lambdas, Enumerable and expressive idioms, mixin/module composition, Bundler/gem dependency issues, and Rails-aware concerns (N+1, ActiveRecord lifecycle). Verifies with the project's specs and rubocop. Any agent touching Ruby (writer, reviewer, debugger) can load it.",
+      "category": "languages",
+      "tags": [
+        "ruby",
+        "metaprogramming",
+        "enumerable",
+        "bundler",
+        "rspec"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/ruby-idioms/SKILL.md"
+    },
+    {
+      "name": "rust-ownership",
+      "description": "Use when writing or fixing Rust where ownership, lifetimes, traits, or async correctness are in play — explains borrow-checker and lifetime errors in real terms, restructures ownership before reaching for clone/unsafe, gets Send/Sync/'static bounds right, and verifies with cargo check/clippy/test. TRIGGER on borrow-checker fights, trait-resolution errors, async Send issues, or unsafe justification. Any agent touching Rust (writer, reviewer, debugger) can load it.",
+      "category": "languages",
+      "tags": [
+        "rust",
+        "ownership",
+        "lifetimes",
+        "traits",
+        "async",
+        "cargo"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/rust-ownership/SKILL.md"
     },
     {
       "name": "severity-triage",
@@ -1897,6 +2029,21 @@
       "path": "skills/engineering/severity-triage/SKILL.md"
     },
     {
+      "name": "shell-scripting-robustness",
+      "description": "Use when writing or hardening Bash/POSIX shell scripts — strict mode (set -euo pipefail, IFS, traps), correct quoting and word-splitting, arrays over space-joined strings, portability (Bash vs. POSIX sh, GNU vs. BSD utilities), and passing shellcheck clean. Also flags when shell is the wrong tool. Verifies with shellcheck and bash -n. Any agent producing shell scripts (writer, reviewer, devops) can load it.",
+      "category": "languages",
+      "tags": [
+        "bash",
+        "shell",
+        "posix",
+        "shellcheck",
+        "portability"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/shell-scripting-robustness/SKILL.md"
+    },
+    {
       "name": "skill-authoring",
       "description": "Use when creating or revising a ClaudeMax skill — defines the SKILL.md format, how to write a discoverable description, when to bundle scripts/resources, and how skills back agents. Load this before writing any new skills/**/SKILL.md.",
       "category": "meta",
@@ -1905,7 +2052,7 @@
         "skills",
         "standards"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "skills/meta/skill-authoring/SKILL.md"
     },
@@ -1936,6 +2083,37 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/data/sql-explain-analysis/SKILL.md"
+    },
+    {
+      "name": "sql-query-design",
+      "description": "Use when writing or correcting a SQL query for correctness — set semantics and JOIN fan-out, NULL three-valued logic, GROUP BY/aggregation edge cases, window functions and CTEs (including recursive), and dialect differences across Postgres/MySQL/SQLite/SQL Server. Verifies the result against sample data rather than trusting valid syntax. For a query that is correct but slow, this is NOT the skill — use plan/EXPLAIN analysis. Any agent authoring SQL (writer, reviewer) can load it.",
+      "category": "languages",
+      "tags": [
+        "sql",
+        "query",
+        "joins",
+        "null-handling",
+        "windows",
+        "dialects"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/sql-query-design/SKILL.md"
+    },
+    {
+      "name": "typescript-type-system",
+      "description": "Use when working with the TypeScript type system — confusing type errors, generics and constraints, conditional/mapped/template-literal types, inference and narrowing, strictness migration, or tsconfig/module-resolution issues. Diagnoses errors in type-system terms, prefers the simplest sound fix over type-level wizardry, and verifies with tsc --noEmit. Any agent reading or writing TS (writer, reviewer) can load it.",
+      "category": "languages",
+      "tags": [
+        "typescript",
+        "types",
+        "generics",
+        "inference",
+        "tsconfig"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/typescript-type-system/SKILL.md"
     },
     {
       "name": "verify-by-running",
