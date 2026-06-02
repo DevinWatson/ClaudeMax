@@ -3,7 +3,7 @@
   "taxonomyVersion": "1.0.0",
   "counts": {
     "agents": 71,
-    "skills": 81,
+    "skills": 94,
     "categories": 16
   },
   "agents": [
@@ -1927,6 +1927,22 @@
       "path": "skills/meta/agent-authoring/SKILL.md"
     },
     {
+      "name": "agent-orchestration",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow — decomposing a task into steps/sub-agents, routing work to the right agent or tool, designing handoffs and shared state between steps, deciding what runs in parallel vs. sequentially, inserting verification/critic steps, handling step failures, and controlling end-to-end cost and latency. TRIGGER on \"orchestrate agents\", \"chain these steps/tools\", or \"coordinate a planner + workers\". Distinct from llm-application-engineering (a single model call's plumbing) — this is the coordination across many. Language- and framework-agnostic — the orchestration patterns; the framework specifics come from a separate language capability the agent also composes. Any agent that coordinates a workflow (an orchestration engineer, an agent-platform designer, a reviewer of agent graphs) can load it.",
+      "category": "ai-ml",
+      "tags": [
+        "orchestration",
+        "multi-agent",
+        "routing",
+        "handoff",
+        "verification",
+        "workflow"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/ai-ml/agent-orchestration/SKILL.md"
+    },
+    {
       "name": "analogy-mapping",
       "description": "Use when making a complex or abstract idea intuitive through analogy/metaphor — decomposing the target into its elements and relationships, generating source domains familiar to the audience, building an explicit source→target correspondence mapping, testing where each analogy holds and (crucially) where it breaks, and offering several framings tuned to different audiences. TRIGGER when explanation/communication clarity is the goal, not open-ended idea generation. Any agent that must explain hard concepts (analogy finder, teacher/tutor, docs explainer) can load it.",
       "category": "creative",
@@ -1987,6 +2003,22 @@
       "path": "skills/engineering/behavior-preserving-refactoring/SKILL.md"
     },
     {
+      "name": "code-migration",
+      "description": "Use when planning or executing a version, framework, or library migration or upgrade — analyzing compatibility and breaking changes, applying codemods/automated rewrites, moving incrementally via a strangler approach, handling deprecations, keeping a rollback path, and verifying at each step that behavior is preserved. TRIGGER on a \"upgrade X to Y\", \"migrate from A to B\", or \"modernize/replace this dependency/framework\" task. Language- and framework-agnostic — the migration strategy; the specific codemod tool and API deltas come from a separate language capability the agent also composes. Any agent that performs migrations (a migration engineer, a dependency-upgrade bot, a modernization reviewer) can load it.",
+      "category": "engineering",
+      "tags": [
+        "migration",
+        "upgrade",
+        "codemod",
+        "strangler",
+        "deprecation",
+        "rollback"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/engineering/code-migration/SKILL.md"
+    },
+    {
       "name": "code-review-method",
       "description": "Use when reviewing a code change (diff, branch, or PR) for real defects — how to read a change for correctness, security, data/concurrency, and maintainability problems, confirm each finding against the surrounding code, and report it with a precise location and a minimal fix. TRIGGER on any \"review this code/diff/PR\" request. Any agent that reviews code (a dedicated reviewer, a security auditor, a language pro double-checking a change) can load it.",
       "category": "engineering",
@@ -2000,6 +2032,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/engineering/code-review-method/SKILL.md"
+    },
+    {
+      "name": "compliance-review",
+      "description": "Use when reviewing code or a change for compliance obligations — open-source license obligations (SPDX identification, copyleft/attribution), data-handling and privacy (PII/PHI classification, retention, consent, minimization), regulatory control mapping (SOC 2 / GDPR / HIPAA and similar), and whether the change leaves the audit evidence a control requires. TRIGGER on a compliance/privacy/license review of code or a diff the user is authorized to review. This is engineering-level compliance triage, NOT legal advice — flag anything material for qualified counsel. Language- and framework-agnostic — the obligations, not the syntax. Any agent that gates changes on compliance (a compliance reviewer, a privacy-aware code reviewer, a release-gate bot) can load it.",
+      "category": "security",
+      "tags": [
+        "compliance",
+        "privacy",
+        "licensing",
+        "gdpr",
+        "hipaa",
+        "soc2",
+        "pii"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/security/compliance-review/SKILL.md"
     },
     {
       "name": "contract-review",
@@ -2044,6 +2093,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/creative/copywriting-concepts/SKILL.md"
+    },
+    {
+      "name": "cost-optimization",
+      "description": "Use when analyzing or reducing the compute, cloud, or resource cost of a system — attributing spend to its drivers, right-sizing instances/containers/storage, cutting wasteful egress and storage tiers, improving query and compute efficiency, adding caching/batching, and weighing each FinOps change against its performance and reliability cost. TRIGGER on a cost-reduction goal, a bill spike, or a cost review — not on raw runtime performance tuning for its own sake. Language- and framework-agnostic — the cost reasoning; the runtime/query specifics come from a separate language capability the agent also composes. Any agent that analyzes spend (a FinOps engineer, a platform reviewer, an architect weighing cost trade-offs) can load it.",
+      "category": "devops",
+      "tags": [
+        "cost",
+        "finops",
+        "cloud",
+        "right-sizing",
+        "caching",
+        "efficiency"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/devops/cost-optimization/SKILL.md"
     },
     {
       "name": "csharp-idioms",
@@ -2211,6 +2276,21 @@
       "path": "skills/ai-ml/eval-suite-design/SKILL.md"
     },
     {
+      "name": "feature-development",
+      "description": "Use when turning a requirement, ticket, or feature request into working, tested, incrementally-shipped code — clarifying acceptance criteria, slicing the work into small verifiable increments, implementing the smallest viable change, self-reviewing the diff, and leaving the result independently verifiable. TRIGGER when asked to build or extend a feature from a spec rather than fix a known bug or refactor. Language- and framework-agnostic — the disciplined delivery loop, not the syntax; the language specifics come from a separate language capability the agent also composes. Any agent that ships application code (a feature developer, a full-stack engineer, a tech-lead reviewing how work was sliced) can load it.",
+      "category": "engineering",
+      "tags": [
+        "feature",
+        "delivery",
+        "incremental",
+        "tdd",
+        "acceptance-criteria"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/engineering/feature-development/SKILL.md"
+    },
+    {
       "name": "fhir-interoperability",
       "description": "Use when modeling, validating, or debugging HL7 FHIR (R4/R4B/R5) integrations — choosing the right resource and elements with correct cardinality and value-set bindings, wiring references/contained/conditional references and Bundles (transaction vs batch), conforming to profiles (US Core/IPS/vendor) via meta.profile and must-support slices, building search queries and REST writes, and binding codes to LOINC/SNOMED/ICD-10/RxNorm/UCUM. SYNTHETIC DATA ONLY — never request, echo, or store real PHI. TRIGGER on FHIR resource modeling, profile conformance, search, or terminology binding. Any healthcare-data agent (FHIR expert, EHR-integration helper, interoperability reviewer) can load it.",
       "category": "domain",
@@ -2375,6 +2455,21 @@
       "path": "skills/devops/incident-response/SKILL.md"
     },
     {
+      "name": "integration-testing",
+      "description": "Use when testing behavior that crosses a component, module, or service boundary — deciding where to use a real dependency versus a test double, standing up and tearing down test data and infrastructure deterministically, distinguishing an integration test from a contract test or a unit test, and controlling the flakiness that boundary tests are prone to. TRIGGER when verifying that two or more parts work together (service↔database, service↔service, app↔external API) rather than testing one unit in isolation. Language- and framework-agnostic — the strategy for boundary tests; the runner/library specifics come from a separate language capability the agent also composes. Any agent that writes or reviews boundary tests (an integration-test author, a backend engineer, a QA reviewer) can load it.",
+      "category": "qa",
+      "tags": [
+        "testing",
+        "integration",
+        "test-doubles",
+        "fixtures",
+        "flakiness"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/qa/integration-testing/SKILL.md"
+    },
+    {
       "name": "java-idioms",
       "description": "Use when writing or fixing Java/JVM code — generics and bounded wildcards (PECS), concurrency under the Java Memory Model (visibility, happens-before, atomicity), modern Java idioms (records, sealed types, switch expressions, streams, Optional), and Maven/Gradle build and dependency-conflict issues. Verifies with the project's build (mvn verify / gradlew test). Any agent touching Java (writer, reviewer, debugger) can load it.",
       "category": "languages",
@@ -2450,6 +2545,22 @@
       "path": "skills/research/literature-synthesis/SKILL.md"
     },
     {
+      "name": "llm-application-engineering",
+      "description": "Use when building an LLM-powered feature into an application — integrating a provider/SDK, wiring prompts and tool/function calling, getting reliable structured output, handling streaming, managing the context/token budget, adding guardrails and safety checks, building fallback/retry/timeout around a non-deterministic API, caching, and exposing eval hooks. TRIGGER on \"add an LLM feature / call a model from our app / make the model use tools\". Distinct from prompt-design (crafting the prompt text) and rag-system-design (the retrieval pipeline) — this is the application engineering around the model call. Language- and framework-agnostic — the SDK specifics come from a separate language capability the agent also composes. Any agent that ships LLM features (an LLM app engineer, a backend engineer adding AI, a reviewer of model-calling code) can load it.",
+      "category": "ai-ml",
+      "tags": [
+        "llm",
+        "sdk",
+        "tool-calling",
+        "structured-output",
+        "streaming",
+        "guardrails"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/ai-ml/llm-application-engineering/SKILL.md"
+    },
+    {
       "name": "llm-eval-rubric",
       "description": "Use when building an LLM-as-judge or rubric-based evaluation of model output quality — defines scoring criteria, calibrates the judge against human labels, and guards against judge bias, gaming, and flaky scores. Use for the judging procedure itself, not for choosing task metrics or designing the system under test; skip it when a deterministic or programmatic check would suffice.",
       "category": "ai-ml",
@@ -2506,6 +2617,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/engineering/match-project-conventions/SKILL.md"
+    },
+    {
+      "name": "mcp-integration",
+      "description": "Use when building or integrating a Model Context Protocol (MCP) server or client — designing the tools/resources/prompts a server exposes, choosing and wiring a transport (stdio or streamable HTTP), handling initialization and capability negotiation, designing clear tool input/output schemas, adding auth, and testing the surface against a client. TRIGGER on \"build an MCP server\", \"expose our system as MCP tools\", or \"connect a client to an MCP server\". Language- and framework-agnostic — the protocol design and integration; the specific MCP SDK comes from a separate language capability the agent also composes. Any agent that builds MCP surfaces (an MCP server author, a platform integrator, a reviewer of tool schemas) can load it.",
+      "category": "ai-ml",
+      "tags": [
+        "mcp",
+        "model-context-protocol",
+        "tools",
+        "transport",
+        "jsonrpc",
+        "integration"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/ai-ml/mcp-integration/SKILL.md"
     },
     {
       "name": "mobile-release-management",
@@ -2658,6 +2785,38 @@
       "path": "skills/ai-ml/prompt-design/SKILL.md"
     },
     {
+      "name": "prompt-library-management",
+      "description": "Use when managing a collection of prompts at scale rather than crafting one — versioning prompts, cataloging them with metadata, templating shared variables/partials, reviewing prompt changes, running a regression eval on every change before it ships, and deprecating retired prompts. TRIGGER on \"organize / version / govern our prompts\", a growing prompts directory, or wiring eval-on-change for prompts. Distinct from prompt-design, which crafts a single prompt — this is the lifecycle and governance of many. Language- and framework-agnostic — the storage/format specifics come from a separate language capability the agent also composes. Any agent that owns a prompt corpus (a prompt-ops engineer, an LLM platform maintainer, a reviewer gating prompt changes) can load it.",
+      "category": "ai-ml",
+      "tags": [
+        "prompt-ops",
+        "versioning",
+        "catalog",
+        "templating",
+        "regression-eval",
+        "governance"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/ai-ml/prompt-library-management/SKILL.md"
+    },
+    {
+      "name": "protobuf-schema-design",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas — modeling proto3 messages and services, assigning and reserving field numbers, applying the backward/forward-compatibility rules so old and new code interoperate, detecting breaking changes before they ship, reasoning about wire-format and safe evolution, and organizing for codegen. TRIGGER on writing or changing a `.proto`, adding a gRPC service/method, or reviewing a proto diff for compatibility. Language- and framework-agnostic — the schema and wire contract; the generated-code/runtime specifics come from a separate language capability the agent also composes. Any agent that owns protobuf schemas (a schema designer, an API reviewer, a gRPC service author) can load it.",
+      "category": "data",
+      "tags": [
+        "protobuf",
+        "proto3",
+        "grpc",
+        "schema",
+        "compatibility",
+        "wire-format"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/data/protobuf-schema-design/SKILL.md"
+    },
+    {
       "name": "python-idioms",
       "description": "Use when writing or fixing Python — type hints and mypy/pyright errors, async/asyncio pitfalls, the data model (dunders, dataclasses, protocols), packaging/dependency questions (pip/poetry/uv), and idiomatic stdlib-first code. Diagnoses typing/import errors precisely, prefers the simplest Pythonic form, and verifies with ruff/mypy/pytest in the project's environment. Any agent touching Python (writer, reviewer, debugger) can load it.",
       "category": "languages",
@@ -2716,6 +2875,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/web/react-rendering-model/SKILL.md"
+    },
+    {
+      "name": "reliability-engineering",
+      "description": "Use when designing or reviewing a system for resilience and availability — defining SLIs/SLOs and error budgets, analyzing failure modes, applying timeouts/retries-with-backoff/circuit-breakers/backpressure correctly, designing graceful degradation and load shedding, planning capacity, and validating with readiness/chaos checks. TRIGGER on reliability/resilience design or review, or hardening a service against partial failure — not on triaging a live outage. Language- and framework-agnostic — the resilience patterns and their failure semantics; the library specifics come from a separate language capability the agent also composes. Any agent that designs for resilience (an SRE, a backend reviewer, a platform engineer) can load it.",
+      "category": "devops",
+      "tags": [
+        "reliability",
+        "resilience",
+        "slo",
+        "error-budget",
+        "circuit-breaker",
+        "backpressure"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/devops/reliability-engineering/SKILL.md"
     },
     {
       "name": "reproduce-then-fix",
@@ -2864,6 +3039,22 @@
       "path": "skills/meta/skill-authoring/SKILL.md"
     },
     {
+      "name": "software-architecture",
+      "description": "Use when designing or reviewing the structure of a system, service, or module — defining component boundaries and responsibilities, managing coupling and cohesion, mapping data flow and interface contracts, weighing trade-offs against quality attributes, and recording the decision as an ADR with an eye to evolvability. TRIGGER before building something non-trivial, when splitting/merging modules or services, or when reviewing a design proposal. Language- and framework-agnostic — shapes boundaries and contracts, not implementation; the language specifics come from a separate language capability the agent also composes. Any agent that designs or reviews structure (a system architect, a staff engineer doing design review, a migration planner) can load it.",
+      "category": "engineering",
+      "tags": [
+        "architecture",
+        "design",
+        "boundaries",
+        "coupling",
+        "adr",
+        "trade-offs"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/engineering/software-architecture/SKILL.md"
+    },
+    {
       "name": "source-evaluation",
       "description": "Use when assessing whether a source can be trusted and how much weight to give it — applies a rubric for authority, evidence, recency, and bias, and assigns a confidence level so claims are cited proportionally to their support.",
       "category": "research",
@@ -2964,6 +3155,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/devops/terraform-iac/SKILL.md"
+    },
+    {
+      "name": "test-automation",
+      "description": "Use when building or restructuring a durable automated-test suite or harness — selecting a framework/runner, structuring tests with page-object/fixture/factory patterns, choosing deterministic selectors and waits, wiring the suite into CI with parallelism and sharding, and producing trustworthy reporting and artifacts. TRIGGER when standing up test infrastructure, refactoring a brittle suite, or wiring tests into a pipeline — as opposed to writing the cases for one feature. Language- and framework-agnostic — the engineering of the harness; the specific runner/tooling comes from a separate language capability the agent also composes. Any agent that owns test infrastructure (a test-automation engineer, an SDET, a CI maintainer) can load it.",
+      "category": "qa",
+      "tags": [
+        "test-automation",
+        "ci",
+        "fixtures",
+        "page-object",
+        "parallelism",
+        "reporting"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/qa/test-automation/SKILL.md"
     },
     {
       "name": "test-design",
