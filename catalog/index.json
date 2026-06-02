@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 11,
-    "skills": 6,
+    "agents": 19,
+    "skills": 7,
     "categories": 16
   },
   "agents": [
@@ -85,6 +85,31 @@
       "path": "agents/security/appsec-auditor.md"
     },
     {
+      "name": "bash-pro",
+      "description": "Use for non-trivial shell scripting — robust Bash/POSIX scripts with proper quoting, error handling (set -euo pipefail, traps), portability, and passing shellcheck. Invoke when a shell script is fragile, fails on edge cases (spaces/globs), or needs writing safely. For complex logic, advise a real language instead.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "bash",
+        "shell",
+        "posix"
+      ],
+      "skills": [
+        "reproduce-then-fix"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "agents/languages/bash-pro.md"
+    },
+    {
       "name": "code-reviewer",
       "description": "Use when reviewing a code change (a diff, branch, or PR) for correctness bugs, security issues, and maintainability problems before it merges. Returns severity-ranked findings with precise locations and minimal fixes. Read-only — it reviews, it does not edit.",
       "category": "engineering",
@@ -110,6 +135,31 @@
       "path": "agents/engineering/code-reviewer.md"
     },
     {
+      "name": "csharp-pro",
+      "description": "Use for non-trivial C#/.NET work — async/await and Task pitfalls (deadlocks, ConfigureAwait), LINQ and IEnumerable/IAsyncEnumerable, nullable reference types, generics, and dotnet build/NuGet/csproj issues. Invoke for async or nullability bugs or idiomatic .NET API design.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "dotnet",
+        "async"
+      ],
+      "skills": [
+        "reproduce-then-fix"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "agents/languages/csharp-pro.md"
+    },
+    {
       "name": "dockerfile-author",
       "description": "Use when writing or improving a Dockerfile — produces small, secure, well-cached, multi-stage images that follow best practices (pinned bases, non-root user, minimal layers, good .dockerignore) for the project's stack. Invoke to containerize an app or fix a bloated/insecure image.",
       "category": "devops",
@@ -132,6 +182,56 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/devops/dockerfile-author.md"
+    },
+    {
+      "name": "go-pro",
+      "description": "Use for non-trivial Go work — goroutines/channels and concurrency correctness (races, deadlocks), context propagation and cancellation, error wrapping, module/build issues, and idiomatic API design. Invoke for data races, go vet/build failures, or designing concurrent code.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "concurrency"
+      ],
+      "skills": [
+        "reproduce-then-fix"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "agents/languages/go-pro.md"
+    },
+    {
+      "name": "java-pro",
+      "description": "Use for non-trivial Java work — generics and bounded wildcards, concurrency (java.util.concurrent, memory model), streams/Optional idioms, Maven/Gradle build and dependency conflicts, and JVM-aware performance. Invoke for confusing generics/concurrency bugs or idiomatic API design on the JVM.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "java",
+        "jvm",
+        "generics"
+      ],
+      "skills": [
+        "reproduce-then-fix"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "agents/languages/java-pro.md"
     },
     {
       "name": "literature-reviewer",
@@ -159,6 +259,31 @@
       "path": "agents/research/literature-reviewer.md"
     },
     {
+      "name": "python-pro",
+      "description": "Use for non-trivial Python work — type hints and mypy/pyright strictness, async/await and asyncio pitfalls, packaging and virtualenv/dependency issues (pip/poetry/uv), and idiomatic, performant code. Invoke for confusing import/typing errors or Pythonic API design.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "python",
+        "typing",
+        "asyncio"
+      ],
+      "skills": [
+        "reproduce-then-fix"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "agents/languages/python-pro.md"
+    },
+    {
       "name": "refactoring-specialist",
       "description": "Use when improving the structure of working code without changing its behavior — reduces duplication, clarifies naming, untangles complex functions, and improves cohesion, verifying behavior is preserved via the existing tests at each step. Not for adding features or fixing bugs.",
       "category": "engineering",
@@ -180,6 +305,56 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/engineering/refactoring-specialist.md"
+    },
+    {
+      "name": "ruby-pro",
+      "description": "Use for non-trivial Ruby work — metaprogramming and method_missing, blocks/procs/lambdas, mixins and module composition, Bundler/gem dependency issues, and idiomatic (and Rails-aware) code. Invoke for confusing metaprogramming behavior or designing expressive Ruby APIs.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "metaprogramming",
+        "bundler"
+      ],
+      "skills": [
+        "reproduce-then-fix"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "agents/languages/ruby-pro.md"
+    },
+    {
+      "name": "rust-pro",
+      "description": "Use for non-trivial Rust work — borrow checker and lifetime errors, trait bounds and generics, async/Send+Sync issues, unsafe justification, and Cargo build/dependency problems. Invoke when the borrow checker or trait resolution is fighting you, or to design idiomatic ownership-friendly APIs.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "ownership",
+        "cargo"
+      ],
+      "skills": [
+        "reproduce-then-fix"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "agents/languages/rust-pro.md"
     },
     {
       "name": "sql-optimizer",
@@ -204,6 +379,29 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/data/sql-optimizer.md"
+    },
+    {
+      "name": "sql-pro",
+      "description": "Use for non-trivial SQL authoring and correctness (not pure performance tuning) — complex joins, window functions, CTEs and recursion, aggregation/grouping edge cases, NULL semantics, and dialect differences across Postgres/MySQL/SQLite/SQL Server. Invoke to write or correct a tricky query; for slow-query plan tuning route to sql-optimizer.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "sql",
+        "query",
+        "dialects"
+      ],
+      "skills": [],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "agents/languages/sql-pro.md"
     },
     {
       "name": "technical-writer",
@@ -303,6 +501,19 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/engineering/diff-summary/SKILL.md"
+    },
+    {
+      "name": "reproduce-then-fix",
+      "description": "Use when fixing a reported bug or regression in any language — first reproduce it with a minimal failing case or test, confirm the failure, then make the smallest change that turns it green and guards against regression. Do not patch blind.",
+      "category": "engineering",
+      "tags": [
+        "debugging",
+        "testing",
+        "bugfix"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/engineering/reproduce-then-fix/SKILL.md"
     },
     {
       "name": "severity-triage",
