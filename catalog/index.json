@@ -2,7 +2,7 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 66,
+    "agents": 71,
     "skills": 10,
     "categories": 16
   },
@@ -549,6 +549,30 @@
       "path": "agents/ai-ml/evals-author.md"
     },
     {
+      "name": "fhir-integration-expert",
+      "description": "Use when integrating with or modeling data for an HL7 FHIR API — designing/validating resources (Patient, Observation, Encounter, etc.), wiring references and contained resources, authoring or conforming to profiles (StructureDefinition), building search queries and Bundles, or mapping codes to LOINC/SNOMED/ICD. Technical, synthetic-data-only.",
+      "category": "domain",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "fhir",
+        "healthcare",
+        "hl7",
+        "interoperability"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/domain/fhir-integration-expert.md"
+    },
+    {
       "name": "financial-modeler",
       "description": "Use to build or review a financial model — projections, unit economics (CAC/LTV/margins), scenario and sensitivity analysis, runway/burn, assumptions hygiene. NOT market sizing (use market-sizer).",
       "category": "business",
@@ -645,6 +669,53 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/web/frontend-performance.md"
+    },
+    {
+      "name": "game-balance-designer",
+      "description": "Use when tuning or analyzing game systems for balance — economy faucets/sinks and currency inflation, difficulty curves, progression/level pacing, cost/power curves, and reasoning about player incentives and dominant strategies. Produces tuned numbers, formulas, and the model behind them; may edit balance config/data tables.",
+      "category": "domain",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "gamedev",
+        "balance",
+        "economy",
+        "design"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/domain/game-balance-designer.md"
+    },
+    {
+      "name": "geospatial-analyst",
+      "description": "Use for GIS/geospatial analysis — picking and reprojecting coordinate reference systems (EPSG, WGS84/Web Mercator), spatial joins, buffers, overlays/clips, distance/area measurement, and working with vector vs raster data in PostGIS, GeoPandas/Shapely, or QGIS. Catches CRS/datum-mismatch and projection-distortion pitfalls. Technical; may write/run code and queries. NOT general (non-spatial) SQL performance tuning — use sql-optimizer for that.",
+      "category": "domain",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gis",
+        "geospatial",
+        "postgis",
+        "geopandas"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/domain/geospatial-analyst.md"
     },
     {
       "name": "github-actions-pro",
@@ -825,6 +896,27 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/devops/kubernetes-operator.md"
+    },
+    {
+      "name": "legal-clause-explainer",
+      "description": "Use when someone wants ONE specific legal clause or term explained in plain language — what it means, why it exists, common variants, and what to watch for. Educational/explanatory only. NOT legal advice. Distinct from business/contract-reviewer, which reviews a WHOLE contract for risks/red flags from a party's perspective; use this agent to teach a clause, that agent to assess a document.",
+      "category": "domain",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "legal",
+        "clause",
+        "explainer",
+        "informational"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/domain/legal-clause-explainer.md"
     },
     {
       "name": "literature-reviewer",
@@ -1425,6 +1517,27 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/mobile/swiftui-pro.md"
+    },
+    {
+      "name": "tax-rules-analyst",
+      "description": "Use when someone wants to understand — at an informational level — how a tax RULE applies to a scenario: which rule/treatment likely governs, what factors and facts matter, and what to gather before talking to a professional. NOT tax or legal advice and NOT a filing/return preparer. Jurisdiction- and date-sensitive.",
+      "category": "domain",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "tax",
+        "rules",
+        "informational",
+        "finance"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/domain/tax-rules-analyst.md"
     },
     {
       "name": "technical-writer",
