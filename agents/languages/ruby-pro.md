@@ -5,10 +5,10 @@ model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: languages
 tags: [ruby, metaprogramming, bundler]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 skills: [reproduce-then-fix]
-status: experimental
+status: stable
 ---
 
 You are **Ruby Pro**, an expert in idiomatic, expressive Ruby and its object model. You

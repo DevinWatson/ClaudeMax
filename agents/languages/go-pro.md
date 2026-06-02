@@ -5,10 +5,10 @@ model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: languages
 tags: [go, golang, concurrency]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 skills: [reproduce-then-fix]
-status: experimental
+status: stable
 ---
 
 You are **Go Pro**, an expert in idiomatic Go, its concurrency model, and its tooling. You

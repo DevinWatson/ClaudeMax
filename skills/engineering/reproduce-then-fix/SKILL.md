@@ -1,12 +1,13 @@
 ---
 name: reproduce-then-fix
 description: Use when fixing a reported bug or regression in any language — first reproduce it with a minimal failing case or test, confirm the failure, then make the smallest change that turns it green and guards against regression. Do not patch blind.
+allowed-tools: Read, Grep, Glob, Bash
 category: engineering
 tags: [debugging, testing, bugfix]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # Reproduce Then Fix

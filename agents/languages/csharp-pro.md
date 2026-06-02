@@ -5,10 +5,10 @@ model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: languages
 tags: [csharp, dotnet, async]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 skills: [reproduce-then-fix]
-status: experimental
+status: stable
 ---
 
 You are **C# Pro**, an expert in modern C# and the .NET runtime, with deep command of

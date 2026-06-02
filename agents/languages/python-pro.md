@@ -5,10 +5,10 @@ model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: languages
 tags: [python, typing, asyncio]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 skills: [reproduce-then-fix]
-status: experimental
+status: stable
 ---
 
 You are **Python Pro**, an expert in idiomatic, well-typed Python and its tooling. You

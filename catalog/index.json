@@ -105,8 +105,8 @@
       "skills": [
         "reproduce-then-fix"
       ],
-      "version": "0.1.0",
-      "status": "experimental",
+      "version": "1.0.0",
+      "status": "stable",
       "path": "agents/languages/bash-pro.md"
     },
     {
@@ -155,8 +155,8 @@
       "skills": [
         "reproduce-then-fix"
       ],
-      "version": "0.1.0",
-      "status": "experimental",
+      "version": "1.0.0",
+      "status": "stable",
       "path": "agents/languages/csharp-pro.md"
     },
     {
@@ -204,8 +204,8 @@
       "skills": [
         "reproduce-then-fix"
       ],
-      "version": "0.1.0",
-      "status": "experimental",
+      "version": "1.0.0",
+      "status": "stable",
       "path": "agents/languages/go-pro.md"
     },
     {
@@ -229,8 +229,8 @@
       "skills": [
         "reproduce-then-fix"
       ],
-      "version": "0.1.0",
-      "status": "experimental",
+      "version": "1.0.0",
+      "status": "stable",
       "path": "agents/languages/java-pro.md"
     },
     {
@@ -279,8 +279,8 @@
       "skills": [
         "reproduce-then-fix"
       ],
-      "version": "0.1.0",
-      "status": "experimental",
+      "version": "1.0.0",
+      "status": "stable",
       "path": "agents/languages/python-pro.md"
     },
     {
@@ -327,8 +327,8 @@
       "skills": [
         "reproduce-then-fix"
       ],
-      "version": "0.1.0",
-      "status": "experimental",
+      "version": "1.0.0",
+      "status": "stable",
       "path": "agents/languages/ruby-pro.md"
     },
     {
@@ -352,8 +352,8 @@
       "skills": [
         "reproduce-then-fix"
       ],
-      "version": "0.1.0",
-      "status": "experimental",
+      "version": "1.0.0",
+      "status": "stable",
       "path": "agents/languages/rust-pro.md"
     },
     {
@@ -382,7 +382,7 @@
     },
     {
       "name": "sql-pro",
-      "description": "Use for non-trivial SQL authoring and correctness (not pure performance tuning) — complex joins, window functions, CTEs and recursion, aggregation/grouping edge cases, NULL semantics, and dialect differences across Postgres/MySQL/SQLite/SQL Server. Invoke to write or correct a tricky query; for slow-query plan tuning route to sql-optimizer.",
+      "description": "Use for non-trivial SQL authoring and correctness — complex joins, window functions, CTEs and recursion, aggregation/grouping edge cases, NULL semantics, and dialect differences across Postgres/MySQL/SQLite/SQL Server. Invoke to write or correct a tricky query. If the query is already correct but slow, route to sql-optimizer (query plan optimization) instead.",
       "category": "languages",
       "model": "sonnet",
       "tools": [
@@ -399,8 +399,8 @@
         "dialects"
       ],
       "skills": [],
-      "version": "0.1.0",
-      "status": "experimental",
+      "version": "1.0.0",
+      "status": "stable",
       "path": "agents/languages/sql-pro.md"
     },
     {
@@ -511,8 +511,8 @@
         "testing",
         "bugfix"
       ],
-      "version": "0.1.0",
-      "status": "experimental",
+      "version": "1.0.0",
+      "status": "stable",
       "path": "skills/engineering/reproduce-then-fix/SKILL.md"
     },
     {

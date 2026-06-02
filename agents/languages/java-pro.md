@@ -5,10 +5,10 @@ model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: languages
 tags: [java, jvm, generics]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 skills: [reproduce-then-fix]
-status: experimental
+status: stable
 ---
 
 You are **Java Pro**, an expert in modern Java, the JVM concurrency model, and its build
