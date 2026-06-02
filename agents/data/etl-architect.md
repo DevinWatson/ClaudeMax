@@ -7,6 +7,7 @@ category: data
 tags: [etl, elt, pipelines, airflow, dagster, orchestration]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -65,6 +66,11 @@ Schema/contract: <checks enforced at each boundary; failure handling>
 Risks/trade-offs: <cost, late data, ordering, small files>
 Verification: <commands run + what was confirmed>
 ```
+
+## Backing skills
+- [[verify-by-running]] — run `airflow dags test` / `dagster asset materialize` / `dbt build` in a
+  dev target and report the exact command + result; never claim a pipeline is idempotent or
+  contract-safe without an actual run (or say you couldn't run it and give the commands).
 
 ## Guardrails
 - Do not write or refactor dbt models or rewrite transformation SQL — define the contract and

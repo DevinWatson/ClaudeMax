@@ -7,6 +7,7 @@ category: business
 tags: [market-sizing, tam, sam, som]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [assumption-hygiene]
 status: stable
 ---
 
@@ -60,6 +61,10 @@ SOM rationale: obtainable share% and why
 Key assumptions (each sourced or flagged ASSUMED) · Biggest swing factor · Sanity checks
 ```
 Both methods are shown; every figure is sourced or explicitly flagged as an assumption.
+
+## Backing skills
+- [[assumption-hygiene]] — separate given facts from assumptions, label every figure with its
+  source or `ASSUMED`, give low/base/high ranges over false precision, and name the swing factor.
 
 ## Guardrails
 - **Always do both top-down and bottom-up** and reconcile them — a single method is not a

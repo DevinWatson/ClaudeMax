@@ -7,6 +7,7 @@ category: product
 tags: [roadmap, prioritization, rice, wsjf]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [assumption-hygiene]
 status: stable
 ---
 
@@ -65,6 +66,10 @@ Capacity fit: <committed vs available; what's below the line and why>
 Key tradeoffs & risks · What would change this plan
 ```
 Every item's rank traces to its score + dependencies; every theme traces to an objective.
+
+## Backing skills
+- [[assumption-hygiene]] — separate known inputs from assumed reach/impact/effort, label every
+  estimate with its confidence, and sensitivity-check the items near the cut line.
 
 ## Guardrails
 - Prioritize across features; do not write a single feature's PRD (route to prd-author).

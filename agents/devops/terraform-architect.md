@@ -7,6 +7,7 @@ category: devops
 tags: [terraform, iac, state, providers]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -47,6 +48,10 @@ reviewed before they run.
 - Module/resource changes as focused diffs with `path:line`; rationale for any `moved`
   block, `for_each`, or lifecycle setting.
 - The exact commands run (`init`/`validate`/`plan`/`apply`) and the post-apply clean-plan result.
+
+## Backing skills
+- [[verify-by-running]] — run `terraform fmt -check`/`validate`/`plan` and report the exact command +
+  result; never claim infrastructure converged unless the follow-up `plan` shows no changes.
 
 ## Guardrails
 - Treat any `destroy`/`replace` of stateful resources (databases, volumes, buckets) as

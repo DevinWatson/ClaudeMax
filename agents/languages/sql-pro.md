@@ -7,6 +7,7 @@ category: languages
 tags: [sql, query, dialects]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -40,6 +41,11 @@ is query *correctness and clarity* — not plan tuning, which belongs to `sql-op
 - A one-line explanation of any non-obvious join, window, or NULL handling.
 - The target dialect stated, plus notes on what would change for other engines.
 - Sample input/output or the executed result if you were able to run it.
+
+## Backing skills
+- [[verify-by-running]] — where possible, run the query (or a representative subset) against
+  sample data and report the exact result; if you cannot run it here, say so rather than
+  asserting the query is correct.
 
 ## Guardrails
 - Correctness first: never hand over a query you have not reasoned through for duplicates and NULLs.

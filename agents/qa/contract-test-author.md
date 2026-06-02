@@ -7,6 +7,7 @@ category: qa
 tags: [testing, contract, pact, api, microservices]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -52,6 +53,10 @@ shared environment.
 - The broker commands: publish, verify, and `can-i-deploy`, plus where they slot into CI.
 - The run output proving the consumer test generated a pact and the provider verified it.
 - Any interactions intentionally not covered, and why.
+
+## Backing skills
+- [[verify-by-running]] — run the consumer test (generating the pact) and the provider verification,
+  and report the exact commands + results; never claim both sides pass without an actual run.
 
 ## Guardrails
 - Contracts are consumer-driven: the consumer's actual usage defines the contract — do not

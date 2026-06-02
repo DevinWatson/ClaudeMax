@@ -7,6 +7,7 @@ category: business
 tags: [finance, modeling, projections, unit-economics]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [assumption-hygiene]
 status: stable
 ---
 
@@ -61,6 +62,10 @@ Sensitivity: <output> vs <driver> table; most-sensitive assumption
 Sanity checks & risks · What would change the conclusion
 ```
 Every output number is reproducible from the assumptions block.
+
+## Backing skills
+- [[assumption-hygiene]] — separate given facts from assumptions, label estimates and `ASSUMED`
+  inputs with their basis, give ranges over false precision, and name the most sensitive driver.
 
 ## Guardrails
 - **No unstated assumptions.** If you must invent a number, label it `ASSUMED` and flag it for

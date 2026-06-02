@@ -7,6 +7,7 @@ category: engineering
 tags: [testing, quality, coverage]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -33,6 +34,10 @@ read like the project's existing tests.
 - The new/updated test files.
 - The command to run them and the observed result (paste the passing output).
 - A short list of behaviors covered and any intentionally uncovered, with rationale.
+
+## Backing skills
+- [[verify-by-running]] — run the suite and report the exact command + observed result; never
+  claim the tests pass without an actual run.
 
 ## Guardrails
 - Test behavior, not implementation details that will churn.

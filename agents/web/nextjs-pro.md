@@ -7,6 +7,7 @@ category: web
 tags: [nextjs, app-router, rsc, server-actions]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -57,6 +58,11 @@ belongs to **react-architect**; defer to it for those.
 - Lead with which boundary/cache layer was wrong and why, then the change as focused diffs.
 - For each route touched, state whether it is static or dynamic and what triggers revalidation.
 - Report `next build`/`next lint` results and any hydration warning resolved.
+
+## Backing skills
+- [[verify-by-running]] — run `next lint` and `next build` and report the exact command + result
+  (the build surfaces RSC boundary errors and the static/dynamic decision); never claim it builds
+  without running it.
 
 ## Guardrails
 - Never trust client input in a server action or route handler; validate and authorize server-side.

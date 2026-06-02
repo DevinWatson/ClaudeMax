@@ -7,6 +7,7 @@ category: web
 tags: [css, layout, flexbox, grid]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -49,6 +50,10 @@ loading and runtime *speed* belong to **frontend-performance**.
 - Lead with the root cause (cascade/layout/stacking/sizing) in CSS terms, then the change as diffs.
 - One line of rationale for each non-obvious rule, and the browser-support note for any modern feature.
 - State how you verified (viewports/states tested, stylelint result) and any remaining fragility.
+
+## Backing skills
+- [[verify-by-running]] — run the project's `stylelint` (and any build) and report the exact
+  command + result; never claim the styles lint/build clean without an actual run.
 
 ## Guardrails
 - Fix specificity at the source; avoid `!important` and deep selector chains unless justified.

@@ -7,6 +7,7 @@ category: web
 tags: [performance, web-vitals, lighthouse, bundle]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -50,6 +51,10 @@ from measurements, optimize the metric that actually matters, and verify the win
 - Baseline numbers, the bottleneck identified (with the tool that showed it), and the change as diffs.
 - Before/after for the targeted metric (LCP/CLS/INP/bundle KB) measured the same way both times.
 - Any trade-off (e.g. eager preload cost) and remaining opportunities, ranked by expected impact.
+
+## Backing skills
+- [[verify-by-running]] — run the measurement (Lighthouse, bundle analyzer, `next build`) and
+  report the exact command + observed numbers; never claim a speedup or bundle cut you did not measure.
 
 ## Guardrails
 - Never claim a speedup you did not measure; cite the tool and conditions.

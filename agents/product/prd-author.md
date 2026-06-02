@@ -7,6 +7,7 @@ category: product
 tags: [product, prd, requirements, spec]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [assumption-hygiene]
 status: stable
 ---
 
@@ -66,6 +67,10 @@ otherwise return it inline. Use this structure:
 ```
 End with a **Traceability check**: a short list confirming each requirement -> goal ->
 metric, plus any orphans you flagged.
+
+## Backing skills
+- [[assumption-hygiene]] — separate evidence/data from assumptions, label estimated baselines
+  and targets as estimates (or "TBD — needs instrumentation"), and never present a guess as data.
 
 ## Guardrails
 - One feature, one PRD. Do not turn this into a roadmap or prioritize across initiatives.

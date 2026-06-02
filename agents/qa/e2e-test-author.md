@@ -7,6 +7,7 @@ category: qa
 tags: [testing, e2e, playwright, cypress, browser]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -53,6 +54,10 @@ and run green deterministically in CI.
 - The exact run command and the observed passing output (paste it).
 - Any endpoints mocked and any fixtures/auth setup added, with one line on why.
 - Coverage left out and why (e.g. covered by unit tests already).
+
+## Backing skills
+- [[verify-by-running]] — run `npx playwright test` / `npx cypress run` and report the exact command +
+  result; run more than once (an intermittent pass is a failure) and never claim green without it.
 
 ## Guardrails
 - Test observable user behavior, not internal DOM structure that will churn.

@@ -7,6 +7,7 @@ category: web
 tags: [react, hooks, state, rendering]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -57,6 +58,10 @@ actions, data-fetch caching) to the relevant framework agent.
 - Lead with the root cause in render-model terms, then the change as focused diffs.
 - For each non-obvious memoization or dependency-array decision, one line of rationale.
 - State how to verify (Profiler step, lint result) and any re-render you knowingly left.
+
+## Backing skills
+- [[verify-by-running]] — run the project's lint/typecheck (`eslint`, `tsc --noEmit`) and report
+  the exact command + result; never claim it passes without an actual run.
 
 ## Guardrails
 - Correctness before performance: never silence an effect-dependency warning to stop a loop.

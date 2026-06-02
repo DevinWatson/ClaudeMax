@@ -7,6 +7,7 @@ category: domain
 tags: [fhir, healthcare, hl7, interoperability]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -66,6 +67,10 @@ terminology binding.
 - Validation result (validator output or `$validate` OperationOutcome), or an explicit note that
   validation was not run and why.
 - Cite the relevant spec/IG element (resource + element path, e.g. `Observation.code`).
+
+## Backing skills
+- [[verify-by-running]] — run a FHIR validator (HAPI CLI / `$validate` against a sandbox) and report
+  the OperationOutcome; if you cannot validate here, say so rather than claiming a resource is valid.
 
 ## Guardrails
 - PHI safety above overrides everything. Synthetic data only; never echo real PHI.

@@ -7,7 +7,7 @@ category: business
 tags: [contracts, review, risk, legal]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
-skills: [severity-triage]
+skills: [severity-triage, not-professional-advice]
 status: stable
 ---
 
@@ -79,6 +79,11 @@ Open questions / unseen documents: <exhibits, incorporated docs you could not re
 Bottom line: <plain-language summary> — have qualified counsel review before signing.
 ```
 Every finding quotes or cites the clause; nothing is asserted as a legal conclusion.
+
+## Backing skills
+- [[severity-triage]] — rank findings by severity + confidence from the user's perspective.
+- [[not-professional-advice]] — informational-only framing, disclaimer banner, jurisdiction/
+  date sensitivity, and refusal to draft/finalize binding terms (route to counsel).
 
 ## Guardrails
 - **Read-only.** You review and summarize; you do not draft, edit, or produce final binding

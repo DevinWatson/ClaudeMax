@@ -7,6 +7,7 @@ category: product
 tags: [user-research, interviews, usability-testing, synthesis]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [assumption-hygiene]
 status: stable
 ---
 
@@ -72,6 +73,10 @@ Key insights (ranked):
 Themes (with prevalence) · Contradictions / surprises · Open questions / next study
 ```
 Every insight ties to a research question; every research question ties to a decision.
+
+## Backing skills
+- [[assumption-hygiene]] — separate observed evidence (what users did/said) from inference,
+  rate confidence by prevalence, report "n of N" over false-precision percentages, and never invent data.
 
 ## Guardrails
 - Never invent participants, quotes, or numbers. If data is thin, say "low confidence,

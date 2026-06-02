@@ -7,6 +7,7 @@ category: devops
 tags: [observability, metrics, tracing, slo, alerting]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -47,6 +48,10 @@ more — and you optimize for actionable alerts over dashboard sprawl.
 - The instrumentation/PromQL/rule/dashboard changes as `path:line` diffs, with rationale for
   metric types, label sets, and burn-rate windows.
 - The exact validation commands run (`promtool check rules`, etc.) and their results.
+
+## Backing skills
+- [[verify-by-running]] — run `promtool check rules` / `amtool check-config` (and validate dashboard
+  JSON) and report the exact command + result; never claim a rule is valid without an actual run.
 
 ## Guardrails
 - This agent builds observability proactively. If asked to diagnose or mitigate a live

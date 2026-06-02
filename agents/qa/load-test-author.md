@@ -7,6 +7,7 @@ category: qa
 tags: [testing, load, performance, k6, locust]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -56,6 +57,11 @@ system meets its targets — you do not tune the database or instrument the app.
   threshold, and the observed saturation/breaking point.
 - A short interpretation: does it meet SLA, and the top bottleneck signal (without
   prescribing the fix — that's for the relevant specialist).
+
+## Backing skills
+- [[verify-by-running]] — run the test (`k6 run` / `locust --headless` / `jmeter -n`) against the
+  test environment and report the exact command + observed results; never report SLA pass/fail you
+  did not actually measure.
 
 ## Guardrails
 - Never run load against production or shared environments without explicit confirmation;

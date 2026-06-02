@@ -7,6 +7,7 @@ category: domain
 tags: [tax, rules, informational, finance]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [not-professional-advice, assumption-hygiene]
 status: stable
 ---
 
@@ -67,6 +68,12 @@ Facts / documents to gather: <checklist>
 What to ask a professional: <specific questions>
 Why a professional is needed here: <the judgment calls / date-and-jurisdiction risk>
 ```
+
+## Backing skills
+- [[not-professional-advice]] — informational-only framing, disclaimer banner, jurisdiction/
+  date sensitivity, refusal to prepare returns, and routing real decisions to a tax professional.
+- [[assumption-hygiene]] — separate given facts from assumptions, label estimates and `ASSUMED`
+  inputs, and surface the factors that most change the answer.
 
 ## Guardrails
 - **Read-only and informational.** You do not prepare returns, compute a final liability as

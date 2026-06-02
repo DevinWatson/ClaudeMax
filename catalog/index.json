@@ -3,7 +3,7 @@
   "taxonomyVersion": "1.0.0",
   "counts": {
     "agents": 71,
-    "skills": 10,
+    "skills": 13,
     "categories": 16
   },
   "agents": [
@@ -271,7 +271,8 @@
         "legal"
       ],
       "skills": [
-        "severity-triage"
+        "severity-triage",
+        "not-professional-advice"
       ],
       "version": "1.0.0",
       "status": "stable",
@@ -297,7 +298,9 @@
         "api",
         "microservices"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/qa/contract-test-author.md"
@@ -370,7 +373,9 @@
         "flexbox",
         "grid"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/web/css-specialist.md"
@@ -395,7 +400,9 @@
         "transformations",
         "tests"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/data/dbt-modeler.md"
@@ -466,7 +473,9 @@
         "ci",
         "security"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/devops/dockerfile-author.md"
@@ -491,7 +500,9 @@
         "cypress",
         "browser"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/qa/e2e-test-author.md"
@@ -517,7 +528,9 @@
         "dagster",
         "orchestration"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/data/etl-architect.md"
@@ -567,7 +580,9 @@
         "hl7",
         "interoperability"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/domain/fhir-integration-expert.md"
@@ -589,7 +604,9 @@
         "projections",
         "unit-economics"
       ],
-      "skills": [],
+      "skills": [
+        "assumption-hygiene"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/business/financial-modeler.md"
@@ -665,7 +682,9 @@
         "lighthouse",
         "bundle"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/web/frontend-performance.md"
@@ -712,7 +731,9 @@
         "postgis",
         "geopandas"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/domain/geospatial-analyst.md"
@@ -913,7 +934,9 @@
         "explainer",
         "informational"
       ],
-      "skills": [],
+      "skills": [
+        "not-professional-advice"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/domain/legal-clause-explainer.md"
@@ -963,7 +986,9 @@
         "k6",
         "locust"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/qa/load-test-author.md"
@@ -985,7 +1010,9 @@
         "sam",
         "som"
       ],
-      "skills": [],
+      "skills": [
+        "assumption-hygiene"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/business/market-sizer.md"
@@ -1080,7 +1107,9 @@
         "rsc",
         "server-actions"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/web/nextjs-pro.md"
@@ -1105,7 +1134,9 @@
         "slo",
         "alerting"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/devops/observability-engineer.md"
@@ -1149,7 +1180,9 @@
         "requirements",
         "spec"
       ],
-      "skills": [],
+      "skills": [
+        "assumption-hygiene"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/product/prd-author.md"
@@ -1171,7 +1204,9 @@
         "lean",
         "optimization"
       ],
-      "skills": [],
+      "skills": [
+        "assumption-hygiene"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/business/process-optimizer.md"
@@ -1271,7 +1306,9 @@
         "state",
         "rendering"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/web/react-architect.md"
@@ -1320,7 +1357,9 @@
         "cleanup",
         "maintainability"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/engineering/refactoring-specialist.md"
@@ -1342,7 +1381,9 @@
         "rice",
         "wsjf"
       ],
-      "skills": [],
+      "skills": [
+        "assumption-hygiene"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/product/roadmap-planner.md"
@@ -1487,7 +1528,9 @@
         "query",
         "dialects"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/sql-pro.md"
@@ -1534,7 +1577,10 @@
         "informational",
         "finance"
       ],
-      "skills": [],
+      "skills": [
+        "not-professional-advice",
+        "assumption-hygiene"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/domain/tax-rules-analyst.md"
@@ -1581,7 +1627,9 @@
         "state",
         "providers"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/devops/terraform-architect.md"
@@ -1604,7 +1652,9 @@
         "quality",
         "coverage"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/engineering/test-author.md"
@@ -1675,7 +1725,9 @@
         "types",
         "javascript"
       ],
-      "skills": [],
+      "skills": [
+        "verify-by-running"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/typescript-pro.md"
@@ -1697,7 +1749,9 @@
         "usability-testing",
         "synthesis"
       ],
-      "skills": [],
+      "skills": [
+        "assumption-hygiene"
+      ],
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/product/user-researcher.md"
@@ -1742,6 +1796,22 @@
       "path": "skills/meta/agent-authoring/SKILL.md"
     },
     {
+      "name": "assumption-hygiene",
+      "description": "Use for any estimate, model, plan, forecast, or research output — explicitly separate given facts from assumptions, label every estimate AS an estimate with its basis/source, mark unverified inputs as ASSUMED, give ranges instead of false-precision point values where uncertain, and list the assumptions that most move the result. Prevents presenting an assumption as a measured fact.",
+      "category": "business",
+      "tags": [
+        "estimation",
+        "assumptions",
+        "modeling",
+        "forecasting",
+        "research",
+        "uncertainty"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/business/assumption-hygiene/SKILL.md"
+    },
+    {
       "name": "diff-summary",
       "description": "Use when you need a structured understanding of a code change before reviewing or describing it — produces a per-file summary of what changed, why it likely changed, and which areas carry the most risk, from a git diff or a set of edited files.",
       "category": "engineering",
@@ -1782,6 +1852,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/ai-ml/llm-eval-rubric/SKILL.md"
+    },
+    {
+      "name": "not-professional-advice",
+      "description": "Use when an informational agent touches a regulated-advice domain (legal, tax, financial, or medical) — frame every output as general education, not a definitive verdict or sign-off, state plainly that it is NOT professional advice and creates no professional relationship, flag jurisdiction- and date-sensitivity, and route real decisions to a qualified licensed professional. Refuse to draft or finalize binding instruments.",
+      "category": "business",
+      "tags": [
+        "legal",
+        "tax",
+        "financial",
+        "medical",
+        "disclaimer",
+        "informational"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/business/not-professional-advice/SKILL.md"
     },
     {
       "name": "reproduce-then-fix",
@@ -1850,6 +1936,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/data/sql-explain-analysis/SKILL.md"
+    },
+    {
+      "name": "verify-by-running",
+      "description": "Use before claiming that code or config builds, compiles, lints, type-checks, or passes tests — pick the right verify command for the stack, run it, capture the ACTUAL output, and report the exact command + result. Distinguish observed-pass from assumed-pass; if you cannot run it here, say so and give the exact command rather than asserting success. The general sibling of reproduce-then-fix (which is bug-specific).",
+      "category": "engineering",
+      "tags": [
+        "verification",
+        "build",
+        "lint",
+        "typecheck",
+        "tests",
+        "ci"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/engineering/verify-by-running/SKILL.md"
     },
     {
       "name": "yaml-manifest-review",

@@ -7,6 +7,7 @@ category: domain
 tags: [gis, geospatial, postgis, geopandas]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -60,6 +61,11 @@ the most common way GIS goes wrong is the coordinate reference system, so you ch
 - The result plus the spatial sanity-check you ran (validity, counts, magnitude, units).
 - Pitfalls flagged: any CRS/datum mismatch, axis-order issue, or measurement done in a CRS unsuited
   to it.
+
+## Backing skills
+- [[verify-by-running]] — run the query/code (PostGIS or GeoPandas) plus the spatial sanity-check
+  (validity, counts, magnitude, units) and report the exact command + result; never claim a
+  measurement or join is correct without an actual run.
 
 ## Guardrails
 - Never perform distance/area work in a geographic (degree) or Web Mercator CRS without flagging

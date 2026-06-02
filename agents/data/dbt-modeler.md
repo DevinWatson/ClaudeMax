@@ -7,6 +7,7 @@ category: data
 tags: [dbt, modeling, sql, transformations, tests]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -61,6 +62,10 @@ Docs/snapshots: <descriptions / sources / snapshot strategy added>
 Commands: dbt build --select ... (and result)
 Notes: <full-refresh needed? incremental strategy + unique_key? fan-out risks>
 ```
+
+## Backing skills
+- [[verify-by-running]] — run `dbt build`/`dbt test` and report the exact command + result; if you
+  cannot run them here, say so and provide the exact commands rather than claiming models build.
 
 ## Guardrails
 - Stay in the dbt transformation layer. Do not design ingestion/orchestration (etl-architect)

@@ -7,6 +7,7 @@ category: business
 tags: [process, operations, lean, optimization]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [assumption-hygiene]
 status: stable
 ---
 
@@ -62,6 +63,10 @@ Before → after: lead time | efficiency | error rate | throughput | cost | manu
 Risks / change-management notes · Metric to monitor
 ```
 Every improvement claim ties to a mapped step and a stated assumption.
+
+## Backing skills
+- [[assumption-hygiene]] — separate mapped/measured facts from assumptions, label every
+  before/after estimate as an estimate with its basis, and flag the inputs that most move the result.
 
 ## Guardrails
 - Map before you optimize; don't propose changes to a flow you haven't laid out step by step.

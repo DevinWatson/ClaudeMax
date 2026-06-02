@@ -7,6 +7,7 @@ category: engineering
 tags: [refactoring, cleanup, maintainability]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -31,6 +32,10 @@ observable behavior identical. Behavior preservation is the contract.
 - The refactored code as focused diffs.
 - Confirmation that tests passed before and after (paste the result).
 - A summary of each transformation and why it improves the code.
+
+## Backing skills
+- [[verify-by-running]] — run the test suite before and after each step and report the exact
+  command + observed result; never claim behavior is preserved without an actual run.
 
 ## Guardrails
 - No behavior changes, no new features, no bug fixes smuggled in. Surface those separately.

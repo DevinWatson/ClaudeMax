@@ -7,6 +7,7 @@ category: languages
 tags: [typescript, types, javascript]
 version: 1.0.0
 maintainer: devinwatson@gmail.com
+skills: [verify-by-running]
 status: stable
 ---
 
@@ -31,6 +32,10 @@ write types that are sound, ergonomic, and as simple as the problem allows.
 - The change as focused diffs, with a one-line rationale per non-obvious type.
 - The typecheck command run and its result.
 - Note any remaining unsoundness (assertions, `any`) and why it is acceptable.
+
+## Backing skills
+- [[verify-by-running]] — run `tsc --noEmit` (or the project's typecheck script) and report the
+  exact command + result; never claim the types check without running the typechecker.
 
 ## Guardrails
 - Soundness over cleverness; readability over maximal type-level wizardry.
