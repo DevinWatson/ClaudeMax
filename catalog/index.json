@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 36,
-    "skills": 8,
+    "agents": 41,
+    "skills": 9,
     "categories": 16
   },
   "agents": [
@@ -234,6 +234,31 @@
       "path": "agents/web/css-specialist.md"
     },
     {
+      "name": "dbt-modeler",
+      "description": "Use when authoring or reviewing dbt models, tests, and docs — staging→intermediate→marts layering, materializations (view/table/incremental), schema tests (unique/not_null/relationships/accepted_values), sources and snapshots, ref()/source() wiring, and Jinja macros. NOT for general pipeline orchestration or ingestion (use etl-architect) and NOT for raw query/index performance tuning (use sql-optimizer).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dbt",
+        "modeling",
+        "sql",
+        "transformations",
+        "tests"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/dbt-modeler.md"
+    },
+    {
       "name": "dependency-scanner",
       "description": "Use when auditing a project's third-party dependencies for known vulnerabilities (CVEs/advisories) — runs SCA tools (npm audit, osv-scanner, pip-audit, Trivy), assesses reachability/exploitability, and recommends safe upgrades. NOT first-party code review (use appsec-auditor).",
       "category": "security",
@@ -280,6 +305,58 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/devops/dockerfile-author.md"
+    },
+    {
+      "name": "etl-architect",
+      "description": "Use when designing or reviewing a batch or streaming data pipeline (ELT/ETL) end to end — ingestion, orchestration (Airflow/Dagster/dbt run), idempotency and backfills, schema evolution, partitioning, and data contracts between producers and consumers. NOT for tuning a single slow query (use sql-optimizer) and NOT for authoring the dbt transformation models themselves (use dbt-modeler).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "etl",
+        "elt",
+        "pipelines",
+        "airflow",
+        "dagster",
+        "orchestration"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/etl-architect.md"
+    },
+    {
+      "name": "evals-author",
+      "description": "Use when building or reviewing an evaluation for an LLM/ML system — choosing metrics (exact-match, rubric/LLM-as-judge, regression suites), assembling datasets, setting pass/fail thresholds, and avoiding eval pitfalls (train/test leakage, gaming, flaky judges). It measures quality. NOT for writing the prompt under test (use prompt-engineer) and NOT for designing the retrieval system (use rag-architect).",
+      "category": "ai-ml",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "evals",
+        "metrics",
+        "llm-as-judge",
+        "testing"
+      ],
+      "skills": [
+        "llm-eval-rubric"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/ai-ml/evals-author.md"
     },
     {
       "name": "frontend-performance",
@@ -560,6 +637,30 @@
       "path": "agents/devops/observability-engineer.md"
     },
     {
+      "name": "prompt-engineer",
+      "description": "Use when designing, debugging, or optimizing an LLM prompt — task decomposition, system-prompt design, zero-shot vs few-shot, structured/JSON output, and failure-mode analysis with a tighten-then-test loop. Model/provider-agnostic prompt craft. NOT for designing the retrieval system feeding the prompt (use rag-architect) and NOT for building the evaluation that measures quality (use evals-author).",
+      "category": "ai-ml",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "prompt",
+        "llm",
+        "few-shot",
+        "structured-output"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/ai-ml/prompt-engineer.md"
+    },
+    {
       "name": "python-pro",
       "description": "Use for non-trivial Python work — type hints and mypy/pyright strictness, async/await and asyncio pitfalls, packaging and virtualenv/dependency issues (pip/poetry/uv), and idiomatic, performant code. Invoke for confusing import/typing errors or Pythonic API design.",
       "category": "languages",
@@ -583,6 +684,33 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/python-pro.md"
+    },
+    {
+      "name": "rag-architect",
+      "description": "Use when designing or fixing a retrieval-augmented generation system — chunking strategy, embedding-model choice, vector store and retrieval (hybrid BM25+dense, filtering, reranking), context assembly, grounding/citation, and RAG evaluation (retrieval recall@k/MRR/nDCG plus answer quality). It owns the retrieval system. NOT for wording the generation prompt alone (use prompt-engineer) and NOT for building a general eval harness (use evals-author).",
+      "category": "ai-ml",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rag",
+        "retrieval",
+        "embeddings",
+        "vector-store",
+        "reranking"
+      ],
+      "skills": [
+        "llm-eval-rubric"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/ai-ml/rag-architect.md"
     },
     {
       "name": "react-architect",
@@ -922,6 +1050,20 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/engineering/diff-summary/SKILL.md"
+    },
+    {
+      "name": "llm-eval-rubric",
+      "description": "Use when building an LLM-as-judge or rubric-based evaluation of model output quality — defines scoring criteria, calibrates the judge against human labels, and guards against judge bias, gaming, and flaky scores. Use for the judging procedure itself, not for choosing task metrics or designing the system under test; skip it when a deterministic or programmatic check would suffice.",
+      "category": "ai-ml",
+      "tags": [
+        "llm",
+        "eval",
+        "rubric",
+        "judge"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/ai-ml/llm-eval-rubric/SKILL.md"
     },
     {
       "name": "reproduce-then-fix",
