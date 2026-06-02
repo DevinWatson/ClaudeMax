@@ -2,7 +2,7 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 41,
+    "agents": 46,
     "skills": 9,
     "categories": 16
   },
@@ -85,6 +85,32 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/meta/agent-evaluator.md"
+    },
+    {
+      "name": "android-kotlin-pro",
+      "description": "Use for native Android development in Kotlin + Jetpack Compose — composables, state hoisting, lifecycle, coroutines/Flow, Navigation, and Gradle builds. NOT for cross-platform RN/Flutter or iOS/SwiftUI.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "android",
+        "kotlin",
+        "jetpack-compose",
+        "gradle"
+      ],
+      "skills": [
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/android-kotlin-pro.md"
     },
     {
       "name": "api-designer",
@@ -359,6 +385,32 @@
       "path": "agents/ai-ml/evals-author.md"
     },
     {
+      "name": "flutter-pro",
+      "description": "Use for Flutter/Dart development — widget tree composition, state management (Provider/Riverpod/Bloc), build/rendering performance, platform channels, and pub/pubspec dependency management. NOT for native SwiftUI/Kotlin or React Native.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "flutter",
+        "dart",
+        "riverpod",
+        "bloc"
+      ],
+      "skills": [
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/flutter-pro.md"
+    },
+    {
       "name": "frontend-performance",
       "description": "Use for web performance work — diagnosing and improving Core Web Vitals (LCP, CLS, INP), bundle size and code-splitting, render/runtime cost, and network/loading waterfalls. Invoke when a page is slow to load or interact, vitals regress, or a bundle is bloated. NOT for visual/layout correctness or styling architecture — route those to css-specialist (it owns whether the layout is right; this agent owns whether it is fast).",
       "category": "web",
@@ -588,6 +640,31 @@
       "path": "agents/research/literature-reviewer.md"
     },
     {
+      "name": "mobile-release-manager",
+      "description": "Use when shipping a mobile app to stores — iOS code signing (provisioning/certs), Android keystore signing, App Store / Play Store submission and review pitfalls, version/build-number management, phased/staged rollout, and crash-rate gating. Release/distribution focused, NOT framework coding (route SwiftUI/Kotlin/RN/Flutter code to those agents).",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "release",
+        "fastlane",
+        "app-store",
+        "play-store",
+        "signing"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/mobile-release-manager.md"
+    },
+    {
       "name": "nextjs-pro",
       "description": "Use for Next.js App Router specifics — Server vs. Client Component boundaries, server actions, data fetching and the fetch/Router cache, route handlers, streaming/Suspense, middleware, and metadata. Invoke for hydration mismatches, \"cannot use X in a Server Component\" errors, stale-data/revalidation problems, or build/route config. NOT for framework-agnostic React (hook composition, where state lives, re-render tuning) — route that to react-architect.",
       "category": "web",
@@ -735,6 +812,32 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/web/react-architect.md"
+    },
+    {
+      "name": "react-native-pro",
+      "description": "Use for cross-platform React Native mobile specifics — native modules/bridging (TurboModules/JSI), platform-specific code, navigation (React Navigation), Hermes/Metro performance, and Expo vs bare workflow. NOT for web React patterns (use react-architect) and NOT for pure native iOS/Android UI.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "react-native",
+        "mobile",
+        "expo",
+        "hermes"
+      ],
+      "skills": [
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/react-native-pro.md"
     },
     {
       "name": "refactoring-specialist",
@@ -903,6 +1006,32 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/sql-pro.md"
+    },
+    {
+      "name": "swiftui-pro",
+      "description": "Use for native iOS development in Swift/SwiftUI — view composition, @State/@Observable state management, navigation, Swift concurrency (async/await, actors), SwiftUI performance, and Xcode/xcodebuild tooling. NOT for cross-platform RN/Flutter or store submission.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ios",
+        "swift",
+        "swiftui",
+        "xcode"
+      ],
+      "skills": [
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/swiftui-pro.md"
     },
     {
       "name": "technical-writer",
