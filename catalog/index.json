@@ -3,7 +3,7 @@
   "taxonomyVersion": "1.0.0",
   "counts": {
     "agents": 71,
-    "skills": 72,
+    "skills": 81,
     "categories": 16
   },
   "agents": [
@@ -100,8 +100,10 @@
         "explanation",
         "communication"
       ],
-      "skills": [],
-      "version": "1.0.0",
+      "skills": [
+        "analogy-mapping"
+      ],
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/creative/analogy-finder.md"
     },
@@ -234,7 +236,7 @@
       "skills": [
         "divergent-then-converge"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/creative/brainstorm-facilitator.md"
     },
@@ -336,9 +338,10 @@
         "ideation"
       ],
       "skills": [
+        "copywriting-concepts",
         "divergent-then-converge"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/creative/copy-ideator.md"
     },
@@ -612,9 +615,11 @@
         "interoperability"
       ],
       "skills": [
+        "fhir-interoperability",
+        "match-project-conventions",
         "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/domain/fhir-integration-expert.md"
     },
@@ -746,8 +751,10 @@
         "economy",
         "design"
       ],
-      "skills": [],
-      "version": "1.0.0",
+      "skills": [
+        "game-balance"
+      ],
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/domain/game-balance-designer.md"
     },
@@ -771,9 +778,11 @@
         "geopandas"
       ],
       "skills": [
+        "geospatial-analysis",
+        "match-project-conventions",
         "verify-by-running"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/domain/geospatial-analyst.md"
     },
@@ -991,9 +1000,10 @@
         "informational"
       ],
       "skills": [
+        "legal-clause-explanation",
         "not-professional-advice"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/domain/legal-clause-explainer.md"
     },
@@ -1123,9 +1133,10 @@
         "product"
       ],
       "skills": [
+        "naming",
         "divergent-then-converge"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/creative/naming-specialist.md"
     },
@@ -1146,8 +1157,10 @@
         "structure",
         "creative-writing"
       ],
-      "skills": [],
-      "version": "1.0.0",
+      "skills": [
+        "narrative-structure"
+      ],
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/creative/narrative-designer.md"
     },
@@ -1680,10 +1693,11 @@
         "finance"
       ],
       "skills": [
+        "tax-rules-analysis",
         "not-professional-advice",
         "assumption-hygiene"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/domain/tax-rules-analyst.md"
     },
@@ -1913,6 +1927,20 @@
       "path": "skills/meta/agent-authoring/SKILL.md"
     },
     {
+      "name": "analogy-mapping",
+      "description": "Use when making a complex or abstract idea intuitive through analogy/metaphor — decomposing the target into its elements and relationships, generating source domains familiar to the audience, building an explicit source→target correspondence mapping, testing where each analogy holds and (crucially) where it breaks, and offering several framings tuned to different audiences. TRIGGER when explanation/communication clarity is the goal, not open-ended idea generation. Any agent that must explain hard concepts (analogy finder, teacher/tutor, docs explainer) can load it.",
+      "category": "creative",
+      "tags": [
+        "analogy",
+        "metaphor",
+        "explanation",
+        "communication"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/creative/analogy-mapping/SKILL.md"
+    },
+    {
       "name": "appsec-review",
       "description": "Use for a defensive, code-level application-security review — trace untrusted input from each entry point to its sinks and find injection (SQL/NoSQL/command/template), broken authn/authz and IDOR, secrets exposure, unsafe deserialization, SSRF/open-redirect/path-traversal, and crypto misuse, confirming reachability before reporting and giving a concrete minimal remediation per finding. TRIGGER on \"security review / appsec audit\" of code or a diff the user is authorized to review. Defensive and read-only — never produces weaponized exploits. Any agent that reviews code for security (an appsec auditor, a security-aware code reviewer, a PR-gate bot) can load it.",
       "category": "security",
@@ -2002,6 +2030,20 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/qa/contract-testing/SKILL.md"
+    },
+    {
+      "name": "copywriting-concepts",
+      "description": "Use when generating persuasive marketing/brand copy CONCEPTS — headlines, taglines, value props, hooks, CTAs — as multiple distinct persuasive angles on the same offer (benefit/outcome, problem-agitate-solve, social-proof, curiosity, objection-handling, authority/specificity), each with a rationale, plus a mandatory honesty pass that strips any invented claim, stat, testimonial, or guarantee. TRIGGER when someone needs varied copy directions, not finished campaigns or factual docs. Any agent producing persuasive short-form copy (copy ideator, landing-page assistant, ad-concept helper) can load it.",
+      "category": "creative",
+      "tags": [
+        "copywriting",
+        "marketing",
+        "persuasion",
+        "ideation"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/creative/copywriting-concepts/SKILL.md"
     },
     {
       "name": "csharp-idioms",
@@ -2169,6 +2211,20 @@
       "path": "skills/ai-ml/eval-suite-design/SKILL.md"
     },
     {
+      "name": "fhir-interoperability",
+      "description": "Use when modeling, validating, or debugging HL7 FHIR (R4/R4B/R5) integrations — choosing the right resource and elements with correct cardinality and value-set bindings, wiring references/contained/conditional references and Bundles (transaction vs batch), conforming to profiles (US Core/IPS/vendor) via meta.profile and must-support slices, building search queries and REST writes, and binding codes to LOINC/SNOMED/ICD-10/RxNorm/UCUM. SYNTHETIC DATA ONLY — never request, echo, or store real PHI. TRIGGER on FHIR resource modeling, profile conformance, search, or terminology binding. Any healthcare-data agent (FHIR expert, EHR-integration helper, interoperability reviewer) can load it.",
+      "category": "domain",
+      "tags": [
+        "fhir",
+        "healthcare",
+        "hl7",
+        "interoperability"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/domain/fhir-interoperability/SKILL.md"
+    },
+    {
       "name": "financial-modeling",
       "description": "Use to build or review a driver-based financial model — separate assumptions from calculations, project revenue/costs/margins, compute unit economics (CAC, LTV, LTV:CAC, CAC payback, NRR), model cash burn and runway, run Base/Downside/Upside scenarios with a sensitivity table, and sanity-check the result. TRIGGER for a 3-year projection, runway/burn analysis, unit-economics review, or fundraise model. NOT market sizing (that is market-sizing). Any agent producing or auditing business financials (financial modeler, fundraise-prep agent, FP&A reviewer) can load it.",
       "category": "business",
@@ -2212,6 +2268,34 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/mobile/flutter-development/SKILL.md"
+    },
+    {
+      "name": "game-balance",
+      "description": "Use when tuning or analyzing game systems for balance — mapping economy faucets/sinks and currency inflation, expressing cost/power/XP as explicit curves (linear/polynomial/exponential), reasoning about player incentives and dominant strategies via efficiency ratios, setting difficulty and progression pacing, and modeling stochastic systems (drops, crit, gacha) with Monte-Carlo before shipping numbers. Produces tuned numbers/formulas and the model behind them. TRIGGER on inflation, difficulty curves, progression pacing, shop pricing, or dominant-build problems. Any agent tuning game systems (balance designer, economy designer, systems-design reviewer) can load it.",
+      "category": "domain",
+      "tags": [
+        "gamedev",
+        "balance",
+        "economy",
+        "progression"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/domain/game-balance/SKILL.md"
+    },
+    {
+      "name": "geospatial-analysis",
+      "description": "Use for GIS/geospatial analysis where the coordinate reference system is the first thing to get right — identifying each dataset's CRS/EPSG/datum and units, reprojecting to a fit-for-purpose projected/equal-area CRS before any metric work, confirming layers share a CRS before spatial joins/overlays/buffers, running the right primitive in PostGIS (ST_Transform/ST_DWithin/ST_Intersects/ST_Buffer/ST_Area, GiST index, geography vs geometry) or GeoPandas/Shapely (to_crs/sjoin/buffer/overlay/make_valid), and handling raster resolution/extent/resampling. Catches CRS/datum-mismatch, axis-order, and Web-Mercator-distortion pitfalls. TRIGGER on reprojection, spatial joins, buffers, overlays, distance/area, or vector/raster work. Any GIS agent (geospatial analyst, spatial-data engineer, map-builder) can load it.",
+      "category": "domain",
+      "tags": [
+        "gis",
+        "geospatial",
+        "postgis",
+        "geopandas"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/domain/geospatial-analysis/SKILL.md"
     },
     {
       "name": "github-actions-workflows",
@@ -2337,6 +2421,20 @@
       "path": "skills/devops/kubernetes-workloads/SKILL.md"
     },
     {
+      "name": "legal-clause-explanation",
+      "description": "Use when someone wants ONE specific legal clause or term explained in plain language — its plain-language meaning and operative parts (who owes what, when, triggered by what), why it exists and which party it protects, common variants (mutual vs one-sided, broad vs narrow, capped vs uncapped, carve-outs, reasonable vs best efforts) and what each signals, and general watch-outs framed as questions for counsel. Educational/explanatory only, NOT legal advice. Severity-RANKING of clause risk is intentionally out of scope (that belongs to whole-contract review). TRIGGER on \"what does this clause/term mean and why is it here.\" Any clause-teaching agent can load it.",
+      "category": "domain",
+      "tags": [
+        "legal",
+        "clause",
+        "explainer",
+        "informational"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/domain/legal-clause-explanation/SKILL.md"
+    },
+    {
       "name": "literature-synthesis",
       "description": "Use to synthesize what is known about a topic from multiple sources — gather broadly from independent angles, evaluate each source's credibility, group claims by theme, reconcile agreements and conflicts, and produce a structured cited summary that separates well-supported findings from contested or thin ones with explicit confidence levels. TRIGGER when answering \"what does the evidence say about X\" across many sources. Any agent producing a cited, confidence-graded synthesis (literature reviewer, competitive analyst, due-diligence researcher) can load it.",
       "category": "research",
@@ -2424,6 +2522,34 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/mobile/mobile-release-management/SKILL.md"
+    },
+    {
+      "name": "naming",
+      "description": "Use when generating and screening names for a product, feature, company, or project — covers the naming-style taxonomy (descriptive, evocative, invented, metaphor, compound, real-word), candidate generation across styles, and a screening pass for pronounceability, spellability, memorability, meaning, brand collisions, and caveated (non-authoritative) domain/trademark risk. TRIGGER when someone needs name candidates plus an honest screen. Any agent that names something (naming specialist, branding helper, product-launch assistant) can load it.",
+      "category": "creative",
+      "tags": [
+        "naming",
+        "branding",
+        "screening",
+        "product"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/creative/naming/SKILL.md"
+    },
+    {
+      "name": "narrative-structure",
+      "description": "Use when designing the STRUCTURE of a story rather than writing finished prose — defining the spine (theme, protagonist, stakes, tone), choosing and laying out a structural model (three-act, hero's journey, story circle) as an explicit beat sheet, detailing character motivation/obstacle/transformation, handling interactive/branching narrative, and verifying every beat serves the theme. TRIGGER on brand-story, game/interactive narrative, or long-form content storytelling work. Any agent building narrative skeletons (narrative designer, content strategist, game-writing assistant) can load it.",
+      "category": "creative",
+      "tags": [
+        "storytelling",
+        "narrative",
+        "structure",
+        "beats"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/creative/narrative-structure/SKILL.md"
     },
     {
       "name": "nextjs-app-router",
@@ -2795,6 +2921,20 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/mobile/swiftui-development/SKILL.md"
+    },
+    {
+      "name": "tax-rules-analysis",
+      "description": "Use when someone wants to UNDERSTAND, at an informational level, how a tax rule/treatment applies to a scenario — framing the facts and question, naming the governing rule(s) and the factors that drive the outcome (marginal vs effective rate, residency/domicile/nexus, income character, deduction vs credit, timing/realization/basis, entity treatment), listing what changes the answer, and specifying the facts/documents to gather before talking to a professional. NOT tax/legal advice, NOT a return preparer; jurisdiction- and date-sensitive. TRIGGER on conceptual \"how is this taxed / treated\" questions. Any informational tax-explainer agent can load it.",
+      "category": "domain",
+      "tags": [
+        "tax",
+        "rules",
+        "informational",
+        "finance"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/domain/tax-rules-analysis/SKILL.md"
     },
     {
       "name": "technical-documentation",
