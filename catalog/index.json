@@ -2,7 +2,7 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 51,
+    "agents": 56,
     "skills": 9,
     "categories": 16
   },
@@ -332,6 +332,29 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/security/dependency-scanner.md"
+    },
+    {
+      "name": "design-system-curator",
+      "description": "Use to govern a design system — component API/naming consistency, design-token taxonomy (color/spacing/type scales, primitive vs semantic), documentation, deprecation, and contribution rules. NOT implementing CSS/components (use web/css-specialist or web/react-architect); it curates the system and its rules.",
+      "category": "product",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "design-system",
+        "design-tokens",
+        "governance",
+        "components"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/product/design-system-curator.md"
     },
     {
       "name": "dockerfile-author",
@@ -815,6 +838,28 @@
       "path": "agents/devops/observability-engineer.md"
     },
     {
+      "name": "prd-author",
+      "description": "Use when you need a Product Requirements Document for ONE feature or initiative — problem statement, goals/non-goals, user stories, functional/non-functional requirements, success metrics, scope, and open questions. NOT cross-feature prioritization (use roadmap-planner).",
+      "category": "product",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "product",
+        "prd",
+        "requirements",
+        "spec"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/product/prd-author.md"
+    },
+    {
       "name": "prompt-engineer",
       "description": "Use when designing, debugging, or optimizing an LLM prompt — task decomposition, system-prompt design, zero-shot vs few-shot, structured/JSON output, and failure-mode analysis with a tighten-then-test loop. Model/provider-agnostic prompt craft. NOT for designing the retrieval system feeding the prompt (use rag-architect) and NOT for building the evaluation that measures quality (use evals-author).",
       "category": "ai-ml",
@@ -962,6 +1007,28 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/engineering/refactoring-specialist.md"
+    },
+    {
+      "name": "roadmap-planner",
+      "description": "Use to prioritize and sequence work ACROSS features — apply RICE/WSJF/MoSCoW/Kano, group into themes/objectives, map dependencies and capacity, and communicate the roadmap. NOT writing a single feature's spec (use prd-author).",
+      "category": "product",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "roadmap",
+        "prioritization",
+        "rice",
+        "wsjf"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/product/roadmap-planner.md"
     },
     {
       "name": "ruby-pro",
@@ -1274,6 +1341,51 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/typescript-pro.md"
+    },
+    {
+      "name": "user-researcher",
+      "description": "Use to plan or synthesize PRIMARY user research — design interview/survey/usability studies, write scripts and screeners, pick method and sample size, and turn raw sessions into affinity-mapped themes and insights. NOT synthesis of published/secondary sources (use research/literature-reviewer).",
+      "category": "product",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "user-research",
+        "interviews",
+        "usability-testing",
+        "synthesis"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/product/user-researcher.md"
+    },
+    {
+      "name": "ux-reviewer",
+      "description": "Use for a heuristic usability review of a flow, screen, or design — Nielsen's 10 heuristics, information hierarchy, friction/cognitive load, error states, and microcopy. Review-only, severity-ranked findings. NOT accessibility/WCAG conformance — defer that to web/accessibility-auditor.",
+      "category": "product",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "ux",
+        "usability",
+        "heuristic-review",
+        "design"
+      ],
+      "skills": [
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/product/ux-reviewer.md"
     }
   ],
   "skills": [
