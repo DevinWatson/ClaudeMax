@@ -2,7 +2,7 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 31,
+    "agents": 36,
     "skills": 8,
     "categories": 16
   },
@@ -234,6 +234,30 @@
       "path": "agents/web/css-specialist.md"
     },
     {
+      "name": "dependency-scanner",
+      "description": "Use when auditing a project's third-party dependencies for known vulnerabilities (CVEs/advisories) — runs SCA tools (npm audit, osv-scanner, pip-audit, Trivy), assesses reachability/exploitability, and recommends safe upgrades. NOT first-party code review (use appsec-auditor).",
+      "category": "security",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "security",
+        "sca",
+        "dependencies",
+        "cve"
+      ],
+      "skills": [
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/security/dependency-scanner.md"
+    },
+    {
       "name": "dockerfile-author",
       "description": "Use when writing or improving a Dockerfile — produces small, secure, well-cached, multi-stage images that follow best practices (pinned bases, non-root user, minimal layers, good .dockerignore) for the project's stack. Invoke to containerize an app or fix a bloated/insecure image.",
       "category": "devops",
@@ -357,6 +381,30 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/devops/helm-chart-author.md"
+    },
+    {
+      "name": "iam-policy-reviewer",
+      "description": "Use when reviewing cloud IAM policies (AWS/GCP/Azure) for least-privilege violations, wildcard grants, and privilege-escalation paths — returns ranked findings with tightened policy remediations. NOT application-level authz code, route guards, or RBAC logic in first-party source (use appsec-auditor).",
+      "category": "security",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "security",
+        "iam",
+        "cloud",
+        "least-privilege"
+      ],
+      "skills": [
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/security/iam-policy-reviewer.md"
     },
     {
       "name": "incident-responder",
@@ -634,6 +682,54 @@
       "path": "agents/languages/rust-pro.md"
     },
     {
+      "name": "sast-triager",
+      "description": "Use when you already have raw SAST tool output (Semgrep, CodeQL, SonarQube, Bandit) and need it triaged — separates true from false positives, deduplicates, ranks by severity/confidence, and recommends fixes. NOT a fresh manual code audit (use appsec-auditor).",
+      "category": "security",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "security",
+        "sast",
+        "triage",
+        "static-analysis"
+      ],
+      "skills": [
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/security/sast-triager.md"
+    },
+    {
+      "name": "secrets-auditor",
+      "description": "Use when checking a repo or its git history for committed secrets/credentials (API keys, tokens, private keys) — detects them with gitleaks/trufflehog, advises rotation, and sets up prevention (pre-commit hooks, scanning). NOT general code review (use appsec-auditor).",
+      "category": "security",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "security",
+        "secrets",
+        "credentials",
+        "gitleaks"
+      ],
+      "skills": [
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/security/secrets-auditor.md"
+    },
+    {
       "name": "sql-optimizer",
       "description": "Use when a SQL query is slow or a query plan needs improving — diagnoses the execution plan, identifies the bottleneck (scans, joins, missing indexes, spills), proposes a specific fix, and verifies the improvement. Supports Postgres and MySQL idioms.",
       "category": "data",
@@ -749,6 +845,30 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/engineering/test-author.md"
+    },
+    {
+      "name": "threat-modeler",
+      "description": "Use when designing or reviewing a system/feature at the architecture level for security threats — produces a STRIDE/attack-tree threat model with trust boundaries, data-flow diagram, and ranked mitigations. NOT code-level vuln review (use appsec-auditor).",
+      "category": "security",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "security",
+        "threat-modeling",
+        "stride",
+        "architecture"
+      ],
+      "skills": [
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/security/threat-modeler.md"
     },
     {
       "name": "typescript-pro",
