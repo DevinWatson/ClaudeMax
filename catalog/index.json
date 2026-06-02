@@ -3,7 +3,7 @@
   "taxonomyVersion": "1.0.0",
   "counts": {
     "agents": 71,
-    "skills": 65,
+    "skills": 72,
     "categories": 16
   },
   "agents": [
@@ -281,10 +281,11 @@
         "legal"
       ],
       "skills": [
+        "contract-review",
         "severity-triage",
         "not-professional-advice"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/business/contract-reviewer.md"
     },
@@ -635,9 +636,10 @@
         "unit-economics"
       ],
       "skills": [
+        "financial-modeling",
         "assumption-hygiene"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/business/financial-modeler.md"
     },
@@ -1014,9 +1016,10 @@
         "review"
       ],
       "skills": [
+        "literature-synthesis",
         "source-evaluation"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/research/literature-reviewer.md"
     },
@@ -1067,9 +1070,10 @@
         "som"
       ],
       "skills": [
+        "market-sizing",
         "assumption-hygiene"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/business/market-sizer.md"
     },
@@ -1221,8 +1225,11 @@
         "outcomes",
         "planning"
       ],
-      "skills": [],
-      "version": "1.0.0",
+      "skills": [
+        "okr-design",
+        "assumption-hygiene"
+      ],
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/business/okr-planner.md"
     },
@@ -1269,9 +1276,10 @@
         "optimization"
       ],
       "skills": [
+        "process-optimization",
         "assumption-hygiene"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/business/process-optimizer.md"
     },
@@ -1697,8 +1705,12 @@
         "writing",
         "developer-docs"
       ],
-      "skills": [],
-      "version": "1.0.0",
+      "skills": [
+        "technical-documentation",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/content/technical-writer.md"
     },
@@ -1962,6 +1974,21 @@
       "path": "skills/engineering/code-review-method/SKILL.md"
     },
     {
+      "name": "contract-review",
+      "description": "Use to review a business/commercial contract for a non-lawyer — map structure and parties, walk a clause-by-clause checklist (term, renewal, payment, liability, indemnity, IP, confidentiality, dispute resolution), flag one-sided/unusual/missing clauses, rank risks from the reader's party's perspective, and frame each as a question for counsel. TRIGGER before signing an MSA/SOW/NDA/SaaS/employment/lease/reseller agreement. Informational review only, NOT legal advice. Any agent that helps a non-lawyer understand commercial terms (contract reviewer, procurement assistant, vendor-onboarding agent) can load it.",
+      "category": "business",
+      "tags": [
+        "contracts",
+        "review",
+        "risk",
+        "legal",
+        "clauses"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/business/contract-review/SKILL.md"
+    },
+    {
       "name": "contract-testing",
       "description": "Use when authoring consumer-driven contract tests (Pact or similar) at a service/API boundary to prevent integration breakage between independently-deployed services — capturing consumer expectations as a contract with matchers, verifying the provider against it with provider-state handlers, and wiring the broker + can-i-deploy deployment gate. TRIGGER on protecting an API boundary between services. Any agent that authors or reviews contract tests (a contract-test author, an API-compatibility reviewer) can load it.",
       "category": "qa",
@@ -2142,6 +2169,21 @@
       "path": "skills/ai-ml/eval-suite-design/SKILL.md"
     },
     {
+      "name": "financial-modeling",
+      "description": "Use to build or review a driver-based financial model — separate assumptions from calculations, project revenue/costs/margins, compute unit economics (CAC, LTV, LTV:CAC, CAC payback, NRR), model cash burn and runway, run Base/Downside/Upside scenarios with a sensitivity table, and sanity-check the result. TRIGGER for a 3-year projection, runway/burn analysis, unit-economics review, or fundraise model. NOT market sizing (that is market-sizing). Any agent producing or auditing business financials (financial modeler, fundraise-prep agent, FP&A reviewer) can load it.",
+      "category": "business",
+      "tags": [
+        "finance",
+        "modeling",
+        "projections",
+        "unit-economics",
+        "runway"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/business/financial-modeling/SKILL.md"
+    },
+    {
       "name": "flaky-test-diagnosis",
       "description": "Use when an existing test passes sometimes and fails other times for no code reason — reproduce the failure under stress, isolate the source of nondeterminism (timing/async, test ordering, shared mutable state, real network/clock/randomness, resource limits), and make it deterministic with the smallest change. TRIGGER on an intermittently-failing test. NOT for a test that fails every time (that is a real bug). Any agent that stabilizes or reviews flaky tests (a flake hunter, a CI reliability reviewer) can load it.",
       "category": "qa",
@@ -2295,6 +2337,21 @@
       "path": "skills/devops/kubernetes-workloads/SKILL.md"
     },
     {
+      "name": "literature-synthesis",
+      "description": "Use to synthesize what is known about a topic from multiple sources — gather broadly from independent angles, evaluate each source's credibility, group claims by theme, reconcile agreements and conflicts, and produce a structured cited summary that separates well-supported findings from contested or thin ones with explicit confidence levels. TRIGGER when answering \"what does the evidence say about X\" across many sources. Any agent producing a cited, confidence-graded synthesis (literature reviewer, competitive analyst, due-diligence researcher) can load it.",
+      "category": "research",
+      "tags": [
+        "research",
+        "synthesis",
+        "sourcing",
+        "review",
+        "confidence"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/research/literature-synthesis/SKILL.md"
+    },
+    {
       "name": "llm-eval-rubric",
       "description": "Use when building an LLM-as-judge or rubric-based evaluation of model output quality — defines scoring criteria, calibrates the judge against human labels, and guards against judge bias, gaming, and flaky scores. Use for the judging procedure itself, not for choosing task metrics or designing the system under test; skip it when a deterministic or programmatic check would suffice.",
       "category": "ai-ml",
@@ -2322,6 +2379,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/qa/load-test-authoring/SKILL.md"
+    },
+    {
+      "name": "market-sizing",
+      "description": "Use to estimate market size — compute TAM/SAM/SOM using BOTH a top-down path (published total narrowed by cited filters) AND an independent bottom-up path (buyers × penetration% × price), cross-check the two for convergence, derive a justified obtainable share, and sanity-check against incumbent revenues. TRIGGER when sizing a market opportunity for a product/buyer/geography/timeframe. NOT full financial projections or unit economics (that is financial-modeling). Any agent estimating opportunity size (market sizer, go-to-market planner, investment-memo analyst) can load it.",
+      "category": "business",
+      "tags": [
+        "market-sizing",
+        "tam",
+        "sam",
+        "som",
+        "estimation"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/business/market-sizing/SKILL.md"
     },
     {
       "name": "match-project-conventions",
@@ -2401,6 +2473,21 @@
       "path": "skills/devops/observability-instrumentation/SKILL.md"
     },
     {
+      "name": "okr-design",
+      "description": "Use to design Objectives and Key Results — write 1–3 qualitative, ambitious objectives plus 3–5 measurable, outcome-based KRs each (baseline → target → metric/source), balance leading vs lagging indicators, add counter-metrics to prevent gaming, link initiatives as inputs, and define 0.0–1.0 grading. TRIGGER when setting quarterly/annual goals at company/team/individual level. Sets goals/outcomes, NOT the feature schedule. Any agent that translates strategy into measurable goals (OKR planner, performance-review prep, team-planning facilitator) can load it.",
+      "category": "business",
+      "tags": [
+        "okr",
+        "goals",
+        "outcomes",
+        "planning",
+        "grading"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/business/okr-design/SKILL.md"
+    },
+    {
       "name": "prd-authoring",
       "description": "Use to write a Product Requirements Document for ONE feature or initiative — anchor on the problem and evidence (not the solution), set outcome goals with explicit non-goals, write testable user stories with Given/When/Then acceptance criteria, specify functional requirements with RFC-2119 MUST/SHOULD/MAY and measurable non-functional targets, define a primary success metric plus guardrails, bound scope, and trace every requirement to a goal to a metric. TRIGGER on \"write a PRD / spec / requirements doc\" for a single initiative. Not cross-feature prioritization (that is roadmap-prioritization). Any agent that produces a single-feature spec (a PRD author, a spec writer, an RFC drafter) can load it.",
       "category": "product",
@@ -2414,6 +2501,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/product/prd-authoring/SKILL.md"
+    },
+    {
+      "name": "process-optimization",
+      "description": "Use to analyze and improve a business/operations process — map the as-is flow (actor, action, system, handoff, process vs lead time), find bottlenecks/waste/handoff failures via Lean lenses, compute process efficiency, design a streamlined to-be flow, decide what to automate, and quantify before/after metrics. TRIGGER for onboarding, billing, support, fulfillment, hiring, or approval workflows. NOT software CI/CD pipelines (that is devops). Any agent improving operational throughput (process optimizer, ops-audit agent, workflow-redesign facilitator) can load it.",
+      "category": "business",
+      "tags": [
+        "process",
+        "operations",
+        "lean",
+        "optimization",
+        "value-stream"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/business/process-optimization/SKILL.md"
     },
     {
       "name": "prompt-design",
@@ -2693,6 +2795,20 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/mobile/swiftui-development/SKILL.md"
+    },
+    {
+      "name": "technical-documentation",
+      "description": "Use to write or improve developer-facing documentation — READMEs, API references, how-to guides, tutorials, and concept docs. Selects audience and doc type, verifies every name/signature/flag/default against the actual source, structures for the reader's task, supplies runnable examples, and edits for clarity. TRIGGER to document a feature or fix confusing docs. Any agent producing accurate developer docs (technical writer, API-docs author, changelog writer, onboarding-guide author) can load it.",
+      "category": "content",
+      "tags": [
+        "documentation",
+        "writing",
+        "developer-docs",
+        "accuracy"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/content/technical-documentation/SKILL.md"
     },
     {
       "name": "terraform-iac",
