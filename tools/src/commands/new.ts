@@ -12,16 +12,17 @@ function parseFlags(argv: string[]): Flags {
   const flags: Flags = {};
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i]!;
-    if (arg.startsWith("--")) {
-      const key = arg.slice(2);
-      const next = argv[i + 1];
-      if (next === undefined || next.startsWith("--")) {
-        flags[key] = true;
-      } else {
-        flags[key] = next;
-        i++;
-      }
+    if (!arg.startsWith("--")) continue;
+    const key = arg.slice(2);
+    // Greedily collect all following tokens up to the next --flag as the value.
+    // This makes multi-word values robust even when the shell/npm splits a quoted
+    // value (e.g. `--description "two words"`) into separate argv tokens.
+    const parts: string[] = [];
+    while (i + 1 < argv.length && !argv[i + 1]!.startsWith("--")) {
+      parts.push(argv[i + 1]!);
+      i++;
     }
+    flags[key] = parts.length === 0 ? true : parts.join(" ");
   }
   return flags;
 }
@@ -117,8 +118,10 @@ ${opts.skills.length ? `\n## Backing skills\nThis agent relies on: ${opts.skills
   return `${fm.join("\n")}\n${body}`;
 }
 
-function buildSkill(opts: { name: string; description: string; category: string; tags: string[]; maintainer: string }): string {
-  const fm: string[] = ["---", `name: ${opts.name}`, `description: ${opts.description}`, `category: ${opts.category}`];
+function buildSkill(opts: { name: string; description: string; category: string; tags: string[]; maintainer: string; allowedTools: string[] }): string {
+  const fm: string[] = ["---", `name: ${opts.name}`, `description: ${opts.description}`];
+  if (opts.allowedTools.length) fm.push(`allowed-tools: ${opts.allowedTools.join(", ")}`);
+  fm.push(`category: ${opts.category}`);
   if (opts.tags.length) fm.push(`tags: ${yamlList(opts.tags)}`);
   fm.push("version: 0.1.0");
   if (opts.maintainer) fm.push(`maintainer: ${opts.maintainer}`);
@@ -204,8 +207,9 @@ export function runNew(argv: string[]): number {
     error(`${file} already exists. Use --force to overwrite.`);
     return 1;
   }
+  const allowedTools = csvListRaw(str(flags, "allowed-tools", "tools"));
   mkdirSync(dir, { recursive: true });
-  writeFileSync(file, buildSkill({ name, description, category, tags, maintainer }), "utf8");
+  writeFileSync(file, buildSkill({ name, description, category, tags, maintainer, allowedTools }), "utf8");
   ok(`Created skill ${c.bold(name)} at skills/${category}/${name}/SKILL.md`);
   info(`Next: fill in the instructions, then run ${c.cyan("npm run validate")} and ${c.cyan("npm run catalog")}.`);
   return 0;

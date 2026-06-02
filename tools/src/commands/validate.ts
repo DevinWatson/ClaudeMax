@@ -30,6 +30,7 @@ export function runValidate(): number {
   const agents = loadAgents();
   const skills = loadSkills();
   const skillNames = new Set(skills.map((s) => s.name));
+  const skillStatusByName = new Map(skills.map((s) => [s.name, s.status]));
 
   // --- Agents ---
   const seenAgentNames = new Map<string, string>();
@@ -50,7 +51,12 @@ export function runValidate(): number {
     for (const dep of a.skills) {
       if (!skillNames.has(dep)) {
         findings.push({ level: "error", where, message: `declares backing skill '${dep}' which does not exist in skills/` });
+      } else if (a.status === "stable" && skillStatusByName.get(dep) !== "stable") {
+        findings.push({ level: "error", where, message: `stable agent lists non-stable skill '${dep}' (${skillStatusByName.get(dep)}) — maturity must match (promote the skill or the agent must not be stable)` });
       }
+    }
+    if (a.skills.length === 0) {
+      findings.push({ level: "warning", where, message: "composes no backing skills — thin agents should compose at least one capability/shared skill (is this a deliberate self-contained exception?)" });
     }
     const prior = seenAgentNames.get(a.name);
     if (prior) findings.push({ level: "error", where, message: `duplicate agent name '${a.name}' (also in ${prior})` });
@@ -121,8 +127,16 @@ function checkFolderCategory(folderCategory: string, category: string, where: st
   }
 }
 
+// Tool-call / harness markup that occasionally leaks into a generated body and
+// must never ship: a standalone closing/opening tag line or an `antml:` token.
+const ARTIFACT_LINE = /^[ \t]*<\/?(?:content|invoke|parameter|function_calls|antml)\b[^>]*>[ \t]*$/m;
+
 function checkBody(rec: AgentRecord | SkillRecord, findings: Finding[]): void {
   if (rec.body.trim().length < MIN_BODY_CHARS) {
     findings.push({ level: "warning", where: rec.relPath, message: `body is very short (<${MIN_BODY_CHARS} chars) — add a proper system prompt / instructions` });
+  }
+  const artifact = rec.body.match(ARTIFACT_LINE) ?? rec.body.match(/antml:/);
+  if (artifact) {
+    findings.push({ level: "error", where: rec.relPath, message: `body contains a stray tool/markup artifact (${JSON.stringify(artifact[0].trim())}) — likely leaked during authoring; remove it` });
   }
 }

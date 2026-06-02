@@ -14,7 +14,8 @@ ${c.bold("Usage")}
 ${c.bold("Commands")}
   new agent   --name <n> --category <id> [--description <t>] [--model <m>]
               [--tools "Read, Grep"] [--tags a,b] [--skills s1,s2] [--maintainer <e>] [--force]
-  new skill   --name <n> --category <id> [--description <t>] [--tags a,b] [--maintainer <e>] [--force]
+  new skill   --name <n> --category <id> [--description <t>] [--allowed-tools "Read, Bash"]
+              [--tags a,b] [--maintainer <e>] [--force]
   validate                      Validate every agent & skill against schemas + conventions.
   catalog     [--check]         Generate catalog/CATALOG.md + index.json (--check fails if stale).
   stats                         Print inventory counts by category and status.

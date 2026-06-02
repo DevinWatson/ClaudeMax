@@ -35,7 +35,8 @@ Then fill in `skills/<category>/my-skill/SKILL.md` following
 ## Before you commit
 
 ```bash
-npm run validate      # schemas, naming, taxonomy, backing-skill existence, duplicates
+npm run validate      # schemas, naming, taxonomy, backing-skill existence, duplicates,
+                      # maturity (stable agents → stable skills), skill coverage, stray-artifact scan
 npm run catalog       # regenerate catalog/CATALOG.md + index.json
 ```
 
