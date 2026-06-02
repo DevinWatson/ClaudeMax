@@ -4,10 +4,10 @@ description: Use when designing or reviewing the structure of a system, service,
 allowed-tools: Read, Grep, Glob, Write
 category: engineering
 tags: [architecture, design, boundaries, coupling, adr, trade-offs]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # Software Architecture

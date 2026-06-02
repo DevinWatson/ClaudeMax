@@ -4,10 +4,10 @@ description: Use when turning a requirement, ticket, or feature request into wor
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 category: engineering
 tags: [feature, delivery, incremental, tdd, acceptance-criteria]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # Feature Development

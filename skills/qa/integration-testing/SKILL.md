@@ -4,10 +4,10 @@ description: Use when testing behavior that crosses a component, module, or serv
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 category: qa
 tags: [testing, integration, test-doubles, fixtures, flakiness]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # Integration Testing

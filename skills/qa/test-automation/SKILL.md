@@ -4,10 +4,10 @@ description: Use when building or restructuring a durable automated-test suite o
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 category: qa
 tags: [test-automation, ci, fixtures, page-object, parallelism, reporting]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # Test Automation

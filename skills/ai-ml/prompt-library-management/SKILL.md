@@ -4,10 +4,10 @@ description: Use when managing a collection of prompts at scale rather than craf
 allowed-tools: Read, Write, Edit, Grep, Glob
 category: ai-ml
 tags: [prompt-ops, versioning, catalog, templating, regression-eval, governance]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # Prompt Library Management

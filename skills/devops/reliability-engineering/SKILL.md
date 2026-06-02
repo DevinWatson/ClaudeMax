@@ -4,10 +4,10 @@ description: Use when designing or reviewing a system for resilience and availab
 allowed-tools: Read, Grep, Glob, Bash
 category: devops
 tags: [reliability, resilience, slo, error-budget, circuit-breaker, backpressure]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # Reliability Engineering

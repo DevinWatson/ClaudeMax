@@ -4,10 +4,10 @@ description: Use when building an LLM-powered feature into an application — in
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 category: ai-ml
 tags: [llm, sdk, tool-calling, structured-output, streaming, guardrails]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # LLM Application Engineering

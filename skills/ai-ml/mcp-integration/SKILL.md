@@ -4,10 +4,10 @@ description: Use when building or integrating a Model Context Protocol (MCP) ser
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 category: ai-ml
 tags: [mcp, model-context-protocol, tools, transport, jsonrpc, integration]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # MCP Integration

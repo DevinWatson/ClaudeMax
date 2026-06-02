@@ -4,10 +4,10 @@ description: Use when reviewing code or a change for compliance obligations — 
 allowed-tools: Read, Grep, Glob
 category: security
 tags: [compliance, privacy, licensing, gdpr, hipaa, soc2, pii]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # Compliance Review

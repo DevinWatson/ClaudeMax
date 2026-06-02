@@ -4,10 +4,10 @@ description: Use when analyzing or reducing the compute, cloud, or resource cost
 allowed-tools: Read, Grep, Glob, Bash
 category: devops
 tags: [cost, finops, cloud, right-sizing, caching, efficiency]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # Cost Optimization

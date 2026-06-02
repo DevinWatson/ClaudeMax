@@ -4,10 +4,10 @@ description: Use when planning or executing a version, framework, or library mig
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 category: engineering
 tags: [migration, upgrade, codemod, strangler, deprecation, rollback]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # Code Migration

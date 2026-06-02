@@ -4,10 +4,10 @@ description: Use when designing or evolving Protocol Buffers / gRPC schemas — 
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 category: data
 tags: [protobuf, proto3, grpc, schema, compatibility, wire-format]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # Protobuf Schema Design
