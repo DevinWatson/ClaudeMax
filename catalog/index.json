@@ -2,7 +2,7 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 171,
+    "agents": 211,
     "skills": 94,
     "categories": 16
   },
@@ -346,8 +346,194 @@
       "path": "agents/creative/copy-ideator.md"
     },
     {
-      "name": "csharp-pro",
-      "description": "Use for non-trivial C#/.NET work — async/await and Task pitfalls (deadlocks, ConfigureAwait), LINQ and IEnumerable/IAsyncEnumerable, nullable reference types, generics, and dotnet build/NuGet/csproj issues. Invoke for async or nullability bugs or idiomatic .NET API design.",
+      "name": "csharp-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in C# — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution, verification/critic steps, and end-to-end cost/latency control via Semantic Kernel/Microsoft.Extensions.AI. Invoke to coordinate a planner+workers or chain tools across a .NET app. Not for a single model call (use csharp-ai-engineer) or retrieval pipelines (use csharp-rag-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-agent-orchestrator.md"
+    },
+    {
+      "name": "csharp-ai-engineer",
+      "description": "Use when building LLM-backed features in C# — wiring model calls via Semantic Kernel/Microsoft.Extensions.AI/Azure OpenAI SDK, prompt/response plumbing, structured output parsing, streaming via IAsyncEnumerable, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a .NET app. Not for retrieval pipelines (use csharp-rag-engineer), multi-agent workflows (use csharp-agent-orchestrator), or eval harnesses (use csharp-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-ai-engineer.md"
+    },
+    {
+      "name": "csharp-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in C# — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized in ASP.NET Core (controllers or Minimal APIs). Invoke to design or refine C# HTTP endpoints. Not for gRPC/protobuf schemas (use csharp-proto-steward) or for system structure (use csharp-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-api-designer.md"
+    },
+    {
+      "name": "csharp-architect",
+      "description": "Use when designing or reviewing the structure of a C# system, service, or module — component boundaries, coupling/cohesion, interface contracts, project/assembly layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial on .NET or when reviewing a C# design proposal. Not for implementing the feature (use csharp-developer) or for REST endpoint shape alone (use csharp-api-designer).",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "csharp",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "csharp-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-architect.md"
+    },
+    {
+      "name": "csharp-compliance-reviewer",
+      "description": "Use when checking C# code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of .NET code. Not for finding exploitable vulnerabilities (use csharp-security-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "csharp",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "csharp-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-compliance-reviewer.md"
+    },
+    {
+      "name": "csharp-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in C# — PactNet consumer and provider tests, contract publication, and compatibility checks between services. Invoke to add or fix contract tests on .NET so a provider change cannot silently break a consumer. Not for in-process integration tests (use csharp-integration-test-architect) or end-to-end flows (use csharp-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-contract-tester.md"
+    },
+    {
+      "name": "csharp-cost-governor",
+      "description": "Use when reducing the runtime cost of C# services — GC/allocation tuning (gen0 pressure, LOH, Server vs. Workstation GC), container memory sizing, connection-pool and thread-pool right-sizing, wasteful allocation and EF Core query patterns, and cloud resource footprint. Invoke to analyze and cut compute/memory cost of .NET workloads. Not for latency-only profiling unless it lowers cost, and not for resilience design (use csharp-reliability-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "cost",
+        "dotnet-tuning"
+      ],
+      "skills": [
+        "cost-optimization",
+        "csharp-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-cost-governor.md"
+    },
+    {
+      "name": "csharp-developer",
+      "description": "Use when turning a C# requirement, ticket, or feature into working, tested, incrementally-shipped code on .NET, or when fixing a reported C# bug. Invoke for building or extending C#/ASP.NET Core features and for diagnosing failures in existing C# code. Not for system-level design (use csharp-architect) or for adding tests to code you did not write (use csharp-unit-test-architect).",
       "category": "languages",
       "model": "sonnet",
       "tools": [
@@ -361,17 +547,373 @@
       "tags": [
         "csharp",
         "dotnet",
-        "async"
+        "feature-development"
       ],
       "skills": [
+        "feature-development",
         "csharp-idioms",
         "match-project-conventions",
         "verify-by-running",
         "reproduce-then-fix"
       ],
-      "version": "1.1.0",
+      "version": "1.0.0",
       "status": "stable",
-      "path": "agents/languages/csharp-pro.md"
+      "path": "agents/languages/csharp/csharp-developer.md"
+    },
+    {
+      "name": "csharp-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in C# — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality on .NET. Not for building the feature (use csharp-ai-engineer) or the retrieval pipeline (use csharp-rag-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "csharp-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-evals-engineer.md"
+    },
+    {
+      "name": "csharp-integration-test-architect",
+      "description": "Use when testing how C# components integrate across real boundaries — database, HTTP clients, message brokers, or other services — using WebApplicationFactory, Testcontainers, or WireMock.Net. Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use csharp-unit-test-architect) or browser/end-to-end flows (use csharp-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "integration-testing",
+        "testcontainers"
+      ],
+      "skills": [
+        "integration-testing",
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-integration-test-architect.md"
+    },
+    {
+      "name": "csharp-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in C# — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle on .NET (e.g. the official C# MCP SDK). Invoke for MCP server/client work in a C# codebase. Not for general LLM feature plumbing (use csharp-ai-engineer) or multi-agent coordination (use csharp-agent-orchestrator).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-mcp-steward.md"
+    },
+    {
+      "name": "csharp-migration-engineer",
+      "description": "Use when migrating C# code across a version or framework boundary — .NET/TFM upgrades (e.g. net6.0 to net8.0), .NET Framework to .NET, ASP.NET Core or EF Core major versions, nullable-reference-type enablement, or library replacements — done in safe, verifiable increments. Invoke to plan and execute a .NET migration or fix breakage it caused. Not for greenfield features (use csharp-developer) or pure restructuring within one version (use csharp-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-migration-engineer.md"
+    },
+    {
+      "name": "csharp-observability-engineer",
+      "description": "Use when instrumenting C# services for observability — structured logging, metrics, and distributed tracing via OpenTelemetry/System.Diagnostics.Metrics/ILogger, Activity/span and context propagation, and useful dashboards/alerts signals. Invoke to add or fix telemetry on .NET. Not for resilience patterns like retries/circuit-breakers (use csharp-reliability-engineer) or cost reduction (use csharp-cost-governor).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-observability-engineer.md"
+    },
+    {
+      "name": "csharp-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a C# application — externalizing prompts from code, templating and parameterizing them (e.g. Handlebars/Semantic Kernel prompt templates), versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a .NET codebase. Not for wiring the model call (use csharp-ai-engineer) or scoring output quality (use csharp-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "csharp",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "csharp-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-prompt-librarian.md"
+    },
+    {
+      "name": "csharp-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by C# — message and service definitions, field numbering, wire/back-compat rules, and generated-C# (Grpc.Tools/protobuf-net) integration. Invoke for .proto schema design or compatibility review in a .NET codebase. Not for REST/HTTP API design (use csharp-api-designer) or consumer/provider contract tests (use csharp-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-proto-steward.md"
+    },
+    {
+      "name": "csharp-qa-analyst",
+      "description": "Use when planning what to test for a C# change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for .NET work, before or instead of writing tests. Not for writing the tests themselves (use the csharp test-architect/sdet roles).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "csharp",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "csharp-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-qa-analyst.md"
+    },
+    {
+      "name": "csharp-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in C# — chunking, embeddings, vector store wiring, hybrid retrieval + reranking, context assembly, and grounding/citation via Semantic Kernel/Microsoft.Extensions.VectorData/Kernel Memory. Invoke for RAG retrieval quality or wiring on .NET. Not for a single model call (use csharp-ai-engineer) or for building an eval harness (use csharp-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-rag-engineer.md"
+    },
+    {
+      "name": "csharp-reliability-engineer",
+      "description": "Use when hardening a C# service against partial failure — timeouts, retries-with-backoff, circuit breakers, bulkheads, and backpressure via Polly or System.Threading.Channels, plus graceful degradation and load shedding. Invoke for resilience design or review of .NET services. Not for emitting telemetry (use csharp-observability-engineer) or triaging a live outage.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-reliability-engineer.md"
+    },
+    {
+      "name": "csharp-sdet",
+      "description": "Use when building end-to-end or UI/API test automation in C# — Playwright-for-.NET/Selenium/RestSharp suites, page objects, fixtures, data setup, and stable selectors run in CI. Invoke to automate full user/API flows on .NET. Not for unit tests (use csharp-unit-test-architect), service integration tests (use csharp-integration-test-architect), or consumer/provider contracts (use csharp-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-sdet.md"
+    },
+    {
+      "name": "csharp-security-reviewer",
+      "description": "Use for a defensive, code-level security review of C# code or a diff — tracing untrusted input to sinks for injection (SQL/LINQ-to-SQL/command/LDAP), broken authn/authz and IDOR, unsafe deserialization (BinaryFormatter/Json.NET TypeNameHandling), SSRF/path-traversal, secrets exposure, and crypto misuse, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of .NET code you are authorized to review. Not for regulatory/policy conformance (use csharp-compliance-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "csharp",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "csharp-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-security-reviewer.md"
+    },
+    {
+      "name": "csharp-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing C# code — mapping a unit's behaviors and writing deterministic xUnit/NUnit/MSTest tests with FluentAssertions/Moq/NSubstitute that catch real regressions (boundaries, invalid input, error paths, async/concurrency). Invoke to raise meaningful unit coverage on .NET. Not for cross-service integration tests (use csharp-integration-test-architect) or end-to-end automation (use csharp-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "csharp",
+        "testing",
+        "xunit"
+      ],
+      "skills": [
+        "test-design",
+        "csharp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/csharp/csharp-unit-test-architect.md"
     },
     {
       "name": "css-specialist",
@@ -3136,8 +3678,8 @@
       "path": "agents/product/roadmap-planner.md"
     },
     {
-      "name": "ruby-pro",
-      "description": "Use for non-trivial Ruby work — metaprogramming and method_missing, blocks/procs/lambdas, mixins and module composition, Bundler/gem dependency issues, and idiomatic (and Rails-aware) code. Invoke for confusing metaprogramming behavior or designing expressive Ruby APIs.",
+      "name": "ruby-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Ruby — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution, verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a Ruby app. Not for a single model call (use ruby-ai-engineer) or retrieval pipelines (use ruby-rag-engineer).",
       "category": "languages",
       "model": "sonnet",
       "tools": [
@@ -3150,18 +3692,560 @@
       ],
       "tags": [
         "ruby",
-        "metaprogramming",
-        "bundler"
+        "agents",
+        "orchestration"
       ],
       "skills": [
+        "agent-orchestration",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-agent-orchestrator.md"
+    },
+    {
+      "name": "ruby-ai-engineer",
+      "description": "Use when building LLM-backed features in Ruby — wiring model calls via ruby-openai/anthropic gems or LangChain.rb, prompt/response plumbing, structured output parsing, streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a Ruby app. Not for retrieval pipelines (use ruby-rag-engineer), multi-agent workflows (use ruby-agent-orchestrator), or eval harnesses (use ruby-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-ai-engineer.md"
+    },
+    {
+      "name": "ruby-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Ruby — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized in Rails (API mode), Grape, or Sinatra. Invoke to design or refine Ruby HTTP endpoints. Not for gRPC/protobuf schemas (use ruby-proto-steward) or for system structure (use ruby-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-api-designer.md"
+    },
+    {
+      "name": "ruby-architect",
+      "description": "Use when designing or reviewing the structure of a Ruby system, service, or module — component boundaries, coupling/cohesion, interface contracts, namespace/module layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Ruby or when reviewing a Ruby design proposal. Not for implementing the feature (use ruby-developer) or for REST endpoint shape alone (use ruby-api-designer).",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "ruby",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "ruby-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-architect.md"
+    },
+    {
+      "name": "ruby-compliance-reviewer",
+      "description": "Use when checking Ruby code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of Ruby code. Not for finding exploitable vulnerabilities (use ruby-security-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "ruby",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "ruby-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-compliance-reviewer.md"
+    },
+    {
+      "name": "ruby-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in Ruby — Pact (pact-ruby) consumer and provider tests, contract publication to a broker, and compatibility checks between services. Invoke to add or fix contract tests in Ruby so a provider change cannot silently break a consumer. Not for in-process integration tests (use ruby-integration-test-architect) or end-to-end flows (use ruby-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-contract-tester.md"
+    },
+    {
+      "name": "ruby-cost-governor",
+      "description": "Use when reducing the runtime cost of Ruby services — memory bloat and GC tuning (RUBY_GC_* / jemalloc), Puma/Sidekiq worker and thread sizing, connection-pool right-sizing, wasteful allocation and N+1 query patterns, and cloud resource footprint. Invoke to analyze and cut compute/memory cost of Ruby workloads. Not for latency-only profiling unless it lowers cost, and not for resilience design (use ruby-reliability-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "cost",
+        "gc-tuning"
+      ],
+      "skills": [
+        "cost-optimization",
+        "ruby-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-cost-governor.md"
+    },
+    {
+      "name": "ruby-developer",
+      "description": "Use when turning a Ruby requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Ruby bug. Invoke for building or extending Ruby/Rails/Sinatra features and for diagnosing failures in existing Ruby code. Not for system-level design (use ruby-architect) or for adding tests to code you did not write (use ruby-unit-test-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "rails",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
         "ruby-idioms",
         "match-project-conventions",
         "verify-by-running",
         "reproduce-then-fix"
       ],
-      "version": "1.1.0",
+      "version": "1.0.0",
       "status": "stable",
-      "path": "agents/languages/ruby-pro.md"
+      "path": "agents/languages/ruby/ruby-developer.md"
+    },
+    {
+      "name": "ruby-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Ruby — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality in Ruby. Not for building the feature (use ruby-ai-engineer) or the retrieval pipeline (use ruby-rag-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "ruby-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-evals-engineer.md"
+    },
+    {
+      "name": "ruby-integration-test-architect",
+      "description": "Use when testing how Ruby components integrate across real boundaries — database, HTTP clients, background jobs, or other services — using Rails request/system specs, database_cleaner, VCR, or WebMock. Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use ruby-unit-test-architect) or browser/end-to-end flows (use ruby-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "integration-testing",
+        "rails"
+      ],
+      "skills": [
+        "integration-testing",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-integration-test-architect.md"
+    },
+    {
+      "name": "ruby-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Ruby — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle in Ruby. Invoke for MCP server/client work in a Ruby codebase. Not for general LLM feature plumbing (use ruby-ai-engineer) or multi-agent coordination (use ruby-agent-orchestrator).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-mcp-steward.md"
+    },
+    {
+      "name": "ruby-migration-engineer",
+      "description": "Use when migrating Ruby code across a version or framework boundary — Ruby version upgrades, Rails major-version upgrades, gem replacements, or deprecated-API removals — done in safe, verifiable increments. Invoke to plan and execute a Ruby migration or fix breakage it caused. Not for greenfield features (use ruby-developer) or pure restructuring within one version (use ruby-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-migration-engineer.md"
+    },
+    {
+      "name": "ruby-observability-engineer",
+      "description": "Use when instrumenting Ruby services for observability — structured logging, metrics, and distributed tracing via OpenTelemetry-Ruby, StatsD/Prometheus, and the Rails instrumentation (ActiveSupport::Notifications) API, span/context propagation, and useful dashboards/alerts signals. Invoke to add or fix telemetry in Ruby. Not for resilience patterns like retries/circuit-breakers (use ruby-reliability-engineer) or cost reduction (use ruby-cost-governor).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-observability-engineer.md"
+    },
+    {
+      "name": "ruby-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a Ruby application — externalizing prompts from code, templating and parameterizing them (ERB/Liquid/YAML), versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a Ruby codebase. Not for wiring the model call (use ruby-ai-engineer) or scoring output quality (use ruby-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "ruby",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "ruby-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-prompt-librarian.md"
+    },
+    {
+      "name": "ruby-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Ruby — message and service definitions, field numbering, wire/back-compat rules, and generated-Ruby (grpc/grpc-tools) integration. Invoke for .proto schema design or compatibility review in a Ruby codebase. Not for REST/HTTP API design (use ruby-api-designer) or consumer/provider contract tests (use ruby-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-proto-steward.md"
+    },
+    {
+      "name": "ruby-qa-analyst",
+      "description": "Use when planning what to test for a Ruby change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for Ruby work, before or instead of writing tests. Not for writing the tests themselves (use the ruby test-architect/sdet roles).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "ruby",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "ruby-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-qa-analyst.md"
+    },
+    {
+      "name": "ruby-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Ruby — chunking, embeddings, vector store wiring (pgvector, neighbor, Pinecone), hybrid retrieval + reranking, context assembly, and grounding/citation via LangChain.rb. Invoke for RAG retrieval quality or wiring in Ruby. Not for a single model call (use ruby-ai-engineer) or for building an eval harness (use ruby-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-rag-engineer.md"
+    },
+    {
+      "name": "ruby-reliability-engineer",
+      "description": "Use when hardening a Ruby service against partial failure — timeouts, retries-with-backoff, circuit breakers, bulkheads, and backpressure via gems like retriable/circuitbox and Sidekiq retry/dead-set tuning, plus graceful degradation and load shedding. Invoke for resilience design or review of Ruby services. Not for emitting telemetry (use ruby-observability-engineer) or triaging a live outage.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-reliability-engineer.md"
+    },
+    {
+      "name": "ruby-sdet",
+      "description": "Use when building end-to-end or UI/API test automation in Ruby — Capybara/Selenium system specs, Cucumber features, or RestClient/Faraday API suites, page objects, fixtures, data setup, and stable selectors run in CI. Invoke to automate full user/API flows in Ruby. Not for unit tests (use ruby-unit-test-architect), service integration tests (use ruby-integration-test-architect), or consumer/provider contracts (use ruby-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-sdet.md"
+    },
+    {
+      "name": "ruby-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Ruby code or a diff — tracing untrusted input to sinks for injection (SQL/ActiveRecord/command/eval), broken authn/authz and IDOR, mass-assignment, unsafe deserialization (Marshal/YAML.load), SSRF/path-traversal, secrets exposure, and crypto misuse, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of Ruby code you are authorized to review. Not for regulatory/policy conformance (use ruby-compliance-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "ruby",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "ruby-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-security-reviewer.md"
+    },
+    {
+      "name": "ruby-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Ruby code — mapping a unit's behaviors and writing deterministic RSpec/Minitest examples that catch real regressions (boundaries, invalid input, error paths, edge cases). Invoke to raise meaningful unit coverage in Ruby. Not for cross-service integration tests (use ruby-integration-test-architect) or end-to-end automation (use ruby-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ruby",
+        "testing",
+        "rspec"
+      ],
+      "skills": [
+        "test-design",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/ruby/ruby-unit-test-architect.md"
     },
     {
       "name": "rust-agent-orchestrator",

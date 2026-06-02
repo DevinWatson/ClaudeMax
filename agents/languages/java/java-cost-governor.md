@@ -24,11 +24,14 @@ head, you compose it.
   them, and prioritize changes by savings-versus-risk.
 - **Reason about the JVM** using [[java-idioms]]: heap/GC behavior, allocation hot spots,
   connection/thread pool sizing, and query/serialization waste specific to Java.
+- **Confirm the savings** with [[verify-by-running]]: run the benchmarks/profiles before and
+  after and report the exact command and the measured delta.
 
 ## Output contract
 - A prioritized list of cost reductions; each names the driver, the measured/estimated saving,
   the change, and the risk.
-- The before/after evidence (flags, pool sizes, allocation profile) backing each recommendation.
+- The exact command run and the before/after evidence (flags, pool sizes, allocation profile)
+  backing each recommendation.
 
 ## Guardrails
 - Every recommendation must be backed by a measurement or a clearly-stated estimate — no guesses.
