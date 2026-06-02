@@ -2,7 +2,7 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 131,
+    "agents": 171,
     "skills": 94,
     "categories": 16
   },
@@ -816,8 +816,8 @@
       "path": "agents/devops/github-actions-pro.md"
     },
     {
-      "name": "go-pro",
-      "description": "Use for non-trivial Go work — goroutines/channels and concurrency correctness (races, deadlocks), context propagation and cancellation, error wrapping, module/build issues, and idiomatic API design. Invoke for data races, go vet/build failures, or designing concurrent code.",
+      "name": "go-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Go — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution, verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a Go app. Not for a single model call (use go-ai-engineer) or retrieval pipelines (use go-rag-engineer). (Go)",
       "category": "languages",
       "model": "sonnet",
       "tools": [
@@ -831,17 +831,579 @@
       "tags": [
         "go",
         "golang",
-        "concurrency"
+        "agents",
+        "orchestration"
       ],
       "skills": [
+        "agent-orchestration",
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-agent-orchestrator.md"
+    },
+    {
+      "name": "go-ai-engineer",
+      "description": "Use when building LLM-backed features in Go — wiring model calls via langchaingo or provider SDKs, prompt/response plumbing, structured output parsing, streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a Go app. Not for retrieval pipelines (use go-rag-engineer), multi-agent workflows (use go-agent-orchestrator), or eval harnesses (use go-evals-engineer). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-ai-engineer.md"
+    },
+    {
+      "name": "go-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Go — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized with net/http, chi, gin, or echo. Invoke to design or refine Go HTTP endpoints. Not for gRPC/protobuf schemas (use go-proto-steward) or for system structure (use go-architect). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-api-designer.md"
+    },
+    {
+      "name": "go-architect",
+      "description": "Use when designing or reviewing the structure of a Go system, service, or module — package boundaries, coupling/cohesion, interface contracts, module/package layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Go or when reviewing a Go design proposal. Not for implementing the feature (use go-developer) or for REST endpoint shape alone (use go-api-designer). (Go)",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "go-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-architect.md"
+    },
+    {
+      "name": "go-compliance-reviewer",
+      "description": "Use when checking Go code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of Go code. Not for finding exploitable vulnerabilities (use go-security-reviewer). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "go-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-compliance-reviewer.md"
+    },
+    {
+      "name": "go-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in Go — Pact-Go consumer and provider tests, contract publication, and compatibility checks between services. Invoke to add or fix contract tests in Go so a provider change cannot silently break a consumer. Not for in-process integration tests (use go-integration-test-architect) or end-to-end flows (use go-sdet). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-contract-tester.md"
+    },
+    {
+      "name": "go-cost-governor",
+      "description": "Use when reducing the runtime cost of Go services — memory allocation and GC pressure (GOGC/GOMEMLIMIT), container memory/CPU sizing, goroutine and connection-pool right-sizing, wasteful allocation and query patterns, and cloud resource footprint. Invoke to analyze and cut compute/memory cost of Go workloads. Not for latency-only profiling unless it lowers cost, and not for resilience design (use go-reliability-engineer). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "cost",
+        "profiling"
+      ],
+      "skills": [
+        "cost-optimization",
+        "go-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-cost-governor.md"
+    },
+    {
+      "name": "go-developer",
+      "description": "Use when turning a Go requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Go bug. Invoke for building or extending Go features and for diagnosing failures in existing Go code. Not for system-level design (use go-architect) or for adding tests to code you did not write (use go-unit-test-architect). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
         "go-idioms",
         "match-project-conventions",
         "verify-by-running",
         "reproduce-then-fix"
       ],
-      "version": "1.1.0",
+      "version": "1.0.0",
       "status": "stable",
-      "path": "agents/languages/go-pro.md"
+      "path": "agents/languages/go/go-developer.md"
+    },
+    {
+      "name": "go-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Go — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality in Go. Not for building the feature (use go-ai-engineer) or the retrieval pipeline (use go-rag-engineer). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "go-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-evals-engineer.md"
+    },
+    {
+      "name": "go-integration-test-architect",
+      "description": "Use when testing how Go components integrate across real boundaries — database, HTTP clients, message brokers, or other services — using build tags, httptest, dockertest/Testcontainers-Go, or ephemeral fixtures. Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use go-unit-test-architect) or browser/end-to-end flows (use go-sdet). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "integration-testing",
+        "testcontainers"
+      ],
+      "skills": [
+        "integration-testing",
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-integration-test-architect.md"
+    },
+    {
+      "name": "go-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Go — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle in Go. Invoke for MCP server/client work in a Go codebase. Not for general LLM feature plumbing (use go-ai-engineer) or multi-agent coordination (use go-agent-orchestrator). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-mcp-steward.md"
+    },
+    {
+      "name": "go-migration-engineer",
+      "description": "Use when migrating Go code across a version or framework boundary — Go version upgrades, module path changes, GOPATH-to-modules moves, generics adoption, or library replacements — done in safe, verifiable increments. Invoke to plan and execute a Go migration or fix breakage it caused. Not for greenfield features (use go-developer) or pure restructuring within one version (use go-architect). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-migration-engineer.md"
+    },
+    {
+      "name": "go-observability-engineer",
+      "description": "Use when instrumenting Go services for observability — structured logging (slog/zap/zerolog), metrics, and distributed tracing via OpenTelemetry-Go/Prometheus, span/context propagation, and useful dashboards/alerts signals. Invoke to add or fix telemetry in Go. Not for resilience patterns like retries/circuit-breakers (use go-reliability-engineer) or cost reduction (use go-cost-governor). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-observability-engineer.md"
+    },
+    {
+      "name": "go-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a Go application — externalizing prompts from code, templating and parameterizing them (text/template, embed), versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a Go codebase. Not for wiring the model call (use go-ai-engineer) or scoring output quality (use go-evals-engineer). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "go-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-prompt-librarian.md"
+    },
+    {
+      "name": "go-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Go — message and service definitions, field numbering, wire/back-compat rules, and generated-Go integration. Invoke for .proto schema design or compatibility review in a Go codebase. Not for REST/HTTP API design (use go-api-designer) or consumer/provider contract tests (use go-contract-tester). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-proto-steward.md"
+    },
+    {
+      "name": "go-qa-analyst",
+      "description": "Use when planning what to test for a Go change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for Go work, before or instead of writing tests. Not for writing the tests themselves (use the go test-architect/sdet roles). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "go-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-qa-analyst.md"
+    },
+    {
+      "name": "go-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Go — chunking, embeddings, vector store wiring, hybrid retrieval + reranking, context assembly, and grounding/citation via langchaingo or vector-store clients. Invoke for RAG retrieval quality or wiring in Go. Not for a single model call (use go-ai-engineer) or for building an eval harness (use go-evals-engineer). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-rag-engineer.md"
+    },
+    {
+      "name": "go-reliability-engineer",
+      "description": "Use when hardening a Go service against partial failure — timeouts via context, retries-with-backoff, circuit breakers, bulkheads, and backpressure via bounded channels/worker pools, plus graceful degradation and load shedding. Invoke for resilience design or review of Go services. Not for emitting telemetry (use go-observability-engineer) or triaging a live outage. (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-reliability-engineer.md"
+    },
+    {
+      "name": "go-sdet",
+      "description": "Use when building end-to-end or UI/API test automation in Go — Playwright-Go/chromedp browser suites or HTTP API suites, page objects/clients, fixtures, data setup, and stable selectors run in CI. Invoke to automate full user/API flows in Go. Not for unit tests (use go-unit-test-architect), service integration tests (use go-integration-test-architect), or consumer/provider contracts (use go-contract-tester). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-sdet.md"
+    },
+    {
+      "name": "go-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Go code or a diff — tracing untrusted input to sinks for injection (SQL/command/template), broken authn/authz and IDOR, SSRF/path-traversal, secrets exposure, unsafe deserialization, and crypto misuse, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of Go code you are authorized to review. Not for regulatory/policy conformance (use go-compliance-reviewer). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "go-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-security-reviewer.md"
+    },
+    {
+      "name": "go-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Go code — mapping a unit's behaviors and writing deterministic table-driven tests with the standard testing package (and testify where used) that catch real regressions (boundaries, invalid input, error paths, concurrency). Invoke to raise meaningful unit coverage in Go. Not for cross-service integration tests (use go-integration-test-architect) or end-to-end automation (use go-sdet). (Go)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "go",
+        "golang",
+        "testing",
+        "table-driven"
+      ],
+      "skills": [
+        "test-design",
+        "go-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/go/go-unit-test-architect.md"
     },
     {
       "name": "helm-chart-author",
@@ -2602,8 +3164,8 @@
       "path": "agents/languages/ruby-pro.md"
     },
     {
-      "name": "rust-pro",
-      "description": "Use for non-trivial Rust work — borrow checker and lifetime errors, trait bounds and generics, async/Send+Sync issues, unsafe justification, and Cargo build/dependency problems. Invoke when the borrow checker or trait resolution is fighting you, or to design idiomatic ownership-friendly APIs.",
+      "name": "rust-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Rust — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution, verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a Rust app. Not for a single model call (use rust-ai-engineer) or retrieval pipelines (use rust-rag-engineer). (Rust)",
       "category": "languages",
       "model": "sonnet",
       "tools": [
@@ -2616,18 +3178,560 @@
       ],
       "tags": [
         "rust",
-        "ownership",
-        "cargo"
+        "agents",
+        "orchestration"
       ],
       "skills": [
+        "agent-orchestration",
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-agent-orchestrator.md"
+    },
+    {
+      "name": "rust-ai-engineer",
+      "description": "Use when building LLM-backed features in Rust — wiring model calls via async-openai/llm crates or raw reqwest, prompt/response plumbing, structured output parsing (serde), streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a Rust app. Not for retrieval pipelines (use rust-rag-engineer), multi-agent workflows (use rust-agent-orchestrator), or eval harnesses (use rust-evals-engineer). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-ai-engineer.md"
+    },
+    {
+      "name": "rust-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Rust — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized in axum/actix-web/warp with serde. Invoke to design or refine Rust HTTP endpoints. Not for gRPC/protobuf schemas (use rust-proto-steward) or for system structure (use rust-architect). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-api-designer.md"
+    },
+    {
+      "name": "rust-architect",
+      "description": "Use when designing or reviewing the structure of a Rust system, crate, or workspace — module/crate boundaries, coupling/cohesion, trait-based interface contracts, workspace layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Rust or when reviewing a Rust design proposal. Not for implementing the feature (use rust-developer) or for HTTP endpoint shape alone (use rust-api-designer). (Rust)",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "rust",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "rust-ownership",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-architect.md"
+    },
+    {
+      "name": "rust-compliance-reviewer",
+      "description": "Use when checking Rust code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of Rust code. Not for finding exploitable vulnerabilities (use rust-security-reviewer). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "rust",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "rust-ownership",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-compliance-reviewer.md"
+    },
+    {
+      "name": "rust-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in Rust — Pact (pact_consumer/pact_verifier) consumer and provider tests, contract publication, and compatibility checks between services. Invoke to add or fix contract tests in Rust so a provider change cannot silently break a consumer. Not for in-process integration tests (use rust-integration-test-architect) or end-to-end flows (use rust-sdet). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-contract-tester.md"
+    },
+    {
+      "name": "rust-cost-governor",
+      "description": "Use when reducing the runtime cost of Rust services — container memory/CPU sizing, allocator and allocation-hot-path reduction, connection-pool and task/thread sizing, wasteful clone/serialization and query patterns, and cloud resource footprint. Invoke to analyze and cut compute/memory cost of Rust workloads. Not for latency-only profiling unless it lowers cost, and not for resilience design (use rust-reliability-engineer). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "cost",
+        "performance"
+      ],
+      "skills": [
+        "cost-optimization",
+        "rust-ownership",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-cost-governor.md"
+    },
+    {
+      "name": "rust-developer",
+      "description": "Use when turning a Rust requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Rust bug. Invoke for building or extending Rust crates/features and for diagnosing failures in existing Rust code. Not for system-level design (use rust-architect) or for adding tests to code you did not write (use rust-unit-test-architect). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "cargo",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
         "rust-ownership",
         "match-project-conventions",
         "verify-by-running",
         "reproduce-then-fix"
       ],
-      "version": "1.1.0",
+      "version": "1.0.0",
       "status": "stable",
-      "path": "agents/languages/rust-pro.md"
+      "path": "agents/languages/rust/rust-developer.md"
+    },
+    {
+      "name": "rust-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Rust — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality in Rust. Not for building the feature (use rust-ai-engineer) or the retrieval pipeline (use rust-rag-engineer). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "rust-ownership",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-evals-engineer.md"
+    },
+    {
+      "name": "rust-integration-test-architect",
+      "description": "Use when testing how Rust components integrate across real boundaries — database, HTTP clients, message brokers, or other services — using the `tests/` directory, Testcontainers-rs, `wiremock`, or `sqlx` test fixtures. Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use rust-unit-test-architect) or browser/end-to-end flows (use rust-sdet). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "integration-testing",
+        "testcontainers"
+      ],
+      "skills": [
+        "integration-testing",
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-integration-test-architect.md"
+    },
+    {
+      "name": "rust-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Rust — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle in Rust (e.g. the rmcp SDK). Invoke for MCP server/client work in a Rust codebase. Not for general LLM feature plumbing (use rust-ai-engineer) or multi-agent coordination (use rust-agent-orchestrator). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-mcp-steward.md"
+    },
+    {
+      "name": "rust-migration-engineer",
+      "description": "Use when migrating Rust code across a version or dependency boundary — Rust edition upgrades (2018→2021→2024), toolchain/MSRV bumps, major crate version upgrades (e.g. tokio/axum/serde), or runtime/library replacements — done in safe, verifiable increments. Invoke to plan and execute a Rust migration or fix breakage it caused. Not for greenfield features (use rust-developer) or pure restructuring within one version (use rust-architect). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-migration-engineer.md"
+    },
+    {
+      "name": "rust-observability-engineer",
+      "description": "Use when instrumenting Rust services for observability — structured logging, metrics, and distributed tracing via the `tracing`/`metrics`/OpenTelemetry crates, span/context propagation, and useful dashboards/alerts signals. Invoke to add or fix telemetry in Rust. Not for resilience patterns like retries/circuit-breakers (use rust-reliability-engineer) or cost reduction (use rust-cost-governor). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-observability-engineer.md"
+    },
+    {
+      "name": "rust-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a Rust application — externalizing prompts from code, templating and parameterizing them, versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a Rust codebase. Not for wiring the model call (use rust-ai-engineer) or scoring output quality (use rust-evals-engineer). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "rust",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "rust-ownership",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-prompt-librarian.md"
+    },
+    {
+      "name": "rust-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Rust — message and service definitions, field numbering, wire/back-compat rules, and generated-Rust integration via prost/tonic. Invoke for .proto schema design or compatibility review in a Rust codebase. Not for REST/HTTP API design (use rust-api-designer) or consumer/provider contract tests (use rust-contract-tester). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-proto-steward.md"
+    },
+    {
+      "name": "rust-qa-analyst",
+      "description": "Use when planning what to test for a Rust change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for Rust work, before or instead of writing tests. Not for writing the tests themselves (use the rust test-architect/sdet roles). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "rust",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "rust-ownership"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-qa-analyst.md"
+    },
+    {
+      "name": "rust-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Rust — chunking, embeddings, vector store wiring (qdrant/lancedb), hybrid retrieval + reranking, context assembly, and grounding/citation. Invoke for RAG retrieval quality or wiring in Rust. Not for a single model call (use rust-ai-engineer) or for building an eval harness (use rust-evals-engineer). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-rag-engineer.md"
+    },
+    {
+      "name": "rust-reliability-engineer",
+      "description": "Use when hardening a Rust service against partial failure — timeouts, retries-with-backoff, circuit breakers, bulkheads, and backpressure via tower middleware / `backoff` / bounded channels, plus graceful degradation and load shedding. Invoke for resilience design or review of Rust services. Not for emitting telemetry (use rust-observability-engineer) or triaging a live outage. (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-reliability-engineer.md"
+    },
+    {
+      "name": "rust-sdet",
+      "description": "Use when building end-to-end or UI/API test automation in Rust — fantoccini/thirtyfour browser suites or reqwest-driven API flows, page objects/clients, fixtures, data setup, and stable selectors run in CI. Invoke to automate full user/API flows in Rust. Not for unit tests (use rust-unit-test-architect), service integration tests (use rust-integration-test-architect), or consumer/provider contracts (use rust-contract-tester). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-sdet.md"
+    },
+    {
+      "name": "rust-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Rust code or a diff — tracing untrusted input to sinks for injection (SQL/command), broken authn/authz and IDOR, unsound `unsafe` and memory-safety violations, deserialization issues, SSRF/path-traversal, secrets exposure, and crypto misuse, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of Rust code you are authorized to review. Not for regulatory/policy conformance (use rust-compliance-reviewer). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "rust",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "rust-ownership",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-security-reviewer.md"
+    },
+    {
+      "name": "rust-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Rust code — mapping a unit's behaviors and writing deterministic `#[test]`/`#[tokio::test]` tests (with assertions, `proptest`/`rstest` where apt) that catch real regressions (boundaries, invalid input, error paths, concurrency). Invoke to raise meaningful unit coverage in Rust. Not for cross-service integration tests (use rust-integration-test-architect) or end-to-end automation (use rust-sdet). (Rust)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rust",
+        "testing",
+        "cargo-test"
+      ],
+      "skills": [
+        "test-design",
+        "rust-ownership",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/rust/rust-unit-test-architect.md"
     },
     {
       "name": "sast-triager",
