@@ -3,7 +3,7 @@
   "taxonomyVersion": "1.0.0",
   "counts": {
     "agents": 71,
-    "skills": 54,
+    "skills": 65,
     "categories": 16
   },
   "agents": [
@@ -180,9 +180,10 @@
         "owasp"
       ],
       "skills": [
+        "appsec-review",
         "severity-triage"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/security/appsec-auditor.md"
     },
@@ -443,9 +444,10 @@
         "cve"
       ],
       "skills": [
+        "dependency-vuln-assessment",
         "severity-triage"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/security/dependency-scanner.md"
     },
@@ -467,8 +469,11 @@
         "governance",
         "components"
       ],
-      "skills": [],
-      "version": "1.0.0",
+      "skills": [
+        "design-system-governance",
+        "match-project-conventions"
+      ],
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/product/design-system-curator.md"
     },
@@ -874,9 +879,10 @@
         "least-privilege"
       ],
       "skills": [
+        "iam-least-privilege",
         "severity-triage"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/security/iam-policy-reviewer.md"
     },
@@ -1238,9 +1244,10 @@
         "spec"
       ],
       "skills": [
+        "prd-authoring",
         "assumption-hygiene"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/product/prd-author.md"
     },
@@ -1454,9 +1461,10 @@
         "wsjf"
       ],
       "skills": [
+        "roadmap-prioritization",
         "assumption-hygiene"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/product/roadmap-planner.md"
     },
@@ -1534,9 +1542,10 @@
         "static-analysis"
       ],
       "skills": [
+        "sast-triage",
         "severity-triage"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/security/sast-triager.md"
     },
@@ -1558,9 +1567,10 @@
         "gitleaks"
       ],
       "skills": [
+        "secret-detection",
         "severity-triage"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/security/secrets-auditor.md"
     },
@@ -1790,9 +1800,10 @@
         "architecture"
       ],
       "skills": [
+        "threat-modeling",
         "severity-triage"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/security/threat-modeler.md"
     },
@@ -1842,9 +1853,10 @@
         "synthesis"
       ],
       "skills": [
+        "user-research-methods",
         "assumption-hygiene"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/product/user-researcher.md"
     },
@@ -1865,9 +1877,10 @@
         "design"
       ],
       "skills": [
+        "ux-heuristic-review",
         "severity-triage"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/product/ux-reviewer.md"
     }
@@ -1886,6 +1899,22 @@
       "version": "1.1.0",
       "status": "stable",
       "path": "skills/meta/agent-authoring/SKILL.md"
+    },
+    {
+      "name": "appsec-review",
+      "description": "Use for a defensive, code-level application-security review — trace untrusted input from each entry point to its sinks and find injection (SQL/NoSQL/command/template), broken authn/authz and IDOR, secrets exposure, unsafe deserialization, SSRF/open-redirect/path-traversal, and crypto misuse, confirming reachability before reporting and giving a concrete minimal remediation per finding. TRIGGER on \"security review / appsec audit\" of code or a diff the user is authorized to review. Defensive and read-only — never produces weaponized exploits. Any agent that reviews code for security (an appsec auditor, a security-aware code reviewer, a PR-gate bot) can load it.",
+      "category": "security",
+      "tags": [
+        "security",
+        "appsec",
+        "audit",
+        "owasp",
+        "injection",
+        "authz"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/security/appsec-review/SKILL.md"
     },
     {
       "name": "assumption-hygiene",
@@ -2008,6 +2037,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/data/dbt-modeling/SKILL.md"
+    },
+    {
+      "name": "dependency-vuln-assessment",
+      "description": "Use to audit a project's third-party dependencies for known vulnerabilities — run SCA tools read-only (npm audit, osv-scanner, pip-audit, Trivy, govulncheck, cargo audit) against the lockfile, normalize and dedupe advisories by ID, assess reachability/exploitability (direct vs transitive, prod vs dev, vulnerable function actually called), weigh CVSS against reachability, and recommend the smallest safe upgrade. TRIGGER on \"scan/audit dependencies for CVEs\" or supply-chain advisory review. Defensive and read-only — never mutates manifests or runs upgrades. Any agent that assesses dependency risk (an SCA scanner, a release gate, a security reviewer) can load it.",
+      "category": "security",
+      "tags": [
+        "security",
+        "sca",
+        "dependencies",
+        "cve",
+        "supply-chain"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/security/dependency-vuln-assessment/SKILL.md"
+    },
+    {
+      "name": "design-system-governance",
+      "description": "Use to govern a design system's coherence — enforce a primitive/semantic (optionally component) token taxonomy with components consuming semantic tokens never raw values, audit component API and naming consistency (props mean the same thing everywhere, names describe role not appearance), define documentation requirements, run a deprecation lifecycle (experimental→stable→deprecated→removed with migration + removal version), and set contribution rules and semver. TRIGGER on \"audit/curate the design system, tokens, or component API.\" Curates the system and its rules — not implementing CSS/components. Any agent that governs a design system (a design-system curator, a component-API reviewer, a tokens linter) can load it.",
+      "category": "product",
+      "tags": [
+        "design-system",
+        "design-tokens",
+        "governance",
+        "components",
+        "naming"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/product/design-system-governance/SKILL.md"
     },
     {
       "name": "diff-summary",
@@ -2156,6 +2215,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/devops/helm-charting/SKILL.md"
+    },
+    {
+      "name": "iam-least-privilege",
+      "description": "Use to review cloud IAM policies/roles/bindings (AWS/GCP/Azure) for least-privilege violations — parse each statement into Effect/Principal/Action/Resource/Condition, hunt wildcards, privilege-escalation paths, over-broad trust, and missing conditions, account for Deny/SCP/permission-boundaries before declaring access effective, and give tightened least-privilege rewrites. TRIGGER on \"review IAM policy / cloud permissions for over-privilege.\" Read-only — only get/list/describe IAM calls, never write/attach/create. Any agent that audits cloud authorization (an IAM reviewer, a cloud security checker, an IaC reviewer) can load it.",
+      "category": "security",
+      "tags": [
+        "security",
+        "iam",
+        "cloud",
+        "least-privilege",
+        "aws",
+        "gcp",
+        "azure"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/security/iam-least-privilege/SKILL.md"
     },
     {
       "name": "incident-response",
@@ -2325,6 +2401,21 @@
       "path": "skills/devops/observability-instrumentation/SKILL.md"
     },
     {
+      "name": "prd-authoring",
+      "description": "Use to write a Product Requirements Document for ONE feature or initiative — anchor on the problem and evidence (not the solution), set outcome goals with explicit non-goals, write testable user stories with Given/When/Then acceptance criteria, specify functional requirements with RFC-2119 MUST/SHOULD/MAY and measurable non-functional targets, define a primary success metric plus guardrails, bound scope, and trace every requirement to a goal to a metric. TRIGGER on \"write a PRD / spec / requirements doc\" for a single initiative. Not cross-feature prioritization (that is roadmap-prioritization). Any agent that produces a single-feature spec (a PRD author, a spec writer, an RFC drafter) can load it.",
+      "category": "product",
+      "tags": [
+        "product",
+        "prd",
+        "requirements",
+        "spec",
+        "user-stories"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/product/prd-authoring/SKILL.md"
+    },
+    {
       "name": "prompt-design",
       "description": "Use when designing, debugging, or optimizing an LLM prompt — task decomposition, system- vs user-prompt design, zero-shot vs few-shot, structured/JSON output, and a one-variable-at-a-time tighten-then-test failure loop against real inputs. TRIGGER on a fuzzy task that needs a reliable prompt, format/constraint/hallucination/refusal failures, or choosing a prompting strategy. A prompt author or a reviewer triaging why a prompt regresses can both load it. NOT for designing the retrieval system feeding the prompt and NOT for building the eval/judge that scores quality.",
       "category": "ai-ml",
@@ -2427,6 +2518,21 @@
       "path": "skills/web/rest-api-design/SKILL.md"
     },
     {
+      "name": "roadmap-prioritization",
+      "description": "Use to prioritize and sequence work ACROSS features into a defensible roadmap — pick a framework deliberately (RICE / WSJF / MoSCoW / Kano) and state the scale, score every item consistently showing the math, group items into themes/objectives, map hard dependencies and the critical path, fit the sequence to capacity, and present a now/next/later view with tradeoffs. TRIGGER on \"prioritize the backlog / build a roadmap / sequence these initiatives.\" Not writing a single feature's detailed spec (that is prd-authoring). Any agent that prioritizes across initiatives (a roadmap planner, a backlog groomer, a portfolio reviewer) can load it.",
+      "category": "product",
+      "tags": [
+        "roadmap",
+        "prioritization",
+        "rice",
+        "wsjf",
+        "sequencing"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/product/roadmap-prioritization/SKILL.md"
+    },
+    {
       "name": "ruby-idioms",
       "description": "Use when writing or fixing Ruby — metaprogramming behavior (method lookup, method_missing/respond_to_missing?, define_method), blocks vs. procs vs. lambdas, Enumerable and expressive idioms, mixin/module composition, Bundler/gem dependency issues, and Rails-aware concerns (N+1, ActiveRecord lifecycle). Verifies with the project's specs and rubocop. Any agent touching Ruby (writer, reviewer, debugger) can load it.",
       "category": "languages",
@@ -2456,6 +2562,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/rust-ownership/SKILL.md"
+    },
+    {
+      "name": "sast-triage",
+      "description": "Use to triage existing SAST output (Semgrep, CodeQL, SonarQube, Bandit, gosec) into a short trustworthy list — parse SARIF/tool JSON, dedupe across tools and repeated root causes, classify each as true-positive / false-positive / needs-context by reading the actual source-to-sink path, re-score on this codebase's real risk, and give minimal fixes or precise targeted suppressions (never blanket-disable). TRIGGER when raw scan results already exist and need triage. Read-only; never authors new rules. Any agent that processes static-analysis results (a SAST triager, a CI security gate, a security reviewer) can load it.",
+      "category": "security",
+      "tags": [
+        "security",
+        "sast",
+        "triage",
+        "static-analysis",
+        "sarif"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/security/sast-triage/SKILL.md"
+    },
+    {
+      "name": "secret-detection",
+      "description": "Use to find committed secrets/credentials in a repo or its git history — scan with gitleaks/trufflehog plus targeted high-signal grep, de-noise test fixtures from real secrets, treat any secret that reached a shared repo as compromised, and drive rotation-first remediation plus prevention (pre-commit hooks, CI scanning, push protection). TRIGGER on \"check for leaked secrets / scan git history for credentials.\" Defensive and read-only; never echoes secret values; live verification only against systems the user is authorized to probe. Any agent that hunts exposed credentials (a secrets auditor, a pre-commit gate, a security reviewer) can load it.",
+      "category": "security",
+      "tags": [
+        "security",
+        "secrets",
+        "credentials",
+        "gitleaks",
+        "trufflehog"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/security/secret-detection/SKILL.md"
     },
     {
       "name": "severity-triage",
@@ -2603,6 +2739,21 @@
       "path": "skills/qa/test-strategy-design/SKILL.md"
     },
     {
+      "name": "threat-modeling",
+      "description": "Use to threat-model a system or feature at the architecture level — map a data-flow diagram with trust boundaries, enumerate threats per element with STRIDE, build attack trees for the top assets, and propose mitigations mapped to threats (eliminate vs. reduce, with residual risk). TRIGGER when designing or reviewing a system/feature for security before code, at the level of components, flows, and boundaries — not line-by-line code review. Defensive only. Any agent that reasons about design-level security (a threat modeler, a security architect, a design reviewer) can load it.",
+      "category": "security",
+      "tags": [
+        "security",
+        "threat-modeling",
+        "stride",
+        "attack-trees",
+        "architecture"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/security/threat-modeling/SKILL.md"
+    },
+    {
       "name": "typescript-type-system",
       "description": "Use when working with the TypeScript type system — confusing type errors, generics and constraints, conditional/mapped/template-literal types, inference and narrowing, strictness migration, or tsconfig/module-resolution issues. Diagnoses errors in type-system terms, prefers the simplest sound fix over type-level wizardry, and verifies with tsc --noEmit. Any agent reading or writing TS (writer, reviewer) can load it.",
       "category": "languages",
@@ -2616,6 +2767,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/typescript-type-system/SKILL.md"
+    },
+    {
+      "name": "user-research-methods",
+      "description": "Use to plan or synthesize PRIMARY user research — design interview/survey/usability/diary studies, choose method by question type and justify sample size (Nielsen ~5 for usability, proportion margin-of-error math for surveys), write non-leading instruments and screeners, and synthesize raw sessions bottom-up via affinity mapping into prevalence-weighted insights tied to the decision they inform. TRIGGER on \"design a user study / write an interview guide or survey / synthesize research notes.\" Not synthesis of published/secondary sources (that is a literature reviewer). Any agent doing first-party research (a user researcher, a discovery lead, a usability analyst) can load it.",
+      "category": "product",
+      "tags": [
+        "user-research",
+        "interviews",
+        "surveys",
+        "usability-testing",
+        "synthesis"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/product/user-research-methods/SKILL.md"
+    },
+    {
+      "name": "ux-heuristic-review",
+      "description": "Use for a heuristic usability review of a flow, screen, or design — walk the user's task end to end, evaluate against Nielsen's 10 heuristics (citing the heuristic per finding), assess information hierarchy and cognitive load, scrutinize error/empty/loading states, and review microcopy, producing review-only findings ready to be severity-ranked. TRIGGER on \"usability/UX/heuristic review.\" Assesses usability quality, NOT accessibility/WCAG conformance — defer that to a WCAG auditor. Any agent that judges usability (a UX reviewer, a design critique bot, a product reviewer) can load it.",
+      "category": "product",
+      "tags": [
+        "ux",
+        "usability",
+        "heuristic-review",
+        "nielsen",
+        "microcopy"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/product/ux-heuristic-review/SKILL.md"
     },
     {
       "name": "verify-by-running",
