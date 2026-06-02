@@ -2,11 +2,37 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 25,
+    "agents": 31,
     "skills": 8,
     "categories": 16
   },
   "agents": [
+    {
+      "name": "accessibility-auditor",
+      "description": "Use to audit UI for accessibility (WCAG 2.2 A/AA) issues — semantic HTML, ARIA misuse, keyboard operability and focus management, color contrast, names/labels, and reduced-motion. Returns severity-ranked findings mapped to specific success criteria with the fix. Review-first by default — it inspects and reports findings; it applies fixes (using Write/Edit) only when explicitly asked.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "accessibility",
+        "a11y",
+        "wcag",
+        "aria"
+      ],
+      "skills": [
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/accessibility-auditor.md"
+    },
     {
       "name": "agent-architect",
       "description": "Use when designing new ClaudeMax agents or skills, especially in bulk — given a domain or a list of desired capabilities, it proposes names/categories, scaffolds the files with the cmx generator, writes the system prompts, factors shared procedures into backing skills, and validates the result. Invoke for \"add agents for X\", \"design a skill that does Y\", or expanding a category.",
@@ -59,6 +85,30 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/meta/agent-evaluator.md"
+    },
+    {
+      "name": "api-designer",
+      "description": "Use when designing or reviewing an HTTP/REST API contract — resource modeling and URL structure, methods and status codes, error response shapes, pagination, filtering, versioning, idempotency, and OpenAPI specs. Invoke before implementation or during review to lock down the contract. Design-focused and language-agnostic — it shapes the interface, not the handler internals of any one framework. NOT for implementing route handlers or framework wiring — route that to nextjs-pro or the relevant language/framework agent.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "api",
+        "rest",
+        "http",
+        "versioning"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/api-designer.md"
     },
     {
       "name": "appsec-auditor",
@@ -160,6 +210,30 @@
       "path": "agents/languages/csharp-pro.md"
     },
     {
+      "name": "css-specialist",
+      "description": "Use for CSS and layout problems — Flexbox/Grid layout, responsive/fluid design, the cascade and specificity, stacking/positioning, and modern CSS (container queries, custom properties, logical properties, :has). Invoke when layout is broken or misaligned, a style isn't applying, or you need a robust responsive layout. NOT for load/runtime speed (LCP/CLS/INP/bundle) — route that to frontend-performance; this agent owns whether the layout is correct, not whether it is fast.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "css",
+        "layout",
+        "flexbox",
+        "grid"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/css-specialist.md"
+    },
+    {
       "name": "dockerfile-author",
       "description": "Use when writing or improving a Dockerfile — produces small, secure, well-cached, multi-stage images that follow best practices (pinned bases, non-root user, minimal layers, good .dockerignore) for the project's stack. Invoke to containerize an app or fix a bloated/insecure image.",
       "category": "devops",
@@ -182,6 +256,30 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/devops/dockerfile-author.md"
+    },
+    {
+      "name": "frontend-performance",
+      "description": "Use for web performance work — diagnosing and improving Core Web Vitals (LCP, CLS, INP), bundle size and code-splitting, render/runtime cost, and network/loading waterfalls. Invoke when a page is slow to load or interact, vitals regress, or a bundle is bloated. NOT for visual/layout correctness or styling architecture — route those to css-specialist (it owns whether the layout is right; this agent owns whether it is fast).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "performance",
+        "web-vitals",
+        "lighthouse",
+        "bundle"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/frontend-performance.md"
     },
     {
       "name": "github-actions-pro",
@@ -365,6 +463,30 @@
       "path": "agents/research/literature-reviewer.md"
     },
     {
+      "name": "nextjs-pro",
+      "description": "Use for Next.js App Router specifics — Server vs. Client Component boundaries, server actions, data fetching and the fetch/Router cache, route handlers, streaming/Suspense, middleware, and metadata. Invoke for hydration mismatches, \"cannot use X in a Server Component\" errors, stale-data/revalidation problems, or build/route config. NOT for framework-agnostic React (hook composition, where state lives, re-render tuning) — route that to react-architect.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "nextjs",
+        "app-router",
+        "rsc",
+        "server-actions"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nextjs-pro.md"
+    },
+    {
       "name": "observability-engineer",
       "description": "Use when instrumenting or improving observability ahead of/outside an incident — adding metrics/logs/traces, writing PromQL and Grafana dashboards, defining SLOs and error budgets, and authoring alerting rules that page on symptoms not causes. NOT for triaging a live outage in progress (use incident-responder).",
       "category": "devops",
@@ -413,6 +535,30 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/python-pro.md"
+    },
+    {
+      "name": "react-architect",
+      "description": "Use for framework-agnostic React design problems — component decomposition, hook composition, state location (lift/colocate, Context vs. external store), effect correctness, and render/re-render behavior. Invoke when a tree re-renders too much, an effect loops or fires wrong, or you need to choose where state lives. NOT for Next.js/RSC/server-actions/routing/caching — route those to nextjs-pro.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "react",
+        "hooks",
+        "state",
+        "rendering"
+      ],
+      "skills": [],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/react-architect.md"
     },
     {
       "name": "refactoring-specialist",
