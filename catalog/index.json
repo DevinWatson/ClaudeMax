@@ -3,22 +3,19 @@
   "taxonomyVersion": "1.0.0",
   "counts": {
     "agents": 71,
-    "skills": 23,
+    "skills": 32,
     "categories": 16
   },
   "agents": [
     {
       "name": "accessibility-auditor",
-      "description": "Use to audit UI for accessibility (WCAG 2.2 A/AA) issues — semantic HTML, ARIA misuse, keyboard operability and focus management, color contrast, names/labels, and reduced-motion. Returns severity-ranked findings mapped to specific success criteria with the fix. Review-first by default — it inspects and reports findings; it applies fixes (using Write/Edit) only when explicitly asked.",
+      "description": "Use to audit UI for accessibility (WCAG 2.2 A/AA) issues — semantic HTML, ARIA misuse, keyboard operability and focus management, color contrast, names/labels, and reduced-motion. Returns severity-ranked findings mapped to specific success criteria with the fix. Read-only — it inspects and reports findings with precise locations; it does not edit files.",
       "category": "web",
       "model": "sonnet",
       "tools": [
         "Read",
-        "Write",
-        "Edit",
         "Grep",
-        "Glob",
-        "Bash"
+        "Glob"
       ],
       "tags": [
         "accessibility",
@@ -27,9 +24,10 @@
         "aria"
       ],
       "skills": [
-        "severity-triage"
+        "severity-triage",
+        "wcag-audit"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/web/accessibility-auditor.md"
     },
@@ -152,8 +150,12 @@
         "http",
         "versioning"
       ],
-      "skills": [],
-      "version": "1.0.0",
+      "skills": [
+        "rest-api-design",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/web/api-designer.md"
     },
@@ -251,9 +253,10 @@
       ],
       "skills": [
         "diff-summary",
-        "severity-triage"
+        "severity-triage",
+        "code-review-method"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/engineering/code-reviewer.md"
     },
@@ -380,9 +383,11 @@
         "grid"
       ],
       "skills": [
-        "verify-by-running"
+        "verify-by-running",
+        "css-layout-and-cascade",
+        "match-project-conventions"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/web/css-specialist.md"
     },
@@ -689,9 +694,11 @@
         "bundle"
       ],
       "skills": [
-        "verify-by-running"
+        "verify-by-running",
+        "web-vitals-optimization",
+        "match-project-conventions"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/web/frontend-performance.md"
     },
@@ -1120,9 +1127,11 @@
         "server-actions"
       ],
       "skills": [
-        "verify-by-running"
+        "verify-by-running",
+        "nextjs-app-router",
+        "match-project-conventions"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/web/nextjs-pro.md"
     },
@@ -1322,9 +1331,11 @@
         "rendering"
       ],
       "skills": [
-        "verify-by-running"
+        "verify-by-running",
+        "react-rendering-model",
+        "match-project-conventions"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/web/react-architect.md"
     },
@@ -1373,9 +1384,11 @@
         "maintainability"
       ],
       "skills": [
-        "verify-by-running"
+        "verify-by-running",
+        "behavior-preserving-refactoring",
+        "match-project-conventions"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/engineering/refactoring-specialist.md"
     },
@@ -1676,9 +1689,11 @@
         "coverage"
       ],
       "skills": [
-        "verify-by-running"
+        "verify-by-running",
+        "test-design",
+        "match-project-conventions"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "stable",
       "path": "agents/engineering/test-author.md"
     },
@@ -1838,6 +1853,35 @@
       "path": "skills/business/assumption-hygiene/SKILL.md"
     },
     {
+      "name": "behavior-preserving-refactoring",
+      "description": "Use when improving the structure of working code without changing what it does — how to baseline behavior with tests, apply one small reversible transformation at a time, re-run the suite after each, and stop the moment a change would alter observable behavior. TRIGGER on \"refactor / clean up / simplify / restructure this without changing behavior\". NOT for adding features or fixing bugs. Any agent that restructures code (a refactoring specialist, a language pro tidying a module, a reviewer suggesting a safe cleanup) can load it.",
+      "category": "engineering",
+      "tags": [
+        "refactoring",
+        "safety",
+        "maintainability",
+        "tests"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/engineering/behavior-preserving-refactoring/SKILL.md"
+    },
+    {
+      "name": "code-review-method",
+      "description": "Use when reviewing a code change (diff, branch, or PR) for real defects — how to read a change for correctness, security, data/concurrency, and maintainability problems, confirm each finding against the surrounding code, and report it with a precise location and a minimal fix. TRIGGER on any \"review this code/diff/PR\" request. Any agent that reviews code (a dedicated reviewer, a security auditor, a language pro double-checking a change) can load it.",
+      "category": "engineering",
+      "tags": [
+        "review",
+        "correctness",
+        "security",
+        "concurrency",
+        "maintainability"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/engineering/code-review-method/SKILL.md"
+    },
+    {
       "name": "csharp-idioms",
       "description": "Use when writing or fixing C#/.NET code — async/await and Task pitfalls (deadlocks from .Result/.Wait, ConfigureAwait by layer, CancellationToken), LINQ deferred execution and multiple enumeration, nullable reference types and flow analysis, generics, and dotnet build/NuGet/csproj issues. Verifies with dotnet build/test. Any agent touching C# (writer, reviewer, debugger) can load it.",
       "category": "languages",
@@ -1851,6 +1895,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/csharp-idioms/SKILL.md"
+    },
+    {
+      "name": "css-layout-and-cascade",
+      "description": "Use when diagnosing or building CSS layout — how to debug with the cascade (specificity, source order, inheritance) instead of !important, choose the right layout primitive (Flexbox vs. Grid), get positioning and stacking contexts right, build responsive/fluid layouts (clamp, container queries, logical properties), and use modern CSS with fallbacks. TRIGGER when layout is broken or misaligned, a style isn't applying, z-index \"doesn't work\", or you need a robust responsive layout. NOT for load/runtime speed (LCP/CLS/INP/bundle). Any agent doing CSS (a CSS specialist, a UI reviewer, a component author) can load it.",
+      "category": "web",
+      "tags": [
+        "css",
+        "layout",
+        "flexbox",
+        "grid",
+        "responsive",
+        "cascade"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/css-layout-and-cascade/SKILL.md"
     },
     {
       "name": "diff-summary",
@@ -1940,6 +2000,21 @@
       "path": "skills/engineering/match-project-conventions/SKILL.md"
     },
     {
+      "name": "nextjs-app-router",
+      "description": "Use when working in the Next.js App Router — how to place the Server/Client Component boundary, fetch data and control the data/route cache and revalidation, write server actions and route handlers safely, and stream with Suspense. TRIGGER on hydration mismatches, \"cannot use X in a Server Component\" errors, stale-data/revalidation bugs, or App Router build/route config. NOT for framework-agnostic React (hook composition, where state lives, re-render tuning) or HTTP contract design. Any agent touching Next.js App Router code (a Next pro, a reviewer of an App Router PR, a full-stack debugger) can load it.",
+      "category": "web",
+      "tags": [
+        "nextjs",
+        "app-router",
+        "rsc",
+        "server-actions",
+        "caching"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/nextjs-app-router/SKILL.md"
+    },
+    {
       "name": "not-professional-advice",
       "description": "Use when an informational agent touches a regulated-advice domain (legal, tax, financial, or medical) — frame every output as general education, not a definitive verdict or sign-off, state plainly that it is NOT professional advice and creates no professional relationship, flag jurisdiction- and date-sensitivity, and route real decisions to a qualified licensed professional. Refuse to draft or finalize binding instruments.",
       "category": "business",
@@ -1971,6 +2046,21 @@
       "path": "skills/languages/python-idioms/SKILL.md"
     },
     {
+      "name": "react-rendering-model",
+      "description": "Use when writing, reviewing, or debugging framework-agnostic React — how to place state correctly, compose with hooks and components, get effects right (synchronize-with-external-system, honest dependency arrays, cleanup), reason about what triggers a re-render, and memoize only with evidence. TRIGGER when a tree re-renders too much, an effect loops or fires wrong, or you must decide where state lives. NOT for Next.js/RSC/server-actions/routing/caching. Any agent touching React (an architect, a reviewer of a React PR, a performance debugger) can load it.",
+      "category": "web",
+      "tags": [
+        "react",
+        "hooks",
+        "state",
+        "rendering",
+        "effects"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/react-rendering-model/SKILL.md"
+    },
+    {
       "name": "reproduce-then-fix",
       "description": "Use when fixing a reported bug or regression in any language — first reproduce it with a minimal failing case or test, confirm the failure, then make the smallest change that turns it green and guards against regression. Do not patch blind.",
       "category": "engineering",
@@ -1982,6 +2072,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/engineering/reproduce-then-fix/SKILL.md"
+    },
+    {
+      "name": "rest-api-design",
+      "description": "Use when designing or reviewing an HTTP/REST API contract — how to model resources and URLs, choose methods and status codes precisely, standardize a machine-readable error shape (RFC 9457 Problem Details), design pagination/filtering/sorting, plan versioning and idempotency, and express it as an OpenAPI 3.1 spec. TRIGGER before implementing or while reviewing an endpoint contract. Language- and framework-agnostic — shapes the interface, not handler internals. Any agent that designs or reviews an HTTP interface (an API designer, a backend reviewer, a client-SDK author) can load it.",
+      "category": "web",
+      "tags": [
+        "api",
+        "rest",
+        "http",
+        "openapi",
+        "versioning"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/rest-api-design/SKILL.md"
     },
     {
       "name": "ruby-idioms",
@@ -2101,6 +2206,20 @@
       "path": "skills/languages/sql-query-design/SKILL.md"
     },
     {
+      "name": "test-design",
+      "description": "Use when adding or expanding automated tests for existing code — how to map a unit's behaviors, enumerate the cases that catch real regressions (happy path, boundaries, invalid input, error paths, concurrency/ordering), and write deterministic tests that read like the project's existing suite. TRIGGER when asked to add/expand tests or raise meaningful coverage. Any agent that writes tests (a test author, a TDD-driven feature builder, a bug-fixer adding a regression guard) can load it.",
+      "category": "engineering",
+      "tags": [
+        "testing",
+        "coverage",
+        "cases",
+        "regression"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/engineering/test-design/SKILL.md"
+    },
+    {
       "name": "typescript-type-system",
       "description": "Use when working with the TypeScript type system — confusing type errors, generics and constraints, conditional/mapped/template-literal types, inference and narrowing, strictness migration, or tsconfig/module-resolution issues. Diagnoses errors in type-system terms, prefers the simplest sound fix over type-level wizardry, and verifies with tsc --noEmit. Any agent reading or writing TS (writer, reviewer) can load it.",
       "category": "languages",
@@ -2130,6 +2249,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/engineering/verify-by-running/SKILL.md"
+    },
+    {
+      "name": "wcag-audit",
+      "description": "Use when auditing UI for accessibility against WCAG 2.2 (A/AA) — how to combine automated scans (axe-core / jest-axe / Lighthouse) with manual review of semantics, ARIA, keyboard operability and focus management, color contrast, names/labels, and reduced-motion, mapping each finding to a specific success criterion and the assistive tech it affects. TRIGGER on \"audit/check accessibility (a11y/WCAG)\" for a component, page, or diff. Any agent that evaluates accessibility (an a11y auditor, a UI reviewer, a design-system checker) can load it.",
+      "category": "web",
+      "tags": [
+        "accessibility",
+        "a11y",
+        "wcag",
+        "aria",
+        "keyboard"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/wcag-audit/SKILL.md"
+    },
+    {
+      "name": "web-vitals-optimization",
+      "description": "Use when diagnosing or improving web performance — how to measure first (Lighthouse, the web-vitals library, bundle analyzers), diagnose the right Core Web Vital (LCP, CLS, INP) with the fix that matches it, cut JavaScript via code-splitting and dependency trimming, fix loading/network waterfalls, and re-measure to prove the win. TRIGGER when a page is slow to load or interact, a vital regresses, or a bundle is bloated. NOT for visual/layout correctness or styling architecture. Any agent doing frontend perf (a perf specialist, a reviewer flagging a regression, a build engineer) can load it.",
+      "category": "web",
+      "tags": [
+        "performance",
+        "web-vitals",
+        "lighthouse",
+        "bundle",
+        "code-splitting"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/web-vitals-optimization/SKILL.md"
     },
     {
       "name": "yaml-manifest-review",
