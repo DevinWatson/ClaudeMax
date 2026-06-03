@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1049,
-    "skills": 341,
+    "agents": 1057,
+    "skills": 349,
     "categories": 17
   },
   "agents": [
@@ -11750,6 +11750,96 @@
       "path": "agents/cloud/gcp/services/databases/gcp-bigtable-specialist.md"
     },
     {
+      "name": "gcp-binary-authorization-specialist",
+      "description": "Use when configuring, securing, or operating Binary Authorization (GCP) — deploy-time admission control enforcing only trusted, attested images run on GKE and Cloud Run: the policy (default + per-cluster/per-service rules, enforced vs dry-run), attestors and KMS-signed attestations bound to image digests, pipeline signing, allowlist exemptions, Continuous Validation, and Cloud Build / Artifact Registry / Container Analysis integration. CONFIGURES the one GCP Binary Authorization service end-to-end. Supply-chain / image-signing admission — cross-ref deploy targets gcp-gke-specialist and gcp-cloud-run-specialist, and source gcp-artifact-registry-specialist. NOT cross-cutting posture/review/triage — defer to gcp-security-reviewer and appsec-auditor / threat-modeler. Sibling GCP security specialists own their service: iam, cloud-kms (attestor keys), secret-manager, security-command-center, certificate-authority-service, certificate-manager. No single AWS/Azure peer (cosign/Notary). NOT the GCP role team.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "binary-authorization",
+        "security",
+        "supply-chain",
+        "attestation",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-binary-authorization",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/security/gcp-binary-authorization-specialist.md"
+    },
+    {
+      "name": "gcp-certificate-authority-service-specialist",
+      "description": "Use when configuring, securing, or operating Certificate Authority Service (CA Service / CAS) (GCP) — the managed private CA: CA pools and tiers (DevOps vs Enterprise), the CA hierarchy (root and subordinate CAs, bridging to an external root), certificate templates and pool issuance policy, CA key custody in Cloud KMS/HSM, and private X.509 issuance/revocation with CRL. CONFIGURES the one GCP private-CA service end-to-end. NOT cross-cutting posture/review/triage — defer to the gcp-security-reviewer role (audit) and security-category agents (appsec-auditor / threat-modeler) for threat modeling. PRIVATE trust only — public-trust TLS certs and certificate maps on load balancers belong to gcp-certificate-manager-specialist (which can import certs from this CA). Sibling GCP security specialists own their service: iam, cloud-kms (CA signing keys), secret-manager, security-command-center, binary-authorization. Cross-cloud peer (defer): aws-private-ca. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "certificate-authority-service",
+        "security",
+        "pki",
+        "private-ca",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-certificate-authority-service",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/security/gcp-certificate-authority-service-specialist.md"
+    },
+    {
+      "name": "gcp-certificate-manager-specialist",
+      "description": "Use when configuring, securing, or operating Certificate Manager (GCP) — TLS/SSL certificates at scale: Google-managed public-trust certs (auto-renewed, validated via DNS or LB authorization), self-managed/imported certs (incl. from CA Service), certificate maps and per-hostname/SNI entries with a primary catch-all, wildcard/SAN certs, trust config for mTLS, and attachment to external Application Load Balancers. CONFIGURES the one GCP Certificate Manager service end-to-end. NOT cross-cutting posture/review/triage — defer to gcp-security-reviewer (audit) and appsec-auditor / threat-modeler. PUBLIC trust — private CA for internal certs is gcp-certificate-authority-service-specialist; the load balancer is gcp-cloud-load-balancing-specialist. Sibling GCP security specialists own their service: iam, cloud-kms, secret-manager (imported keys), security-command-center, binary-authorization. Cross-cloud peer (defer): aws-certificate-manager. NOT the GCP role team.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "certificate-manager",
+        "security",
+        "tls",
+        "ssl",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-certificate-manager",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/security/gcp-certificate-manager-specialist.md"
+    },
+    {
       "name": "gcp-cloud-architect",
       "description": "Use when designing or reviewing a Google Cloud architecture — selecting managed services, laying out projects/folders/VPCs/regions, and evaluating a design against the Google Cloud Architecture Framework's pillars (GCP). Produces the design and trade-offs, not the IaC. NOT for writing Terraform/Deployment Manager (use gcp-iac-engineer), IAM/exposure auditing (gcp-security-reviewer), cost tuning (gcp-cost-governor), generic IaC across clouds (terraform-architect), or AWS/Azure architecture (aws-/azure-cloud-architect).",
       "category": "cloud",
@@ -11982,6 +12072,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/networking/gcp-cloud-interconnect-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-kms-specialist",
+      "description": "Use when configuring, securing, or operating Cloud KMS (GCP) — the managed key management service: key rings and keys (CryptoKey) with purposes (symmetric/asymmetric/MAC), versions and rotation, protection levels (software, HSM via Cloud HSM, external via Cloud EKM), CMEK wiring with service-agent grants, separation-of-duties IAM, and scheduled-destroy. CONFIGURES the one GCP KMS service end-to-end. NOT cross-cutting security posture/review/triage — defer to the gcp-security-reviewer role (read-only audit of whether CMEK/encryption is applied) and to the security-category agents (appsec-auditor / threat-modeler) for app crypto/threat modeling. Sibling GCP security specialists own their service: iam, secret-manager (uses KMS CMEK), security-command-center, certificate-authority-service, certificate-manager, binary-authorization (KMS-signed attestations). Cross-cloud peers (defer): aws-kms, azure-key-vault (keys). NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer) for architecture or broad IaC.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-kms",
+        "security",
+        "encryption",
+        "cmek",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-kms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/security/gcp-cloud-kms-specialist.md"
     },
     {
       "name": "gcp-cloud-load-balancing-specialist",
@@ -12726,6 +12846,36 @@
       "path": "agents/cloud/gcp/services/ai-ml/gcp-enterprise-knowledge-graph-specialist.md"
     },
     {
+      "name": "gcp-error-reporting-specialist",
+      "description": "Use when configuring, securing, or operating Error Reporting (GCP) — the managed service that aggregates and deduplicates application crashes/exceptions into error groups: automatic capture from Cloud Logging stack traces, the reportErrorEvents API, service/version attribution, new-group notifications, and group lifecycle. OWNS the GCP Error Reporting service — the application-error signal. NOT cross-cutting observability strategy — defer to the gcp-observability-engineer role (which uses observability-instrumentation). Sibling signal specialists: gcp-cloud-logging-specialist (logs — the source of captured traces), gcp-cloud-monitoring-specialist (metrics/alerting/paging), gcp-cloud-trace-specialist (traces), gcp-cloud-profiler-specialist (profiling). Cross-cloud peer (defer): aws-cloudwatch (Logs Insights; no exact equal). NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "error-reporting",
+        "observability",
+        "errors",
+        "exceptions",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-error-reporting",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/observability/gcp-error-reporting-specialist.md"
+    },
+    {
       "name": "gcp-eventarc-specialist",
       "description": "Use when designing, configuring, deploying, or operating Eventarc (GCP) — the managed event-routing service that delivers CloudEvents to a destination: triggers, event sources (Cloud Audit Logs, direct events, Pub-Sub), event filters (type/service/methodName/resource), destinations (Cloud Run, Functions 2nd gen, GKE, Workflows), the trigger service account + invoker IAM, and the transport Pub/Sub topic. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Eventarc ROUTES events — for multi-step orchestration defer to gcp-workflows-specialist, for rate-limited targeted task delivery to gcp-cloud-tasks-specialist, and for the underlying managed messaging bus to gcp-pubsub-specialist. AWS equivalent is EventBridge (aws-eventbridge); Azure is Event Grid — defer those clouds.",
       "category": "cloud",
@@ -12842,6 +12992,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/gcp-iac-engineer.md"
+    },
+    {
+      "name": "gcp-iam-specialist",
+      "description": "Use when configuring, securing, or operating Identity and Access Management (IAM) (GCP) — binding members (users/groups/service accounts/Workload Identity Federation) to roles (predefined/custom, avoiding primitive owner/editor) on the resource hierarchy: bindings with inheritance, IAM Conditions (CEL), service accounts and impersonation, keyless workloads via WIF and GKE Workload Identity, deny policies, and the Policy Troubleshooter. CONFIGURES the one GCP IAM service end-to-end. NOT cross-cutting security posture/review/triage — defer to the gcp-security-reviewer role (read-only audit) and to the security-category agents (appsec-auditor / threat-modeler) for app-level authz/threat modeling. Sibling GCP security specialists own their service: cloud-kms, secret-manager, security-command-center, certificate-authority-service, certificate-manager, binary-authorization. Cross-cloud peers (defer): aws-iam, azure-entra-id. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "iam",
+        "security",
+        "authorization",
+        "service-accounts",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-iam",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/security/gcp-iam-specialist.md"
     },
     {
       "name": "gcp-looker-specialist",
@@ -13201,6 +13381,66 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/gcp-reliability-engineer.md"
+    },
+    {
+      "name": "gcp-secret-manager-specialist",
+      "description": "Use when configuring, securing, or operating Secret Manager (GCP) — the managed secret store: secrets and immutable versions (latest alias), replication (automatic vs user-managed multi-region), CMEK payload encryption, rotation (period + Pub/Sub + function), expiration, consumer wiring (Cloud Run/Functions mounts, GKE CSI, client libraries), and least-privilege secret-level accessor IAM. CONFIGURES the one GCP Secret Manager service end-to-end. NOT cross-cutting security posture/review/triage — defer to the gcp-security-reviewer role (read-only audit) and to the security-category agents (appsec-auditor / threat-modeler) for app-level secret usage/threat modeling. Sibling GCP security specialists own their service: iam, cloud-kms (CMEK keys), security-command-center, certificate-authority-service, certificate-manager, binary-authorization. Cross-cloud peers (defer): aws-secrets-manager, azure-key-vault (secrets). NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer) for architecture or broad IaC.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "secret-manager",
+        "security",
+        "secrets",
+        "rotation",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-secret-manager",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/security/gcp-secret-manager-specialist.md"
+    },
+    {
+      "name": "gcp-security-command-center-specialist",
+      "description": "Use when configuring, securing, or operating Security Command Center (SCC) (GCP) — the centralized security/risk platform: org-level activation and tier (Standard/Premium/Enterprise), built-in detectors (Security Health Analytics, Web Security Scanner, Event/Container/VM Threat Detection), Security Posture and drift, attack-path simulation and exposure scoring, mute rules, and continuous exports to Pub/Sub/BigQuery/SIEM. CONFIGURES the one GCP SCC service end-to-end. NOT the cross-cutting security-review work — defer to the gcp-security-reviewer role for hands-on posture/review/findings triage (this specialist builds the SCC platform that produces the findings) and appsec-auditor / threat-modeler. Sibling GCP security specialists own their service: iam, cloud-kms, secret-manager, certificate-authority-service, certificate-manager, binary-authorization. Cross-cloud peers (defer): aws-security-hub, azure-defender-for-cloud. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "security-command-center",
+        "security",
+        "findings",
+        "posture",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-security-command-center",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/security/gcp-security-command-center-specialist.md"
     },
     {
       "name": "gcp-security-reviewer",
@@ -32616,6 +32856,54 @@
       "path": "skills/cloud/gcp-bigtable/SKILL.md"
     },
     {
+      "name": "gcp-binary-authorization",
+      "description": "Use when designing, provisioning, securing, or operating Binary Authorization — Google Cloud's deploy-time control that enforces only trusted, attested container images run on GKE and Cloud Run (Binary Authorization). Covers the admission policy (default + per-cluster/per-service rules), enforcement modes (enforced-block vs dry-run/audit), attestors and KMS-signed attestations bound to image digests, allowlist exemptions, Continuous Validation of running pods, and supply-chain integration with Cloud Build / Artifact Registry / Container Analysis scanning, plus IAM, cost, and limits. Loads the Binary Authorization knowledge: define the policy and attestors, sign images in the pipeline, enforce on GKE/Cloud Run, and verify an unsigned image is blocked. Consumed by the Binary Authorization specialist and by the GCP role team (gcp-security-reviewer / gcp-cloud-architect) when wiring supply-chain admission control (Binary Authorization).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "binary-authorization",
+        "security",
+        "supply-chain",
+        "attestation",
+        "gke"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-binary-authorization/SKILL.md"
+    },
+    {
+      "name": "gcp-certificate-authority-service",
+      "description": "Use when designing, provisioning, securing, or operating Certificate Authority Service (CA Service / CAS) — Google Cloud's managed private CA for issuing private X.509 certificates and PKI hierarchies (Certificate Authority Service). Covers CA pools and tiers (DevOps vs Enterprise), the CA hierarchy (root and subordinate CAs, bridging to an external root), certificate templates and pool issuance policy (subject/SAN/key/lifetime constraints), CA key custody (Cloud KMS / HSM / BYO), certificate lifetime and revocation/CRL/OCSP, and audit logging, plus least-privilege IAM, cost, scaling, and limits. Loads the CA Service knowledge: build the CA hierarchy in a CA pool, define templates and issuance policy, issue/revoke certs, secure CA keys, and verify a cert chains to the root. Consumed by the CA Service specialist and by the GCP role team (gcp-security-reviewer / gcp-cloud-architect) when wiring private PKI (Certificate Authority Service).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "certificate-authority-service",
+        "security",
+        "pki",
+        "private-ca",
+        "x509"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-certificate-authority-service/SKILL.md"
+    },
+    {
+      "name": "gcp-certificate-manager",
+      "description": "Use when designing, provisioning, securing, or operating Certificate Manager — Google Cloud's service for acquiring, storing, and deploying TLS/SSL certificates at scale on load balancers (Certificate Manager). Covers Google-managed certs (publicly trusted, auto-renewed) with DNS authorizations and load-balancer authorization, CAA control and import from CA Service, self-managed (imported) certs, certificate maps and entries (hostname/SNI to cert, with primary/catch-all), wildcard/SAN certs, trust config for mTLS, and attachment to external Application Load Balancers, plus IAM, cost, scaling, and limits. Loads the Certificate Manager knowledge: provision Google-managed or imported certs, validate via DNS authorization, build certificate maps, attach to load balancers, and verify TLS serves the right cert. Consumed by the Certificate Manager specialist and by the GCP role team (gcp-cloud-architect / gcp-networking-engineer / gcp-security-reviewer) when wiring TLS termination (Certificate Manager).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "certificate-manager",
+        "security",
+        "tls",
+        "ssl",
+        "certificates"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-certificate-manager/SKILL.md"
+    },
+    {
       "name": "gcp-cloud-armor",
       "description": "Use when designing, provisioning, securing, or operating Google Cloud Armor — Google Cloud's edge web application firewall (WAF) and DDoS protection that attaches security policies to external Application Load Balancer backend services to filter, rate-limit, and block traffic at Google's network edge before it reaches origins. Loads the Cloud Armor knowledge: build security policies and rules (allow/deny/throttle/redirect by IP/CIDR/geo/expression), use preconfigured WAF rules (OWASP CRS for SQLi/XSS/LFI/RCE), configure rate limiting and bot management (reCAPTCHA), enable adaptive protection and edge security, plus IAM and cost/scaling levers. Consumed by the Cloud Armor specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add WAF/DDoS to a web edge (Google Cloud Armor).",
       "category": "cloud",
@@ -32730,6 +33018,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-cloud-interconnect/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-kms",
+      "description": "Use when designing, provisioning, securing, or operating Cloud KMS — Google Cloud's managed key management service for creating, using, rotating, and destroying cryptographic keys (Cloud KMS). Covers key rings, keys (CryptoKey) and CryptoKey versions, purposes (symmetric encrypt/decrypt, asymmetric sign/decrypt, MAC), protection levels (software, HSM via Cloud HSM, external via EKM/Cloud EKM), automatic and manual rotation, key state and version lifecycle (enable/disable/destroy with scheduled-destroy delay), CMEK (customer-managed encryption keys) wiring into other GCP services, IAM separation (key admin vs encrypter/decrypter), Autokey, location/residency, plus cost and limits. Loads the Cloud KMS knowledge: design key rings/keys, choose protection level, set rotation, grant least-privilege crypto IAM, wire CMEK, and verify encrypt/decrypt. Consumed by the Cloud KMS specialist and by the GCP role team (gcp-security-reviewer / gcp-cloud-architect) when wiring encryption-at-rest (Cloud KMS).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-kms",
+        "security",
+        "encryption",
+        "kms",
+        "cmek",
+        "hsm"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-kms/SKILL.md"
     },
     {
       "name": "gcp-cloud-load-balancing",
@@ -33117,6 +33422,22 @@
       "path": "skills/cloud/gcp-enterprise-knowledge-graph/SKILL.md"
     },
     {
+      "name": "gcp-error-reporting",
+      "description": "Use when designing, provisioning, securing, or operating Error Reporting — Google Cloud's managed service that aggregates and deduplicates application crashes/exceptions into error groups across services (Cloud Operations / formerly Stackdriver Error Reporting). Covers automatic error capture from Cloud Logging stack traces, error groups and deduplication, group state (open/acknowledged/resolved/muted), notifications, the reportErrorEvents API for custom exception reporting, supported languages/runtimes, and integration with Cloud Run / GKE / App Engine / Cloud Functions, plus IAM, cost, and scaling/limits. Loads the Error Reporting knowledge: ensure exceptions surface as groups, tune capture, wire notifications, manage group lifecycle, and verify a thrown error appears as a group. Consumed by the Error Reporting specialist and by the GCP role team (gcp-observability-engineer, which uses observability-instrumentation) when wiring the application-error signal (Error Reporting).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "error-reporting",
+        "observability",
+        "errors",
+        "exceptions",
+        "crash-reporting"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-error-reporting/SKILL.md"
+    },
+    {
       "name": "gcp-eventarc",
       "description": "Use when designing, provisioning, securing, or operating Eventarc — Google Cloud's managed event-routing service that delivers events as CloudEvents to a destination: triggers (the routing rule), event sources (Cloud Audit Logs from any Google service, direct Pub/Sub messages, and third-party/Eventarc Advanced sources), event filters (matching by event type / service / methodName / resource attributes), destinations (Cloud Run, Cloud Functions 2nd gen, GKE, Workflows), the trigger service account + invoker IAM, the transport Pub/Sub topic, delivery + retry semantics, channels, and regions. Loads the Eventarc knowledge: build a trigger with filters, route CloudEvents to a target, secure the delivery identity, and verify an event arrives. Consumed by the Eventarc specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they wire event-driven flows (Eventarc).",
       "category": "cloud",
@@ -33165,6 +33486,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-gke/SKILL.md"
+    },
+    {
+      "name": "gcp-iam",
+      "description": "Use when designing, provisioning, securing, or operating Identity and Access Management (IAM) — Google Cloud's authorization system controlling who (members) can do what (roles) on which resources (Identity and Access Management (IAM)). Covers members/principals (users, groups, service accounts, Workload Identity Federation), roles (primitive, predefined, custom), bindings on the resource hierarchy with inheritance, IAM Conditions (CEL), service accounts and impersonation, keyless workloads (WIF + GKE Workload Identity), deny policies, and the Policy Troubleshooter, plus cost and limits. Loads the IAM knowledge: model members to roles to bindings, prefer predefined/custom over primitive roles, eliminate downloaded SA keys via WIF, add conditions, and verify effective access. Consumed by the IAM specialist and by the GCP role team (gcp-security-reviewer / gcp-cloud-architect) when wiring authorization (Identity and Access Management (IAM)).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "iam",
+        "security",
+        "authorization",
+        "service-accounts",
+        "workload-identity-federation",
+        "least-privilege"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-iam/SKILL.md"
     },
     {
       "name": "gcp-looker",
@@ -33313,6 +33651,38 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-pubsub/SKILL.md"
+    },
+    {
+      "name": "gcp-secret-manager",
+      "description": "Use when designing, provisioning, securing, or operating Secret Manager — Google Cloud's managed service for storing, versioning, accessing, and rotating secrets like API keys, passwords, certificates, and connection strings (Secret Manager). Covers secrets and immutable secret versions (add/access/disable/destroy, version aliases and \"latest\"), replication policy (automatic vs user-managed multi-region), CMEK encryption of secret payloads, rotation (rotation period + Pub/Sub topic notifications wired to a rotation function), expiration/TTL, access via client libraries / Cloud Run + GKE secret integration / gcloud, least-privilege accessor IAM, audit logging, plus cost and limits. Loads the Secret Manager knowledge: create secrets with the right replication, add versions, set rotation, grant least-privilege accessors, and verify access. Consumed by the Secret Manager specialist and by the GCP role team (gcp-security-reviewer / gcp-cloud-architect) when wiring secret storage (Secret Manager).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "secret-manager",
+        "security",
+        "secrets",
+        "rotation",
+        "cmek"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-secret-manager/SKILL.md"
+    },
+    {
+      "name": "gcp-security-command-center",
+      "description": "Use when designing, provisioning, securing, or operating Security Command Center (SCC) — Google Cloud's centralized security/risk platform that surfaces misconfigurations, vulnerabilities, and threats across an organization (Security Command Center). Covers service tiers (Standard/Premium/Enterprise), findings and sources, the built-in detectors (Security Health Analytics, Web Security Scanner, Event/Container/VM Threat Detection), Security Posture definitions/deployments and drift, attack-path simulation and exposure scoring, mute rules and finding lifecycle, and continuous exports to Pub/Sub/BigQuery/SIEM, plus IAM, cost, and limits. Loads the SCC knowledge: enable at the org, choose tier, manage findings/sources, define posture, wire exports, and verify a finding surfaces. Consumed by the SCC specialist and by the GCP role team (gcp-security-reviewer, which does cross-cutting posture/review/triage) when wiring centralized findings (Security Command Center).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "security-command-center",
+        "security",
+        "findings",
+        "posture",
+        "threat-detection"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-security-command-center/SKILL.md"
     },
     {
       "name": "gcp-services",

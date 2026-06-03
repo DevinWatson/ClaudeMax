@@ -276,16 +276,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] gcp|observability|cloud-monitoring|Cloud Monitoring
 - [x] gcp|observability|cloud-trace|Cloud Trace
 - [x] gcp|observability|cloud-profiler|Cloud Profiler
-- [ ] gcp|observability|error-reporting|Error Reporting
+- [x] gcp|observability|error-reporting|Error Reporting
 
 ### security
-- [ ] gcp|security|iam|Identity and Access Management (IAM)
-- [ ] gcp|security|cloud-kms|Cloud KMS
-- [ ] gcp|security|secret-manager|Secret Manager
-- [ ] gcp|security|security-command-center|Security Command Center
-- [ ] gcp|security|certificate-authority-service|Certificate Authority Service
-- [ ] gcp|security|certificate-manager|Certificate Manager
-- [ ] gcp|security|binary-authorization|Binary Authorization
+- [x] gcp|security|iam|Identity and Access Management (IAM)
+- [x] gcp|security|cloud-kms|Cloud KMS
+- [x] gcp|security|secret-manager|Secret Manager
+- [x] gcp|security|security-command-center|Security Command Center
+- [x] gcp|security|certificate-authority-service|Certificate Authority Service
+- [x] gcp|security|certificate-manager|Certificate Manager
+- [x] gcp|security|binary-authorization|Binary Authorization
 - [ ] gcp|security|cloud-asset-inventory|Cloud Asset Inventory
 - [ ] gcp|security|identity-aware-proxy|Identity-Aware Proxy
 - [ ] gcp|security|sensitive-data-protection|Sensitive Data Protection
