@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 779,
-    "skills": 131,
+    "agents": 787,
+    "skills": 132,
     "categories": 17
   },
   "agents": [
@@ -6994,6 +6994,234 @@
       "version": "1.1.0",
       "status": "stable",
       "path": "agents/domain/game-balance-designer.md"
+    },
+    {
+      "name": "gcp-cloud-architect",
+      "description": "Use when designing or reviewing a Google Cloud architecture — selecting managed services, laying out projects/folders/VPCs/regions, and evaluating a design against the Google Cloud Architecture Framework's pillars (GCP). Produces the design and trade-offs, not the IaC. NOT for writing Terraform/Deployment Manager (use gcp-iac-engineer), IAM/exposure auditing (gcp-security-reviewer), cost tuning (gcp-cost-governor), generic IaC across clouds (terraform-architect), or AWS/Azure architecture (aws-/azure-cloud-architect).",
+      "category": "cloud",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "gcp",
+        "architecture",
+        "architecture-framework",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "gcp-services",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/gcp-cloud-architect.md"
+    },
+    {
+      "name": "gcp-cost-governor",
+      "description": "Use when reducing or governing Google Cloud spend — finding idle/over-provisioned resources, right-sizing, picking pricing models (committed use discounts / sustained use / Spot VMs / BigQuery on-demand vs flat-rate), cutting egress and un-lifecycled storage cost, and verifying with the Billing/gcloud CLI (GCP). NOT for architecture design (gcp-cloud-architect), reliability/DR (gcp-reliability-engineer), writing the IaC change itself (gcp-iac-engineer), or AWS/Azure cost (aws-/azure-cost-governor).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cost",
+        "finops",
+        "rightsizing"
+      ],
+      "skills": [
+        "cost-optimization",
+        "gcp-services",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/gcp-cost-governor.md"
+    },
+    {
+      "name": "gcp-data-engineer",
+      "description": "Use when building Google Cloud data systems with GCP-managed services — modeling Cloud SQL/Spanner/Firestore/Bigtable, ingesting and streaming with Pub/Sub, transforming with Dataflow, and warehousing/analyzing in BigQuery — then validating it (GCP). NOT for cloud-agnostic or multi-cloud pipeline orchestration design (etl-architect designs provider-neutral orchestration; this agent is for GCP-managed services like BigQuery/Dataflow/Pub-Sub specifically), broad architecture (gcp-cloud-architect), IAM/exposure review (gcp-security-reviewer), or AWS/Azure data (aws-/azure-data-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "data",
+        "bigquery",
+        "dataflow",
+        "pubsub",
+        "spanner"
+      ],
+      "skills": [
+        "data-pipeline-design",
+        "gcp-services",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/gcp-data-engineer.md"
+    },
+    {
+      "name": "gcp-iac-engineer",
+      "description": "Use when writing or refactoring GCP infrastructure as code — Terraform or Deployment Manager that provisions Google Cloud resources, then validating it with plan/validate (GCP). NOT for cloud architecture/Architecture-Framework design (use gcp-cloud-architect), IAM/exposure review (gcp-security-reviewer), generic provider-agnostic Terraform language work (terraform-architect — this agent is GCP-specific infra), or AWS/Azure infra (aws-/azure-iac-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "iac",
+        "terraform",
+        "deployment-manager"
+      ],
+      "skills": [
+        "terraform-iac",
+        "gcp-services",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/gcp-iac-engineer.md"
+    },
+    {
+      "name": "gcp-networking-engineer",
+      "description": "Use when designing or fixing Google Cloud networking — VPC and subnet layout, firewall rules, routes and Cloud NAT, Cloud DNS, and Cloud Load Balancing — then validating it (GCP). NOT for IAM/exposure security review (gcp-security-reviewer), broad architecture (gcp-cloud-architect), DR/failover strategy (gcp-reliability-engineer), generic IaC (gcp-iac-engineer authors the modules), or AWS/Azure networking (aws-/azure-networking-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "networking",
+        "vpc",
+        "dns",
+        "load-balancing"
+      ],
+      "skills": [
+        "network-design",
+        "gcp-services",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/gcp-networking-engineer.md"
+    },
+    {
+      "name": "gcp-observability-engineer",
+      "description": "Use when instrumenting Google Cloud observability — Cloud Monitoring metrics/dashboards/alerting policies, Cloud Logging, and Cloud Trace, with SLO-driven alerting — then validating it (GCP). NOT for generic non-cloud observability (devops observability-engineer), reliability/DR design (gcp-reliability-engineer), networking (gcp-networking-engineer), broad architecture (gcp-cloud-architect), or AWS/Azure observability (aws-/azure-observability-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "observability",
+        "cloud-monitoring",
+        "cloud-trace",
+        "alerting"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "gcp-services",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/gcp-observability-engineer.md"
+    },
+    {
+      "name": "gcp-reliability-engineer",
+      "description": "Use when hardening a Google Cloud workload's resilience — zonal/regional/multi-region design, disaster recovery to an RTO/RPO, backups and restore drills, health checks and failover — then validating it (GCP). NOT for day-one architecture (gcp-cloud-architect), networking plumbing (gcp-networking-engineer), metrics/tracing (gcp-observability-engineer), cost (gcp-cost-governor), or AWS/Azure reliability (aws-/azure-reliability-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "reliability",
+        "dr",
+        "regional",
+        "backups"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "gcp-services",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/gcp-reliability-engineer.md"
+    },
+    {
+      "name": "gcp-security-reviewer",
+      "description": "Use when reviewing GCP configuration for security — IAM least-privilege (no primitive owner/editor, scoped service accounts, no downloaded SA keys), public exposure (open firewall rules, public buckets/Cloud SQL), missing encryption (CMEK/TLS), and secret handling — then triaging findings by severity (GCP). Read-only; reports, does not change infra. NOT for building/fixing IaC (use gcp-iac-engineer), architecture design (gcp-cloud-architect), generic app-code appsec unrelated to GCP config, or AWS/Azure config review (aws-/azure-security-reviewer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "gcp",
+        "security",
+        "iam",
+        "encryption",
+        "review"
+      ],
+      "skills": [
+        "appsec-review",
+        "gcp-services",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/gcp-security-reviewer.md"
     },
     {
       "name": "geospatial-analyst",
@@ -22221,6 +22449,26 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/domain/game-balance/SKILL.md"
+    },
+    {
+      "name": "gcp-services",
+      "description": "The substantive GCP platform capability — compute (Compute Engine, Cloud Run, GKE, Cloud Functions), storage (Cloud Storage, Persistent Disk), databases (Cloud SQL, Spanner, Firestore, Bigtable), data/analytics (BigQuery, Dataflow, Pub/Sub), networking (VPC, Cloud Load Balancing, Cloud DNS, Cloud CDN), IAM (roles, service accounts, least privilege, workload identity), the Google Cloud Architecture Framework, regions/zones & multi-region patterns, and tooling (gcloud CLI, Deployment Manager/Terraform). Use when designing, building, reviewing, securing, costing, or operating anything on Google Cloud — picking the right managed service, applying least-privilege IAM, choosing zonal vs regional vs multi-region, or validating gcloud/Deployment Manager/Terraform. Any agent that touches GCP (an architect, IaC engineer, security reviewer, cost governor, reliability/networking/observability/data engineer) can load it.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud",
+        "compute-engine",
+        "cloud-run",
+        "gke",
+        "bigquery",
+        "vpc",
+        "iam",
+        "spanner",
+        "architecture-framework"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-services/SKILL.md"
     },
     {
       "name": "geospatial-analysis",

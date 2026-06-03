@@ -50,7 +50,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 
 ## Cloud platforms (NEW taxonomy category `cloud`; per-platform teams + new capability skills)
 - [x] aws
-- [ ] gcp
+- [x] gcp
 - [ ] azure
 - [ ] cloudflare
 - [ ] kubernetes-platform
