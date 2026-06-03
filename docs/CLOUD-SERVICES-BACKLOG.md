@@ -414,16 +414,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] azure|management-governance|azure-monitor|Azure Monitor
 - [x] azure|management-governance|azure-policy|Azure Policy
 - [x] azure|management-governance|azure-resource-manager|Azure Resource Manager
-- [ ] azure|management-governance|azure-cost-management|Microsoft Cost Management
-- [ ] azure|management-governance|azure-automation|Azure Automation
-- [ ] azure|management-governance|azure-arc|Azure Arc
-- [ ] azure|management-governance|azure-advisor|Azure Advisor
-- [ ] azure|management-governance|log-analytics|Azure Log Analytics
-- [ ] azure|management-governance|application-insights|Application Insights
+- [x] azure|management-governance|azure-cost-management|Microsoft Cost Management
+- [x] azure|management-governance|azure-automation|Azure Automation
+- [x] azure|management-governance|azure-arc|Azure Arc
+- [x] azure|management-governance|azure-advisor|Azure Advisor
+- [x] azure|management-governance|log-analytics|Azure Log Analytics
+- [x] azure|management-governance|application-insights|Application Insights
 
 ### devops
-- [ ] azure|devops|azure-devops|Azure DevOps
-- [ ] azure|devops|azure-pipelines|Azure Pipelines
+- [x] azure|devops|azure-devops|Azure DevOps
+- [x] azure|devops|azure-pipelines|Azure Pipelines
 - [ ] azure|devops|azure-artifacts|Azure Artifacts
 - [ ] azure|devops|azure-load-testing|Azure Load Testing
 - [ ] azure|devops|dev-box|Microsoft Dev Box

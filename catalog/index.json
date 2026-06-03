@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1153,
-    "skills": 445,
+    "agents": 1161,
+    "skills": 453,
     "categories": 17
   },
   "agents": [
@@ -5242,6 +5242,35 @@
       "path": "agents/cloud/aws/services/developer-tools/aws-x-ray-specialist.md"
     },
     {
+      "name": "azure-advisor-specialist",
+      "description": "Use when reviewing, configuring, or operating Azure Advisor (Azure Advisor) (Azure) — surfacing and acting on personalized recommendations across cost, security, reliability, performance, and operational excellence, configuring right-sizing thresholds + scope, and wiring recommendation alerts/digests. OWNS the single-service Advisor layer end-to-end (config, alerts, triage/remediation) and verifies recommendations clear and the Advisor score moves. NOT the azure-cloud-architect / azure-cost-governor / azure-reliability-engineer roles, which are cross-cutting (Well-Architected strategy, FinOps/reliability programs) — the specialist operates Advisor; the roles set direction. For budgets/allocation defer to azure-cost-management-specialist; security feed comes from Defender for Cloud. Cross-cloud peers (defer): aws-trusted-advisor, aws-compute-optimizer.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-advisor",
+        "management-governance",
+        "recommendations",
+        "specialist"
+      ],
+      "skills": [
+        "azure-advisor",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/management-governance/azure-advisor-specialist.md"
+    },
+    {
       "name": "azure-ai-content-safety-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure AI Content Safety (Azure) — the managed text/image moderation service: the Content Safety resource, text and image analysis across the four harm categories (Hate/Sexual/Violence/Self-Harm) with severity, custom blocklists, Prompt Shields (jailbreak + indirect prompt-injection), Groundedness and Protected Material detection, Entra ID vs keys, Private Link, and cost. OWNS the managed moderation service end-to-end (resource, blocklists, detections, auth). NOT the app-side moderation orchestration or eval harness that calls it — that belongs to the language ai-engineer/rag-engineer/evals-engineer roles (app-side vs managed Azure AI service). NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT sibling Azure AI services (azure-openai/azure-ai-foundry/vision/language/speech). Cross-cloud peers (defer): AWS Bedrock Guardrails, GCP Model Armor.",
       "category": "cloud",
@@ -5597,6 +5626,64 @@
       "path": "agents/cloud/azure/services/networking/azure-application-gateway-specialist.md"
     },
     {
+      "name": "azure-application-insights-specialist",
+      "description": "Use when configuring or operating Application Insights (Application Insights) (Azure) — the APM feature of Azure Monitor: workspace-based App Insights resources, the connection string, auto + OpenTelemetry/SDK instrumentation, distributed tracing, requests/dependencies/exceptions, Live Metrics, the Application Map, availability tests, sampling, and KQL telemetry queries. OWNS the single-service App Insights layer end-to-end (resource, instrumentation, availability tests, sampling) and verifies telemetry flows and a test/alert fires. Cross-references azure-monitor-specialist for the collection/alerting umbrella and azure-log-analytics-specialist for the backing workspace. NOT the azure-observability-engineer role, which is cross-cutting (org-wide APM/SLO strategy). Cross-cloud peers (defer): aws-x-ray, gcp-cloud-trace.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-application-insights",
+        "management-governance",
+        "apm",
+        "specialist"
+      ],
+      "skills": [
+        "azure-application-insights",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/management-governance/azure-application-insights-specialist.md"
+    },
+    {
+      "name": "azure-arc-specialist",
+      "description": "Use when onboarding, configuring, or operating Azure Arc (Azure Arc) (Azure) — projecting on-prem/multicloud servers, Kubernetes clusters, and data services into Azure as resources, deploying extensions, wiring GitOps/Flux configurations, and governing the hybrid estate with Azure Policy + Machine Configuration at scale. OWNS the single-service Arc layer end-to-end (onboarding, extensions, policy at scale) and verifies resources report Connected. NOT the azure-platform-engineer / azure-cloud-architect roles, which are cross-cutting (hybrid/multicloud strategy, landing-zone design) — the specialist owns the Arc config; the roles set direction. For the policy authoring itself cross-reference azure-policy-specialist. Cross-cloud peers (defer): aws-systems-manager (hybrid managed instances), gcp-anthos.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-arc",
+        "management-governance",
+        "hybrid",
+        "specialist"
+      ],
+      "skills": [
+        "azure-arc",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/management-governance/azure-arc-specialist.md"
+    },
+    {
       "name": "azure-attestation-specialist",
       "description": "Use when provisioning, configuring, or operating Microsoft Azure Attestation (Azure Attestation) (Azure) — remote attestation that verifies a platform and the code inside a Trusted Execution Environment before secrets are released: attestation providers, policies (the claims/rules deciding pass/fail for Intel SGX, AMD SEV-SNP confidential VMs, TPM, Trusted Launch), policy signing, and the signed JWT a relying party (e.g. Key Vault secure key release) validates. CONFIGURES the one service end-to-end (create the provider, author + sign policies, wire relying parties) and verifies a genuine TEE attests and a bad measurement is rejected. NOT azure-security-reviewer (cross-cutting: reviews trust/attestation posture) — you set it up; it reviews it. NOT the appsec/threat-modeling security-category agents (code/design-level). Sibling: azure-key-vault-specialist owns the vault that consumes attestation tokens. Confidential-computing peers (defer): AWS Nitro Enclaves attestation, GCP Confidential Space attestation.",
       "category": "cloud",
@@ -5624,6 +5711,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/security/azure-attestation-specialist.md"
+    },
+    {
+      "name": "azure-automation-specialist",
+      "description": "Use when configuring or operating Azure Automation (Azure Automation) (Azure) — Automation accounts, PowerShell/Python runbooks with schedules/webhooks, Hybrid Runbook Workers for on-prem/multicloud execution, encrypted shared resources (variables/credentials/certificates/modules), State Configuration (DSC), and Update Management. OWNS the single-service Automation layer end-to-end (account + identity, runbooks + triggers, hybrid workers, DSC) and verifies a runbook job runs. NOT the azure-platform-engineer role, which is cross-cutting (org-wide automation strategy, golden runbooks, platform tooling) — the specialist owns the Automation config; the role sets direction. For runbook-driven OS patching at fleet scale cross-reference Azure Update Manager. Cross-cloud peer (defer): aws-systems-manager (Automation/Run Command + State Manager).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-automation",
+        "management-governance",
+        "runbooks",
+        "specialist"
+      ],
+      "skills": [
+        "azure-automation",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/management-governance/azure-automation-specialist.md"
     },
     {
       "name": "azure-backup-specialist",
@@ -5998,6 +6114,35 @@
       "path": "agents/cloud/azure/azure-cost-governor.md"
     },
     {
+      "name": "azure-cost-management-specialist",
+      "description": "Use when configuring or operating Microsoft Cost Management (Microsoft Cost Management) (Azure) — cost analysis, budgets with forecast/actual alerts + action groups, scheduled exports to storage, anomaly alerts, tag-based cost allocation/showback, and Reservation/Savings Plan recommendations at a billing scope. OWNS the single-service cost layer end-to-end (budgets, exports, allocation rules) and verifies spend reporting and an alert path. NOT the azure-cost-governor role, which is cross-cutting (org-wide FinOps strategy, chargeback policy, commitment portfolio, tagging mandates) — the specialist owns the Cost Management config; the role sets direction. For recommendation-driven right-sizing defer to azure-advisor-specialist. Cross-cloud peers (defer): aws-cost-explorer, gcp-cloud-billing.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-cost-management",
+        "management-governance",
+        "finops",
+        "specialist"
+      ],
+      "skills": [
+        "azure-cost-management",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/management-governance/azure-cost-management-specialist.md"
+    },
+    {
       "name": "azure-data-box-specialist",
       "description": "Use when planning, ordering, securing, or operating an Azure Data Box (Azure) — offline physical bulk data transfer of terabytes-to-petabytes into/out of Azure when the network is too slow or costly: the device family (Data Box Disk ~8 TB, Data Box ~100 TB, Data Box Heavy ~1 PB; Gateway/Edge for online), the order → ship → copy (NFS/SMB/REST) → return → ingest workflow, AES-256 encryption and tamper-resistance, the target storage account/blob/file destination, NIST secure erase, RBAC on orders, and chain-of-custody. OWNS the Azure managed-service layer end-to-end (device selection, copy, security/chain-of-custody, destination + ingest verification) for offline migration. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-data-engineer, cross-cutting) and NOT continuous sync (use Gateway/Edge or online tools). Cross-cloud peer (defer): aws-snow-family.",
       "category": "cloud",
@@ -6317,6 +6462,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/security/azure-dedicated-hsm-specialist.md"
+    },
+    {
+      "name": "azure-devops-specialist",
+      "description": "Use when configuring or operating Azure DevOps (Azure DevOps) (Azure) — the full ALM suite: organization/project structure, Boards (work items/backlogs/sprints), Repos (Git + branch policies + PRs), Pipelines, Artifacts (package feeds + upstream), Test Plans, service connections (prefer workload identity), security groups + permissions, and PAT vs Entra auth. OWNS the Azure DevOps service end-to-end (org/project, repos/boards/feeds/connections, security) and verifies the project/repos/policies exist. NOT the github-actions team, which owns the cross-platform/GitHub CI/CD estate — this agent owns the Azure DevOps service; route GitHub work there. For the CI/CD pipeline internals defer to azure-pipelines-specialist. Cross-platform peer (defer): GitHub (Actions/Repos/Projects/Packages).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-devops",
+        "devops",
+        "alm",
+        "specialist"
+      ],
+      "skills": [
+        "azure-devops",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/devops/azure-devops-specialist.md"
     },
     {
       "name": "azure-digital-twins-specialist",
@@ -6900,6 +7074,35 @@
       "path": "agents/cloud/azure/services/networking/azure-load-balancer-specialist.md"
     },
     {
+      "name": "azure-log-analytics-specialist",
+      "description": "Use when configuring or operating Azure Log Analytics (Azure Log Analytics) (Azure) — the workspace + KQL query engine behind Azure Monitor/Sentinel/Defender: workspace topology, tables and table plans (Analytics/Basic/Auxiliary), retention + archive, ingestion-time DCR transforms, KQL queries + saved functions, solutions/insights, and cross-workspace queries. OWNS the single-service workspace layer end-to-end (workspace, tables/retention, KQL, transforms) and verifies a KQL query returns expected data. Cross-references azure-monitor-specialist for the collection/alerting umbrella (diagnostic settings/DCRs/alerts). NOT the azure-observability-engineer role, which is cross-cutting (org-wide workspace topology, observability strategy). For SIEM on the workspace defer to azure-microsoft-sentinel-specialist. Cross-cloud peers (defer): aws-cloudwatch (Logs Insights), gcp-cloud-logging.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-log-analytics",
+        "management-governance",
+        "kql",
+        "specialist"
+      ],
+      "skills": [
+        "azure-log-analytics",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/management-governance/azure-log-analytics-specialist.md"
+    },
+    {
       "name": "azure-logic-apps-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Logic Apps (Azure) — the managed serverless workflow-automation / iPaaS service: workflow definitions (triggers + actions), the 400+ connectors, Consumption (multi-tenant, per-execution) vs Standard (single-tenant, VNet, stateful/stateless) hosting, control flow + run-after error handling, and B2B/EDI via integration accounts (AS2/X12/EDIFACT). OWNS the Azure managed-service layer end-to-end (workflow, hosting model, connectors/triggers, B2B/EDI, managed-identity/RBAC). DEFERS cloud-agnostic integration/orchestration design to the architecture teams. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT enterprise message brokering (route queues/topics to azure-service-bus) or event routing (azure-event-grid). Cross-cloud peer (defer): aws-step-functions, gcp-workflows.",
       "category": "cloud",
@@ -7250,6 +7453,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/ai-ml/azure-openai-specialist.md"
+    },
+    {
+      "name": "azure-pipelines-specialist",
+      "description": "Use when authoring, configuring, or operating Azure Pipelines (Azure Pipelines) (Azure) — CI/CD via YAML (or classic): triggers, stages → jobs → steps/tasks, templates + parameters, variable groups (Key Vault-linked), agent pools (Microsoft-hosted vs self-hosted scale sets), environments with deployment strategies + approvals/checks, service connections (workload identity), and artifacts/caching. OWNS the single-service pipeline layer end-to-end (pipeline authoring, agents, environments, approvals) and verifies a run succeeds and gates behave. Cross-references azure-devops-specialist for the surrounding org/project/Repos/Boards/Artifacts suite. NOT the github-actions team (cross-platform CI/CD). Cross-platform peers (defer): github-actions, aws-codepipeline, gcp-cloud-build.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-pipelines",
+        "devops",
+        "ci-cd",
+        "specialist"
+      ],
+      "skills": [
+        "azure-pipelines",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/devops/azure-pipelines-specialist.md"
     },
     {
       "name": "azure-policy-specialist",
@@ -34941,6 +35173,21 @@
       "path": "skills/cloud/aws-x-ray/SKILL.md"
     },
     {
+      "name": "azure-advisor",
+      "description": "Use when reviewing, configuring, or operating Azure Advisor — the free personalized recommendation engine that analyzes your Azure usage and configuration and advises across cost, security, reliability, performance, and operational excellence (Azure Advisor). Covers the five recommendation categories, the Advisor score, recommendation digests + alerts, postponing/dismissing recommendations, configuration (rules/thresholds, subscription scope), and acting on guidance (right-sizing, reservations, redundancy, quotas). Loads the knowledge to surface recommendations, configure alerts/digests, and verify remediation. Consumed by the azure-advisor specialist and by the Azure role team (azure-cloud-architect / azure-cost-governor / azure-reliability-engineer) when operating the managed service (Azure Advisor).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-advisor",
+        "management-governance",
+        "recommendations",
+        "well-architected"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-advisor/SKILL.md"
+    },
+    {
       "name": "azure-ai-content-safety",
       "description": "Use when designing, provisioning, securing, or operating Azure AI Content Safety — Microsoft Azure's managed service for moderating text and image content and protecting LLM apps from prompt attacks (Azure AI Content Safety). Covers the Content Safety / Cognitive Services resource, the text and image moderation APIs with four harm categories (Hate, Sexual, Violence, Self-Harm) scored by severity, custom blocklists, Prompt Shields (jailbreak/indirect prompt-injection detection), Groundedness detection and Protected Material detection, keys vs Entra ID/managed identity, Private Link/VNet, and cost. Loads the Content Safety knowledge: provision a resource, configure categories/blocklists/Prompt Shields, secure access, and verify a moderation call. Consumed by the azure-ai-content-safety specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure AI Content Safety).",
       "category": "cloud",
@@ -35135,6 +35382,36 @@
       "path": "skills/cloud/azure-application-gateway/SKILL.md"
     },
     {
+      "name": "azure-application-insights",
+      "description": "Use when designing, provisioning, configuring, or operating Application Insights — the APM feature of Azure Monitor for instrumenting and observing live applications (Application Insights). Covers workspace-based App Insights resources, the connection string, auto + manual (OpenTelemetry/SDK) instrumentation, distributed tracing, requests/dependencies/exceptions, Live Metrics, the Application Map, availability (URL/standard) tests, sampling, and querying telemetry tables via KQL. Loads the knowledge to stand up the resource, instrument an app, wire availability tests + alerts, and verify telemetry flows. Consumed by the azure-application-insights specialist and by the Azure role team (azure-observability-engineer / azure-cloud-architect / azure-iac-engineer) when operating the managed service (Application Insights).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-application-insights",
+        "management-governance",
+        "apm",
+        "tracing"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-application-insights/SKILL.md"
+    },
+    {
+      "name": "azure-arc",
+      "description": "Use when designing, onboarding, configuring, or operating Azure Arc — the control plane that projects servers, Kubernetes clusters, and data services running on-prem or in other clouds into Azure for unified management, policy, and monitoring (Azure Arc). Covers Arc-enabled servers (Connected Machine agent), Arc-enabled Kubernetes (cluster connect + GitOps/Flux config), Arc-enabled data services / SQL, extensions, Azure Policy and Machine Configuration at scale, and RBAC across hybrid estates. Loads the knowledge to onboard resources, project them as Azure resources, govern with policy, and verify connectivity. Consumed by the azure-arc specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect / azure-iac-engineer) when operating the managed service (Azure Arc).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-arc",
+        "management-governance",
+        "hybrid",
+        "multicloud"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-arc/SKILL.md"
+    },
+    {
       "name": "azure-attestation",
       "description": "Use when designing, provisioning, configuring, or operating Microsoft Azure Attestation — the unified remote-attestation service that verifies a platform and the integrity of the code running inside a Trusted Execution Environment before secrets are released (Azure Attestation). Covers remote attestation of TEEs — Intel SGX enclaves, AMD SEV-SNP confidential VMs, TPM boot/runtime measurements, and Trusted Launch guest attestation — attestation providers/endpoints, policies (the claims/rules deciding pass/fail), the signed JWT token a relying party consumes, policy signing, and integration with confidential computing + secret release. Loads the knowledge: create a provider, author and sign policies, wire relying parties, secure access, and verify a token validates. Consumed by the azure-attestation specialist and by the Azure role team (azure-security-reviewer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Attestation).",
       "category": "cloud",
@@ -35148,6 +35425,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-attestation/SKILL.md"
+    },
+    {
+      "name": "azure-automation",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Automation — the managed process-automation service for runbooks, configuration management, and update orchestration across Azure, on-prem, and other clouds (Azure Automation). Covers PowerShell/Python/PowerShell-Workflow/graphical runbooks, schedules and webhooks, Hybrid Runbook Workers for on-prem/multicloud execution, shared resources (variables/credentials/certificates/connections/modules), State Configuration (DSC), and Update Management. Loads the knowledge to stand up an Automation account, author and schedule runbooks, wire hybrid workers, and verify a job runs. Consumed by the azure-automation specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect / azure-iac-engineer) when operating the managed service (Azure Automation).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-automation",
+        "management-governance",
+        "runbooks",
+        "dsc"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-automation/SKILL.md"
     },
     {
       "name": "azure-backup",
@@ -35322,6 +35614,21 @@
       "path": "skills/cloud/azure-cosmos-db/SKILL.md"
     },
     {
+      "name": "azure-cost-management",
+      "description": "Use when designing, configuring, or operating Microsoft Cost Management — the native Azure service for analyzing, allocating, budgeting, and alerting on cloud spend across subscriptions, resource groups, and management groups (Microsoft Cost Management). Covers cost analysis views/dimensions, budgets with action-group alerts, scheduled exports to storage, cost allocation rules and tag-based showback/chargeback, anomaly alerts, and Reservation/Savings Plan recommendations. Loads the knowledge to stand up budgets + alerts, wire scheduled exports, model cost allocation, and verify spend reporting. Consumed by the azure-cost-management specialist and by the Azure role team (azure-cost-governor / azure-cloud-architect / azure-iac-engineer) when operating the managed service (Microsoft Cost Management).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-cost-management",
+        "management-governance",
+        "finops",
+        "budgets"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-cost-management/SKILL.md"
+    },
+    {
       "name": "azure-data-box",
       "description": "Use when planning, ordering, securing, or operating an Azure Data Box — Azure's offline, physical bulk data-transfer appliance for moving terabytes-to-petabytes into (or out of) Azure when network transfer is too slow or expensive (Azure Data Box). Covers the device family — Data Box Disk (~8 TB SSDs), Data Box (~100 TB), and Data Box Heavy (~1 PB) — plus Data Box Gateway/Edge for online/streaming cases, the order → ship → copy (NFS/SMB/REST) → return → ingest workflow, AES-256 encryption and tamper-resistance, the target storage account/blob/file destination, secure erasure (NIST) after upload, RBAC on orders, and chain-of-custody. Loads the knowledge: pick the right device by data size + timeline, order, copy securely, and verify ingest into the storage account. Consumed by the azure-data-box specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect / azure-data-engineer) when running the managed service (Azure Data Box).",
       "category": "cloud",
@@ -35473,6 +35780,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-dedicated-hsm/SKILL.md"
+    },
+    {
+      "name": "azure-devops",
+      "description": "Use when designing, provisioning, configuring, or operating Azure DevOps — Microsoft's hosted ALM suite spanning Boards, Repos, Pipelines, Artifacts, and Test Plans (Azure DevOps). Covers organization/project structure, Boards (work items/backlogs/sprints/queries), Repos (Git repos, branch policies, PRs), Pipelines (build/release CI/CD), Artifacts (package feeds + upstream sources), Test Plans, service connections, agent/deployment pools, security groups + permissions, and PATs vs Entra. Loads the knowledge to stand up an org/project, wire repos/boards/feeds/service connections, and verify the ALM flow. Consumed by the azure-devops specialist and by the github-actions team and Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service (Azure DevOps).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-devops",
+        "devops",
+        "alm",
+        "ci-cd"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-devops/SKILL.md"
     },
     {
       "name": "azure-digital-twins",
@@ -35764,6 +36086,21 @@
       "path": "skills/cloud/azure-load-balancer/SKILL.md"
     },
     {
+      "name": "azure-log-analytics",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Log Analytics — the log/telemetry data store and KQL query engine behind Azure Monitor, Sentinel, and Defender (Azure Log Analytics). Covers the Log Analytics workspace, tables and table plans (Analytics/Basic/Auxiliary), KQL queries + saved searches/functions, data retention + archive, ingestion-time transformations via DCRs, solutions/insights, and cross-workspace queries. Loads the knowledge to stand up the workspace, model tables/retention, author KQL, and verify data is queryable. Consumed by the azure-log-analytics specialist and by the Azure role team (azure-observability-engineer / azure-cloud-architect / azure-iac-engineer) when operating the managed service (Azure Log Analytics).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-log-analytics",
+        "management-governance",
+        "kql",
+        "observability"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-log-analytics/SKILL.md"
+    },
+    {
       "name": "azure-logic-apps",
       "description": "Use when designing, provisioning, securing, or operating Azure Logic Apps — the managed serverless workflow-automation and iPaaS integration service (Azure Logic Apps). Covers workflow definitions (triggers + actions, the Workflow Definition Language), the 400+ managed and custom connectors, the Consumption (multi-tenant, per-execution) vs Standard (single-tenant, App Service / Functions runtime, VNet, stateful/stateless) hosting models, control flow (conditions, switch, scopes, until, parallel branches, run-after), integration accounts and B2B/EDI (AS2, X12, EDIFACT), and on-prem connectivity via the data gateway. Loads the knowledge: create the workflow, pick Consumption vs Standard, wire triggers/connectors, add B2B/EDI where needed, secure with Entra/managed identity, and verify a run. Consumed by the azure-logic-apps specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure Logic Apps).",
       "category": "cloud",
@@ -35917,6 +36254,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-openai/SKILL.md"
+    },
+    {
+      "name": "azure-pipelines",
+      "description": "Use when designing, authoring, configuring, or operating Azure Pipelines — the CI/CD service within Azure DevOps for building, testing, and deploying via YAML or classic pipelines (Azure Pipelines). Covers the YAML pipeline model (triggers, stages → jobs → steps/tasks), templates + parameters, variables + variable groups (Key Vault-linked), agent pools (Microsoft-hosted vs self-hosted) + demands, environments with deployment strategies + approvals/checks, service connections, artifacts + caching, and matrix/multi-stage deploys. Loads the knowledge to author a pipeline, wire agents/environments/approvals, and verify a run succeeds. Consumed by the azure-pipelines specialist and by the github-actions team and Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service (Azure Pipelines).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-pipelines",
+        "devops",
+        "ci-cd",
+        "yaml"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-pipelines/SKILL.md"
     },
     {
       "name": "azure-policy",
