@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 513,
-    "skills": 108,
+    "agents": 534,
+    "skills": 109,
     "categories": 16
   },
   "agents": [
@@ -6700,6 +6700,574 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/java/java-unit-test-architect.md"
+    },
+    {
+      "name": "julia-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Julia — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution, verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a Julia app. Not for a single model call (use julia-ai-engineer) or retrieval pipelines (use julia-rag-engineer). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-agent-orchestrator.md"
+    },
+    {
+      "name": "julia-ai-engineer",
+      "description": "Use when building LLM-backed features in Julia — wiring model calls via HTTP.jl or PromptingTools.jl, prompt/response plumbing, structured output parsing, streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a Julia app. Not for retrieval pipelines (use julia-rag-engineer), multi-agent workflows (use julia-agent-orchestrator), or eval harnesses (use julia-evals-engineer). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-ai-engineer.md"
+    },
+    {
+      "name": "julia-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Julia — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized in Genie, Oxygen.jl, or HTTP.jl. Invoke to design or refine Julia HTTP endpoints. Not for gRPC/protobuf schemas (use julia-proto-steward) or for system structure (use julia-architect). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-api-designer.md"
+    },
+    {
+      "name": "julia-architect",
+      "description": "Use when designing or reviewing the structure of a Julia system, package, or module — module/package boundaries, type hierarchy and dispatch design, coupling/cohesion, interface contracts, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Julia or when reviewing a Julia design proposal. Not for implementing the feature (use julia-developer) or for HTTP endpoint shape alone (use julia-api-designer). (Julia)",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "julia",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "julia-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-architect.md"
+    },
+    {
+      "name": "julia-compliance-reviewer",
+      "description": "Use when checking Julia code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of Julia code. Not for finding exploitable vulnerabilities (use julia-security-reviewer). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "julia",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "julia-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-compliance-reviewer.md"
+    },
+    {
+      "name": "julia-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in Julia — Pact-style consumer and provider tests, contract publication, and compatibility checks between services. Invoke to add or fix contract tests in Julia so a provider change cannot silently break a consumer. Not for in-process integration tests (use julia-integration-test-architect) or end-to-end flows (use julia-sdet). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-contract-tester.md"
+    },
+    {
+      "name": "julia-cost-governor",
+      "description": "Use when reducing the runtime cost of Julia services — allocation and type-instability hot spots, GC pressure, container memory sizing, compile-latency (time-to-first-X) trade-offs, and cloud resource footprint, measured with BenchmarkTools and @code_warntype. Invoke to analyze and cut compute/memory cost of Julia workloads. Not for latency-only profiling unless it lowers cost, and not for resilience design (use julia-reliability-engineer). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "cost",
+        "performance"
+      ],
+      "skills": [
+        "cost-optimization",
+        "julia-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-cost-governor.md"
+    },
+    {
+      "name": "julia-developer",
+      "description": "Use when turning a Julia requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Julia bug. Invoke for building or extending Julia features (scientific/numerical/data) and for diagnosing failures in existing Julia code. Not for system-level design (use julia-architect) or for adding tests to code you did not write (use julia-unit-test-architect). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-developer.md"
+    },
+    {
+      "name": "julia-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Julia — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality in Julia. Not for building the feature (use julia-ai-engineer) or the retrieval pipeline (use julia-rag-engineer). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "julia-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-evals-engineer.md"
+    },
+    {
+      "name": "julia-integration-test-architect",
+      "description": "Use when testing how Julia components integrate across real boundaries — database, HTTP clients, message queues, or external processes — using Test.jl with real or containerized dependencies. Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use julia-unit-test-architect) or browser/end-to-end flows (use julia-sdet). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "integration-testing"
+      ],
+      "skills": [
+        "integration-testing",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-integration-test-architect.md"
+    },
+    {
+      "name": "julia-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Julia — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle in Julia. Invoke for MCP server/client work in a Julia codebase. Not for general LLM feature plumbing (use julia-ai-engineer) or multi-agent coordination (use julia-agent-orchestrator). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-mcp-steward.md"
+    },
+    {
+      "name": "julia-migration-engineer",
+      "description": "Use when migrating Julia code across a version or package boundary — Julia release upgrades, breaking package major versions, Manifest/compat-bound updates, or library replacements — done in safe, verifiable increments. Invoke to plan and execute a Julia migration or fix breakage it caused. Not for greenfield features (use julia-developer) or pure restructuring within one version (use julia-architect). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-migration-engineer.md"
+    },
+    {
+      "name": "julia-observability-engineer",
+      "description": "Use when instrumenting Julia services for observability — structured logging via the Logging stdlib, metrics, and distributed tracing via OpenTelemetry.jl, span/context propagation, and useful dashboards/alerts signals. Invoke to add or fix telemetry in Julia. Not for resilience patterns like retries/circuit-breakers (use julia-reliability-engineer) or cost reduction (use julia-cost-governor). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-observability-engineer.md"
+    },
+    {
+      "name": "julia-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a Julia application — externalizing prompts from code, templating and parameterizing them, versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a Julia codebase. Not for wiring the model call (use julia-ai-engineer) or scoring output quality (use julia-evals-engineer). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "julia",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "julia-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-prompt-librarian.md"
+    },
+    {
+      "name": "julia-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Julia — message and service definitions, field numbering, wire/back-compat rules, and generated-Julia integration via ProtoBuf.jl/gRPCClient.jl. Invoke for .proto schema design or compatibility review in a Julia codebase. Not for REST/HTTP API design (use julia-api-designer) or consumer/provider contract tests (use julia-contract-tester). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-proto-steward.md"
+    },
+    {
+      "name": "julia-qa-analyst",
+      "description": "Use when planning what to test for a Julia change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for Julia work, before or instead of writing tests. Not for writing the tests themselves (use the julia test-architect/sdet roles). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "julia",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "julia-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-qa-analyst.md"
+    },
+    {
+      "name": "julia-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Julia — chunking, embeddings, vector store wiring, hybrid retrieval + reranking, context assembly, and grounding/citation via PromptingTools.jl/RAGTools or HTTP.jl. Invoke for RAG retrieval quality or wiring in Julia. Not for a single model call (use julia-ai-engineer) or for building an eval harness (use julia-evals-engineer). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-rag-engineer.md"
+    },
+    {
+      "name": "julia-reliability-engineer",
+      "description": "Use when hardening a Julia service against partial failure — timeouts, retries-with-backoff, circuit breakers, bulkheads, and backpressure, plus graceful degradation and load shedding. Invoke for resilience design or review of Julia services. Not for emitting telemetry (use julia-observability-engineer) or triaging a live outage. (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-reliability-engineer.md"
+    },
+    {
+      "name": "julia-sdet",
+      "description": "Use when building end-to-end or UI/API test automation in Julia — HTTP.jl-driven API suites or browser automation, page/client objects, fixtures, data setup, and stable flows run in CI. Invoke to automate full user/API flows in Julia. Not for unit tests (use julia-unit-test-architect), component integration tests (use julia-integration-test-architect), or consumer/provider contracts (use julia-contract-tester). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-sdet.md"
+    },
+    {
+      "name": "julia-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Julia code or a diff — tracing untrusted input to sinks for injection (SQL/command/eval), broken authn/authz and IDOR, unsafe deserialization, SSRF/path-traversal, secrets exposure, and crypto misuse, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of Julia code you are authorized to review. Not for regulatory/policy conformance (use julia-compliance-reviewer). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "julia",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "julia-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-security-reviewer.md"
+    },
+    {
+      "name": "julia-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Julia code — mapping a unit's behaviors and writing deterministic Test.jl tests (@test, @testset) that catch real regressions (boundaries, invalid input, error paths, type stability). Invoke to raise meaningful unit coverage in Julia. Not for cross-component integration tests (use julia-integration-test-architect) or end-to-end automation (use julia-sdet). (Julia)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "julia",
+        "testing",
+        "test-jl"
+      ],
+      "skills": [
+        "test-design",
+        "julia-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/julia/julia-unit-test-architect.md"
     },
     {
       "name": "kotlin-agent-orchestrator",
@@ -14728,6 +15296,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/mobile/jetpack-compose-development/SKILL.md"
+    },
+    {
+      "name": "julia-idioms",
+      "description": "Use when writing, reviewing, or debugging Julia code — multiple dispatch as the core paradigm, the type system (abstract/concrete/parametric types, type stability), performance (type instability, globals, @code_warntype, @inbounds, allocations), broadcasting and vectorization, the package manager and environments (Project.toml/Manifest.toml), modules, metaprogramming/macros, and the two-language-problem solution (calling C/Python/R). Verifies with the project's tooling (julia run, Pkg.test/Test.jl, JET.jl, JuliaFormatter, BenchmarkTools). Common in scientific computing, numerical/ML, and data work. Any agent touching Julia (writer, reviewer, debugger, a scientific-computing team) can load it.",
+      "category": "languages",
+      "tags": [
+        "julia",
+        "multiple-dispatch",
+        "type-stability",
+        "performance",
+        "pkg",
+        "scientific-computing"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/julia-idioms/SKILL.md"
     },
     {
       "name": "kotlin-idioms",
