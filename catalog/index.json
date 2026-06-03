@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 576,
-    "skills": 111,
+    "agents": 597,
+    "skills": 112,
     "categories": 16
   },
   "agents": [
@@ -5477,6 +5477,576 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/go/go-unit-test-architect.md"
+    },
+    {
+      "name": "groovy-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Groovy — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution, verification/critic steps, and end-to-end cost/latency control (Groovy). Invoke to coordinate a planner+workers or chain tools across a Groovy app. Not for a single model call (use groovy-ai-engineer) or retrieval pipelines (use groovy-rag-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-agent-orchestrator.md"
+    },
+    {
+      "name": "groovy-ai-engineer",
+      "description": "Use when building LLM-backed features in Groovy — wiring model calls via LangChain4j/Spring AI or a raw SDK, prompt/response plumbing, structured output parsing, streaming, tool/function calling, and token/error/timeout handling (Groovy). Invoke for a single model integration in a Groovy app. Not for retrieval pipelines (use groovy-rag-engineer), multi-agent workflows (use groovy-agent-orchestrator), or eval harnesses (use groovy-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-ai-engineer.md"
+    },
+    {
+      "name": "groovy-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Groovy — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized in Grails, Micronaut, or Ratpack (Groovy). Invoke to design or refine Groovy HTTP endpoints. Not for gRPC/protobuf schemas (use groovy-proto-steward) or for system structure (use groovy-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-api-designer.md"
+    },
+    {
+      "name": "groovy-architect",
+      "description": "Use when designing or reviewing the structure of a Groovy system, service, or module — component boundaries, coupling/cohesion, interface contracts, where to use a DSL, package/module layout, and trade-offs against quality attributes, recorded as an ADR (Groovy). Invoke before building something non-trivial in Groovy (Gradle plugin, Jenkins shared library, Grails/Micronaut service) or when reviewing a Groovy design proposal. Not for implementing the feature (use groovy-developer) or for REST endpoint shape alone (use groovy-api-designer).",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "groovy",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "groovy-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-architect.md"
+    },
+    {
+      "name": "groovy-compliance-reviewer",
+      "description": "Use when checking Groovy code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control (Groovy). Invoke for compliance/control conformance review of Groovy code. Not for finding exploitable vulnerabilities (use groovy-security-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "groovy",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "groovy-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-compliance-reviewer.md"
+    },
+    {
+      "name": "groovy-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in Groovy — Pact-JVM or Spring Cloud Contract consumer and provider tests (often written as Spock specs), contract publication, and compatibility checks between services (Groovy). Invoke to add or fix contract tests in Groovy so a provider change cannot silently break a consumer. Not for in-process integration tests (use groovy-integration-test-architect) or end-to-end flows (use groovy-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-contract-tester.md"
+    },
+    {
+      "name": "groovy-cost-governor",
+      "description": "Use when reducing the runtime cost of Groovy services — JVM heap/GC tuning, container memory sizing, connection-pool and thread-pool right-sizing, dynamic-dispatch and metaprogramming overhead, wasteful allocation and query patterns, and cloud resource footprint (Groovy). Invoke to analyze and cut compute/memory cost of Groovy workloads. Not for latency-only profiling unless it lowers cost, and not for resilience design (use groovy-reliability-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "cost",
+        "jvm-tuning"
+      ],
+      "skills": [
+        "cost-optimization",
+        "groovy-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-cost-governor.md"
+    },
+    {
+      "name": "groovy-developer",
+      "description": "Use when turning a Groovy requirement, ticket, or feature into working, tested, incrementally-shipped code on the JVM, or when fixing a reported Groovy bug (Groovy). Invoke for building or extending Groovy features — Gradle build logic, Jenkins pipelines, Grails/Micronaut/Ratpack apps, Spock-tested code — and for diagnosing failures in existing Groovy code. Not for system-level design (use groovy-architect) or for adding tests to code you did not write (use groovy-unit-test-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "jvm",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-developer.md"
+    },
+    {
+      "name": "groovy-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Groovy — assembling datasets, defining eval suites (often as Spock specs), and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions (Groovy). Invoke to measure or gate LLM output quality in Groovy. Not for building the feature (use groovy-ai-engineer) or the retrieval pipeline (use groovy-rag-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "groovy-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-evals-engineer.md"
+    },
+    {
+      "name": "groovy-integration-test-architect",
+      "description": "Use when testing how Groovy components integrate across real boundaries — database, HTTP clients, message brokers, or other services — using Spock integration specs, Testcontainers, WireMock, or Grails/Micronaut test support (Groovy). Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use groovy-unit-test-architect) or browser/end-to-end flows (use groovy-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "integration-testing",
+        "testcontainers"
+      ],
+      "skills": [
+        "integration-testing",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-integration-test-architect.md"
+    },
+    {
+      "name": "groovy-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Groovy — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle in Groovy (Groovy). Invoke for MCP server/client work in a Groovy codebase. Not for general LLM feature plumbing (use groovy-ai-engineer) or multi-agent coordination (use groovy-agent-orchestrator).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-mcp-steward.md"
+    },
+    {
+      "name": "groovy-migration-engineer",
+      "description": "Use when migrating Groovy code across a version or framework boundary — Groovy major-version upgrades, Gradle build-script migrations, Grails/Micronaut major versions, dynamic-to-@CompileStatic hardening, or library replacements — done in safe, verifiable increments (Groovy). Invoke to plan and execute a Groovy migration or fix breakage it caused. Not for greenfield features (use groovy-developer) or pure restructuring within one version (use groovy-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-migration-engineer.md"
+    },
+    {
+      "name": "groovy-observability-engineer",
+      "description": "Use when instrumenting Groovy services for observability — structured logging, metrics, and distributed tracing via Micrometer/OpenTelemetry/SLF4J (and @Slf4j), span/context propagation, and useful dashboards/alerts signals (Groovy). Invoke to add or fix telemetry in Groovy. Not for resilience patterns like retries/circuit-breakers (use groovy-reliability-engineer) or cost reduction (use groovy-cost-governor).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-observability-engineer.md"
+    },
+    {
+      "name": "groovy-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a Groovy application — externalizing prompts from code, templating and parameterizing them (GString or template engine), versioning, and structuring a reusable prompt library (Groovy). Invoke to curate prompt assets in a Groovy codebase. Not for wiring the model call (use groovy-ai-engineer) or scoring output quality (use groovy-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "groovy",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "groovy-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-prompt-librarian.md"
+    },
+    {
+      "name": "groovy-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Groovy — message and service definitions, field numbering, wire/back-compat rules, and generated-Java/Groovy integration (Groovy). Invoke for .proto schema design or compatibility review in a Groovy codebase. Not for REST/HTTP API design (use groovy-api-designer) or consumer/provider contract tests (use groovy-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-proto-steward.md"
+    },
+    {
+      "name": "groovy-qa-analyst",
+      "description": "Use when planning what to test for a Groovy change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity (Groovy). Invoke to produce a test plan or risk assessment for Groovy work, before or instead of writing tests. Not for writing the tests themselves (use the groovy test-architect/sdet roles).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "groovy",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "groovy-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-qa-analyst.md"
+    },
+    {
+      "name": "groovy-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Groovy — chunking, embeddings, vector store wiring, hybrid retrieval + reranking, context assembly, and grounding/citation via LangChain4j/Spring AI (Groovy). Invoke for RAG retrieval quality or wiring in Groovy. Not for a single model call (use groovy-ai-engineer) or for building an eval harness (use groovy-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-rag-engineer.md"
+    },
+    {
+      "name": "groovy-reliability-engineer",
+      "description": "Use when hardening a Groovy service against partial failure — timeouts, retries-with-backoff, circuit breakers, bulkheads, and backpressure via Resilience4j or reactive operators, plus graceful degradation and load shedding (Groovy). Invoke for resilience design or review of Groovy services. Not for emitting telemetry (use groovy-observability-engineer) or triaging a live outage.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-reliability-engineer.md"
+    },
+    {
+      "name": "groovy-sdet",
+      "description": "Use when building end-to-end or UI/API test automation in Groovy — Geb/Selenium, Spock-driven REST/HTTP suites, page objects, fixtures, data setup, and stable selectors run in CI (Groovy). Invoke to automate full user/API flows in Groovy. Not for unit tests (use groovy-unit-test-architect), service integration tests (use groovy-integration-test-architect), or consumer/provider contracts (use groovy-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-sdet.md"
+    },
+    {
+      "name": "groovy-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Groovy code or a diff — tracing untrusted input to sinks for injection (SQL/command/GString-built queries), broken authn/authz and IDOR, unsafe deserialization, SSRF/path-traversal, secrets exposure, crypto misuse, and Groovy-specific risks like dynamic Eval/GroovyShell execution and Jenkins pipeline injection, with severity-ranked findings and minimal remediations (Groovy). Invoke for an appsec audit of Groovy code you are authorized to review. Not for regulatory/policy conformance (use groovy-compliance-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "groovy",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "groovy-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-security-reviewer.md"
+    },
+    {
+      "name": "groovy-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Groovy code — mapping a unit's behaviors and writing deterministic Spock specifications (or JUnit) that catch real regressions (boundaries, invalid input, error paths, dynamic-dispatch edges) (Groovy). Invoke to raise meaningful unit coverage in Groovy. Not for cross-service integration tests (use groovy-integration-test-architect) or end-to-end automation (use groovy-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "groovy",
+        "testing",
+        "spock"
+      ],
+      "skills": [
+        "test-design",
+        "groovy-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/groovy/groovy-unit-test-architect.md"
     },
     {
       "name": "haskell-agent-orchestrator",
@@ -16326,6 +16896,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/go-idioms/SKILL.md"
+    },
+    {
+      "name": "groovy-idioms",
+      "description": "Use when writing, reviewing, or debugging Groovy code — dynamic vs static dispatch (@CompileStatic/@TypeChecked), closures and functional collection methods (each/collect/findAll/inject), GStrings and string handling, optional typing and def, the Groovy truth / Elvis / safe-navigation operators, builder and DSL authoring (Gradle build scripts, Jenkinsfile pipelines, Spock specs), operator overloading and metaprogramming (ExpandoMetaClass, AST transforms), GDK extensions, and Java interop. Verifies with the project's build (groovy/gradle run, Spock/JUnit, gradle test) and CodeNarc. Any agent touching Groovy (writer, reviewer, debugger, a Gradle/Jenkins/Spock team) can load it.",
+      "category": "languages",
+      "tags": [
+        "groovy",
+        "jvm",
+        "gradle",
+        "jenkins",
+        "spock",
+        "dsl",
+        "metaprogramming"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/groovy-idioms/SKILL.md"
     },
     {
       "name": "haskell-idioms",
