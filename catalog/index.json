@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 849,
-    "skills": 141,
+    "agents": 857,
+    "skills": 149,
     "categories": 17
   },
   "agents": [
@@ -925,6 +925,66 @@
       "path": "agents/web/astro/astro-test-engineer.md"
     },
     {
+      "name": "aws-app-runner-specialist",
+      "description": "Use when designing, building, deploying, or operating AWS App Runner (AWS) — services from an ECR image or source repo, automatic HTTPS endpoints, autoscaling (MaxConcurrency/min/max), instance CPU/memory sizing, VPC connectors for private egress, instance vs access roles, custom domains, and auto-deploy on push. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the App Runner service end-to-end. Pick this for a single managed HTTP/HTTPS web service or API with minimal infra; for sidecars/non-HTTP/fine-grained networking use aws-fargate-specialist, event functions aws-lambda-specialist, PaaS stacks aws-elastic-beanstalk-specialist; for GCP Cloud Run or Azure Container Apps defer to those clouds' specialists.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "app-runner",
+        "containers",
+        "paas",
+        "autoscaling",
+        "specialist"
+      ],
+      "skills": [
+        "aws-app-runner",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/compute/aws-app-runner-specialist.md"
+    },
+    {
+      "name": "aws-batch-specialist",
+      "description": "Use when designing, building, or operating AWS Batch (AWS) — compute environments (EC2/Spot/Fargate, allocation strategies), job queues and priorities, job definitions (vCPU/memory/GPU, retries, timeouts), array jobs, job dependencies, scheduling/fair-share policies, and CE scale-to-zero. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the Batch service end-to-end. Pick this for large fleets of independent jobs, array sweeps, HPC/GPU, and Spot-driven batch; for short event functions use aws-lambda-specialist, long-running services aws-fargate-specialist; for GCP Batch or Azure Batch defer to those clouds' specialists.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "batch",
+        "hpc",
+        "job-queue",
+        "spot",
+        "specialist"
+      ],
+      "skills": [
+        "aws-batch",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/compute/aws-batch-specialist.md"
+    },
+    {
       "name": "aws-cloud-architect",
       "description": "Use when designing or reviewing an AWS architecture — selecting managed services, laying out accounts/VPCs/regions, and evaluating a design against the Well-Architected Framework's six pillars (AWS). Produces the design and trade-offs, not the IaC. NOT for writing Terraform/CDK (use aws-iac-engineer), IAM/exposure auditing (aws-security-reviewer), cost tuning (aws-cost-governor), or generic IaC across clouds (terraform-architect).",
       "category": "cloud",
@@ -1008,6 +1068,126 @@
       "path": "agents/cloud/aws/aws-data-engineer.md"
     },
     {
+      "name": "aws-ec2-auto-scaling-specialist",
+      "description": "Use when designing, configuring, or operating Amazon EC2 Auto Scaling (AWS) — Auto Scaling groups, launch templates, min/desired/max capacity, scaling policies (target tracking, step, scheduled, predictive), EC2/ELB health checks and instance replacement, lifecycle hooks, instance refresh, mixed-instances + Spot, warm pools, and multi-AZ distribution. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the EC2 Auto Scaling service end-to-end. Pair with aws-ec2-specialist (the instances/launch template); for ECS container scaling use the Fargate specialist, and Lambda/App Runner have their own scaling; for GCP MIGs or Azure VM Scale Sets defer to those clouds' specialists.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "ec2-auto-scaling",
+        "asg",
+        "scaling-policy",
+        "spot",
+        "specialist"
+      ],
+      "skills": [
+        "aws-ec2-auto-scaling",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/compute/aws-ec2-auto-scaling-specialist.md"
+    },
+    {
+      "name": "aws-ec2-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon EC2 (AWS) — instance type/family selection and sizing, AMIs and launch templates, EBS storage, security groups, IAM instance profiles, IMDSv2 hardening, capacity (On-Demand/Spot/Reserved), and instance lifecycle. NOT the AWS role team — aws-cloud-architect (multi-service Well-Architected design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the EC2 service end-to-end. For serverless functions use aws-lambda-specialist, for serverless containers aws-fargate/app-runner specialists, for elastic self-healing fleets aws-ec2-auto-scaling-specialist; for GCP Compute Engine or Azure VMs defer to those clouds' specialists.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "ec2",
+        "compute",
+        "ebs",
+        "security-groups",
+        "specialist"
+      ],
+      "skills": [
+        "aws-ec2",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/compute/aws-ec2-specialist.md"
+    },
+    {
+      "name": "aws-elastic-beanstalk-specialist",
+      "description": "Use when designing, deploying, or operating AWS Elastic Beanstalk (AWS) — applications and environments, platform/solution-stack choice, web vs worker tiers, option settings and .ebextensions/.platform hooks, deployment policies (all-at-once/rolling/immutable/blue-green swap), the service vs instance-profile roles, and the EC2/ASG/ELB it manages. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the Beanstalk service end-to-end. Pick this for push-to-deploy PaaS on managed stacks; for pure containers use aws-fargate/app-runner specialists, event functions aws-lambda-specialist, raw VMs aws-ec2-specialist; for GCP App Engine or Azure App Service defer to those clouds' specialists.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "elastic-beanstalk",
+        "paas",
+        "deployment",
+        "environments",
+        "specialist"
+      ],
+      "skills": [
+        "aws-elastic-beanstalk",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/compute/aws-elastic-beanstalk-specialist.md"
+    },
+    {
+      "name": "aws-fargate-specialist",
+      "description": "Use when designing, building, deploying, or operating AWS Fargate (AWS) — ECS task definitions and services, task CPU/memory sizing, awsvpc networking, task vs execution roles, ALB integration, service autoscaling, Fargate/Fargate Spot capacity, and logging. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the Fargate service end-to-end. Pick this for containerized long-running services/jobs without node management; for raw VMs use aws-ec2-specialist, a single managed web service aws-app-runner-specialist, event functions aws-lambda-specialist, batch jobs aws-batch-specialist; for GCP Cloud Run or Azure Container Apps defer to those clouds' specialists.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "fargate",
+        "ecs",
+        "containers",
+        "serverless",
+        "specialist"
+      ],
+      "skills": [
+        "aws-fargate",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/compute/aws-fargate-specialist.md"
+    },
+    {
       "name": "aws-iac-engineer",
       "description": "Use when writing or refactoring AWS infrastructure as code — Terraform, CDK, CloudFormation, or SAM that provisions AWS resources, then validating it with plan/synth/validate (AWS). NOT for cloud architecture/Well-Architected design (use aws-cloud-architect), IAM/exposure review (aws-security-reviewer), or generic provider-agnostic Terraform language work (terraform-architect — this agent is AWS-specific infra).",
       "category": "cloud",
@@ -1036,6 +1216,66 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/aws-iac-engineer.md"
+    },
+    {
+      "name": "aws-lambda-specialist",
+      "description": "Use when designing, building, deploying, or operating AWS Lambda (AWS) — function sizing (memory/timeout), runtimes/container images, triggers and event source mappings, concurrency (reserved/provisioned), cold-start tuning, layers, execution roles, secrets/env, and versions/aliases. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the Lambda service end-to-end. Pick this for short event-driven/glue/API-backend work; for long-running VMs use aws-ec2-specialist, for serverless containers aws-fargate/app-runner specialists, batch fleets aws-batch-specialist; for GCP Cloud Functions or Azure Functions defer to those clouds' specialists.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "lambda",
+        "serverless",
+        "functions",
+        "concurrency",
+        "specialist"
+      ],
+      "skills": [
+        "aws-lambda",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/compute/aws-lambda-specialist.md"
+    },
+    {
+      "name": "aws-lightsail-specialist",
+      "description": "Use when designing, provisioning, deploying, or operating Amazon Lightsail (AWS) — blueprint + bundle selection, the per-instance firewall, static IPs, managed databases, load balancers with managed certs, container services, snapshots/backups, the Lightsail DNS zone, and predictable fixed-price hosting. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the Lightsail service end-to-end. Pick this for simple fixed-price small apps/prototypes; when you need instance types, deep VPC/IAM, or autoscaling use aws-ec2-specialist / aws-ec2-auto-scaling-specialist or container specialists; for GCP/Azure simple hosting defer to those clouds' specialists.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "lightsail",
+        "vps",
+        "fixed-price",
+        "simple-hosting",
+        "specialist"
+      ],
+      "skills": [
+        "aws-lightsail",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/compute/aws-lightsail-specialist.md"
     },
     {
       "name": "aws-networking-engineer",
@@ -23695,6 +23935,135 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/web/astro-framework/SKILL.md"
+    },
+    {
+      "name": "aws-app-runner",
+      "description": "Use when designing, building, securing, or operating AWS App Runner — services from a container image (ECR) or source repo (auto-build), automatic HTTPS endpoints, autoscaling configurations (concurrency/min/max), instance CPU/memory sizing, VPC connectors for private egress, instance vs access roles, custom domains, observability, and auto-deploy on push (AWS App Runner). Loads the App Runner-specific knowledge: how to choose source, size and autoscale, scope its roles, reach private resources, and verify the service. Consumed by the App Runner specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) for fully managed web-service hosting.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "app-runner",
+        "containers",
+        "paas",
+        "autoscaling",
+        "web-service"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-app-runner/SKILL.md"
+    },
+    {
+      "name": "aws-batch",
+      "description": "Use when designing, building, securing, or operating AWS Batch — compute environments (managed/unmanaged, EC2/Spot/Fargate), job queues with priorities, job definitions (container, vCPU/memory/GPU, retries, timeouts), array jobs, job dependencies, scheduling policies/fair-share, and CE scaling/allocation strategies (AWS Batch). Loads the Batch-specific knowledge: how to model queues and compute environments, size jobs, scope job/execution roles, control cost with Spot, and verify a job runs. Consumed by the Batch specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) for large-scale batch/HPC workloads.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "batch",
+        "hpc",
+        "job-queue",
+        "spot",
+        "compute-environment"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-batch/SKILL.md"
+    },
+    {
+      "name": "aws-ec2",
+      "description": "Use when designing, provisioning, securing, or operating Amazon EC2 — instances, AMIs, instance types/families and sizing, EBS volumes, key pairs, security groups, IAM instance profiles, user data, placement groups, capacity (On-Demand/Spot/Reserved/Savings Plans), and lifecycle (start/stop/hibernate/terminate) (Amazon EC2). Loads the EC2-specific knowledge: how to pick a family, attach least-privilege roles, harden network exposure, control cost, and verify an instance is healthy. Consumed by the EC2 specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they touch raw compute.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "ec2",
+        "compute",
+        "ebs",
+        "security-groups",
+        "spot",
+        "sizing"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-ec2/SKILL.md"
+    },
+    {
+      "name": "aws-ec2-auto-scaling",
+      "description": "Use when designing, configuring, or operating Amazon EC2 Auto Scaling — Auto Scaling groups (ASGs), launch templates, desired/min/max capacity, scaling policies (target tracking, step, simple, scheduled, predictive), health checks (EC2/ELB) and instance replacement, lifecycle hooks, instance refresh, mixed instances + Spot allocation, warm pools, and multi-AZ distribution (Amazon EC2 Auto Scaling). Loads the ASG-specific knowledge: how to define a group, choose scaling policies, wire health checks and refreshes, mix Spot, and verify scaling. Consumed by the EC2 Auto Scaling specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) for self-healing elastic EC2 fleets.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "ec2-auto-scaling",
+        "asg",
+        "scaling-policy",
+        "spot",
+        "instance-refresh"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-ec2-auto-scaling/SKILL.md"
+    },
+    {
+      "name": "aws-elastic-beanstalk",
+      "description": "Use when designing, deploying, securing, or operating AWS Elastic Beanstalk — applications, environments, platforms/solution stacks, environment tiers (web server vs worker), configuration via option settings and .ebextensions/.platform, deployment policies (all-at-once/rolling/immutable/blue-green via swap), managed updates, and the underlying EC2/ASG/ELB it provisions (AWS Elastic Beanstalk). Loads the Beanstalk-specific knowledge: how to pick a platform, configure environments, choose a deployment policy, secure it, and verify health. Consumed by the Beanstalk specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) for PaaS-style app deploys.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "elastic-beanstalk",
+        "paas",
+        "deployment",
+        "ebextensions",
+        "environments"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-elastic-beanstalk/SKILL.md"
+    },
+    {
+      "name": "aws-fargate",
+      "description": "Use when designing, building, securing, or operating AWS Fargate — serverless containers on ECS (and EKS), task definitions, services, task/CPU-memory sizing, awsvpc networking, task vs execution roles, load balancer integration, autoscaling, capacity providers (Fargate/Fargate Spot), and logging (AWS Fargate). Loads the Fargate-specific knowledge: how to size a task, split task vs execution roles, wire networking/ALB, autoscale, control cost, and verify a service is healthy. Consumed by the Fargate specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they run containers without managing nodes.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "fargate",
+        "ecs",
+        "containers",
+        "serverless",
+        "task-definition"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-fargate/SKILL.md"
+    },
+    {
+      "name": "aws-lambda",
+      "description": "Use when designing, building, securing, or operating AWS Lambda — functions, runtimes, handlers, triggers/event sources, memory/timeout sizing, concurrency (reserved/provisioned), cold starts, layers, container images, execution roles, environment/secrets, and packaging/deploy (AWS Lambda). Loads the Lambda-specific knowledge: how to size and tune a function, wire event sources, scope its execution role, control concurrency and cost, and verify an invocation. Consumed by the Lambda specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they touch serverless compute.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "lambda",
+        "serverless",
+        "functions",
+        "concurrency",
+        "event-driven"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-lambda/SKILL.md"
+    },
+    {
+      "name": "aws-lightsail",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Lightsail — simplified VPS instances, bundles/blueprints, fixed-price plans, managed databases, load balancers, container services, object storage, snapshots, static IPs, and the Lightsail DNS/networking model (Amazon Lightsail). Loads the Lightsail-specific knowledge: how to pick a bundle, configure firewall/networking, snapshot/back up, control the flat-rate cost, and verify an instance/service. Consumed by the Lightsail specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when a workload wants simple fixed-price hosting.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "lightsail",
+        "vps",
+        "fixed-price",
+        "simple-hosting",
+        "blueprints"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-lightsail/SKILL.md"
     },
     {
       "name": "aws-services",
