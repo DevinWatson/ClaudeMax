@@ -216,16 +216,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] gcp|application-development|application-integration|Application Integration
 - [x] gcp|application-development|cloud-build|Cloud Build
 - [x] gcp|application-development|cloud-deploy|Cloud Deploy
-- [ ] gcp|application-development|cloud-scheduler|Cloud Scheduler
-- [ ] gcp|application-development|cloud-tasks|Cloud Tasks
-- [ ] gcp|application-development|cloud-workstations|Cloud Workstations
-- [ ] gcp|application-development|eventarc|Eventarc
-- [ ] gcp|application-development|pubsub|Pub/Sub
-- [ ] gcp|application-development|workflows|Workflows
-- [ ] gcp|application-development|artifact-registry|Artifact Registry
+- [x] gcp|application-development|cloud-scheduler|Cloud Scheduler
+- [x] gcp|application-development|cloud-tasks|Cloud Tasks
+- [x] gcp|application-development|cloud-workstations|Cloud Workstations
+- [x] gcp|application-development|eventarc|Eventarc
+- [x] gcp|application-development|pubsub|Pub/Sub
+- [x] gcp|application-development|workflows|Workflows
+- [x] gcp|application-development|artifact-registry|Artifact Registry
 
 ### application-hosting
-- [ ] gcp|application-hosting|app-engine|App Engine
+- [x] gcp|application-hosting|app-engine|App Engine
 - [ ] gcp|application-hosting|cloud-run|Cloud Run
 - [ ] gcp|application-hosting|gke|Google Kubernetes Engine
 

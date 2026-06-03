@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1001,
-    "skills": 293,
+    "agents": 1009,
+    "skills": 301,
     "categories": 17
   },
   "agents": [
@@ -11543,6 +11543,35 @@
       "path": "agents/cloud/gcp/services/application-development/gcp-apigee-specialist.md"
     },
     {
+      "name": "gcp-app-engine-specialist",
+      "description": "Use when designing, configuring, deploying, or operating App Engine (GCP) — the managed PaaS for web apps and APIs: the standard vs flexible environments, the application / services / versions hierarchy, app.yaml (runtime, handlers, env vars, instance_class, scaling block), traffic splitting + migration (blue-green/canary/A-B), automatic/basic/manual scaling, the App Engine service account + IAM + Identity-Aware Proxy, custom domains + managed TLS, and the permanent region. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. App Engine is opinionated PaaS — pick gcp-cloud-run for serverless CONTAINERS (more control, scale-to-zero) and gcp-gke for full KUBERNETES; prefer Cloud Run over App Engine flexible for new container workloads. AWS analog is Elastic Beanstalk (aws-elastic-beanstalk); Azure is App Service (azure-app-service) — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "app-engine",
+        "application-hosting",
+        "paas",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-app-engine",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-hosting/gcp-app-engine-specialist.md"
+    },
+    {
       "name": "gcp-application-integration-specialist",
       "description": "Use when designing, configuring, deploying, or operating Application Integration (GCP) — the iPaaS for connecting apps and automating business processes: integration flows on a visual canvas, triggers (API/scheduler/Pub-Sub/event), tasks (data mapping, REST/SOAP, connector tasks, conditions/loops, sub-integrations, suspend/approval), the Integration Connectors fabric to SaaS/databases/Google services, variables, authentication profiles, error handling, regions, IAM, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. This owns low-code iPaaS integration — defer code-defined GCP workflow orchestration to the Workflows specialist and event routing/delivery to the Eventarc/Pub-Sub specialists. The AWS equivalent is AWS AppFlow/Step Functions; Azure is Logic Apps — defer those clouds.",
       "category": "cloud",
@@ -11570,6 +11599,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/application-development/gcp-application-integration-specialist.md"
+    },
+    {
+      "name": "gcp-artifact-registry-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Artifact Registry (GCP) — the managed registry for container images and language packages: repositories by format (Docker/OCI, Maven, npm, Python, Go, apt, yum, Helm), modes (standard / remote upstream-cache / virtual aggregation), regional vs multi-region location, authentication (keyless Workload Identity, SA keys), reader/writer/admin IAM, cleanup policies + immutable tags, vulnerability scanning, CMEK, and VPC-SC. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Artifact Registry STORES artifacts — for the CI build that produces/pushes them defer to gcp-cloud-build-specialist, for the delivery that consumes them to gcp-cloud-deploy-specialist. AWS equivalents are ECR (aws-ecr, images) + CodeArtifact; Azure is Azure Container Registry (azure-container-registry) — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "artifact-registry",
+        "application-development",
+        "container-registry",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-artifact-registry",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-development/gcp-artifact-registry-specialist.md"
     },
     {
       "name": "gcp-cloud-architect",
@@ -11656,6 +11714,64 @@
       "path": "agents/cloud/gcp/services/application-development/gcp-cloud-deploy-specialist.md"
     },
     {
+      "name": "gcp-cloud-scheduler-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Cloud Scheduler (GCP) — the managed cron / scheduled-job service: unix-cron schedules + timezones, HTTP / Pub-Sub / App Engine targets, retry config + attempt deadlines, and the invoker service account + OIDC/OAuth auth. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Cloud Scheduler only FIRES on a schedule — for async queues + rate/concurrency control defer to gcp-cloud-tasks-specialist, for multi-step orchestration to gcp-workflows-specialist, for event routing to gcp-eventarc-specialist. AWS equivalent is EventBridge Scheduler (aws-eventbridge-scheduler); Azure is Logic Apps / Scheduler — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-scheduler",
+        "application-development",
+        "cron",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-scheduler",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-development/gcp-cloud-scheduler-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-tasks-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Cloud Tasks (GCP) — the managed asynchronous task-queue service: queues with rate + concurrency control (maxDispatchesPerSecond, maxConcurrentDispatches, maxBurstSize), HTTP / App Engine task targets, per-task scheduling (scheduleTime), dispatch deadlines, retry config, task dedup, and the invoker service account + OIDC/OAuth auth. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Cloud Tasks gives explicit per-task delivery + rate limiting — for time-based cron triggers defer to gcp-cloud-scheduler-specialist, for high-throughput pub/sub fan-out to gcp-pubsub-specialist, for orchestration to gcp-workflows-specialist. AWS equivalent is SQS (aws-sqs, + Lambda); Azure is Storage Queues / Service Bus — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-tasks",
+        "application-development",
+        "task-queue",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-tasks",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-development/gcp-cloud-tasks-specialist.md"
+    },
+    {
       "name": "gcp-cloud-tpu-specialist",
       "description": "Use when designing, configuring, deploying, or operating Cloud TPU (GCP) — Google's ML accelerators: choosing the generation (v5e/v5p), slice topology and Pods, single- vs multi-host slices and Multislice, TPU VMs vs queued resources, the JAX/PyTorch-XLA/TF runtime, spot/reservations, VPC placement, IAM, CMEK, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. This owns the ACCELERATOR hardware — defer training orchestration, the model registry, endpoints, and pipelines to gcp-vertex-ai-specialist (which can run on TPUs); generic GPU/Compute VMs belong to the compute specialist. NOT the language ai-engineer/rag-engineer roles, which write model code; this provisions and operates the accelerator. The AWS equivalent is AWS Trainium/Inferentia; Azure uses ND-series GPUs — defer to those clouds.",
       "category": "cloud",
@@ -11683,6 +11799,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/ai-ml/gcp-cloud-tpu-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-workstations-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Cloud Workstations (GCP) — the managed, secure cloud-based development-environment service: workstation clusters on a VPC, workstation configurations (machine type, boot/persistent disk, container/custom dev image, idle + running timeouts, service account), individual workstations, the IDE access model (browser / JetBrains / local SSH-IDE), and private / VPC-SC networking. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Cloud Workstations is a managed DEV ENVIRONMENT, not an app runtime — to host/run applications defer to gcp-app-engine-specialist / gcp-cloud-run / gcp-gke, and to store images defer to gcp-artifact-registry-specialist. AWS analog is Cloud9 / WorkSpaces; Azure is Dev Box / Codespaces — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-workstations",
+        "application-development",
+        "dev-environment",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-workstations",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-development/gcp-cloud-workstations-specialist.md"
     },
     {
       "name": "gcp-cost-governor",
@@ -11801,6 +11946,35 @@
       "path": "agents/cloud/gcp/services/ai-ml/gcp-enterprise-knowledge-graph-specialist.md"
     },
     {
+      "name": "gcp-eventarc-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Eventarc (GCP) — the managed event-routing service that delivers CloudEvents to a destination: triggers, event sources (Cloud Audit Logs, direct events, Pub-Sub), event filters (type/service/methodName/resource), destinations (Cloud Run, Functions 2nd gen, GKE, Workflows), the trigger service account + invoker IAM, and the transport Pub/Sub topic. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Eventarc ROUTES events — for multi-step orchestration defer to gcp-workflows-specialist, for rate-limited targeted task delivery to gcp-cloud-tasks-specialist, and for the underlying managed messaging bus to gcp-pubsub-specialist. AWS equivalent is EventBridge (aws-eventbridge); Azure is Event Grid — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "eventarc",
+        "application-development",
+        "event-routing",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-eventarc",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-development/gcp-eventarc-specialist.md"
+    },
+    {
       "name": "gcp-iac-engineer",
       "description": "Use when writing or refactoring GCP infrastructure as code — Terraform or Deployment Manager that provisions Google Cloud resources, then validating it with plan/validate (GCP). NOT for cloud architecture/Architecture-Framework design (use gcp-cloud-architect), IAM/exposure review (gcp-security-reviewer), generic provider-agnostic Terraform language work (terraform-architect — this agent is GCP-specific infra), or AWS/Azure infra (aws-/azure-iac-engineer).",
       "category": "cloud",
@@ -11888,6 +12062,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/gcp-observability-engineer.md"
+    },
+    {
+      "name": "gcp-pubsub-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Pub/Sub (GCP) — the managed global messaging / event-streaming service: topics + subscriptions, push vs pull (incl. BigQuery / Cloud Storage subscriptions), ordering keys, exactly-once delivery, ack deadlines + redelivery, dead-letter topics + retry policy, retention + seek/replay, schemas (Avro/Protobuf), message filtering, and resource-level IAM + CMEK. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. This specialist owns the GCP MANAGED Pub/Sub service — for self-managed Apache Kafka brokers/clusters defer to the kafka data team (agents/data/kafka). For event routing defer to gcp-eventarc-specialist, for rate-limited task delivery to gcp-cloud-tasks-specialist. AWS analogs are SNS + SQS / Kinesis (aws-sns/aws-sqs); Azure is Event Hubs (azure-event-hubs) / Service Bus — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "pubsub",
+        "application-development",
+        "messaging",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-pubsub",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-development/gcp-pubsub-specialist.md"
     },
     {
       "name": "gcp-reliability-engineer",
@@ -12154,6 +12357,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/ai-ml/gcp-vision-api-specialist.md"
+    },
+    {
+      "name": "gcp-workflows-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Workflows (GCP) — the serverless orchestration service that runs steps from a YAML/JSON workflow definition: assign/call/switch/for/parallel/try-retry-except steps, expressions + variables, HTTP calls and Google Cloud connectors, authenticated calls via the workflow service account, subworkflows, callbacks + waits, error handling + retries, executions, and triggers (Scheduler / Eventarc). NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Workflows ORCHESTRATES multi-step flows — for fire-and-forget rate-limited task delivery defer to gcp-cloud-tasks-specialist, for event routing to gcp-eventarc-specialist, for cron triggers to gcp-cloud-scheduler-specialist, for pub/sub to gcp-pubsub-specialist. AWS equivalent is Step Functions (aws-step-functions); Azure is Logic Apps / Durable Functions — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "workflows",
+        "application-development",
+        "orchestration",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-workflows",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-development/gcp-workflows-specialist.md"
     },
     {
       "name": "geospatial-analyst",
@@ -31068,6 +31300,22 @@
       "path": "skills/cloud/gcp-apigee/SKILL.md"
     },
     {
+      "name": "gcp-app-engine",
+      "description": "Use when designing, provisioning, securing, or operating App Engine — Google Cloud's fully managed PaaS for running web apps and APIs: the standard vs flexible environments (sandboxed language runtimes + scale-to-zero vs Docker containers on managed Compute VMs), the application / services / versions hierarchy, app.yaml configuration (runtime, handlers, env vars, instance_class, scaling blocks), traffic splitting + migration across versions (blue-green / canary / A-B), automatic / basic / manual scaling, the App Engine service account + IAM + Identity-Aware Proxy, custom domains + managed TLS, cron (legacy) and task handling, and regional pinning. Loads the App Engine knowledge: author app.yaml, deploy a version, split/migrate traffic, secure with IAP, and verify the served app. Consumed by the App Engine specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they host apps on PaaS (App Engine).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "app-engine",
+        "application-hosting",
+        "paas",
+        "traffic-splitting",
+        "autoscaling"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-app-engine/SKILL.md"
+    },
+    {
       "name": "gcp-application-integration",
       "description": "Use when designing, provisioning, securing, or operating Application Integration — Google Cloud's iPaaS (integration platform as a service) for connecting apps and automating business processes: integration flows on a visual canvas, triggers (API/scheduler/Pub-Sub/Cloud-Pub-Sub/event), tasks (data mapping, REST/SOAP calls, connector tasks, conditions/loops, sub-integrations, suspend/approval), the Integration Connectors fabric (managed connectors to SaaS, databases, and Google services), variables, authentication profiles, and error handling, plus regions, IAM, and cost (Application Integration). Loads the Application Integration knowledge: build an integration flow with a trigger and tasks, attach connectors and auth profiles, secure the identity, publish, and verify an execution. Consumed by the Application Integration specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add integration.",
       "category": "cloud",
@@ -31082,6 +31330,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-application-integration/SKILL.md"
+    },
+    {
+      "name": "gcp-artifact-registry",
+      "description": "Use when designing, provisioning, securing, or operating Artifact Registry — Google Cloud's managed registry for container images and language packages: repositories by format (Docker/OCI, Maven, npm, Python/PyPI, Go, apt, yum, plus Helm/Kubeflow), repository modes (standard, remote upstream-proxy/cache, and virtual aggregation), regional vs multi-region location, authentication (gcloud credential helper, keyless Workload Identity, service-account keys), IAM roles (reader/writer/admin), cleanup policies + immutable tags, container vulnerability scanning + Artifact Analysis, CMEK, and VPC-SC. Loads the Artifact Registry knowledge: create a repo of the right format/mode, authenticate + push/pull, secure access, enable scanning + cleanup, and verify an artifact resolves. Consumed by the Artifact Registry specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they stand up image/package storage (Artifact Registry).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "artifact-registry",
+        "application-development",
+        "container-registry",
+        "packages",
+        "vulnerability-scanning"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-artifact-registry/SKILL.md"
     },
     {
       "name": "gcp-cloud-build",
@@ -31116,6 +31380,38 @@
       "path": "skills/cloud/gcp-cloud-deploy/SKILL.md"
     },
     {
+      "name": "gcp-cloud-scheduler",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Scheduler — Google Cloud's fully managed enterprise cron / job-scheduling service: scheduled jobs defined by unix-cron / App Engine cron schedules and a timezone, targets (HTTP/HTTPS endpoints, Pub/Sub topics, App Engine HTTP), retry config (max retries, min/max backoff, max doublings, max retry duration), attempt deadlines, the invoker service account + OIDC/OAuth auth headers, and the guaranteed at-least-once delivery model. Loads the Cloud Scheduler knowledge: define a cron schedule, wire a target with auth, set retries/deadline, and verify a job fires. Consumed by the Cloud Scheduler specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add scheduled invocations (Cloud Scheduler).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-scheduler",
+        "application-development",
+        "cron",
+        "scheduled-jobs",
+        "pubsub"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-scheduler/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-tasks",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Tasks — Google Cloud's fully managed asynchronous task-queue service: queues with rate + concurrency control (maxDispatchesPerSecond, maxConcurrentDispatches, maxBurstSize), task targets (HTTP/HTTPS endpoints and App Engine handlers), per-task scheduling (scheduleTime for deferred execution), dispatch deadlines, retry config (maxAttempts, min/max backoff, maxDoublings, maxRetryDuration), task deduplication by name, the invoker service account + OIDC/OAuth auth, and at-least-once delivery. Loads the Cloud Tasks knowledge: create a queue with rate limits, enqueue HTTP tasks with auth, tune retries/deadlines, and verify dispatch. Consumed by the Cloud Tasks specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add async/decoupled task processing (Cloud Tasks).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-tasks",
+        "application-development",
+        "task-queue",
+        "async",
+        "rate-limiting"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-tasks/SKILL.md"
+    },
+    {
       "name": "gcp-cloud-tpu",
       "description": "Use when designing, provisioning, securing, or operating Cloud TPU — Google Cloud's custom ML accelerators: TPU generations (v5e, v5p, and their predecessors), single TPU VMs vs multi-host Pods and slices, topologies and chips/cores, the runtime (JAX, PyTorch/XLA, TensorFlow), TPU VM vs queued resources, Multislice training, the TPU runtime image, plus regions/zones, preemptible/spot and reservations, IAM, networking, and cost (Cloud TPU). Loads the Cloud TPU knowledge: choose the generation and slice topology, provision a TPU VM or queued resource, run a JAX/PyTorch/TF workload, secure the identity, and verify the accelerator runs a step. Consumed by the Cloud TPU specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add accelerators.",
       "category": "cloud",
@@ -31131,6 +31427,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-cloud-tpu/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-workstations",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Workstations — Google Cloud's managed, secure, cloud-based development environments: workstation cluster (on a VPC), workstation configurations (the template — machine type, boot/persistent disk, container image / custom dev image, idle + running timeouts, service account), individual workstations (the running instances), the IDE access model (browser, JetBrains, local SSH/IDE via gateway), private/VPC-SC networking, and policy controls. Loads the Cloud Workstations knowledge: define a config, launch a workstation, secure access + image, and verify a developer can connect and build. Consumed by the Cloud Workstations specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they standardize managed dev environments (Cloud Workstations).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-workstations",
+        "application-development",
+        "dev-environment",
+        "ide",
+        "vpc"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-workstations/SKILL.md"
     },
     {
       "name": "gcp-document-ai",
@@ -31163,6 +31475,38 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-enterprise-knowledge-graph/SKILL.md"
+    },
+    {
+      "name": "gcp-eventarc",
+      "description": "Use when designing, provisioning, securing, or operating Eventarc — Google Cloud's managed event-routing service that delivers events as CloudEvents to a destination: triggers (the routing rule), event sources (Cloud Audit Logs from any Google service, direct Pub/Sub messages, and third-party/Eventarc Advanced sources), event filters (matching by event type / service / methodName / resource attributes), destinations (Cloud Run, Cloud Functions 2nd gen, GKE, Workflows), the trigger service account + invoker IAM, the transport Pub/Sub topic, delivery + retry semantics, channels, and regions. Loads the Eventarc knowledge: build a trigger with filters, route CloudEvents to a target, secure the delivery identity, and verify an event arrives. Consumed by the Eventarc specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they wire event-driven flows (Eventarc).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "eventarc",
+        "application-development",
+        "event-routing",
+        "cloudevents",
+        "triggers"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-eventarc/SKILL.md"
+    },
+    {
+      "name": "gcp-pubsub",
+      "description": "Use when designing, provisioning, securing, or operating Pub/Sub — Google Cloud's fully managed, global messaging / event-streaming service: topics and subscriptions, push vs pull delivery (incl. StreamingPull and BigQuery / Cloud Storage subscriptions), message ordering (ordering keys), exactly-once delivery, ack deadlines + redelivery, dead-letter topics + retry policy, message retention + seek/replay, schemas (Avro / Protobuf) + schema enforcement, message filtering, flow control, the publisher/subscriber service accounts + IAM, and CMEK. Loads the Pub/Sub knowledge: create a topic + subscription, choose push/pull + ordering/exactly-once, wire dead-letter + schema, and verify end-to-end delivery. Consumed by the Pub/Sub specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add managed messaging (Pub/Sub).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "pubsub",
+        "application-development",
+        "messaging",
+        "event-streaming",
+        "dead-letter"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-pubsub/SKILL.md"
     },
     {
       "name": "gcp-services",
@@ -31296,6 +31640,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-vision-api/SKILL.md"
+    },
+    {
+      "name": "gcp-workflows",
+      "description": "Use when designing, provisioning, securing, or operating Workflows — Google Cloud's serverless orchestration service that runs a sequence of steps defined in a YAML/JSON workflow definition: steps (assign, call, switch, for/parallel iteration, try/retry/except, return), expressions and variables, HTTP calls and Google Cloud connectors (Cloud Run, Functions, Pub/Sub, BigQuery, etc.), authenticated calls (OIDC/OAuth) via the workflow service account, subworkflows, callbacks + waits (human-in-the-loop / event-driven pauses), error handling + retry policies, executions and their state, and triggers (Scheduler / Eventarc / direct). Loads the Workflows knowledge: author a workflow definition, wire authenticated connector calls, add retries/callbacks, and verify an execution succeeds. Consumed by the Workflows specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they orchestrate multi-service flows (Workflows).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "workflows",
+        "application-development",
+        "orchestration",
+        "serverless",
+        "connectors"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-workflows/SKILL.md"
     },
     {
       "name": "geospatial-analysis",
