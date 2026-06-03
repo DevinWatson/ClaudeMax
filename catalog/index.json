@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 660,
-    "skills": 116,
+    "agents": 669,
+    "skills": 117,
     "categories": 16
   },
   "agents": [
@@ -15613,6 +15613,263 @@
       "path": "agents/languages/sql/sql-security-reviewer.md"
     },
     {
+      "name": "svelte-accessibility-specialist",
+      "description": "Use for a WCAG accessibility audit of a Svelte 5 app — semantic structure, keyboard and focus management across client-side route navigation, ARIA usage in components and snippets, color contrast, and forms with `bind:` — with severity-ranked findings (Svelte). Invoke for an accessibility review of rendered components and routes. NOT for fixing the issues (use svelte-developer), NOT for security review (use svelte-security-reviewer), NOT for performance (use svelte-performance-engineer). NOT for Vue (use vue-accessibility-specialist) or Next.js (use nextjs-accessibility-specialist).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "svelte",
+        "svelte5",
+        "accessibility",
+        "wcag",
+        "a11y"
+      ],
+      "skills": [
+        "wcag-audit",
+        "svelte-framework",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/svelte/svelte-accessibility-specialist.md"
+    },
+    {
+      "name": "svelte-ai-engineer",
+      "description": "Use when building LLM/AI features into a Svelte 5 app — streaming chat and completions rendered reactively with runes, tool calling, RAG retrieval, and prompt orchestration wired through reactive modules and a backend (Svelte). Invoke to design and implement AI-powered product features. NOT for generic UI features (use svelte-developer), NOT for system architecture (use svelte-architect), NOT for component-API design (use svelte-component-architect), NOT for security review of those endpoints (use svelte-security-reviewer). NOT for Vue (use vue-ai-engineer) or Next.js (use nextjs-ai-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "svelte",
+        "svelte5",
+        "ai",
+        "llm",
+        "rag"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "svelte-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/svelte/svelte-ai-engineer.md"
+    },
+    {
+      "name": "svelte-architect",
+      "description": "Use when shaping the architecture of a Svelte 5 app or module — component/module topology, state-management strategy (stores vs `$state` modules vs context vs local), reactivity boundaries, route/code-splitting structure, and the SvelteKit-vs-SPA meta-framework decision (Svelte). Invoke for system-level design and trade-off analysis. NOT for implementing features (use svelte-developer), NOT for designing a single component's/design-system API (use svelte-component-architect), NOT for performance tuning of existing code (use svelte-performance-engineer). NOT for Vue design (use vue-architect) or Next.js architecture (use nextjs-architect).",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "svelte",
+        "svelte5",
+        "architecture",
+        "stores"
+      ],
+      "skills": [
+        "software-architecture",
+        "svelte-framework",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/svelte/svelte-architect.md"
+    },
+    {
+      "name": "svelte-component-architect",
+      "description": "Use when designing the API surface of reusable Svelte 5 components or a design-system library — the `$props`/`$bindable` contract, snippet (default and named) shape, the exported-function/`$state` module signature, and theming/variant strategy — and implementing those primitives (Svelte). Invoke for component API design and design-system work. NOT for app-level structure and state-management strategy (use svelte-architect), NOT for product feature implementation (use svelte-developer), NOT for performance tuning (use svelte-performance-engineer). NOT for Vue (use vue-component-architect), React, or Next.js (use those teams).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "svelte",
+        "svelte5",
+        "design-system",
+        "components",
+        "snippets"
+      ],
+      "skills": [
+        "software-architecture",
+        "svelte-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/svelte/svelte-component-architect.md"
+    },
+    {
+      "name": "svelte-developer",
+      "description": "Use when turning a Svelte 5 requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Svelte bug — a reactivity-loss/stale-render issue, a runes (`$state`/`$derived`/`$effect`) misuse, a `$props`/`$bindable`/snippet contract bug, or a store/context wiring problem (Svelte). Invoke for building or extending components, snippets, stores, and reactive modules. NOT for system-level design (use svelte-architect), NOT for design-system/component-API design (use svelte-component-architect), NOT for adding tests to code you did not write (use svelte-test-engineer), NOT for Core Web Vitals tuning (use svelte-performance-engineer). NOT for Vue features (use vue-developer), React (use the React team), or Next.js (use nextjs-developer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "svelte",
+        "svelte5",
+        "runes",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "svelte-framework",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/svelte/svelte-developer.md"
+    },
+    {
+      "name": "svelte-observability-engineer",
+      "description": "Use when instrumenting a Svelte 5 app for production visibility — client-side error reporting via a global error handler and `<svelte:boundary>`/`onerror`, route-navigation and component timing, structured client logging, RUM/Web Vitals reporting, and OpenTelemetry browser tracing (Svelte). Invoke to add or improve logs, traces, and metrics. NOT for fixing the underlying bug (use svelte-developer), NOT for Core Web Vitals tuning (use svelte-performance-engineer), NOT for system architecture (use svelte-architect). NOT for Vue (use vue-observability-engineer) or Next.js (use nextjs-observability-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "svelte",
+        "svelte5",
+        "observability",
+        "telemetry",
+        "rum"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "svelte-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/svelte/svelte-observability-engineer.md"
+    },
+    {
+      "name": "svelte-performance-engineer",
+      "description": "Use when a Svelte 5 app is slow or failing Core Web Vitals — large LCP, layout shift, slow INP, heavy bundles, excessive DOM updates, or costly reactivity/effects — and you need it measured and tuned (Svelte). Invoke to profile and optimize an existing app via small `$state` surfaces, `$state.raw`, keyed `{#each}`, route/component code-splitting, and effect/render-cost reduction. NOT for building new features (use svelte-developer), NOT for system architecture (use svelte-architect), NOT for component-API design (use svelte-component-architect), NOT for accessibility review (use svelte-accessibility-specialist). NOT for Vue (use vue-performance-engineer) or Next.js (use nextjs-performance-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "svelte",
+        "svelte5",
+        "performance",
+        "web-vitals"
+      ],
+      "skills": [
+        "web-vitals-optimization",
+        "svelte-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/svelte/svelte-performance-engineer.md"
+    },
+    {
+      "name": "svelte-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a Svelte 5 app or diff — XSS via `{@html ...}` and unsafe HTML rendering, unsafe dynamic `href`/`src`/attribute bindings, secret/token exposure in client bundles, insecure client-side auth/route checks, and unsafe handling of API/LLM responses — with severity-ranked findings (Svelte). Invoke for an authorized appsec review. NOT for fixing the issues (use svelte-developer), NOT for accessibility review (use svelte-accessibility-specialist), NOT for performance (use svelte-performance-engineer). NOT for Vue (use vue-security-reviewer) or Next.js (use nextjs-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "svelte",
+        "svelte5",
+        "security",
+        "appsec",
+        "xss"
+      ],
+      "skills": [
+        "appsec-review",
+        "svelte-framework",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/svelte/svelte-security-reviewer.md"
+    },
+    {
+      "name": "svelte-test-engineer",
+      "description": "Use when adding or improving automated tests for a Svelte 5 app — component/unit tests with Vitest and `@testing-library/svelte`, store and reactive-module tests, and end-to-end flows with Playwright covering routing and rendering (Svelte). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use svelte-developer), NOT for performance profiling (use svelte-performance-engineer), NOT for security review (use svelte-security-reviewer). NOT for Vue (use vue-test-engineer) or Next.js (use nextjs-test-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "svelte",
+        "svelte5",
+        "testing",
+        "vitest",
+        "testing-library"
+      ],
+      "skills": [
+        "test-automation",
+        "svelte-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/svelte/svelte-test-engineer.md"
+    },
+    {
       "name": "swift-agent-orchestrator",
       "description": "Use when designing a multi-agent or multi-step LLM workflow in Swift — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution via structured concurrency/TaskGroup, verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a Swift app or service. Not for a single model call (use swift-ai-engineer), retrieval pipelines (use swift-rag-engineer), or SwiftUI orchestration UI (use the swiftui team).",
       "category": "languages",
@@ -19543,6 +19800,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/sql-query-design/SKILL.md"
+    },
+    {
+      "name": "svelte-framework",
+      "description": "Use when working in Svelte 5 — the runes reactivity model ($state/$derived/$effect/$props/$bindable), components and snippets, props and bindings, stores (writable/derived/readable), the context API, transitions/animations, and the compiled no-virtual-DOM performance model. TRIGGER on \"my UI doesn't update\"/stale-render bugs, rune vs Svelte 4 (`$:`/stores) questions, component/snippet or props/bindings contract design, store or context wiring, or svelte-check/vite build errors. NOT for framework-agnostic UI concerns, and SvelteKit's server/data layer (load functions, form actions, file-based routing, hooks) is the meta-framework boundary handled elsewhere. Any agent touching Svelte (a Svelte role, a reviewer of a Svelte PR, a SvelteKit team) can load it.",
+      "category": "web",
+      "tags": [
+        "svelte",
+        "svelte5",
+        "runes",
+        "reactivity",
+        "stores",
+        "sveltekit"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/svelte-framework/SKILL.md"
     },
     {
       "name": "swift-idioms",

@@ -34,7 +34,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 
 ## Web/app frameworks (tailored teams; web category unless noted; new framework skill each)
 - [x] vue
-- [ ] svelte
+- [x] svelte
 - [ ] angular
 - [ ] astro
 - [ ] remix
