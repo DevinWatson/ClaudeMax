@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 795,
-    "skills": 133,
+    "agents": 801,
+    "skills": 134,
     "categories": 17
   },
   "agents": [
@@ -2667,6 +2667,178 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/clojure/clojure-unit-test-architect.md"
+    },
+    {
+      "name": "cloudflare-edge-architect",
+      "description": "Use when designing or reviewing a Cloudflare edge architecture — selecting edge primitives (Workers, Durable Objects, KV, R2, D1, Queues), laying out zones/routes/bindings, and choosing the cache/DNS/origin-failover posture, with cost-awareness folded in (Cloudflare). Produces the design and trade-offs, not the deploy code. NOT for writing Workers code or wrangler.toml (use cloudflare-workers-developer), WAF/Access/exposure review (cloudflare-security-reviewer), CDN/DNS/load-balancing plumbing (cloudflare-networking-engineer), or AWS/GCP/Azure hyperscaler architecture (aws-/gcp-/azure-cloud-architect — those are the big-3 clouds; this is the edge/CDN platform).",
+      "category": "cloud",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "cloudflare",
+        "edge",
+        "architecture",
+        "workers",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "cloudflare-platform",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/cloudflare/cloudflare-edge-architect.md"
+    },
+    {
+      "name": "cloudflare-networking-engineer",
+      "description": "Use when designing or fixing Cloudflare edge networking — authoritative DNS zones/records and proxied vs DNS-only, CDN caching and Cache Rules, Tiered Cache / Argo Smart Routing, and Load Balancing (pools, health checks, steering, origin failover) — then validating it (Cloudflare). NOT for WAF/Access/exposure security review (cloudflare-security-reviewer), edge architecture (cloudflare-edge-architect), DR/resilience strategy (cloudflare-reliability-engineer), Workers code/wrangler (cloudflare-workers-developer), or AWS/GCP/Azure VPC/DNS networking (aws-/gcp-/azure-networking-engineer — hyperscaler VPCs, not the edge/CDN).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cloudflare",
+        "networking",
+        "dns",
+        "cache-rules",
+        "load-balancing"
+      ],
+      "skills": [
+        "network-design",
+        "cloudflare-platform",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/cloudflare/cloudflare-networking-engineer.md"
+    },
+    {
+      "name": "cloudflare-observability-engineer",
+      "description": "Use when instrumenting Cloudflare observability — Workers logs and tail (wrangler tail), Workers Analytics Engine custom metrics, GraphQL Analytics, Logpush to a sink, and Trace/Tail Workers — with SLO-driven alerting on edge golden signals — then validating it (Cloudflare). NOT for generic non-cloud observability (devops observability-engineer), reliability/failover design (cloudflare-reliability-engineer), DNS/cache/LB networking (cloudflare-networking-engineer), edge architecture (cloudflare-edge-architect), or AWS/GCP/Azure observability (aws-/gcp-/azure-observability-engineer — hyperscaler monitoring, not the edge).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cloudflare",
+        "observability",
+        "logpush",
+        "analytics-engine",
+        "alerting"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "cloudflare-platform",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/cloudflare/cloudflare-observability-engineer.md"
+    },
+    {
+      "name": "cloudflare-reliability-engineer",
+      "description": "Use when hardening a Cloudflare workload's resilience — origin failover via Load Balancing pools/health checks, cache-on-error and stale-while-revalidate to survive origin outages, Durable Object / D1 consistency-and-locality bottlenecks, Queue retry/dead-letter handling, and graceful degradation to an RTO/RPO — then validating it (Cloudflare). NOT for day-one architecture (cloudflare-edge-architect), DNS/cache/LB plumbing (cloudflare-networking-engineer), metrics/tracing (cloudflare-observability-engineer), Workers code (cloudflare-workers-developer), or AWS/GCP/Azure reliability (aws-/gcp-/azure-reliability-engineer — hyperscaler multi-AZ/region, not the edge).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cloudflare",
+        "reliability",
+        "failover",
+        "cache-on-error",
+        "queues"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "cloudflare-platform",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/cloudflare/cloudflare-reliability-engineer.md"
+    },
+    {
+      "name": "cloudflare-security-reviewer",
+      "description": "Use when reviewing Cloudflare configuration for security — WAF coverage (managed + custom rules), rate limiting and Bot Management, public exposure of Workers/Pages/origins, Access (Zero Trust) on internal/admin surfaces, mTLS and TLS mode (Full (strict)), and secret handling (wrangler secrets vs committed keys, over-broad bindings) — then triaging findings by severity (Cloudflare). Read-only; reports, does not change config. NOT for building/fixing Workers or config (cloudflare-workers-developer), edge architecture (cloudflare-edge-architect), DNS/cache/LB design (cloudflare-networking-engineer), or AWS/GCP/Azure config review (aws-/gcp-/azure-security-reviewer — hyperscaler IAM/VPC, not the edge).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "cloudflare",
+        "security",
+        "waf",
+        "zero-trust",
+        "review"
+      ],
+      "skills": [
+        "appsec-review",
+        "cloudflare-platform",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/cloudflare/cloudflare-security-reviewer.md"
+    },
+    {
+      "name": "cloudflare-workers-developer",
+      "description": "Use when writing or refactoring Cloudflare Workers code and config — Workers/Durable Objects/Queue consumers/Cron handlers, R2/D1/KV/Hyperdrive bindings, wrangler.toml, secrets, and Pages Functions — then validating with wrangler dev / deploy --dry-run (Cloudflare). NOT for edge architecture/primitive selection (use cloudflare-edge-architect), WAF/Access/exposure review (cloudflare-security-reviewer), CDN/DNS/load-balancing config (cloudflare-networking-engineer), or a general Node/Express/web backend (this agent targets the Workers V8-isolate edge runtime — no full Node APIs, short CPU budgets, no long-lived process — not a Node server).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cloudflare",
+        "workers",
+        "durable-objects",
+        "bindings",
+        "wrangler"
+      ],
+      "skills": [
+        "cloudflare-platform",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/cloudflare/cloudflare-workers-developer.md"
     },
     {
       "name": "code-reviewer",
@@ -22211,6 +22383,26 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/clojure-idioms/SKILL.md"
+    },
+    {
+      "name": "cloudflare-platform",
+      "description": "The substantive Cloudflare edge platform capability — edge compute (Workers, Durable Objects, Workers KV, Queues, Cron Triggers), storage/data (R2 object storage, D1 SQLite, KV, Hyperdrive to origin databases), network/CDN (CDN caching, Cache Rules, Argo Smart Routing, Load Balancing), authoritative DNS (zones, records, proxying), security (WAF, rate limiting, Bot Management, DDoS protection, Access/Zero Trust, mTLS), Pages (static and full-stack deploys), bindings/secrets/environments, and tooling (wrangler CLI, wrangler.toml, the Terraform Cloudflare provider). Use when designing, building, reviewing, securing, or operating anything on Cloudflare's edge — choosing the right edge primitive, wiring bindings to R2/D1/KV/Queues, configuring cache and DNS, hardening with WAF/Access/mTLS, or authoring/validating wrangler and Terraform. Any agent touching Cloudflare can load it. NOT for AWS/GCP/Azure hyperscaler services or generic non-edge Node backends.",
+      "category": "cloud",
+      "tags": [
+        "cloudflare",
+        "edge",
+        "workers",
+        "durable-objects",
+        "r2",
+        "d1",
+        "workers-kv",
+        "wrangler",
+        "waf",
+        "zero-trust"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/cloudflare-platform/SKILL.md"
     },
     {
       "name": "code-migration",

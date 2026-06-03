@@ -52,7 +52,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] aws
 - [x] gcp
 - [x] azure
-- [ ] cloudflare
+- [x] cloudflare
 - [ ] kubernetes-platform
 - [ ] supabase
 
