@@ -1,6 +1,6 @@
 ---
 name: php-developer
-description: Use when turning a PHP requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported PHP bug. Invoke for building or extending PHP/Laravel/Symfony/Slim features and for diagnosing failures in existing PHP code. Not for system-level design (use php-architect) or for adding tests to code you did not write (use php-unit-test-architect).
+description: Use when turning a PHP requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported PHP bug in plain PHP or a non-Laravel framework (Symfony, Slim) or framework-agnostic library code. Invoke for building or extending such PHP features and for diagnosing failures in existing PHP code. Not for system-level design (use php-architect) or for adding tests to code you did not write (use php-unit-test-architect). For Laravel application work — Eloquent, Blade/Livewire, form requests, queues, policies — route to the Laravel team (laravel-developer) instead.
 model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: languages

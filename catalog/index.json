@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 745,
-    "skills": 126,
+    "agents": 754,
+    "skills": 127,
     "categories": 16
   },
   "agents": [
@@ -10245,6 +10245,276 @@
       "path": "agents/devops/kubernetes-operator.md"
     },
     {
+      "name": "laravel-accessibility-specialist",
+      "description": "Use for a WCAG 2.2 (A/AA) accessibility audit of a Laravel app's server-rendered UI — Blade templates, components, slots, layouts, and Livewire components/interactions — checking semantics, ARIA, keyboard operability and focus management (including Livewire DOM updates via wire:model/actions), names/labels on form fields, validation-error announcement, and color contrast, with severity-ranked, criterion-mapped findings (Laravel). Invoke for an accessibility review of Blade/Livewire views. NOT for fixing the issues (use laravel-developer), NOT for general appsec review (use laravel-security-reviewer), NOT for non-UI backend work.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "laravel",
+        "accessibility",
+        "a11y",
+        "wcag",
+        "blade",
+        "livewire"
+      ],
+      "skills": [
+        "wcag-audit",
+        "laravel-framework",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/laravel/laravel-accessibility-specialist.md"
+    },
+    {
+      "name": "laravel-api-engineer",
+      "description": "Use when designing and building HTTP API endpoints in a Laravel app — API routes/controllers, API resources (JsonResource/ResourceCollection), resource modeling, status codes and error envelopes, pagination, filtering, throttling, versioning, and token auth with Sanctum/Passport, with form-request input handling (Laravel). Invoke to design or implement the API contract layer. NOT for server-rendered Blade/Livewire/Inertia UI features (use laravel-developer), NOT for system architecture (use laravel-architect), NOT for security review (use laravel-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "laravel",
+        "api",
+        "rest",
+        "php",
+        "sanctum"
+      ],
+      "skills": [
+        "rest-api-design",
+        "laravel-framework",
+        "php-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/laravel/laravel-api-engineer.md"
+    },
+    {
+      "name": "laravel-architect",
+      "description": "Use when shaping the architecture of a Laravel app or module — module/package boundaries and app structure, the Eloquent data model and query strategy, the server-rendered (Blade/Livewire/Inertia)-vs-API split, action/service/repository boundaries, queue/job and event/listener topology, and caching strategy (Laravel). Invoke for system-level design and trade-off analysis. NOT for implementing features (use laravel-developer), NOT for performance tuning of existing code (use laravel-performance-engineer), NOT for framework-agnostic PHP design (route to php-architect).",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "laravel",
+        "architecture",
+        "php",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "laravel-framework",
+        "php-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/laravel/laravel-architect.md"
+    },
+    {
+      "name": "laravel-developer",
+      "description": "Use when turning a Laravel requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Laravel bug — a broken Eloquent query, an N+1, a migration failure, a controller/form-request/validation error, a routing/middleware problem, or a Blade/Livewire/Inertia view issue (Laravel). Invoke for building or extending Laravel app features (models, controllers, views, Livewire, jobs). NOT for system-level design (use laravel-architect), NOT for adding tests to code you did not write (use laravel-test-engineer), NOT for query/caching performance tuning of working code (use laravel-performance-engineer). For general (non-Laravel) PHP work, route to php-developer instead.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "laravel",
+        "eloquent",
+        "blade",
+        "livewire",
+        "php",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "laravel-framework",
+        "php-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/laravel/laravel-developer.md"
+    },
+    {
+      "name": "laravel-migration-engineer",
+      "description": "Use when upgrading a Laravel app across versions or evolving its schema safely — Laravel/PHP version upgrades and deprecation fixes (shift-style upgrades, config/structure changes), writing and reconciling Eloquent migrations (data migrations, reversible up/down, backfills), zero-downtime schema changes, and resolving migration conflicts or drift (Laravel). Invoke for version upgrades and migration work. NOT for routine feature schema changes inside a feature (use laravel-developer), NOT for query performance tuning (use laravel-performance-engineer), NOT for system architecture (use laravel-architect).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "laravel",
+        "migrations",
+        "upgrade",
+        "eloquent",
+        "php"
+      ],
+      "skills": [
+        "code-migration",
+        "laravel-framework",
+        "php-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/laravel/laravel-migration-engineer.md"
+    },
+    {
+      "name": "laravel-observability-engineer",
+      "description": "Use when instrumenting a Laravel app for production visibility — structured logging (Monolog channels, context), OpenTelemetry tracing across controllers/queued jobs/events, request and database metrics via Laravel events (DB::listen, query/request lifecycle), and error reporting (Sentry/Flare/OTel) (Laravel). Invoke to add or improve logs, traces, and metrics. NOT for fixing the underlying bug (use laravel-developer), NOT for query/cache performance tuning (use laravel-performance-engineer), NOT for system architecture (use laravel-architect).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "laravel",
+        "observability",
+        "telemetry",
+        "opentelemetry",
+        "php"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "laravel-framework",
+        "php-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/laravel/laravel-observability-engineer.md"
+    },
+    {
+      "name": "laravel-performance-engineer",
+      "description": "Use when a Laravel app is slow or its database cost is high — N+1 queries, missing eager loading (with/load/withCount), unindexed or full-table Eloquent scans, heavy API resources, slow controller actions, weak caching, or overloaded queues — and you need it measured and tuned (Laravel). Invoke to profile and optimize an existing app via query tuning, query-count reduction, indexing, caching, and queue/job offloading. NOT for building new features (use laravel-developer), NOT for system architecture (use laravel-architect), NOT for security review (use laravel-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "laravel",
+        "eloquent",
+        "performance",
+        "caching",
+        "queues",
+        "php"
+      ],
+      "skills": [
+        "cost-optimization",
+        "laravel-framework",
+        "php-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/laravel/laravel-performance-engineer.md"
+    },
+    {
+      "name": "laravel-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a Laravel app or diff — mass assignment via missing/over-broad $fillable or unfiltered request input, SQL injection via raw DB::raw/whereRaw/interpolated queries, CSRF protection gaps, authentication/authorization holes (missing policies/gates, broken object-level authz), Blade XSS via unescaped {!! !!} output, SSRF, and unsafe deserialization — with severity-ranked results (Laravel). Invoke for an authorized appsec review. NOT for fixing the issues (use laravel-developer), NOT for performance review (use laravel-performance-engineer), NOT for HTTP contract design (use laravel-api-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "laravel",
+        "security",
+        "appsec",
+        "php"
+      ],
+      "skills": [
+        "appsec-review",
+        "laravel-framework",
+        "php-idioms",
+        "match-project-conventions",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/laravel/laravel-security-reviewer.md"
+    },
+    {
+      "name": "laravel-test-engineer",
+      "description": "Use when adding or improving automated tests for a Laravel app — Eloquent model and query tests, feature/HTTP tests (routes, form-request validation, middleware, auth), API resource tests (status codes, JSON shape), database/migration tests with RefreshDatabase, queued-job and event tests, and query-count assertions — using Pest or PHPUnit via php artisan test (Laravel). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use laravel-developer), NOT for performance profiling (use laravel-performance-engineer), NOT for security review (use laravel-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "laravel",
+        "testing",
+        "pest",
+        "phpunit",
+        "php"
+      ],
+      "skills": [
+        "test-automation",
+        "laravel-framework",
+        "php-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/laravel/laravel-test-engineer.md"
+    },
+    {
       "name": "legal-clause-explainer",
       "description": "Use when someone wants ONE specific legal clause or term explained in plain language — what it means, why it exists, common variants, and what to watch for. Educational/explanatory only. NOT legal advice. Distinct from business/contract-reviewer, which reviews a WHOLE contract for risks/red flags from a party's perspective; use this agent to teach a clause, that agent to assess a document.",
       "category": "domain",
@@ -12773,7 +13043,7 @@
     },
     {
       "name": "php-architect",
-      "description": "Use when designing or reviewing the structure of a PHP system, service, or module — component boundaries, coupling/cohesion, interface contracts, namespace/package layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in PHP or when reviewing a PHP design proposal. Not for implementing the feature (use php-developer) or for REST endpoint shape alone (use php-api-designer).",
+      "description": "Use when designing or reviewing the structure of a plain-PHP or non-Laravel (Symfony, Slim) system, service, or module — component boundaries, coupling/cohesion, interface contracts, namespace/package layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in PHP or when reviewing a PHP design proposal. Not for implementing the feature (use php-developer) or for REST endpoint shape alone (use php-api-designer). For Laravel application architecture — module/package boundaries, Eloquent data model, Blade/Livewire-vs-API split, queue/event topology — route to laravel-architect instead.",
       "category": "languages",
       "model": "opus",
       "tools": [
@@ -12875,7 +13145,7 @@
     },
     {
       "name": "php-developer",
-      "description": "Use when turning a PHP requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported PHP bug. Invoke for building or extending PHP/Laravel/Symfony/Slim features and for diagnosing failures in existing PHP code. Not for system-level design (use php-architect) or for adding tests to code you did not write (use php-unit-test-architect).",
+      "description": "Use when turning a PHP requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported PHP bug in plain PHP or a non-Laravel framework (Symfony, Slim) or framework-agnostic library code. Invoke for building or extending such PHP features and for diagnosing failures in existing PHP code. Not for system-level design (use php-architect) or for adding tests to code you did not write (use php-unit-test-architect). For Laravel application work — Eloquent, Blade/Livewire, form requests, queues, policies — route to the Laravel team (laravel-developer) instead.",
       "category": "languages",
       "model": "sonnet",
       "tools": [
@@ -21395,6 +21665,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/devops/kubernetes-workloads/SKILL.md"
+    },
+    {
+      "name": "laravel-framework",
+      "description": "Use when working in Laravel (PHP) — Eloquent ORM (relationships, migrations, scopes, N+1 via eager loading with with/load), the service container and DI, facades, routing and middleware, controllers and form-request validation, Blade plus Livewire/Inertia, Eloquent-vs-query-builder, queues/jobs and Horizon, events/listeners, Artisan, policies/gates (authz), API resources with Sanctum/Passport, and caching. Laravel renders server-side UI (Blade/Livewire/Inertia) AND serves APIs. TRIGGER on Eloquent model/migration/scope issues, N+1 problems, container/facade questions, routing/middleware/form-request concerns, Blade/Livewire/Inertia views, queue/job/Horizon wiring, policy/gate authz, API resource design, or artisan test/migrate failures. NOT for general PHP language concerns (typed properties, enums, match, traits, Composer, PSR — that is php-idioms) or framework-agnostic HTTP contract design. Any agent touching Laravel can load it.",
+      "category": "web",
+      "tags": [
+        "laravel",
+        "eloquent",
+        "blade",
+        "livewire",
+        "php",
+        "web"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/laravel-framework/SKILL.md"
     },
     {
       "name": "legal-clause-explanation",

@@ -44,7 +44,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] fastapi (python web)
 - [x] express (node web)
 - [x] nestjs (node web)
-- [ ] laravel (php web)
+- [x] laravel (php web)
 - [ ] phoenix (elixir web)
 - [ ] dotnet-aspnet (csharp web)
 

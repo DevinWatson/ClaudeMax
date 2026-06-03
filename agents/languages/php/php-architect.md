@@ -1,6 +1,6 @@
 ---
 name: php-architect
-description: Use when designing or reviewing the structure of a PHP system, service, or module — component boundaries, coupling/cohesion, interface contracts, namespace/package layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in PHP or when reviewing a PHP design proposal. Not for implementing the feature (use php-developer) or for REST endpoint shape alone (use php-api-designer).
+description: Use when designing or reviewing the structure of a plain-PHP or non-Laravel (Symfony, Slim) system, service, or module — component boundaries, coupling/cohesion, interface contracts, namespace/package layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in PHP or when reviewing a PHP design proposal. Not for implementing the feature (use php-developer) or for REST endpoint shape alone (use php-api-designer). For Laravel application architecture — module/package boundaries, Eloquent data model, Blade/Livewire-vs-API split, queue/event topology — route to laravel-architect instead.
 model: opus
 tools: Read, Grep, Glob, Write
 category: languages
