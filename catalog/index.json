@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 842,
-    "skills": 140,
+    "agents": 849,
+    "skills": 141,
     "categories": 17
   },
   "agents": [
@@ -10743,6 +10743,213 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/julia/julia-unit-test-architect.md"
+    },
+    {
+      "name": "kafka-administrator",
+      "description": "Use when administering and operating a self-managed Apache Kafka cluster at the broker/cluster level — creating/altering topics (partitions, replication factor, min.insync.replicas, retention/compaction), managing broker configs and KRaft/ZooKeeper, applying ACLs and listeners, managing consumer groups and offsets, and partition rebalancing/reassignment — then validating against the cluster (Kafka). NOT for deployment architecture (kafka-architect), building Kafka Streams/Connect applications (kafka-streams-developer), partition/throughput/latency tuning (kafka-performance-engineer), resilience drills (kafka-reliability-engineer), security/ACL review (kafka-security-reviewer), monitoring (kafka-observability-engineer); NOT for managed cloud streaming ops (AWS MSK/Kinesis, GCP Pub/Sub, Azure Event Hubs — the cloud data-engineers), managed Supabase, the postgres/mongodb/redis/snowflake teams, cloud-agnostic batch orchestration (etl-architect), or SQL rewrites (sql-optimizer — N/A, Kafka isn't SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kafka",
+        "administration",
+        "topics",
+        "brokers",
+        "consumer-groups",
+        "reassignment"
+      ],
+      "skills": [
+        "kafka-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/kafka/kafka-administrator.md"
+    },
+    {
+      "name": "kafka-architect",
+      "description": "Use when designing or reviewing the architecture of a self-managed Apache Kafka deployment — how cluster topology, topic design (partitions, replication factor, min.insync.replicas), partitioning/keying strategy, delivery semantics (at-least-once vs exactly-once), Streams/Connect topology, Schema Registry compatibility, and retention/compaction fit the workload and durability/ordering needs (Kafka). Produces the design and trade-offs, not the implementation. NOT for broker/cluster ops (kafka-administrator), Streams/Connect apps (kafka-streams-developer), throughput/latency tuning (kafka-performance-engineer), resilience (kafka-reliability-engineer), security/ACL review (kafka-security-reviewer), monitoring (kafka-observability-engineer); NOT for managed cloud streaming (AWS MSK/Kinesis, GCP Pub/Sub, Azure Event Hubs — the cloud data-engineers), managed Supabase, the postgres/mongodb/redis/snowflake teams, batch orchestration (etl-architect), or SQL rewrites (sql-optimizer — N/A, Kafka isn't SQL).",
+      "category": "data",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "kafka",
+        "architecture",
+        "topic-design",
+        "partitioning",
+        "delivery-semantics",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "kafka-administration",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/kafka/kafka-architect.md"
+    },
+    {
+      "name": "kafka-observability-engineer",
+      "description": "Use when instrumenting a self-managed Apache Kafka cluster's observability — broker JMX metrics (under-replicated/offline partitions, ISR shrink/expand, request latency, controller state), consumer-group lag, producer/consumer client metrics, Kafka Streams and Connect task/connector health, and SLO-driven alerting via an exporter (JMX/Prometheus) — then validating it (Kafka). NOT for deployment architecture (kafka-architect), routine ops (kafka-administrator), Streams/Connect application development (kafka-streams-developer), throughput/latency tuning (kafka-performance-engineer), resilience drills (kafka-reliability-engineer), security/ACL review (kafka-security-reviewer); NOT for managed-cloud-streaming monitoring (AWS MSK/Kinesis, GCP Pub/Sub, Azure Event Hubs — the cloud observability-engineers), managed Supabase (supabase-observability-engineer), the postgres/mongodb/redis/snowflake teams, generic app observability (devops observability-engineer), or SQL rewrites (sql-optimizer — N/A, Kafka isn't SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kafka",
+        "observability",
+        "jmx-metrics",
+        "consumer-lag",
+        "alerting",
+        "under-replicated"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "kafka-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/kafka/kafka-observability-engineer.md"
+    },
+    {
+      "name": "kafka-performance-engineer",
+      "description": "Use when tuning the throughput and latency of a self-managed Apache Kafka cluster and its clients — partition count and consumer parallelism, producer batching (batch.size/linger.ms/compression) and acks trade-offs, consumer fetch and poll tuning (max.poll.records, fetch.min/max.bytes), broker I/O/page-cache/network-threads, hot-partition and skew remediation, and consumer-lag reduction — then validating with throughput/latency/lag measurements (Kafka). Owns the partition/throughput/latency layer. There is no single-query rewrite here (Kafka isn't SQL — sql-optimizer does not apply). NOT for deployment architecture (kafka-architect), routine ops (kafka-administrator), Streams/Connect apps (kafka-streams-developer), resilience (kafka-reliability-engineer), security/ACL review (kafka-security-reviewer), monitoring (kafka-observability-engineer); NOT for managed cloud streaming tuning (AWS MSK/Kinesis, GCP Pub/Sub, Azure Event Hubs — the cloud data-engineers) or the postgres/mongodb/redis/snowflake teams.",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kafka",
+        "performance",
+        "partitions",
+        "throughput",
+        "latency",
+        "consumer-lag"
+      ],
+      "skills": [
+        "kafka-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/kafka/kafka-performance-engineer.md"
+    },
+    {
+      "name": "kafka-reliability-engineer",
+      "description": "Use when hardening a self-managed Apache Kafka cluster's resilience — replication factor and min.insync.replicas/acks for no-data-loss, rack/AZ-aware replica placement, ISR and under-replicated-partition recovery, controller/broker failover, multi-cluster replication (MirrorMaker 2), consumer-group rebalance resilience, and backup/restore to a defined RTO/RPO — then validating it with a tested drill (Kafka). NOT for deployment architecture (kafka-architect), routine broker/topic ops (kafka-administrator), Streams/Connect apps (kafka-streams-developer), throughput/latency tuning (kafka-performance-engineer), security/ACL review (kafka-security-reviewer), monitoring instrumentation (kafka-observability-engineer); NOT for managed cloud streaming resilience (AWS MSK/Kinesis, GCP Pub/Sub, Azure Event Hubs — the cloud reliability-engineers), managed Supabase, the postgres/mongodb/redis/snowflake teams, cloud-agnostic batch orchestration (etl-architect), or SQL rewrites (sql-optimizer — N/A, Kafka isn't SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kafka",
+        "reliability",
+        "replication",
+        "isr",
+        "failover",
+        "mirrormaker"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "kafka-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/kafka/kafka-reliability-engineer.md"
+    },
+    {
+      "name": "kafka-security-reviewer",
+      "description": "Use when reviewing a self-managed Apache Kafka cluster for security — listener encryption (TLS/mTLS) and PLAINTEXT exposure, SASL authentication, ACL least-privilege on topics/groups/cluster (over-broad/wildcard grants, anonymous/super-user access), inter-broker and ZooKeeper/KRaft auth, Schema Registry and Connect REST exposure, and sensitive data in topics — then triaging by severity (Kafka). Read-only; reports, does not change anything. NOT for fixing or building the cluster (kafka-administrator), architecture (kafka-architect), Streams/Connect apps (kafka-streams-developer), throughput/latency tuning (kafka-performance-engineer), resilience (kafka-reliability-engineer), monitoring (kafka-observability-engineer); NOT for managed-cloud-streaming review (AWS MSK/Kinesis, GCP Pub/Sub, Azure Event Hubs — the cloud security-reviewers), managed Supabase (supabase-security-reviewer), the postgres/mongodb/redis/snowflake teams, or SQL rewrites (sql-optimizer — N/A, Kafka isn't SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "kafka",
+        "security",
+        "acls",
+        "tls",
+        "sasl",
+        "review"
+      ],
+      "skills": [
+        "appsec-review",
+        "kafka-administration",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/kafka/kafka-security-reviewer.md"
+    },
+    {
+      "name": "kafka-streams-developer",
+      "description": "Use when building stream-processing applications on Apache Kafka — Kafka Streams topologies (KStream/KTable/GlobalKTable, stateless and stateful ops, windowing, joins, state stores and changelog topics, exactly-once_v2), and Kafka Connect source/sink connectors (converters/Avro, SMTs, tasks.max, dead-letter queues) — then validating against the cluster (Kafka). NOT for broker/cluster ops or topic creation (kafka-administrator), deployment architecture (kafka-architect), partition/throughput/latency tuning (kafka-performance-engineer), resilience drills (kafka-reliability-engineer), security/ACL review (kafka-security-reviewer), monitoring (kafka-observability-engineer); NOT for managed cloud streaming (AWS MSK/Kinesis, GCP Pub/Sub, Azure Event Hubs — the cloud data-engineers), managed Supabase, the postgres/mongodb/redis/snowflake teams, cloud-agnostic batch pipeline orchestration (etl-architect), or SQL rewrites (sql-optimizer — N/A, Kafka isn't SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kafka",
+        "kafka-streams",
+        "kafka-connect",
+        "stream-processing",
+        "state-stores",
+        "connectors"
+      ],
+      "skills": [
+        "kafka-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/kafka/kafka-streams-developer.md"
     },
     {
       "name": "kotlin-agent-orchestrator",
@@ -24289,6 +24496,26 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/julia-idioms/SKILL.md"
+    },
+    {
+      "name": "kafka-administration",
+      "description": "The substantive Apache Kafka event-streaming capability — topics/partitions/replication factor and ISR, producers/consumers/consumer-groups and offset management, delivery semantics (at-least-once/at-most-once/exactly-once, idempotent producers, transactions), Kafka Streams, Kafka Connect source/sink connectors, the Schema Registry (Avro, compatibility modes), retention and log compaction, partition rebalancing/reassignment, partitioning/keying strategy, and tooling (kafka-topics, kafka-console-producer/consumer, kafka-consumer-groups, kafka-reassign-partitions). Use when designing, administering, tuning, securing, or operating a self-managed Kafka cluster, its topics/clients, Streams/Connect apps, or schemas. Any agent operating Kafka can load it. NOT for managed cloud streaming (AWS MSK/Kinesis, GCP Pub/Sub, Azure Event Hubs — the cloud data-engineers own those), managed Supabase, Postgres/MongoDB/Redis, Snowflake, batch orchestration design (etl-architect), or SQL rewrites (Kafka isn't SQL).",
+      "category": "data",
+      "tags": [
+        "kafka",
+        "event-streaming",
+        "topics",
+        "partitions",
+        "consumer-groups",
+        "delivery-semantics",
+        "kafka-streams",
+        "kafka-connect",
+        "schema-registry",
+        "log-compaction"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/data/kafka-administration/SKILL.md"
     },
     {
       "name": "kotlin-idioms",
