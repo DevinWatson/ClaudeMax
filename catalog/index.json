@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 814,
-    "skills": 136,
+    "agents": 822,
+    "skills": 137,
     "categories": 17
   },
   "agents": [
@@ -15094,6 +15094,242 @@
       "path": "agents/languages/php/php-unit-test-architect.md"
     },
     {
+      "name": "postgres-architect",
+      "description": "Use when designing or reviewing the architecture of a self-managed PostgreSQL deployment — how the primary/replica topology, replication and HA, partitioning strategy, connection-pooling tier (PgBouncer), extension choices, and tuning baseline fit together for the workload and RTO/RPO (PostgreSQL). Produces the design and trade-offs, not the implementation. NOT for applying changes (postgres-dba), engine/index/config tuning (postgres-performance-engineer), HA execution (postgres-reliability-engineer), security/RLS review (postgres-security-reviewer), schema modeling (postgres-data-modeler), migration (postgres-migration-engineer), monitoring (postgres-observability-engineer); NOT for managed Supabase BaaS architecture (supabase-architect — auth/realtime/storage on managed Postgres), AWS/GCP/Azure managed DW/pipeline architecture (cloud data-engineers — BigQuery/Synapse/Redshift), cloud-agnostic pipeline orchestration design (etl-architect), or single-query rewrites (sql-optimizer).",
+      "category": "data",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "postgresql",
+        "architecture",
+        "topology",
+        "replication",
+        "partitioning",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "postgresql-administration",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/postgres/postgres-architect.md"
+    },
+    {
+      "name": "postgres-data-modeler",
+      "description": "Use when modeling the relational schema for a self-managed PostgreSQL database — tables, types, constraints, keys, relationships, normalization, the index design for the access patterns (B-tree/GIN/GiST/BRIN, covering/partial), declarative-partitioning layout, and the DDL/migrations that express them (PostgreSQL). Designs the schema; does not execute or run the engine. NOT for applying/operating the engine (postgres-dba), deployment architecture (postgres-architect), engine/index/config performance tuning (postgres-performance-engineer), HA (postgres-reliability-engineer), security/RLS review (postgres-security-reviewer), DB migration execution (postgres-migration-engineer), monitoring (postgres-observability-engineer); NOT for managed Supabase schema modeling (supabase-database-engineer), managed cloud DW modeling (cloud data-engineers), or single-query rewrites (sql-optimizer).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "postgresql",
+        "data-modeling",
+        "schema",
+        "ddl",
+        "indexing",
+        "partitioning"
+      ],
+      "skills": [
+        "relational-data-modeling",
+        "postgresql-administration",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/postgres/postgres-data-modeler.md"
+    },
+    {
+      "name": "postgres-dba",
+      "description": "Use when administering and operating a self-managed PostgreSQL instance — applying server config (postgresql.conf/pg_hba.conf), managing roles/privileges, running vacuum/autovacuum and bloat maintenance, taking and restoring backups (pg_dump/pg_restore/pg_basebackup), enabling extensions, and routine day-to-day operations — then validating against the instance (PostgreSQL). NOT for deployment architecture (postgres-architect), deep engine/index/config performance tuning (postgres-performance-engineer), HA/replication/failover hardening (postgres-reliability-engineer), security/RLS review (postgres-security-reviewer), schema/index data modeling (postgres-data-modeler), DB version/platform migration (postgres-migration-engineer), monitoring instrumentation (postgres-observability-engineer); NOT for managed Supabase admin (supabase team), managed cloud DW ops (cloud data-engineers), pipeline orchestration (etl-architect), or single-query rewrites (sql-optimizer).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "postgresql",
+        "dba",
+        "operations",
+        "vacuum",
+        "backup",
+        "roles"
+      ],
+      "skills": [
+        "postgresql-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/postgres/postgres-dba.md"
+    },
+    {
+      "name": "postgres-migration-engineer",
+      "description": "Use when migrating a self-managed PostgreSQL database — major-version upgrades (pg_upgrade or logical-replication cutover), migrating onto/off PostgreSQL from another engine, moving data with pg_dump/pg_restore/pg_basebackup, near-zero-downtime cutovers via logical replication, and reversible schema-change migrations — then validating the migrated instance (PostgreSQL). NOT for deployment architecture (postgres-architect), routine ops (postgres-dba), engine/index/config performance tuning (postgres-performance-engineer), HA (postgres-reliability-engineer), security/RLS review (postgres-security-reviewer), greenfield schema modeling (postgres-data-modeler), monitoring (postgres-observability-engineer); NOT for managed Supabase migrations (supabase team), managed cloud DW migrations (cloud data-engineers), pipeline orchestration (etl-architect), or single-query rewrites (sql-optimizer).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "postgresql",
+        "migration",
+        "pg-upgrade",
+        "logical-replication",
+        "cutover",
+        "pg-dump"
+      ],
+      "skills": [
+        "code-migration",
+        "postgresql-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/postgres/postgres-migration-engineer.md"
+    },
+    {
+      "name": "postgres-observability-engineer",
+      "description": "Use when instrumenting a self-managed PostgreSQL instance's observability — pg_stat_statements and slow-query insight, the pg_stat_* / pg_stat_activity views, log_min_duration_statement and structured logging, exporters/metrics for connection saturation, replication lag, cache hit ratio, bloat and autovacuum activity, and SLO-driven alerting on those signals — then validating it (PostgreSQL). NOT for deployment architecture (postgres-architect), routine ops (postgres-dba), engine/index/config performance tuning (postgres-performance-engineer), HA/recovery design (postgres-reliability-engineer), security/RLS review (postgres-security-reviewer), schema modeling (postgres-data-modeler), DB migration (postgres-migration-engineer); NOT for managed Supabase observability (supabase-observability-engineer), AWS/GCP/Azure managed-DB monitoring (their observability-engineers), generic app observability (devops observability-engineer), or single-query rewrites (sql-optimizer).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "postgresql",
+        "observability",
+        "pg-stat-statements",
+        "metrics",
+        "alerting",
+        "logging"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "postgresql-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/postgres/postgres-observability-engineer.md"
+    },
+    {
+      "name": "postgres-performance-engineer",
+      "description": "Use when tuning the performance of a self-managed PostgreSQL engine/instance as a whole — memory and WAL/checkpoint configuration (shared_buffers, work_mem, effective_cache_size), the index strategy across the workload (B-tree/GIN/GiST/BRIN, index-only scans, dropping unused indexes), autovacuum tuning for throughput, partition pruning, and workload profiling via pg_stat_statements — then validating with EXPLAIN ANALYZE (PostgreSQL). Owns engine/instance/index/config tuning. NOT for rewriting an individual single query in isolation — that is sql-optimizer (sql-optimizer owns single-query rewrites; this owns the engine/instance/index/config layer). NOT for deployment architecture (postgres-architect), routine ops (postgres-dba), HA (postgres-reliability-engineer), security/RLS (postgres-security-reviewer), schema modeling (postgres-data-modeler), migration (postgres-migration-engineer), monitoring (postgres-observability-engineer); NOT for managed Supabase or managed cloud DW tuning.",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "postgresql",
+        "performance",
+        "tuning",
+        "indexing",
+        "explain-analyze",
+        "pg-stat-statements"
+      ],
+      "skills": [
+        "postgresql-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/postgres/postgres-performance-engineer.md"
+    },
+    {
+      "name": "postgres-reliability-engineer",
+      "description": "Use when hardening a self-managed PostgreSQL deployment's resilience — streaming and logical replication, standby/failover and promotion, point-in-time recovery and WAL archiving, backup/restore drills, replication-lag and connection-pool limits, and graceful degradation to a defined RTO/RPO — then validating it with a tested drill (PostgreSQL). NOT for deployment architecture (postgres-architect), routine ops (postgres-dba), engine/index/config performance tuning (postgres-performance-engineer), security/RLS review (postgres-security-reviewer), schema modeling (postgres-data-modeler), DB migration (postgres-migration-engineer), monitoring instrumentation (postgres-observability-engineer); NOT for managed Supabase resilience (supabase-reliability-engineer — managed infra), AWS/GCP/Azure managed-DB reliability (their reliability-engineers), pipeline orchestration resilience (etl-architect), or single-query rewrites (sql-optimizer).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "postgresql",
+        "reliability",
+        "replication",
+        "failover",
+        "pitr",
+        "backups"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "postgresql-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/postgres/postgres-reliability-engineer.md"
+    },
+    {
+      "name": "postgres-security-reviewer",
+      "description": "Use when reviewing a self-managed PostgreSQL deployment for security — role/privilege design and least privilege, GRANT/DEFAULT PRIVILEGES sprawl, Row-Level Security coverage and correct USING/WITH CHECK policies, pg_hba.conf and SSL/auth-method hardening (scram-sha-256), SECURITY DEFINER functions with unpinned search_path, and risky extension/superuser exposure — then triaging findings by severity (PostgreSQL). Read-only; reports, does not change anything. NOT for fixing or building the deployment (postgres-dba), architecture (postgres-architect), performance tuning (postgres-performance-engineer), HA (postgres-reliability-engineer), schema modeling (postgres-data-modeler), migration (postgres-migration-engineer), monitoring (postgres-observability-engineer); NOT for managed Supabase RLS/auth review (supabase-security-reviewer), AWS/GCP/Azure managed-DB/IAM review (their security-reviewers), pipeline review (etl-architect), or single-query rewrites (sql-optimizer).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "postgresql",
+        "security",
+        "rls",
+        "privileges",
+        "pg-hba",
+        "review"
+      ],
+      "skills": [
+        "appsec-review",
+        "postgresql-administration",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/postgres/postgres-security-reviewer.md"
+    },
+    {
       "name": "prd-author",
       "description": "Use when you need a Product Requirements Document for ONE feature or initiative — problem statement, goals/non-goals, user stories, functional/non-functional requirements, success metrics, scope, and open questions. NOT cross-feature prioritization (use roadmap-planner).",
       "category": "product",
@@ -23892,6 +24128,26 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/php-idioms/SKILL.md"
+    },
+    {
+      "name": "postgresql-administration",
+      "description": "The substantive raw-PostgreSQL-engine capability — server config/tuning (shared_buffers, work_mem, effective_cache_size, WAL/checkpoint settings), indexes and query planning (EXPLAIN ANALYZE, B-tree/GIN/GiST/BRIN, index-only scans), vacuum/autovacuum/bloat management, replication and HA (streaming and logical replication, failover, PITR/WAL archiving), declarative partitioning, connection pooling (PgBouncer), roles/privileges/security and Row-Level Security, extensions (pg_stat_statements, pgvector, postgis), and tooling (psql, pg_dump/pg_restore, pg_basebackup). Use when administering, tuning, scaling, replicating, securing, or operating a self-managed PostgreSQL instance/cluster. Any agent operating a PostgreSQL instance can load it. NOT for managed Supabase BaaS (auth/realtime/storage on top of Postgres), managed cloud data warehouses/pipelines (BigQuery/Synapse/Redshift), cloud-agnostic pipeline orchestration design, or single-query SQL rewrites in isolation.",
+      "category": "data",
+      "tags": [
+        "postgresql",
+        "postgres",
+        "tuning",
+        "indexing",
+        "vacuum",
+        "replication",
+        "partitioning",
+        "pgbouncer",
+        "rls",
+        "extensions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/data/postgresql-administration/SKILL.md"
     },
     {
       "name": "prd-authoring",
