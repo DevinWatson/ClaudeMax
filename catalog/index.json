@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 865,
-    "skills": 157,
+    "agents": 873,
+    "skills": 165,
     "categories": 17
   },
   "agents": [
@@ -955,6 +955,37 @@
       "path": "agents/cloud/aws/services/compute/aws-app-runner-specialist.md"
     },
     {
+      "name": "aws-backup-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Backup (AWS) — centralized, policy-driven backup orchestration across EBS, EFS, FSx, S3, RDS/Aurora, DynamoDB, EC2 and more: backup plans (schedules, lifecycle to cold storage, retention), vaults and Vault Lock (immutable WORM), tag/ARN resource selection, cross-Region/account copy, KMS encryption, restore testing, and Backup Audit Manager. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns AWS Backup — centralized data protection — end-to-end (the protected stores themselves are owned by the ebs/efs/fsx/s3 specialists). Pick a sibling instead for: data transfer/sync (datasync), offline bulk (snow-family), hybrid on-prem access (storage-gateway). For Azure Backup / GCP Backup-DR defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "backup",
+        "data-protection",
+        "disaster-recovery",
+        "compliance",
+        "storage",
+        "specialist"
+      ],
+      "skills": [
+        "aws-backup",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/storage/aws-backup-specialist.md"
+    },
+    {
       "name": "aws-batch-specialist",
       "description": "Use when designing, building, or operating AWS Batch (AWS) — compute environments (EC2/Spot/Fargate, allocation strategies), job queues and priorities, job definitions (vCPU/memory/GPU, retries, timeouts), array jobs, job dependencies, scheduling/fair-share policies, and CE scale-to-zero. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the Batch service end-to-end. Pick this for large fleets of independent jobs, array sweeps, HPC/GPU, and Spot-driven batch; for short event functions use aws-lambda-specialist, long-running services aws-fargate-specialist; for GCP Batch or Azure Batch defer to those clouds' specialists.",
       "category": "cloud",
@@ -1066,6 +1097,68 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/aws-data-engineer.md"
+    },
+    {
+      "name": "aws-datasync-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS DataSync (AWS) — online data transfer and sync between on-prem/other-cloud and AWS (and AWS-to-AWS): source/destination locations (NFS/SMB/HDFS/object, S3/EFS/FSx), the DataSync agent, tasks and executions, filters/includes-excludes, scheduling, bandwidth throttling, integrity verification, and in-transit encryption. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns DataSync — online transfer/sync — end-to-end (its S3/EFS/FSx source/target stores are owned by those specialists). Pick a sibling instead for: ongoing hybrid file access (storage-gateway), offline petabyte transfer (snow-family), scheduled backups (backup). For GCP Storage Transfer / Azure equivalents defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "datasync",
+        "data-transfer",
+        "migration",
+        "sync",
+        "storage",
+        "specialist"
+      ],
+      "skills": [
+        "aws-datasync",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/storage/aws-datasync-specialist.md"
+    },
+    {
+      "name": "aws-ebs-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon EBS (AWS) — block volumes for EC2: volume types (gp3/io2/st1/sc1), IOPS/throughput sizing, encryption-by-default with KMS, snapshots and DLM, Fast Snapshot Restore, multi-attach, and online elastic resize. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns EBS — block storage — end-to-end. Pick a sibling instead for: shared NFS file (efs), managed Windows/Lustre/NetApp/OpenZFS file (fsx), object storage (s3), archive (s3-glacier), centralized backup (backup), data transfer (datasync). For GCP Persistent Disk or Azure Managed Disks defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "ebs",
+        "block-storage",
+        "ec2",
+        "encryption",
+        "storage",
+        "specialist"
+      ],
+      "skills": [
+        "aws-ebs",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/storage/aws-ebs-specialist.md"
     },
     {
       "name": "aws-ec2-auto-scaling-specialist",
@@ -1218,6 +1311,38 @@
       "path": "agents/cloud/aws/services/containers/aws-ecs-specialist.md"
     },
     {
+      "name": "aws-efs-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon EFS (AWS) — elastic, multi-AZ NFS shared file systems: performance modes (General Purpose/Max I/O), throughput modes (Elastic/Bursting/Provisioned), Standard vs One Zone, mount targets and access points, IA/Archive lifecycle, encryption at rest (KMS) and in transit (TLS), and replication. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns EFS — shared NFS file storage — end-to-end. Pick a sibling instead for: single-instance block (ebs), managed Windows/Lustre/NetApp/OpenZFS file (fsx), object storage (s3), archive (s3-glacier), backup (backup), transfer (datasync). For GCP Filestore or Azure Files defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "efs",
+        "nfs",
+        "file-storage",
+        "shared-storage",
+        "encryption",
+        "storage",
+        "specialist"
+      ],
+      "skills": [
+        "aws-efs",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/storage/aws-efs-specialist.md"
+    },
+    {
       "name": "aws-eks-specialist",
       "description": "Use when designing, configuring, deploying, or operating Amazon EKS (AWS) — the managed Kubernetes control plane, node groups vs Fargate profiles vs Karpenter, the VPC CNI, IRSA / EKS Pod Identity, managed add-ons, access entries/aws-auth, cluster/node scaling, and the AWS Load Balancer Controller. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the AWS-side EKS plumbing end-to-end. Pick EKS for the Kubernetes API — for AWS-native orchestration use aws-ecs-specialist; serverless pod capacity is aws-fargate-specialist; the registry is aws-ecr-specialist; cluster-internal platform/RBAC/policy belongs to the kubernetes-platform team; for GKE/AKS defer to those clouds.",
       "category": "cloud",
@@ -1306,6 +1431,39 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/compute/aws-fargate-specialist.md"
+    },
+    {
+      "name": "aws-fsx-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon FSx (AWS) — managed third-party file systems: FSx for Windows File Server (SMB/AD), FSx for Lustre (HPC/ML, S3-linked), FSx for NetApp ONTAP (multi-protocol NFS/SMB/iSCSI), and FSx for OpenZFS (NFS/ZFS) — including type selection, Single-/Multi-AZ, storage/throughput sizing, encryption (KMS), AD/network integration, and backups. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns FSx — managed file systems — end-to-end. Pick a sibling instead for: plain Linux NFS (efs), single-instance block (ebs), object storage (s3), archive (s3-glacier), backup (backup), transfer (datasync). For GCP/Azure file offerings defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "fsx",
+        "file-storage",
+        "smb",
+        "lustre",
+        "netapp",
+        "openzfs",
+        "storage",
+        "specialist"
+      ],
+      "skills": [
+        "aws-fsx",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/storage/aws-fsx-specialist.md"
     },
     {
       "name": "aws-iac-engineer",
@@ -1548,6 +1706,37 @@
       "path": "agents/cloud/aws/aws-reliability-engineer.md"
     },
     {
+      "name": "aws-s3-glacier-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon S3 Glacier (AWS) — the archive tier of S3: Glacier Instant Retrieval / Flexible Retrieval / Deep Archive storage classes, lifecycle transitions into Glacier, retrieval tiers (Instant/Expedited/Standard/Bulk) and restore jobs, minimum storage durations and early-deletion fees, Object Lock / Vault Lock WORM, and encryption. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns Glacier — the archive object tier — end-to-end. It sits UNDER S3: for hot/warm buckets, policies, and general object storage use the S3 specialist; for block use ebs, file use efs/fsx, backup orchestration use backup, transfer use datasync. For GCP Archive class or Azure Archive tier defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "s3-glacier",
+        "archive",
+        "cold-storage",
+        "compliance",
+        "storage",
+        "specialist"
+      ],
+      "skills": [
+        "aws-s3-glacier",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/storage/aws-s3-glacier-specialist.md"
+    },
+    {
       "name": "aws-s3-specialist",
       "description": "Use when designing, configuring, deploying, or operating Amazon S3 (AWS) — buckets, storage classes and lifecycle/Intelligent-Tiering, versioning, Block Public Access, bucket/IAM policies, default + KMS encryption, access points and Object Lambda, replication (CRR/SRR), Object Lock/WORM, static hosting, presigned URLs, and event notifications. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns S3 — object storage — end-to-end. For block storage use the EBS specialist, shared file systems the EFS/FSx specialists; for GCP Cloud Storage or Azure Blob defer to those clouds.",
       "category": "cloud",
@@ -1602,6 +1791,71 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/aws-security-reviewer.md"
+    },
+    {
+      "name": "aws-snow-family-specialist",
+      "description": "Use when designing, ordering, configuring, or operating the AWS Snow Family (AWS) — offline/edge physical devices for bulk transfer and edge compute: Snowcone, Snowball Edge Storage Optimized, and Snowball Edge Compute Optimized; job types (import/export to S3, local compute, cluster), KMS encryption, manifest/unlock handling, on-device S3/NFS endpoints, edge EC2/EBS, and shipping logistics. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns Snow Family — offline bulk transfer and edge compute — end-to-end (the destination S3 buckets are owned by the S3 specialist). Pick a sibling instead for: online transfer/sync (datasync), ongoing hybrid file access (storage-gateway), scheduled backups (backup). For Azure Data Box / GCP Transfer Appliance defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "snow-family",
+        "snowball",
+        "edge",
+        "offline-transfer",
+        "migration",
+        "storage",
+        "specialist"
+      ],
+      "skills": [
+        "aws-snow-family",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/storage/aws-snow-family-specialist.md"
+    },
+    {
+      "name": "aws-storage-gateway-specialist",
+      "description": "Use when designing, deploying, configuring, or operating AWS Storage Gateway (AWS) — the hybrid on-prem-to-AWS bridge: S3 File Gateway (NFS/SMB backed by S3), FSx File Gateway (SMB cache of FSx for Windows), Volume Gateway (iSCSI block, cached/stored, EBS snapshots), and Tape Gateway (VTL to S3/Glacier) — including appliance deployment, cache/upload-buffer sizing, bandwidth throttling, AD/NFS access, and encryption. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns Storage Gateway — hybrid on-prem storage — end-to-end (its S3/FSx/EBS/Glacier targets are owned by those specialists). Pick a sibling instead for: online transfer/sync (datasync), offline bulk (snow-family), backup orchestration (backup), or cloud-native s3/ebs/efs/fsx. For Azure File Sync / GCP equivalents defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "storage-gateway",
+        "hybrid",
+        "on-premises",
+        "nfs",
+        "smb",
+        "iscsi",
+        "storage",
+        "specialist"
+      ],
+      "skills": [
+        "aws-storage-gateway",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/storage/aws-storage-gateway-specialist.md"
     },
     {
       "name": "aws-wavelength-specialist",
@@ -24193,6 +24447,22 @@
       "path": "skills/cloud/aws-app-runner/SKILL.md"
     },
     {
+      "name": "aws-backup",
+      "description": "Use when designing, configuring, securing, or operating AWS Backup — centralized, policy-driven backup orchestration across services (EBS, EFS, FSx, S3, RDS/Aurora, DynamoDB, EC2/AMI, and more): backup plans (rules, schedules, lifecycle to cold storage, retention), backup vaults and Vault Lock (immutable WORM/compliance), resource selection by tag/ARN, cross-Region and cross-account copy, KMS encryption, restore testing, and Backup Audit Manager for compliance reporting (AWS Backup). Loads the Backup knowledge: how to define a backup plan, assign resources, lock vaults for ransomware/compliance protection, copy off-Region/account, and verify backups and restores. Consumed by the AWS Backup specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they implement centralized data protection.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "backup",
+        "data-protection",
+        "disaster-recovery",
+        "compliance",
+        "storage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-backup/SKILL.md"
+    },
+    {
       "name": "aws-batch",
       "description": "Use when designing, building, securing, or operating AWS Batch — compute environments (managed/unmanaged, EC2/Spot/Fargate), job queues with priorities, job definitions (container, vCPU/memory/GPU, retries, timeouts), array jobs, job dependencies, scheduling policies/fair-share, and CE scaling/allocation strategies (AWS Batch). Loads the Batch-specific knowledge: how to model queues and compute environments, size jobs, scope job/execution roles, control cost with Spot, and verify a job runs. Consumed by the Batch specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) for large-scale batch/HPC workloads.",
       "category": "cloud",
@@ -24207,6 +24477,41 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-batch/SKILL.md"
+    },
+    {
+      "name": "aws-datasync",
+      "description": "Use when designing, configuring, securing, or operating AWS DataSync — online data transfer and synchronization between on-prem/other-cloud storage and AWS (and AWS-to-AWS): tasks and task executions, source/destination locations (NFS, SMB, HDFS, object storage / other clouds, S3, EFS, FSx for Windows/Lustre/ONTAP/OpenZFS), the DataSync agent (VM/EC2/appliance for on-prem), scheduling, filters/includes-excludes, bandwidth throttling, data-integrity verification, transfer modes, and encryption in transit (DataSync). Loads the DataSync knowledge: how to define source/dest locations, deploy an agent, build a task with filters/schedule, throttle bandwidth, and verify a transfer completed with integrity. Consumed by the DataSync specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they implement data migration/sync.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "datasync",
+        "data-transfer",
+        "migration",
+        "sync",
+        "nfs",
+        "smb",
+        "storage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-datasync/SKILL.md"
+    },
+    {
+      "name": "aws-ebs",
+      "description": "Use when designing, provisioning, securing, or operating Amazon EBS — block volumes for EC2, volume types (gp3/gp2 general-purpose SSD, io2 Block Express/io1 provisioned IOPS, st1/sc1 throughput/cold HDD), IOPS and throughput sizing, EBS encryption with KMS, snapshots and Data Lifecycle Manager (DLM), Fast Snapshot Restore, multi-attach, and resizing/modifying volumes online (Amazon EBS). Loads the EBS knowledge: how to size a volume for a workload, pick the right type, encrypt by default, snapshot/back up, and verify attachment, IOPS, and encryption. Consumed by the EBS specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle block storage for EC2.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "ebs",
+        "block-storage",
+        "ec2",
+        "encryption",
+        "snapshots",
+        "storage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-ebs/SKILL.md"
     },
     {
       "name": "aws-ec2",
@@ -24290,6 +24595,23 @@
       "path": "skills/cloud/aws-ecs/SKILL.md"
     },
     {
+      "name": "aws-efs",
+      "description": "Use when designing, provisioning, securing, or operating Amazon EFS — fully managed, elastic, multi-AZ NFS (v4.1) shared file systems for Linux/EC2/containers/Lambda, performance modes (General Purpose vs Max I/O) and throughput modes (Elastic, Bursting, Provisioned), storage classes and Lifecycle Management (Standard / Infrequent Access / Archive), mount targets and access points, encryption at rest (KMS) and in transit (TLS), and EFS-to-EFS replication (Amazon EFS). Loads the EFS knowledge: how to create an encrypted multi-AZ file system, expose it via mount targets/access points, tune performance/throughput, control cost with IA/Archive lifecycle, and verify mounts and encryption. Consumed by the EFS specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle shared NFS file storage.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "efs",
+        "nfs",
+        "file-storage",
+        "shared-storage",
+        "encryption",
+        "storage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-efs/SKILL.md"
+    },
+    {
       "name": "aws-eks",
       "description": "Use when designing, provisioning, securing, or operating Amazon EKS — managed Kubernetes control plane, node groups (managed/self-managed) vs Fargate profiles, the VPC CNI, IRSA / EKS Pod Identity, add-ons, cluster autoscaling (Karpenter/Cluster Autoscaler), aws-auth/access entries, and load balancer/ingress controllers (Amazon EKS). Loads the EKS knowledge: how to stand up a cluster, attach compute, map IAM to Kubernetes RBAC, grant pods AWS access via IRSA, scale nodes, and verify the cluster and workloads. Consumed by the EKS specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they run Kubernetes.",
       "category": "cloud",
@@ -24336,6 +24658,24 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-fargate/SKILL.md"
+    },
+    {
+      "name": "aws-fsx",
+      "description": "Use when designing, provisioning, securing, or operating Amazon FSx — fully managed third-party file systems: FSx for Windows File Server (SMB, Active Directory, DFS), FSx for Lustre (high-performance/HPC, S3-linked data repositories), FSx for NetApp ONTAP (multi-protocol NFS/SMB/iSCSI, SnapMirror, dedup), and FSx for OpenZFS (NFS, snapshots, cloning), including deployment types (Single-AZ/Multi-AZ), storage/throughput capacity, encryption (KMS), backups, and SMB/NFS access (Amazon FSx). Loads the FSx knowledge: how to choose the file-system type for a workload, size storage/throughput, integrate AD/networking, encrypt and back up, and verify mounts and performance. Consumed by the FSx specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle managed file systems.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "fsx",
+        "file-storage",
+        "smb",
+        "lustre",
+        "netapp",
+        "openzfs",
+        "storage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-fsx/SKILL.md"
     },
     {
       "name": "aws-lambda",
@@ -24418,6 +24758,23 @@
       "path": "skills/cloud/aws-s3/SKILL.md"
     },
     {
+      "name": "aws-s3-glacier",
+      "description": "Use when designing, configuring, securing, or operating Amazon S3 Glacier archive storage — the Glacier Instant Retrieval, Glacier Flexible Retrieval, and Glacier Deep Archive S3 storage classes, lifecycle transitions into Glacier, retrieval tiers (Instant / Expedited / Standard / Bulk) and restore requests, minimum storage durations and early-deletion fees, Vault Lock / S3 Object Lock for compliance WORM, encryption (SSE-S3/SSE-KMS), and the legacy Glacier vault API (Amazon S3 Glacier). Loads the Glacier knowledge: how to move cold data into the right archive class, lifecycle into it, restore with the right retrieval tier, lock for compliance, and verify class, restore, and retention. Consumed by the S3 Glacier specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle archival object storage.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "s3-glacier",
+        "archive",
+        "cold-storage",
+        "object-storage",
+        "compliance",
+        "storage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-s3-glacier/SKILL.md"
+    },
+    {
       "name": "aws-services",
       "description": "The substantive AWS platform capability — compute (EC2, Lambda, ECS/Fargate, EKS), storage (S3, EBS, EFS), databases (RDS/Aurora, DynamoDB), networking (VPC, subnets, security groups, ALB/NLB, Route 53, CloudFront), IAM (roles, policies, least privilege), messaging/eventing (SQS, SNS, EventBridge, Kinesis), the Well-Architected Framework's six pillars, regions/AZs & multi-region patterns, and tooling (AWS CLI, CloudFormation/CDK/SAM). Use when designing, building, reviewing, securing, costing, or operating anything on Amazon Web Services — picking the right managed service, applying least-privilege IAM, choosing single- vs multi-AZ/region, or validating CloudFormation/CDK/SAM. Any agent that touches AWS (an architect, IaC engineer, security reviewer, cost governor, reliability/networking/observability/data engineer) can load it.",
       "category": "cloud",
@@ -24435,6 +24792,41 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-services/SKILL.md"
+    },
+    {
+      "name": "aws-snow-family",
+      "description": "Use when designing, ordering, securing, or operating the AWS Snow Family — offline/edge physical devices for bulk data transfer and edge compute: Snowcone (small, portable, online via DataSync or offline shipping), Snowball Edge Storage Optimized (large offline transfer to S3) and Compute Optimized (edge EC2/EBS/GPU compute in disconnected environments), job types (import/export to S3, local compute, cluster), ordering through the AWS Snow console/jobs, encryption with KMS, tamper-evident enclosures and the manifest/unlock code, NFS/S3 endpoints on-device, and shipping/return logistics (AWS Snow Family). Loads the Snow knowledge: how to pick a device, create a job, encrypt and load data, run edge workloads, ship back, and verify import into S3. Consumed by the Snow Family specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle offline bulk migration or edge compute.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "snow-family",
+        "snowball",
+        "edge",
+        "offline-transfer",
+        "migration",
+        "storage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-snow-family/SKILL.md"
+    },
+    {
+      "name": "aws-storage-gateway",
+      "description": "Use when designing, deploying, securing, or operating AWS Storage Gateway — the hybrid on-prem-to-AWS storage bridge: S3 File Gateway (NFS/SMB shares backed by S3 objects), FSx File Gateway (low-latency on-prem cache of FSx for Windows), Volume Gateway (iSCSI block volumes, cached vs stored, EBS snapshots), and Tape Gateway (virtual tape library to S3/Glacier replacing physical tapes), including gateway appliance deployment (VM/hardware/EC2), local cache/upload buffer sizing, bandwidth throttling, and encryption (Storage Gateway). Loads the gateway knowledge: how to pick the gateway type, deploy and activate the appliance, size cache, expose shares/volumes/tapes, and verify on-prem-to-AWS data flow. Consumed by the Storage Gateway specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle hybrid storage.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "storage-gateway",
+        "hybrid",
+        "on-premises",
+        "nfs",
+        "smb",
+        "iscsi",
+        "storage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-storage-gateway/SKILL.md"
     },
     {
       "name": "aws-wavelength",

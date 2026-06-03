@@ -44,14 +44,14 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 
 ### storage
 - [x] aws|storage|s3|Amazon S3
-- [ ] aws|storage|ebs|Amazon EBS
-- [ ] aws|storage|efs|Amazon EFS
-- [ ] aws|storage|fsx|Amazon FSx
-- [ ] aws|storage|s3-glacier|Amazon S3 Glacier
-- [ ] aws|storage|storage-gateway|AWS Storage Gateway
-- [ ] aws|storage|backup|AWS Backup
-- [ ] aws|storage|datasync|AWS DataSync
-- [ ] aws|storage|snow-family|AWS Snow Family
+- [x] aws|storage|ebs|Amazon EBS
+- [x] aws|storage|efs|Amazon EFS
+- [x] aws|storage|fsx|Amazon FSx
+- [x] aws|storage|s3-glacier|Amazon S3 Glacier
+- [x] aws|storage|storage-gateway|AWS Storage Gateway
+- [x] aws|storage|backup|AWS Backup
+- [x] aws|storage|datasync|AWS DataSync
+- [x] aws|storage|snow-family|AWS Snow Family
 
 ### databases
 - [ ] aws|databases|rds|Amazon RDS
