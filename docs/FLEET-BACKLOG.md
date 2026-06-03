@@ -38,7 +38,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] angular
 - [x] astro
 - [x] remix
-- [ ] django (python web)
+- [x] django (python web)
 - [ ] rails (ruby web)
 - [ ] spring-boot (java web)
 - [ ] fastapi (python web)

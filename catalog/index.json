@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 696,
-    "skills": 120,
+    "agents": 704,
+    "skills": 121,
     "categories": 16
   },
   "agents": [
@@ -4151,6 +4151,248 @@
       "version": "1.1.0",
       "status": "stable",
       "path": "agents/product/design-system-curator.md"
+    },
+    {
+      "name": "django-api-engineer",
+      "description": "Use when designing and building HTTP API endpoints in a Django app with Django REST Framework — serializers, viewsets/routers and APIView/generic views, permission and authentication classes, pagination, filtering, throttling, and versioning, with proper resource modeling, status codes, and error envelopes (Django/DRF). Invoke to design or implement the API contract layer. NOT for server-rendered/template UI features (use django-developer), NOT for system architecture (use django-architect), NOT for security review (use django-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "django",
+        "drf",
+        "api",
+        "rest",
+        "python"
+      ],
+      "skills": [
+        "rest-api-design",
+        "django-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/django/django-api-engineer.md"
+    },
+    {
+      "name": "django-architect",
+      "description": "Use when shaping the architecture of a Django app or module — app/module boundaries and the apps structure, the data model and ORM strategy, settings/environment layering, the server-rendered-vs-DRF-API split, auth/permissions architecture, async/ASGI and Celery topology, and caching strategy (Django). Invoke for system-level design and trade-off analysis. NOT for implementing features (use django-developer), NOT for performance tuning of existing code (use django-performance-engineer), NOT for framework-agnostic Python design (route to python-architect).",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "django",
+        "drf",
+        "architecture",
+        "python"
+      ],
+      "skills": [
+        "software-architecture",
+        "django-framework",
+        "python-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/django/django-architect.md"
+    },
+    {
+      "name": "django-developer",
+      "description": "Use when turning a Django requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Django bug — a broken queryset, an N+1, a migration failure, a view/DRF serializer error, or a middleware/settings problem (Django). Invoke for building or extending Django app features (models, views, DRF endpoints, templates, admin). NOT for system-level design (use django-architect), NOT for adding tests to code you did not write (use django-test-engineer), NOT for ORM/caching performance tuning of working code (use django-performance-engineer). For general (non-Django) Python work, route to python-developer instead.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "django",
+        "drf",
+        "orm",
+        "python",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "django-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/django/django-developer.md"
+    },
+    {
+      "name": "django-migration-engineer",
+      "description": "Use when upgrading a Django app across versions or evolving its schema safely — Django/DRF version upgrades and deprecation fixes, writing and reconciling ORM migrations (data migrations, squashing, backfills), zero-downtime/reversible schema changes, and resolving migration conflicts or drift (Django). Invoke for version upgrades and migration work. NOT for routine feature schema changes inside a feature (use django-developer), NOT for query performance tuning (use django-performance-engineer), NOT for system architecture (use django-architect).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "django",
+        "migrations",
+        "upgrade",
+        "orm",
+        "python"
+      ],
+      "skills": [
+        "code-migration",
+        "django-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/django/django-migration-engineer.md"
+    },
+    {
+      "name": "django-observability-engineer",
+      "description": "Use when instrumenting a Django app for production visibility — structured logging via Django's logging config, OpenTelemetry tracing across views/DRF endpoints/Celery tasks, request and database metrics, and error reporting (Sentry/OTel) (Django). Invoke to add or improve logs, traces, and metrics. NOT for fixing the underlying bug (use django-developer), NOT for query/cache performance tuning (use django-performance-engineer), NOT for system architecture (use django-architect).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "django",
+        "observability",
+        "telemetry",
+        "opentelemetry",
+        "python"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "django-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/django/django-observability-engineer.md"
+    },
+    {
+      "name": "django-performance-engineer",
+      "description": "Use when a Django app is slow or its database cost is high — N+1 queries, missing select_related/prefetch_related, unindexed or full-table queryset scans, heavy serializers, slow views, or weak caching — and you need it measured and tuned (Django). Invoke to profile and optimize an existing app via ORM query tuning, query-count reduction, indexing, and the cache framework. NOT for building new features (use django-developer), NOT for system architecture (use django-architect), NOT for security review (use django-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "django",
+        "orm",
+        "performance",
+        "caching",
+        "python"
+      ],
+      "skills": [
+        "cost-optimization",
+        "django-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/django/django-performance-engineer.md"
+    },
+    {
+      "name": "django-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a Django app or diff — CSRF protection, ORM/SQL injection via raw queries or `extra`, authentication/authorization and DRF permission gaps, SSRF in server-side requests, unsafe deserialization, mass-assignment in serializers, and insecure settings (DEBUG, SECRET_KEY, ALLOWED_HOSTS, cookie flags) — with severity-ranked findings (Django). Invoke for an authorized appsec review. NOT for fixing the issues (use django-developer), NOT for performance review (use django-performance-engineer), NOT for HTTP contract design (use django-api-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "django",
+        "drf",
+        "security",
+        "appsec",
+        "python"
+      ],
+      "skills": [
+        "appsec-review",
+        "django-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/django/django-security-reviewer.md"
+    },
+    {
+      "name": "django-test-engineer",
+      "description": "Use when adding or improving automated tests for a Django app — model and queryset tests, view and DRF endpoint tests (permissions, serializers, status codes), migration tests, and query-count assertions — using Django's test runner or pytest-django (Django). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use django-developer), NOT for performance profiling (use django-performance-engineer), NOT for security review (use django-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "django",
+        "drf",
+        "testing",
+        "pytest",
+        "python"
+      ],
+      "skills": [
+        "test-automation",
+        "django-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/django/django-test-engineer.md"
     },
     {
       "name": "dockerfile-author",
@@ -12446,7 +12688,7 @@
     },
     {
       "name": "python-architect",
-      "description": "Use when designing or reviewing the structure of a Python system, service, or package — module/package boundaries, coupling/cohesion, interface contracts (protocols/ABCs), layering, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Python or when reviewing a Python design proposal. Not for implementing the feature (use python-developer) or for REST endpoint shape alone (use python-api-designer).",
+      "description": "Use when designing or reviewing the structure of a Python system, service, or package — module/package boundaries, coupling/cohesion, interface contracts (protocols/ABCs), layering, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Python or when reviewing a Python design proposal. Not for implementing the feature (use python-developer), REST endpoint shape alone (use python-api-designer), or framework-specific app architecture (e.g. Django — use django-architect).",
       "category": "languages",
       "model": "opus",
       "tools": [
@@ -12548,7 +12790,7 @@
     },
     {
       "name": "python-developer",
-      "description": "Use when turning a Python requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Python bug. Invoke for building or extending Python/Django/FastAPI/CLI features and for diagnosing failures in existing Python code. Not for system-level design (use python-architect) or for adding tests to code you did not write (use python-unit-test-architect).",
+      "description": "Use when turning a Python requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Python bug. Invoke for general (non-framework) Python features — CLI tools, libraries, scripts, data work — and diagnosing failures in existing Python code. For framework app work (Django, FastAPI, etc.) use the matching framework team (e.g. django-developer). Not for system-level design (use python-architect) or for adding tests to code you did not write (use python-unit-test-architect).",
       "category": "languages",
       "model": "sonnet",
       "tools": [
@@ -19484,6 +19726,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/creative/divergent-then-converge/SKILL.md"
+    },
+    {
+      "name": "django-framework",
+      "description": "Use when working in Django (Python) — the ORM (models, migrations, querysets, select_related/prefetch_related, N+1 avoidance), function- and class-based views and Django REST Framework (DRF) serializers/viewsets, URL routing and the request/response cycle, middleware, forms & validation, the admin, settings/apps structure, auth & permissions, signals, async views & ASGI, caching, and Celery integration. Django renders server-side templates AND serves APIs via DRF. TRIGGER on Django model/migration/queryset issues, N+1 query problems, DRF serializer/viewset/permission questions, middleware or settings problems, or manage.py check/test/migration failures. NOT for general Python language concerns (typing, asyncio, packaging — that is python-idioms) or framework-agnostic HTTP contract design. Any agent touching Django (a developer, an API engineer, a reviewer, a performance or migration engineer) can load it.",
+      "category": "web",
+      "tags": [
+        "django",
+        "drf",
+        "orm",
+        "python",
+        "web"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/django-framework/SKILL.md"
     },
     {
       "name": "dockerfile-authoring",
