@@ -19,7 +19,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] elixir
 - [x] cpp
 - [x] c
-- [ ] dart
+- [x] dart
 - [ ] clojure
 - [ ] haskell
 - [ ] lua

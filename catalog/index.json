@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 408,
-    "skills": 103,
+    "agents": 429,
+    "skills": 104,
     "categories": 16
   },
   "agents": [
@@ -2428,6 +2428,574 @@
       "version": "1.1.0",
       "status": "stable",
       "path": "agents/web/css-specialist.md"
+    },
+    {
+      "name": "dart-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Dart — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution (Futures/isolates), verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a Dart app/server. Not for a single model call (use dart-ai-engineer), retrieval pipelines (use dart-rag-engineer), or Flutter UI (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-agent-orchestrator.md"
+    },
+    {
+      "name": "dart-ai-engineer",
+      "description": "Use when building LLM-backed features in Dart — wiring model calls via provider SDKs or HTTP clients, prompt/response plumbing, structured output parsing, streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a Dart app/server. Not for retrieval pipelines (use dart-rag-engineer), multi-agent workflows (use dart-agent-orchestrator), eval harnesses (use dart-evals-engineer), or Flutter UI for AI features (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-ai-engineer.md"
+    },
+    {
+      "name": "dart-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Dart — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized in shelf or dart_frog. Invoke to design or refine Dart HTTP endpoints. Not for gRPC/protobuf schemas (use dart-proto-steward), system structure (use dart-architect), or Flutter client UI (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-api-designer.md"
+    },
+    {
+      "name": "dart-architect",
+      "description": "Use when designing or reviewing the structure of a Dart system, server, package, or CLI — component boundaries, coupling/cohesion, library/`lib/src` layout, public API surface, interface contracts, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Dart or when reviewing a Dart design proposal. Not for implementing the feature (use dart-developer), HTTP endpoint shape alone (use dart-api-designer), or Flutter widget/UI architecture (use the Flutter framework team).",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "dart",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "dart-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-architect.md"
+    },
+    {
+      "name": "dart-compliance-reviewer",
+      "description": "Use when checking Dart code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of Dart server/CLI/package code. Not for finding exploitable vulnerabilities (use dart-security-reviewer) or Flutter client/UI concerns (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "dart",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "dart-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-compliance-reviewer.md"
+    },
+    {
+      "name": "dart-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in Dart — Pact (pact_dart) consumer and provider tests, contract publication, and compatibility checks between services. Invoke to add or fix contract tests in Dart so a provider change cannot silently break a consumer. Not for in-process integration tests (use dart-integration-test-architect), end-to-end flows (use dart-sdet), or Flutter UI work (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-contract-tester.md"
+    },
+    {
+      "name": "dart-cost-governor",
+      "description": "Use when reducing the runtime cost of Dart services — VM/AOT memory footprint, container memory sizing, connection-pool and isolate-pool right-sizing, wasteful allocation and async/Stream patterns, and cloud resource footprint. Invoke to analyze and cut compute/memory cost of Dart workloads. Not for latency-only profiling unless it lowers cost, resilience design (use dart-reliability-engineer), or Flutter app/UI performance (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "cost",
+        "vm-tuning"
+      ],
+      "skills": [
+        "cost-optimization",
+        "dart-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-cost-governor.md"
+    },
+    {
+      "name": "dart-developer",
+      "description": "Use when turning a Dart requirement, ticket, or feature into working, tested, incrementally-shipped code — a CLI tool, server, or package — or when fixing a reported Dart bug. Invoke for building or extending Dart/shelf/server/package features and for diagnosing failures in existing Dart code. Not for system-level design (use dart-architect), adding tests to code you did not write (use dart-unit-test-architect), or Flutter widget/UI work (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-developer.md"
+    },
+    {
+      "name": "dart-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Dart — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality in Dart. Not for building the feature (use dart-ai-engineer), the retrieval pipeline (use dart-rag-engineer), or Flutter UI (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "dart-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-evals-engineer.md"
+    },
+    {
+      "name": "dart-integration-test-architect",
+      "description": "Use when testing how Dart components integrate across real boundaries — database, HTTP clients, message brokers, or a running shelf/dart_frog server — with package:test and ephemeral/containerized dependencies. Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use dart-unit-test-architect), end-to-end flows (use dart-sdet), or Flutter widget/integration UI tests (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "integration-testing"
+      ],
+      "skills": [
+        "integration-testing",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-integration-test-architect.md"
+    },
+    {
+      "name": "dart-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Dart — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle in Dart. Invoke for MCP server/client work in a Dart codebase. Not for general LLM feature plumbing (use dart-ai-engineer), multi-agent coordination (use dart-agent-orchestrator), or Flutter UI (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-mcp-steward.md"
+    },
+    {
+      "name": "dart-migration-engineer",
+      "description": "Use when migrating Dart code across a version or library boundary — Dart SDK upgrades, the null-safety migration, Dart 3 class-modifier/records adoption, or package replacements — done in safe, verifiable increments. Invoke to plan and execute a Dart migration or fix breakage it caused. Not for greenfield features (use dart-developer), pure restructuring within one version (use dart-architect), or Flutter framework/SDK migrations (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-migration-engineer.md"
+    },
+    {
+      "name": "dart-observability-engineer",
+      "description": "Use when instrumenting Dart services for observability — structured logging, metrics, and distributed tracing via OpenTelemetry-dart and the logging package, span/context propagation across async and isolate boundaries, and useful dashboards/alerts signals. Invoke to add or fix telemetry in Dart servers/CLIs. Not for resilience patterns like retries/circuit-breakers (use dart-reliability-engineer), cost reduction (use dart-cost-governor), or Flutter UI instrumentation (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-observability-engineer.md"
+    },
+    {
+      "name": "dart-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a Dart application — externalizing prompts from code, templating and parameterizing them, versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a Dart codebase. Not for wiring the model call (use dart-ai-engineer), scoring output quality (use dart-evals-engineer), or Flutter UI (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "dart",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "dart-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-prompt-librarian.md"
+    },
+    {
+      "name": "dart-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Dart — message and service definitions, field numbering, wire/back-compat rules, and generated-Dart (protoc + grpc-dart) integration. Invoke for .proto schema design or compatibility review in a Dart codebase. Not for REST/HTTP API design (use dart-api-designer), consumer/provider contract tests (use dart-contract-tester), or Flutter UI (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-proto-steward.md"
+    },
+    {
+      "name": "dart-qa-analyst",
+      "description": "Use when planning what to test for a Dart change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for Dart work, before or instead of writing tests. Not for writing the tests themselves (use the dart test-architect/sdet roles) or Flutter UI test planning (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "dart",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "dart-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-qa-analyst.md"
+    },
+    {
+      "name": "dart-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Dart — chunking, embeddings, vector store wiring, hybrid retrieval + reranking, context assembly, and grounding/citation. Invoke for RAG retrieval quality or wiring in a Dart app/server. Not for a single model call (use dart-ai-engineer), building an eval harness (use dart-evals-engineer), or Flutter UI for RAG features (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-rag-engineer.md"
+    },
+    {
+      "name": "dart-reliability-engineer",
+      "description": "Use when hardening a Dart service against partial failure — timeouts, retries-with-backoff, circuit breakers, bulkheads, and backpressure via the retry package or Stream/async operators, plus graceful degradation and load shedding. Invoke for resilience design or review of Dart servers. Not for emitting telemetry (use dart-observability-engineer), triaging a live outage, or Flutter UI resilience (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-reliability-engineer.md"
+    },
+    {
+      "name": "dart-sdet",
+      "description": "Use when building end-to-end or API test automation in Dart — package:test/HTTP-driven suites against a running server or CLI, fixtures, data setup, and stable flows run in CI. Invoke to automate full API/CLI flows in Dart. Not for unit tests (use dart-unit-test-architect), service integration tests (use dart-integration-test-architect), consumer/provider contracts (use dart-contract-tester), or Flutter end-to-end UI automation (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-sdet.md"
+    },
+    {
+      "name": "dart-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Dart code or a diff — tracing untrusted input to sinks for injection (SQL/command/header), broken authn/authz and IDOR, unsafe deserialization, SSRF/path-traversal, secrets exposure, and crypto misuse, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of Dart server/CLI/package code you are authorized to review. Not for regulatory/policy conformance (use dart-compliance-reviewer) or Flutter client/UI security (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "dart",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "dart-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-security-reviewer.md"
+    },
+    {
+      "name": "dart-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Dart code — mapping a unit's behaviors and writing deterministic package:test tests (with mocktail for fakes) that catch real regressions (boundaries, invalid input, error paths, async/Stream). Invoke to raise meaningful unit coverage in Dart. Not for cross-boundary integration tests (use dart-integration-test-architect), end-to-end automation (use dart-sdet), or Flutter widget tests (use the Flutter framework team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "dart",
+        "testing",
+        "package-test"
+      ],
+      "skills": [
+        "test-design",
+        "dart-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/dart/dart-unit-test-architect.md"
     },
     {
       "name": "dbt-modeler",
@@ -11454,6 +12022,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/web/css-layout-and-cascade/SKILL.md"
+    },
+    {
+      "name": "dart-idioms",
+      "description": "Use when writing or fixing Dart LANGUAGE code — sound null safety, async/await with Futures and Streams, isolates and concurrency, the type system (mixins, extension methods, sealed/final classes, records and patterns in Dart 3), const and immutability, generics, error handling, package structure and pub, and FFI. Verifies with dart compile/run, dart test, dart analyze, and dart format. This is Dart the language (CLI, server, packages, async) — NOT Flutter widgets/UI, which is flutter-development. Any agent touching Dart (writer, reviewer, debugger, the Flutter team) can load it.",
+      "category": "languages",
+      "tags": [
+        "dart",
+        "null-safety",
+        "async",
+        "isolates",
+        "pub",
+        "dart3"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/dart-idioms/SKILL.md"
     },
     {
       "name": "data-pipeline-design",
