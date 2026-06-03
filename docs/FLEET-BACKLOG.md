@@ -59,6 +59,6 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 ## Data platforms / databases (data category; tailored teams + skills)
 - [x] postgres
 - [x] mongodb
-- [ ] redis
+- [x] redis
 - [ ] snowflake
 - [ ] kafka

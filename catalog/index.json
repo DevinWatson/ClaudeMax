@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 829,
-    "skills": 138,
+    "agents": 835,
+    "skills": 139,
     "categories": 17
   },
   "agents": [
@@ -17327,6 +17327,186 @@
       "path": "agents/mobile/react-native/react-native-test-engineer.md"
     },
     {
+      "name": "redis-administrator",
+      "description": "Use when administering and operating a self-managed Redis instance/cluster — applying server config (redis.conf / CONFIG SET), choosing and operating data structures, configuring caching/TTL and eviction, managing keyspace and pub/sub, writing Lua scripts and MULTI/EXEC transactions, taking and restoring RDB/AOF backups, and routine day-to-day operations — then validating against the instance (Redis). NOT for deployment architecture (redis-architect), memory/latency/data-structure performance tuning (redis-performance-engineer), HA/replication/failover/persistence hardening (redis-reliability-engineer), security review (redis-security-reviewer), monitoring instrumentation (redis-observability-engineer); NOT for managed cloud Redis admin (AWS ElastiCache / GCP MemoryStore / Azure Cache — the cloud data-engineers) or Supabase; NOT for the postgres/mongodb teams (relational/document engines), pipeline orchestration (etl-architect), or single SQL query rewrites (sql-optimizer — Redis isn't SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "redis",
+        "administration",
+        "operations",
+        "caching",
+        "persistence",
+        "lua"
+      ],
+      "skills": [
+        "redis-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/redis/redis-administrator.md"
+    },
+    {
+      "name": "redis-architect",
+      "description": "Use when designing or reviewing the architecture of a self-managed Redis deployment — how the role (cache vs durable store vs queue), the standalone/replica/Sentinel/Cluster topology, persistence posture (RDB/AOF/hybrid), eviction and memory-sizing strategy, sharding (hash slots) and HA/failover approach, and the caching pattern fit the workload and RTO/RPO (Redis). Produces the design and trade-offs, not the implementation. NOT for applying changes (redis-administrator), memory/latency/data-structure tuning (redis-performance-engineer), HA/persistence execution (redis-reliability-engineer), security review (redis-security-reviewer), monitoring (redis-observability-engineer); NOT for managed cloud Redis architecture (AWS ElastiCache / GCP MemoryStore / Azure Cache — the cloud data-engineers) or Supabase; NOT for the postgres/mongodb teams (relational/document engines), cloud-agnostic pipeline orchestration (etl-architect), or single SQL query rewrites (sql-optimizer — Redis isn't SQL).",
+      "category": "data",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "redis",
+        "architecture",
+        "topology",
+        "caching",
+        "cluster",
+        "sentinel",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "redis-administration",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/redis/redis-architect.md"
+    },
+    {
+      "name": "redis-observability-engineer",
+      "description": "Use when instrumenting a self-managed Redis instance/cluster's observability — INFO-section and SLOWLOG/LATENCY insight, exporters/metrics for memory usage and fragmentation, eviction and keyspace hit/miss ratio, connected-clients and blocked-clients, replication lag, persistence (last-save/AOF rewrite) status, ops/sec, and SLO-driven alerting on those signals — then validating it (Redis). NOT for deployment architecture (redis-architect), routine ops (redis-administrator), memory/latency performance tuning (redis-performance-engineer), HA/recovery design (redis-reliability-engineer), security review (redis-security-reviewer); NOT for managed cloud Redis monitoring (AWS ElastiCache / GCP MemoryStore / Azure Cache — their observability-engineers), generic app observability (devops observability-engineer), the postgres/mongodb teams, or single SQL query rewrites (sql-optimizer — Redis isn't SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "redis",
+        "observability",
+        "metrics",
+        "slowlog",
+        "alerting",
+        "exporter"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "redis-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/redis/redis-observability-engineer.md"
+    },
+    {
+      "name": "redis-performance-engineer",
+      "description": "Use when tuning the performance of a self-managed Redis engine/instance/cluster — memory optimization (maxmemory, eviction policy, fragmentation, OBJECT ENCODING, big-key reduction), latency diagnosis (SLOWLOG, LATENCY, avoiding KEYS/blocking commands and long Lua on the single thread), data-structure selection for the access pattern, pipelining, and connection/throughput tuning — then validating with INFO/SLOWLOG before-and-after (Redis). Owns Redis memory/latency/data-structure tuning. NOT a SQL concern — for single SQL query rewrites use sql-optimizer (Redis isn't SQL; sql-optimizer owns single-query rewrites, this owns the Redis memory/latency/data-structure layer). NOT for deployment architecture (redis-architect), routine ops (redis-administrator), HA/persistence (redis-reliability-engineer), security (redis-security-reviewer), monitoring (redis-observability-engineer); NOT for managed cloud Redis tuning (the cloud data-engineers).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "redis",
+        "performance",
+        "memory",
+        "latency",
+        "eviction",
+        "data-structures",
+        "slowlog"
+      ],
+      "skills": [
+        "redis-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/redis/redis-performance-engineer.md"
+    },
+    {
+      "name": "redis-reliability-engineer",
+      "description": "Use when hardening a self-managed Redis deployment's resilience — primary/replica replication and replication-lag bounds, Sentinel HA/failover and promotion, Redis Cluster failover and slot coverage, persistence durability (RDB/AOF/hybrid, appendfsync, BGREWRITEAOF), backup/restore drills, and graceful degradation to a defined RTO/RPO — then validating it with a tested drill (Redis). NOT for deployment architecture (redis-architect), routine ops (redis-administrator), memory/latency performance tuning (redis-performance-engineer), security review (redis-security-reviewer), monitoring instrumentation (redis-observability-engineer); NOT for managed cloud Redis resilience (AWS ElastiCache / GCP MemoryStore / Azure Cache — their reliability-engineers) or Supabase; NOT for the postgres/mongodb teams, pipeline orchestration resilience (etl-architect), or single SQL query rewrites (sql-optimizer — Redis isn't SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "redis",
+        "reliability",
+        "replication",
+        "sentinel",
+        "failover",
+        "persistence",
+        "backups"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "redis-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/redis/redis-reliability-engineer.md"
+    },
+    {
+      "name": "redis-security-reviewer",
+      "description": "Use when reviewing a self-managed Redis deployment for security — authentication (requirepass / ACL users and rules, default-user exposure), network exposure (bind/protected-mode, TLS, port reachability), dangerous-command exposure (FLUSHALL/CONFIG/DEBUG/EVAL — rename-command/ACL restrictions), persistence-file and CONFIG-write exposure, and Lua-script injection surface — then triaging findings by severity (Redis). Read-only; reports, does not change anything. NOT for fixing or building the deployment (redis-administrator), architecture (redis-architect), memory/latency tuning (redis-performance-engineer), HA (redis-reliability-engineer), monitoring (redis-observability-engineer); NOT for managed cloud Redis / IAM review (AWS ElastiCache / GCP MemoryStore / Azure Cache — their security-reviewers) or Supabase; NOT for the postgres/mongodb teams or single SQL query rewrites (sql-optimizer — Redis isn't SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "redis",
+        "security",
+        "acl",
+        "auth",
+        "network",
+        "review"
+      ],
+      "skills": [
+        "appsec-review",
+        "redis-administration",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/redis/redis-security-reviewer.md"
+    },
+    {
       "name": "refactoring-specialist",
       "description": "Use when improving the structure of working code without changing its behavior — reduces duplication, clarifies naming, untangles complex functions, and improves cohesion, verifying behavior is preserved via the existing tests at each step. Not for adding features or fixing bugs.",
       "category": "engineering",
@@ -24537,6 +24717,26 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/web/react-rendering-model/SKILL.md"
+    },
+    {
+      "name": "redis-administration",
+      "description": "The substantive raw-Redis-engine capability — data structures (strings, hashes, lists, sets, sorted-sets, streams, bitmaps, HyperLogLog), caching patterns (cache-aside, write-through, eviction policies, TTL/expiry), persistence (RDB snapshots, AOF, hybrid), replication (primary/replica), Redis Cluster (sharding, hash slots, resharding), pub/sub and keyspace notifications, Lua scripting and transactions (MULTI/EXEC/WATCH), Sentinel HA/failover, memory optimization (maxmemory, eviction, fragmentation), and tooling (redis-cli, INFO, SLOWLOG, MONITOR). Use when administering, tuning, scaling, replicating, securing, or operating a self-managed Redis instance/cluster. Any agent operating a Redis instance can load it. NOT for managed cloud Redis (AWS ElastiCache, GCP MemoryStore, Azure Cache for Redis — the cloud data-engineers own those), cloud-agnostic pipeline orchestration, relational/document engines (Postgres/MongoDB), or single SQL query rewrites (Redis isn't SQL).",
+      "category": "data",
+      "tags": [
+        "redis",
+        "caching",
+        "data-structures",
+        "persistence",
+        "replication",
+        "cluster",
+        "sentinel",
+        "eviction",
+        "pubsub",
+        "lua"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/data/redis-administration/SKILL.md"
     },
     {
       "name": "relational-data-modeling",
