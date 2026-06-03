@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 937,
-    "skills": 229,
+    "agents": 945,
+    "skills": 237,
     "categories": 17
   },
   "agents": [
@@ -1282,6 +1282,36 @@
       "path": "agents/cloud/aws/services/networking/aws-cloud-map-specialist.md"
     },
     {
+      "name": "aws-cloudformation-specialist",
+      "description": "Use when designing, authoring, deploying, or operating AWS CloudFormation (AWS) — templates (YAML/JSON), stacks and StackSets, change sets, drift detection, nested/cross stacks, intrinsic functions, custom resources, modules, and resource import. Pick this to own CloudFormation-native IaC specifically. NOT the aws-iac-engineer role (which owns broad multi-service AWS IaC and tool choice) — this specialist owns CFN templates/stacks as the artifact; NOT the devops terraform-architect — Terraform is a sibling IaC choice for the same resources, defer to it when Terraform is the chosen tool. NOT sibling mgmt-governance specialists (aws-config=compliance, aws-cloudtrail=audit, aws-systems-manager=ops, aws-organizations/aws-control-tower=multi-account governance). NOT the AWS role team (aws-cloud-architect/aws-security-reviewer own architecture and account-wide security). For Azure ARM/Bicep or GCP Deployment Manager defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "cloudformation",
+        "iac",
+        "stacks",
+        "stacksets",
+        "specialist"
+      ],
+      "skills": [
+        "aws-cloudformation",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/management-governance/aws-cloudformation-specialist.md"
+    },
+    {
       "name": "aws-cloudfront-specialist",
       "description": "Use when designing, configuring, deploying, or operating Amazon CloudFront (AWS) — the global CDN/edge: distributions, origins (S3/ALB/origin groups), cache behaviors and path patterns, cache/origin-request/response-headers policies and TTLs, Origin Access Control (OAC) for private S3, viewer/origin TLS + ACM (us-east-1), WAF and geo-restriction, CloudFront Functions vs Lambda@Edge, invalidations, and access logs. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), aws-security-reviewer (account posture) own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the CloudFront CDN service itself (distributions/behaviors/edge config and APIs). Pick a networking sibling instead for: the private network (vpc), DNS (route53), the API front door (api-gateway), on-prem links (direct-connect). For Cloudflare/Fastly or Azure CDN/Front Door defer to those.",
       "category": "cloud",
@@ -1310,6 +1340,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/networking/aws-cloudfront-specialist.md"
+    },
+    {
+      "name": "aws-cloudtrail-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS CloudTrail (AWS) — management and data events, single/multi-region and organization trails to S3 + CloudWatch Logs, CloudTrail Lake event data stores and SQL queries, CloudTrail Insights, advanced event selectors, log file integrity validation, and KMS encryption. Pick this to implement AWS API audit logging. NOT aws-cloudwatch (which owns operational metrics/logs/alarms) — CloudTrail owns the audit trail of API activity. NOT aws-config (resource compliance state) — cross-ref it. NOT sibling mgmt-governance specialists (aws-systems-manager=ops, aws-organizations/aws-control-tower=multi-account governance). NOT the AWS role team (aws-security-reviewer/aws-cloud-architect own account-wide security posture and architecture). For Azure Activity Log/Monitor or GCP Cloud Audit Logs defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "cloudtrail",
+        "audit-logging",
+        "security",
+        "governance",
+        "specialist"
+      ],
+      "skills": [
+        "aws-cloudtrail",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/management-governance/aws-cloudtrail-specialist.md"
     },
     {
       "name": "aws-cloudwatch-specialist",
@@ -1551,6 +1611,96 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/ai-ml/aws-comprehend-specialist.md"
+    },
+    {
+      "name": "aws-compute-optimizer-specialist",
+      "description": "Use when enabling, configuring, or operating AWS Compute Optimizer (AWS) — ML rightsizing recommendations for EC2, Auto Scaling groups, EBS volumes, Lambda, and ECS-on-Fargate; reading over-/under-provisioned/optimized findings, savings and performance-risk, enhanced infrastructure metrics, memory metrics via the CloudWatch agent, S3 export, and org-wide opt-in via a delegated admin. Pick this to surface and prioritize rightsizing recommendations. Cross-ref the aws-cost-governor role, which owns broad cost governance/allocation, and the aws-reliability-engineer role for the reliability impact of resizing — this specialist surfaces and validates the rightsizing recommendation. NOT sibling mgmt-governance specialists (aws-config=compliance, aws-cloudtrail=audit, aws-systems-manager=ops, aws-cloudformation=IaC). For Azure Advisor or GCP Recommender defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "compute-optimizer",
+        "rightsizing",
+        "cost",
+        "performance",
+        "specialist"
+      ],
+      "skills": [
+        "aws-compute-optimizer",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/management-governance/aws-compute-optimizer-specialist.md"
+    },
+    {
+      "name": "aws-config-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Config (AWS) — the configuration recorder and delivery channel, configuration items and timeline, managed/custom (Lambda/Guard) Config rules, conformance packs, SSM Automation remediation, multi-account/region aggregators, and advanced queries. Pick this to implement AWS resource configuration compliance. NOT aws-cloudtrail (which owns API audit logging — who called what) — Config owns resource configuration state and compliance; cross-ref it. NOT sibling mgmt-governance specialists (aws-systems-manager=ops/patching/params, aws-organizations/aws-control-tower=multi-account governance, aws-cloudformation=IaC). NOT the AWS role team (aws-security-reviewer/aws-cloud-architect own account-wide security posture and architecture). For Azure Policy or GCP Organization Policy/Security Health Analytics defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "config",
+        "compliance",
+        "governance",
+        "remediation",
+        "specialist"
+      ],
+      "skills": [
+        "aws-config",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/management-governance/aws-config-specialist.md"
+    },
+    {
+      "name": "aws-control-tower-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Control Tower (AWS) — the landing zone, foundational Log Archive/Audit accounts, preventive/detective/proactive controls (guardrails) enabled per OU, Account Factory and Account Factory for Terraform (AFT), Customizations for Control Tower (CfCT), and landing-zone drift/repair. Pick this to implement an opinionated managed multi-account landing zone. Cross-ref aws-organizations: Control Tower BUILDS ON it — defer raw OU/account/SCP mechanics (without the managed layer) to aws-organizations. NOT sibling mgmt-governance specialists (aws-config=compliance, aws-cloudtrail=audit, aws-systems-manager=ops, aws-service-catalog=product provisioning). NOT the AWS role team (aws-security-reviewer/aws-cloud-architect own security posture and architecture). For Azure Landing Zones or GCP Cloud Foundation/landing zone defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "control-tower",
+        "landing-zone",
+        "multi-account",
+        "governance",
+        "specialist"
+      ],
+      "skills": [
+        "aws-control-tower",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/management-governance/aws-control-tower-specialist.md"
     },
     {
       "name": "aws-cost-governor",
@@ -2905,6 +3055,36 @@
       "path": "agents/cloud/aws/services/analytics/aws-opensearch-service-specialist.md"
     },
     {
+      "name": "aws-organizations-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Organizations (AWS) — the org root and management account, OUs and account hierarchy, service control policies (SCPs) and resource control policies (RCPs), tag/backup policies, consolidated billing, delegated administration, account creation/move/close, and trusted access. Pick this to implement multi-account structure and SCP guardrails. Cross-ref aws-control-tower, which BUILDS ON Organizations to provide a managed landing zone — defer the opinionated landing-zone/controls layer to it. NOT sibling mgmt-governance specialists (aws-config=compliance, aws-cloudtrail=audit, aws-systems-manager=ops, aws-cloudformation=IaC). NOT the AWS role team (aws-security-reviewer/aws-cloud-architect own security posture and architecture). For cost allocation defer to the aws-cost-governor role. For Azure Management Groups or GCP Resource Manager/Folders defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "organizations",
+        "multi-account",
+        "governance",
+        "scp",
+        "specialist"
+      ],
+      "skills": [
+        "aws-organizations",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/management-governance/aws-organizations-specialist.md"
+    },
+    {
       "name": "aws-outposts-specialist",
       "description": "Use when designing, configuring, deploying, or operating AWS Outposts (AWS) — Outpost rack/server capacity planning, VPC extension on-prem, local gateway and service link, on-prem service placement (EC2/EBS/ECS/EKS/RDS/S3 on Outposts), and data-residency/low-latency hybrid workloads. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns Outposts end-to-end. For AWS-owned 5G edge use aws-wavelength-specialist; for plain in-Region compute use aws-ec2-specialist; for GCP/Azure hybrid (Anthos/Stack) defer to those clouds.",
       "category": "cloud",
@@ -3381,6 +3561,36 @@
       "path": "agents/cloud/aws/aws-security-reviewer.md"
     },
     {
+      "name": "aws-service-catalog-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Service Catalog (AWS) — portfolios and products (CloudFormation/Terraform-backed), product versions, launch constraints (the launch role), template/stack-set/notification/tag-update constraints, TagOptions, IAM principal access and org/portfolio sharing, and provisioned-product lifecycle. Pick this to implement curated, governed self-service provisioning. NOT aws-cloudformation, which authors the template content — Service Catalog governs WHO can launch WHAT under a launch role (the template is a sibling artifact). NOT sibling mgmt-governance specialists (aws-config=compliance, aws-cloudtrail=audit, aws-systems-manager=ops, aws-organizations/aws-control-tower=multi-account governance). NOT the AWS role team (aws-cloud-architect/aws-security-reviewer own architecture and account-wide security). For Azure Managed Applications/Blueprints or GCP Service Catalog defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "service-catalog",
+        "governance",
+        "self-service",
+        "portfolios",
+        "specialist"
+      ],
+      "skills": [
+        "aws-service-catalog",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/management-governance/aws-service-catalog-specialist.md"
+    },
+    {
       "name": "aws-snow-family-specialist",
       "description": "Use when designing, ordering, configuring, or operating the AWS Snow Family (AWS) — offline/edge physical devices for bulk transfer and edge compute: Snowcone, Snowball Edge Storage Optimized, and Snowball Edge Compute Optimized; job types (import/export to S3, local compute, cluster), KMS encryption, manifest/unlock handling, on-device S3/NFS endpoints, edge EC2/EBS, and shipping logistics. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns Snow Family — offline bulk transfer and edge compute — end-to-end (the destination S3 buckets are owned by the S3 specialist). Pick a sibling instead for: online transfer/sync (datasync), ongoing hybrid file access (storage-gateway), scheduled backups (backup). For Azure Data Box / GCP Transfer Appliance defer to those clouds.",
       "category": "cloud",
@@ -3534,6 +3744,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/storage/aws-storage-gateway-specialist.md"
+    },
+    {
+      "name": "aws-systems-manager-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Systems Manager / SSM (AWS) — Parameter Store (string/secure-string, hierarchies, tiers), Session Manager (keyless shell), Patch Manager (baselines, maintenance windows, compliance), Run Command, State Manager associations, Automation runbooks, Inventory, and SSM documents. Pick this to implement operational management, patching, and parameter/config storage. NOT sibling mgmt-governance specialists (aws-config=compliance recording, aws-cloudtrail=audit logging, aws-cloudformation=provisioning IaC) — SSM owns day-2 operations of compute. NOT aws-organizations/aws-control-tower (multi-account governance). NOT the AWS role team (aws-cloud-architect/aws-security-reviewer own architecture and account-wide security). For secret rotation prefer Secrets Manager. For Azure Automation/Update Manager or GCP OS Config defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "systems-manager",
+        "ssm",
+        "operations",
+        "patching",
+        "specialist"
+      ],
+      "skills": [
+        "aws-systems-manager",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/management-governance/aws-systems-manager-specialist.md"
     },
     {
       "name": "aws-textract-specialist",
@@ -26527,6 +26767,22 @@
       "path": "skills/cloud/aws-cloud-map/SKILL.md"
     },
     {
+      "name": "aws-cloudformation",
+      "description": "Use when designing, authoring, provisioning, or operating AWS CloudFormation — templates (YAML/JSON), stacks and StackSets, change sets, drift detection, nested stacks and cross-stack exports/imports, intrinsic functions (Ref/GetAtt/Sub/Join/Select/If) and pseudo parameters, parameters/mappings/conditions/outputs, custom resources and Lambda-backed providers, modules, resource import, deletion/update policies, and stack policies (AWS CloudFormation). Loads the CloudFormation knowledge: how to write templates, deploy/update stacks safely, manage multi-account/multi-region StackSets, detect drift, and verify a stack reaches CREATE/UPDATE_COMPLETE. Consumed by the CloudFormation specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when AWS-native IaC is the chosen tool.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "cloudformation",
+        "iac",
+        "stacks",
+        "stacksets",
+        "management-governance"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-cloudformation/SKILL.md"
+    },
+    {
       "name": "aws-cloudfront",
       "description": "Use when designing, provisioning, securing, or operating Amazon CloudFront — the AWS global content delivery network (CDN) that caches and serves content from edge locations. Loads the CloudFront knowledge: distributions, origins (S3, custom/ALB, origin groups for failover), cache behaviors and path patterns, cache policies / origin-request policies / response-headers policies, TTLs and invalidations, Origin Access Control (OAC) for private S3, viewer + origin protocol/TLS and ACM certificates, WAF and geo-restriction, CloudFront Functions vs Lambda@Edge, and access logs. Covers how to define origins and behaviors, lock S3 to OAC, attach TLS/WAF, tune caching, and verify cache hits and origin shielding. Consumed by the CloudFront specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology via network-design — this owns the CloudFront CDN service itself.",
       "category": "cloud",
@@ -26542,6 +26798,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-cloudfront/SKILL.md"
+    },
+    {
+      "name": "aws-cloudtrail",
+      "description": "Use when designing, provisioning, securing, or operating AWS CloudTrail — management events and data events (S3/Lambda/DynamoDB), trails (single-region/multi-region) delivering to S3 and CloudWatch Logs, organization trails, CloudTrail Lake event data stores and SQL queries, CloudTrail Insights (anomaly detection on API rate/error), event selectors and advanced event selectors, log file integrity validation, and KMS encryption (AWS CloudTrail). Loads the CloudTrail knowledge: how to capture an immutable audit trail of API activity, scope event selectors for cost, query history with Lake, and verify events land and validate. Consumed by the CloudTrail specialist and by the AWS role team (aws-security-reviewer / aws-cloud-architect) when they need audit logging.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "cloudtrail",
+        "audit-logging",
+        "security",
+        "governance",
+        "management-governance"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-cloudtrail/SKILL.md"
     },
     {
       "name": "aws-cloudwatch",
@@ -26671,6 +26943,54 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-comprehend/SKILL.md"
+    },
+    {
+      "name": "aws-compute-optimizer",
+      "description": "Use when designing, enabling, securing, or operating AWS Compute Optimizer — machine-learning rightsizing recommendations for EC2 instances, Auto Scaling groups, EBS volumes, Lambda functions, and ECS services on Fargate; over-/under-provisioned and optimized findings, recommendation reasons and risk, enhanced infrastructure metrics (3-month lookback), external metrics ingestion, the savings/performance trade-off, and multi-account opt-in via Organizations with a delegated administrator (AWS Compute Optimizer). Loads the Compute Optimizer knowledge: how to enable it, read and prioritize rightsizing recommendations, and verify findings export and an applied resize holds performance. Consumed by the Compute Optimizer specialist and by the AWS role team (aws-cloud-architect / aws-reliability-engineer) and cross-refs the aws-cost-governor role for cost rightsizing.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "compute-optimizer",
+        "rightsizing",
+        "cost",
+        "performance",
+        "management-governance"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-compute-optimizer/SKILL.md"
+    },
+    {
+      "name": "aws-config",
+      "description": "Use when designing, provisioning, securing, or operating AWS Config — the configuration recorder and delivery channel, resource configuration items and timeline/snapshots, Config rules (AWS managed and custom Lambda/Guard rules), conformance packs, remediation actions (SSM Automation), multi-account/multi-region aggregators, advanced queries (SQL over resource config), and compliance reporting (AWS Config). Loads the Config knowledge: how to record resource configuration, evaluate compliance with rules and conformance packs, auto-remediate drift, aggregate across accounts, and verify a rule evaluates and remediates. Consumed by the Config specialist and by the AWS role team (aws-security-reviewer / aws-cloud-architect) when they need resource compliance.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "config",
+        "compliance",
+        "governance",
+        "remediation",
+        "management-governance"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-config/SKILL.md"
+    },
+    {
+      "name": "aws-control-tower",
+      "description": "Use when designing, provisioning, securing, or operating AWS Control Tower — the landing zone (multi-account baseline built on AWS Organizations), guardrails/controls (preventive SCP-based, detective Config-based, proactive CloudFormation-hooks; mandatory/strongly-recommended/elective), Account Factory and Account Factory for Terraform (AFT) for governed account provisioning, the management/log-archive/audit foundational accounts, the Customizations for Control Tower (CfCT) pipeline, controls applied to OUs, and landing-zone drift/repair (AWS Control Tower). Loads the Control Tower knowledge: how to set up a landing zone, enable controls on OUs, vend accounts via Account Factory, and verify controls enforce and the zone has no drift. Consumed by the Control Tower specialist and by the AWS role team (aws-security-reviewer / aws-cloud-architect) for multi-account governance.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "control-tower",
+        "landing-zone",
+        "multi-account",
+        "governance",
+        "management-governance"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-control-tower/SKILL.md"
     },
     {
       "name": "aws-data-exchange",
@@ -27325,6 +27645,22 @@
       "path": "skills/cloud/aws-opensearch-service/SKILL.md"
     },
     {
+      "name": "aws-organizations",
+      "description": "Use when designing, provisioning, securing, or operating AWS Organizations — the organization root and management account, organizational units (OUs) and account hierarchy, service control policies (SCPs) and resource control policies (RCPs), tag policies and backup policies, consolidated billing, delegated administration for member services, account creation/invitation/move/close, trusted access for AWS services, and the all-features vs consolidated-billing mode (AWS Organizations). Loads the Organizations knowledge: how to structure OUs, author SCP guardrails, delegate admin, and verify a policy denies/allows as intended. Consumed by the Organizations specialist and by the AWS role team (aws-security-reviewer / aws-cloud-architect) for multi-account governance.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "organizations",
+        "multi-account",
+        "governance",
+        "scp",
+        "management-governance"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-organizations/SKILL.md"
+    },
+    {
       "name": "aws-outposts",
       "description": "Use when designing, provisioning, securing, or operating AWS Outposts — Outpost racks and servers, capacity (instance/EBS) planning, local gateway and VPC extension, service link to the parent Region, supported on-prem services (EC2/EBS/ECS/EKS/RDS/S3 on Outposts), and data-residency/low-latency workloads (AWS Outposts). Loads the Outposts knowledge: how to size an Outpost order, extend a VPC on-prem, wire the local gateway and service link, and verify capacity and connectivity. Consumed by the Outposts specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they design hybrid on-prem AWS.",
       "category": "cloud",
@@ -27554,6 +27890,22 @@
       "path": "skills/cloud/aws-sagemaker/SKILL.md"
     },
     {
+      "name": "aws-service-catalog",
+      "description": "Use when designing, provisioning, securing, or operating AWS Service Catalog — portfolios and products (CloudFormation/Terraform-backed provisioned products), product versions, launch constraints (the assumed role at launch), template/stack-set/notification/tag-update constraints, TagOptions for standardized tagging, access control via IAM principals and portfolio sharing (including org/Organizations sharing), provisioning parameters and provisioned-product lifecycle, and the AppRegistry application association (AWS Service Catalog). Loads the Service Catalog knowledge: how to curate approved products, set launch/governance constraints, share portfolios, let users self-serve, and verify a product provisions under the launch role. Consumed by the Service Catalog specialist and by the AWS role team (aws-cloud-architect / aws-security-reviewer) for curated, governed provisioning.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "service-catalog",
+        "governance",
+        "self-service",
+        "portfolios",
+        "management-governance"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-service-catalog/SKILL.md"
+    },
+    {
       "name": "aws-services",
       "description": "The substantive AWS platform capability — compute (EC2, Lambda, ECS/Fargate, EKS), storage (S3, EBS, EFS), databases (RDS/Aurora, DynamoDB), networking (VPC, subnets, security groups, ALB/NLB, Route 53, CloudFront), IAM (roles, policies, least privilege), messaging/eventing (SQS, SNS, EventBridge, Kinesis), the Well-Architected Framework's six pillars, regions/AZs & multi-region patterns, and tooling (AWS CLI, CloudFormation/CDK/SAM). Use when designing, building, reviewing, securing, costing, or operating anything on Amazon Web Services — picking the right managed service, applying least-privilege IAM, choosing single- vs multi-AZ/region, or validating CloudFormation/CDK/SAM. Any agent that touches AWS (an architect, IaC engineer, security reviewer, cost governor, reliability/networking/observability/data engineer) can load it.",
       "category": "cloud",
@@ -27654,6 +28006,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-storage-gateway/SKILL.md"
+    },
+    {
+      "name": "aws-systems-manager",
+      "description": "Use when designing, provisioning, securing, or operating AWS Systems Manager (SSM) — Parameter Store (string/secure-string parameters, hierarchies, versions), Session Manager (browser/CLI shell without SSH/bastions), Patch Manager (patch baselines, maintenance windows, compliance), Run Command (ad-hoc command execution at fleet scale), State Manager (associations enforcing desired config), Automation (runbooks/documents for operational workflows and remediation), Inventory (software/config collection), Fleet Manager, and SSM documents (AWS Systems Manager). Loads the SSM knowledge: how to manage parameters, get keyless shell access, patch and configure fleets, automate operations, and verify commands/patches/sessions succeed. Consumed by the Systems Manager specialist and by the AWS role team (aws-cloud-architect / aws-security-reviewer) for operational management.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "systems-manager",
+        "ssm",
+        "operations",
+        "patching",
+        "management-governance"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-systems-manager/SKILL.md"
     },
     {
       "name": "aws-textract",

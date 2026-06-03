@@ -130,14 +130,14 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 
 ### management-governance
 - [x] aws|management-governance|cloudwatch|Amazon CloudWatch
-- [ ] aws|management-governance|cloudformation|AWS CloudFormation
-- [ ] aws|management-governance|cloudtrail|AWS CloudTrail
-- [ ] aws|management-governance|config|AWS Config
-- [ ] aws|management-governance|systems-manager|AWS Systems Manager
-- [ ] aws|management-governance|organizations|AWS Organizations
-- [ ] aws|management-governance|control-tower|AWS Control Tower
-- [ ] aws|management-governance|service-catalog|AWS Service Catalog
-- [ ] aws|management-governance|compute-optimizer|AWS Compute Optimizer
+- [x] aws|management-governance|cloudformation|AWS CloudFormation
+- [x] aws|management-governance|cloudtrail|AWS CloudTrail
+- [x] aws|management-governance|config|AWS Config
+- [x] aws|management-governance|systems-manager|AWS Systems Manager
+- [x] aws|management-governance|organizations|AWS Organizations
+- [x] aws|management-governance|control-tower|AWS Control Tower
+- [x] aws|management-governance|service-catalog|AWS Service Catalog
+- [x] aws|management-governance|compute-optimizer|AWS Compute Optimizer
 - [ ] aws|management-governance|proton|AWS Proton
 
 ### security-identity
