@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 835,
-    "skills": 139,
+    "agents": 842,
+    "skills": 140,
     "categories": 17
   },
   "agents": [
@@ -19578,6 +19578,208 @@
       "path": "agents/security/secrets-auditor.md"
     },
     {
+      "name": "snowflake-administrator",
+      "description": "Use when administering and operating a Snowflake account — creating/altering virtual warehouses (size, auto-suspend/resume, multi-cluster), managing databases/schemas, applying RBAC roles and grants, configuring ingestion (Snowpipe/streams/tasks/COPY), setting Time-Travel retention and zero-copy clones, and routine operations — then validating against the account (Snowflake). NOT for deployment architecture (snowflake-architect), warehouse/clustering/credit tuning (snowflake-performance-engineer), cost governance (snowflake-cost-governor), security/RBAC review (snowflake-security-reviewer), schema modeling (snowflake-data-modeler), monitoring (snowflake-observability-engineer); NOT for managed warehouse ops on other clouds (Redshift/BigQuery/Synapse — the cloud data-engineers), managed Supabase (supabase team), the postgres/mongodb/redis teams, cloud-agnostic pipeline orchestration (etl-architect), or single-query rewrites (sql-optimizer).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "snowflake",
+        "administration",
+        "warehouse",
+        "rbac",
+        "ingestion",
+        "operations"
+      ],
+      "skills": [
+        "snowflake-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/snowflake/snowflake-administrator.md"
+    },
+    {
+      "name": "snowflake-architect",
+      "description": "Use when designing or reviewing the architecture of a Snowflake deployment — how warehouse topology (per-workload sizing, multi-cluster scaling), database/schema layout, RBAC role hierarchy, secure data sharing, ingestion pattern (Snowpipe/streams/tasks/COPY), Time-Travel/cloning posture, and the cost/credit model fit together for the workload and budget (Snowflake). Produces the design and trade-offs, not the implementation. NOT for applying changes (snowflake-administrator), warehouse/clustering/credit tuning (snowflake-performance-engineer), cost governance (snowflake-cost-governor), security/RBAC review (snowflake-security-reviewer), schema modeling (snowflake-data-modeler), monitoring (snowflake-observability-engineer); NOT for managed warehouses on other clouds (Redshift/BigQuery/Synapse — the cloud data-engineers), managed Supabase (supabase-architect), the postgres/mongodb/redis teams, cloud-agnostic pipeline orchestration (etl-architect), or single-query rewrites (sql-optimizer).",
+      "category": "data",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "snowflake",
+        "architecture",
+        "warehouse-topology",
+        "rbac",
+        "data-sharing",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "snowflake-administration",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/snowflake/snowflake-architect.md"
+    },
+    {
+      "name": "snowflake-cost-governor",
+      "description": "Use when governing and reducing the credit/storage spend of a Snowflake account — attributing cost via the metering/usage views (WAREHOUSE_METERING_HISTORY, QUERY_HISTORY, storage), right-sizing and auto-suspend, multi-cluster vs over-provisioning, result-cache reuse, controlling reclustering/Snowpipe churn and Time-Travel/Fail-safe storage, and resource monitors with credit quotas and SUSPEND/NOTIFY triggers — then validating spend against the account (Snowflake). Owns credit/budget governance; for latency tuning via the query profile defer to snowflake-performance-engineer. NOT for deployment architecture (snowflake-architect), routine ops (snowflake-administrator), security/RBAC review (snowflake-security-reviewer), schema modeling (snowflake-data-modeler), monitoring (snowflake-observability-engineer); NOT for managed-warehouse cost on other clouds (Redshift/BigQuery/Synapse — the cloud cost engineers), the postgres/mongodb/redis teams, or single-query rewrites (sql-optimizer).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "snowflake",
+        "cost",
+        "credits",
+        "resource-monitors",
+        "right-sizing",
+        "finops"
+      ],
+      "skills": [
+        "cost-optimization",
+        "snowflake-administration",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/snowflake/snowflake-cost-governor.md"
+    },
+    {
+      "name": "snowflake-data-modeler",
+      "description": "Use when modeling the relational schema for a Snowflake database — tables, types, constraints, keys, relationships, normalization vs warehouse-friendly denormalization (star/snowflake schemas), VARIANT/semi-structured columns, the clustering-key layout for the access patterns, and the DDL/migrations that express them (Snowflake). Designs the schema; does not execute or run the account. NOT for applying/operating the account (snowflake-administrator), deployment architecture (snowflake-architect), warehouse/clustering/credit performance tuning (snowflake-performance-engineer), cost governance (snowflake-cost-governor), security/RBAC review (snowflake-security-reviewer), monitoring (snowflake-observability-engineer); NOT for AWS/GCP/Azure managed-warehouse modeling (Redshift/BigQuery/Synapse — the cloud data-engineers), managed Supabase schema modeling (supabase-database-engineer), the postgres/mongodb/redis teams, or single-query rewrites (sql-optimizer).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "snowflake",
+        "data-modeling",
+        "schema",
+        "ddl",
+        "clustering",
+        "variant"
+      ],
+      "skills": [
+        "relational-data-modeling",
+        "snowflake-administration",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/snowflake/snowflake-data-modeler.md"
+    },
+    {
+      "name": "snowflake-observability-engineer",
+      "description": "Use when instrumenting a Snowflake account's observability — the ACCOUNT_USAGE / INFORMATION_SCHEMA views (QUERY_HISTORY, WAREHOUSE_METERING_HISTORY, COPY_HISTORY, PIPE_USAGE_HISTORY), warehouse queueing/spilling signals, credit-burn and storage-growth metrics, ingestion/task failure visibility, and SLO-driven alerting (via an exporter or scheduled task) — then validating it (Snowflake). NOT for deployment architecture (snowflake-architect), routine ops (snowflake-administrator), warehouse/clustering/credit tuning (snowflake-performance-engineer), cost governance and resource monitors (snowflake-cost-governor), security/RBAC review (snowflake-security-reviewer), schema modeling (snowflake-data-modeler); NOT for managed-warehouse monitoring on other clouds (Redshift/BigQuery/Synapse — the cloud observability-engineers), managed Supabase (supabase-observability-engineer), the postgres/mongodb/redis teams, generic app observability (devops observability-engineer), or single-query rewrites (sql-optimizer).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "snowflake",
+        "observability",
+        "account-usage",
+        "metrics",
+        "alerting",
+        "query-history"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "snowflake-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/snowflake/snowflake-observability-engineer.md"
+    },
+    {
+      "name": "snowflake-performance-engineer",
+      "description": "Use when tuning the performance of a Snowflake warehouse/account as a whole — warehouse sizing and multi-cluster scaling, clustering keys and partition pruning, result/metadata cache reuse, materialized views, the search optimization service, and credit-efficient optimization read from the query profile — then validating with the query profile and QUERY_HISTORY (Snowflake). Owns the warehouse/clustering/credit layer; for rewriting an individual single query in isolation defer to sql-optimizer (it owns single-query rewrites). NOT for deployment architecture (snowflake-architect), routine ops (snowflake-administrator), cost governance (snowflake-cost-governor), security/RBAC (snowflake-security-reviewer), schema modeling (snowflake-data-modeler), monitoring (snowflake-observability-engineer); NOT for managed warehouse tuning on other clouds (Redshift/BigQuery/Synapse — the cloud data-engineers) or the postgres/mongodb/redis teams.",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "snowflake",
+        "performance",
+        "warehouse-sizing",
+        "clustering",
+        "query-profile",
+        "materialized-views"
+      ],
+      "skills": [
+        "snowflake-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/snowflake/snowflake-performance-engineer.md"
+    },
+    {
+      "name": "snowflake-security-reviewer",
+      "description": "Use when reviewing a Snowflake account for security — RBAC role-hierarchy and grant least-privilege, object privileges granted directly to users, over-held ACCOUNTADMIN/SECURITYADMIN, missing secure views/UDFs (definition or row leakage), row-access-policy and dynamic-data-masking coverage, network policies, and risky secure-share/Marketplace exposure — then triaging by severity (Snowflake). Read-only; reports, does not change anything. NOT for fixing or building the account (snowflake-administrator), architecture (snowflake-architect), performance tuning (snowflake-performance-engineer), cost governance (snowflake-cost-governor), schema modeling (snowflake-data-modeler), monitoring (snowflake-observability-engineer); NOT for managed-warehouse/IAM review on other clouds (Redshift/BigQuery/Synapse — the cloud security-reviewers), managed Supabase (supabase-security-reviewer), the postgres/mongodb/redis teams, or single-query rewrites (sql-optimizer).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "snowflake",
+        "security",
+        "rbac",
+        "secure-views",
+        "data-sharing",
+        "review"
+      ],
+      "skills": [
+        "appsec-review",
+        "snowflake-administration",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/snowflake/snowflake-security-reviewer.md"
+    },
+    {
       "name": "solidity-api-designer",
       "description": "Use when designing or refining a Solidity contract's external interface (ABI) — public/external function signatures, parameter and return shapes, events as the read/notification surface, error types, and the off-chain integration contract (how dapps, SDKs, and indexers call and read the contract). Invoke to design or refine a contract's ABI/interface and its off-chain consumption. Not for ABI/event schema versioning and evolution (use solidity-proto-steward) or system structure (use solidity-architect).",
       "category": "languages",
@@ -24947,6 +25149,26 @@
       "version": "1.1.0",
       "status": "stable",
       "path": "skills/meta/skill-authoring/SKILL.md"
+    },
+    {
+      "name": "snowflake-administration",
+      "description": "The substantive Snowflake data-warehouse capability — virtual warehouses (sizing, auto-suspend/resume, multi-cluster scaling), micro-partitions and clustering keys and partition pruning, cost/credit management and resource monitors, RBAC (roles, grants, role hierarchy, secure views), secure data sharing and the Marketplace, ingestion (Snowpipe, streams, tasks, COPY), Time Travel/zero-copy cloning/Fail-safe, and query optimization (query profile, result cache, materialized views, search optimization). Use when administering, sizing, securing, ingesting into, governing the cost of, or optimizing a Snowflake account/warehouse/database. Any agent operating Snowflake can load it. NOT for cloud-managed warehouses on other platforms (Redshift/BigQuery/Synapse — the AWS/GCP/Azure data-engineers own those), self-managed PostgreSQL/MongoDB/Redis engines, managed Supabase BaaS, cloud-agnostic pipeline orchestration design, or single-query SQL rewrites in isolation.",
+      "category": "data",
+      "tags": [
+        "snowflake",
+        "data-warehouse",
+        "virtual-warehouse",
+        "micro-partitions",
+        "clustering",
+        "rbac",
+        "snowpipe",
+        "time-travel",
+        "cost-management",
+        "query-optimization"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/data/snowflake-administration/SKILL.md"
     },
     {
       "name": "software-architecture",

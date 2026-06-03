@@ -60,5 +60,5 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] postgres
 - [x] mongodb
 - [x] redis
-- [ ] snowflake
+- [x] snowflake
 - [ ] kafka
