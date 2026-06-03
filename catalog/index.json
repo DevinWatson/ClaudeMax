@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 534,
-    "skills": 109,
+    "agents": 555,
+    "skills": 110,
     "categories": 16
   },
   "agents": [
@@ -14607,6 +14607,577 @@
       "version": "1.1.0",
       "status": "stable",
       "path": "agents/product/ux-reviewer.md"
+    },
+    {
+      "name": "zig-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Zig — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution, verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a Zig app (Zig). Not for a single model call (use zig-ai-engineer) or retrieval pipelines (use zig-rag-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-agent-orchestrator.md"
+    },
+    {
+      "name": "zig-ai-engineer",
+      "description": "Use when building LLM-backed features in Zig — wiring model HTTP calls, prompt/response plumbing, structured (JSON) output parsing, streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a Zig app (Zig). Not for retrieval pipelines (use zig-rag-engineer), multi-agent workflows (use zig-agent-orchestrator), or eval harnesses (use zig-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-ai-engineer.md"
+    },
+    {
+      "name": "zig-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Zig — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized with std.http or a framework like http.zig/zap. Invoke to design or refine Zig HTTP endpoints (Zig). Not for protobuf/gRPC schemas (use zig-proto-steward) or for system structure (use zig-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-api-designer.md"
+    },
+    {
+      "name": "zig-architect",
+      "description": "Use when designing or reviewing the structure of a Zig system, library, or module — component boundaries, coupling/cohesion, interface contracts, module and build-graph layout, allocator-ownership strategy, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Zig or when reviewing a Zig design proposal (Zig). Not for implementing the feature (use zig-developer) or for HTTP endpoint shape alone (use zig-api-designer).",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "zig",
+        "systems",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "zig-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-architect.md"
+    },
+    {
+      "name": "zig-compliance-reviewer",
+      "description": "Use when checking Zig code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of Zig code (Zig). Not for finding exploitable vulnerabilities (use zig-security-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "zig",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "zig-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-compliance-reviewer.md"
+    },
+    {
+      "name": "zig-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts for Zig services — capturing the consumer's expectations, verifying them against the provider, and wiring contract publication/compatibility checks into CI. Invoke to add or fix contract tests in Zig so a provider change cannot silently break a consumer (Zig). Not for in-process integration tests (use zig-integration-test-architect) or end-to-end flows (use zig-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "contract-testing",
+        "api"
+      ],
+      "skills": [
+        "contract-testing",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-contract-tester.md"
+    },
+    {
+      "name": "zig-cost-governor",
+      "description": "Use when reducing the runtime cost of Zig services — allocation footprint and allocator strategy (arena vs. GPA), binary size and optimize mode, memory residency, pool/buffer right-sizing, and wasteful copy/serialization patterns. Invoke to analyze and cut compute/memory cost of Zig workloads (Zig). Not for latency-only profiling unless it lowers cost, and not for resilience design (use zig-reliability-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "cost",
+        "performance"
+      ],
+      "skills": [
+        "cost-optimization",
+        "zig-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-cost-governor.md"
+    },
+    {
+      "name": "zig-developer",
+      "description": "Use when turning a Zig requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Zig bug. Invoke for building or extending Zig features and for diagnosing failures in existing Zig code (Zig). Not for system-level design (use zig-architect) or for adding tests to code you did not write (use zig-unit-test-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "systems",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-developer.md"
+    },
+    {
+      "name": "zig-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Zig — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality in Zig (Zig). Not for building the feature (use zig-ai-engineer) or the retrieval pipeline (use zig-rag-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "zig-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-evals-engineer.md"
+    },
+    {
+      "name": "zig-integration-test-architect",
+      "description": "Use when testing how Zig components integrate across real boundaries — filesystem, sockets/HTTP clients, child processes, C libraries, or other services — with hermetic setup/teardown and std.testing. Invoke for integration tests that exercise wiring and I/O rather than a single unit (Zig). Not for pure unit tests (use zig-unit-test-architect) or end-to-end flows (use zig-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "integration-testing",
+        "io"
+      ],
+      "skills": [
+        "integration-testing",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-integration-test-architect.md"
+    },
+    {
+      "name": "zig-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Zig — defining tools/resources/prompts, wiring transport (stdio/HTTP) and capability negotiation, and handling MCP message lifecycle in Zig. Invoke for MCP server/client work in a Zig codebase (Zig). Not for general LLM feature plumbing (use zig-ai-engineer) or multi-agent coordination (use zig-agent-orchestrator).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-mcp-steward.md"
+    },
+    {
+      "name": "zig-migration-engineer",
+      "description": "Use when migrating Zig code across a version or dependency boundary — Zig compiler/std upgrades (pre-1.0 breaking changes), build.zig / build.zig.zon API moves, or library replacements — done in safe, verifiable increments. Invoke to plan and execute a Zig migration or fix breakage it caused (Zig). Not for greenfield features (use zig-developer) or pure restructuring within one version (use zig-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-migration-engineer.md"
+    },
+    {
+      "name": "zig-observability-engineer",
+      "description": "Use when instrumenting Zig services for observability — structured logging via std.log, metrics, and distributed tracing (OpenTelemetry-style), span/context propagation, and useful dashboard/alert signals. Invoke to add or fix telemetry in Zig (Zig). Not for resilience patterns like retries/circuit-breakers (use zig-reliability-engineer) or cost reduction (use zig-cost-governor).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "observability",
+        "tracing"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-observability-engineer.md"
+    },
+    {
+      "name": "zig-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a Zig application — externalizing prompts from code, templating and parameterizing them, versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a Zig codebase (Zig). Not for wiring the model call (use zig-ai-engineer) or scoring output quality (use zig-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "zig",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "zig-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-prompt-librarian.md"
+    },
+    {
+      "name": "zig-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Zig — message and service definitions, field numbering, wire/back-compat rules, and generated-Zig integration. Invoke for .proto schema design or compatibility review in a Zig codebase (Zig). Not for REST/HTTP API design (use zig-api-designer) or consumer/provider contract tests (use zig-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-proto-steward.md"
+    },
+    {
+      "name": "zig-qa-analyst",
+      "description": "Use when planning what to test for a Zig change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for Zig work, before or instead of writing tests (Zig). Not for writing the tests themselves (use the zig test-architect/sdet roles).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "zig",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "zig-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-qa-analyst.md"
+    },
+    {
+      "name": "zig-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Zig — chunking, embeddings, vector store wiring, hybrid retrieval + reranking, context assembly, and grounding/citation. Invoke for RAG retrieval quality or wiring in Zig (Zig). Not for a single model call (use zig-ai-engineer) or for building an eval harness (use zig-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-rag-engineer.md"
+    },
+    {
+      "name": "zig-reliability-engineer",
+      "description": "Use when hardening a Zig service against partial failure — timeouts, retries-with-backoff, circuit breakers, bulkheads, and backpressure, plus graceful degradation and load shedding, with correct error-set handling and bounded resources. Invoke for resilience design or review of Zig services (Zig). Not for emitting telemetry (use zig-observability-engineer) or triaging a live outage.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-reliability-engineer.md"
+    },
+    {
+      "name": "zig-sdet",
+      "description": "Use when building end-to-end or CLI/API test automation in Zig — driving the built binary or HTTP API end to end, fixtures, data setup, and stable assertions run in CI via the build system. Invoke to automate full user/API flows in Zig (Zig). Not for unit tests (use zig-unit-test-architect), component integration tests (use zig-integration-test-architect), or consumer/provider contracts (use zig-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-sdet.md"
+    },
+    {
+      "name": "zig-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Zig code or a diff — memory-safety defects (use-after-free, double-free, buffer/slice overruns, dangling slices), integer overflow/underflow and truncation, allocator misuse and leaks, unchecked C-interop boundaries, untrusted-input parsing, and unsafe @ptrCast/@intCast, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of Zig code you are authorized to review (Zig). Not for regulatory/policy conformance (use zig-compliance-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "zig",
+        "security",
+        "memory-safety"
+      ],
+      "skills": [
+        "appsec-review",
+        "zig-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-security-reviewer.md"
+    },
+    {
+      "name": "zig-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Zig code — mapping a unit's behaviors and writing deterministic std.testing tests (with std.testing.allocator leak checks) that catch real regressions (boundaries, invalid input, error paths). Invoke to raise meaningful unit coverage in Zig (Zig). Not for cross-boundary integration tests (use zig-integration-test-architect) or end-to-end automation (use zig-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "zig",
+        "testing",
+        "std-testing"
+      ],
+      "skills": [
+        "test-design",
+        "zig-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/zig/zig-unit-test-architect.md"
     }
   ],
   "skills": [
@@ -16263,6 +16834,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/devops/yaml-manifest-review/SKILL.md"
+    },
+    {
+      "name": "zig-idioms",
+      "description": "Use when writing, reviewing, or debugging Zig code — explicit allocators and manual memory management (no hidden allocations), errdefer/defer and error unions/error sets, optionals, comptime metaprogramming and generics-via-types, no hidden control flow, slices vs arrays vs pointers, packed/extern structs, C interop (@cImport / translate-c), build.zig and the build system, and cross-compilation. Verifies with zig build / zig test, zig fmt, std.testing, and GeneralPurposeAllocator leak detection. Any agent touching Zig (writer, reviewer, debugger, a systems/embedded team) can load it. Note Zig is pre-1.0 — language and std churn across versions.",
+      "category": "languages",
+      "tags": [
+        "zig",
+        "systems",
+        "allocators",
+        "comptime",
+        "c-interop"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/zig-idioms/SKILL.md"
     }
   ]
 }
