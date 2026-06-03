@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 429,
-    "skills": 104,
+    "agents": 450,
+    "skills": 105,
     "categories": 16
   },
   "agents": [
@@ -1134,6 +1134,576 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/c/c-unit-test-architect.md"
+    },
+    {
+      "name": "clojure-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Clojure — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution (core.async), verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a Clojure app. Not for a single model call (use clojure-ai-engineer) or retrieval pipelines (use clojure-rag-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-agent-orchestrator.md"
+    },
+    {
+      "name": "clojure-ai-engineer",
+      "description": "Use when building LLM-backed features in Clojure — wiring model calls via openai-clojure/langchain4j-interop/raw clients, prompt/response plumbing, structured output parsing, streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a Clojure app. Not for retrieval pipelines (use clojure-rag-engineer), multi-agent workflows (use clojure-agent-orchestrator), or eval harnesses (use clojure-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-ai-engineer.md"
+    },
+    {
+      "name": "clojure-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Clojure — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized with Ring, reitit, or Pedestal. Invoke to design or refine Clojure HTTP endpoints. Not for gRPC/protobuf schemas (use clojure-proto-steward) or for system structure (use clojure-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-api-designer.md"
+    },
+    {
+      "name": "clojure-architect",
+      "description": "Use when designing or reviewing the structure of a Clojure system, service, or module — namespace and component boundaries, coupling/cohesion, data and interface contracts, state/concurrency model, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Clojure or when reviewing a Clojure design proposal. Not for implementing the feature (use clojure-developer) or for REST endpoint shape alone (use clojure-api-designer).",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "clojure",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "clojure-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-architect.md"
+    },
+    {
+      "name": "clojure-compliance-reviewer",
+      "description": "Use when checking Clojure code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of Clojure code. Not for finding exploitable vulnerabilities (use clojure-security-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "clojure",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "clojure-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-compliance-reviewer.md"
+    },
+    {
+      "name": "clojure-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in Clojure — Pact-JVM consumer and provider tests, contract publication, and compatibility checks between services. Invoke to add or fix contract tests in Clojure so a provider change cannot silently break a consumer. Not for in-process integration tests (use clojure-integration-test-architect) or end-to-end flows (use clojure-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-contract-tester.md"
+    },
+    {
+      "name": "clojure-cost-governor",
+      "description": "Use when reducing the runtime cost of Clojure services — JVM heap/GC tuning, container memory sizing, connection-pool and thread-pool right-sizing, wasteful allocation (boxing, lazy-seq retention, reflection) and query patterns, and cloud resource footprint. Invoke to analyze and cut compute/memory cost of Clojure workloads. Not for latency-only profiling unless it lowers cost, and not for resilience design (use clojure-reliability-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "cost",
+        "jvm-tuning"
+      ],
+      "skills": [
+        "cost-optimization",
+        "clojure-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-cost-governor.md"
+    },
+    {
+      "name": "clojure-developer",
+      "description": "Use when turning a Clojure requirement, ticket, or feature into working, tested, incrementally-shipped code on the JVM (Clojure), or when fixing a reported Clojure bug. Invoke for building or extending Clojure/Ring/reitit features and for diagnosing failures in existing Clojure code. Not for system-level design (use clojure-architect) or for adding tests to code you did not write (use clojure-unit-test-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "jvm",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-developer.md"
+    },
+    {
+      "name": "clojure-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Clojure — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality in Clojure. Not for building the feature (use clojure-ai-engineer) or the retrieval pipeline (use clojure-rag-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "clojure-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-evals-engineer.md"
+    },
+    {
+      "name": "clojure-integration-test-architect",
+      "description": "Use when testing how Clojure components integrate across real boundaries — database (next.jdbc), HTTP clients, message brokers, or other services — using Testcontainers, embedded systems (Integrant/Component), or WireMock. Invoke for integration tests that exercise wiring and I/O rather than a single function. Not for pure unit tests (use clojure-unit-test-architect) or browser/end-to-end flows (use clojure-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "integration-testing",
+        "testcontainers"
+      ],
+      "skills": [
+        "integration-testing",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-integration-test-architect.md"
+    },
+    {
+      "name": "clojure-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Clojure — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle in Clojure. Invoke for MCP server/client work in a Clojure codebase. Not for general LLM feature plumbing (use clojure-ai-engineer) or multi-agent coordination (use clojure-agent-orchestrator).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-mcp-steward.md"
+    },
+    {
+      "name": "clojure-migration-engineer",
+      "description": "Use when migrating Clojure code across a version or library boundary — Clojure version upgrades, lein-to-deps.edn/tools.deps moves, major library replacements (compojure→reitit, clj-http→hato), or core.async/spec API shifts — done in safe, verifiable increments. Invoke to plan and execute a Clojure migration or fix breakage it caused. Not for greenfield features (use clojure-developer) or pure restructuring within one version (use clojure-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-migration-engineer.md"
+    },
+    {
+      "name": "clojure-observability-engineer",
+      "description": "Use when instrumenting Clojure services for observability — structured logging, metrics, and distributed tracing via OpenTelemetry-clj/Micrometer/tools.logging, span/context propagation across threads and core.async, and useful dashboards/alerts signals. Invoke to add or fix telemetry in Clojure. Not for resilience patterns like retries/circuit-breakers (use clojure-reliability-engineer) or cost reduction (use clojure-cost-governor).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-observability-engineer.md"
+    },
+    {
+      "name": "clojure-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a Clojure application — externalizing prompts from code, templating and parameterizing them (Selmer/EDN resources), versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a Clojure codebase. Not for wiring the model call (use clojure-ai-engineer) or scoring output quality (use clojure-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "clojure",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "clojure-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-prompt-librarian.md"
+    },
+    {
+      "name": "clojure-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Clojure — message and service definitions, field numbering, wire/back-compat rules, and generated-Java/protojure integration. Invoke for .proto schema design or compatibility review in a Clojure codebase. Not for REST/HTTP API design (use clojure-api-designer) or consumer/provider contract tests (use clojure-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-proto-steward.md"
+    },
+    {
+      "name": "clojure-qa-analyst",
+      "description": "Use when planning what to test for a Clojure change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for Clojure work, before or instead of writing tests. Not for writing the tests themselves (use the clojure test-architect/sdet roles).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "clojure",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "clojure-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-qa-analyst.md"
+    },
+    {
+      "name": "clojure-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Clojure — chunking, embeddings, vector store wiring, hybrid retrieval + reranking, context assembly, and grounding/citation via openai-clojure/langchain4j-interop. Invoke for RAG retrieval quality or wiring in Clojure. Not for a single model call (use clojure-ai-engineer) or for building an eval harness (use clojure-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-rag-engineer.md"
+    },
+    {
+      "name": "clojure-reliability-engineer",
+      "description": "Use when hardening a Clojure service against partial failure — timeouts, retries-with-backoff, circuit breakers, bulkheads, and backpressure via core.async bounded channels or Resilience4j interop, plus graceful degradation and load shedding. Invoke for resilience design or review of Clojure services. Not for emitting telemetry (use clojure-observability-engineer) or triaging a live outage.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-reliability-engineer.md"
+    },
+    {
+      "name": "clojure-sdet",
+      "description": "Use when building end-to-end or UI/API test automation in Clojure — etaoin (WebDriver) / clj-http / Playwright suites, page objects, fixtures, data setup, and stable selectors run in CI. Invoke to automate full user/API flows in Clojure. Not for unit tests (use clojure-unit-test-architect), service integration tests (use clojure-integration-test-architect), or consumer/provider contracts (use clojure-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-sdet.md"
+    },
+    {
+      "name": "clojure-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Clojure code or a diff — tracing untrusted input to sinks for injection (SQL via next.jdbc, command, EDN/read-eval), broken authn/authz and IDOR, unsafe deserialization (read-string/Java), SSRF/path-traversal, secrets exposure, and crypto misuse, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of Clojure code you are authorized to review. Not for regulatory/policy conformance (use clojure-compliance-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "clojure",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "clojure-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-security-reviewer.md"
+    },
+    {
+      "name": "clojure-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Clojure code — mapping a function's behaviors and writing deterministic clojure.test/kaocha tests (with test.check generative tests where they pay off) that catch real regressions (boundaries, invalid input, error paths, laziness/state). Invoke to raise meaningful unit coverage in Clojure. Not for cross-service integration tests (use clojure-integration-test-architect) or end-to-end automation (use clojure-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "clojure",
+        "testing",
+        "clojure-test"
+      ],
+      "skills": [
+        "test-design",
+        "clojure-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/clojure/clojure-unit-test-architect.md"
     },
     {
       "name": "code-reviewer",
@@ -11867,6 +12437,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/c-idioms/SKILL.md"
+    },
+    {
+      "name": "clojure-idioms",
+      "description": "Use when writing, reviewing, or debugging Clojure/JVM-Lisp code — immutable persistent data structures, the seq abstraction and laziness, pure functions and functional composition, threading macros (->/->>), destructuring, multimethods and protocols, namespaces, state via atoms/refs/agents and STM, core.async channels/go blocks, spec/malli validation, REPL-driven development, and Java interop. Verifies with the project's build (clj/lein/deps.edn, clojure.test or kaocha, clj-kondo, cljfmt). Any agent touching Clojure (writer, reviewer, debugger) can load it.",
+      "category": "languages",
+      "tags": [
+        "clojure",
+        "jvm",
+        "functional",
+        "repl",
+        "core-async",
+        "spec"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/clojure-idioms/SKILL.md"
     },
     {
       "name": "code-migration",
