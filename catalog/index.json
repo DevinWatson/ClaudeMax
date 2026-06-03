@@ -2,7 +2,7 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 249,
+    "agents": 261,
     "skills": 96,
     "categories": 16
   },
@@ -368,7 +368,7 @@
     },
     {
       "name": "api-designer",
-      "description": "Use when designing or reviewing an HTTP/REST API contract — resource modeling and URL structure, methods and status codes, error response shapes, pagination, filtering, versioning, idempotency, and OpenAPI specs. Invoke before implementation or during review to lock down the contract. Design-focused and language-agnostic — it shapes the interface, not the handler internals of any one framework. NOT for implementing route handlers or framework wiring — route that to nextjs-pro or the relevant language/framework agent.",
+      "description": "Use when designing or reviewing an HTTP/REST API contract — resource modeling and URL structure, methods and status codes, error response shapes, pagination, filtering, versioning, idempotency, and OpenAPI specs. Invoke before implementation or during review to lock down the contract. Design-focused and language-agnostic — it shapes the interface, not the handler internals of any one framework. NOT for implementing route handlers or framework wiring — route that to nextjs-api-engineer or the relevant language/framework agent.",
       "category": "web",
       "model": "sonnet",
       "tools": [
@@ -1837,8 +1837,37 @@
       "path": "agents/domain/geospatial-analyst.md"
     },
     {
-      "name": "github-actions-pro",
-      "description": "Use when authoring or fixing GitHub Actions workflows (.github/workflows) — structuring jobs and matrices, dependency/build caching, reusable/composite workflows, and CI security (pinned actions, least-privilege GITHUB_TOKEN, OIDC, untrusted-PR safety). NOT for the build steps inside a container image (use dockerfile-author) or Terraform/k8s deploy logic.",
+      "name": "github-actions-cost-governor",
+      "description": "Use when GitHub Actions billing is too high — excessive runner minutes, redundant or unconditional job runs, oversized runners, ineffective caching, and wasteful matrices — and you need spend reduced without breaking CI (GitHub Actions). Invoke to analyze and cut runner-minute cost. NOT for authoring workflows (use github-actions-developer), NOT for a security audit (use github-actions-security-reviewer), NOT for flake/reliability tuning (use github-actions-reliability-engineer).",
+      "category": "devops",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "github-actions",
+        "ci",
+        "cost",
+        "runner-minutes"
+      ],
+      "skills": [
+        "cost-optimization",
+        "github-actions-workflows",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/devops/github-actions/github-actions-cost-governor.md"
+    },
+    {
+      "name": "github-actions-developer",
+      "description": "Use when authoring or fixing GitHub Actions workflows (.github/workflows) — structuring jobs and matrices, dependency/build caching, reusable/composite workflows, triggers, and CI security basics (pinned actions, least-privilege GITHUB_TOKEN, OIDC), validated with actionlint (GitHub Actions). Invoke to build or repair CI/CD pipelines. NOT for a dedicated security audit (use github-actions-security-reviewer), NOT for runtime reliability/retries tuning (use github-actions-reliability-engineer), NOT for cost reduction (use github-actions-cost-governor).",
       "category": "devops",
       "model": "sonnet",
       "tools": [
@@ -1861,9 +1890,92 @@
         "match-project-conventions",
         "verify-by-running"
       ],
-      "version": "1.1.0",
+      "version": "1.0.0",
       "status": "stable",
-      "path": "agents/devops/github-actions-pro.md"
+      "path": "agents/devops/github-actions/github-actions-developer.md"
+    },
+    {
+      "name": "github-actions-migration-engineer",
+      "description": "Use when migrating CI/CD to GitHub Actions — porting from Jenkins, GitLab CI, CircleCI, Travis, or Azure Pipelines, or upgrading deprecated actions/runners and consolidating workflows — preserving behavior while modernizing (GitHub Actions). Invoke to plan and execute a CI migration. NOT for greenfield workflow authoring (use github-actions-developer), NOT for a security audit (use github-actions-security-reviewer), NOT for cost reduction (use github-actions-cost-governor).",
+      "category": "devops",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "github-actions",
+        "ci",
+        "migration",
+        "cicd"
+      ],
+      "skills": [
+        "code-migration",
+        "github-actions-workflows",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/devops/github-actions/github-actions-migration-engineer.md"
+    },
+    {
+      "name": "github-actions-reliability-engineer",
+      "description": "Use when GitHub Actions workflows are flaky, slow, or unreliable — intermittent failures, missing timeouts/retries, race conditions, poor concurrency control, and weak failure visibility — and you need them stabilized (GitHub Actions). Invoke to harden CI/CD reliability. NOT for first authoring a workflow (use github-actions-developer), NOT for a security audit (use github-actions-security-reviewer), NOT for runner-minute cost reduction (use github-actions-cost-governor).",
+      "category": "devops",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "github-actions",
+        "ci",
+        "reliability",
+        "flaky-tests"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "github-actions-workflows",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/devops/github-actions/github-actions-reliability-engineer.md"
+    },
+    {
+      "name": "github-actions-security-reviewer",
+      "description": "Use for a defensive, supply-chain security review of GitHub Actions workflows (.github/workflows) — unpinned/third-party actions, over-privileged GITHUB_TOKEN, pull_request_target and script-injection from untrusted PRs, secret exposure, and missing OIDC — with severity-ranked findings (GitHub Actions). Invoke for an authorized CI security audit. NOT for writing or fixing the workflow (use github-actions-developer), NOT for reliability tuning (use github-actions-reliability-engineer), NOT for cost (use github-actions-cost-governor).",
+      "category": "devops",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "github-actions",
+        "ci",
+        "security",
+        "supply-chain"
+      ],
+      "skills": [
+        "appsec-review",
+        "github-actions-workflows",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/devops/github-actions/github-actions-security-reviewer.md"
     },
     {
       "name": "go-agent-orchestrator",
@@ -3319,8 +3431,120 @@
       "path": "agents/creative/narrative-designer.md"
     },
     {
-      "name": "nextjs-pro",
-      "description": "Use for Next.js App Router specifics — Server vs. Client Component boundaries, server actions, data fetching and the fetch/Router cache, route handlers, streaming/Suspense, middleware, and metadata. Invoke for hydration mismatches, \"cannot use X in a Server Component\" errors, stale-data/revalidation problems, or build/route config. NOT for framework-agnostic React (hook composition, where state lives, re-render tuning) — route that to react-architect.",
+      "name": "nextjs-accessibility-specialist",
+      "description": "Use for a WCAG accessibility audit of a Next.js App Router app — semantic structure, keyboard and focus management across client navigation, ARIA usage, color contrast, and forms — with severity-ranked findings (Next.js). Invoke for an accessibility review of rendered routes and components. NOT for fixing the issues (use nextjs-developer), NOT for security review (use nextjs-security-reviewer), NOT for performance (use nextjs-performance-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "nextjs",
+        "app-router",
+        "accessibility",
+        "wcag",
+        "a11y"
+      ],
+      "skills": [
+        "wcag-audit",
+        "nextjs-app-router",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nextjs/nextjs-accessibility-specialist.md"
+    },
+    {
+      "name": "nextjs-ai-engineer",
+      "description": "Use when building LLM/AI features into a Next.js App Router app — streaming chat and completions, the Vercel AI SDK, tool calling, RAG retrieval, and prompt orchestration wired through server actions and route handlers (Next.js). Invoke to design and implement AI-powered product features. NOT for generic UI features (use nextjs-developer), NOT for system architecture (use nextjs-architect), NOT for security review of those endpoints (use nextjs-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "nextjs",
+        "app-router",
+        "ai",
+        "llm",
+        "rag"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "nextjs-app-router",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nextjs/nextjs-ai-engineer.md"
+    },
+    {
+      "name": "nextjs-api-engineer",
+      "description": "Use when designing and building HTTP API endpoints in a Next.js App Router app — route handlers (app/**/route.ts) and server actions as APIs, with proper resource modeling, status codes, error envelopes, validation, pagination, and versioning (Next.js). Invoke to design or implement the API contract layer. NOT for UI features (use nextjs-developer), NOT for system architecture (use nextjs-architect), NOT for security review (use nextjs-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "nextjs",
+        "app-router",
+        "api",
+        "rest",
+        "route-handlers"
+      ],
+      "skills": [
+        "rest-api-design",
+        "nextjs-app-router",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nextjs/nextjs-api-engineer.md"
+    },
+    {
+      "name": "nextjs-architect",
+      "description": "Use when shaping the architecture of a Next.js App Router app or module — route-segment topology, the Server/Client boundary strategy, data-fetching and caching architecture, rendering strategy (static/dynamic/streaming), and Vercel deployment/edge layering decisions (Next.js). Invoke for system-level design and trade-off analysis. NOT for implementing features (use nextjs-developer), NOT for performance tuning of existing code (use nextjs-performance-engineer), NOT for framework-agnostic React design (route to react-architect).",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "nextjs",
+        "app-router",
+        "rsc",
+        "architecture"
+      ],
+      "skills": [
+        "software-architecture",
+        "nextjs-app-router",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nextjs/nextjs-architect.md"
+    },
+    {
+      "name": "nextjs-developer",
+      "description": "Use when turning a Next.js App Router requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Next.js bug — hydration mismatch, Server/Client boundary error, stale-data/revalidation problem, or server action failure (Next.js). Invoke for building or extending routes, server actions, route handlers, and RSC data flows. NOT for system-level design (use nextjs-architect), NOT for adding tests to code you did not write (use nextjs-test-engineer), NOT for Core Web Vitals tuning (use nextjs-performance-engineer).",
       "category": "web",
       "model": "sonnet",
       "tools": [
@@ -3335,16 +3559,133 @@
         "nextjs",
         "app-router",
         "rsc",
-        "server-actions"
+        "server-actions",
+        "feature-development"
       ],
       "skills": [
-        "verify-by-running",
+        "feature-development",
         "nextjs-app-router",
-        "match-project-conventions"
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
       ],
-      "version": "1.1.0",
+      "version": "1.0.0",
       "status": "stable",
-      "path": "agents/web/nextjs-pro.md"
+      "path": "agents/web/nextjs/nextjs-developer.md"
+    },
+    {
+      "name": "nextjs-observability-engineer",
+      "description": "Use when instrumenting a Next.js App Router app for production visibility — structured logging, OpenTelemetry tracing across RSC/route handlers/server actions, metrics, error reporting, and Vercel/edge runtime telemetry (Next.js). Invoke to add or improve logs, traces, and metrics. NOT for fixing the underlying bug (use nextjs-developer), NOT for Core Web Vitals tuning (use nextjs-performance-engineer), NOT for system architecture (use nextjs-architect).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "nextjs",
+        "app-router",
+        "observability",
+        "telemetry",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "nextjs-app-router",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nextjs/nextjs-observability-engineer.md"
+    },
+    {
+      "name": "nextjs-performance-engineer",
+      "description": "Use when a Next.js App Router app is slow or failing Core Web Vitals — large LCP, layout shift, slow TTFB, heavy client bundles, hydration cost, or render waterfalls — and you need it measured and tuned (Next.js). Invoke to profile and optimize an existing app via RSC payload reduction, code-splitting, image/font optimization, streaming, and caching. NOT for building new features (use nextjs-developer), NOT for system architecture (use nextjs-architect), NOT for accessibility review (use nextjs-accessibility-specialist).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "nextjs",
+        "app-router",
+        "performance",
+        "web-vitals"
+      ],
+      "skills": [
+        "web-vitals-optimization",
+        "nextjs-app-router",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nextjs/nextjs-performance-engineer.md"
+    },
+    {
+      "name": "nextjs-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a Next.js App Router app or diff — server-action and route-handler authz/input validation, secret exposure across the Server/Client boundary, SSRF in server fetches, auth/session handling, and middleware bypass — with severity-ranked findings (Next.js). Invoke for an authorized appsec review. NOT for fixing the issues (use nextjs-developer), NOT for accessibility review (use nextjs-accessibility-specialist), NOT for HTTP contract design (use nextjs-api-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "nextjs",
+        "app-router",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "nextjs-app-router",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nextjs/nextjs-security-reviewer.md"
+    },
+    {
+      "name": "nextjs-test-engineer",
+      "description": "Use when adding or improving automated tests for a Next.js App Router app — component/unit tests, server action and route handler tests, and Playwright end-to-end flows covering RSC rendering and navigation (Next.js). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use nextjs-developer), NOT for performance profiling (use nextjs-performance-engineer), NOT for security review (use nextjs-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "nextjs",
+        "app-router",
+        "testing",
+        "playwright",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "nextjs-app-router",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nextjs/nextjs-test-engineer.md"
     },
     {
       "name": "observability-engineer",
@@ -3427,7 +3768,7 @@
     },
     {
       "name": "process-optimizer",
-      "description": "Use to analyze and improve a business/operations process — map the current flow, find bottlenecks/waste/handoff failures, propose a streamlined flow and what to automate, with before/after metrics. Lean/value-stream thinking; NOT software CI/CD delivery (use github-actions-pro or the relevant devops agent).",
+      "description": "Use to analyze and improve a business/operations process — map the current flow, find bottlenecks/waste/handoff failures, propose a streamlined flow and what to automate, with before/after metrics. Lean/value-stream thinking; NOT software CI/CD delivery (use github-actions-developer or the relevant devops agent).",
       "category": "business",
       "model": "sonnet",
       "tools": [
@@ -4078,7 +4419,7 @@
     },
     {
       "name": "react-architect",
-      "description": "Use for framework-agnostic React design problems — component decomposition, hook composition, state location (lift/colocate, Context vs. external store), effect correctness, and render/re-render behavior. Invoke when a tree re-renders too much, an effect loops or fires wrong, or you need to choose where state lives. NOT for Next.js/RSC/server-actions/routing/caching — route those to nextjs-pro.",
+      "description": "Use for framework-agnostic React design problems — component decomposition, hook composition, state location (lift/colocate, Context vs. external store), effect correctness, and render/re-render behavior. Invoke when a tree re-renders too much, an effect loops or fires wrong, or you need to choose where state lives. NOT for Next.js/RSC/server-actions/routing/caching — route those to nextjs-developer.",
       "category": "web",
       "model": "sonnet",
       "tools": [

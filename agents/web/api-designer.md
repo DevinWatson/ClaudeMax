@@ -1,6 +1,6 @@
 ---
 name: api-designer
-description: Use when designing or reviewing an HTTP/REST API contract — resource modeling and URL structure, methods and status codes, error response shapes, pagination, filtering, versioning, idempotency, and OpenAPI specs. Invoke before implementation or during review to lock down the contract. Design-focused and language-agnostic — it shapes the interface, not the handler internals of any one framework. NOT for implementing route handlers or framework wiring — route that to nextjs-pro or the relevant language/framework agent.
+description: Use when designing or reviewing an HTTP/REST API contract — resource modeling and URL structure, methods and status codes, error response shapes, pagination, filtering, versioning, idempotency, and OpenAPI specs. Invoke before implementation or during review to lock down the contract. Design-focused and language-agnostic — it shapes the interface, not the handler internals of any one framework. NOT for implementing route handlers or framework wiring — route that to nextjs-api-engineer or the relevant language/framework agent.
 model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: web

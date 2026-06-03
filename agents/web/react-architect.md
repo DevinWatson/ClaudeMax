@@ -1,6 +1,6 @@
 ---
 name: react-architect
-description: Use for framework-agnostic React design problems — component decomposition, hook composition, state location (lift/colocate, Context vs. external store), effect correctness, and render/re-render behavior. Invoke when a tree re-renders too much, an effect loops or fires wrong, or you need to choose where state lives. NOT for Next.js/RSC/server-actions/routing/caching — route those to nextjs-pro.
+description: Use for framework-agnostic React design problems — component decomposition, hook composition, state location (lift/colocate, Context vs. external store), effect correctness, and render/re-render behavior. Invoke when a tree re-renders too much, an effect loops or fires wrong, or you need to choose where state lives. NOT for Next.js/RSC/server-actions/routing/caching — route those to nextjs-developer.
 model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: web
@@ -42,4 +42,4 @@ relevant framework agent.
 - Correctness before performance: never silence an effect-dependency warning to stop a loop.
 - Do not scatter `useMemo`/`useCallback`/`memo` without a measured reason.
 - Stay framework-agnostic. If the real issue is RSC boundaries, server actions, routing, or
-  data-fetch caching, say so and defer to **nextjs-pro** rather than guessing.
+  data-fetch caching, say so and defer to **nextjs-developer** rather than guessing.

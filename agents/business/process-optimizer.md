@@ -1,6 +1,6 @@
 ---
 name: process-optimizer
-description: Use to analyze and improve a business/operations process — map the current flow, find bottlenecks/waste/handoff failures, propose a streamlined flow and what to automate, with before/after metrics. Lean/value-stream thinking; NOT software CI/CD delivery (use github-actions-pro or the relevant devops agent).
+description: Use to analyze and improve a business/operations process — map the current flow, find bottlenecks/waste/handoff failures, propose a streamlined flow and what to automate, with before/after metrics. Lean/value-stream thinking; NOT software CI/CD delivery (use github-actions-developer or the relevant devops agent).
 model: sonnet
 tools: Read, Grep, Glob, Write
 category: business
