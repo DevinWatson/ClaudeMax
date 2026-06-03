@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1137,
-    "skills": 429,
+    "agents": 1145,
+    "skills": 437,
     "categories": 17
   },
   "agents": [
@@ -6261,6 +6261,35 @@
       "path": "agents/cloud/azure/services/compute/azure-dedicated-host-specialist.md"
     },
     {
+      "name": "azure-digital-twins-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Digital Twins (Azure Digital Twins) (Azure) — building a live, queryable spatial graph of an environment from models: DTDL models (interfaces, properties, telemetry, relationships, components), the twin graph, the Azure Digital Twins query language, ingestion via event routes from IoT Hub/Event Grid (through Azure Functions), event routes/endpoints to push twin change events downstream, ADT Explorer, and Entra data-plane RBAC plus private endpoints. OWNS the ADT instance layer end-to-end and verifies twins update from telemetry and queries return live state. NOT the azure-iot-engineer role (cross-cutting IoT solution architecture). Sibling azure-iot-hub-specialist owns the hub that often feeds ADT; azure-iot-central-specialist owns the managed SaaS app; azure-iot-edge-specialist owns the edge runtime. Cross-cloud peer (defer): aws-iot-twinmaker.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-digital-twins",
+        "iot",
+        "dtdl",
+        "specialist"
+      ],
+      "skills": [
+        "azure-digital-twins",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/iot/azure-digital-twins-specialist.md"
+    },
+    {
       "name": "azure-disk-storage-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Disk Storage (Azure) — managed disks as block storage for VMs: disk types (Ultra Disk, Premium SSD v2, Premium SSD, Standard SSD, Standard HDD), provisioned IOPS/throughput and bursting, sizing/resize, host caching, snapshots and images (incremental snapshots), shared disks, LRS/ZRS disks, server-side encryption (platform/customer-managed keys via disk encryption sets, double encryption), Azure Disk Encryption (in-guest), and disk-access private endpoints. OWNS the Azure managed-service layer end-to-end (disk type/size, performance, redundancy, snapshots, encryption, attachment) for VM block storage; cross-ref azure-virtual-machines for the compute side. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Sibling Azure storage specialists own object storage (azure-blob-storage) and file shares (azure-files). Cross-cloud peers (defer): aws-ebs, gcp-persistent-disk.",
       "category": "cloud",
@@ -6317,6 +6346,93 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/networking/azure-dns-specialist.md"
+    },
+    {
+      "name": "azure-entra-domain-services-specialist",
+      "description": "Use when designing, configuring, securing, or operating Microsoft Entra Domain Services (Microsoft Entra Domain Services) (Azure) — managed Active Directory Domain Services (AD DS) providing domain join, LDAP/LDAPS, Kerberos, and NTLM without running domain controllers: the managed domain instance in a dedicated subnet/VNet, one-way sync from Entra ID, VNet DNS, secure LDAP, OUs/Group Policy, and replica sets for HA/geo. OWNS the managed-domain layer end-to-end and verifies domain join, Kerberos/NTLM auth, and LDAP queries. NOT the azure-iam-engineer role (cross-cutting IAM strategy). Sibling azure-microsoft-entra-id-specialist owns the cloud IdP this syncs from; azure-entra-id-b2c-specialist owns CIAM; azure-entra-id-governance-specialist owns governance. Cross-cloud peer (defer): aws-managed-microsoft-ad.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-entra-domain-services",
+        "identity",
+        "managed-ad",
+        "specialist"
+      ],
+      "skills": [
+        "azure-entra-domain-services",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/identity/azure-entra-domain-services-specialist.md"
+    },
+    {
+      "name": "azure-entra-id-b2c-specialist",
+      "description": "Use when designing, configuring, securing, or operating Microsoft Entra External ID / Azure AD B2C (Microsoft Entra External ID (B2C)) (Azure) — customer identity and access management (CIAM) for external/consumer sign-up and sign-in: the dedicated B2C/External ID tenant, user flows vs custom policies (Identity Experience Framework / TrustFramework XML), social and SAML/OIDC identity providers, local accounts and custom attributes/claims, API connectors, UI/branding, and token configuration. OWNS the CIAM tenant layer end-to-end and verifies sign-up/sign-in completes and tokens carry expected claims. NOT the azure-iam-engineer role (cross-cutting IAM strategy). Sibling azure-microsoft-entra-id-specialist owns the workforce IdP (separate tenant); azure-entra-domain-services-specialist owns managed AD DS; azure-entra-id-governance-specialist owns governance. Cross-cloud peers (defer): aws-cognito, gcp-identity-platform.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-entra-id-b2c",
+        "identity",
+        "ciam",
+        "specialist"
+      ],
+      "skills": [
+        "azure-entra-id-b2c",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/identity/azure-entra-id-b2c-specialist.md"
+    },
+    {
+      "name": "azure-entra-id-governance-specialist",
+      "description": "Use when designing, configuring, securing, or operating Microsoft Entra ID Governance (Microsoft Entra ID Governance) (Azure) — controlling the identity lifecycle and access at scale: entitlement management (access packages, catalogs, connected organizations) for self-service requests with approval/expiry, access reviews (recurring recertification), lifecycle workflows (joiner/mover/leaver automation), Privileged Identity Management (PIM) for just-in-time privileged activation with approval/audit, terms of use, and separation-of-duties checks. OWNS the governance layer end-to-end and verifies request/approval, review removal, and PIM activation. Entra config/objects live in azure-microsoft-entra-id-specialist; posture review in azure-security-reviewer. NOT the azure-iam-engineer role (IAM strategy). Siblings: azure-entra-id-b2c-specialist (CIAM), azure-entra-domain-services-specialist (managed AD DS). Cross-cloud peers (defer): aws-iam-identity-center reviews, gcp access governance.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-entra-id-governance",
+        "identity",
+        "access-reviews",
+        "specialist"
+      ],
+      "skills": [
+        "azure-entra-id-governance",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/identity/azure-entra-id-governance-specialist.md"
     },
     {
       "name": "azure-event-grid-specialist",
@@ -6581,6 +6697,93 @@
       "path": "agents/cloud/azure/azure-iac-engineer.md"
     },
     {
+      "name": "azure-iot-central-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure IoT Central (Azure IoT Central) (Azure) — the managed IoT application platform (aPaaS/SaaS) built on a hidden IoT Hub/DPS: IoT Central applications and pricing plans, device templates (DTDL capability models), device groups, rules and actions, dashboards/views and analytics, jobs for bulk operations, data export to downstream targets, and access via Entra roles/API tokens. OWNS the IoT Central application layer end-to-end and verifies devices report, rules fire, and exports deliver. NOT the azure-iot-engineer role (cross-cutting IoT solution architecture). Sibling azure-iot-hub-specialist owns the raw hub IoT Central is built on (drop to it when you need hub-level routing/scale control); azure-iot-edge-specialist owns the edge runtime; azure-digital-twins-specialist owns the spatial graph. Cross-cloud peer (defer): aws-iot-core.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-iot-central",
+        "iot",
+        "device-templates",
+        "specialist"
+      ],
+      "skills": [
+        "azure-iot-central",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/iot/azure-iot-central-specialist.md"
+    },
+    {
+      "name": "azure-iot-edge-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure IoT Edge (Azure IoT Edge) (Azure) — running cloud workloads as containerized modules on edge devices managed from IoT Hub: the edge runtime (edgeAgent/edgeHub), custom and Azure-service modules, deployment manifests and module twins, routes between modules and the cloud, at-scale/layered deployments targeted by device tags, offline store-and-forward, gateway patterns, and DPS/X.509 provisioning. OWNS the IoT Edge device-and-deployment layer end-to-end and verifies modules run, routes deliver upstream, and offline works. NOT the azure-iot-engineer role (cross-cutting IoT solution architecture). Sibling azure-iot-hub-specialist owns the hub edge is managed from; azure-iot-central-specialist owns the managed SaaS app; azure-digital-twins-specialist owns the spatial graph. Cross-cloud peer (defer): aws-iot-greengrass.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-iot-edge",
+        "iot",
+        "edge-runtime",
+        "specialist"
+      ],
+      "skills": [
+        "azure-iot-edge",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/iot/azure-iot-edge-specialist.md"
+    },
+    {
+      "name": "azure-iot-hub-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure IoT Hub (Azure IoT Hub) (Azure) — the managed bidirectional device-to-cloud messaging hub: per-device identity and the device registry, device/module twins, direct methods and cloud-to-device messages, device-to-cloud telemetry, message routing to Event Hubs/Service Bus/Storage, the Device Provisioning Service (DPS), tier/unit sizing, and per-device SAS/X.509/TPM auth plus Entra/RBAC. OWNS the IoT Hub managed-service layer end-to-end and verifies telemetry, routing, twins, and direct methods. NOT the azure-iot-engineer role (cross-cutting IoT solution architecture, multi-service data pipelines). Siblings: azure-iot-central-specialist owns the managed IoT SaaS app (built on IoT Hub); azure-iot-edge-specialist owns the edge runtime; azure-digital-twins-specialist owns the spatial graph. Cross-cloud peer (defer): aws-iot-core.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-iot-hub",
+        "iot",
+        "device-twins",
+        "specialist"
+      ],
+      "skills": [
+        "azure-iot-hub",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/iot/azure-iot-hub-specialist.md"
+    },
+    {
       "name": "azure-load-balancer-specialist",
       "description": "Use when designing, configuring, securing, or operating an Azure Load Balancer (Azure) — the Layer-4 (TCP/UDP) load balancer over a backend pool of VMs/VMSS/IPs: public vs internal (private), Standard vs Basic vs Gateway SKU, frontend IP configurations, backend pools (NIC/IP), health probes (TCP/HTTP/HTTPS), load-balancing rules and HA Ports, inbound NAT rules/pools, outbound rules and SNAT port allocation, session persistence, availability-zone redundancy, and NSG interplay. OWNS the L4 load-balancer managed-service layer end-to-end (SKU, frontends, pools, probes, rules) and verifies traffic reaches healthy backends. NOT the azure-networking-engineer role, which owns cross-cutting load-balancing/topology design (via network-design). For L7 path/host routing, TLS termination, or WAF use Application Gateway, not this. Sibling: azure-virtual-network-specialist owns the VNet. Cross-cloud peers (defer): aws-elb (NLB), gcp-cloud-load-balancing.",
       "category": "cloud",
@@ -6696,6 +6899,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/databases/azure-managed-instance-for-cassandra-specialist.md"
+    },
+    {
+      "name": "azure-microsoft-entra-id-specialist",
+      "description": "Use when designing, configuring, securing, or operating Microsoft Entra ID (Microsoft Entra ID) (Azure) — the workforce cloud identity provider (formerly Azure AD): tenants, users and groups (assigned + dynamic), app registrations and enterprise apps (SSO via OIDC/OAuth/SAML, service principals), Conditional Access, MFA and authentication methods, RBAC and Privileged Identity Management (PIM) for just-in-time elevation, and managed identities. OWNS the Entra tenant identity layer end-to-end and verifies sign-in, Conditional Access evaluation, and PIM activation. CONFIGURES Entra — NOT azure-security-reviewer, which reviews identity posture. NOT the azure-iam-engineer role (cross-cutting IAM strategy). Sibling azure-entra-id-b2c-specialist owns customer/CIAM identity; azure-entra-domain-services-specialist owns managed AD DS; azure-entra-id-governance-specialist owns access reviews/entitlement/lifecycle. Cross-cloud peers (defer): aws-iam + aws-iam-identity-center, gcp-cloud-identity.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-microsoft-entra-id",
+        "identity",
+        "conditional-access",
+        "specialist"
+      ],
+      "skills": [
+        "azure-microsoft-entra-id",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/identity/azure-microsoft-entra-id-specialist.md"
     },
     {
       "name": "azure-microsoft-purview-specialist",
@@ -34981,6 +35213,21 @@
       "path": "skills/cloud/azure-dedicated-host/SKILL.md"
     },
     {
+      "name": "azure-digital-twins",
+      "description": "Use when designing, provisioning, securing, or operating Azure Digital Twins — building a live, queryable graph of an environment (buildings, factories, fleets) from models (Azure Digital Twins). Covers DTDL models (interfaces, properties, telemetry, relationships, components), the twin graph (digital twin instances + relationships), the Azure Digital Twins query language, ingesting telemetry via event routes from IoT Hub/Event Grid (often through Azure Functions), event routes/endpoints to push twin change events downstream, ADT Explorer for authoring/visualizing, and Entra/RBAC plus private endpoints. Loads the knowledge: define DTDL models, build the twin graph, wire ingestion and event routes, secure access, and verify twins update and queries return live state. Consumed by the azure-digital-twins specialist and by the Azure role team when standing up the managed service (Azure Digital Twins).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-digital-twins",
+        "iot",
+        "dtdl",
+        "twin-graph"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-digital-twins/SKILL.md"
+    },
+    {
       "name": "azure-disk-storage",
       "description": "Use when designing, provisioning, securing, or operating Azure Disk Storage — Azure managed disks attached as block storage to virtual machines (Azure Disk Storage). Covers disk types (Ultra Disk, Premium SSD v2, Premium SSD, Standard SSD, Standard HDD), performance tiers and provisioned IOPS/throughput, bursting, disk sizing and resize, snapshots and images, incremental snapshots, shared disks, host caching, zone-redundant (ZRS) disks, server-side encryption with platform or customer-managed keys, Azure Disk Encryption (in-guest), and disk-access private endpoints. Loads the knowledge: pick a disk type and size, configure performance/snapshots/encryption, provision, attach, secure, and verify the disk is attached and readable/writable. Consumed by the azure-disk-storage specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Disk Storage).",
       "category": "cloud",
@@ -35010,6 +35257,51 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-dns/SKILL.md"
+    },
+    {
+      "name": "azure-entra-domain-services",
+      "description": "Use when designing, provisioning, securing, or operating Microsoft Entra Domain Services — managed Active Directory Domain Services (AD DS) in Azure providing domain join, LDAP, Kerberos, and NTLM without running domain controllers (Microsoft Entra Domain Services). Covers the managed domain instance and its dedicated subnet/VNet, one-way sync from Entra ID (users/groups/credentials), domain join for Windows/Linux VMs, legacy auth protocols (LDAP/LDAPS, Kerberos, NTLM), group policy and organizational units, secure LDAP exposure, replica sets for HA/geo, and Entra/RBAC. Loads the knowledge: provision the managed domain into a VNet, configure DNS and secure LDAP, domain-join workloads, secure protocols, and verify join/auth and LDAP queries work. Consumed by the entra-domain-services specialist and by the Azure role team when standing up the managed service (Microsoft Entra Domain Services).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-entra-domain-services",
+        "identity",
+        "managed-ad",
+        "ldap"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-entra-domain-services/SKILL.md"
+    },
+    {
+      "name": "azure-entra-id-b2c",
+      "description": "Use when designing, provisioning, securing, or operating Microsoft Entra External ID / Azure AD B2C — customer identity and access management (CIAM) for sign-up/sign-in of external/consumer users to your apps (Microsoft Entra External ID (B2C)). Covers the dedicated B2C/External ID tenant, user flows (built-in sign-up/sign-in/password-reset/profile-edit) vs custom policies (Identity Experience Framework / TrustFramework XML), external identity providers (social + SAML/OIDC federation), local accounts and user attributes/custom claims, UI/branding customization, token configuration and API connectors, and access via Entra/RBAC. Loads the knowledge: create the CIAM tenant, register the app, build user flows or custom policies, federate IdPs, secure tokens, and verify sign-up/sign-in and token claims. Consumed by the entra-id-b2c specialist and by the Azure role team when standing up the managed service (Microsoft Entra External ID / B2C).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-entra-id-b2c",
+        "identity",
+        "ciam",
+        "user-flows"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-entra-id-b2c/SKILL.md"
+    },
+    {
+      "name": "azure-entra-id-governance",
+      "description": "Use when designing, provisioning, securing, or operating Microsoft Entra ID Governance — controlling the identity lifecycle and access at scale across employees, partners, and guests (Microsoft Entra ID Governance). Covers entitlement management (access packages, catalogs, connected organizations) for self-service access requests with approval and expiry, access reviews (recurring recertification of group/app/role membership), lifecycle workflows (automated joiner/mover/leaver tasks), Privileged Identity Management (PIM) for just-in-time privileged role activation with approval/audit, terms of use, and separation-of-duties checks. Loads the knowledge: design catalogs and access packages, schedule access reviews, build lifecycle workflows, configure PIM, and verify request/approval/review/elevation flows. Consumed by the entra-id-governance specialist and by the Azure role team when standing up the managed service (Microsoft Entra ID Governance).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-entra-id-governance",
+        "identity",
+        "access-reviews",
+        "pim"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-entra-id-governance/SKILL.md"
     },
     {
       "name": "azure-event-grid",
@@ -35135,6 +35427,51 @@
       "path": "skills/cloud/azure-hdinsight/SKILL.md"
     },
     {
+      "name": "azure-iot-central",
+      "description": "Use when designing, provisioning, securing, or operating Azure IoT Central — the managed application platform (aPaaS/SaaS) for building IoT solutions without managing the underlying hub/DPS yourself (Azure IoT Central). Covers IoT Central applications and pricing plans, device templates (capability models from DTDL), device groups, rules and actions, dashboards/views and analytics, jobs for bulk device operations, data export to downstream targets, and access via Entra ID and API tokens. Loads the knowledge: create the application, model device templates, provision devices, configure rules/dashboards/exports, secure access, and verify devices report and rules fire. Consumed by the azure-iot-central specialist and by the Azure role team when standing up the managed service (Azure IoT Central).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-iot-central",
+        "iot",
+        "device-templates",
+        "saas"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-iot-central/SKILL.md"
+    },
+    {
+      "name": "azure-iot-edge",
+      "description": "Use when designing, provisioning, securing, or operating Azure IoT Edge — running cloud workloads as containerized modules on edge devices managed from IoT Hub (Azure IoT Edge). Covers the IoT Edge runtime (edgeAgent + edgeHub system modules), custom and Azure-service modules, deployment manifests and module twins, routes between modules and the cloud, layered/at-scale deployments targeted by device tags, offline operation with local store-and-forward, gateway/transparent-gateway patterns, and device provisioning via DPS with X.509. Loads the knowledge: prepare devices, author deployment manifests, set routes, secure module identities, and verify modules run and route messages offline and online. Consumed by the azure-iot-edge specialist and by the Azure role team when standing up the managed service (Azure IoT Edge).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-iot-edge",
+        "iot",
+        "edge-runtime",
+        "deployment-manifest"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-iot-edge/SKILL.md"
+    },
+    {
+      "name": "azure-iot-hub",
+      "description": "Use when designing, provisioning, securing, or operating Azure IoT Hub — the managed bidirectional messaging hub between IoT devices and the cloud (Azure IoT Hub). Covers per-device identity and the device registry, device/module twins (desired vs reported properties + tags), cloud-to-device messages and direct methods, device-to-cloud telemetry, message routing to endpoints (Event Hubs/Service Bus/Storage), the Device Provisioning Service (DPS) for zero-touch enrollment, SKU/unit sizing and throttling, and Entra/RBAC plus per-device SAS/X.509/TPM auth. Loads the knowledge: provision the hub and DPS, model twins, wire routing, secure device identities, and verify telemetry/commands end-to-end. Consumed by the azure-iot-hub specialist and by the Azure role team when standing up the managed service (Azure IoT Hub).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-iot-hub",
+        "iot",
+        "device-twins",
+        "dps"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-iot-hub/SKILL.md"
+    },
+    {
       "name": "azure-load-balancer",
       "description": "Use when designing, provisioning, securing, or operating an Azure Load Balancer — Azure's high-performance Layer-4 (TCP/UDP) load balancer that distributes traffic across a backend pool of VMs/VMSS/IPs (Azure Load Balancer). Covers public vs internal (private) load balancers, Standard vs Basic vs Gateway SKU, frontend IP configurations, backend pools (NIC or IP based), health probes (TCP/HTTP/HTTPS), load-balancing rules and HA Ports, inbound NAT rules/pools, outbound rules and SNAT port allocation, session persistence/distribution mode, availability-zone redundancy, and NSG interplay. Loads the knowledge: pick SKU and public/internal, define frontends/backend pools/probes/rules, secure, provision, and verify traffic distributes to healthy backends. Consumed by the azure-load-balancer specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Load Balancer).",
       "category": "cloud",
@@ -35196,6 +35533,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-managed-instance-for-cassandra/SKILL.md"
+    },
+    {
+      "name": "azure-microsoft-entra-id",
+      "description": "Use when designing, provisioning, securing, or operating Microsoft Entra ID (formerly Azure AD) — the cloud identity and access management directory for workforce/organizational identities (Microsoft Entra ID). Covers tenants, users and groups (dynamic + assigned), app registrations and enterprise apps (SSO, service principals, OAuth/OIDC/SAML), Conditional Access policies, multi-factor authentication and authentication methods, single sign-on, role-based access control and Privileged Identity Management (PIM) for just-in-time elevation, managed identities, and external collaboration (B2B guests). Loads the knowledge: model users/groups, register apps and configure SSO, enforce Conditional Access + MFA, assign roles via PIM, and verify sign-in and access work. Consumed by the microsoft-entra-id specialist and by the Azure role team when standing up the managed service (Microsoft Entra ID).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-microsoft-entra-id",
+        "identity",
+        "conditional-access",
+        "sso"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-microsoft-entra-id/SKILL.md"
     },
     {
       "name": "azure-microsoft-purview",

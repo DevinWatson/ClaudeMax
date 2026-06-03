@@ -392,16 +392,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] azure|integration|event-grid|Azure Event Grid
 
 ### iot
-- [ ] azure|iot|iot-hub|Azure IoT Hub
-- [ ] azure|iot|iot-central|Azure IoT Central
-- [ ] azure|iot|iot-edge|Azure IoT Edge
-- [ ] azure|iot|digital-twins|Azure Digital Twins
+- [x] azure|iot|iot-hub|Azure IoT Hub
+- [x] azure|iot|iot-central|Azure IoT Central
+- [x] azure|iot|iot-edge|Azure IoT Edge
+- [x] azure|iot|digital-twins|Azure Digital Twins
 
 ### identity
-- [ ] azure|identity|microsoft-entra-id|Microsoft Entra ID
-- [ ] azure|identity|entra-id-b2c|Microsoft Entra External ID (B2C)
-- [ ] azure|identity|entra-domain-services|Microsoft Entra Domain Services
-- [ ] azure|identity|entra-id-governance|Microsoft Entra ID Governance
+- [x] azure|identity|microsoft-entra-id|Microsoft Entra ID
+- [x] azure|identity|entra-id-b2c|Microsoft Entra External ID (B2C)
+- [x] azure|identity|entra-domain-services|Microsoft Entra Domain Services
+- [x] azure|identity|entra-id-governance|Microsoft Entra ID Governance
 
 ### security
 - [ ] azure|security|microsoft-defender-for-cloud|Microsoft Defender for Cloud
