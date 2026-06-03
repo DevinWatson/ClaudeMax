@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1025,
-    "skills": 317,
+    "agents": 1033,
+    "skills": 325,
     "categories": 17
   },
   "agents": [
@@ -11485,6 +11485,36 @@
       "path": "agents/domain/game-balance-designer.md"
     },
     {
+      "name": "gcp-alloydb-specialist",
+      "description": "Use when designing, configuring, securing, or operating AlloyDB for PostgreSQL (GCP) — the managed PostgreSQL-compatible database: clusters, primary + read-pool instances, the columnar engine, backups/PITR, cross-region secondary clusters, plus private connectivity, IAM database auth, CMEK, and cost/scaling. OWNS the GCP managed-DB layer for AlloyDB (provisioning, HA, read pools, backups, scaling, IAM). NOT engine-internal PostgreSQL tuning (query plans, indexes, vacuum, schema) — defer that to the postgres data team. NOT a sibling GCP DB specialist: use gcp-cloud-sql-specialist for managed MySQL/Postgres/SQL Server, gcp-spanner-specialist for globally distributed SQL, gcp-bigtable-specialist/gcp-firestore-specialist for NoSQL. Cross-cloud peers (defer to them for those platforms): aws-rds / aws-aurora and azure-database. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "alloydb",
+        "databases",
+        "postgresql",
+        "columnar-engine",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-alloydb",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/databases/gcp-alloydb-specialist.md"
+    },
+    {
       "name": "gcp-api-gateway-specialist",
       "description": "Use when designing, configuring, deploying, or operating API Gateway (GCP) — the lightweight, fully managed gateway that fronts Cloud Functions / Cloud Run / App Engine / HTTP backends from an OpenAPI 2.0 spec: the API, immutable API Config, and Gateway resources, backend routing (x-google-backend), API-key and JWT (Firebase/Auth0/Google) auth, CORS, per-method quotas, the Gateway service account, IAM, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Pick API Gateway for LIGHTWEIGHT managed routing/auth in front of serverless; defer FULL API management (rich policies, developer portal, monetization, analytics) to gcp-apigee-specialist. Both ↔ aws-api-gateway-specialist / azure-api-management-specialist — defer those clouds.",
       "category": "cloud",
@@ -11690,6 +11720,36 @@
       "path": "agents/cloud/gcp/services/data-analytics/gcp-bigquery-specialist.md"
     },
     {
+      "name": "gcp-bigtable-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud Bigtable (GCP) — the wide-column NoSQL database: instances, clusters and nodes, row-key design, column families and GC rules, single- vs multi-cluster replication and app profiles, autoscaling, plus IAM, CMEK, and cost/scaling. OWNS the GCP managed-DB layer for Bigtable (provisioning, clusters/nodes, replication, scaling, IAM) and wide-column data modeling (row keys, hotspot avoidance). NOT a sibling GCP DB specialist: use gcp-firestore-specialist for document NoSQL, gcp-spanner-specialist for globally distributed SQL, gcp-cloud-sql-specialist/gcp-alloydb-specialist for managed relational. Cross-cloud peers (defer for those platforms): aws-keyspaces and aws-dynamodb. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "bigtable",
+        "databases",
+        "nosql",
+        "wide-column",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-bigtable",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/databases/gcp-bigtable-specialist.md"
+    },
+    {
       "name": "gcp-cloud-architect",
       "description": "Use when designing or reviewing a Google Cloud architecture — selecting managed services, laying out projects/folders/VPCs/regions, and evaluating a design against the Google Cloud Architecture Framework's pillars (GCP). Produces the design and trade-offs, not the IaC. NOT for writing Terraform/Deployment Manager (use gcp-iac-engineer), IAM/exposure auditing (gcp-security-reviewer), cost tuning (gcp-cost-governor), generic IaC across clouds (terraform-architect), or AWS/Azure architecture (aws-/azure-cloud-architect).",
       "category": "cloud",
@@ -11861,6 +11921,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/application-development/gcp-cloud-scheduler-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-sql-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud SQL (GCP) — the managed relational database for MySQL, PostgreSQL, and SQL Server: instances/tiers, regional HA with automatic failover, read replicas (incl. cross-region), automated backups/PITR, maintenance windows, database flags, plus private IP/Auth Proxy, IAM database auth, CMEK, and cost/scaling. OWNS the GCP managed-DB layer for Cloud SQL (provisioning, HA, replicas, backups, scaling, IAM). NOT engine-internal tuning (query plans, indexes, schema) — defer Postgres tuning to the postgres data team. NOT a sibling GCP DB specialist: gcp-alloydb-specialist for the high-performance Postgres-compatible engine, gcp-spanner-specialist for distributed SQL, gcp-bigtable-specialist/gcp-firestore-specialist for NoSQL. Cross-cloud peers (defer for those): aws-rds / aws-aurora and azure-database. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-sql",
+        "databases",
+        "mysql",
+        "postgresql",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-sql",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/databases/gcp-cloud-sql-specialist.md"
     },
     {
       "name": "gcp-cloud-tasks-specialist",
@@ -12035,6 +12125,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/gcp-data-engineer.md"
+    },
+    {
+      "name": "gcp-database-migration-service-specialist",
+      "description": "Use when planning or executing a database migration with Database Migration Service (GCP) — the managed minimal-downtime service that migrates MySQL, PostgreSQL, and SQL Server into Cloud SQL or AlloyDB: source/destination connection profiles, one-time vs continuous (CDC) migration jobs, connectivity methods (VPC peering, reverse SSH, IP allowlist, PSC), replication-lag monitoring, validation, and promote/cutover, plus IAM and security around the migration. OWNS the GCP managed-migration layer for DMS (connection profiles, job lifecycle, CDC, cutover). NOT the steady-state managed-DB owner of the destination — hand the promoted database to gcp-cloud-sql-specialist or gcp-alloydb-specialist for ongoing HA/backups/scaling. NOT engine-internal tuning — defer Postgres engine work to the postgres data team. Cross-cloud peer (defer for that platform): aws-dms. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "database-migration-service",
+        "databases",
+        "migration",
+        "cdc",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-database-migration-service",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/databases/gcp-database-migration-service-specialist.md"
     },
     {
       "name": "gcp-dataflow-specialist",
@@ -12215,6 +12335,36 @@
       "path": "agents/cloud/gcp/services/application-development/gcp-eventarc-specialist.md"
     },
     {
+      "name": "gcp-firestore-specialist",
+      "description": "Use when designing, configuring, securing, or operating Firestore (GCP) — the serverless document NoSQL database: Native vs Datastore mode and location (both permanent), collections/documents data modeling, composite indexes and query design, real-time listeners, TTL, backups/PITR, plus Security Rules (client) vs IAM (server), CMEK, and cost/scaling. OWNS the GCP managed-DB layer for Firestore (provisioning, mode/location, indexes, rules/IAM, backups, scaling) and document data modeling. NOT a sibling GCP DB specialist: use gcp-bigtable-specialist for wide-column NoSQL, gcp-spanner-specialist for globally distributed SQL, gcp-cloud-sql-specialist/gcp-alloydb-specialist for managed relational. Cross-cloud peers (defer for those platforms): aws-dynamodb and azure-cosmos-db. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "firestore",
+        "databases",
+        "nosql",
+        "document-database",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-firestore",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/databases/gcp-firestore-specialist.md"
+    },
+    {
       "name": "gcp-gke-specialist",
       "description": "Use when designing, configuring, provisioning, or operating Google Kubernetes Engine (GKE, GCP) — the GCP MANAGED-GKE layer: Standard vs Autopilot, cluster topology (zonal/regional, public/private), node pools (machine type, autoscaling, Spot, surge upgrades, node auto-provisioning), release channels + cluster/node upgrades, Workload Identity, and GKE networking (VPC-native, GKE Ingress/Gateway, network policy, Dataplane V2). MUST cross-ref the kubernetes-platform team: this specialist owns the GCP-side cluster lifecycle (provisioning/node pools/Autopilot/upgrades/Workload Identity/GKE networking) while the kubernetes-platform team owns distribution-agnostic CLUSTER-INTERNAL ops (RBAC, app manifests, Helm, policy, service mesh). NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting work. Pick gcp-cloud-run for serverless containers and gcp-app-engine for PaaS. AWS analog is EKS (aws-eks-specialist); Azure is AKS (azure-aks) — defer those clouds.",
       "category": "cloud",
@@ -12362,6 +12512,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/data-analytics/gcp-managed-spark-specialist.md"
+    },
+    {
+      "name": "gcp-memorystore-specialist",
+      "description": "Use when designing, configuring, securing, or operating Memorystore (GCP) — the managed in-memory store for Redis (incl. Redis Cluster) and Memcached: service tiers (Basic vs Standard HA with replicas/automatic failover), memory/shard/replica sizing, persistence (RDB/AOF), eviction policy, maintenance windows, plus private IP, AUTH, in-transit TLS, CMEK, and cost/scaling. OWNS the GCP managed in-memory layer for Memorystore (provisioning, tiers/HA, replicas, persistence, scaling, IAM). NOT engine-internal Redis tuning (data-structure/command/cluster-slot design) — defer to the redis data team. NOT a sibling GCP DB specialist: gcp-firestore-specialist/gcp-bigtable-specialist (NoSQL), gcp-cloud-sql-specialist/gcp-alloydb-specialist (relational), gcp-spanner-specialist (distributed SQL). Cross-cloud peers (defer): aws-elasticache and azure-cache-for-redis. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "memorystore",
+        "databases",
+        "redis",
+        "cache",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-memorystore",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/databases/gcp-memorystore-specialist.md"
     },
     {
       "name": "gcp-migrate-to-containers-specialist",
@@ -12597,6 +12777,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/compute/gcp-shielded-vms-specialist.md"
+    },
+    {
+      "name": "gcp-spanner-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud Spanner (GCP) — the globally distributed relational database with strong external consistency (TrueTime): regional vs multi-region instance configs sized in nodes/processing units, primary-key design and interleaving to avoid hotspots, secondary indexes, GoogleSQL/PostgreSQL dialects, autoscaling, backups/PITR, plus IAM (incl. fine-grained), CMEK, and scaling. OWNS the GCP managed-DB layer for Spanner (provisioning, instance config, capacity/scaling, key/interleaving design, backups, IAM). NOT engine-agnostic SQL query tuning — defer generic query rewrites to the data sql team. NOT a sibling GCP DB specialist: gcp-cloud-sql-specialist/gcp-alloydb-specialist (single-region relational), gcp-bigtable-specialist/gcp-firestore-specialist (NoSQL). Cross-cloud peers (defer): azure-cosmos-db and aws-aurora. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "spanner",
+        "databases",
+        "distributed-sql",
+        "strong-consistency",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-spanner",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/databases/gcp-spanner-specialist.md"
     },
     {
       "name": "gcp-speech-to-text-specialist",
@@ -12837,6 +13047,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/compute/gcp-vmware-engine-specialist.md"
+    },
+    {
+      "name": "gcp-vpc-specialist",
+      "description": "Use when designing, configuring, securing, or operating a Virtual Private Cloud (VPC) (GCP) — the VPC network service: custom vs auto-mode networks, regional subnets and secondary ranges (alias IP), firewall rules and hierarchical policies, routes and Cloud NAT, Private Google Access and Private Service Connect, VPC Network Peering, and Shared VPC, plus network IAM, flow/firewall logging, and cost/scaling. OWNS the GCP VPC service (provisioning networks/subnets, firewall rules, routes/NAT, private access, peering, Shared VPC). NOT cross-cutting network topology/architecture across providers or services — defer to the platform networking-engineer role (which uses network-design). NOT a sibling GCP service (Cloud Load Balancing, Cloud VPN/Interconnect, Cloud DNS, Cloud Armor). Cross-cloud peers (defer for those): aws-vpc and azure-virtual-network. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "vpc",
+        "networking",
+        "subnets",
+        "firewall-rules",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-vpc",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/networking/gcp-vpc-specialist.md"
     },
     {
       "name": "gcp-workflows-specialist",
@@ -31748,6 +31988,23 @@
       "path": "skills/domain/game-balance/SKILL.md"
     },
     {
+      "name": "gcp-alloydb",
+      "description": "Use when designing, provisioning, securing, or operating AlloyDB for PostgreSQL — Google Cloud's fully managed, PostgreSQL-compatible database with a disaggregated storage engine, a columnar engine for analytics, primary and read-pool instances, automatic backups/PITR, and cross-region replication, plus IAM, CMEK, private/VPC connectivity, and cost/scaling levers. Loads the AlloyDB knowledge: create clusters and instances, size primary and read pools, enable the columnar engine, secure with IAM and private networking, and verify connectivity and replication. Consumed by the AlloyDB specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle managed PostgreSQL workloads (AlloyDB for PostgreSQL).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "alloydb",
+        "databases",
+        "postgresql",
+        "columnar-engine",
+        "read-pool",
+        "managed-database"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-alloydb/SKILL.md"
+    },
+    {
       "name": "gcp-api-gateway",
       "description": "Use when designing, provisioning, securing, or operating API Gateway — Google Cloud's lightweight, fully managed gateway that fronts serverless and HTTP backends from an OpenAPI 2.0 (Swagger) config: the API, API Config, and Gateway resources, routing to Cloud Functions / Cloud Run / App Engine / HTTP backends, authentication (API keys, JWT/Firebase/Auth0/Google ID tokens via security definitions), CORS, quotas, and monitoring, plus regions, IAM, and cost (API Gateway). Loads the API Gateway knowledge: author the OpenAPI config, deploy an API Config + Gateway, wire backends and auth, secure the identity, and verify a routed request. Consumed by the API Gateway specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they front an API.",
       "category": "cloud",
@@ -31862,6 +32119,23 @@
       "path": "skills/cloud/gcp-bigquery/SKILL.md"
     },
     {
+      "name": "gcp-bigtable",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Bigtable — Google Cloud's fully managed, petabyte-scale wide-column NoSQL database for high-throughput, low-latency workloads (time series, IoT, AdTech, analytics), with instances, clusters and nodes, single-cluster vs replicated multi-cluster routing, app profiles, column families, and row-key design, plus IAM, CMEK, autoscaling, and cost/scaling levers. Loads the Bigtable knowledge: design row keys and column families, size clusters and nodes, configure replication and app profiles, secure with IAM, and verify throughput and latency. Consumed by the Bigtable specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle wide-column NoSQL workloads (Bigtable).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "bigtable",
+        "databases",
+        "nosql",
+        "wide-column",
+        "row-key",
+        "app-profile"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-bigtable/SKILL.md"
+    },
+    {
       "name": "gcp-cloud-build",
       "description": "Use when designing, provisioning, securing, or operating Cloud Build — Google Cloud's managed CI/build service: build configs (cloudbuild.yaml / Dockerfile), build steps (containerized steps, builder images, `args`, `waitFor` for parallelism), substitutions, artifacts and images, triggers (push/PR/tag/manual/Pub-Sub/webhook from GitHub/GitLab/Cloud Source Repositories), the build service account and per-step permissions, private worker pools (private pools) for VPC/private access, machine types, caching, and Artifact Registry integration, plus IAM, timeouts, and cost (Cloud Build). Loads the Cloud Build knowledge: author cloudbuild.yaml, create a trigger, build/push artifacts, secure the build identity, and verify a green build. Consumed by the Cloud Build specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add CI.",
       "category": "cloud",
@@ -31943,6 +32217,23 @@
       "path": "skills/cloud/gcp-cloud-scheduler/SKILL.md"
     },
     {
+      "name": "gcp-cloud-sql",
+      "description": "Use when designing, provisioning, securing, or operating Cloud SQL — Google Cloud's fully managed relational database for MySQL, PostgreSQL, and SQL Server, with instances and tiers, high availability (regional, synchronous standby), read replicas (including cross-region), automated backups and point-in-time recovery, maintenance windows, and database flags, plus IAM database authentication, private IP/Cloud SQL Auth Proxy, CMEK, and cost/scaling levers. Loads the Cloud SQL knowledge: pick an engine and tier, configure HA and read replicas, set backups/PITR and maintenance, secure with private IP and IAM, and verify failover and connectivity. Consumed by the Cloud SQL specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle managed relational workloads (Cloud SQL).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-sql",
+        "databases",
+        "mysql",
+        "postgresql",
+        "sql-server",
+        "high-availability"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-sql/SKILL.md"
+    },
+    {
       "name": "gcp-cloud-tasks",
       "description": "Use when designing, provisioning, securing, or operating Cloud Tasks — Google Cloud's fully managed asynchronous task-queue service: queues with rate + concurrency control (maxDispatchesPerSecond, maxConcurrentDispatches, maxBurstSize), task targets (HTTP/HTTPS endpoints and App Engine handlers), per-task scheduling (scheduleTime for deferred execution), dispatch deadlines, retry config (maxAttempts, min/max backoff, maxDoublings, maxRetryDuration), task deduplication by name, the invoker service account + OIDC/OAuth auth, and at-least-once delivery. Loads the Cloud Tasks knowledge: create a queue with rate limits, enqueue HTTP tasks with auth, tune retries/deadlines, and verify dispatch. Consumed by the Cloud Tasks specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add async/decoupled task processing (Cloud Tasks).",
       "category": "cloud",
@@ -32007,6 +32298,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-compute-engine/SKILL.md"
+    },
+    {
+      "name": "gcp-database-migration-service",
+      "description": "Use when planning or executing database migrations with Database Migration Service (DMS) — Google Cloud's managed, minimal-downtime service that migrates MySQL, PostgreSQL, and SQL Server into Cloud SQL or AlloyDB using source and destination connection profiles, an initial full dump followed by continuous change data capture (CDC) replication, connectivity methods (VPC peering, reverse SSH, IP allowlist, PSC), and a promote/cutover step, plus IAM and security around the migration. Loads the DMS knowledge: create connection profiles, configure a continuous or one-time migration job, run CDC, monitor lag, and verify and promote the cutover. Consumed by the Database Migration Service specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they plan managed database migrations (Database Migration Service).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "database-migration-service",
+        "databases",
+        "migration",
+        "cdc",
+        "replication",
+        "cutover"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-database-migration-service/SKILL.md"
     },
     {
       "name": "gcp-dataflow",
@@ -32107,6 +32415,23 @@
       "path": "skills/cloud/gcp-eventarc/SKILL.md"
     },
     {
+      "name": "gcp-firestore",
+      "description": "Use when designing, provisioning, securing, or operating Firestore — Google Cloud's serverless, fully managed document NoSQL database with Native mode vs Datastore mode, collections and documents, automatic single-field and composite indexes, real-time listeners and offline sync, multi-region/regional locations, security rules (mobile/web) vs IAM (server), and backups/PITR, plus cost and scaling levers. Loads the Firestore knowledge: model collections/documents, design indexes and queries, choose Native vs Datastore mode and location, secure with security rules or IAM, and verify reads/writes and index coverage. Consumed by the Firestore specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle serverless document NoSQL workloads (Firestore).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "firestore",
+        "databases",
+        "nosql",
+        "document-database",
+        "security-rules",
+        "serverless"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-firestore/SKILL.md"
+    },
+    {
       "name": "gcp-gke",
       "description": "Use when designing, provisioning, securing, or operating Google Kubernetes Engine (GKE) — Google Cloud's managed Kubernetes: the Standard (you manage node pools) vs Autopilot (Google manages nodes/capacity, pay-per-pod) modes, cluster topology (zonal vs regional control plane, public vs private clusters), node pools (machine type, autoscaling, spot, surge upgrades, node auto-provisioning), release channels + cluster/node version upgrades, Workload Identity (map K8s SAs to Google SAs), GKE networking (VPC-native/alias IPs, GKE Ingress + Gateway API, network policy, Dataplane V2/Cilium), and the GKE add-ons. Loads the GKE knowledge: provision a cluster + node pools (or Autopilot), wire Workload Identity + networking, manage upgrades, and verify nodes/workloads are Ready. Consumed by the GKE specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they provision the managed Kubernetes layer (GKE).",
       "category": "cloud",
@@ -32170,6 +32495,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-managed-spark/SKILL.md"
+    },
+    {
+      "name": "gcp-memorystore",
+      "description": "Use when designing, provisioning, securing, or operating Memorystore — Google Cloud's fully managed in-memory data store for Redis (and Redis Cluster) and Memcached, with service tiers (Basic vs Standard HA with replicas/automatic failover), node/shard sizing, read replicas, persistence (RDB/AOF), maintenance windows, and private VPC connectivity, plus IAM/AUTH, in-transit TLS, and cost/scaling levers. Loads the Memorystore knowledge: pick Redis vs Memcached and a tier, size memory/shards/replicas, enable HA and persistence, secure with private IP and AUTH/TLS, and verify connectivity and failover. Consumed by the Memorystore specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle managed in-memory cache workloads (Memorystore).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "memorystore",
+        "databases",
+        "redis",
+        "memcached",
+        "cache",
+        "high-availability"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-memorystore/SKILL.md"
     },
     {
       "name": "gcp-migrate-to-containers",
@@ -32257,6 +32599,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-shielded-vms/SKILL.md"
+    },
+    {
+      "name": "gcp-spanner",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Spanner — Google Cloud's fully managed, globally distributed, horizontally scalable relational database with strong external consistency backed by TrueTime, regional vs multi-region instance configurations sized in nodes or processing units, interleaved tables and primary-key design to avoid hotspots, secondary indexes, the GoogleSQL and PostgreSQL dialects, and backups/PITR, plus IAM, CMEK, VPC connectivity, and cost/scaling levers. Loads the Spanner knowledge: design schemas/keys and interleaving, choose an instance config and capacity, secure with IAM, and verify consistency and throughput. Consumed by the Spanner specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle globally distributed relational workloads (Spanner).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "spanner",
+        "databases",
+        "distributed-sql",
+        "strong-consistency",
+        "truetime",
+        "interleaving"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-spanner/SKILL.md"
     },
     {
       "name": "gcp-speech-to-text",
@@ -32388,6 +32747,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-vmware-engine/SKILL.md"
+    },
+    {
+      "name": "gcp-vpc",
+      "description": "Use when designing, provisioning, securing, or operating a Virtual Private Cloud (VPC) — Google Cloud's global software-defined network with VPC networks (auto vs custom mode), regional subnets and secondary ranges (alias IP), firewall rules and hierarchical firewall policies, routes and Cloud NAT, Private Google Access and Private Service Connect, VPC Network Peering, and Shared VPC for centralized network administration, plus IAM, flow logs, and cost/scaling levers. Loads the VPC knowledge: design networks/subnets and IP plans, write firewall rules and routes, enable private access and Shared VPC/peering, secure with IAM, and verify connectivity and rules. Consumed by the VPC specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they build the network foundation (Virtual Private Cloud (VPC)).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "vpc",
+        "networking",
+        "subnets",
+        "firewall-rules",
+        "shared-vpc",
+        "private-google-access"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-vpc/SKILL.md"
     },
     {
       "name": "gcp-workflows",

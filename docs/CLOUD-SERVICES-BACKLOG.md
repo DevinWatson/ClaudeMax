@@ -248,16 +248,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] gcp|data-analytics|managed-spark|Dataproc (Managed Spark)
 
 ### databases
-- [ ] gcp|databases|alloydb|AlloyDB for PostgreSQL
-- [ ] gcp|databases|bigtable|Bigtable
-- [ ] gcp|databases|cloud-sql|Cloud SQL
-- [ ] gcp|databases|firestore|Firestore
-- [ ] gcp|databases|memorystore|Memorystore
-- [ ] gcp|databases|spanner|Spanner
-- [ ] gcp|databases|database-migration-service|Database Migration Service
+- [x] gcp|databases|alloydb|AlloyDB for PostgreSQL
+- [x] gcp|databases|bigtable|Bigtable
+- [x] gcp|databases|cloud-sql|Cloud SQL
+- [x] gcp|databases|firestore|Firestore
+- [x] gcp|databases|memorystore|Memorystore
+- [x] gcp|databases|spanner|Spanner
+- [x] gcp|databases|database-migration-service|Database Migration Service
 
 ### networking
-- [ ] gcp|networking|vpc|Virtual Private Cloud (VPC)
+- [x] gcp|networking|vpc|Virtual Private Cloud (VPC)
 - [ ] gcp|networking|cloud-cdn|Cloud CDN
 - [ ] gcp|networking|cloud-dns|Cloud DNS
 - [ ] gcp|networking|cloud-load-balancing|Cloud Load Balancing
