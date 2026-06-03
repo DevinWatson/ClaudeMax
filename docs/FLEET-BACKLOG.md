@@ -30,7 +30,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] groovy
 - [x] ocaml
 - [x] erlang
-- [ ] solidity
+- [x] solidity
 
 ## Web/app frameworks (tailored teams; web category unless noted; new framework skill each)
 - [ ] vue

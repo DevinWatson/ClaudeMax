@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 639,
-    "skills": 114,
+    "agents": 651,
+    "skills": 115,
     "categories": 16
   },
   "agents": [
@@ -15118,6 +15118,337 @@
       "path": "agents/security/secrets-auditor.md"
     },
     {
+      "name": "solidity-api-designer",
+      "description": "Use when designing or refining a Solidity contract's external interface (ABI) — public/external function signatures, parameter and return shapes, events as the read/notification surface, error types, and the off-chain integration contract (how dapps, SDKs, and indexers call and read the contract). Invoke to design or refine a contract's ABI/interface and its off-chain consumption. Not for ABI/event schema versioning and evolution (use solidity-proto-steward) or system structure (use solidity-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "solidity",
+        "abi",
+        "interface",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "solidity-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/solidity/solidity-api-designer.md"
+    },
+    {
+      "name": "solidity-architect",
+      "description": "Use when designing or reviewing the structure of a Solidity protocol or contract system — contract decomposition and boundaries, upgradeability strategy (UUPS/Transparent/immutable), storage-layout planning, trust and access-control model, external-integration surface, and trade-offs against security and gas, recorded as an ADR. Invoke before building something non-trivial on-chain or when reviewing a smart-contract design. Not for implementing the feature (use solidity-developer) or for a vulnerability audit (use solidity-security-auditor).",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "solidity",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "solidity-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/solidity/solidity-architect.md"
+    },
+    {
+      "name": "solidity-compliance-reviewer",
+      "description": "Use when checking Solidity contracts against a regulatory or policy standard — sanctions/KYC and transfer-restriction controls, on-chain data exposure vs. privacy obligations, licensing, pausability/freeze and recovery requirements, and auditability/event coverage — with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of smart contracts. Not for finding exploitable vulnerabilities (use solidity-security-auditor).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "solidity",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "solidity-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/solidity/solidity-compliance-reviewer.md"
+    },
+    {
+      "name": "solidity-developer",
+      "description": "Use when turning a Solidity requirement, ticket, or feature into working, tested, incrementally-shipped smart-contract code, or when fixing a reported Solidity bug. Invoke for building or extending contracts (ERC tokens, vaults, protocol logic) and for diagnosing failures in existing Solidity code. Not for system-level design (use solidity-architect), a security audit (use solidity-security-auditor), or gas-only tuning (use solidity-gas-optimizer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "solidity",
+        "smart-contracts",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "solidity-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/solidity/solidity-developer.md"
+    },
+    {
+      "name": "solidity-gas-optimizer",
+      "description": "Use when reducing the gas cost of Solidity contracts — storage-slot packing, minimizing SSTORE/SLOAD, calldata vs memory choices, caching storage reads, short-circuiting, custom errors over revert strings, and loop/data-structure cost — measured with gas snapshots. Invoke to analyze and cut on-chain gas usage. Not for finding vulnerabilities (use solidity-security-auditor) or system design (use solidity-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "solidity",
+        "gas",
+        "optimization"
+      ],
+      "skills": [
+        "cost-optimization",
+        "solidity-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/solidity/solidity-gas-optimizer.md"
+    },
+    {
+      "name": "solidity-integration-test-architect",
+      "description": "Use when testing how Solidity contracts integrate across real boundaries — interactions between deployed contracts, external protocols, and live mainnet state via mainnet/fork tests — using Foundry fork cheatcodes or Hardhat forking. Invoke for fork-based integration tests that exercise real on-chain dependencies rather than a single contract in isolation. Not for pure unit/fuzz tests (use solidity-unit-test-architect) or system design.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "solidity",
+        "integration-testing",
+        "fork-testing"
+      ],
+      "skills": [
+        "integration-testing",
+        "solidity-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/solidity/solidity-integration-test-architect.md"
+    },
+    {
+      "name": "solidity-migration-engineer",
+      "description": "Use when migrating Solidity code across a version or framework boundary — solc/pragma upgrades (e.g. pre-0.8 to checked arithmetic), OpenZeppelin major-version moves, Hardhat-to-Foundry toolchain migration, or proxy/storage-layout migrations and upgrades — done in safe, verifiable increments. Invoke to plan and execute a smart-contract migration or fix breakage it caused. Not for greenfield features (use solidity-developer) or pure restructuring within one version (use solidity-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "solidity",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "solidity-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/solidity/solidity-migration-engineer.md"
+    },
+    {
+      "name": "solidity-observability-engineer",
+      "description": "Use when making Solidity contracts observable — designing indexable events for off-chain consumption, building or fixing a subgraph (The Graph) or event indexer, and standing up on-chain activity monitoring/alerting. Invoke to add or fix event emission, indexing, or monitoring for smart contracts. Not for resilience patterns like pausability/circuit-breakers (use solidity-reliability-engineer) or gas reduction (use solidity-gas-optimizer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "solidity",
+        "observability",
+        "the-graph",
+        "indexing"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "solidity-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/solidity/solidity-observability-engineer.md"
+    },
+    {
+      "name": "solidity-proto-steward",
+      "description": "Use when evolving a Solidity contract's ABI and event schema compatibly over time — versioning function signatures and event shapes, append-only changes, deprecation, and the back/forward-compatibility rules that keep live dapps, SDKs, and indexers/subgraphs working across an upgrade. Invoke for ABI/event schema evolution and compatibility review. Not for first-time interface design (use solidity-api-designer) or system structure (use solidity-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "solidity",
+        "abi",
+        "schema-evolution",
+        "compatibility"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "solidity-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/solidity/solidity-proto-steward.md"
+    },
+    {
+      "name": "solidity-reliability-engineer",
+      "description": "Use when hardening a Solidity protocol against failure and attack — pausability/emergency stop, circuit breakers and rate/withdrawal limits, timelocks and guardian roles, graceful degradation, and incident-response readiness for exploits. Invoke for resilience design or review of smart contracts and their emergency mechanisms. Not for emitting events/indexing (use solidity-observability-engineer) or finding the vulnerabilities themselves (use solidity-security-auditor).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "solidity",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "solidity-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/solidity/solidity-reliability-engineer.md"
+    },
+    {
+      "name": "solidity-security-auditor",
+      "description": "Use for a defensive, code-level security audit of Solidity code or a diff — reentrancy, integer overflow/underflow, broken access control and privileged-function exposure, oracle/price manipulation, front-running/MEV, flash-loan attack vectors, and upgrade/storage-layout safety — with severity-ranked findings and minimal remediations. Invoke for a smart-contract security audit you are authorized to perform. Not for regulatory/policy conformance (use solidity-compliance-reviewer) or gas tuning (use solidity-gas-optimizer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "solidity",
+        "security",
+        "audit"
+      ],
+      "skills": [
+        "appsec-review",
+        "solidity-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/solidity/solidity-security-auditor.md"
+    },
+    {
+      "name": "solidity-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Solidity contracts — mapping a contract's behaviors and writing deterministic Foundry/Hardhat tests, including fuzz tests and invariants, that catch real regressions (boundaries, revert paths, access control, arithmetic edges, reentrancy). Invoke to raise meaningful unit coverage on smart contracts. Not for cross-contract/fork integration tests (use solidity-integration-test-architect) or system design.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "solidity",
+        "testing",
+        "foundry",
+        "fuzzing"
+      ],
+      "skills": [
+        "test-design",
+        "solidity-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/solidity/solidity-unit-test-architect.md"
+    },
+    {
       "name": "sql-data-modeler",
       "description": "Use when designing or evolving a relational schema — tables, keys and constraints, normalization vs. deliberate denormalization, data types, indexing strategy, partitioning, and safe migration steps. Invoke to create a new schema, change an existing one, or fix a model causing anomalies/bloat. Not for authoring queries against a model (use sql-developer) and not for plan-level tuning of a slow query (use sql-performance-engineer).",
       "category": "languages",
@@ -18896,6 +19227,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/engineering/software-architecture/SKILL.md"
+    },
+    {
+      "name": "solidity-idioms",
+      "description": "Use when writing, reviewing, or fixing Solidity smart-contract code — contract structure and visibility, storage/memory/calldata layout and gas-aware data design, the checks-effects-interactions pattern, reentrancy and external-call safety, 0.8 checked arithmetic and overflow, access control (Ownable/role-based), events, custom errors and require/revert, proxy and upgradeability patterns (UUPS/Transparent), and ERC standards (20/721/1155). Verifies with the project's toolchain (Foundry forge build/test, Hardhat, solc) plus static analysis (slither/mythril) and gas snapshots. Any agent touching Solidity (developer, auditor, gas optimizer, tester, web3 team) can load it.",
+      "category": "languages",
+      "tags": [
+        "solidity",
+        "smart-contracts",
+        "evm",
+        "foundry",
+        "security"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/solidity-idioms/SKILL.md"
     },
     {
       "name": "source-evaluation",
