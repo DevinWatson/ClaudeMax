@@ -100,14 +100,14 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] aws|ai-ml|rekognition|Amazon Rekognition
 - [x] aws|ai-ml|comprehend|Amazon Comprehend
 - [x] aws|ai-ml|polly|Amazon Polly
-- [ ] aws|ai-ml|transcribe|Amazon Transcribe
-- [ ] aws|ai-ml|translate|Amazon Translate
-- [ ] aws|ai-ml|textract|Amazon Textract
-- [ ] aws|ai-ml|lex|Amazon Lex
-- [ ] aws|ai-ml|kendra|Amazon Kendra
-- [ ] aws|ai-ml|personalize|Amazon Personalize
-- [ ] aws|ai-ml|forecast|Amazon Forecast
-- [ ] aws|ai-ml|fraud-detector|Amazon Fraud Detector
+- [x] aws|ai-ml|transcribe|Amazon Transcribe
+- [x] aws|ai-ml|translate|Amazon Translate
+- [x] aws|ai-ml|textract|Amazon Textract
+- [x] aws|ai-ml|lex|Amazon Lex
+- [x] aws|ai-ml|kendra|Amazon Kendra
+- [x] aws|ai-ml|personalize|Amazon Personalize
+- [x] aws|ai-ml|forecast|Amazon Forecast
+- [x] aws|ai-ml|fraud-detector|Amazon Fraud Detector
 - [ ] aws|ai-ml|q-developer|Amazon Q Developer
 
 ### developer-tools
