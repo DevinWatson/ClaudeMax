@@ -148,14 +148,14 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] aws|security-identity|kms|AWS KMS
 - [x] aws|security-identity|secrets-manager|AWS Secrets Manager
 - [x] aws|security-identity|shield|AWS Shield
-- [ ] aws|security-identity|waf|AWS WAF
-- [ ] aws|security-identity|inspector|Amazon Inspector
-- [ ] aws|security-identity|detective|Amazon Detective
-- [ ] aws|security-identity|security-hub|AWS Security Hub
-- [ ] aws|security-identity|certificate-manager|AWS Certificate Manager
-- [ ] aws|security-identity|firewall-manager|AWS Firewall Manager
-- [ ] aws|security-identity|iam-identity-center|AWS IAM Identity Center
-- [ ] aws|security-identity|private-ca|AWS Private CA
+- [x] aws|security-identity|waf|AWS WAF
+- [x] aws|security-identity|inspector|Amazon Inspector
+- [x] aws|security-identity|detective|Amazon Detective
+- [x] aws|security-identity|security-hub|AWS Security Hub
+- [x] aws|security-identity|certificate-manager|AWS Certificate Manager
+- [x] aws|security-identity|firewall-manager|AWS Firewall Manager
+- [x] aws|security-identity|iam-identity-center|AWS IAM Identity Center
+- [x] aws|security-identity|private-ca|AWS Private CA
 - [ ] aws|security-identity|verified-permissions|Amazon Verified Permissions
 
 ### migration

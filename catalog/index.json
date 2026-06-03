@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 953,
-    "skills": 245,
+    "agents": 961,
+    "skills": 253,
     "categories": 17
   },
   "agents": [
@@ -1196,6 +1196,35 @@
       "path": "agents/cloud/aws/services/ai-ml/aws-bedrock-specialist.md"
     },
     {
+      "name": "aws-certificate-manager-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Certificate Manager / ACM (AWS) — requesting free public TLS certs and managing private certs from AWS Private CA, DNS vs email validation, wildcard/multi-SAN certs, managed renewal, importing third-party certs, Region scoping (us-east-1 for CloudFront), and association with CloudFront/ALB/NLB/API Gateway/App Runner. Pick this to provision and wire TLS onto AWS endpoints. NOT the aws-security-reviewer role (cross-cutting posture/review/findings triage) — this specialist configures/operates ACM itself (full tools incl. Bash, invokes verify-by-running). NOT the security category appsec/threat-modeling agents. Standing up an internal CA hierarchy and revocation is aws-private-ca — cross-ref that specialist. Siblings: waf=L7 firewall, security-hub=findings aggregation, iam-identity-center=workforce SSO. For GCP Certificate Manager or Azure Key Vault certs defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "certificate-manager",
+        "acm",
+        "tls",
+        "specialist"
+      ],
+      "skills": [
+        "aws-certificate-manager",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-certificate-manager-specialist.md"
+    },
+    {
       "name": "aws-clean-rooms-specialist",
       "description": "Use when designing, configuring, deploying, or operating AWS Clean Rooms (AWS) — the privacy-preserving data-collaboration service that lets multiple parties analyze combined data without sharing the underlying records: collaborations and members/roles, configured tables over Glue/S3, analysis rules (aggregation/list/custom-SQL), differential privacy budgets, query controls and S3 output, and Clean Rooms ML. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting architecture, broad IaC, and account-wide security. NOT data/etl-architect, which owns cloud-agnostic pipeline orchestration and warehouse modeling — this specialist owns the Clean Rooms collaboration, configured tables, and analysis rules. NOT aws-data-exchange (data products/subscriptions) — Clean Rooms analyzes in place without sharing rows. For GCP (BigQuery data clean rooms) or Azure equivalents defer to those clouds.",
       "category": "cloud",
@@ -1880,6 +1909,35 @@
       "path": "agents/cloud/aws/services/databases/aws-dax-specialist.md"
     },
     {
+      "name": "aws-detective-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon Detective (AWS) — enabling the behavior graph from CloudTrail/VPC Flow Logs/GuardDuty/EKS audit logs, adding member accounts under a delegated admin, toggling optional data sources, and running investigations, finding groups, and entity profiles for root-cause and scope analysis. Pick this to operate security investigation tooling. NOT the aws-security-reviewer role (cross-cutting posture/review/findings triage) — this specialist configures/operates Detective itself (full tools incl. Bash, invokes verify-by-running). NOT the security category appsec/threat-modeling agents. Detective investigates but does not detect — GuardDuty is the finding source, cross-ref the aws-guardduty specialist. Siblings: waf=L7 firewall, inspector=vuln scanning, security-hub=findings aggregation. For GCP Security Command Center or Azure investigation tooling defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "detective",
+        "security-investigation",
+        "behavior-graph",
+        "specialist"
+      ],
+      "skills": [
+        "aws-detective",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-detective-specialist.md"
+    },
+    {
       "name": "aws-direct-connect-specialist",
       "description": "Use when designing, configuring, deploying, or operating AWS Direct Connect (AWS) — the dedicated private on-prem-to-AWS link: dedicated vs hosted connections, the cross-connect/LOA-CFA, virtual interfaces (private/public/transit VIFs), Direct Connect gateway for multi-VPC/Region, BGP + ASNs, Link Aggregation Groups (LAG), MACsec + IPsec-over-DX encryption, and resilience models. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the Direct Connect service itself. It is the DEDICATED on-prem link — for internet-based hybrid links use Site-to-Site VPN. Pick a networking sibling instead for: the private network (vpc), CDN (cloudfront), DNS (route53), the API front door (api-gateway). For GCP Interconnect or Azure ExpressRoute defer to those clouds.",
       "category": "cloud",
@@ -2392,6 +2450,35 @@
       "path": "agents/cloud/aws/services/compute/aws-fargate-specialist.md"
     },
     {
+      "name": "aws-firewall-manager-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Firewall Manager (AWS) — centrally enforcing security policies across an Organization for AWS WAF, Shield Advanced, security groups (common/audit/usage), Network Firewall, and DNS Firewall, scoping by account/OU/tag, automatic remediation/continuous compliance, and the delegated-admin model atop Organizations all-features + Config. Pick this to enforce protections org-wide. NOT the aws-security-reviewer role (cross-cutting posture/review/findings triage) — this specialist configures/operates Firewall Manager itself (full tools incl. Bash, invokes verify-by-running). NOT the security category appsec/threat-modeling agents. Depends on AWS Organizations (cross-ref aws-organizations); rule content is authored in the underlying services — cross-ref aws-waf, aws-shield, aws-network-firewall. Siblings: inspector=vuln scanning, detective=investigation, security-hub=findings aggregation. For GCP org policy or Azure Firewall Manager defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "firewall-manager",
+        "org-wide-policy",
+        "multi-account",
+        "specialist"
+      ],
+      "skills": [
+        "aws-firewall-manager",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-firewall-manager-specialist.md"
+    },
+    {
       "name": "aws-forecast-specialist",
       "description": "Use when designing, configuring, deploying, or operating Amazon Forecast (AWS) — the managed time-series forecasting service: the dataset group with target/related/item-metadata datasets, schemas and domains, predictors (AutoPredictor with ensembling, or legacy ARIMA/DeepAR+/Prophet/ETS/NPTS), forecast horizon/frequency, accuracy metrics (wQL/WAPE/RMSE/MASE) and backtesting, quantile forecasts (P10/P50/P90), what-if analyses, S3 export, and the IAM/KMS/cost/quota config around them — flagging that it is closed to new customers (maintenance mode). NOT the language ai-engineer/rag-engineer/evals-engineer roles — those build app-side LLM/RAG/eval code; this specialist owns the managed AWS forecasting service (datasets, predictors, forecasts, IAM). For custom time-series modeling or new builds defer to aws-sagemaker-specialist (SageMaker Canvas/DeepAR). NOT the AWS role team for cross-cutting work; for GCP Vertex AI Forecasting or Azure ML AutoML forecasting defer to those clouds.",
       "category": "cloud",
@@ -2603,6 +2690,35 @@
       "path": "agents/cloud/aws/aws-iac-engineer.md"
     },
     {
+      "name": "aws-iam-identity-center-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS IAM Identity Center / AWS SSO (AWS) — workforce single sign-on across accounts and SAML/OIDC apps, the identity source (built-in directory, AD, or external IdP via SAML + SCIM), permission sets (policies + boundary + session duration), group-to-account/OU assignments across an Organization, the access portal/short-lived credentials, ABAC, and MFA. Pick this to centralize workforce access to AWS. NOT the aws-security-reviewer role (cross-cutting posture/review/findings triage) — this specialist configures/operates Identity Center itself (full tools incl. Bash, invokes verify-by-running). NOT the security category appsec/threat-modeling agents. Governs workforce humans; AWS service principals are aws-iam and end-user/customer app auth is amazon-cognito — cross-ref those. Siblings: waf=L7 firewall, security-hub=findings aggregation, certificate-manager=TLS certs. For GCP Workforce Identity or Azure Entra ID defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "iam-identity-center",
+        "sso",
+        "workforce-identity",
+        "specialist"
+      ],
+      "skills": [
+        "aws-iam-identity-center",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-iam-identity-center-specialist.md"
+    },
+    {
       "name": "aws-iam-specialist",
       "description": "Use when designing, configuring, deploying, or operating AWS IAM (AWS) — users/groups/roles and trust policies, managed/inline policies and policy evaluation, permission boundaries, instance profiles, federation/OIDC and IAM Roles Anywhere, and IAM Access Analyzer (external + unused access) for least-privilege right-sizing. Pick this to author and right-size IAM identities and authorization policies for AWS principals. NOT the aws-security-reviewer role, which owns cross-cutting account-wide security posture, review, and findings triage — this specialist owns configuring/operating IAM itself. NOT the security category appsec/threat-modeling agents (application-layer security). NOT amazon-cognito (end-user/customer app auth, not AWS principals). Siblings: kms=encryption keys, secrets-manager=secret lifecycle, guardduty=threat detection. For GCP IAM or Azure RBAC/Entra ID defer to those clouds.",
       "category": "cloud",
@@ -2630,6 +2746,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/security-identity/aws-iam-specialist.md"
+    },
+    {
+      "name": "aws-inspector-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon Inspector (AWS) — continuous vulnerability scanning for EC2, ECR images, and Lambda (code + dependencies), agent-based vs agentless EC2 scanning, ECR re-scan duration, CVE findings and the Inspector score, suppression rules, SBOM export, delegated-admin org enablement, and routing findings to Security Hub/EventBridge. Pick this to operate vulnerability management coverage. NOT the aws-security-reviewer role (cross-cutting posture/review/findings triage) — this specialist configures/operates Inspector itself (full tools incl. Bash, invokes verify-by-running). NOT the security category appsec/threat-modeling agents. Siblings: waf=L7 firewall, detective=investigation, security-hub=findings aggregation (consumes Inspector findings), macie=data classification. For GCP Container/Artifact Analysis or Azure Defender for Cloud vuln scanning defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "inspector",
+        "vulnerability-scanning",
+        "cve",
+        "specialist"
+      ],
+      "skills": [
+        "aws-inspector",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-inspector-specialist.md"
     },
     {
       "name": "aws-kendra-specialist",
@@ -3318,6 +3463,35 @@
       "path": "agents/cloud/aws/services/ai-ml/aws-polly-specialist.md"
     },
     {
+      "name": "aws-private-ca-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Private CA (AWS) — standing up a private PKI with root and subordinate CA hierarchies, CA modes (general-purpose vs short-lived), certificate templates and X.509 constraints, issuing private end-entity certs directly or via ACM, revocation via CRL/OCSP, and cross-account CA sharing via AWS RAM for internal/mTLS use. Pick this to build and operate an internal CA. NOT the aws-security-reviewer role (cross-cutting posture/review/findings triage) — this specialist configures/operates Private CA itself (full tools incl. Bash, invokes verify-by-running). NOT the security category appsec/threat-modeling agents. Issues privately trusted internal certs; publicly trusted internet-facing certs and managed renewal are aws-certificate-manager (ACM) — cross-ref that specialist. Siblings: waf=L7 firewall, security-hub=findings aggregation, iam-identity-center=workforce SSO. For GCP Certificate Authority Service or Azure private CA defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "private-ca",
+        "pki",
+        "internal-certificates",
+        "specialist"
+      ],
+      "skills": [
+        "aws-private-ca",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-private-ca-specialist.md"
+    },
+    {
       "name": "aws-privatelink-specialist",
       "description": "Use when designing, configuring, deploying, or operating AWS PrivateLink (AWS) — private VPC connectivity to AWS services, partner SaaS, or your own services without the internet: interface endpoints (ENIs + private DNS + endpoint policies) vs gateway endpoints (S3/DynamoDB), endpoint services backed by an NLB with allow-listed principals and acceptance, the consumer/provider model, and private-DNS domain verification. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the PrivateLink service itself. Pick a connectivity sibling for: hub-and-spoke routing (transit-gateway), IPsec tunnels (vpn), the private network + endpoint placement/SGs (vpc), or dedicated circuits (direct-connect); the NLB backing an endpoint service is owned by the Elastic Load Balancing specialist. For GCP PSC or Azure Private Link defer to those.",
       "category": "cloud",
@@ -3734,6 +3908,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/security-identity/aws-secrets-manager-specialist.md"
+    },
+    {
+      "name": "aws-security-hub-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Security Hub (AWS) — centralizing findings in ASFF from GuardDuty/Inspector/Macie/Access Analyzer/Firewall Manager, enabling security standards (FSBP/CIS/PCI/NIST) and controls, central configuration, cross-Region finding aggregation, insights, automation rules, and EventBridge response. Pick this to aggregate findings and run continuous compliance scoring. NOT the aws-security-reviewer role (cross-cutting posture/review/findings triage) — this specialist configures/operates Security Hub itself (full tools incl. Bash, invokes verify-by-running). NOT the security category appsec/threat-modeling agents. Aggregates and scores but does not detect — it consumes GuardDuty/Inspector/Macie findings (cross-ref those specialists). Siblings: waf=L7 firewall, detective=investigation, firewall-manager=org-wide policy. For GCP Security Command Center or Azure Defender for Cloud defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "security-hub",
+        "findings-aggregation",
+        "compliance-standards",
+        "specialist"
+      ],
+      "skills": [
+        "aws-security-hub",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-security-hub-specialist.md"
     },
     {
       "name": "aws-security-reviewer",
@@ -4214,6 +4417,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/networking/aws-vpn-specialist.md"
+    },
+    {
+      "name": "aws-waf-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS WAF (AWS) — web ACLs, custom + AWS Managed rule groups, rate-based rules, IP/geo/SQLi/XSS/regex statements, allow/block/count/CAPTCHA/challenge actions, scope-down statements, logging, and association with CloudFront/ALB/API Gateway/AppSync/Cognito/App Runner. Pick this to author and operate layer-7 web-application firewall rules. NOT the aws-security-reviewer role, which owns cross-cutting account-wide security posture, review, and findings triage — this specialist owns configuring/operating WAF itself (full tools incl. Bash, invokes verify-by-running). NOT the security category appsec/threat-modeling agents (application-layer code security). WAF filters L7 web requests; volumetric L3/L4 DDoS is aws-shield — cross-ref the aws-shield specialist. Siblings: inspector=vuln scanning, security-hub=findings aggregation, firewall-manager=org-wide policy. For GCP Cloud Armor or Azure WAF defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "waf",
+        "web-application-firewall",
+        "layer7",
+        "specialist"
+      ],
+      "skills": [
+        "aws-waf",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-waf-specialist.md"
     },
     {
       "name": "aws-wavelength-specialist",
@@ -26965,6 +27197,22 @@
       "path": "skills/cloud/aws-bedrock/SKILL.md"
     },
     {
+      "name": "aws-certificate-manager",
+      "description": "Use when designing, provisioning, securing, or operating AWS Certificate Manager (ACM) — provisioning public TLS/SSL certificates (free, AWS-signed) and managing private certificates issued from AWS Private CA, DNS vs email domain validation, wildcard and multi-SAN certificates, automatic managed renewal and the renewal-eligibility rules, integration with CloudFront, Application/Network Load Balancers, API Gateway, App Runner and other AWS services, importing third-party certificates, Region scoping (incl. the us-east-1 requirement for CloudFront), and ACM in AWS Organizations (AWS Certificate Manager). Loads the ACM knowledge: request and validate certificates, wire them into endpoints, and verify the served chain. Consumed by the ACM specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they provision TLS.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "certificate-manager",
+        "acm",
+        "tls",
+        "certificates",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-certificate-manager/SKILL.md"
+    },
+    {
       "name": "aws-clean-rooms",
       "description": "Use when designing, provisioning, securing, or operating AWS Clean Rooms — the service that lets multiple parties analyze their combined data without sharing or copying the underlying records (AWS Clean Rooms). Loads the Clean Rooms knowledge: collaborations and members (with roles like creator, member who can query, and member who pays), configured tables that map to each party's data in Glue/S3 (or Snowflake/Athena), analysis rules (aggregation, list, and custom/SQL) that constrain what queries may run, query controls and output, differential privacy budgets and noise, AWS Clean Rooms ML (lookalike modeling) and Clean Rooms Spark/SQL. Covers join/aggregation constraints, IAM and collaboration membership, KMS-protected outputs, cost (CRPU / query compute) and quotas, and verification that a permitted query runs while a disallowed one is blocked. Consumed by the Clean Rooms specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect).",
       "category": "cloud",
@@ -27288,6 +27536,22 @@
       "path": "skills/cloud/aws-dax/SKILL.md"
     },
     {
+      "name": "aws-detective",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Detective — security investigation and root-cause analysis built on an automatically maintained behavior graph from CloudTrail management events, VPC Flow Logs, GuardDuty findings, and EKS audit logs, finding groups that correlate related findings/entities into a single investigation, entity profiles and time-range scoping, investigations that surface indicators of compromise and MITRE ATT&CK tactics, the behavior-graph ingestion model, and delegated-administrator org enablement with member accounts (Amazon Detective). Loads the Detective knowledge: enable the graph, pivot across entities, and verify ingestion. Consumed by the Detective specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they add investigation tooling.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "detective",
+        "security-investigation",
+        "behavior-graph",
+        "threat-hunting",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-detective/SKILL.md"
+    },
+    {
       "name": "aws-direct-connect",
       "description": "Use when designing, provisioning, securing, or operating AWS Direct Connect — the dedicated private network link between on-premises/colo and AWS that bypasses the public internet. Loads the Direct Connect knowledge: dedicated vs hosted connections, DX locations and the cross-connect/LOA-CFA, virtual interfaces (private VIF to a VGW/DX gateway, public VIF to AWS public services, transit VIF to a Transit Gateway), DX gateway for multi-VPC/Region, BGP peering and ASNs, Link Aggregation Groups (LAG), VLAN tagging, MACsec + IPsec-over-DX encryption, resilience models, and CloudWatch metrics. Covers how to order a connection, create VIFs and BGP, attach a DX gateway, encrypt, and verify the link and routes. Consumed by the Direct Connect specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology via network-design — this owns the Direct Connect service itself.",
       "category": "cloud",
@@ -27566,6 +27830,22 @@
       "path": "skills/cloud/aws-fargate/SKILL.md"
     },
     {
+      "name": "aws-firewall-manager",
+      "description": "Use when designing, provisioning, securing, or operating AWS Firewall Manager — centrally defining and enforcing security policies across all accounts and resources in an AWS Organization, policy types for AWS WAF (web ACLs + rule groups), AWS Shield Advanced, security groups (common/audit/usage), AWS Network Firewall, Route 53 Resolver DNS Firewall, and third-party firewalls, automatic remediation and continuous compliance of new/non-compliant resources, policy scope by account/OU/tag, the delegated-administrator model, and the prerequisite of AWS Config + Organizations all-features (AWS Firewall Manager). Loads the Firewall Manager knowledge: author org-wide policies, scope them, and verify enforcement. Consumed by the Firewall Manager specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they enforce protections at scale.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "firewall-manager",
+        "org-wide-policy",
+        "multi-account",
+        "governance",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-firewall-manager/SKILL.md"
+    },
+    {
       "name": "aws-forecast",
       "description": "Use when designing, provisioning, securing, or operating Amazon Forecast — the managed time-series forecasting service that builds forecasts from historical data without ML model code (Amazon Forecast). Loads the Forecast knowledge: the dataset group with target-time-series plus related-time-series and item-metadata datasets and their schemas/domains (RETAIL, INVENTORY_PLANNING, custom, etc.), predictors (AutoPredictor with algorithm ensembling, or legacy manual algorithms ARIMA/DeepAR+/Prophet/ETS/NPTS), forecast horizon and frequency, accuracy metrics (wQL/WAPE/RMSE/MASE) and backtesting, forecast quantiles (P10/P50/P90), what-if analyses, exporting forecasts to S3, IAM/KMS security, cost (training/import + forecast generation), quotas, the maintenance-mode/limited-new-onboarding status, and verification by generating and querying a forecast. The 2nd consumer is the AWS role team (aws-iac-engineer / aws-cloud-architect). Consumed by the Forecast specialist.",
       "category": "cloud",
@@ -27677,6 +27957,38 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-iam/SKILL.md"
+    },
+    {
+      "name": "aws-iam-identity-center",
+      "description": "Use when designing, provisioning, securing, or operating AWS IAM Identity Center (successor to AWS SSO) — workforce single sign-on across AWS accounts and SAML/OIDC apps, the identity source choice (Identity Center directory, Active Directory, or external IdP via SAML + SCIM provisioning of users/groups), permission sets (managed/inline/custom policies + permission boundaries + session duration) assigned to principals on accounts/OUs across an AWS Organization, the AWS access portal and short-lived role credentials, attribute-based access control (ABAC), MFA enforcement, and trusted identity propagation to apps (AWS IAM Identity Center). Loads the Identity Center knowledge: wire the identity source, model permission sets, assign access, and verify sign-in. Consumed by the Identity Center specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they centralize workforce access.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "iam-identity-center",
+        "sso",
+        "workforce-identity",
+        "permission-sets",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-iam-identity-center/SKILL.md"
+    },
+    {
+      "name": "aws-inspector",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Inspector — continuous automated vulnerability management for EC2 instances, ECR container images, and Lambda functions (code + dependencies), CVE detection against the EC2/ECR/Lambda scanning engines, SSM-agent-based and agentless EC2 scanning, network reachability analysis, software bill of materials (SBOM) export, the Inspector risk score, finding suppression rules, delegated-administrator org enablement, and routing findings to AWS Security Hub and EventBridge (Amazon Inspector). Loads the Inspector knowledge: enable continuous scanning across accounts, triage CVE findings, and verify coverage. Consumed by the Inspector specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they add vulnerability scanning.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "inspector",
+        "vulnerability-scanning",
+        "cve",
+        "sbom",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-inspector/SKILL.md"
     },
     {
       "name": "aws-kendra",
@@ -28018,6 +28330,22 @@
       "path": "skills/cloud/aws-polly/SKILL.md"
     },
     {
+      "name": "aws-private-ca",
+      "description": "Use when designing, provisioning, securing, or operating AWS Private Certificate Authority (AWS Private CA) — standing up a private PKI with root and subordinate CA hierarchies, the CA modes (general-purpose vs short-lived certificate), certificate templates and X.509 path-length/constraints, issuing private end-entity certificates directly or via ACM, certificate revocation through CRLs and OCSP, audit reports, cross-account CA sharing via AWS RAM, integration with ACM, EKS, IoT, and mutual-TLS use cases, and the matching CA tenant model (AWS Private CA). Loads the Private CA knowledge: design the CA hierarchy, issue and revoke internal certs, and verify the chain. Consumed by the Private CA specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they build internal PKI.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "private-ca",
+        "pki",
+        "internal-certificates",
+        "revocation",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-private-ca/SKILL.md"
+    },
+    {
       "name": "aws-privatelink",
       "description": "Use when designing, provisioning, securing, or operating AWS PrivateLink — private connectivity from a VPC to AWS services, partner SaaS, or your own services without the internet (AWS PrivateLink). Loads the PrivateLink knowledge: interface VPC endpoints (ENIs with private IPs + private DNS) vs gateway endpoints (S3/DynamoDB, route-table based, free), VPC endpoint services backed by a Network Load Balancer with allow-listed principals and acceptance, the consumer/provider model across accounts, endpoint policies, private-DNS names and domain verification, and why PrivateLink avoids the overlapping-CIDR and transitive-routing limits of peering/TGW. Covers how to consume a service privately, publish your own service, scope access by principal/policy, and verify private resolution and reachability. Consumed by the AWS PrivateLink specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology — this owns the PrivateLink service itself.",
       "category": "cloud",
@@ -28229,6 +28557,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-secrets-manager/SKILL.md"
+    },
+    {
+      "name": "aws-security-hub",
+      "description": "Use when designing, provisioning, securing, or operating AWS Security Hub — centralized security findings aggregation in the AWS Security Finding Format (ASFF) from GuardDuty, Inspector, Macie, IAM Access Analyzer, Firewall Manager, and partner products, automated security standards and controls (CIS AWS Foundations, PCI DSS, AWS Foundational Security Best Practices/FSBP, NIST), the consolidated control finding and security score, insights (saved finding queries), automation rules and EventBridge-based response, cross-Region finding aggregation, and delegated-administrator org enablement with auto-enabled controls (AWS Security Hub). Loads the Security Hub knowledge: aggregate findings, enable standards, and verify scoring. Consumed by the Security Hub specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they centralize posture management.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "security-hub",
+        "findings-aggregation",
+        "compliance-standards",
+        "posture",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-security-hub/SKILL.md"
     },
     {
       "name": "aws-service-catalog",
@@ -28492,6 +28836,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-vpn/SKILL.md"
+    },
+    {
+      "name": "aws-waf",
+      "description": "Use when designing, provisioning, securing, or operating AWS WAF — web ACLs, rules and rule groups (custom + AWS Managed Rules + AWS Marketplace), rate-based rules, statement types (IP set, geo-match, byte/regex/size, SQLi/XSS, label-match), rule actions (allow/block/count/CAPTCHA/challenge), web ACL association with CloudFront, Application Load Balancer, API Gateway, AppSync, Cognito user pools and App Runner, request sampling, logging to CloudWatch Logs/S3/Firehose, and WCU capacity budgeting (AWS WAF). Loads the WAF knowledge: design L7 filtering rules, tune managed rule groups, set rate limits, and verify allow/block behavior. Consumed by the WAF specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they add web-application firewalling.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "waf",
+        "web-application-firewall",
+        "layer7",
+        "rules",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-waf/SKILL.md"
     },
     {
       "name": "aws-wavelength",
