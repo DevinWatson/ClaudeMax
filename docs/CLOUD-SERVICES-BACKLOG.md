@@ -320,16 +320,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] azure|ai-ml|azure-ai-document-intelligence|Azure AI Document Intelligence
 - [x] azure|ai-ml|azure-ai-translator|Azure AI Translator
 - [x] azure|ai-ml|azure-bot-service|Azure Bot Service
-- [ ] azure|ai-ml|azure-ai-content-safety|Azure AI Content Safety
-- [ ] azure|ai-ml|azure-ai-foundry|Azure AI Foundry
+- [x] azure|ai-ml|azure-ai-content-safety|Azure AI Content Safety
+- [x] azure|ai-ml|azure-ai-foundry|Azure AI Foundry
 
 ### compute
-- [ ] azure|compute|virtual-machines|Azure Virtual Machines
-- [ ] azure|compute|vm-scale-sets|Azure VM Scale Sets
-- [ ] azure|compute|azure-functions|Azure Functions
-- [ ] azure|compute|app-service|Azure App Service
-- [ ] azure|compute|azure-batch|Azure Batch
-- [ ] azure|compute|azure-vmware-solution|Azure VMware Solution
+- [x] azure|compute|virtual-machines|Azure Virtual Machines
+- [x] azure|compute|vm-scale-sets|Azure VM Scale Sets
+- [x] azure|compute|azure-functions|Azure Functions
+- [x] azure|compute|app-service|Azure App Service
+- [x] azure|compute|azure-batch|Azure Batch
+- [x] azure|compute|azure-vmware-solution|Azure VMware Solution
 - [ ] azure|compute|azure-dedicated-host|Azure Dedicated Host
 
 ### containers

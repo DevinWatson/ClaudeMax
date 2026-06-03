@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1081,
-    "skills": 373,
+    "agents": 1089,
+    "skills": 381,
     "categories": 17
   },
   "agents": [
@@ -5242,6 +5242,35 @@
       "path": "agents/cloud/aws/services/developer-tools/aws-x-ray-specialist.md"
     },
     {
+      "name": "azure-ai-content-safety-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure AI Content Safety (Azure) — the managed text/image moderation service: the Content Safety resource, text and image analysis across the four harm categories (Hate/Sexual/Violence/Self-Harm) with severity, custom blocklists, Prompt Shields (jailbreak + indirect prompt-injection), Groundedness and Protected Material detection, Entra ID vs keys, Private Link, and cost. OWNS the managed moderation service end-to-end (resource, blocklists, detections, auth). NOT the app-side moderation orchestration or eval harness that calls it — that belongs to the language ai-engineer/rag-engineer/evals-engineer roles (app-side vs managed Azure AI service). NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT sibling Azure AI services (azure-openai/azure-ai-foundry/vision/language/speech). Cross-cloud peers (defer): AWS Bedrock Guardrails, GCP Model Armor.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-ai-content-safety",
+        "ai-ml",
+        "content-moderation",
+        "specialist"
+      ],
+      "skills": [
+        "azure-ai-content-safety",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/ai-ml/azure-ai-content-safety-specialist.md"
+    },
+    {
       "name": "azure-ai-document-intelligence-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure AI Document Intelligence (AZURE) — the managed document-processing service (formerly Form Recognizer): the Document Intelligence resource, prebuilt models (read/OCR, layout, general document, invoice, receipt, ID, tax/W-2, contract, health card), custom models (template/neural extraction + classification + composed), the layout API (incl. RAG chunking), training over Blob, async analyze, tiers, Entra ID vs keys, Private Link, and cost. OWNS the managed service end-to-end (prebuilt/custom models, RBAC). NOT the language ai-engineer/rag-engineer/evals-engineer roles or app-side ingestion/RAG/eval code that calls it. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer). NOT sibling Azure AI services (openai/search/vision/language/speech/translator/bot). Cross-cloud peers (defer): aws-textract, gcp-document-ai.",
       "category": "cloud",
@@ -5270,6 +5299,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/ai-ml/azure-ai-document-intelligence-specialist.md"
+    },
+    {
+      "name": "azure-ai-foundry-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure AI Foundry (Azure) — the managed AI dev and agent platform: Foundry hubs and projects, the model catalog and serverless/managed-compute deployments, the Foundry Agent Service, prompt flow orchestration, evaluations, connections to Azure OpenAI / Azure AI Search / storage, managed VNet, Entra ID vs keys, and cost. OWNS the managed Foundry platform end-to-end (hubs, projects, connections, deployments, flows, evaluations, agents). NOT the app-side product code that calls the deployed endpoints — that belongs to the language ai-engineer/rag-engineer/evals-engineer roles (app-side vs managed Azure AI platform). NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). For Azure OpenAI model deployments defer to azure-openai and for RAG retrieval to azure-ai-search (both are connections under a Foundry project). Cross-cloud peers (defer): AWS Bedrock/SageMaker Studio, GCP Vertex AI.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-ai-foundry",
+        "ai-ml",
+        "genai",
+        "specialist"
+      ],
+      "skills": [
+        "azure-ai-foundry",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/ai-ml/azure-ai-foundry-specialist.md"
     },
     {
       "name": "azure-ai-language-specialist",
@@ -5423,6 +5481,64 @@
       "path": "agents/cloud/azure/services/ai-ml/azure-ai-vision-specialist.md"
     },
     {
+      "name": "azure-app-service-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure App Service (Azure) — PaaS hosting for web apps/APIs: App Service plans and tiers (Basic/Standard/Premium v3/Isolated v2 ASE), code vs custom-container deployment, deployment slots and slot swaps with warm-up, autoscale and scale-up, custom domains and managed TLS, app settings/connection strings and Key Vault references, VNet integration/Private Endpoints/Access Restrictions, Easy Auth/Entra ID and managed identities, and cost. OWNS PaaS web/API hosting end-to-end (plan, app, slots, scaling, domains/TLS, auth). For serverless event functions defer to azure-functions, for general containers to azure-container-apps, for raw VMs to azure-virtual-machines. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-elastic-beanstalk, gcp-app-engine.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-app-service",
+        "compute",
+        "paas",
+        "specialist"
+      ],
+      "skills": [
+        "azure-app-service",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/compute/azure-app-service-specialist.md"
+    },
+    {
+      "name": "azure-batch-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Batch (Azure) — managed large-scale parallel/HPC compute: the Batch account and pools/jobs/tasks model, compute-node pools (dedicated vs low-priority/Spot, VM sizes, OS/container images), autoscale formulas, task scheduling/dependencies and multi-instance MPI tasks, application packages and resource/output files in Storage, task constraints/retries, VNet pools and Entra ID/managed identities, pool allocation modes, and cost. OWNS batch/HPC scheduling end-to-end (account, pools, jobs, tasks, autoscale). For general autoscaling app fleets defer to azure-vm-scale-sets, for single VMs to azure-virtual-machines. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT serverless (azure-functions) or PaaS web (azure-app-service). Cross-cloud peers (defer): aws-batch, gcp-batch.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-batch",
+        "compute",
+        "hpc",
+        "specialist"
+      ],
+      "skills": [
+        "azure-batch",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/compute/azure-batch-specialist.md"
+    },
+    {
       "name": "azure-bot-service-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Bot Service (AZURE) — the managed platform that registers a Bot Framework bot and connects it to channels: the Azure Bot resource + messaging endpoint, channels (Teams, Web Chat, Direct Line, telephony, SMS), Direct Line App Service Extension, Entra ID app-registration / managed-identity app type and OAuth connection settings, hosting on App Service/Functions, tiers and channel billing, and cost. OWNS the managed service end-to-end (bot resource, channels, identity, endpoint wiring, scaling). NOT the app-side dialog/LLM logic or the bot code, and NOT the language ai-engineer/evals-engineer roles that build/eval it. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer). Pairs with azure-ai-language (CLU) and azure-openai (LLM bots). NOT sibling Azure AI services (search/vision/speech/document-intelligence/translator). Cross-cloud peer (defer): aws-lex.",
       "category": "cloud",
@@ -5534,6 +5650,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/azure-data-engineer.md"
+    },
+    {
+      "name": "azure-functions-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Functions (Azure) — serverless event-driven compute: triggers and bindings (HTTP/Timer/Queue/Service Bus/Event Hub/Grid/Blob/Cosmos), hosting plans (Consumption/Flex/Elastic Premium/Dedicated), the isolated worker model, Durable Functions orchestrations, cold starts and scaling, the storage account requirement, app settings and Key Vault references, Entra ID/managed identities and function keys, VNet integration, and cost. OWNS the serverless function service end-to-end (app, plan, triggers/bindings, Durable, auth). For full PaaS web apps defer to azure-app-service, for containers to azure-container-apps. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT VMs (azure-virtual-machines/azure-vm-scale-sets) or batch (azure-batch). Cross-cloud peers (defer): aws-lambda, gcp-cloud-functions.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-functions",
+        "compute",
+        "serverless",
+        "specialist"
+      ],
+      "skills": [
+        "azure-functions",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/compute/azure-functions-specialist.md"
     },
     {
       "name": "azure-iac-engineer",
@@ -5740,6 +5885,93 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/azure-security-reviewer.md"
+    },
+    {
+      "name": "azure-virtual-machines-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Virtual Machines (Azure) — single-VM IaaS compute: VM sizes/series (B/D/E/F/M/N), Managed Disks (Standard/Premium/Ultra) and OS/data disks, images (Marketplace/custom/Shared Image Gallery), availability zones vs sets, Spot and reserved instances, NICs/NSGs, extensions and cloud-init, Entra ID login and managed identities, disk encryption, and cost. OWNS single-VM IaaS end-to-end (size, disks, image, availability, networking, auth). For horizontal autoscaling fleets defer to azure-vm-scale-sets. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT PaaS web hosting (azure-app-service), serverless (azure-functions), batch/HPC (azure-batch), or VMware private clouds (azure-vmware-solution). Cross-cloud peers (defer): aws-ec2, gcp-compute-engine.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-virtual-machines",
+        "compute",
+        "iaas",
+        "specialist"
+      ],
+      "skills": [
+        "azure-virtual-machines",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/compute/azure-virtual-machines-specialist.md"
+    },
+    {
+      "name": "azure-vm-scale-sets-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure VM Scale Sets (Azure) — autoscaling VM fleets: Uniform vs Flexible orchestration, autoscale rules (metric/schedule with min/max/default), health probes and automatic instance repair, upgrade modes (Manual/Automatic/Rolling) and rolling-upgrade policy, zone/fault-domain spread, Spot priority mix, load balancer integration, Entra ID/managed identities, and cost. OWNS the autoscaling fleet end-to-end (model, autoscale, health/repair, upgrades). For single-VM IaaS details (sizes/disks/images) cross-ref azure-virtual-machines. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT PaaS web hosting (azure-app-service), serverless (azure-functions), batch/HPC (azure-batch), or VMware private clouds (azure-vmware-solution). Cross-cloud peers (defer): aws-ec2-auto-scaling, gcp-managed-instance-groups.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-vm-scale-sets",
+        "compute",
+        "autoscaling",
+        "specialist"
+      ],
+      "skills": [
+        "azure-vm-scale-sets",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/compute/azure-vm-scale-sets-specialist.md"
+    },
+    {
+      "name": "azure-vmware-solution-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure VMware Solution / AVS (Azure) — native VMware vSphere private clouds on dedicated bare-metal Azure hosts: AVS private clouds and clusters, the managed VMware stack (vCenter/ESXi/vSAN/NSX-T), host SKUs and cluster scaling, ExpressRoute connectivity (to VNets and Global Reach to on-prem), NSX-T segments/gateways/firewall, HCX migration, stretched clusters, vSAN encryption/CMK, Azure RBAC plus vCenter/NSX local identity, and cost. OWNS VMware private clouds on Azure end-to-end (private cloud, clusters, connectivity, NSX-T, security). For native Azure IaaS VMs defer to azure-virtual-machines. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT autoscaling fleets (azure-vm-scale-sets), serverless (azure-functions), PaaS web (azure-app-service), or batch (azure-batch). Cross-cloud peer (defer): gcp-vmware-engine.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-vmware-solution",
+        "compute",
+        "vmware",
+        "specialist"
+      ],
+      "skills": [
+        "azure-vmware-solution",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/compute/azure-vmware-solution-specialist.md"
     },
     {
       "name": "bash-developer",
@@ -32853,6 +33085,22 @@
       "path": "skills/cloud/aws-x-ray/SKILL.md"
     },
     {
+      "name": "azure-ai-content-safety",
+      "description": "Use when designing, provisioning, securing, or operating Azure AI Content Safety — Microsoft Azure's managed service for moderating text and image content and protecting LLM apps from prompt attacks (Azure AI Content Safety). Covers the Content Safety / Cognitive Services resource, the text and image moderation APIs with four harm categories (Hate, Sexual, Violence, Self-Harm) scored by severity, custom blocklists, Prompt Shields (jailbreak/indirect prompt-injection detection), Groundedness detection and Protected Material detection, keys vs Entra ID/managed identity, Private Link/VNet, and cost. Loads the Content Safety knowledge: provision a resource, configure categories/blocklists/Prompt Shields, secure access, and verify a moderation call. Consumed by the azure-ai-content-safety specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure AI Content Safety).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-ai-content-safety",
+        "ai-ml",
+        "content-moderation",
+        "prompt-shields",
+        "responsible-ai"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-ai-content-safety/SKILL.md"
+    },
+    {
       "name": "azure-ai-document-intelligence",
       "description": "Use when designing, provisioning, securing, or operating Azure AI Document Intelligence — Microsoft Azure's managed document-processing service (formerly Form Recognizer) that extracts text, layout, tables, key-value pairs, and structured fields from documents (Azure AI Document Intelligence). Covers the Document Intelligence (Cognitive Services) resource, prebuilt models (read/OCR, layout, general document, invoice, receipt, ID, tax/W-2, contract, health card), custom models (template/neural extraction + classification + composed), the layout API (incl. RAG chunking), training/labeling over Blob, async analyze operations, tiers, keys vs Entra ID/managed identity, Private Link, and cost. Loads the knowledge: provision a resource, analyze with prebuilt or train a custom model, secure, and verify. Consumed by the azure-ai-document-intelligence specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure AI Document Intelligence).",
       "category": "cloud",
@@ -32867,6 +33115,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-ai-document-intelligence/SKILL.md"
+    },
+    {
+      "name": "azure-ai-foundry",
+      "description": "Use when designing, provisioning, securing, or operating Azure AI Foundry — Microsoft Azure's end-to-end platform for building, evaluating, and operating generative-AI apps and agents (Azure AI Foundry). Covers Foundry hubs and projects, the model catalog and Models-as-a-Service / serverless and managed deployments, the Foundry Agent Service, prompt flow for orchestration, evaluations (built-in and custom evaluators) and safety/groundedness checks, connections to Azure OpenAI / Azure AI Search / storage, tracing and content safety integration, Entra ID/managed identity, Private Link/VNet, and cost. Loads the Foundry knowledge: provision a hub and project, wire connections and model deployments, secure access, and verify a deployed model and a flow. Consumed by the azure-ai-foundry specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure AI Foundry).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-ai-foundry",
+        "ai-ml",
+        "genai",
+        "agents",
+        "prompt-flow"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-ai-foundry/SKILL.md"
     },
     {
       "name": "azure-ai-language",
@@ -32953,6 +33217,38 @@
       "path": "skills/cloud/azure-ai-vision/SKILL.md"
     },
     {
+      "name": "azure-app-service",
+      "description": "Use when designing, provisioning, securing, or operating Azure App Service — Microsoft Azure's PaaS for hosting web apps, APIs, and backends (Azure App Service). Covers App Service plans and tiers (Free/Shared/Basic/Standard/Premium v3/Isolated v2 ASE), Web Apps for Windows/Linux and code vs custom-container deployment, deployment slots and slot swaps with warm-up, autoscale and manual scale (out and up), custom domains and managed TLS certificates, app settings/connection strings and Key Vault references, deployment (zip/Run-From-Package, CI/CD, containers), VNet integration and Private Endpoints and Access Restrictions, Entra ID / Easy Auth and managed identities, and cost. Loads the App Service knowledge: pick a plan and runtime, configure slots and scaling, secure, and verify the app serves. Consumed by the azure-app-service specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure App Service).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-app-service",
+        "compute",
+        "paas",
+        "web-apps",
+        "deployment-slots"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-app-service/SKILL.md"
+    },
+    {
+      "name": "azure-batch",
+      "description": "Use when designing, provisioning, securing, or operating Azure Batch — Microsoft Azure's managed service for large-scale parallel and high-performance batch compute (Azure Batch). Covers the Batch account and its pools/jobs/tasks model, compute-node pools (dedicated vs low-priority/Spot nodes, VM sizes, OS images and container support), autoscale formulas, task scheduling and dependencies and multi-instance/MPI tasks, application packages and resource/output files in Azure Storage, job/task constraints and retries, VNet pools and Entra ID/managed identities and pool allocation modes, and cost. Loads the Batch knowledge: create a pool, submit jobs/tasks with autoscale, secure, and verify tasks complete. Consumed by the azure-batch specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Batch).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-batch",
+        "compute",
+        "hpc",
+        "batch-processing",
+        "autoscale"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-batch/SKILL.md"
+    },
+    {
       "name": "azure-bot-service",
       "description": "Use when designing, provisioning, securing, or operating Azure Bot Service — Microsoft Azure's managed platform for building and connecting conversational bots across channels (Azure Bot Service). Covers the Azure Bot resource (registration) and its messaging endpoint, the Bot Framework SDK/Composer, channels (Web Chat / Direct Line, Microsoft Teams, telephony, email, SMS), Direct Line / Direct Line App Service Extension, authentication via Entra ID app registration / managed identity and OAuth connection settings, integration with Azure AI Language CLU and Azure OpenAI for NLU/LLM bots, hosting on App Service/Functions, tiers and channel billing, and cost. Loads the knowledge: provision a bot resource + channels, wire the messaging endpoint, secure it, and verify a conversation. Consumed by the azure-bot-service specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Bot Service).",
       "category": "cloud",
@@ -32967,6 +33263,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-bot-service/SKILL.md"
+    },
+    {
+      "name": "azure-functions",
+      "description": "Use when designing, provisioning, securing, or operating Azure Functions — Microsoft Azure's serverless, event-driven compute (Azure Functions). Covers triggers and bindings (HTTP, Timer, Queue/Service Bus, Event Hub/Grid, Blob, Cosmos DB), hosting plans (Consumption, Flex Consumption, Elastic Premium, Dedicated/App Service, Container Apps), the isolated vs in-process worker models and language stacks, Durable Functions (orchestrations/activities/entities and patterns), cold starts and scaling/concurrency, the storage account requirement, app settings and Key Vault references, Entra ID/managed identities and function/host keys, VNet integration and Private Endpoints, and cost. Loads the Functions knowledge: pick a plan and trigger, provision, secure, and verify a function executes. Consumed by the azure-functions specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Functions).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-functions",
+        "compute",
+        "serverless",
+        "durable-functions",
+        "triggers-bindings"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-functions/SKILL.md"
     },
     {
       "name": "azure-machine-learning",
@@ -33021,6 +33333,54 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-services/SKILL.md"
+    },
+    {
+      "name": "azure-virtual-machines",
+      "description": "Use when designing, provisioning, securing, or operating Azure Virtual Machines — Microsoft Azure's IaaS compute for Linux and Windows VMs (Azure Virtual Machines). Covers VM sizes and series (B/D/E/F/M/N GPU families), OS and data disks (Managed Disks, Standard/Premium SSD/Ultra), images (Marketplace, custom, Shared Image Gallery), availability sets vs availability zones, proximity placement, Spot VMs and reserved instances, networking (NICs/NSGs/public IPs), boot diagnostics and extensions, Entra ID/managed identities and disk encryption, and cost. Loads the VM knowledge: pick a size and disks, choose an availability model, provision, secure, and verify the VM boots and is reachable. Consumed by the azure-virtual-machines specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Virtual Machines).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-virtual-machines",
+        "compute",
+        "iaas",
+        "vm",
+        "managed-disks"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-virtual-machines/SKILL.md"
+    },
+    {
+      "name": "azure-vm-scale-sets",
+      "description": "Use when designing, provisioning, securing, or operating Azure Virtual Machine Scale Sets — Microsoft Azure's service for managing and autoscaling a group of identical or mixed VMs (Azure VM Scale Sets). Covers Uniform vs Flexible orchestration, autoscale rules (metric- and schedule-based) with min/max/default instance counts, instance health probes and automatic instance repair, upgrade modes (Manual/Automatic/Rolling) and rolling-upgrade policies, zone redundancy and fault domains, custom/gallery images and cloud-init extensions, Spot priority mix, load balancer/Application Gateway integration, Entra ID/managed identities, and cost. Loads the VMSS knowledge: define the model, set autoscale and upgrade policy, secure, and verify instances scale and stay healthy. Consumed by the azure-vm-scale-sets specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure VM Scale Sets).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-vm-scale-sets",
+        "compute",
+        "autoscaling",
+        "vmss",
+        "rolling-upgrades"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-vm-scale-sets/SKILL.md"
+    },
+    {
+      "name": "azure-vmware-solution",
+      "description": "Use when designing, provisioning, securing, or operating Azure VMware Solution (AVS) — Microsoft Azure's service for running native VMware vSphere private clouds on dedicated bare-metal Azure infrastructure (Azure VMware Solution). Covers AVS private clouds and clusters on dedicated hosts, the full VMware stack (vCenter, ESXi, vSAN storage, NSX-T networking, HCX migration), node/host SKUs and cluster scaling, ExpressRoute connectivity (Global Reach and to Azure VNets), segments and NSX-T gateway firewall/DNS, vSAN encryption and identity (vCenter/NSX local + Entra ID for the Azure resource), stretched clusters and customer-managed keys, and cost. Loads the AVS knowledge: provision a private cloud, configure networking and connectivity, secure, and verify vCenter and a workload VM. Consumed by the azure-vmware-solution specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure VMware Solution).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-vmware-solution",
+        "compute",
+        "vmware",
+        "vsphere",
+        "private-cloud"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-vmware-solution/SKILL.md"
     },
     {
       "name": "behavior-preserving-refactoring",
