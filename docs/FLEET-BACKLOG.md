@@ -37,7 +37,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] svelte
 - [x] angular
 - [x] astro
-- [ ] remix
+- [x] remix
 - [ ] django (python web)
 - [ ] rails (ruby web)
 - [ ] spring-boot (java web)

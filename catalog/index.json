@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 687,
-    "skills": 119,
+    "agents": 696,
+    "skills": 120,
     "categories": 16
   },
   "agents": [
@@ -13838,6 +13838,265 @@
       "path": "agents/engineering/refactoring-specialist.md"
     },
     {
+      "name": "remix-accessibility-specialist",
+      "description": "Use for a WCAG accessibility audit of a Remix (React Router 7 era) app — semantic structure, keyboard and focus management across client-side route navigation and form submissions, ARIA usage, color contrast, and form/error-message accessibility (including action-returned validation errors) — with severity-ranked findings (Remix). Invoke for an accessibility review of rendered routes and components. NOT for fixing the issues (use remix-developer), NOT for security review (use remix-security-reviewer), NOT for performance (use remix-performance-engineer). NOT for Next.js (use nextjs-accessibility-specialist).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "remix",
+        "react-router",
+        "accessibility",
+        "wcag",
+        "a11y"
+      ],
+      "skills": [
+        "wcag-audit",
+        "remix-framework",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/remix/remix-accessibility-specialist.md"
+    },
+    {
+      "name": "remix-ai-engineer",
+      "description": "Use when building LLM/AI features into a Remix (React Router 7 era) app — streaming chat/completions via resource routes and deferred/`Await` rendering, tool calling, RAG retrieval, and prompt orchestration wired through loaders/actions and a server boundary (Remix). Invoke to design and implement AI-powered product features. NOT for generic UI features (use remix-developer), NOT for system architecture (use remix-architect), NOT for the general data/API-layer design (use remix-api-engineer), NOT for security review of those endpoints (use remix-security-reviewer). NOT for Next.js (use nextjs-ai-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "remix",
+        "react-router",
+        "ai",
+        "llm",
+        "rag"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "remix-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/remix/remix-ai-engineer.md"
+    },
+    {
+      "name": "remix-api-engineer",
+      "description": "Use when designing and implementing the data and API layer of a Remix (React Router 7 era) app — loaders as the read/query layer and actions as the write/mutation layer, the resource-route (loaderless/actionless endpoint) API surface, request/response contracts over the Web Fetch model, input validation of `formData`/search params, status codes, headers, caching, and pagination/error shapes (Remix). Invoke for designing the loader/action/resource-route contract and wiring it to backing services. NOT for general UI feature work (use remix-developer), NOT for app-wide system architecture (use remix-architect), NOT for security review of those endpoints (use remix-security-reviewer), NOT for performance tuning (use remix-performance-engineer). NOT for Next.js route handlers (use the Next.js team) — here the API surface is loaders/actions and resource routes.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "remix",
+        "react-router",
+        "api",
+        "loaders",
+        "actions",
+        "resource-routes"
+      ],
+      "skills": [
+        "rest-api-design",
+        "remix-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/remix/remix-api-engineer.md"
+    },
+    {
+      "name": "remix-architect",
+      "description": "Use when shaping the architecture of a Remix (React Router 7 era) app or module — nested-route topology and layout boundaries, the loader/action data-loading and mutation strategy, server/client code boundaries, session/auth strategy, deferred/streaming vs blocking data, and the SSR/edge-adapter and classic-Remix-vs-React-Router-7 decision (Remix). Invoke for system-level design and trade-off analysis. NOT for implementing features (use remix-developer), NOT for designing the loader/action data/API contract in isolation (use remix-api-engineer), NOT for performance tuning of existing code (use remix-performance-engineer). NOT for framework-agnostic React design (route to react-architect) or Next.js App Router architecture (use nextjs-architect) — Remix's data model is loaders/actions over Web Fetch, not server components/route handlers.",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "remix",
+        "react-router",
+        "architecture",
+        "ssr"
+      ],
+      "skills": [
+        "software-architecture",
+        "remix-framework",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/remix/remix-architect.md"
+    },
+    {
+      "name": "remix-developer",
+      "description": "Use when turning a Remix (React Router 7 era) requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Remix bug — a stale-`useLoaderData`/revalidation issue, a loader/action data-flow error, a `Form` vs `useFetcher` mistake, a redirect/`Response`/headers bug, or a session/cookie wiring problem (Remix). Invoke for building or extending routes, loaders, actions, forms, and boundaries. NOT for system-level design (use remix-architect), NOT for the loader/action data/API layer design in isolation (use remix-api-engineer), NOT for adding tests to code you did not write (use remix-test-engineer), NOT for Core Web Vitals tuning (use remix-performance-engineer). NOT for framework-agnostic React features (use react-architect's developer counterpart) or Next.js App Router routing/data (use nextjs-developer) — Remix uses loaders/actions and the Web Fetch model, not server components/route handlers.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "remix",
+        "react-router",
+        "loaders",
+        "actions",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "remix-framework",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/remix/remix-developer.md"
+    },
+    {
+      "name": "remix-observability-engineer",
+      "description": "Use when instrumenting a Remix (React Router 7 era) app for production visibility — server-side loader/action timing and error logging, request-scoped structured logging with correlation IDs, root `ErrorBoundary` reporting, client navigation/RUM/Web Vitals reporting, and OpenTelemetry tracing across the SSR request and data layer (Remix). Invoke to add or improve logs, traces, and metrics. NOT for fixing the underlying bug (use remix-developer), NOT for Core Web Vitals tuning (use remix-performance-engineer), NOT for system architecture (use remix-architect). NOT for Next.js (use nextjs-observability-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "remix",
+        "react-router",
+        "observability",
+        "telemetry",
+        "rum"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "remix-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/remix/remix-observability-engineer.md"
+    },
+    {
+      "name": "remix-performance-engineer",
+      "description": "Use when a Remix (React Router 7 era) app is slow or failing Core Web Vitals — large LCP, layout shift, slow INP, blocking loaders that hurt TTFB, heavy bundles, or over-eager revalidation — and you need it measured and tuned (Remix). Invoke to profile and optimize an existing app via deferred/streaming data (`defer`/`Await`), loader parallelization, `shouldRevalidate`, route-level code-splitting, prefetching, and bundle trimming. NOT for building new features (use remix-developer), NOT for system architecture (use remix-architect), NOT for the data/API-layer design (use remix-api-engineer), NOT for accessibility review (use remix-accessibility-specialist). NOT for Next.js (use nextjs-performance-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "remix",
+        "react-router",
+        "performance",
+        "web-vitals"
+      ],
+      "skills": [
+        "web-vitals-optimization",
+        "remix-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/remix/remix-performance-engineer.md"
+    },
+    {
+      "name": "remix-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a Remix (React Router 7 era) app or diff — missing authorization in loaders/actions (the real trust boundary), XSS via `dangerouslySetInnerHTML`/unsanitized loader data, unvalidated `formData` in actions, open redirects from user-controlled `redirect` targets, secret/server-only-module leakage into the client bundle, and insecure cookie/session configuration — with severity-ranked findings (Remix). Invoke for an authorized appsec review. NOT for fixing the issues (use remix-developer), NOT for accessibility review (use remix-accessibility-specialist), NOT for performance (use remix-performance-engineer). NOT for Next.js (use nextjs-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "remix",
+        "react-router",
+        "security",
+        "appsec",
+        "xss"
+      ],
+      "skills": [
+        "appsec-review",
+        "remix-framework",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/remix/remix-security-reviewer.md"
+    },
+    {
+      "name": "remix-test-engineer",
+      "description": "Use when adding or improving automated tests for a Remix (React Router 7 era) app — unit/component tests with Vitest and Testing Library, loader/action tests against the Web Fetch Request/Response model, and end-to-end flows (Playwright) covering navigation, form submissions, and revalidation (Remix). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use remix-developer), NOT for performance profiling (use remix-performance-engineer), NOT for security review (use remix-security-reviewer). NOT for Next.js (use nextjs-test-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "remix",
+        "react-router",
+        "testing",
+        "vitest",
+        "playwright"
+      ],
+      "skills": [
+        "test-automation",
+        "remix-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/remix/remix-test-engineer.md"
+    },
+    {
       "name": "roadmap-planner",
       "description": "Use to prioritize and sequence work ACROSS features — apply RICE/WSJF/MoSCoW/Kano, group into themes/objectives, map dependencies and capacity, and communicate the roadmap. NOT writing a single feature's spec (use prd-author).",
       "category": "product",
@@ -20100,6 +20359,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/devops/reliability-engineering/SKILL.md"
+    },
+    {
+      "name": "remix-framework",
+      "description": "Use when working in Remix (React Router 7 era) — nested routes and the route module API (loader/action/Component/ErrorBoundary/meta/links), server data loading with loaders and mutations with actions, the Web Fetch Request/Response model, forms and progressive enhancement (Form/useFetcher), error/catch boundaries, the loader→useLoaderData / action→useActionData data flow, cookies/sessions, deferred data and streaming (defer/Await), SSR and edge adapters, and the React Router 7 convergence. TRIGGER on loader/action design, \"data isn't revalidating\"/stale-loader-data issues, Form vs useFetcher choices, redirect/Response/headers handling, session/cookie wiring, deferred/streaming UI, or remix vite:build / react-router build errors. NOT for framework-agnostic React rendering (use react-rendering-model) and NOT for the Next.js App Router (server components/route handlers). Any agent touching Remix or React Router 7 can load it.",
+      "category": "web",
+      "tags": [
+        "remix",
+        "react-router",
+        "loaders",
+        "actions",
+        "ssr",
+        "web-fetch"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/remix-framework/SKILL.md"
     },
     {
       "name": "reproduce-then-fix",
