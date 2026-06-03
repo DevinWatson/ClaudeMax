@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 282,
-    "skills": 97,
+    "agents": 303,
+    "skills": 98,
     "categories": 16
   },
   "agents": [
@@ -6673,6 +6673,576 @@
       "path": "agents/languages/sql/sql-security-reviewer.md"
     },
     {
+      "name": "swift-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Swift — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution via structured concurrency/TaskGroup, verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a Swift app or service. Not for a single model call (use swift-ai-engineer), retrieval pipelines (use swift-rag-engineer), or SwiftUI orchestration UI (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-agent-orchestrator.md"
+    },
+    {
+      "name": "swift-ai-engineer",
+      "description": "Use when building LLM-backed features in Swift — wiring model calls via SwiftOpenAI/MacPaw or a raw SDK over AsyncHTTPClient/URLSession, prompt/response plumbing, structured output parsing, streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a Swift app or service. Not for retrieval pipelines (use swift-rag-engineer), multi-agent workflows (use swift-agent-orchestrator), eval harnesses (use swift-evals-engineer), or SwiftUI chat UI (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-ai-engineer.md"
+    },
+    {
+      "name": "swift-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Swift — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized in Vapor or Hummingbird routes and Codable DTOs. Invoke to design or refine server-side Swift HTTP endpoints. Not for gRPC/protobuf schemas (use swift-proto-steward), system structure (use swift-architect), or SwiftUI client UI (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-api-designer.md"
+    },
+    {
+      "name": "swift-architect",
+      "description": "Use when designing or reviewing the structure of a Swift system, server, package, or module — component boundaries, coupling/cohesion, protocol/interface contracts, target/module layout, value-vs-reference modeling, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Swift or when reviewing a Swift design proposal. Not for implementing the feature (use swift-developer), REST endpoint shape alone (use swift-api-designer), or SwiftUI view/UI architecture (use the swiftui team).",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "swift",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "swift-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-architect.md"
+    },
+    {
+      "name": "swift-compliance-reviewer",
+      "description": "Use when checking Swift code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of Swift code. Not for finding exploitable vulnerabilities (use swift-security-reviewer) or SwiftUI client-side privacy review (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "swift",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "swift-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-compliance-reviewer.md"
+    },
+    {
+      "name": "swift-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in Swift — Pact-style consumer and provider tests, contract publication, and compatibility checks between services. Invoke to add or fix contract tests in Swift so a provider change cannot silently break a consumer. Not for in-process integration tests (use swift-integration-test-architect), end-to-end flows (use swift-sdet), or gRPC schema compatibility (use swift-proto-steward).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-contract-tester.md"
+    },
+    {
+      "name": "swift-cost-governor",
+      "description": "Use when reducing the runtime cost of Swift services — process memory and allocation footprint, container memory/CPU sizing, connection-pool and EventLoop/task right-sizing, wasteful allocation/copy and query patterns, and cloud resource footprint. Invoke to analyze and cut compute/memory cost of Swift workloads. Not for latency-only profiling unless it lowers cost, resilience design (use swift-reliability-engineer), or SwiftUI client performance (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "cost",
+        "tuning"
+      ],
+      "skills": [
+        "cost-optimization",
+        "swift-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-cost-governor.md"
+    },
+    {
+      "name": "swift-developer",
+      "description": "Use when turning a Swift requirement, ticket, or feature into working, tested, incrementally-shipped code — server-side (Vapor/Hummingbird), CLI, or library Swift — or when fixing a reported Swift bug. Invoke for building or extending Swift language features and for diagnosing failures in existing Swift code. Not for system-level design (use swift-architect), not for adding tests to code you did not write (use swift-unit-test-architect), and not for SwiftUI view/UI work (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "feature-development",
+        "server-side"
+      ],
+      "skills": [
+        "feature-development",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-developer.md"
+    },
+    {
+      "name": "swift-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Swift — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality in Swift. Not for building the feature (use swift-ai-engineer), the retrieval pipeline (use swift-rag-engineer), or SwiftUI output evaluation (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "swift-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-evals-engineer.md"
+    },
+    {
+      "name": "swift-integration-test-architect",
+      "description": "Use when testing how Swift components integrate across real boundaries — database, HTTP clients, message brokers, or other services — using Vapor/Hummingbird test harnesses, Testcontainers, or local ephemeral services. Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use swift-unit-test-architect), end-to-end flows (use swift-sdet), or SwiftUI UI tests (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "integration-testing",
+        "testcontainers"
+      ],
+      "skills": [
+        "integration-testing",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-integration-test-architect.md"
+    },
+    {
+      "name": "swift-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Swift — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle with the Swift MCP SDK. Invoke for MCP server/client work in a Swift codebase. Not for general LLM feature plumbing (use swift-ai-engineer), multi-agent coordination (use swift-agent-orchestrator), or SwiftUI MCP UI (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-mcp-steward.md"
+    },
+    {
+      "name": "swift-migration-engineer",
+      "description": "Use when migrating Swift code across a version or framework boundary — Swift language-version/tools upgrades, Swift Concurrency adoption and strict-concurrency/`Sendable` migration, Vapor major versions, or library replacements — done in safe, verifiable increments. Invoke to plan and execute a Swift migration or fix breakage it caused. Not for greenfield features (use swift-developer), pure restructuring within one version (use swift-architect), or SwiftUI framework migrations (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-migration-engineer.md"
+    },
+    {
+      "name": "swift-observability-engineer",
+      "description": "Use when instrumenting Swift services for observability — structured logging, metrics, and distributed tracing via swift-log, swift-metrics, and swift-distributed-tracing/OpenTelemetry, span/context propagation across async tasks, and useful dashboards/alert signals. Invoke to add or fix telemetry in Swift services. Not for resilience patterns like retries/circuit-breakers (use swift-reliability-engineer), cost reduction (use swift-cost-governor), or SwiftUI client analytics (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-observability-engineer.md"
+    },
+    {
+      "name": "swift-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a Swift application — externalizing prompts from code, templating and parameterizing them, versioning, and structuring a reusable prompt library loaded as resources. Invoke to curate prompt assets in a Swift codebase. Not for wiring the model call (use swift-ai-engineer), scoring output quality (use swift-evals-engineer), or SwiftUI prompt UI (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "swift",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "swift-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-prompt-librarian.md"
+    },
+    {
+      "name": "swift-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Swift — message and service definitions, field numbering, wire/back-compat rules, and generated-Swift integration via swift-protobuf and grpc-swift. Invoke for .proto schema design or compatibility review in a Swift codebase. Not for REST/HTTP API design (use swift-api-designer), consumer/provider contract tests (use swift-contract-tester), or SwiftUI gRPC client UI (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-proto-steward.md"
+    },
+    {
+      "name": "swift-qa-analyst",
+      "description": "Use when planning what to test for a Swift change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for Swift work, before or instead of writing tests. Not for writing the tests themselves (use the swift test-architect/sdet roles) or for SwiftUI UI test strategy (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "swift",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "swift-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-qa-analyst.md"
+    },
+    {
+      "name": "swift-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Swift — chunking, embeddings, vector store wiring, hybrid retrieval + reranking, context assembly, and grounding/citation in a Swift app or service. Invoke for RAG retrieval quality or wiring in Swift. Not for a single model call (use swift-ai-engineer), building an eval harness (use swift-evals-engineer), or SwiftUI retrieval UI (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-rag-engineer.md"
+    },
+    {
+      "name": "swift-reliability-engineer",
+      "description": "Use when hardening a Swift service against partial failure — timeouts, retries-with-backoff, circuit breakers, bulkheads, and backpressure via async/await and swift-nio operators, plus graceful degradation and load shedding. Invoke for resilience design or review of Swift services. Not for emitting telemetry (use swift-observability-engineer), triaging a live outage, or SwiftUI client resilience (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-reliability-engineer.md"
+    },
+    {
+      "name": "swift-sdet",
+      "description": "Use when building end-to-end or API test automation in Swift — HTTP/API suites against a running server (Vapor/Hummingbird) with AsyncHTTPClient or URLSession, fixtures, data setup, and stable flows run in CI. Invoke to automate full API/user flows in Swift. Not for unit tests (use swift-unit-test-architect), service integration tests (use swift-integration-test-architect), consumer/provider contracts (use swift-contract-tester), or SwiftUI UI automation (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-sdet.md"
+    },
+    {
+      "name": "swift-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Swift code or a diff — tracing untrusted input to sinks for injection (SQL/command), broken authn/authz and IDOR, unsafe deserialization/`Codable` abuse, SSRF/path-traversal, secrets exposure, insecure storage, and crypto misuse, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of Swift code you are authorized to review. Not for regulatory/policy conformance (use swift-compliance-reviewer) or SwiftUI client-side security (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "swift",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "swift-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-security-reviewer.md"
+    },
+    {
+      "name": "swift-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Swift code — mapping a unit's behaviors and writing deterministic XCTest or swift-testing cases that catch real regressions (boundaries, invalid input, error paths, async/actor behavior). Invoke to raise meaningful unit coverage in Swift. Not for cross-service integration tests (use swift-integration-test-architect), end-to-end automation (use swift-sdet), or SwiftUI view tests (use the swiftui team).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "swift",
+        "testing",
+        "xctest"
+      ],
+      "skills": [
+        "test-design",
+        "swift-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/swift/swift-unit-test-architect.md"
+    },
+    {
       "name": "swiftui-accessibility-specialist",
       "description": "Use for an accessibility audit of SwiftUI UI — VoiceOver labels/traits/hints, Dynamic Type, contrast, focus order, hit targets, and Reduce Motion, mapped to WCAG with severity-ranked findings (SwiftUI). Invoke for a read-only a11y review. NOT for implementing the fixes (use swiftui-developer), NOT for security review (use swiftui-security-reviewer), and NOT for Android Jetpack Compose.",
       "category": "mobile",
@@ -8945,6 +9515,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/sql-query-design/SKILL.md"
+    },
+    {
+      "name": "swift-idioms",
+      "description": "Use when writing or fixing Swift LANGUAGE code — optionals and safe unwrapping, value vs reference semantics (struct/enum/class), protocol-oriented programming with associated types and generics, error handling (throws/Result), Swift Concurrency (async/await, actors, Sendable, structured concurrency/TaskGroup), and ARC memory management (weak/unowned, retain cycles), built and verified with SwiftPM (swift build/test, swiftformat/swiftlint). Covers server-side, CLI, library, and concurrency Swift — NOT SwiftUI view layout (use the swiftui-development skill for that). Any agent touching Swift (writer, reviewer, debugger, the SwiftUI team) can load it.",
+      "category": "languages",
+      "tags": [
+        "swift",
+        "concurrency",
+        "protocols",
+        "generics",
+        "arc",
+        "swiftpm"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/swift-idioms/SKILL.md"
     },
     {
       "name": "swiftui-development",
