@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 651,
-    "skills": 115,
+    "agents": 660,
+    "skills": 116,
     "categories": 16
   },
   "agents": [
@@ -17219,6 +17219,263 @@
       "path": "agents/product/ux-reviewer.md"
     },
     {
+      "name": "vue-accessibility-specialist",
+      "description": "Use for a WCAG accessibility audit of a Vue 3 app — semantic structure, keyboard and focus management across client-side router navigation, ARIA usage in components and slots, color contrast, and forms — with severity-ranked findings (Vue). Invoke for an accessibility review of rendered components and routes. NOT for fixing the issues (use vue-developer), NOT for security review (use vue-security-reviewer), NOT for performance (use vue-performance-engineer). NOT for Next.js (use nextjs-accessibility-specialist).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "vue",
+        "vue3",
+        "accessibility",
+        "wcag",
+        "a11y"
+      ],
+      "skills": [
+        "wcag-audit",
+        "vue-framework",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/vue/vue-accessibility-specialist.md"
+    },
+    {
+      "name": "vue-ai-engineer",
+      "description": "Use when building LLM/AI features into a Vue 3 app — streaming chat and completions rendered reactively, tool calling, RAG retrieval, and prompt orchestration wired through composables and a backend (Vue). Invoke to design and implement AI-powered product features. NOT for generic UI features (use vue-developer), NOT for system architecture (use vue-architect), NOT for component-API design (use vue-component-architect), NOT for security review of those endpoints (use vue-security-reviewer). NOT for Next.js (use nextjs-ai-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "vue",
+        "vue3",
+        "ai",
+        "llm",
+        "rag"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "vue-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/vue/vue-ai-engineer.md"
+    },
+    {
+      "name": "vue-architect",
+      "description": "Use when shaping the architecture of a Vue 3 app or module — component/composable topology, state-management strategy (Pinia stores vs provide/inject vs local), Vue Router structure and code-splitting, reactivity boundaries, and the Nuxt-vs-SPA meta-framework decision (Vue). Invoke for system-level design and trade-off analysis. NOT for implementing features (use vue-developer), NOT for designing a single component's/design-system API (use vue-component-architect), NOT for performance tuning of existing code (use vue-performance-engineer), NOT for framework-agnostic React design (route to react-architect) or Next.js architecture (use nextjs-architect).",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "vue",
+        "vue3",
+        "architecture",
+        "pinia"
+      ],
+      "skills": [
+        "software-architecture",
+        "vue-framework",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/vue/vue-architect.md"
+    },
+    {
+      "name": "vue-component-architect",
+      "description": "Use when designing the API surface of reusable Vue 3 components, composables, or a design-system library — the props/emits/`v-model` contract, slot (named/scoped) shape, `defineExpose` surface, composable signatures, and theming/variant strategy — and implementing those primitives (Vue). Invoke for component/composable API design and design-system work. NOT for app-level structure and state-management strategy (use vue-architect), NOT for product feature implementation (use vue-developer), NOT for performance tuning (use vue-performance-engineer). NOT for Next.js (use the Next.js team).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "vue",
+        "vue3",
+        "design-system",
+        "components",
+        "composables"
+      ],
+      "skills": [
+        "software-architecture",
+        "vue-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/vue/vue-component-architect.md"
+    },
+    {
+      "name": "vue-developer",
+      "description": "Use when turning a Vue 3 requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Vue bug — a reactivity-loss/stale-render issue, a `<script setup>`/SFC error, a props/emits/v-model contract bug, or a Pinia/router wiring problem (Vue). Invoke for building or extending components, composables, stores, and routes. NOT for system-level design (use vue-architect), NOT for design-system/component-API design (use vue-component-architect), NOT for adding tests to code you did not write (use vue-test-engineer), NOT for Core Web Vitals tuning (use vue-performance-engineer). NOT for general React features (use react-architect's developer counterpart) or Next.js (use nextjs-developer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "vue",
+        "vue3",
+        "composition-api",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "vue-framework",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/vue/vue-developer.md"
+    },
+    {
+      "name": "vue-observability-engineer",
+      "description": "Use when instrumenting a Vue 3 app for production visibility — client-side error reporting via `app.config.errorHandler` and `onErrorCaptured`, router-navigation and component-render timing, structured client logging, RUM/Web Vitals reporting, and OpenTelemetry browser tracing (Vue). Invoke to add or improve logs, traces, and metrics. NOT for fixing the underlying bug (use vue-developer), NOT for Core Web Vitals tuning (use vue-performance-engineer), NOT for system architecture (use vue-architect). NOT for Next.js (use nextjs-observability-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "vue",
+        "vue3",
+        "observability",
+        "telemetry",
+        "rum"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "vue-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/vue/vue-observability-engineer.md"
+    },
+    {
+      "name": "vue-performance-engineer",
+      "description": "Use when a Vue 3 app is slow or failing Core Web Vitals — large LCP, layout shift, slow INP, heavy bundles, excessive re-renders, or costly reactivity — and you need it measured and tuned (Vue). Invoke to profile and optimize an existing app via v-memo, shallowRef, async components, keep-alive, route-level code-splitting, and render-cost reduction. NOT for building new features (use vue-developer), NOT for system architecture (use vue-architect), NOT for component-API design (use vue-component-architect), NOT for accessibility review (use vue-accessibility-specialist). NOT for Next.js (use nextjs-performance-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "vue",
+        "vue3",
+        "performance",
+        "web-vitals"
+      ],
+      "skills": [
+        "web-vitals-optimization",
+        "vue-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/vue/vue-performance-engineer.md"
+    },
+    {
+      "name": "vue-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a Vue 3 app or diff — XSS via `v-html`/dynamic templates, unsafe `:href`/dynamic component injection, secret/token exposure in client bundles, insecure client-side auth/route-guard checks, and unsafe handling of API/LLM responses — with severity-ranked findings (Vue). Invoke for an authorized appsec review. NOT for fixing the issues (use vue-developer), NOT for accessibility review (use vue-accessibility-specialist), NOT for performance (use vue-performance-engineer). NOT for Next.js (use nextjs-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "vue",
+        "vue3",
+        "security",
+        "appsec",
+        "xss"
+      ],
+      "skills": [
+        "appsec-review",
+        "vue-framework",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/vue/vue-security-reviewer.md"
+    },
+    {
+      "name": "vue-test-engineer",
+      "description": "Use when adding or improving automated tests for a Vue 3 app — component/unit tests with Vitest and `@vue/test-utils`, composable and Pinia store tests, and end-to-end flows covering routing and rendering (Vue). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use vue-developer), NOT for performance profiling (use vue-performance-engineer), NOT for security review (use vue-security-reviewer). NOT for Next.js (use nextjs-test-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "vue",
+        "vue3",
+        "testing",
+        "vitest",
+        "test-utils"
+      ],
+      "skills": [
+        "test-automation",
+        "vue-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/vue/vue-test-engineer.md"
+    },
+    {
       "name": "zig-agent-orchestrator",
       "description": "Use when designing a multi-agent or multi-step LLM workflow in Zig — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution, verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a Zig app (Zig). Not for a single model call (use zig-ai-engineer) or retrieval pipelines (use zig-rag-engineer).",
       "category": "languages",
@@ -19481,6 +19738,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/engineering/verify-by-running/SKILL.md"
+    },
+    {
+      "name": "vue-framework",
+      "description": "Use when working in Vue 3 — the Composition API (ref/reactive/computed/watch), `<script setup>` and single-file components, reactivity fundamentals and pitfalls (ref unwrapping, losing reactivity on destructure), props/emits/v-model contracts, slots, provide/inject, lifecycle, Pinia state, Vue Router, and Vue performance levers (v-memo, async components, keep-alive). TRIGGER on reactivity-loss bugs, \"value is not reactive\"/stale-render issues, SFC/`<script setup>` questions, component API design, Pinia/router wiring, or vue-tsc/vite build errors. NOT for framework-agnostic UI concerns, and Nuxt's server/data layer (SSR data, server routes, file-based routing) is the meta-framework boundary handled elsewhere. Any agent touching Vue (a Vue role, a reviewer of a Vue PR, a Nuxt team) can load it.",
+      "category": "web",
+      "tags": [
+        "vue",
+        "vue3",
+        "composition-api",
+        "pinia",
+        "vue-router",
+        "reactivity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/vue-framework/SKILL.md"
     },
     {
       "name": "wcag-audit",

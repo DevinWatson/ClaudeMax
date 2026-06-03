@@ -33,7 +33,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] solidity
 
 ## Web/app frameworks (tailored teams; web category unless noted; new framework skill each)
-- [ ] vue
+- [x] vue
 - [ ] svelte
 - [ ] angular
 - [ ] astro
