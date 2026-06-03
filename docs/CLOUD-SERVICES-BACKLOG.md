@@ -436,10 +436,10 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 ### web-mobile
 - [x] azure|web-mobile|static-web-apps|Azure Static Web Apps
 - [x] azure|web-mobile|azure-maps|Azure Maps
-- [ ] azure|web-mobile|notification-hubs|Azure Notification Hubs
-- [ ] azure|web-mobile|azure-signalr-service|Azure SignalR Service
-- [ ] azure|web-mobile|azure-communication-services|Azure Communication Services
+- [x] azure|web-mobile|notification-hubs|Azure Notification Hubs
+- [x] azure|web-mobile|azure-signalr-service|Azure SignalR Service
+- [x] azure|web-mobile|azure-communication-services|Azure Communication Services
 
 ### hybrid
-- [ ] azure|hybrid|azure-stack-hci|Azure Stack HCI
-- [ ] azure|hybrid|azure-stack-edge|Azure Stack Edge
+- [x] azure|hybrid|azure-stack-hci|Azure Stack HCI
+- [x] azure|hybrid|azure-stack-edge|Azure Stack Edge

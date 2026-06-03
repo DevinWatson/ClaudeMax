@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1169,
-    "skills": 461,
+    "agents": 1174,
+    "skills": 466,
     "categories": 17
   },
   "agents": [
@@ -6001,6 +6001,35 @@
       "path": "agents/cloud/azure/azure-cloud-architect.md"
     },
     {
+      "name": "azure-communication-services-specialist",
+      "description": "Use when configuring or operating Azure Communication Services / ACS (Azure Communication Services) (Azure) — multichannel comms APIs over the Teams backbone: voice/video calling, chat, SMS, email, and PSTN telephony, plus the Communication Services resource, scoped identities/access tokens, phone-number provisioning, Email Communication Services domains, Call Automation (server-driven IVR/recording/routing), Teams interop, and Event Grid events. OWNS the ACS service end-to-end and verifies a message sends with a delivery report or a call connects. NOT for cross-platform mobile push — defer to azure-notification-hubs-specialist; NOT for in-app realtime/WebSocket fan-out — defer to azure-signalr-service-specialist; cross-cutting platform strategy and module authoring defer to the Azure role team (azure-platform-engineer / azure-cloud-architect / azure-iac-engineer). Cross-cloud peers (defer): AWS Connect / Pinpoint / Chime.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-communication-services",
+        "web-mobile",
+        "communications",
+        "specialist"
+      ],
+      "skills": [
+        "azure-communication-services",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/web-mobile/azure-communication-services-specialist.md"
+    },
+    {
       "name": "azure-container-apps-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Container Apps (Azure) — serverless containers for microservices and event-driven apps on managed Kubernetes + KEDA without exposing the cluster: the Container Apps environment (VNet + Log Analytics), apps/containers, revisions and traffic splitting (blue/green, canary), external/internal ingress (HTTP/TCP), KEDA autoscaling incl. scale-to-zero, Dapr sidecars, jobs, managed identity + ACR/Key Vault, and Consumption vs Dedicated plans. OWNS serverless microservices end-to-end (environment, apps, scaling, ingress, revisions, Dapr). For single ad-hoc containers/jobs defer to azure-container-instances; for full cluster control to azure-aks. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT the image registry (azure-container-registry). Cross-cloud peers (defer): aws-app-runner, gcp-cloud-run.",
       "category": "cloud",
@@ -7569,6 +7598,35 @@
       "path": "agents/cloud/azure/azure-networking-engineer.md"
     },
     {
+      "name": "azure-notification-hubs-specialist",
+      "description": "Use when configuring or operating Azure Notification Hubs (Azure Notification Hubs) (Azure) — cross-platform push that fans one send out to APNs/FCM v1/WNS (+ Baidu/ADM): namespaces and hubs, PNS credentials, registrations vs installations, tag and tag-expression targeting, native vs template notifications, and direct/tag/scheduled sends. OWNS the Notification Hubs service end-to-end and verifies a tagged push reaches a real device. NOT for in-app realtime/WebSocket messaging — defer that to azure-signalr-service-specialist; NOT for voice/video/SMS/email/chat APIs — defer to azure-communication-services-specialist; cross-cutting platform strategy and module authoring defer to the Azure role team (azure-platform-engineer / azure-cloud-architect / azure-iac-engineer). Cross-cloud peers (defer): AWS SNS mobile push, GCP Firebase Cloud Messaging.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-notification-hubs",
+        "web-mobile",
+        "push-notifications",
+        "specialist"
+      ],
+      "skills": [
+        "azure-notification-hubs",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/web-mobile/azure-notification-hubs-specialist.md"
+    },
+    {
       "name": "azure-observability-engineer",
       "description": "Use when instrumenting Microsoft Azure observability — Azure Monitor metrics/dashboards/alert rules, Log Analytics (KQL), and Application Insights distributed tracing, with SLO-driven alerting — then validating it (Azure). NOT for generic non-cloud observability (devops observability-engineer), reliability/DR design (azure-reliability-engineer), networking (azure-networking-engineer), broad architecture (azure-cloud-architect), or AWS/GCP observability (aws-/gcp-observability-engineer).",
       "category": "cloud",
@@ -7888,6 +7946,35 @@
       "path": "agents/cloud/azure/services/containers/azure-service-fabric-specialist.md"
     },
     {
+      "name": "azure-signalr-service-specialist",
+      "description": "Use when configuring or operating Azure SignalR Service (Azure SignalR Service) (Azure) — fully managed real-time messaging that terminates persistent WebSocket (SSE/long-polling) connections as a backplane: Default/Serverless/Classic service modes, hub and client/server connection routing, units + autoscale, upstream endpoints + event handlers for Serverless, and integration with ASP.NET Core SignalR and Azure Functions SignalR bindings. OWNS the SignalR Service end-to-end and verifies a client connects, negotiates, and receives a broadcast. NOT for cross-platform mobile push — defer to azure-notification-hubs-specialist; NOT for voice/video/chat/SMS comms APIs — defer to azure-communication-services-specialist; cross-cutting platform strategy and module authoring defer to the Azure role team (azure-platform-engineer / azure-cloud-architect / azure-iac-engineer). Cross-cloud peer (defer): AWS API Gateway WebSocket APIs.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-signalr-service",
+        "web-mobile",
+        "realtime",
+        "specialist"
+      ],
+      "skills": [
+        "azure-signalr-service",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/web-mobile/azure-signalr-service-specialist.md"
+    },
+    {
       "name": "azure-site-recovery-specialist",
       "description": "Use when configuring or operating Azure Site Recovery (Azure Site Recovery) (Azure) — disaster-recovery replication and failover orchestration: the Recovery Services vault, replication policies (RPO + app/crash-consistent snapshots + retention), recovery plans (ordered groups + scripts/runbooks), non-disruptive test failover, planned/unplanned failover and failback/reprotect, and RPO/RTO targets. OWNS the ASR DR layer end-to-end and verifies replication is healthy and a test failover boots the workload. NOT the assessment/migration hub — defers discovery/right-sizing to azure-migrate-specialist and database engine migration to azure-database-migration-service-specialist. Sibling boundaries: target region design to the azure platform/architect roles; backup (not DR) to the backup team. Cross-cloud peer (defer): AWS Elastic Disaster Recovery.",
       "category": "cloud",
@@ -7973,6 +8060,64 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/databases/azure-sql-managed-instance-specialist.md"
+    },
+    {
+      "name": "azure-stack-edge-specialist",
+      "description": "Use when configuring or operating Azure Stack Edge (Azure Stack Edge) (Azure) — a managed, Microsoft-supplied edge appliance ordered through Azure that brings compute, storage, networking, and hardware-accelerated AI (GPU/FPGA/VPU) to a site and ships data to Azure: Pro-GPU/Pro-R/Mini-R SKUs, order/activate device lifecycle, local edge compute (IoT Edge/VMs/AKS) + edge AI inference, local SMB/NFS shares + Edge Storage Accounts with cloud tiering, and bandwidth-aware data transfer to Azure Storage. OWNS the Stack Edge appliance end-to-end and verifies the device is healthy, data lands in Azure Storage, and an edge workload runs. NOT for hyperconverged on-prem clusters — defer to azure-stack-hci-specialist; NOT for pure Arc onboarding of arbitrary servers — defer to azure-arc-specialist; cross-cutting platform strategy and module authoring defer to the Azure role team (azure-platform-engineer / azure-cloud-architect / azure-iac-engineer). Cross-cloud peer (defer): AWS Snowball Edge.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-stack-edge",
+        "hybrid",
+        "edge",
+        "specialist"
+      ],
+      "skills": [
+        "azure-stack-edge",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/hybrid/azure-stack-edge-specialist.md"
+    },
+    {
+      "name": "azure-stack-hci-specialist",
+      "description": "Use when configuring or operating Azure Stack HCI / Azure Local (Azure Stack HCI) (Azure) — hyperconverged on-premises infrastructure that runs a validated-node cluster Arc-connected to Azure: Storage Spaces Direct (S2D) software-defined storage, Hyper-V compute + SDN, Arc registration and cluster lifecycle/updates, AKS on Azure Stack HCI, and cluster networking/witness. OWNS the HCI cluster end-to-end and verifies the cluster is Arc-connected, S2D is healthy, quorum holds, and a test workload runs. NOT for pure Arc onboarding of arbitrary servers/Kubernetes — defer that to azure-arc-specialist; NOT for managed edge appliances — defer to azure-stack-edge-specialist; cross-cutting platform strategy and module authoring defer to the Azure role team (azure-platform-engineer / azure-cloud-architect / azure-iac-engineer). Cross-cloud peers (defer): AWS Outposts, GCP Anthos / GDC.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-stack-hci",
+        "hybrid",
+        "hyperconverged",
+        "specialist"
+      ],
+      "skills": [
+        "azure-stack-hci",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/hybrid/azure-stack-hci-specialist.md"
     },
     {
       "name": "azure-static-web-apps-specialist",
@@ -35798,6 +35943,21 @@
       "path": "skills/cloud/azure-cdn/SKILL.md"
     },
     {
+      "name": "azure-communication-services",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Communication Services (ACS) — Azure's multichannel communication platform exposing voice/video calling, chat, SMS, email, and PSTN telephony as APIs/SDKs over the same backbone as Teams (Azure Communication Services). Covers the Communication Services resource, identities and access tokens (scoped to chat/voip), phone-number provisioning + PSTN calling, SMS and Email Communication Services domains, Call Automation (server-driven IVR/recording/routing), Teams interoperability, and event handling via Event Grid. Loads the knowledge to provision the resource, mint scoped identities/tokens, wire a channel (call/chat/SMS/email), and verify a message or call succeeds. Consumed by the azure-communication-services specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-communication-services",
+        "web-mobile",
+        "communications",
+        "telephony"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-communication-services/SKILL.md"
+    },
+    {
       "name": "azure-container-apps",
       "description": "Use when designing, provisioning, securing, or operating Azure Container Apps — Azure's serverless container platform for microservices and event-driven apps built on Kubernetes + KEDA without exposing the cluster (Azure Container Apps). Covers the Container Apps environment (the shared boundary/VNet/Log Analytics), apps and containers, revisions and traffic splitting (blue/green, canary), ingress (external/internal, HTTP and TCP), KEDA-based autoscaling (HTTP, queue, custom) including scale-to-zero, Dapr sidecars for service invocation/pub-sub/state, jobs (manual/scheduled/event), managed identities, ACR pulls, secrets, and consumption vs dedicated plans. Loads the knowledge: define the environment and app, set scaling/ingress/revisions, provision, secure, and verify the app is healthy and reachable. Consumed by the azure-container-apps specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Container Apps).",
       "category": "cloud",
@@ -36561,6 +36721,21 @@
       "path": "skills/cloud/azure-netapp-files/SKILL.md"
     },
     {
+      "name": "azure-notification-hubs",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Notification Hubs — Azure's massively-scalable cross-platform push notification engine that fans a single send out to APNs (iOS), FCM v1 (Android), WNS (Windows), and Baidu/Amazon ADM (Azure Notification Hubs). Covers namespaces and hubs, platform credentials (APNs token/cert, FCM v1 service account, WNS), device registrations vs installations, tag and tag-expression targeting, native vs template notifications, scheduled and direct/batch sends, and the data/standard pricing tiers. Loads the knowledge to provision a namespace + hub, wire each PNS credential, design a registration/tag model, and verify a push reaches a device. Consumed by the azure-notification-hubs specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-notification-hubs",
+        "web-mobile",
+        "push-notifications",
+        "messaging"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-notification-hubs/SKILL.md"
+    },
+    {
       "name": "azure-openai",
       "description": "Use when designing, provisioning, securing, or operating Azure OpenAI Service — Microsoft Azure's managed access to OpenAI models (GPT-4o/4.1/o-series chat + completions, embeddings, DALL-E, Whisper) with enterprise networking, identity, and quotas (Azure OpenAI Service). Covers the Cognitive Services OpenAI resource, model deployments (Standard / Global / Provisioned PTU), capacity and rate limits (TPM/RPM tokens-per-minute), content filters and abuse monitoring, \"On Your Data\" / RAG grounding against Azure AI Search, the Assistants API and function/tool calling, keys vs Entra ID auth and managed identity, Private Link/VNet isolation, and cost. Loads the Azure OpenAI knowledge: provision a resource, create model deployments with quota, secure access, and verify a completion. Consumed by the azure-openai specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure OpenAI Service).",
       "category": "cloud",
@@ -36704,6 +36879,21 @@
       "path": "skills/cloud/azure-services/SKILL.md"
     },
     {
+      "name": "azure-signalr-service",
+      "description": "Use when designing, provisioning, configuring, or operating Azure SignalR Service — Azure's fully managed real-time messaging service that handles persistent WebSocket (and SSE/long-polling) connections so apps push to thousands of clients without running their own SignalR backplane (Azure SignalR Service). Covers the Default, Serverless, and Classic service modes, hubs and client/server connection routing, units and autoscale, upstream endpoints + event handlers for Serverless, managed-identity upstream auth, private endpoints, and integration with ASP.NET Core SignalR and Azure Functions SignalR bindings. Loads the knowledge to pick a mode, size units, wire hub routing/upstream, and verify clients connect and receive broadcasts. Consumed by the azure-signalr-service specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-signalr-service",
+        "web-mobile",
+        "realtime",
+        "websocket"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-signalr-service/SKILL.md"
+    },
+    {
       "name": "azure-site-recovery",
       "description": "Use when designing, provisioning, configuring, or operating Azure Site Recovery (ASR) — Azure's disaster-recovery service that replicates workloads to a secondary region (or to Azure from on-prem) and orchestrates failover/failback (Azure Site Recovery). Covers the Recovery Services vault, replication policies (RPO, app-consistent/crash-consistent snapshots, retention), recovery plans (ordered groups + scripts/runbooks), test failover, planned/unplanned failover and failback, and RPO/RTO targets. Loads the knowledge to set up a vault, enable replication, build recovery plans, run a non-disruptive test failover, and verify DR readiness. Consumed by the azure-site-recovery specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service.",
       "category": "cloud",
@@ -36749,6 +36939,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-sql-managed-instance/SKILL.md"
+    },
+    {
+      "name": "azure-stack-edge",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Stack Edge — Azure's managed, Microsoft-supplied edge appliance (ordered through Azure) that brings compute, storage, networking, and hardware-accelerated AI (GPU/FPGA/VPU) to an on-premises or remote site and ships data to Azure (Azure Stack Edge). Covers ordering and Arc-managed device lifecycle, the Pro-GPU/Pro-R/Mini-R SKUs, local edge compute (IoT Edge modules, VMs, AKS) and edge AI inference, local SMB/NFS shares with cloud tiering, network/bandwidth and data-transfer/upload to Azure Storage, and Edge Storage Accounts. Loads the knowledge to order/activate a device, configure edge compute + shares, secure it, and verify edge workloads run and data lands in Azure. Consumed by the azure-stack-edge specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the service.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-stack-edge",
+        "hybrid",
+        "edge",
+        "edge-ai"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-stack-edge/SKILL.md"
+    },
+    {
+      "name": "azure-stack-hci",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Stack HCI (now Azure Local) — Azure's hyperconverged infrastructure (HCI) operating system that runs a validated on-premises cluster of nodes, Arc-connected back to Azure for management, billing, and updates (Azure Stack HCI). Covers the validated-node cluster, Storage Spaces Direct (S2D) software-defined storage, Hyper-V compute and SDN, Azure Arc registration + cluster lifecycle, AKS on Azure Stack HCI for containers, Azure Arc-enabled VMs/services on the cluster, cluster networking/witness, and update orchestration. Loads the knowledge to register and configure a cluster, lay out S2D storage and networking, secure it, and verify the cluster is Arc-connected and healthy. Consumed by the azure-stack-hci specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the service.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-stack-hci",
+        "hybrid",
+        "hyperconverged",
+        "arc"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-stack-hci/SKILL.md"
     },
     {
       "name": "azure-static-web-apps",
