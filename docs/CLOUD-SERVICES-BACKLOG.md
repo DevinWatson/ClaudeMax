@@ -312,14 +312,14 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 
 ### ai-ml
 - [x] azure|ai-ml|azure-machine-learning|Azure Machine Learning
-- [ ] azure|ai-ml|azure-openai|Azure OpenAI Service
-- [ ] azure|ai-ml|azure-ai-search|Azure AI Search
-- [ ] azure|ai-ml|azure-ai-vision|Azure AI Vision
-- [ ] azure|ai-ml|azure-ai-language|Azure AI Language
-- [ ] azure|ai-ml|azure-ai-speech|Azure AI Speech
-- [ ] azure|ai-ml|azure-ai-document-intelligence|Azure AI Document Intelligence
-- [ ] azure|ai-ml|azure-ai-translator|Azure AI Translator
-- [ ] azure|ai-ml|azure-bot-service|Azure Bot Service
+- [x] azure|ai-ml|azure-openai|Azure OpenAI Service
+- [x] azure|ai-ml|azure-ai-search|Azure AI Search
+- [x] azure|ai-ml|azure-ai-vision|Azure AI Vision
+- [x] azure|ai-ml|azure-ai-language|Azure AI Language
+- [x] azure|ai-ml|azure-ai-speech|Azure AI Speech
+- [x] azure|ai-ml|azure-ai-document-intelligence|Azure AI Document Intelligence
+- [x] azure|ai-ml|azure-ai-translator|Azure AI Translator
+- [x] azure|ai-ml|azure-bot-service|Azure Bot Service
 - [ ] azure|ai-ml|azure-ai-content-safety|Azure AI Content Safety
 - [ ] azure|ai-ml|azure-ai-foundry|Azure AI Foundry
 

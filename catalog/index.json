@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1073,
-    "skills": 365,
+    "agents": 1081,
+    "skills": 373,
     "categories": 17
   },
   "agents": [
@@ -5242,6 +5242,217 @@
       "path": "agents/cloud/aws/services/developer-tools/aws-x-ray-specialist.md"
     },
     {
+      "name": "azure-ai-document-intelligence-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure AI Document Intelligence (AZURE) — the managed document-processing service (formerly Form Recognizer): the Document Intelligence resource, prebuilt models (read/OCR, layout, general document, invoice, receipt, ID, tax/W-2, contract, health card), custom models (template/neural extraction + classification + composed), the layout API (incl. RAG chunking), training over Blob, async analyze, tiers, Entra ID vs keys, Private Link, and cost. OWNS the managed service end-to-end (prebuilt/custom models, RBAC). NOT the language ai-engineer/rag-engineer/evals-engineer roles or app-side ingestion/RAG/eval code that calls it. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer). NOT sibling Azure AI services (openai/search/vision/language/speech/translator/bot). Cross-cloud peers (defer): aws-textract, gcp-document-ai.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-ai-document-intelligence",
+        "ai-ml",
+        "ocr",
+        "document-extraction",
+        "specialist"
+      ],
+      "skills": [
+        "azure-ai-document-intelligence",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/ai-ml/azure-ai-document-intelligence-specialist.md"
+    },
+    {
+      "name": "azure-ai-language-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure AI Language (AZURE) — the managed NLP service (formerly Text Analytics + LUIS): the Language resource, prebuilt features (NER, entity linking, key-phrase, sentiment + opinion mining, language detection, PII/PHI detection/redaction, summarization, health analytics) and custom features (CLU, custom NER, custom classification, Custom Question Answering), train/deploy cycles, tiers, Entra ID vs keys, Private Link, and cost. OWNS the managed service end-to-end (prebuilt/custom features, deployments, RBAC). NOT the language ai-engineer/evals-engineer roles or app-side NLP orchestration/eval code that calls it. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer). CLU often feeds azure-bot-service. NOT sibling Azure AI services (openai/search/vision/speech/document-intelligence/translator/bot). Cross-cloud peer (defer): aws-comprehend.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-ai-language",
+        "ai-ml",
+        "nlp",
+        "sentiment",
+        "specialist"
+      ],
+      "skills": [
+        "azure-ai-language",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/ai-ml/azure-ai-language-specialist.md"
+    },
+    {
+      "name": "azure-ai-search-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure AI Search (AZURE) — the managed search/retrieval service (formerly Cognitive Search): the search service + SKU/replicas/partitions, indexes and field attributes, indexers + data sources + skillsets (AI enrichment, integrated vectorization), vector/hybrid/semantic search, RAG retrieval (incl. as a data source for Azure OpenAI On Your Data), Entra ID/RBAC + managed-identity connections, Private Link, and cost. OWNS the managed service end-to-end (indexes, indexers/skillsets, scaling, RBAC). NOT the language rag-engineer/ai-engineer/evals-engineer roles (they build app-side RAG orchestration/prompting/eval; cross-ref rag-engineer for retrieval logic). NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer). Pairs with azure-openai for the generation side of RAG. NOT sibling Azure AI services (vision/language/speech). Cross-cloud peer (defer): aws-kendra.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-ai-search",
+        "ai-ml",
+        "search",
+        "vector-search",
+        "rag",
+        "specialist"
+      ],
+      "skills": [
+        "azure-ai-search",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/ai-ml/azure-ai-search-specialist.md"
+    },
+    {
+      "name": "azure-ai-speech-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure AI Speech (AZURE) — the managed speech service: the Speech resource and region, real-time + batch speech-to-text (STT) and conversation transcription, text-to-speech (TTS) with neural voices and SSML, custom speech and custom neural voice (gated) models/endpoints, speech translation, speaker recognition, pronunciation assessment, tiers, Entra ID vs keys, Private Link, and cost. OWNS the managed service end-to-end (STT/TTS/translation, custom models/endpoints, RBAC). NOT the language ai-engineer/evals-engineer roles or app-side voice-app/eval code that calls it. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer). Pairs with azure-bot-service (voice channels) and azure-ai-language (CLU). NOT sibling Azure AI services (openai/search/vision/language/document-intelligence/translator/bot). Cross-cloud peers (defer): aws-transcribe + aws-polly, gcp-speech-to-text + gcp-text-to-speech.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-ai-speech",
+        "ai-ml",
+        "speech-to-text",
+        "text-to-speech",
+        "specialist"
+      ],
+      "skills": [
+        "azure-ai-speech",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/ai-ml/azure-ai-speech-specialist.md"
+    },
+    {
+      "name": "azure-ai-translator-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure AI Translator (AZURE) — the managed machine-translation service: the Translator / Azure AI services resource and region (global vs geo/regional endpoints, data-residency), the Text Translation API (translate/transliterate/detect/dictionary), Document Translation (async, format-preserving batch over Blob), Custom Translator (domain models on parallel corpora), tiers (F0/S1, commitment tiers), Entra ID vs keys, Private Link, and cost. OWNS the managed Azure AI Translator service end-to-end (resource, text/document translation, custom models, RBAC). NOT the language ai-engineer/evals-engineer roles or app-side localization pipeline/eval code that calls it. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer) for cross-cutting work. NOT sibling Azure AI services (openai/search/vision/language/speech/document-intelligence/bot). Cross-cloud peers (defer): aws-translate, gcp-translation.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-ai-translator",
+        "ai-ml",
+        "translation",
+        "localization",
+        "specialist"
+      ],
+      "skills": [
+        "azure-ai-translator",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/ai-ml/azure-ai-translator-specialist.md"
+    },
+    {
+      "name": "azure-ai-vision-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure AI Vision (AZURE) — the managed computer-vision service: the Computer Vision / Azure AI services resource, Image Analysis 4.0 (tags, captions, objects, people, smart crops, background removal), the Read OCR API, image/video embeddings and visual search, Spatial Analysis, the gated Face service, tiers (F0/S1), Entra ID vs keys, Private Link, and cost. OWNS the managed Azure AI Vision service end-to-end (provisioning, features, tier, RBAC). NOT the language ai-engineer/ml roles or app-side vision pipeline/custom-model-training code that calls it (custom models belong to Azure ML / Custom Vision). NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer) for cross-cutting work. NOT sibling Azure AI services (openai/search/language/speech/document-intelligence/translator/bot). Cross-cloud peers (defer): aws-rekognition, gcp-vision-api.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-ai-vision",
+        "ai-ml",
+        "computer-vision",
+        "ocr",
+        "specialist"
+      ],
+      "skills": [
+        "azure-ai-vision",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/ai-ml/azure-ai-vision-specialist.md"
+    },
+    {
+      "name": "azure-bot-service-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Bot Service (AZURE) — the managed platform that registers a Bot Framework bot and connects it to channels: the Azure Bot resource + messaging endpoint, channels (Teams, Web Chat, Direct Line, telephony, SMS), Direct Line App Service Extension, Entra ID app-registration / managed-identity app type and OAuth connection settings, hosting on App Service/Functions, tiers and channel billing, and cost. OWNS the managed service end-to-end (bot resource, channels, identity, endpoint wiring, scaling). NOT the app-side dialog/LLM logic or the bot code, and NOT the language ai-engineer/evals-engineer roles that build/eval it. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer). Pairs with azure-ai-language (CLU) and azure-openai (LLM bots). NOT sibling Azure AI services (search/vision/speech/document-intelligence/translator). Cross-cloud peer (defer): aws-lex.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-bot-service",
+        "ai-ml",
+        "bot-framework",
+        "conversational-ai",
+        "specialist"
+      ],
+      "skills": [
+        "azure-bot-service",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/ai-ml/azure-bot-service-specialist.md"
+    },
+    {
       "name": "azure-cloud-architect",
       "description": "Use when designing or reviewing a Microsoft Azure architecture — selecting managed services, laying out management-groups/subscriptions/resource-groups/VNets/regions, and evaluating a design against the Azure Well-Architected Framework's pillars (Azure). Produces the design and trade-offs, not the IaC. NOT for writing Bicep/ARM/Terraform (use azure-iac-engineer), RBAC/exposure auditing (azure-security-reviewer), cost tuning (azure-cost-governor), generic IaC across clouds (terraform-architect), or AWS/GCP architecture (aws-/gcp-cloud-architect).",
       "category": "cloud",
@@ -5443,6 +5654,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/azure-observability-engineer.md"
+    },
+    {
+      "name": "azure-openai-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure OpenAI Service (AZURE) — the managed OpenAI-model service: the OpenAI Cognitive Services resource, model deployments (GPT/o-series, embeddings, DALL-E, Whisper) with SKU (Standard/GlobalStandard/PTU) and TPM quota, content filters, On Your Data/RAG grounding, the Assistants/tool-calling API, Entra ID vs keys, Private Link, and cost. OWNS the managed service end-to-end (deployments, quota, filters, auth). NOT the language ai-engineer/rag-engineer/evals-engineer roles (they build app-side prompt/RAG/eval that calls the model; cross-ref rag-engineer). NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer). For RAG retrieval defer to azure-ai-search (pair for On Your Data). NOT sibling Azure AI services (vision/language/speech/translator/document-intelligence/bot). Cross-cloud peers (defer): aws-bedrock, gcp-vertex-ai.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-openai",
+        "ai-ml",
+        "llm",
+        "gpt",
+        "specialist"
+      ],
+      "skills": [
+        "azure-openai",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/ai-ml/azure-openai-specialist.md"
     },
     {
       "name": "azure-reliability-engineer",
@@ -32612,6 +32853,122 @@
       "path": "skills/cloud/aws-x-ray/SKILL.md"
     },
     {
+      "name": "azure-ai-document-intelligence",
+      "description": "Use when designing, provisioning, securing, or operating Azure AI Document Intelligence — Microsoft Azure's managed document-processing service (formerly Form Recognizer) that extracts text, layout, tables, key-value pairs, and structured fields from documents (Azure AI Document Intelligence). Covers the Document Intelligence (Cognitive Services) resource, prebuilt models (read/OCR, layout, general document, invoice, receipt, ID, tax/W-2, contract, health card), custom models (template/neural extraction + classification + composed), the layout API (incl. RAG chunking), training/labeling over Blob, async analyze operations, tiers, keys vs Entra ID/managed identity, Private Link, and cost. Loads the knowledge: provision a resource, analyze with prebuilt or train a custom model, secure, and verify. Consumed by the azure-ai-document-intelligence specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure AI Document Intelligence).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-ai-document-intelligence",
+        "ai-ml",
+        "ocr",
+        "forms",
+        "document-extraction"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-ai-document-intelligence/SKILL.md"
+    },
+    {
+      "name": "azure-ai-language",
+      "description": "Use when designing, provisioning, securing, or operating Azure AI Language — Microsoft Azure's managed natural-language-processing service (formerly Text Analytics + LUIS) for understanding text (Azure AI Language). Covers the Language (Cognitive Services) resource, prebuilt features (NER, entity linking, key-phrase extraction, sentiment + opinion mining, language detection, PII/PHI detection/redaction, summarization, health text analytics), and custom features (CLU, custom NER, custom text classification, Custom Question Answering), tiers, keys vs Entra ID/managed identity, Private Link, and cost. Loads the knowledge: provision a resource, call analysis or train a custom model, secure access, and verify. Consumed by the azure-ai-language specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure AI Language).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-ai-language",
+        "ai-ml",
+        "nlp",
+        "ner",
+        "sentiment",
+        "pii"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-ai-language/SKILL.md"
+    },
+    {
+      "name": "azure-ai-search",
+      "description": "Use when designing, provisioning, securing, or operating Azure AI Search — Microsoft Azure's managed search and retrieval service (formerly Cognitive Search) for full-text, vector, hybrid, and semantic search powering RAG (Azure AI Search). Covers the search service and SKU/replicas/partitions, indexes and field attributes (searchable/filterable/facetable/retrievable), indexers + data sources + skillsets (AI enrichment, integrated vectorization, chunking/embeddings), vector and hybrid search with semantic reranking, RAG retrieval patterns (incl. as a data source for Azure OpenAI On Your Data), scoring profiles and analyzers, keys vs Entra ID/RBAC and managed-identity connections, Private Link, and cost. Loads the Azure AI Search knowledge: provision a service, build an index + indexer/skillset, run a query, and verify results. Consumed by the azure-ai-search specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure AI Search).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-ai-search",
+        "ai-ml",
+        "search",
+        "vector-search",
+        "rag",
+        "retrieval"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-ai-search/SKILL.md"
+    },
+    {
+      "name": "azure-ai-speech",
+      "description": "Use when designing, provisioning, securing, or operating Azure AI Speech — Microsoft Azure's managed speech service for speech-to-text, text-to-speech, speech translation, and speaker recognition (Azure AI Speech). Covers the Speech (Cognitive Services) resource and region/endpoint, real-time + batch speech-to-text (STT) and conversation transcription, text-to-speech (TTS) with neural voices and SSML, custom neural voice and custom speech models, speech translation, pronunciation assessment, keyword spotting, speaker recognition, the Speech SDK vs REST, single vs multi-service resources and tiers (F0/S0), keys vs Entra ID/managed identity, Private Link/VNet, and cost. Loads the Azure AI Speech knowledge: provision a resource, run STT/TTS, secure access, and verify. Consumed by the azure-ai-speech specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure AI Speech).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-ai-speech",
+        "ai-ml",
+        "speech-to-text",
+        "text-to-speech",
+        "ssml",
+        "translation"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-ai-speech/SKILL.md"
+    },
+    {
+      "name": "azure-ai-translator",
+      "description": "Use when designing, provisioning, securing, or operating Azure AI Translator — Microsoft Azure's managed machine-translation service for real-time text translation, async document translation, and custom translation models (Azure AI Translator). Covers the Translator (Cognitive Services) resource and region (global vs geo-scoped endpoints), the Text Translation API (translate/transliterate/detect/dictionary), Document Translation (async, format-preserving batch over Blob), Custom Translator (domain models on parallel corpora), tiers, keys vs Entra ID/managed identity, Private Link, and cost. Loads the knowledge: provision a resource, call text/document translation, secure access, and verify. Consumed by the azure-ai-translator specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure AI Translator).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-ai-translator",
+        "ai-ml",
+        "translation",
+        "machine-translation",
+        "localization"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-ai-translator/SKILL.md"
+    },
+    {
+      "name": "azure-ai-vision",
+      "description": "Use when designing, provisioning, securing, or operating Azure AI Vision — Microsoft Azure's managed computer-vision service for image analysis, OCR, spatial analysis, and face recognition (Azure AI Vision). Covers the Computer Vision / Azure AI services resource, Image Analysis 4.0 (tags, captions/dense captions, objects, people, smart crops, background removal), the Read OCR API (printed + handwritten text extraction), image/video embeddings and visual search, Spatial Analysis, the gated Face service (detection/verification/identification/liveness), multi-service vs single-service resources and pricing tiers (F0/S1), keys vs Entra ID/managed identity, Private Link/VNet, and cost. Loads the Azure AI Vision knowledge: provision a resource, call analysis/Read, secure access, and verify a result. Consumed by the azure-ai-vision specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure AI Vision).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-ai-vision",
+        "ai-ml",
+        "computer-vision",
+        "ocr",
+        "image-analysis",
+        "face"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-ai-vision/SKILL.md"
+    },
+    {
+      "name": "azure-bot-service",
+      "description": "Use when designing, provisioning, securing, or operating Azure Bot Service — Microsoft Azure's managed platform for building and connecting conversational bots across channels (Azure Bot Service). Covers the Azure Bot resource (registration) and its messaging endpoint, the Bot Framework SDK/Composer, channels (Web Chat / Direct Line, Microsoft Teams, telephony, email, SMS), Direct Line / Direct Line App Service Extension, authentication via Entra ID app registration / managed identity and OAuth connection settings, integration with Azure AI Language CLU and Azure OpenAI for NLU/LLM bots, hosting on App Service/Functions, tiers and channel billing, and cost. Loads the knowledge: provision a bot resource + channels, wire the messaging endpoint, secure it, and verify a conversation. Consumed by the azure-bot-service specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Bot Service).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-bot-service",
+        "ai-ml",
+        "bot-framework",
+        "conversational-ai",
+        "channels"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-bot-service/SKILL.md"
+    },
+    {
       "name": "azure-machine-learning",
       "description": "Use when designing, provisioning, securing, or operating Azure Machine Learning — Microsoft Azure's managed platform for building, training, deploying, and operating ML models (Azure Machine Learning). Covers workspaces and the studio, compute (compute instances, compute clusters, attached/serverless, Kubernetes), jobs (command/sweep/pipeline) and pipelines, datastores and data assets, the model registry and environments, managed online endpoints (real-time) and batch endpoints, AutoML, MLflow tracking/registry integration, prompt flow for LLM apps, plus instance sizing, autoscaling, VNet/Private Link, managed identity/RBAC, CMK, and cost. Loads the Azure ML knowledge: provision a workspace + compute, run training jobs, register models, deploy endpoints, and verify. Consumed by the Azure ML specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed ML platform (Azure Machine Learning).",
       "category": "cloud",
@@ -32627,6 +32984,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-machine-learning/SKILL.md"
+    },
+    {
+      "name": "azure-openai",
+      "description": "Use when designing, provisioning, securing, or operating Azure OpenAI Service — Microsoft Azure's managed access to OpenAI models (GPT-4o/4.1/o-series chat + completions, embeddings, DALL-E, Whisper) with enterprise networking, identity, and quotas (Azure OpenAI Service). Covers the Cognitive Services OpenAI resource, model deployments (Standard / Global / Provisioned PTU), capacity and rate limits (TPM/RPM tokens-per-minute), content filters and abuse monitoring, \"On Your Data\" / RAG grounding against Azure AI Search, the Assistants API and function/tool calling, keys vs Entra ID auth and managed identity, Private Link/VNet isolation, and cost. Loads the Azure OpenAI knowledge: provision a resource, create model deployments with quota, secure access, and verify a completion. Consumed by the azure-openai specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure OpenAI Service).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-openai",
+        "ai-ml",
+        "llm",
+        "gpt",
+        "embeddings",
+        "rag"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-openai/SKILL.md"
     },
     {
       "name": "azure-services",
