@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1057,
-    "skills": 349,
+    "agents": 1065,
+    "skills": 357,
     "categories": 17
   },
   "agents": [
@@ -11896,6 +11896,36 @@
       "path": "agents/cloud/gcp/services/networking/gcp-cloud-armor-specialist.md"
     },
     {
+      "name": "gcp-cloud-asset-inventory-specialist",
+      "description": "Use when configuring, securing, or operating Cloud Asset Inventory (GCP) — the resource-metadata service: asset/content types, point-in-time exports to BigQuery/Cloud Storage, real-time change feeds to Pub/Sub, searchAllResources/searchAllIamPolicies queries, and analyzeIamPolicy/analyzeMove at org/folder/project scope. CONFIGURES the one GCP Cloud Asset Inventory service end-to-end. NOT cross-cutting security posture/review/triage — defer to the gcp-security-reviewer role (read-only audit) and to the security-category agents (appsec-auditor / threat-modeler) for app-level review/threat modeling. Sibling GCP security specialists own their service: iam, cloud-kms, secret-manager, security-command-center, vpc-service-controls, sensitive-data-protection, confidential-vm, recaptcha, identity-aware-proxy. Cross-cloud peer (defer): aws-config (asset metadata/inventory). NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer) for architecture or broad IaC.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-asset-inventory",
+        "security",
+        "governance",
+        "asset-metadata",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-asset-inventory",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/security/gcp-cloud-asset-inventory-specialist.md"
+    },
+    {
       "name": "gcp-cloud-build-specialist",
       "description": "Use when designing, configuring, deploying, or operating Cloud Build (GCP) — the managed CI/build service: cloudbuild.yaml build configs and steps (builder images, args, waitFor), substitutions, artifacts/images, triggers (push/PR/tag/manual/Pub-Sub from GitHub/GitLab/Cloud Source Repos), the build service account + Secret Manager, private worker pools for VPC access, machine types, caching, and Artifact Registry, plus IAM, timeouts, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Cloud Build BUILDS artifacts; defer continuous DELIVERY/promotion (delivery pipelines, rollouts, canary) to gcp-cloud-deploy-specialist — together they are the GCP-native CI/CD chain. Both are bound vs the cross-platform devops CI/CD team (github-actions): use those for cross-platform/GitHub-Actions pipelines, this for GCP-native builds. AWS=CodeBuild; Azure=Azure Pipelines — defer those clouds.",
       "category": "cloud",
@@ -12433,6 +12463,36 @@
       "path": "agents/cloud/gcp/services/databases/gcp-cloud-sql-specialist.md"
     },
     {
+      "name": "gcp-cloud-storage-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud Storage (GCP) — object storage: buckets and locations (region/dual/multi-region), storage classes (Standard/Nearline/Coldline/Archive) and Autoclass, lifecycle management, versioning and soft delete, retention policies and bucket lock, uniform bucket-level access vs ACLs and IAM, signed URLs, CMEK/CSEK encryption, public access prevention, requester pays, and transfer (gcloud storage / Storage Transfer Service). OWNS the GCP Cloud Storage object-storage service end-to-end. NOT a sibling GCP storage/data service (Filestore managed NFS, Persistent Disk, BigQuery, databases) — defer to those specialists. Defer org-wide bucket exposure to gcp-security-reviewer and multi-service / data-platform architecture to the GCP role team (gcp-cloud-architect / gcp-iac-engineer) and the platform data/networking roles. Cross-cloud peers (defer): aws-s3, azure-blob-storage.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-storage",
+        "storage",
+        "object-storage",
+        "buckets",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-storage",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/storage/gcp-cloud-storage-specialist.md"
+    },
+    {
       "name": "gcp-cloud-tasks-specialist",
       "description": "Use when designing, configuring, deploying, or operating Cloud Tasks (GCP) — the managed asynchronous task-queue service: queues with rate + concurrency control (maxDispatchesPerSecond, maxConcurrentDispatches, maxBurstSize), HTTP / App Engine task targets, per-task scheduling (scheduleTime), dispatch deadlines, retry config, task dedup, and the invoker service account + OIDC/OAuth auth. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Cloud Tasks gives explicit per-task delivery + rate limiting — for time-based cron triggers defer to gcp-cloud-scheduler-specialist, for high-throughput pub/sub fan-out to gcp-pubsub-specialist, for orchestration to gcp-workflows-specialist. AWS equivalent is SQS (aws-sqs, + Lambda); Azure is Storage Queues / Service Bus — defer those clouds.",
       "category": "cloud",
@@ -12608,6 +12668,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/compute/gcp-compute-engine-specialist.md"
+    },
+    {
+      "name": "gcp-confidential-vm-specialist",
+      "description": "Use when configuring, securing, or operating Confidential VM (GCP) — Compute Engine instances with memory encrypted in use (confidential computing): AMD SEV / SEV-SNP / Intel TDX, supported machine families/images, confidentialInstanceConfig, hardware attestation and Shielded VM integration, GKE Confidential Nodes, and CMEK composition. CONFIGURES the one GCP Confidential VM capability end-to-end (data-in-use protection). NOT cross-cutting security posture/review/triage — defer to the gcp-security-reviewer role (read-only audit) and security-category agents (appsec-auditor / threat-modeler). Sibling GCP security specialists own their service: iam, cloud-kms (CMEK keys), secret-manager, security-command-center, vpc-service-controls, sensitive-data-protection, recaptcha, identity-aware-proxy, cloud-asset-inventory; gcp-shielded-vms-specialist owns the secure boot this builds on. Cross-cloud peers (defer): AWS Nitro Enclaves, Azure confidential VMs. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "confidential-vm",
+        "security",
+        "confidential-computing",
+        "attestation",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-confidential-vm",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/security/gcp-confidential-vm-specialist.md"
     },
     {
       "name": "gcp-cost-governor",
@@ -12905,6 +12995,36 @@
       "path": "agents/cloud/gcp/services/application-development/gcp-eventarc-specialist.md"
     },
     {
+      "name": "gcp-filestore-specialist",
+      "description": "Use when designing, configuring, securing, or operating Filestore (GCP) — fully managed NFS file storage: service tiers (Basic HDD/SSD, Zonal, Regional, Enterprise) and their capacity/performance/availability tradeoffs, NFSv3 shares mounted by Compute Engine VMs and GKE (the Filestore CSI driver, ReadWriteMany), VPC network attachment and reserved IP ranges, snapshots and backups for recovery, capacity scaling, NFS export options/client-IP access controls and CMEK, and multishares for GKE. OWNS the GCP Filestore managed-NFS service end-to-end. NOT a sibling GCP storage service (Cloud Storage object storage, Persistent Disk block storage) — defer to those specialists. Defer exposure to gcp-security-reviewer and cross-cutting storage architecture to the GCP role team (gcp-cloud-architect / gcp-iac-engineer) and the platform data/networking roles. Cross-cloud peers (defer): aws-efs, azure-files.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "filestore",
+        "storage",
+        "nfs",
+        "file-storage",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-filestore",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/storage/gcp-filestore-specialist.md"
+    },
+    {
       "name": "gcp-firestore-specialist",
       "description": "Use when designing, configuring, securing, or operating Firestore (GCP) — the serverless document NoSQL database: Native vs Datastore mode and location (both permanent), collections/documents data modeling, composite indexes and query design, real-time listeners, TTL, backups/PITR, plus Security Rules (client) vs IAM (server), CMEK, and cost/scaling. OWNS the GCP managed-DB layer for Firestore (provisioning, mode/location, indexes, rules/IAM, backups, scaling) and document data modeling. NOT a sibling GCP DB specialist: use gcp-bigtable-specialist for wide-column NoSQL, gcp-spanner-specialist for globally distributed SQL, gcp-cloud-sql-specialist/gcp-alloydb-specialist for managed relational. Cross-cloud peers (defer for those platforms): aws-dynamodb and azure-cosmos-db. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
       "category": "cloud",
@@ -13022,6 +13142,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/security/gcp-iam-specialist.md"
+    },
+    {
+      "name": "gcp-identity-aware-proxy-specialist",
+      "description": "Use when configuring, securing, or operating Identity-Aware Proxy (IAP) (GCP) — the zero-trust BeyondCorp access layer: IAP-secured web apps behind an external HTTPS load balancer, IAP TCP forwarding for SSH/RDP without public IPs, the OAuth brand/client, iap.httpsResourceAccessor / tunnelResourceAccessor IAM, Access Context Manager access levels (device/IP/geo/time), and IAP JWT identity propagation. CONFIGURES the one GCP IAP service end-to-end (zero-trust access / BeyondCorp). NOT cross-cutting security posture/review/triage — defer to the gcp-security-reviewer role (read-only audit) and the security-category agents (appsec-auditor / threat-modeler) for app-level authz/threat modeling. Sibling GCP security specialists own their service: iam, cloud-kms, secret-manager, security-command-center, vpc-service-controls (data perimeter), sensitive-data-protection, confidential-vm, recaptcha, cloud-asset-inventory. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer) for architecture or broad IaC.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "identity-aware-proxy",
+        "security",
+        "zero-trust",
+        "beyondcorp",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-identity-aware-proxy",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/security/gcp-identity-aware-proxy-specialist.md"
     },
     {
       "name": "gcp-looker-specialist",
@@ -13353,6 +13503,36 @@
       "path": "agents/cloud/gcp/services/application-development/gcp-pubsub-specialist.md"
     },
     {
+      "name": "gcp-recaptcha-specialist",
+      "description": "Use when configuring, securing, or operating reCAPTCHA Enterprise (GCP) — bot defense and fraud prevention: site keys (score-based/checkbox/invisible, web/Android/iOS, WAF keys), the createAssessment risk-score (0.0-1.0) + reason-code flow, action tokens, Account Defender and Fraud Prevention/password-leak signals, and WAF integration with Cloud Armor. CONFIGURES the one GCP reCAPTCHA Enterprise service end-to-end (bot defense). NOT cross-cutting security posture/review/triage — defer to the gcp-security-reviewer role (read-only audit) and security-category agents (appsec-auditor / threat-modeler). Sibling GCP security specialists own their service: iam, cloud-kms, secret-manager, security-command-center, vpc-service-controls, sensitive-data-protection, confidential-vm, identity-aware-proxy, cloud-asset-inventory; distinct from gcp-cloud-armor-specialist (general WAF/DDoS). Cross-cloud peers (defer): AWS WAF Bot Control, Azure bot protection. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "recaptcha",
+        "security",
+        "bot-defense",
+        "fraud-prevention",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-recaptcha",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/security/gcp-recaptcha-specialist.md"
+    },
+    {
       "name": "gcp-reliability-engineer",
       "description": "Use when hardening a Google Cloud workload's resilience — zonal/regional/multi-region design, disaster recovery to an RTO/RPO, backups and restore drills, health checks and failover — then validating it (GCP). NOT for day-one architecture (gcp-cloud-architect), networking plumbing (gcp-networking-engineer), metrics/tracing (gcp-observability-engineer), cost (gcp-cost-governor), or AWS/Azure reliability (aws-/azure-reliability-engineer).",
       "category": "cloud",
@@ -13467,6 +13647,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/gcp-security-reviewer.md"
+    },
+    {
+      "name": "gcp-sensitive-data-protection-specialist",
+      "description": "Use when configuring, securing, or operating Sensitive Data Protection / Cloud DLP (GCP) — classifying and de-identifying sensitive data: infoTypes (built-in + custom regex/dictionary/stored), inspection templates and inspect jobs over text/images/BigQuery/Cloud Storage/Datastore, de-identification templates (masking/redaction/tokenization/FPE/date-shift/bucketing), data-profiling discovery, and risk analysis (k-anonymity/l-diversity). CONFIGURES the one GCP Sensitive Data Protection service end-to-end. NOT cross-cutting security posture/review/triage — defer to the gcp-security-reviewer role (read-only audit) and security-category agents (appsec-auditor / threat-modeler). Sibling GCP security specialists own their service: iam, cloud-kms (tokenization keys), secret-manager, security-command-center, vpc-service-controls, confidential-vm, recaptcha, identity-aware-proxy, cloud-asset-inventory. Cross-cloud peer (defer): aws-macie. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "sensitive-data-protection",
+        "cloud-dlp",
+        "security",
+        "de-identification",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-sensitive-data-protection",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/security/gcp-sensitive-data-protection-specialist.md"
     },
     {
       "name": "gcp-shielded-vms-specialist",
@@ -13767,6 +13977,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/compute/gcp-vmware-engine-specialist.md"
+    },
+    {
+      "name": "gcp-vpc-service-controls-specialist",
+      "description": "Use when configuring, securing, or operating VPC Service Controls (VPC-SC) (GCP) — the data perimeter / exfiltration-prevention layer: service perimeters (dry-run vs enforced), restricted services, Access Context Manager access levels (IP/device/identity/geo), ingress and egress rules, and Private Google Access composition. CONFIGURES the one GCP VPC-SC service end-to-end (data perimeter). NOT cross-cutting security posture/review/triage — defer to the gcp-security-reviewer role (read-only audit) and security-category agents (appsec-auditor / threat-modeler). Sibling GCP security specialists own their service: iam (complementary authz), cloud-kms, secret-manager, security-command-center, sensitive-data-protection, confidential-vm, recaptcha, identity-aware-proxy, cloud-asset-inventory; distinct from gcp-vpc-specialist (firewall/subnets). Cross-cloud peers (defer): AWS SCPs + VPC endpoint policies, Azure private endpoints/policy. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "vpc-service-controls",
+        "security",
+        "data-perimeter",
+        "exfiltration-prevention",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-vpc-service-controls",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/security/gcp-vpc-service-controls-specialist.md"
     },
     {
       "name": "gcp-vpc-specialist",
@@ -32921,6 +33161,23 @@
       "path": "skills/cloud/gcp-cloud-armor/SKILL.md"
     },
     {
+      "name": "gcp-cloud-asset-inventory",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Asset Inventory — Google Cloud's metadata service that tracks resources and IAM policies across the org/folder/project hierarchy over time. Covers asset types and the resource/IAM-policy/org-policy/access-policy content types, point-in-time and historical exports to BigQuery/Cloud Storage, real-time change feeds to Pub/Sub, the searchAllResources/searchAllIamPolicies query surface, and analyzeIamPolicy/analyzeMove analysis, plus the asset-feed/export IAM and quotas. Loads the Cloud Asset Inventory knowledge: enable the API at the right scope, choose feeds vs exports, query inventory, and verify the metadata flows. Consumed by the Cloud Asset Inventory specialist and by the GCP role team (gcp-security-reviewer / gcp-cloud-architect) when inventorying or auditing resources (Cloud Asset Inventory).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-asset-inventory",
+        "security",
+        "governance",
+        "asset-metadata",
+        "audit",
+        "exports"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-asset-inventory/SKILL.md"
+    },
+    {
       "name": "gcp-cloud-build",
       "description": "Use when designing, provisioning, securing, or operating Cloud Build — Google Cloud's managed CI/build service: build configs (cloudbuild.yaml / Dockerfile), build steps (containerized steps, builder images, `args`, `waitFor` for parallelism), substitutions, artifacts and images, triggers (push/PR/tag/manual/Pub-Sub/webhook from GitHub/GitLab/Cloud Source Repositories), the build service account and per-step permissions, private worker pools (private pools) for VPC/private access, machine types, caching, and Artifact Registry integration, plus IAM, timeouts, and cost (Cloud Build). Loads the Cloud Build knowledge: author cloudbuild.yaml, create a trigger, build/push artifacts, secure the build identity, and verify a green build. Consumed by the Cloud Build specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add CI.",
       "category": "cloud",
@@ -33223,6 +33480,23 @@
       "path": "skills/cloud/gcp-cloud-sql/SKILL.md"
     },
     {
+      "name": "gcp-cloud-storage",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Storage — Google Cloud's object storage service for buckets and objects (Cloud Storage). Covers buckets and locations (region/dual-region/multi-region), storage classes (Standard/Nearstline/Coldline/Archive) and Autoclass, object lifecycle management (transition/delete/abort), object versioning, soft delete, retention policies and bucket lock, uniform bucket-level access vs fine-grained ACLs and IAM, signed URLs and signed policy documents, CMEK/CSEK encryption, public access prevention, requester pays, transfer (gsutil/gcloud storage, Storage Transfer Service), and cost/scaling. Loads the Cloud Storage knowledge: create buckets with the right class/location, set lifecycle/versioning/retention, lock down access, and verify. Consumed by the Cloud Storage specialist and by the GCP role team (gcp-cloud-architect / gcp-security-reviewer) when storing objects (Cloud Storage).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-storage",
+        "storage",
+        "object-storage",
+        "buckets",
+        "lifecycle",
+        "signed-urls"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-storage/SKILL.md"
+    },
+    {
       "name": "gcp-cloud-tasks",
       "description": "Use when designing, provisioning, securing, or operating Cloud Tasks — Google Cloud's fully managed asynchronous task-queue service: queues with rate + concurrency control (maxDispatchesPerSecond, maxConcurrentDispatches, maxBurstSize), task targets (HTTP/HTTPS endpoints and App Engine handlers), per-task scheduling (scheduleTime for deferred execution), dispatch deadlines, retry config (maxAttempts, min/max backoff, maxDoublings, maxRetryDuration), task deduplication by name, the invoker service account + OIDC/OAuth auth, and at-least-once delivery. Loads the Cloud Tasks knowledge: create a queue with rate limits, enqueue HTTP tasks with auth, tune retries/deadlines, and verify dispatch. Consumed by the Cloud Tasks specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add async/decoupled task processing (Cloud Tasks).",
       "category": "cloud",
@@ -33321,6 +33595,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-compute-engine/SKILL.md"
+    },
+    {
+      "name": "gcp-confidential-vm",
+      "description": "Use when designing, provisioning, securing, or operating Confidential VM — Google Cloud Compute Engine instances whose memory is encrypted in use by the CPU, providing confidential computing for data-in-use protection (Confidential VM). Covers the confidential computing technologies (AMD SEV, SEV-SNP, and Intel TDX), supported machine families and images, the confidentialInstanceConfig setting, hardware-rooted attestation and the vTPM/Shielded VM integration, GKE Confidential Nodes, performance/compatibility tradeoffs, and how it composes with CMEK and Shielded VM, plus IAM, cost, and limits. Loads the Confidential VM knowledge: enable the right confidential type on a supported machine/image, attest, and verify. Consumed by the Confidential VM specialist and by the GCP role team (gcp-security-reviewer / gcp-cloud-architect) when protecting data in use (Confidential VM).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "confidential-vm",
+        "security",
+        "confidential-computing",
+        "memory-encryption",
+        "attestation",
+        "sev-tdx"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-confidential-vm/SKILL.md"
     },
     {
       "name": "gcp-database-migration-service",
@@ -33454,6 +33745,23 @@
       "path": "skills/cloud/gcp-eventarc/SKILL.md"
     },
     {
+      "name": "gcp-filestore",
+      "description": "Use when designing, provisioning, securing, or operating Filestore — Google Cloud's fully managed NFS file storage for Compute Engine and GKE workloads needing a shared POSIX filesystem (Filestore). Covers service tiers (Basic HDD/SSD, Zonal, Regional, Enterprise) and their capacity/performance/availability tradeoffs, NFSv3 shares mounted by VMs and GKE (the Filestore CSI driver), VPC network attachment and private connectivity, snapshots and backups for point-in-time recovery, capacity scaling, IP-range/access controls and IAM, multishares for GKE, plus cost and limits. Loads the Filestore knowledge: pick a tier, provision an instance on a VPC, mount it, set snapshots/backups, and verify. Consumed by the Filestore specialist and by the GCP role team (gcp-cloud-architect / gcp-security-reviewer) when providing shared NFS storage (Filestore).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "filestore",
+        "storage",
+        "nfs",
+        "file-storage",
+        "snapshots",
+        "backups"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-filestore/SKILL.md"
+    },
+    {
       "name": "gcp-firestore",
       "description": "Use when designing, provisioning, securing, or operating Firestore — Google Cloud's serverless, fully managed document NoSQL database with Native mode vs Datastore mode, collections and documents, automatic single-field and composite indexes, real-time listeners and offline sync, multi-region/regional locations, security rules (mobile/web) vs IAM (server), and backups/PITR, plus cost and scaling levers. Loads the Firestore knowledge: model collections/documents, design indexes and queries, choose Native vs Datastore mode and location, secure with security rules or IAM, and verify reads/writes and index coverage. Consumed by the Firestore specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle serverless document NoSQL workloads (Firestore).",
       "category": "cloud",
@@ -33503,6 +33811,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-iam/SKILL.md"
+    },
+    {
+      "name": "gcp-identity-aware-proxy",
+      "description": "Use when designing, provisioning, securing, or operating Identity-Aware Proxy (IAP) — Google Cloud's context-aware access layer that authenticates and authorizes requests to applications and VMs before they reach the resource, implementing BeyondCorp zero-trust (Identity-Aware Proxy). Covers IAP-secured web apps behind HTTPS load balancers, IAP TCP forwarding for SSH/RDP/admin access without public IPs, the IAP OAuth client/brand, the iap.httpsResourceAccessor / tunnelResourceAccessor IAM roles, Access Context Manager access levels (device, IP, geo, time) for conditional access, and signed-header/JWT identity propagation, plus cost and limits. Loads the IAP knowledge: front a resource with IAP, bind accessor IAM with access levels, and verify allow/deny. Consumed by the IAP specialist and by the GCP role team (gcp-security-reviewer / gcp-cloud-architect) when wiring zero-trust access (Identity-Aware Proxy).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "identity-aware-proxy",
+        "security",
+        "zero-trust",
+        "beyondcorp",
+        "access-levels",
+        "context-aware-access"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-identity-aware-proxy/SKILL.md"
     },
     {
       "name": "gcp-looker",
@@ -33653,6 +33978,23 @@
       "path": "skills/cloud/gcp-pubsub/SKILL.md"
     },
     {
+      "name": "gcp-recaptcha",
+      "description": "Use when designing, provisioning, securing, or operating reCAPTCHA Enterprise — Google Cloud's bot-defense and fraud-prevention service that scores the risk of web/mobile interactions (reCAPTCHA Enterprise). Covers site keys (score-based / checkbox / invisible, web vs Android/iOS), the assessment API and risk score (0.0–1.0) with reason codes, action tokens and the create-assessment flow, account-defender and fraud-prevention/password-leak signals, WAF integration with Cloud Armor and reCAPTCHA WAF challenge pages, multi-factor (SMS) and the express keys, plus IAM, cost, and limits. Loads the reCAPTCHA knowledge: create site keys, run assessments, act on scores, and verify. Consumed by the reCAPTCHA specialist and by the GCP role team (gcp-security-reviewer / gcp-cloud-architect) when defending against bots/abuse (reCAPTCHA Enterprise).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "recaptcha",
+        "security",
+        "bot-defense",
+        "fraud-prevention",
+        "risk-score",
+        "waf"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-recaptcha/SKILL.md"
+    },
+    {
       "name": "gcp-secret-manager",
       "description": "Use when designing, provisioning, securing, or operating Secret Manager — Google Cloud's managed service for storing, versioning, accessing, and rotating secrets like API keys, passwords, certificates, and connection strings (Secret Manager). Covers secrets and immutable secret versions (add/access/disable/destroy, version aliases and \"latest\"), replication policy (automatic vs user-managed multi-region), CMEK encryption of secret payloads, rotation (rotation period + Pub/Sub topic notifications wired to a rotation function), expiration/TTL, access via client libraries / Cloud Run + GKE secret integration / gcloud, least-privilege accessor IAM, audit logging, plus cost and limits. Loads the Secret Manager knowledge: create secrets with the right replication, add versions, set rotation, grant least-privilege accessors, and verify access. Consumed by the Secret Manager specialist and by the GCP role team (gcp-security-reviewer / gcp-cloud-architect) when wiring secret storage (Secret Manager).",
       "category": "cloud",
@@ -33683,6 +34025,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-security-command-center/SKILL.md"
+    },
+    {
+      "name": "gcp-sensitive-data-protection",
+      "description": "Use when designing, provisioning, securing, or operating Sensitive Data Protection (Cloud DLP) — Google Cloud's service for discovering, classifying, and de-identifying sensitive data such as PII, PHI, and credentials (Sensitive Data Protection). Covers infoTypes (built-in + custom regex/dictionary/stored), inspection templates and inspect jobs over text/images/BigQuery/Cloud Storage/Datastore, de-identification templates (masking, redaction, tokenization, format-preserving and deterministic encryption, date shifting, bucketing), data-profiling/discovery for org-wide classification, and risk analysis (k-anonymity, l-diversity, re-identification), plus IAM and cost. Loads the DLP knowledge: build infoType/inspect/deidentify templates, run jobs, and verify findings. Consumed by the Sensitive Data Protection specialist and by the GCP role team (gcp-security-reviewer / gcp-cloud-architect) when classifying or masking data (Sensitive Data Protection).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "sensitive-data-protection",
+        "cloud-dlp",
+        "security",
+        "pii",
+        "de-identification",
+        "classification"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-sensitive-data-protection/SKILL.md"
     },
     {
       "name": "gcp-services",
@@ -33885,6 +34244,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-vpc/SKILL.md"
+    },
+    {
+      "name": "gcp-vpc-service-controls",
+      "description": "Use when designing, provisioning, securing, or operating VPC Service Controls (VPC-SC) — Google Cloud's data-exfiltration-prevention layer that draws service perimeters around managed APIs so data cannot leave the trust boundary (VPC Service Controls). Covers service perimeters (enforced vs dry-run), restricted/protected services, access levels from Access Context Manager (IP, device, identity, geo), ingress and egress rules (from/to identities and resources), perimeter bridges, the access policy on the org, dry-run audit before enforcement, and how it composes with Private Google Access and IAM, plus limits and operations. Loads the VPC-SC knowledge: define a perimeter, add access levels and ingress/egress rules, dry-run, then enforce and verify. Consumed by the VPC Service Controls specialist and by the GCP role team (gcp-security-reviewer / gcp-cloud-architect) when building a data perimeter (VPC Service Controls).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "vpc-service-controls",
+        "security",
+        "data-perimeter",
+        "exfiltration-prevention",
+        "access-levels",
+        "perimeter"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-vpc-service-controls/SKILL.md"
     },
     {
       "name": "gcp-workflows",

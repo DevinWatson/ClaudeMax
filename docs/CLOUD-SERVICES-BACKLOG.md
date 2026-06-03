@@ -286,16 +286,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] gcp|security|certificate-authority-service|Certificate Authority Service
 - [x] gcp|security|certificate-manager|Certificate Manager
 - [x] gcp|security|binary-authorization|Binary Authorization
-- [ ] gcp|security|cloud-asset-inventory|Cloud Asset Inventory
-- [ ] gcp|security|identity-aware-proxy|Identity-Aware Proxy
-- [ ] gcp|security|sensitive-data-protection|Sensitive Data Protection
-- [ ] gcp|security|confidential-vm|Confidential VM
-- [ ] gcp|security|recaptcha|reCAPTCHA Enterprise
-- [ ] gcp|security|vpc-service-controls|VPC Service Controls
+- [x] gcp|security|cloud-asset-inventory|Cloud Asset Inventory
+- [x] gcp|security|identity-aware-proxy|Identity-Aware Proxy
+- [x] gcp|security|sensitive-data-protection|Sensitive Data Protection
+- [x] gcp|security|confidential-vm|Confidential VM
+- [x] gcp|security|recaptcha|reCAPTCHA Enterprise
+- [x] gcp|security|vpc-service-controls|VPC Service Controls
 
 ### storage
-- [ ] gcp|storage|cloud-storage|Cloud Storage
-- [ ] gcp|storage|filestore|Filestore
+- [x] gcp|storage|cloud-storage|Cloud Storage
+- [x] gcp|storage|filestore|Filestore
 - [ ] gcp|storage|backup-and-dr|Backup and DR Service
 
 ### management
