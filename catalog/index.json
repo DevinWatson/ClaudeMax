@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 977,
-    "skills": 269,
+    "agents": 985,
+    "skills": 277,
     "categories": 17
   },
   "agents": [
@@ -1044,6 +1044,35 @@
       "path": "agents/cloud/aws/services/migration/aws-application-migration-service-specialist.md"
     },
     {
+      "name": "aws-appstream-specialist",
+      "description": "Use when provisioning, sizing, securing, or operating non-persistent application/desktop streaming with Amazon AppStream 2.0 (Amazon AppStream 2.0) (AWS) — Image Builder + custom images, fleets (Always-On/On-Demand/Elastic) and stacks, user access (user pool/SAML 2.0), fleet auto-scaling, home-folder storage to S3, and VPC networking. Pick this for non-persistent app streaming where nothing survives a session. AppStream is non-persistent application streaming — for persistent per-user managed VDI defer to the aws-workspaces-specialist. NOT the aws-security-reviewer role (cross-cutting posture); defer multi-service architecture to aws-cloud-architect. For Azure or GCP application/desktop streaming defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "appstream",
+        "application-streaming",
+        "end-user-computing",
+        "specialist"
+      ],
+      "skills": [
+        "aws-appstream",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/end-user-computing/aws-appstream-specialist.md"
+    },
+    {
       "name": "aws-appsync-specialist",
       "description": "Use when designing, configuring, deploying, or operating AWS AppSync (AWS) — managed GraphQL (and Merged) APIs: schemas (SDL), unit/pipeline resolvers (APPSYNC_JS and VTL), data sources (DynamoDB, Lambda, RDS Data API, OpenSearch, HTTP, EventBridge, None), real-time subscriptions, caching, authorization modes (Cognito/OIDC/IAM/Lambda/API key) and field-level auth, WAF, and observability. Pick this to build a managed GraphQL API. NOT for REST/HTTP/WebSocket APIs (defer to aws-api-gateway), fan-out (aws-sns-specialist), pull queues (aws-sqs-specialist), event routing (aws-eventbridge-specialist), workflow orchestration (aws-step-functions-specialist), broker messaging (aws-mq-specialist), or SaaS data integration (aws-appflow-specialist). NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting architecture, broad IaC, and account-wide security. For GCP/Azure managed GraphQL defer to those clouds.",
       "category": "cloud",
@@ -1223,6 +1252,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/ai-ml/aws-bedrock-specialist.md"
+    },
+    {
+      "name": "aws-braket-specialist",
+      "description": "Use when designing, configuring, deploying, or operating quantum computing with Amazon Braket (Amazon Braket) (AWS) — on-demand QPU devices (IonQ/IQM/Rigetti) and managed simulators (SV1/DM1/TN1, local), quantum tasks (circuits/AHS programs) with shots, hybrid jobs (classical+quantum on managed compute), the Braket SDK/PennyLane, S3 result storage, and device availability windows. Pick this niche service for quantum task/job submission and quantum-cost control. NOT the aws-security-reviewer role (cross-cutting posture); defer multi-service architecture to aws-cloud-architect; sibling specialized services (aws-managed-blockchain, aws-ground-station=satellite, aws-gamelift=game servers) are unrelated. For IBM Quantum, Azure Quantum, or other quantum platforms defer to those.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "braket",
+        "quantum-computing",
+        "simulators",
+        "specialized",
+        "specialist"
+      ],
+      "skills": [
+        "aws-braket",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/specialized/aws-braket-specialist.md"
     },
     {
       "name": "aws-certificate-manager-specialist",
@@ -1758,6 +1817,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/management-governance/aws-config-specialist.md"
+    },
+    {
+      "name": "aws-connect-specialist",
+      "description": "Use when designing, configuring, deploying, or operating a cloud contact center with Amazon Connect (Amazon Connect) (AWS) — instances and claimed phone numbers, queues and routing profiles, contact flows (the IVR/routing graph), agents/hierarchies/security profiles, AWS Lambda + Amazon Lex integration for self-service, Contact Lens analytics, and S3 recording storage. Pick this for the contact-center/IVR/telephony layer. Cross-reference: contact flows invoke Lambda and Lex bots — defer that function/bot logic to the relevant aws-lambda / aws-lex work. NOT the aws-security-reviewer role (cross-cutting posture); defer multi-service architecture to aws-cloud-architect. For Genesys, Twilio, or other-cloud contact centers defer to those.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "connect",
+        "contact-center",
+        "ivr",
+        "business-apps",
+        "specialist"
+      ],
+      "skills": [
+        "aws-connect",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/business-apps/aws-connect-specialist.md"
     },
     {
       "name": "aws-control-tower-specialist",
@@ -2630,6 +2719,36 @@
       "path": "agents/cloud/aws/services/storage/aws-fsx-specialist.md"
     },
     {
+      "name": "aws-gamelift-specialist",
+      "description": "Use when designing, configuring, deploying, or operating dedicated game server hosting with Amazon GameLift (Amazon GameLift) (AWS) — server builds and fleets (managed EC2/Spot, Container, Anywhere), aliases, fleet auto-scaling on player demand, queues spanning Regions/fleets for placement and latency, FlexMatch matchmaking (rule sets + configurations), game/player sessions, and Realtime/local testing. Pick this niche service for session-based multiplayer game-server fleets and matchmaking. NOT the aws-security-reviewer role (cross-cutting posture); defer multi-service architecture to aws-cloud-architect; sibling specialized services (aws-managed-blockchain, aws-braket=quantum, aws-ground-station=satellite) are unrelated. For Agones, PlayFab, or other-cloud game-server hosting defer to those.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "gamelift",
+        "game-servers",
+        "matchmaking",
+        "specialized",
+        "specialist"
+      ],
+      "skills": [
+        "aws-gamelift",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/specialized/aws-gamelift-specialist.md"
+    },
+    {
       "name": "aws-global-accelerator-specialist",
       "description": "Use when designing, configuring, deploying, or operating AWS Global Accelerator (AWS) — the edge service that fronts apps with two static anycast IPs and routes users over the AWS backbone to the nearest healthy regional endpoint: standard vs custom-routing accelerators, BYOIP, TCP/UDP listeners, endpoint groups per region with traffic dials, weighted endpoints (ALB/NLB/EIP/EC2), client affinity, and fast regional failover. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the Global Accelerator service itself. It accelerates TCP/UDP with static IPs over the backbone — for HTTP caching/edge logic use the CloudFront specialist, for latency/geo DNS routing the Route 53 specialist, and for the load balancers it fronts the Elastic Load Balancing specialist. For GCP anycast LB or Azure Front Door defer to those clouds.",
       "category": "cloud",
@@ -2688,6 +2807,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/analytics/aws-glue-specialist.md"
+    },
+    {
+      "name": "aws-ground-station-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Ground Station (AWS Ground Station) (AWS) — satellite onboarding, contacts (scheduled antenna passes), mission profiles, dataflow endpoint groups and typed configs (antenna downlink/uplink/decode/tracking), DigIF wideband vs narrowband, and S3 recording or EC2/VPC delivery of downlinked data. Pick this niche service for satellite ground-station-as-a-service and downlink pipelines. NOT the aws-security-reviewer role (cross-cutting posture); defer multi-service architecture to aws-cloud-architect; sibling specialized services (aws-managed-blockchain, aws-braket=quantum, aws-gamelift=game servers) are unrelated. For other satellite ground-network providers or other-cloud equivalents defer to those.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "ground-station",
+        "satellite",
+        "downlink",
+        "specialized",
+        "specialist"
+      ],
+      "skills": [
+        "aws-ground-station",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/specialized/aws-ground-station-specialist.md"
     },
     {
       "name": "aws-guardduty-specialist",
@@ -3335,6 +3484,36 @@
       "path": "agents/cloud/aws/services/migration/aws-mainframe-modernization-specialist.md"
     },
     {
+      "name": "aws-managed-blockchain-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon Managed Blockchain (Amazon Managed Blockchain) (AWS) — Hyperledger Fabric networks (networks, members, peer nodes, channels, chaincode, the ordering service and CA) and Ethereum/public-network nodes via AMB Access, VPC/PrivateLink connectivity, certificate-based Fabric identities, member governance/voting, and node sizing. Pick this niche service for managed blockchain networks and nodes. NOT the aws-security-reviewer role (cross-cutting posture); defer multi-service architecture to aws-cloud-architect; sibling specialized services (aws-braket=quantum, aws-ground-station=satellite, aws-gamelift=game servers) are unrelated. For self-managed Fabric/Ethereum or other-cloud blockchain defer to those.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "managed-blockchain",
+        "hyperledger-fabric",
+        "ethereum",
+        "specialized",
+        "specialist"
+      ],
+      "skills": [
+        "aws-managed-blockchain",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/specialized/aws-managed-blockchain-specialist.md"
+    },
+    {
       "name": "aws-mediaconvert-specialist",
       "description": "Use when transcoding file-based (VOD) video with AWS Elemental MediaConvert (AWS Elemental MediaConvert) (AWS) — transcode jobs, reusable job templates and output presets, input clipping/stitching/captions/audio, output groups (file/HLS/DASH/CMAF/Smooth) for ABR ladders, codecs and QVBR rate control, SPEKE DRM, on-demand vs reserved queues, and S3/EventBridge-triggered pipelines. Pick this for stored-file/VOD transcoding. This is file/VOD only — defer real-time live encoding to aws-medialive-specialist and live origin packaging/DRM to aws-mediapackage-specialist; for a turnkey live streaming product defer to aws-ivs-specialist. NOT the aws-security-reviewer role; defer multi-service architecture to aws-cloud-architect. For GCP Transcoder or Azure Media Services defer to those clouds.",
       "category": "cloud",
@@ -3808,6 +3987,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/ai-ml/aws-personalize-specialist.md"
+    },
+    {
+      "name": "aws-pinpoint-specialist",
+      "description": "Use when designing, configuring, deploying, or operating multichannel customer engagement with Amazon Pinpoint (Amazon Pinpoint) (AWS) — projects, channels (email/SMS/MMS/push/voice), endpoints and user attributes, dynamic/imported segments, campaigns and multi-step journeys, message templates, A/B testing, and analytics event streaming to Kinesis. Pick this for targeted campaigns, journeys, and segmentation across channels. Pinpoint is multichannel engagement/campaigns — for raw transactional/bulk email sending defer to the aws-ses-specialist (Pinpoint's email channel uses an SES identity). NOT the aws-security-reviewer role (cross-cutting posture); defer multi-service architecture to aws-cloud-architect. For Braze, Iterable, or other-cloud engagement platforms defer to those.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "pinpoint",
+        "customer-engagement",
+        "campaigns",
+        "business-apps",
+        "specialist"
+      ],
+      "skills": [
+        "aws-pinpoint",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/business-apps/aws-pinpoint-specialist.md"
     },
     {
       "name": "aws-polly-specialist",
@@ -4372,6 +4581,36 @@
       "path": "agents/cloud/aws/services/management-governance/aws-service-catalog-specialist.md"
     },
     {
+      "name": "aws-ses-specialist",
+      "description": "Use when designing, configuring, deploying, or operating transactional and bulk email sending with Amazon SES (Amazon SES) (AWS) — verified domain/email identities, DKIM/SPF/DMARC authentication, SMTP and API sending, configuration sets and bounce/complaint event publishing, sandbox/sending quotas, dedicated vs shared IPs, suppression list, and deliverability/reputation. Pick this for raw email delivery and inbox placement. SES is transactional/bulk email sending — for multichannel campaign engagement (segments/journeys/SMS/push) defer to the aws-pinpoint-specialist (Pinpoint can use SES as its email channel). NOT the aws-security-reviewer role (cross-cutting posture); defer multi-service architecture to aws-cloud-architect. For SendGrid/Mailgun or other-cloud email defer to those.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "ses",
+        "email",
+        "deliverability",
+        "business-apps",
+        "specialist"
+      ],
+      "skills": [
+        "aws-ses",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/business-apps/aws-ses-specialist.md"
+    },
+    {
       "name": "aws-shield-specialist",
       "description": "Use when designing, configuring, deploying, or operating AWS Shield (AWS) — Shield Standard vs Advanced, subscribing to Advanced and adding per-resource protections (CloudFront, Route 53, Global Accelerator, ELB, Elastic IPs), associating AWS WAF web ACLs + rate-based rules, automatic application-layer (L7) DDoS mitigation, health-based detection with Route 53 health checks, SRT engagement, and cost protection. Pick this to configure and operate DDoS protection on edge resources. NOT the aws-security-reviewer role, which owns cross-cutting account-wide security posture, review, and findings triage — this specialist owns configuring/operating Shield itself. NOT the security category appsec/threat-modeling agents. Shield stops DDoS; granular application-layer filtering rules are AWS WAF — cross-ref the aws-waf specialist for L7 rule design. Siblings: iam, kms, secrets-manager, guardduty, macie, cognito. For GCP Cloud Armor or Azure DDoS Protection defer to those clouds.",
       "category": "cloud",
@@ -4914,7 +5153,7 @@
     },
     {
       "name": "aws-workspaces-specialist",
-      "description": "Use when provisioning, sizing, securing, or operating persistent managed virtual desktops (VDI) with Amazon WorkSpaces (Amazon WorkSpaces) (AWS) — WorkSpaces tied to a directory (Managed Microsoft AD/AD Connector/Simple AD), bundles (compute type + volumes) and custom images, running modes (AlwaysOn vs AutoStop) and billing, Personal vs Pools vs Core models, VPC networking and IP access control groups, KMS volume encryption, and PCoIP/WSP DCV protocols. Pick this for persistent per-user cloud desktops. WorkSpaces is persistent VDI — for non-persistent application streaming defer to the AppStream 2.0 specialist (coming next). NOT the aws-security-reviewer role (cross-cutting posture); defer directory/AD identity depth to the aws-directory-service work and multi-service architecture to aws-cloud-architect. For Azure Virtual Desktop or GCP defer to those clouds.",
+      "description": "Use when provisioning, sizing, securing, or operating persistent managed virtual desktops (VDI) with Amazon WorkSpaces (Amazon WorkSpaces) (AWS) — WorkSpaces tied to a directory (Managed Microsoft AD/AD Connector/Simple AD), bundles (compute type + volumes) and custom images, running modes (AlwaysOn vs AutoStop) and billing, Personal vs Pools vs Core models, VPC networking and IP access control groups, KMS volume encryption, and PCoIP/WSP DCV protocols. Pick this for persistent per-user cloud desktops. WorkSpaces is persistent VDI — for non-persistent application streaming defer to the aws-appstream-specialist. NOT the aws-security-reviewer role (cross-cutting posture); defer directory/AD identity depth to the aws-directory-service work and multi-service architecture to aws-cloud-architect. For Azure Virtual Desktop or GCP defer to those clouds.",
       "category": "cloud",
       "model": "sonnet",
       "tools": [
@@ -27580,6 +27819,22 @@
       "path": "skills/cloud/aws-application-migration-service/SKILL.md"
     },
     {
+      "name": "aws-appstream",
+      "description": "Use when designing, provisioning, securing, or operating Amazon AppStream 2.0 — non-persistent application/desktop streaming, fleets (Always-On/On-Demand/Elastic), stacks and user access (user pools/SAML 2.0/API), Image Builder and custom images, fleet auto-scaling, session storage (home folders to S3, Google Drive/OneDrive), VPC networking, and usage reports (Amazon AppStream 2.0). Loads the AppStream knowledge: build an image, run a fleet+stack, scale it, secure access, and verify a streaming session. Consumed by the AppStream specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle application streaming.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "appstream",
+        "application-streaming",
+        "fleets",
+        "stacks",
+        "end-user-computing"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-appstream/SKILL.md"
+    },
+    {
       "name": "aws-appsync",
       "description": "Use when designing, provisioning, securing, or operating AWS AppSync — managed GraphQL (and Merged/federated) APIs: schemas (SDL), resolvers (VTL and JavaScript/APPSYNC_JS, unit vs pipeline), data sources (DynamoDB, Lambda, RDS Data API, OpenSearch, HTTP, EventBridge, None), real-time GraphQL subscriptions over WebSockets, server-side and per-resolver caching, authorization modes (API key, IAM, Cognito User Pools, OIDC, Lambda authorizer) and field-level auth, WAF, and CloudWatch/X-Ray observability (AWS AppSync). Loads the AppSync knowledge: how to define a schema, wire resolvers to data sources, secure with an auth mode, enable subscriptions/caching, and verify a query/mutation/subscription. Consumed by the AppSync specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they build GraphQL APIs.",
       "category": "cloud",
@@ -27675,6 +27930,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-bedrock/SKILL.md"
+    },
+    {
+      "name": "aws-braket",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Braket — quantum computing as a service, on-demand QPU devices (IonQ/IQM/Rigetti) and managed simulators (SV1/DM1/TN1, local), quantum tasks (circuits/AHS programs) with shots, hybrid jobs (classical+quantum on managed compute), the Braket SDK/PennyLane, S3 result storage, and device availability windows (Amazon Braket). Loads the Braket knowledge: pick a device/simulator, submit a quantum task or hybrid job, secure result storage + IAM, and verify results returned. Consumed by the Braket specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle quantum workloads.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "braket",
+        "quantum-computing",
+        "simulators",
+        "specialized"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-braket/SKILL.md"
     },
     {
       "name": "aws-certificate-manager",
@@ -27949,6 +28219,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-config/SKILL.md"
+    },
+    {
+      "name": "aws-connect",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Connect — the cloud contact center, instances and phone numbers (claimed DIDs/toll-free), queues and routing profiles, contact flows (the IVR/routing graph), agents and hierarchies, Lambda + Amazon Lex integration for self-service, Contact Lens analytics, and storage of recordings/transcripts to S3 (Amazon Connect). Loads the Connect knowledge: stand up an instance, build a contact flow with queues+routing, wire Lambda/Lex, secure it, and verify a call routes. Consumed by the Connect specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle contact-center workloads.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "connect",
+        "contact-center",
+        "ivr",
+        "telephony",
+        "business-apps"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-connect/SKILL.md"
     },
     {
       "name": "aws-control-tower",
@@ -28392,6 +28678,22 @@
       "path": "skills/cloud/aws-fsx/SKILL.md"
     },
     {
+      "name": "aws-gamelift",
+      "description": "Use when designing, provisioning, securing, or operating Amazon GameLift — dedicated, scalable game server hosting, builds and fleets (managed EC2/Spot, Container, Anywhere), aliases, fleet auto-scaling on player demand, queues spanning Regions/fleets for placement and latency, FlexMatch matchmaking (rule sets + configurations), game sessions and player sessions, and GameLift Realtime/local testing (Amazon GameLift). Loads the GameLift knowledge: upload a build, run a scaled fleet behind a queue, add FlexMatch matchmaking, secure it, and verify a game session is placed. Consumed by the GameLift specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle game-server hosting.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "gamelift",
+        "game-servers",
+        "matchmaking",
+        "fleets",
+        "specialized"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-gamelift/SKILL.md"
+    },
+    {
       "name": "aws-global-accelerator",
       "description": "Use when designing, provisioning, securing, or operating AWS Global Accelerator — the edge service that fronts apps with static anycast IPs and routes users over the AWS backbone to the nearest healthy regional endpoint (AWS Global Accelerator). Loads the GA knowledge: standard vs custom-routing accelerators, two static anycast IPs (BYOIP), TCP/UDP listeners, endpoint groups per region with traffic dials and per-endpoint weights, endpoint types (ALB/NLB/EIP/EC2), client affinity, health checks and fast regional failover, and the difference from CloudFront (TCP/UDP + static IPs vs HTTP caching). Covers how to get stable entry IPs, multi-region active/active or failover, weighted traffic shifting, and verify routing and failover. Consumed by the AWS Global Accelerator specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology — this owns the Global Accelerator service itself.",
       "category": "cloud",
@@ -28422,6 +28724,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-glue/SKILL.md"
+    },
+    {
+      "name": "aws-ground-station",
+      "description": "Use when designing, provisioning, securing, or operating AWS Ground Station — fully managed satellite ground stations as a service, satellite onboarding, contacts (scheduled antenna passes), mission profiles, dataflow endpoint groups and config (antenna downlink/uplink/decode), DigIF wideband vs narrowband, S3 recording or EC2/VPC delivery of downlinked data, and contact scheduling/cost (AWS Ground Station). Loads the Ground Station knowledge: onboard a satellite, define a mission profile + dataflow, schedule a contact, secure delivery, and verify a contact completes. Consumed by the Ground Station specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle satellite/downlink workloads.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "ground-station",
+        "satellite",
+        "downlink",
+        "specialized"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-ground-station/SKILL.md"
     },
     {
       "name": "aws-guardduty",
@@ -28760,6 +29077,21 @@
       "path": "skills/cloud/aws-mainframe-modernization/SKILL.md"
     },
     {
+      "name": "aws-managed-blockchain",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Managed Blockchain — Hyperledger Fabric networks (networks, members, peer nodes, channels, chaincode, the ordering service) and Ethereum/public-network nodes (AMB Access), VPC endpoints/PrivateLink connectivity, certificate-based Fabric identities, member governance/voting, and node sizing (Amazon Managed Blockchain). Loads the Managed Blockchain knowledge: create a Fabric network + member + peer node (or an Ethereum node), connect via VPC endpoint, secure identities, and verify the node is healthy. Consumed by the Managed Blockchain specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle blockchain workloads.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "managed-blockchain",
+        "hyperledger-fabric",
+        "ethereum",
+        "specialized"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-managed-blockchain/SKILL.md"
+    },
+    {
       "name": "aws-mediaconvert",
       "description": "Use when transcoding file-based (VOD) video with AWS Elemental MediaConvert — submitting transcode jobs, reusable job templates and output presets, input clipping/stitching/captions/audio selectors, output groups (file/Apple HLS/DASH ISO/CMAF/Microsoft Smooth) for adaptive bitrate (ABR) renditions, codecs (H.264/H.265/AV1) and rate control, DRM/SPEKE encryption, accelerated transcoding, on-demand vs reserved pricing queues, and event-driven pipelines via EventBridge/S3 (AWS Elemental MediaConvert). Loads the MediaConvert knowledge: how to build job templates and output groups, produce ABR ladders, wire S3-triggered jobs, and verify outputs render. Consumed by the MediaConvert specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) building VOD pipelines.",
       "category": "cloud",
@@ -28984,6 +29316,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-personalize/SKILL.md"
+    },
+    {
+      "name": "aws-pinpoint",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Pinpoint — multichannel customer engagement across email, SMS/MMS, push (APNs/FCM), voice, and custom channels, projects/applications, endpoints and user attributes, segments (dynamic/imported), campaigns and multi-step journeys, message templates, A/B testing, and analytics/event streaming to Kinesis (Amazon Pinpoint). Loads the Pinpoint knowledge: create a project, ingest endpoints, build segments, run a campaign/journey, secure it, and verify a send. Consumed by the Pinpoint specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle customer engagement.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "pinpoint",
+        "customer-engagement",
+        "campaigns",
+        "segments",
+        "business-apps"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-pinpoint/SKILL.md"
     },
     {
       "name": "aws-polly",
@@ -29280,6 +29628,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-services/SKILL.md"
+    },
+    {
+      "name": "aws-ses",
+      "description": "Use when designing, provisioning, securing, or operating Amazon SES — transactional and bulk email sending via SMTP and the API, verified identities (domains/email addresses), DKIM/SPF/DMARC authentication, configuration sets and event publishing (bounces/complaints/deliveries to SNS/EventBridge/Kinesis), dedicated vs shared IPs, sandbox/sending quotas, and deliverability/reputation (suppression list, Virtual Deliverability Manager) (Amazon SES). Loads the SES knowledge: verify a domain, authenticate it, send via SMTP/API, monitor bounces/complaints, and verify deliverability. Consumed by the SES specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle email sending.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "ses",
+        "email",
+        "deliverability",
+        "dkim",
+        "business-apps"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-ses/SKILL.md"
     },
     {
       "name": "aws-shield",

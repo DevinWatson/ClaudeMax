@@ -180,18 +180,18 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 
 ### end-user-computing
 - [x] aws|end-user-computing|workspaces|Amazon WorkSpaces
-- [ ] aws|end-user-computing|appstream|Amazon AppStream 2.0
+- [x] aws|end-user-computing|appstream|Amazon AppStream 2.0
 
 ### business-apps
-- [ ] aws|business-apps|connect|Amazon Connect
-- [ ] aws|business-apps|ses|Amazon SES
-- [ ] aws|business-apps|pinpoint|Amazon Pinpoint
+- [x] aws|business-apps|connect|Amazon Connect
+- [x] aws|business-apps|ses|Amazon SES
+- [x] aws|business-apps|pinpoint|Amazon Pinpoint
 
 ### specialized
-- [ ] aws|specialized|managed-blockchain|Amazon Managed Blockchain
-- [ ] aws|specialized|braket|Amazon Braket
-- [ ] aws|specialized|ground-station|AWS Ground Station
-- [ ] aws|specialized|gamelift|Amazon GameLift
+- [x] aws|specialized|managed-blockchain|Amazon Managed Blockchain
+- [x] aws|specialized|braket|Amazon Braket
+- [x] aws|specialized|ground-station|AWS Ground Station
+- [x] aws|specialized|gamelift|Amazon GameLift
 - [ ] aws|specialized|amplify|AWS Amplify
 
 ---
