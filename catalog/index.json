@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1089,
-    "skills": 381,
+    "agents": 1097,
+    "skills": 389,
     "categories": 17
   },
   "agents": [
@@ -5481,6 +5481,35 @@
       "path": "agents/cloud/azure/services/ai-ml/azure-ai-vision-specialist.md"
     },
     {
+      "name": "azure-aks-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Kubernetes Service (AKS) (Azure) — the Azure managed-AKS layer: cluster provisioning, system/user/spot node pools, the cluster autoscaler, Azure CNI / CNI Overlay networking, Entra integration + Azure RBAC for Kubernetes, Workload Identity (OIDC federation), AKS Automatic, control-plane and node-image upgrades, and ACR/Key Vault/Monitor wiring. OWNS the Azure managed-AKS layer end-to-end (cluster provisioning, node pools, upgrades, networking, identity). MUST cross-ref the kubernetes-platform team (kubernetes-platform-cluster-admin/platform-architect/etc.), which owns cluster-INTERNAL ops (workload deployment, Helm, in-cluster networking/policy/observability); this specialist owns the Azure managed-cluster boundary, they own what runs inside it. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): gcp-gke, aws-eks.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-aks",
+        "containers",
+        "kubernetes",
+        "specialist"
+      ],
+      "skills": [
+        "azure-aks",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/containers/azure-aks-specialist.md"
+    },
+    {
       "name": "azure-app-service-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure App Service (Azure) — PaaS hosting for web apps/APIs: App Service plans and tiers (Basic/Standard/Premium v3/Isolated v2 ASE), code vs custom-container deployment, deployment slots and slot swaps with warm-up, autoscale and scale-up, custom domains and managed TLS, app settings/connection strings and Key Vault references, VNet integration/Private Endpoints/Access Restrictions, Easy Auth/Entra ID and managed identities, and cost. OWNS PaaS web/API hosting end-to-end (plan, app, slots, scaling, domains/TLS, auth). For serverless event functions defer to azure-functions, for general containers to azure-container-apps, for raw VMs to azure-virtual-machines. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-elastic-beanstalk, gcp-app-engine.",
       "category": "cloud",
@@ -5595,6 +5624,93 @@
       "path": "agents/cloud/azure/azure-cloud-architect.md"
     },
     {
+      "name": "azure-container-apps-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Container Apps (Azure) — serverless containers for microservices and event-driven apps on managed Kubernetes + KEDA without exposing the cluster: the Container Apps environment (VNet + Log Analytics), apps/containers, revisions and traffic splitting (blue/green, canary), external/internal ingress (HTTP/TCP), KEDA autoscaling incl. scale-to-zero, Dapr sidecars, jobs, managed identity + ACR/Key Vault, and Consumption vs Dedicated plans. OWNS serverless microservices end-to-end (environment, apps, scaling, ingress, revisions, Dapr). For single ad-hoc containers/jobs defer to azure-container-instances; for full cluster control to azure-aks. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT the image registry (azure-container-registry). Cross-cloud peers (defer): aws-app-runner, gcp-cloud-run.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-container-apps",
+        "containers",
+        "serverless",
+        "specialist"
+      ],
+      "skills": [
+        "azure-container-apps",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/containers/azure-container-apps-specialist.md"
+    },
+    {
+      "name": "azure-container-instances-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Container Instances (Azure) — serverless single containers and container groups with no orchestrator: container-group sizing (CPU/memory, OS type), restart policies (Always/OnFailure/Never), public IP + DNS label vs VNet injection, mounted Azure Files/secret volumes, environment variables/secrets, ACR pulls via managed identity, and per-second billing. OWNS single serverless container groups end-to-end (image, size, restart policy, networking, volumes, auth). For autoscaling serverless microservices defer to azure-container-apps; for full orchestration to azure-aks. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT the image registry (azure-container-registry). Cross-cloud peer (defer): aws-fargate.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-container-instances",
+        "containers",
+        "serverless",
+        "specialist"
+      ],
+      "skills": [
+        "azure-container-instances",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/containers/azure-container-instances-specialist.md"
+    },
+    {
+      "name": "azure-container-registry-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Container Registry (Azure) — the managed OCI registry for images, Helm charts, and OCI artifacts: service tiers (Basic/Standard/Premium), repositories and tag immutability, ACR Tasks (quick/multi-step/triggered builds + base-image-update automation), geo-replication, content trust/signing, Defender vulnerability scanning, retention/untagged-manifest cleanup, private endpoints/firewall, scope-map tokens, and Entra/managed-identity auth (AcrPull/AcrPush). OWNS the registry end-to-end (tier, repos, Tasks, replication, scanning, access, networking). NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT the container runtimes that consume images (azure-aks/azure-container-apps/azure-container-instances). Cross-cloud peers (defer): aws-ecr, gcp-artifact-registry.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-container-registry",
+        "containers",
+        "oci-registry",
+        "specialist"
+      ],
+      "skills": [
+        "azure-container-registry",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/containers/azure-container-registry-specialist.md"
+    },
+    {
       "name": "azure-cost-governor",
       "description": "Use when reducing or governing Microsoft Azure spend — finding idle/over-provisioned resources, right-sizing, picking pricing models (Reservations / Savings Plans / Spot VMs / Synapse serverless vs dedicated pools), cutting egress and un-lifecycled storage cost, and verifying with Cost Management / the az CLI (Azure). NOT for architecture design (azure-cloud-architect), reliability/DR (azure-reliability-engineer), writing the IaC change itself (azure-iac-engineer), or AWS/GCP cost (aws-/gcp-cost-governor).",
       "category": "cloud",
@@ -5650,6 +5766,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/azure-data-engineer.md"
+    },
+    {
+      "name": "azure-dedicated-host-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Dedicated Host (Azure) — single-tenant physical servers dedicated to one subscription for VM placement: host groups (zone + fault-domain count + automatic placement), host SKUs/families, maintenance control, capacity reservations, BYOL/Azure Hybrid Benefit licensing, and placing VMs onto hosts. OWNS the dedicated-hardware/host layer end-to-end (host group, host SKU, placement, licensing, host-level isolation). For the VMs that run on the host (size/disks/image/auth) cross-ref azure-virtual-machines. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT scale-set autoscaling (azure-vm-scale-sets) or VMware private clouds (azure-vmware-solution). Cross-cloud peers (defer): AWS EC2 Dedicated Hosts, GCP sole-tenant nodes.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-dedicated-host",
+        "compute",
+        "dedicated-hardware",
+        "specialist"
+      ],
+      "skills": [
+        "azure-dedicated-host",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/compute/azure-dedicated-host-specialist.md"
     },
     {
       "name": "azure-functions-specialist",
@@ -5885,6 +6030,93 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/azure-security-reviewer.md"
+    },
+    {
+      "name": "azure-service-fabric-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Service Fabric (Azure) — the distributed-systems platform for microservices and stateful services on a cluster: node types (VM Scale Set backed, durability/reliability tiers, seed nodes), the application/service model, programming models (Reliable Services stateless/stateful, Reliable Actors, guest executables, containers), monitored health-based rolling upgrades, partitioning/replication and placement constraints, the Naming/Failover/Cluster Resource Managers, X.509/Entra security, and managed clusters. OWNS the Service Fabric platform end-to-end (cluster, node types, application/service model, upgrades, stateful partitioning). For most new microservice/container workloads prefer azure-aks or azure-container-apps. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-service-fabric",
+        "containers",
+        "microservices",
+        "specialist"
+      ],
+      "skills": [
+        "azure-service-fabric",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/containers/azure-service-fabric-specialist.md"
+    },
+    {
+      "name": "azure-sql-database-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure SQL Database (Azure) — the fully managed PaaS SQL engine for single databases and elastic pools: purchasing models (DTU vs vCore) and tiers (General Purpose/Business Critical/Hyperscale), the serverless auto-pause tier, elastic pools, zone-redundant HA, geo-replication and auto-failover groups, automated backups (PITR + long-term retention), Entra authentication + Azure RBAC, private endpoints/firewall, and TDE/Always Encrypted. OWNS the Azure managed-service layer end-to-end (provisioning, sizing/tier, HA/DR, backups, failover, Entra auth) and DEFERS engine-internal T-SQL/index/query-plan tuning to a SQL Server engine specialist / the data engine teams under agents/data/. For near-100% SQL Server instance features (Agent, cross-DB, CLR, linked servers) defer to azure-sql-managed-instance. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-rds, gcp-cloud-sql.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-sql-database",
+        "databases",
+        "paas",
+        "specialist"
+      ],
+      "skills": [
+        "azure-sql-database",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/databases/azure-sql-database-specialist.md"
+    },
+    {
+      "name": "azure-sql-managed-instance-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure SQL Managed Instance (Azure) — the managed PaaS SQL Server instance with near-100% engine compatibility for lift-and-shift: instance-level features (SQL Agent, cross-DB queries, CLR, Service Broker, linked servers), GP/BC tiers and vCore sizing, the mandatory delegated VNet subnet, instance pools, zone-redundant HA, auto-failover groups, backups (PITR + LTR), native migration (DMS / MI link / log replay), Entra auth, private connectivity, TDE/Always Encrypted. OWNS the Azure managed-service layer (provisioning, sizing/tier, VNet, HA/DR, backups, failover, migration, Entra auth) and DEFERS engine-internal T-SQL/index/query-plan tuning to a SQL Server engine specialist / the data engine teams under agents/data/. For PaaS single databases without instance features defer to azure-sql-database. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-rds, gcp-cloud-sql.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-sql-managed-instance",
+        "databases",
+        "paas",
+        "specialist"
+      ],
+      "skills": [
+        "azure-sql-managed-instance",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/databases/azure-sql-managed-instance-specialist.md"
     },
     {
       "name": "azure-virtual-machines-specialist",
@@ -33217,6 +33449,22 @@
       "path": "skills/cloud/azure-ai-vision/SKILL.md"
     },
     {
+      "name": "azure-aks",
+      "description": "Use when designing, provisioning, securing, or operating Azure Kubernetes Service — Azure's managed Kubernetes control plane and node pools (Azure Kubernetes Service (AKS)). Covers the managed control plane, system vs user node pools, the cluster/node autoscaler, VM sizes and spot node pools, Azure CNI vs kubenet networking and CNI Overlay, Microsoft Entra integration and Azure RBAC for Kubernetes, Workload Identity (federated pod identity), the AKS Automatic / managed add-on experience, cluster and node-image upgrades, and integration with ACR/Key Vault/Azure Monitor. Loads the knowledge: size the cluster and node pools, choose networking and identity, provision, secure, and verify the API server and nodes are healthy. Consumed by the azure-aks specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Kubernetes Service (AKS)).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-aks",
+        "containers",
+        "kubernetes",
+        "node-pools",
+        "workload-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-aks/SKILL.md"
+    },
+    {
       "name": "azure-app-service",
       "description": "Use when designing, provisioning, securing, or operating Azure App Service — Microsoft Azure's PaaS for hosting web apps, APIs, and backends (Azure App Service). Covers App Service plans and tiers (Free/Shared/Basic/Standard/Premium v3/Isolated v2 ASE), Web Apps for Windows/Linux and code vs custom-container deployment, deployment slots and slot swaps with warm-up, autoscale and manual scale (out and up), custom domains and managed TLS certificates, app settings/connection strings and Key Vault references, deployment (zip/Run-From-Package, CI/CD, containers), VNet integration and Private Endpoints and Access Restrictions, Entra ID / Easy Auth and managed identities, and cost. Loads the App Service knowledge: pick a plan and runtime, configure slots and scaling, secure, and verify the app serves. Consumed by the azure-app-service specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure App Service).",
       "category": "cloud",
@@ -33263,6 +33511,69 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-bot-service/SKILL.md"
+    },
+    {
+      "name": "azure-container-apps",
+      "description": "Use when designing, provisioning, securing, or operating Azure Container Apps — Azure's serverless container platform for microservices and event-driven apps built on Kubernetes + KEDA without exposing the cluster (Azure Container Apps). Covers the Container Apps environment (the shared boundary/VNet/Log Analytics), apps and containers, revisions and traffic splitting (blue/green, canary), ingress (external/internal, HTTP and TCP), KEDA-based autoscaling (HTTP, queue, custom) including scale-to-zero, Dapr sidecars for service invocation/pub-sub/state, jobs (manual/scheduled/event), managed identities, ACR pulls, secrets, and consumption vs dedicated plans. Loads the knowledge: define the environment and app, set scaling/ingress/revisions, provision, secure, and verify the app is healthy and reachable. Consumed by the azure-container-apps specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Container Apps).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-container-apps",
+        "containers",
+        "serverless",
+        "keda",
+        "dapr"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-container-apps/SKILL.md"
+    },
+    {
+      "name": "azure-container-instances",
+      "description": "Use when designing, provisioning, securing, or operating Azure Container Instances — Azure's serverless single-container (and container-group) runtime with no orchestrator to manage (Azure Container Instances). Covers container groups (one or more co-located containers sharing a lifecycle/network/volume), CPU/memory sizing, OS type (Linux/Windows), restart policies (Always/OnFailure/Never), public IP and DNS labels, VNet injection for private networking, mounted volumes (Azure Files/emptyDir/secret), environment variables and secrets, image pulls from ACR, managed identity, and per-second billing. Loads the knowledge: size a container group, choose restart/network/volumes, provision, secure, and verify the container is running and reachable. Consumed by the azure-container-instances specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Container Instances).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-container-instances",
+        "containers",
+        "serverless",
+        "container-groups"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-container-instances/SKILL.md"
+    },
+    {
+      "name": "azure-container-registry",
+      "description": "Use when designing, provisioning, securing, or operating Azure Container Registry — Azure's managed OCI artifact registry for container images, Helm charts, and OCI artifacts (Azure Container Registry). Covers the service tiers (Basic/Standard/Premium), repositories and tags, ACR Tasks (quick/scheduled/triggered builds, multi-step, base-image-update automation), geo-replication (Premium), content trust / image signing, vulnerability scanning (Defender), retention and untagged-manifest cleanup, private endpoints and firewall rules, anonymous pull, token/scope-map access, and authentication via managed identity / Entra / admin user. Loads the knowledge: choose a tier, set up repos/tasks/replication, provision, secure, and verify push/pull works. Consumed by the azure-container-registry specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Container Registry).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-container-registry",
+        "containers",
+        "oci-registry",
+        "acr-tasks",
+        "geo-replication"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-container-registry/SKILL.md"
+    },
+    {
+      "name": "azure-dedicated-host",
+      "description": "Use when designing, provisioning, securing, or operating Azure Dedicated Host — single-tenant physical servers dedicated to one Azure subscription for VM placement, used for compliance, licensing (Bring-Your-Own-License / Azure Hybrid Benefit), and host-level isolation/control (Azure Dedicated Host). Covers host groups, host SKUs/families (Dsv3/Esv3/Fsv2 etc.), availability-zone placement, fault domains, host-level maintenance control, automatic vs manual VM placement, capacity reservations, and the relationship to Azure Virtual Machines that run on the host. Loads the knowledge: choose a host SKU and group, place hosts in zones/fault domains, provision, secure, and verify hosts are allocated and VMs land on them. Consumed by the azure-dedicated-host specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Dedicated Host).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-dedicated-host",
+        "compute",
+        "dedicated-hardware",
+        "isolation",
+        "byol"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-dedicated-host/SKILL.md"
     },
     {
       "name": "azure-functions",
@@ -33315,6 +33626,22 @@
       "path": "skills/cloud/azure-openai/SKILL.md"
     },
     {
+      "name": "azure-service-fabric",
+      "description": "Use when designing, provisioning, securing, or operating Azure Service Fabric — Azure's distributed-systems platform for packaging, deploying, and managing microservices and stateful services on a cluster (Azure Service Fabric). Covers node types (VM Scale Set backed, seed nodes, reliability/durability tiers), the application/service model, programming models (Reliable Services stateless/stateful, Reliable Actors, guest executables, containers), monitored health-based rolling upgrades, partitioning/replication and placement constraints, the Naming/Failover/Cluster Resource Managers, security (X.509 certs, Entra, NSGs), and managed clusters. Loads the knowledge: size node types, model the application, set upgrade/placement policy, provision, secure, and verify the cluster and services are healthy. Consumed by the azure-service-fabric specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Service Fabric).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-service-fabric",
+        "containers",
+        "microservices",
+        "stateful-services",
+        "reliable-actors"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-service-fabric/SKILL.md"
+    },
+    {
       "name": "azure-services",
       "description": "The substantive Microsoft Azure platform capability — compute (Virtual Machines, App Service, Azure Functions, AKS, Container Apps), storage (Blob, Managed Disks, Files), databases (Azure SQL, Cosmos DB, Database for PostgreSQL/MySQL), data/analytics (Synapse, Data Factory, Event Hubs, Service Bus), networking (Virtual Network, Load Balancer, Application Gateway, Azure DNS, Front Door), identity/IAM (Entra ID, RBAC, managed identities), governance (Management Groups, Subscriptions, Azure Policy), the Azure Well-Architected Framework, regions/availability zones, and tooling (az CLI, ARM/Bicep, Terraform). Use when designing, building, reviewing, securing, costing, or operating anything on Azure — picking the right managed service, applying least-privilege RBAC, choosing zonal vs zone-redundant vs multi-region, or validating az/Bicep/Terraform. Any agent touching Azure (architect, IaC, security reviewer, cost governor, reliability/networking/observability/data engineer) can load it.",
       "category": "cloud",
@@ -33333,6 +33660,38 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-services/SKILL.md"
+    },
+    {
+      "name": "azure-sql-database",
+      "description": "Use when designing, provisioning, securing, or operating Azure SQL Database — Azure's fully managed PaaS relational database engine (SQL Server based) for single databases and elastic pools (Azure SQL Database). Covers purchasing models (DTU vs vCore) and tiers (General Purpose, Business Critical, Hyperscale), the serverless auto-pause tier, elastic pools, zone-redundant HA, geo-replication and auto-failover groups, automated backups (PITR + long-term retention), Entra authentication and Azure RBAC, private endpoints/firewall, and TDE/Always Encrypted. Loads the knowledge: pick a purchasing model/tier and size, choose HA/DR, provision, secure, and verify the database is online and accepts queries. Consumed by the azure-sql-database specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure SQL Database).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-sql-database",
+        "databases",
+        "paas",
+        "hyperscale",
+        "failover-groups"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-sql-database/SKILL.md"
+    },
+    {
+      "name": "azure-sql-managed-instance",
+      "description": "Use when designing, provisioning, securing, or operating Azure SQL Managed Instance — Azure's fully managed PaaS SQL Server instance offering near-100% engine compatibility for lift-and-shift of on-prem SQL Server (Azure SQL Managed Instance). Covers instance-scoped features (SQL Agent, cross-DB queries, CLR, Service Broker, linked servers, instance logins/collation), GP vs BC tiers and the vCore model, the mandatory delegated VNet subnet, instance pools, zone-redundant HA, auto-failover groups, automated backups (PITR + long-term retention), native migration (DMS / MI link / log replay), Entra auth, private connectivity, and TDE/Always Encrypted. Loads the knowledge: size the instance and VNet, choose HA/DR, provision, secure, and verify the instance is online and accepts queries. Consumed by the azure-sql-managed-instance specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure SQL Managed Instance).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-sql-managed-instance",
+        "databases",
+        "paas",
+        "sql-server-compat",
+        "vnet"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-sql-managed-instance/SKILL.md"
     },
     {
       "name": "azure-virtual-machines",

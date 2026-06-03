@@ -330,18 +330,18 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] azure|compute|app-service|Azure App Service
 - [x] azure|compute|azure-batch|Azure Batch
 - [x] azure|compute|azure-vmware-solution|Azure VMware Solution
-- [ ] azure|compute|azure-dedicated-host|Azure Dedicated Host
+- [x] azure|compute|azure-dedicated-host|Azure Dedicated Host
 
 ### containers
-- [ ] azure|containers|aks|Azure Kubernetes Service (AKS)
-- [ ] azure|containers|container-instances|Azure Container Instances
-- [ ] azure|containers|container-apps|Azure Container Apps
-- [ ] azure|containers|container-registry|Azure Container Registry
-- [ ] azure|containers|service-fabric|Azure Service Fabric
+- [x] azure|containers|aks|Azure Kubernetes Service (AKS)
+- [x] azure|containers|container-instances|Azure Container Instances
+- [x] azure|containers|container-apps|Azure Container Apps
+- [x] azure|containers|container-registry|Azure Container Registry
+- [x] azure|containers|service-fabric|Azure Service Fabric
 
 ### databases
-- [ ] azure|databases|azure-sql-database|Azure SQL Database
-- [ ] azure|databases|sql-managed-instance|Azure SQL Managed Instance
+- [x] azure|databases|azure-sql-database|Azure SQL Database
+- [x] azure|databases|sql-managed-instance|Azure SQL Managed Instance
 - [ ] azure|databases|cosmos-db|Azure Cosmos DB
 - [ ] azure|databases|azure-database-for-postgresql|Azure Database for PostgreSQL
 - [ ] azure|databases|azure-database-for-mysql|Azure Database for MySQL
