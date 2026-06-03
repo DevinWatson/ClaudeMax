@@ -266,16 +266,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] gcp|networking|cloud-vpn|Cloud VPN
 - [x] gcp|networking|cloud-armor|Google Cloud Armor
 - [x] gcp|networking|cloud-ngfw|Cloud Next Generation Firewall
-- [ ] gcp|networking|cloud-router|Cloud Router
-- [ ] gcp|networking|cloud-service-mesh|Cloud Service Mesh
-- [ ] gcp|networking|media-cdn|Media CDN
-- [ ] gcp|networking|network-connectivity-center|Network Connectivity Center
+- [x] gcp|networking|cloud-router|Cloud Router
+- [x] gcp|networking|cloud-service-mesh|Cloud Service Mesh
+- [x] gcp|networking|media-cdn|Media CDN
+- [x] gcp|networking|network-connectivity-center|Network Connectivity Center
 
 ### observability
-- [ ] gcp|observability|cloud-logging|Cloud Logging
-- [ ] gcp|observability|cloud-monitoring|Cloud Monitoring
-- [ ] gcp|observability|cloud-trace|Cloud Trace
-- [ ] gcp|observability|cloud-profiler|Cloud Profiler
+- [x] gcp|observability|cloud-logging|Cloud Logging
+- [x] gcp|observability|cloud-monitoring|Cloud Monitoring
+- [x] gcp|observability|cloud-trace|Cloud Trace
+- [x] gcp|observability|cloud-profiler|Cloud Profiler
 - [ ] gcp|observability|error-reporting|Error Reporting
 
 ### security

@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1041,
-    "skills": 333,
+    "agents": 1049,
+    "skills": 341,
     "categories": 17
   },
   "agents": [
@@ -12014,6 +12014,66 @@
       "path": "agents/cloud/gcp/services/networking/gcp-cloud-load-balancing-specialist.md"
     },
     {
+      "name": "gcp-cloud-logging-specialist",
+      "description": "Use when configuring, securing, or operating Cloud Logging (GCP) — the managed log-management service: log buckets (retention, CMEK, Log Analytics), the Log Router and sinks to buckets / BigQuery / GCS / Pub/Sub, inclusion/exclusion filters, log-based metrics, aggregated org/folder sinks, and the Logging query language. OWNS the GCP Cloud Logging service — the logs signal. NOT cross-cutting observability strategy across signals — defer to the gcp-observability-engineer role (which uses observability-instrumentation); this specialist owns the one logging service. Sibling specialists own the other signals: gcp-cloud-monitoring-specialist (metrics/alerting), gcp-cloud-trace-specialist (traces), gcp-cloud-profiler-specialist (profiling) — the four are GCP's observability suite. Cross-cloud peers (defer): aws-cloudwatch (Logs) and azure-monitor (Log Analytics). NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-logging",
+        "observability",
+        "sinks",
+        "log-based-metrics",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-logging",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/observability/gcp-cloud-logging-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-monitoring-specialist",
+      "description": "Use when configuring, securing, or operating Cloud Monitoring (GCP) — the managed metrics/dashboards/alerting/uptime/SLO service: metric types (built-in, Ops Agent, log-based, custom, Managed Service for Prometheus), metric scopes for multi-project monitoring, dashboards, alerting policies with notification channels, uptime checks, and burn-rate SLOs. OWNS the GCP Cloud Monitoring service — the metrics/alerting signal. NOT cross-cutting observability strategy across signals — defer to the gcp-observability-engineer role (which uses observability-instrumentation); this specialist owns the one monitoring service. Sibling specialists own the other signals: gcp-cloud-logging-specialist (logs), gcp-cloud-trace-specialist (traces), gcp-cloud-profiler-specialist (profiling) — the four form GCP's observability suite. Cross-cloud peers (defer): aws-cloudwatch, azure-monitor. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-monitoring",
+        "observability",
+        "metrics",
+        "alerting",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-monitoring",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/observability/gcp-cloud-monitoring-specialist.md"
+    },
+    {
       "name": "gcp-cloud-nat-specialist",
       "description": "Use when designing, configuring, securing, or operating Cloud NAT (GCP) — the distributed managed NAT service that gives instances without external IPs outbound internet egress: NAT gateway on a Cloud Router per region/VPC, subnet/range selection, NAT IP allocation (auto vs manual/static), static vs dynamic port allocation, timeout tuning, endpoint-independent mapping, and NAT logging. OWNS the GCP Cloud NAT service end-to-end. NOT cross-cutting multi-service network topology — defer to the platform networking-engineer role (which uses network-design). NOT a sibling networking specialist (Cloud DNS, Load Balancing, CDN, VPN, Interconnect, Armor, NGFW). Cross-cloud peer (defer for that): aws-nat-gateway. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
       "category": "cloud",
@@ -12074,6 +12134,66 @@
       "path": "agents/cloud/gcp/services/networking/gcp-cloud-ngfw-specialist.md"
     },
     {
+      "name": "gcp-cloud-profiler-specialist",
+      "description": "Use when configuring, securing, or operating Cloud Profiler (GCP) — the continuous, low-overhead production profiler: the language profiling agent (Go, Java, Node.js, Python), profile types (CPU, heap, allocated heap, contention, wall), service/version labeling for diffing, flame-graph analysis across versions, and deployment across GKE/Compute Engine/Cloud Run/App Engine. OWNS the GCP Cloud Profiler service — the profiling signal. NOT cross-cutting observability strategy across signals — defer to the gcp-observability-engineer role (which uses observability-instrumentation); this specialist owns the one profiling service. Sibling specialists own the other signals: gcp-cloud-logging-specialist (logs), gcp-cloud-monitoring-specialist (metrics/alerting), gcp-cloud-trace-specialist (traces) — the four form GCP's observability suite. Cross-cloud peer (defer): aws-codeguru-profiler. NOT the role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-profiler",
+        "observability",
+        "profiling",
+        "flame-graph",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-profiler",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/observability/gcp-cloud-profiler-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-router-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud Router (GCP) — the managed distributed BGP service: ASN selection, BGP sessions/peers over HA VPN tunnels and Interconnect VLAN attachments, regional vs global dynamic routing, custom route advertisements, MED/priority and BGP timers, plus the Cloud NAT attachment point. OWNS the GCP Cloud Router service. NOT cross-cutting, multi-service network topology — defer to the platform networking-engineer role (which uses network-design). The underlying tunnels/circuits belong to gcp-cloud-vpn-specialist and gcp-cloud-interconnect-specialist; the NAT gateway belongs to gcp-cloud-nat-specialist. NOT a sibling networking specialist (VPC, DNS, Load Balancing, Cloud Armor, NGFW, CDN, NCC). Cross-cloud peers (defer): the AWS/Azure BGP/dynamic-routing equivalents. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-router",
+        "networking",
+        "bgp",
+        "dynamic-routing",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-router",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/networking/gcp-cloud-router-specialist.md"
+    },
+    {
       "name": "gcp-cloud-run-specialist",
       "description": "Use when designing, configuring, deploying, or operating Cloud Run (GCP) — the serverless CONTAINER platform: services vs jobs, immutable revisions + traffic splitting (canary/blue-green), concurrency (requests per container), scale-to-zero vs min-instances, CPU allocation (always-on vs during-request) + boot, memory/CPU sizing, the per-service service account + invoker IAM, ingress + IAP + VPC connectors/Direct VPC egress, Cloud SQL, and Artifact Registry images. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Cloud Run is serverless CONTAINERS (more control + scale-to-zero) — pick gcp-app-engine for opinionated PaaS and gcp-gke for full KUBERNETES; prefer Cloud Run over App Engine flexible for new container workloads. AWS analogs are App Runner / Fargate (aws-app-runner-specialist); Azure is Container Apps (azure-container-apps) — defer those clouds.",
       "category": "cloud",
@@ -12131,6 +12251,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/application-development/gcp-cloud-scheduler-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-service-mesh-specialist",
+      "description": "Use when configuring, securing, or operating Cloud Service Mesh (GCP) — the managed Istio/Anthos Service Mesh control plane for GKE and fleets, in sidecar (Envoy) or proxyless gRPC mode: control-plane provisioning, sidecar injection, traffic management (VirtualService/DestinationRule, canary splits, retries/timeouts), mTLS and AuthorizationPolicy, ingress/egress gateways, and telemetry to Cloud Monitoring/Trace. OWNS the GCP Cloud Service Mesh service. NOT cross-cutting, multi-service network topology — defer to the platform networking-engineer role (which uses network-design). The underlying GKE clusters/fleet and Kubernetes lifecycle belong to gcp-gke-specialist and the kubernetes-platform team. NOT a sibling networking specialist (VPC, DNS, Load Balancing, Cloud Armor, NGFW, CDN, NCC, Cloud Router). Cross-cloud peers (defer): AWS App Mesh, Azure service mesh. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-service-mesh",
+        "networking",
+        "istio",
+        "mtls",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-service-mesh",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/networking/gcp-cloud-service-mesh-specialist.md"
     },
     {
       "name": "gcp-cloud-sql-specialist",
@@ -12219,6 +12369,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/ai-ml/gcp-cloud-tpu-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-trace-specialist",
+      "description": "Use when configuring, securing, or operating Cloud Trace (GCP) — the managed distributed-tracing service: traces and spans, context propagation (W3C Trace Context / X-Cloud-Trace-Context), OpenTelemetry + Cloud Trace exporter instrumentation, sampling vs span-ingestion cost, the trace waterfall and latency analysis, and log-trace correlation. OWNS the GCP Cloud Trace service — the traces signal. NOT cross-cutting observability strategy across signals — defer to the gcp-observability-engineer role (which uses observability-instrumentation); this specialist owns the one tracing service. Sibling specialists own the other signals: gcp-cloud-logging-specialist (logs), gcp-cloud-monitoring-specialist (metrics/alerting), gcp-cloud-profiler-specialist (profiling) — the four are GCP's observability suite. Cross-cloud peer (defer): aws-x-ray (and Azure App Insights). NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-trace",
+        "observability",
+        "distributed-tracing",
+        "opentelemetry",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-trace",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/observability/gcp-cloud-trace-specialist.md"
     },
     {
       "name": "gcp-cloud-vpn-specialist",
@@ -12754,6 +12934,36 @@
       "path": "agents/cloud/gcp/services/data-analytics/gcp-managed-spark-specialist.md"
     },
     {
+      "name": "gcp-media-cdn-specialist",
+      "description": "Use when configuring, securing, or operating Media CDN (GCP) — Google's high-scale media-delivery CDN for large-file and streaming (VOD/live, HLS/DASH) egress: EdgeCacheService / EdgeCacheOrigin / EdgeCacheKeyset, route-based matching and rewrites, multi-tier caching with origin shielding, cache modes/TTLs/cache keys, and signed requests/cookies. OWNS the GCP Media CDN service. NOT cross-cutting, multi-service network topology — defer to the platform networking-engineer role (which uses network-design). For general web/object caching fronting a load-balancer backend use gcp-cloud-cdn-specialist (Media CDN is the media-specialized, standalone product); edge WAF/DDoS is gcp-cloud-armor-specialist. NOT a sibling networking specialist (VPC, DNS, Load Balancing, NGFW, NCC, Cloud Router). Cross-cloud media-delivery peer (defer): aws-cloudfront (and Azure CDN). NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "media-cdn",
+        "networking",
+        "media-delivery",
+        "edge-cache",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-media-cdn",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/networking/gcp-media-cdn-specialist.md"
+    },
+    {
       "name": "gcp-memorystore-specialist",
       "description": "Use when designing, configuring, securing, or operating Memorystore (GCP) — the managed in-memory store for Redis (incl. Redis Cluster) and Memcached: service tiers (Basic vs Standard HA with replicas/automatic failover), memory/shard/replica sizing, persistence (RDB/AOF), eviction policy, maintenance windows, plus private IP, AUTH, in-transit TLS, CMEK, and cost/scaling. OWNS the GCP managed in-memory layer for Memorystore (provisioning, tiers/HA, replicas, persistence, scaling, IAM). NOT engine-internal Redis tuning (data-structure/command/cluster-slot design) — defer to the redis data team. NOT a sibling GCP DB specialist: gcp-firestore-specialist/gcp-bigtable-specialist (NoSQL), gcp-cloud-sql-specialist/gcp-alloydb-specialist (relational), gcp-spanner-specialist (distributed SQL). Cross-cloud peers (defer): aws-elasticache and azure-cache-for-redis. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
       "category": "cloud",
@@ -12842,6 +13052,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/compute/gcp-migrate-to-vms-specialist.md"
+    },
+    {
+      "name": "gcp-network-connectivity-center-specialist",
+      "description": "Use when configuring, securing, or operating Network Connectivity Center (NCC) (GCP) — the hub-and-spoke connectivity plane using Google's backbone as transit: the Hub and spoke types (VPC spokes for VPC-to-VPC transitivity, hybrid spokes over HA VPN / Interconnect VLAN attachments / Router Appliances), mesh vs star/center-group topology, spoke acceptance, and route exchange via Cloud Router. OWNS the GCP NCC service. NOT cross-cutting, multi-service network topology across the org — defer to the platform networking-engineer role (which uses network-design). The underlying tunnels/circuits belong to gcp-cloud-vpn-specialist and gcp-cloud-interconnect-specialist, and dynamic routing to gcp-cloud-router-specialist. NOT a sibling networking specialist (VPC, DNS, Load Balancing, Cloud Armor, NGFW, CDN). Cross-cloud peer (defer): aws-transit-gateway (and Azure Virtual WAN). NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "network-connectivity-center",
+        "networking",
+        "hub-and-spoke",
+        "transit",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-network-connectivity-center",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/networking/gcp-network-connectivity-center-specialist.md"
     },
     {
       "name": "gcp-networking-engineer",
@@ -32509,6 +32749,40 @@
       "path": "skills/cloud/gcp-cloud-load-balancing/SKILL.md"
     },
     {
+      "name": "gcp-cloud-logging",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Logging — Google Cloud's managed log-management service (Cloud Operations / formerly Stackdriver). Covers the Log Router and sinks routing to log buckets / BigQuery / Cloud Storage / Pub/Sub, log buckets (retention, regionalization, CMEK), inclusion/exclusion filters, log-based metrics (counter/distribution) feeding Cloud Monitoring, Log Analytics (BigQuery-backed SQL) and linked datasets, aggregated org/folder sinks, and the Logging query language, plus IAM, CMEK/audit, cost (ingestion vs retention), and scaling/limits. Loads the Cloud Logging knowledge: design buckets/retention, route with sinks and filters, build log-based metrics, query logs, and verify routing and metrics. Consumed by the Cloud Logging specialist and by the GCP role team (gcp-observability-engineer, which uses observability-instrumentation) when wiring the logging signal (Cloud Logging).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-logging",
+        "observability",
+        "log-router",
+        "sinks",
+        "log-based-metrics",
+        "log-analytics"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-logging/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-monitoring",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Monitoring — Google Cloud's managed metrics, dashboards, alerting, uptime, and SLO service (Cloud Operations / formerly Stackdriver). Covers metric types (built-in, Ops Agent, log-based, custom, Managed Service for Prometheus / GMP), metric scopes for multi-project monitoring, dashboards, alerting policies (threshold, MQL/PromQL, rate-of-change, absence) with notification channels, uptime checks and synthetics, and SLO/SLI with burn-rate alerting, plus MQL/PromQL, IAM, cost (metric samples/cardinality), and scaling/limits. Loads the Cloud Monitoring knowledge: define metrics and scopes, build dashboards, author alerting policies and SLOs, set uptime checks, and verify alerts fire/resolve. Consumed by the Cloud Monitoring specialist and by the GCP role team (gcp-observability-engineer, which uses observability-instrumentation) when wiring the metrics/alerting signal (Cloud Monitoring).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-monitoring",
+        "observability",
+        "metrics",
+        "alerting",
+        "slo",
+        "uptime-checks"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-monitoring/SKILL.md"
+    },
+    {
       "name": "gcp-cloud-nat",
       "description": "Use when designing, provisioning, securing, or operating Cloud NAT — Google Cloud's distributed, software-defined managed network address translation that gives instances and resources without external IPs outbound internet (and some Google API) connectivity without exposing them to inbound connections. Loads the Cloud NAT knowledge: attach a NAT gateway to a Cloud Router per region/VPC, choose subnets/ranges to NAT, manage NAT IP allocation (auto vs manual) and static vs dynamic port allocation, tune timeouts and per-VM port limits, enable endpoint-independent mapping and logging, plus IAM and cost/scaling levers. Consumed by the Cloud NAT specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they enable private-instance egress (Cloud NAT).",
       "category": "cloud",
@@ -32543,6 +32817,40 @@
       "path": "skills/cloud/gcp-cloud-ngfw/SKILL.md"
     },
     {
+      "name": "gcp-cloud-profiler",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Profiler — Google Cloud's continuous, low-overhead statistical profiler (Cloud Operations / formerly Stackdriver) that collects production CPU and heap profiles from running services to find hot paths and memory hogs. Covers the profiling agent per language (Go, Java, Node.js, Python), profile types (CPU time, heap, allocated heap, contention, wall/threads), service and service-version labeling for diffing, flame-graph analysis across versions/regions, sampling/overhead, and deployment across GKE/Compute Engine/Cloud Run/App Engine, plus IAM, cost (overhead), and scaling/limits. Loads the Cloud Profiler knowledge: add the agent, label service/version, collect profiles, analyze flame graphs and diffs, and verify profiles appear. Consumed by the Cloud Profiler specialist and by the GCP role team (gcp-observability-engineer, which uses observability-instrumentation) when wiring the profiling signal (Cloud Profiler).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-profiler",
+        "observability",
+        "profiling",
+        "cpu-profiling",
+        "heap-profiling",
+        "flame-graph"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-profiler/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-router",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Router — Google Cloud's managed, distributed BGP service that programs dynamic routes for Cloud VPN (HA VPN), Cloud Interconnect (Dedicated/Partner VLAN attachments), and Network Connectivity Center, advertises VPC subnet routes to on-prem peers, and serves as the control plane that Cloud NAT attaches to. Covers ASN selection (16/32-bit), BGP sessions and peers, dynamic routing mode (regional vs global), custom route advertisements (default plus advertised IP ranges), BGP timers and MED/priority, graceful restart, plus IAM, logging, cost, and scaling/limits. Loads the Cloud Router knowledge: create routers and BGP sessions, advertise/learn routes, tune route preference, and verify learned/advertised routes and session state. Consumed by the Cloud Router specialist and by the GCP role team (gcp-networking-engineer / gcp-iac-engineer) when building hybrid connectivity (Cloud Router).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-router",
+        "networking",
+        "bgp",
+        "dynamic-routing",
+        "hybrid-connectivity",
+        "cloud-nat"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-router/SKILL.md"
+    },
+    {
       "name": "gcp-cloud-run",
       "description": "Use when designing, provisioning, securing, or operating Cloud Run — Google Cloud's serverless container platform: services (request/HTTP-driven, autoscaling) vs jobs (run-to-completion tasks/task arrays), immutable revisions + traffic splitting (blue-green/canary), concurrency (requests per container), scale-to-zero vs min-instances (warm), CPU allocation (always-on vs only-during-requests) + CPU boost, memory/CPU sizing, the per-service service account + IAM invoker, ingress controls + IAP + VPC connectors / Direct VPC egress, Cloud SQL connections, and Artifact Registry images. Loads the Cloud Run knowledge: deploy a container service or job, set concurrency/scaling, split traffic, scope IAM/ingress, and verify the served endpoint. Consumed by the Cloud Run specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they host serverless containers (Cloud Run).",
       "category": "cloud",
@@ -32574,6 +32882,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-cloud-scheduler/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-service-mesh",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Service Mesh — Google Cloud's managed Istio/Anthos Service Mesh control plane for GKE and multi-cluster/multi-cloud fleets, in both sidecar (Envoy) and proxyless gRPC modes. Covers control-plane provisioning (managed vs in-cluster), sidecar injection and proxyless gRPC, traffic management (VirtualService/DestinationRule, request routing, canary/weighted splits, retries/timeouts, outlier detection, fault injection), mTLS and PeerAuthentication/AuthorizationPolicy (STRICT vs PERMISSIVE), telemetry (golden-signal metrics, access logs, distributed traces to Cloud Trace), and ingress/egress gateways, plus IAM/fleet, cost, and scaling/limits. Loads the mesh knowledge: enroll clusters, inject proxies, write traffic and security policies, enable telemetry, and verify routing/mTLS. Consumed by the Cloud Service Mesh specialist and by the GCP role team (gcp-networking-engineer / the kubernetes-platform team) when meshing services (Cloud Service Mesh).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-service-mesh",
+        "networking",
+        "istio",
+        "service-mesh",
+        "mtls",
+        "traffic-management"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-service-mesh/SKILL.md"
     },
     {
       "name": "gcp-cloud-sql",
@@ -32624,6 +32949,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-cloud-tpu/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-trace",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Trace — Google Cloud's managed distributed-tracing service (Cloud Operations / formerly Stackdriver) for analyzing latency across requests in distributed/microservice systems. Covers traces and spans (parent/child, attributes, events), context propagation (W3C Trace Context, X-Cloud-Trace-Context), OpenTelemetry / Cloud Trace exporter instrumentation, sampling rate vs cost, the trace waterfall and latency analysis, and log-trace correlation with Cloud Logging, plus IAM, cost (spans ingested), and scaling/limits. Loads the Cloud Trace knowledge: instrument services and propagate context, set sampling, ingest spans, analyze latency, and verify traces appear with correct parent/child spans. Consumed by the Cloud Trace specialist and by the GCP role team (gcp-observability-engineer, which uses observability-instrumentation) when wiring the tracing signal (Cloud Trace).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-trace",
+        "observability",
+        "distributed-tracing",
+        "spans",
+        "opentelemetry",
+        "latency"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-trace/SKILL.md"
     },
     {
       "name": "gcp-cloud-vpn",
@@ -32873,6 +33215,23 @@
       "path": "skills/cloud/gcp-managed-spark/SKILL.md"
     },
     {
+      "name": "gcp-media-cdn",
+      "description": "Use when designing, provisioning, securing, or operating Media CDN — Google Cloud's high-scale media-delivery CDN built on the same edge infrastructure as YouTube, optimized for large-file and streaming (VOD/live, HLS/DASH) egress. Covers EdgeCacheService / EdgeCacheOrigin / EdgeCacheKeyset resources, route-based request matching and header/path rewrites, multi-tier edge caching with cache-fill and origin shielding, long-tail cache behavior, signed requests/cookies and token authentication for content protection, TLS/managed certs, plus IAM, logging, cost (cache egress vs cache fill), and scaling/limits. Loads the Media CDN knowledge: define origins/services/routes, tune caching and shielding, protect content with signed requests, and verify cache hits and signed-URL enforcement. Consumed by the Media CDN specialist and by the GCP role team (gcp-networking-engineer / gcp-iac-engineer) when delivering media at scale (Media CDN).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "media-cdn",
+        "networking",
+        "cdn",
+        "media-delivery",
+        "edge-cache",
+        "origin-shielding"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-media-cdn/SKILL.md"
+    },
+    {
       "name": "gcp-memorystore",
       "description": "Use when designing, provisioning, securing, or operating Memorystore — Google Cloud's fully managed in-memory data store for Redis (and Redis Cluster) and Memcached, with service tiers (Basic vs Standard HA with replicas/automatic failover), node/shard sizing, read replicas, persistence (RDB/AOF), maintenance windows, and private VPC connectivity, plus IAM/AUTH, in-transit TLS, and cost/scaling levers. Loads the Memorystore knowledge: pick Redis vs Memcached and a tier, size memory/shards/replicas, enable HA and persistence, secure with private IP and AUTH/TLS, and verify connectivity and failover. Consumed by the Memorystore specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle managed in-memory cache workloads (Memorystore).",
       "category": "cloud",
@@ -32922,6 +33281,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-migrate-to-vms/SKILL.md"
+    },
+    {
+      "name": "gcp-network-connectivity-center",
+      "description": "Use when designing, provisioning, securing, or operating Network Connectivity Center (NCC) — Google Cloud's hub-and-spoke connectivity management plane that uses Google's backbone as the transit network to interconnect VPCs and hybrid sites. Covers the Hub resource and spoke types (VPC spokes for VPC-to-VPC transitivity, hybrid spokes over HA VPN / Interconnect VLAN attachments / Router Appliances, and producer/PSC spokes), spoke acceptance/auto-accept and topology (mesh vs star with center groups), route exchange and dynamic routing via Cloud Router, plus IAM, logging, cost, and scaling/limits. Loads the NCC knowledge: create a hub, attach VPC/hybrid spokes, manage route exchange and topology, and verify spoke-to-spoke reachability. Consumed by the NCC specialist and by the GCP role team (gcp-networking-engineer / gcp-iac-engineer) when building enterprise WAN/transit topologies (Network Connectivity Center).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "network-connectivity-center",
+        "networking",
+        "hub-and-spoke",
+        "transit",
+        "hybrid-connectivity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-network-connectivity-center/SKILL.md"
     },
     {
       "name": "gcp-pubsub",
