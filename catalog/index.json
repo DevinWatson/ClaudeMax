@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1113,
-    "skills": 405,
+    "agents": 1121,
+    "skills": 413,
     "categories": 17
   },
   "agents": [
@@ -5539,6 +5539,35 @@
       "path": "agents/cloud/azure/services/compute/azure-app-service-specialist.md"
     },
     {
+      "name": "azure-application-gateway-specialist",
+      "description": "Use when designing, configuring, securing, or operating an Azure Application Gateway (Azure) — the regional Layer-7 (HTTP/HTTPS) load balancer + WAF: v2 SKU (Standard_v2/WAF_v2) with autoscaling/zones, frontend IPs, listeners (multi-site), routing rules, backend pools + HTTP settings, health probes, TLS termination/end-to-end TLS, path-/host-based routing, redirects/rewrites, and the WAF (OWASP CRS managed + custom rules). OWNS this one service end-to-end (SKU, listeners, rules, pools, probes, TLS, WAF) and verifies L7 routing reaches healthy backends. NOT the azure-networking-engineer role, which owns cross-cutting multi-VNet topology and load-balancing design (via network-design). Sibling boundaries: for L4 TCP/UDP use azure-load-balancer-specialist; for a global edge CDN+WAF use azure-front-door-specialist. Cross-cloud peers (defer): aws-alb, gcp equivalents.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-application-gateway",
+        "networking",
+        "layer7",
+        "specialist"
+      ],
+      "skills": [
+        "azure-application-gateway",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-application-gateway-specialist.md"
+    },
+    {
       "name": "azure-backup-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Backup (Azure) — managed backup of VMs, files/folders, Azure Files shares, SQL/SAP HANA in VMs, blobs/disks, and on-prem workloads into a Recovery Services vault or Backup vault: vault types and storage redundancy (LRS/ZRS/GRS), backup policies (frequency + GFS retention), agents/extensions (VM/MARS/MABS-DPM), instant-restore vs vault-tier recovery, cross-region restore, and ransomware protection (soft delete, immutable vault, Multi-User Authorization). OWNS the Azure managed-service layer end-to-end (vault + redundancy, policies, protected items, restore, RBAC) for backup/restore. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-reliability-engineer, who own broad DR/failover strategy and topology, cross-cutting). Cross-cloud peer (defer): aws-backup.",
       "category": "cloud",
@@ -5566,6 +5595,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/storage/azure-backup-specialist.md"
+    },
+    {
+      "name": "azure-bastion-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Bastion (Azure) — the fully managed PaaS jump host that gives secure RDP/SSH to VMs over TLS (browser or native client) without exposing VM public IPs or opening inbound 3389/22: deployment into the dedicated AzureBastionSubnet (/26+), the SKUs (Developer/Basic/Standard/Premium) and their gated features (host scaling/instance count, native client, IP-based connection, shareable links, session recording, private-only), connectivity to VMs by private IP across peered spokes, Entra ID/RBAC access control, and required NSG rules. OWNS this one service end-to-end (host, AzureBastionSubnet, SKU/features, secure access) and verifies RDP/SSH works over TLS with no public IP on the VM. NOT the azure-networking-engineer role, which owns cross-cutting remote-access topology (via network-design). Cross-cloud analogues (defer): aws-ssm-session-manager, gcp-iap.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-bastion",
+        "networking",
+        "security",
+        "specialist"
+      ],
+      "skills": [
+        "azure-bastion",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-bastion-specialist.md"
     },
     {
       "name": "azure-batch-specialist",
@@ -6058,6 +6116,64 @@
       "path": "agents/cloud/azure/services/storage/azure-disk-storage-specialist.md"
     },
     {
+      "name": "azure-dns-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure DNS (Azure) — managed DNS hosting for public internet resolution and private in-VNet resolution: public DNS zones (with registrar NS delegation), private DNS zones (VNet links, optional auto-registration, split-horizon), record sets (A/AAAA/CNAME/MX/TXT/SRV/NS/SOA/CAA/PTR) and TTLs, alias records pointing dynamically at Azure resources (public IP/Front Door/Traffic Manager), zone delegation/child zones, and the DNS Private Resolver for hybrid forwarding. OWNS this one service end-to-end (zones, record sets, alias records, delegation, VNet links) and verifies names resolve correctly. NOT the azure-networking-engineer role, which owns cross-cutting DNS strategy/topology (via network-design). Sibling boundary: for DNS-based global, health-aware traffic routing use azure-traffic-manager-specialist (this is authoritative name hosting, not routing). Cross-cloud peers (defer): aws-route53, gcp-cloud-dns.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-dns",
+        "networking",
+        "dns",
+        "specialist"
+      ],
+      "skills": [
+        "azure-dns",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-dns-specialist.md"
+    },
+    {
+      "name": "azure-expressroute-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure ExpressRoute (Azure) — private, dedicated connectivity linking on-premises to Azure through a connectivity provider, bypassing the public internet: circuits (provider/Direct, bandwidth tiers, Local/Standard/Premium SKUs, metered vs unlimited), peerings (private peering for VNets, Microsoft peering for M365/PaaS) with BGP, the ExpressRoute gateway + connections, Global Reach, FastPath, redundancy, and IPsec/MACsec encryption. OWNS this one service end-to-end (circuits, peerings, gateway, connections) and verifies the circuit is Provisioned, BGP routes are learned, and traffic flows privately. NOT the azure-networking-engineer role, which owns cross-cutting hybrid topology (via network-design). Sibling boundary: for encrypted connectivity OVER the public internet use azure-vpn-gateway-specialist (this is private dedicated connectivity). Cross-cloud peers (defer): aws-direct-connect, gcp-interconnect.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-expressroute",
+        "networking",
+        "hybrid",
+        "specialist"
+      ],
+      "skills": [
+        "azure-expressroute",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-expressroute-specialist.md"
+    },
+    {
       "name": "azure-files-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Files (Azure) — managed SMB and NFS file shares in a storage account: tiers (Premium FileStorage SSD vs Standard transaction-optimized/hot/cool HDD), SMB vs NFS 4.1, identity-based SMB auth (Entra ID Kerberos / on-prem AD DS / Entra Domain Services) + NTFS ACLs, Azure File Sync (cloud tiering to on-prem caches), share snapshots and soft delete, large file shares, private endpoints/VNet, and CMK. OWNS the Azure managed-service layer end-to-end (account/share, tier/protocol, identity-based access, sync/snapshots, networking) for shared file storage. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Sibling Azure storage specialists own object storage (azure-blob-storage) and VM disks (azure-disk-storage). Cross-cloud peers (defer): aws-efs / aws-fsx, gcp-filestore.",
       "category": "cloud",
@@ -6085,6 +6201,64 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/storage/azure-files-specialist.md"
+    },
+    {
+      "name": "azure-firewall-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Firewall (Azure) — the managed, stateful, cloud-native firewall-as-a-service that centrally inspects/governs traffic for a hub VNet: SKUs (Basic/Standard/Premium), the AzureFirewallSubnet with zones, network rules (L3/L4), application rules (FQDN/FQDN-tag), NAT (DNAT) rules, threat intelligence, the central Firewall Policy (rule collection groups + priorities), Premium IDPS and TLS inspection, and UDRs that route spoke traffic through it. OWNS this one service end-to-end (SKU, firewall + Firewall Policy, rules, threat intel/IDPS, routing through it) and verifies allowed/denied flows. NOT the azure-networking-engineer role, which owns the cross-cutting hub-spoke topology design (via network-design) — the specialist owns the firewall, not the topology. Cross-cloud peers (defer): aws-network-firewall, gcp-cloud-ngfw.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-firewall",
+        "networking",
+        "security",
+        "specialist"
+      ],
+      "skills": [
+        "azure-firewall",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-firewall-specialist.md"
+    },
+    {
+      "name": "azure-front-door-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Front Door (Azure) — the global L7 entry point combining CDN, dynamic acceleration, WAF, and intelligent routing at the Microsoft edge: Standard/Premium tiers, endpoints + custom domains with managed TLS, origin groups/origins with health probes and latency/priority/weighted failover, routes (domain+path → origin group), CDN caching, the Rules engine, WAF policies (managed+custom, bot, rate limiting), and Private Link origins (Premium). OWNS this one service end-to-end (profile, endpoints, origins, routes, caching, Rules engine, WAF) and verifies global routing/caching/failover/WAF. NOT the azure-networking-engineer role, which owns cross-cutting topology (via network-design). Sibling boundaries: for REGIONAL in-VNet L7+WAF use azure-application-gateway-specialist; for DNS-only global routing use azure-traffic-manager-specialist (Front Door is the global edge CDN+WAF+L7 option). Cross-cloud peer (defer): aws-cloudfront.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-front-door",
+        "networking",
+        "cdn",
+        "specialist"
+      ],
+      "skills": [
+        "azure-front-door",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-front-door-specialist.md"
     },
     {
       "name": "azure-functions-specialist",
@@ -6554,6 +6728,35 @@
       "path": "agents/cloud/azure/services/storage/azure-table-storage-specialist.md"
     },
     {
+      "name": "azure-traffic-manager-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Traffic Manager (Azure) — the DNS-based global traffic load balancer that directs clients to the best endpoint across regions via DNS responses: profiles and routing methods (Priority/Weighted/Performance/Geographic/Multivalue/Subnet), endpoints (Azure/External/Nested), endpoint health monitoring (HTTP/HTTPS/TCP probes) with automatic failover, DNS TTL, and the fact that it operates only at the DNS layer (it does not proxy traffic). OWNS this one service end-to-end (profile, routing method, endpoints, health monitoring, TTL) and verifies DNS resolves to the right endpoint and fails over on outage. NOT the azure-networking-engineer role, which owns cross-cutting global-routing strategy/topology (via network-design). Sibling boundaries: for a proxying global edge with CDN/WAF use azure-front-door-specialist; for authoritative DNS zone hosting use azure-dns-specialist. Cross-cloud peer (defer): aws-route53 (routing policies).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-traffic-manager",
+        "networking",
+        "dns",
+        "specialist"
+      ],
+      "skills": [
+        "azure-traffic-manager",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-traffic-manager-specialist.md"
+    },
+    {
       "name": "azure-virtual-machines-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Virtual Machines (Azure) — single-VM IaaS compute: VM sizes/series (B/D/E/F/M/N), Managed Disks (Standard/Premium/Ultra) and OS/data disks, images (Marketplace/custom/Shared Image Gallery), availability zones vs sets, Spot and reserved instances, NICs/NSGs, extensions and cloud-init, Entra ID login and managed identities, disk encryption, and cost. OWNS single-VM IaaS end-to-end (size, disks, image, availability, networking, auth). For horizontal autoscaling fleets defer to azure-vm-scale-sets. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT PaaS web hosting (azure-app-service), serverless (azure-functions), batch/HPC (azure-batch), or VMware private clouds (azure-vmware-solution). Cross-cloud peers (defer): aws-ec2, gcp-compute-engine.",
       "category": "cloud",
@@ -6668,6 +6871,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/compute/azure-vmware-solution-specialist.md"
+    },
+    {
+      "name": "azure-vpn-gateway-specialist",
+      "description": "Use when designing, configuring, securing, or operating an Azure VPN Gateway (Azure) — the managed gateway for encrypted IPsec/IKE connectivity over the internet: site-to-site (S2S) tunnels to on-prem, point-to-site (P2S) for clients (OpenVPN/IKEv2/SSTP; Entra/cert/RADIUS auth), VNet-to-VNet, the GatewaySubnet, SKUs (VpnGw1–5/AZ), active-active HA, and BGP. OWNS this one service end-to-end (SKU, GatewaySubnet, S2S/P2S/VNet-to-VNet connections, HA, BGP) and verifies tunnels are Connected and traffic flows. NOT the azure-networking-engineer role, which owns cross-cutting hybrid topology (via network-design). Sibling boundary: for PRIVATE, dedicated connectivity use azure-expressroute-specialist (this is VPN over the public internet). Cross-cloud peers (defer): aws-vpn (Site-to-Site VPN), gcp-cloud-vpn.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-vpn-gateway",
+        "networking",
+        "vpn",
+        "specialist"
+      ],
+      "skills": [
+        "azure-vpn-gateway",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-vpn-gateway-specialist.md"
     },
     {
       "name": "bash-developer",
@@ -33945,6 +34177,21 @@
       "path": "skills/cloud/azure-app-service/SKILL.md"
     },
     {
+      "name": "azure-application-gateway",
+      "description": "Use when designing, provisioning, securing, or operating an Azure Application Gateway — Azure's regional Layer-7 (HTTP/HTTPS) load balancer and web application firewall (Azure Application Gateway). Covers the v2 SKU (Standard_v2/WAF_v2) with autoscaling and zones, frontend IPs, listeners (multi-site), routing rules, backend pools and HTTP settings, health probes, TLS termination and end-to-end TLS, path-/host-based routing, redirects/rewrites, the WAF (OWASP CRS managed + custom rules, Detection/Prevention), and the dedicated subnet. Loads the knowledge: choose SKU, define frontends/listeners/rules/backend pools/probes, enable WAF and TLS, provision, and verify L7 routing reaches healthy backends. Consumed by the azure-application-gateway specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Application Gateway).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-application-gateway",
+        "networking",
+        "layer7",
+        "waf"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-application-gateway/SKILL.md"
+    },
+    {
       "name": "azure-backup",
       "description": "Use when designing, provisioning, securing, or operating Azure Backup — Azure's managed backup service that protects VMs, files/folders, Azure Files shares, SQL/SAP HANA in VMs, and on-prem workloads (via MARS/MABS/DPM) into a Recovery Services vault or Backup vault (Azure Backup). Covers vault types and storage redundancy (LRS/ZRS/GRS), backup policies (frequency/schedule/retention GFS), the workload extensions/agents, instant restore snapshots vs vault-tier recovery, cross-region restore, soft delete and immutable/Multi-User Authorization (MUA) protection against ransomware, Entra/RBAC, and managed identities. Loads the knowledge: pick a vault + redundancy, define policies, enable protection, secure, provision, and verify a backup + restore. Consumed by the azure-backup specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect / azure-reliability-engineer) when standing up the managed service (Azure Backup).",
       "category": "cloud",
@@ -33958,6 +34205,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-backup/SKILL.md"
+    },
+    {
+      "name": "azure-bastion",
+      "description": "Use when designing, provisioning, securing, or operating Azure Bastion — Azure's fully managed PaaS jump host that gives secure RDP/SSH to VMs over TLS (browser or native client) without exposing VM public IPs or opening inbound 3389/22 (Azure Bastion). Covers deployment into the dedicated AzureBastionSubnet (/26+), the SKUs (Developer/Basic/Standard/Premium) and their gated features (host scaling/instance count, native client, IP-based connection, shareable links, session recording, private-only), connectivity to VMs by private IP across peered spokes, Entra ID/RBAC access, and required NSG rules on the bastion subnet. Loads the knowledge: create the AzureBastionSubnet and bastion host, pick the SKU for required features, secure access, provision, and verify RDP/SSH works over TLS with no public IP on the VM. Consumed by the azure-bastion specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Bastion).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-bastion",
+        "networking",
+        "security",
+        "jump-host"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-bastion/SKILL.md"
     },
     {
       "name": "azure-batch",
@@ -34181,6 +34443,36 @@
       "path": "skills/cloud/azure-disk-storage/SKILL.md"
     },
     {
+      "name": "azure-dns",
+      "description": "Use when designing, provisioning, securing, or operating Azure DNS — Azure's managed DNS hosting for public internet name resolution and private in-VNet resolution (Azure DNS). Covers public DNS zones (with registrar NS delegation), private DNS zones (split-horizon resolution via VNet links, optional VM auto-registration), record sets (A/AAAA/CNAME/MX/TXT/SRV/NS/SOA/CAA/PTR) and TTLs, alias records pointing dynamically at Azure resources (public IPs, Front Door, Traffic Manager), zone delegation and child zones, and the DNS Private Resolver for hybrid forwarding. Loads the knowledge: create zones, manage record sets and alias records, delegate, link private zones to VNets, secure, provision, and verify resolution. Consumed by the azure-dns specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure DNS).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-dns",
+        "networking",
+        "dns",
+        "name-resolution"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-dns/SKILL.md"
+    },
+    {
+      "name": "azure-expressroute",
+      "description": "Use when designing, provisioning, securing, or operating Azure ExpressRoute — Azure's private, dedicated connectivity linking on-premises networks to Azure through a connectivity provider, bypassing the public internet for predictable bandwidth, low latency, and high reliability (Azure ExpressRoute). Covers circuits (provider/Direct, bandwidth tiers, Local/Standard/Premium SKUs, metered vs unlimited), peerings (private peering for VNets, Microsoft peering for M365/PaaS) with BGP, the ExpressRoute gateway and connections, Global Reach, FastPath, redundancy, and IPsec/MACsec encryption. Loads the knowledge: order/provision the circuit, configure peerings and BGP, deploy the gateway and connections, secure, and verify BGP routes are learned and traffic flows privately. Consumed by the azure-expressroute specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure ExpressRoute).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-expressroute",
+        "networking",
+        "hybrid",
+        "private-connectivity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-expressroute/SKILL.md"
+    },
+    {
       "name": "azure-files",
       "description": "Use when designing, provisioning, securing, or operating Azure Files — Azure's fully managed file shares accessible over SMB and NFS in a storage account (Azure Files). Covers the tiers (Premium FileStorage on SSD vs Standard transaction-optimized/hot/cool on HDD), SMB vs NFS 4.1 protocols, identity-based SMB auth (Entra ID Kerberos / on-prem AD DS / Entra Domain Services) and NTFS ACLs, Azure File Sync (cloud tiering to on-prem caches), snapshots and soft delete, large file shares, private endpoints and the network model, and CMK encryption. Loads the knowledge: pick a tier and protocol, size the share, configure sync/snapshots, provision, secure, and verify a mount read/write. Consumed by the azure-files specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Files).",
       "category": "cloud",
@@ -34195,6 +34487,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-files/SKILL.md"
+    },
+    {
+      "name": "azure-firewall",
+      "description": "Use when designing, provisioning, securing, or operating Azure Firewall — Azure's managed, stateful, cloud-native firewall-as-a-service that centrally governs and inspects traffic for a hub VNet (Azure Firewall). Covers the SKUs (Basic/Standard/Premium), the AzureFirewallSubnet with zones, network rules (L3/L4), application rules (FQDN/FQDN-tag), NAT (DNAT) rules, threat intelligence, the central Firewall Policy (rule collection groups + priorities), Premium IDPS and TLS inspection, forced tunneling and UDRs that route spoke traffic through it, and logging to Log Analytics. Loads the knowledge: pick SKU, deploy into the hub subnet, author a Firewall Policy (network/application/NAT rules + threat intel/IDPS), route traffic through it, secure, provision, and verify allowed/denied flows. Consumed by the azure-firewall specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Firewall).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-firewall",
+        "networking",
+        "security",
+        "firewall"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-firewall/SKILL.md"
+    },
+    {
+      "name": "azure-front-door",
+      "description": "Use when designing, provisioning, securing, or operating Azure Front Door — Azure's global L7 entry point combining a CDN, dynamic site acceleration, web application firewall, and intelligent routing at the Microsoft edge (Azure Front Door). Covers the Standard/Premium tiers, endpoints and custom domains with managed TLS, origin groups/origins with health probes and latency/priority/weighted failover, routes (domain+path → origin group), CDN caching (compression, query-string, purge), the Rules engine, WAF policies (managed + custom rules, bot, rate limiting), Private Link origins (Premium), and end-to-end TLS. Loads the knowledge: create the profile/endpoint, define origins and routes, enable caching and WAF, attach custom domains with TLS, provision, and verify global routing/caching/WAF behavior. Consumed by the azure-front-door specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Front Door).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-front-door",
+        "networking",
+        "cdn",
+        "edge"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-front-door/SKILL.md"
     },
     {
       "name": "azure-functions",
@@ -34391,6 +34713,21 @@
       "path": "skills/cloud/azure-table-storage/SKILL.md"
     },
     {
+      "name": "azure-traffic-manager",
+      "description": "Use when designing, provisioning, securing, or operating Azure Traffic Manager — Azure's DNS-based global traffic load balancer that directs clients to the best endpoint across regions via DNS responses (Azure Traffic Manager). Covers profiles and routing methods (Priority/Weighted/Performance/Geographic/Multivalue/Subnet), endpoints (Azure/External/Nested profiles), endpoint health monitoring (HTTP/HTTPS/TCP probes) and automatic failover, DNS TTL and the relative DNS name, and the fact that it operates only at the DNS layer (it does not proxy — clients connect directly to the resolved endpoint). Loads the knowledge: create the profile, pick the routing method, add and monitor endpoints, tune TTL, provision, and verify DNS resolves to the right endpoint and fails over on outage. Consumed by the azure-traffic-manager specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Traffic Manager).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-traffic-manager",
+        "networking",
+        "dns",
+        "global-routing"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-traffic-manager/SKILL.md"
+    },
+    {
       "name": "azure-virtual-machines",
       "description": "Use when designing, provisioning, securing, or operating Azure Virtual Machines — Microsoft Azure's IaaS compute for Linux and Windows VMs (Azure Virtual Machines). Covers VM sizes and series (B/D/E/F/M/N GPU families), OS and data disks (Managed Disks, Standard/Premium SSD/Ultra), images (Marketplace, custom, Shared Image Gallery), availability sets vs availability zones, proximity placement, Spot VMs and reserved instances, networking (NICs/NSGs/public IPs), boot diagnostics and extensions, Entra ID/managed identities and disk encryption, and cost. Loads the VM knowledge: pick a size and disks, choose an availability model, provision, secure, and verify the VM boots and is reachable. Consumed by the azure-virtual-machines specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Virtual Machines).",
       "category": "cloud",
@@ -34452,6 +34789,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-vmware-solution/SKILL.md"
+    },
+    {
+      "name": "azure-vpn-gateway",
+      "description": "Use when designing, provisioning, securing, or operating an Azure VPN Gateway — Azure's managed gateway for encrypted IPsec/IKE connectivity between a VNet and on-premises or other networks over the public internet (Azure VPN Gateway). Covers site-to-site (S2S) tunnels to on-prem VPN devices, point-to-site (P2S) for clients (OpenVPN/IKEv2/SSTP; Entra/cert/RADIUS auth), VNet-to-VNet, the GatewaySubnet, SKUs (VpnGw1–5/AZ), active-active vs active-standby HA, BGP for dynamic routing, local network gateways and shared keys, and throughput/tunnel limits. Loads the knowledge: choose SKU and HA, create the GatewaySubnet and gateway, configure S2S/P2S/VNet-to-VNet connections and BGP, secure, provision, and verify tunnels are Connected and traffic flows. Consumed by the azure-vpn-gateway specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure VPN Gateway).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-vpn-gateway",
+        "networking",
+        "vpn",
+        "hybrid"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-vpn-gateway/SKILL.md"
     },
     {
       "name": "behavior-preserving-refactoring",

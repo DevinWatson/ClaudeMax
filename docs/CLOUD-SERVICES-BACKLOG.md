@@ -362,14 +362,14 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 ### networking
 - [x] azure|networking|virtual-network|Azure Virtual Network
 - [x] azure|networking|load-balancer|Azure Load Balancer
-- [ ] azure|networking|application-gateway|Azure Application Gateway
-- [ ] azure|networking|vpn-gateway|Azure VPN Gateway
-- [ ] azure|networking|azure-dns|Azure DNS
-- [ ] azure|networking|azure-firewall|Azure Firewall
-- [ ] azure|networking|front-door|Azure Front Door
-- [ ] azure|networking|traffic-manager|Azure Traffic Manager
-- [ ] azure|networking|expressroute|Azure ExpressRoute
-- [ ] azure|networking|azure-bastion|Azure Bastion
+- [x] azure|networking|application-gateway|Azure Application Gateway
+- [x] azure|networking|vpn-gateway|Azure VPN Gateway
+- [x] azure|networking|azure-dns|Azure DNS
+- [x] azure|networking|azure-firewall|Azure Firewall
+- [x] azure|networking|front-door|Azure Front Door
+- [x] azure|networking|traffic-manager|Azure Traffic Manager
+- [x] azure|networking|expressroute|Azure ExpressRoute
+- [x] azure|networking|azure-bastion|Azure Bastion
 - [ ] azure|networking|ddos-protection|Azure DDoS Protection
 - [ ] azure|networking|private-link|Azure Private Link
 - [ ] azure|networking|virtual-wan|Azure Virtual WAN
