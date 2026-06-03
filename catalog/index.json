@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 787,
-    "skills": 132,
+    "agents": 795,
+    "skills": 133,
     "categories": 17
   },
   "agents": [
@@ -1152,6 +1152,235 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/aws-security-reviewer.md"
+    },
+    {
+      "name": "azure-cloud-architect",
+      "description": "Use when designing or reviewing a Microsoft Azure architecture — selecting managed services, laying out management-groups/subscriptions/resource-groups/VNets/regions, and evaluating a design against the Azure Well-Architected Framework's pillars (Azure). Produces the design and trade-offs, not the IaC. NOT for writing Bicep/ARM/Terraform (use azure-iac-engineer), RBAC/exposure auditing (azure-security-reviewer), cost tuning (azure-cost-governor), generic IaC across clouds (terraform-architect), or AWS/GCP architecture (aws-/gcp-cloud-architect).",
+      "category": "cloud",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "azure",
+        "architecture",
+        "well-architected-framework",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "azure-services",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/azure-cloud-architect.md"
+    },
+    {
+      "name": "azure-cost-governor",
+      "description": "Use when reducing or governing Microsoft Azure spend — finding idle/over-provisioned resources, right-sizing, picking pricing models (Reservations / Savings Plans / Spot VMs / Synapse serverless vs dedicated pools), cutting egress and un-lifecycled storage cost, and verifying with Cost Management / the az CLI (Azure). NOT for architecture design (azure-cloud-architect), reliability/DR (azure-reliability-engineer), writing the IaC change itself (azure-iac-engineer), or AWS/GCP cost (aws-/gcp-cost-governor).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "cost",
+        "finops",
+        "rightsizing"
+      ],
+      "skills": [
+        "cost-optimization",
+        "azure-services",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/azure-cost-governor.md"
+    },
+    {
+      "name": "azure-data-engineer",
+      "description": "Use when building Microsoft Azure data systems with Azure-managed services — modeling Azure SQL/Cosmos DB/Database for PostgreSQL-MySQL, ingesting and streaming with Event Hubs/Service Bus, orchestrating with Data Factory, and warehousing/analyzing in Synapse Analytics — then validating it (Azure). NOT for cloud-agnostic or multi-cloud pipeline orchestration design (etl-architect designs provider-neutral/multi-cloud orchestration; this agent is for Azure-managed services like Synapse/Data Factory/Event Hubs specifically), broad architecture (azure-cloud-architect), RBAC/exposure review (azure-security-reviewer), or AWS/GCP data (aws-/gcp-data-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "data",
+        "synapse",
+        "data-factory",
+        "event-hubs",
+        "cosmos-db"
+      ],
+      "skills": [
+        "data-pipeline-design",
+        "azure-services",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/azure-data-engineer.md"
+    },
+    {
+      "name": "azure-iac-engineer",
+      "description": "Use when writing or refactoring Azure infrastructure as code — Bicep, ARM, or Terraform that provisions Microsoft Azure resources, then validating it with what-if/plan/validate (Azure). NOT for cloud architecture/Well-Architected design (use azure-cloud-architect), RBAC/exposure review (azure-security-reviewer), generic provider-agnostic Terraform language work (terraform-architect — this agent is Azure-specific infra), or AWS/GCP infra (aws-/gcp-iac-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "iac",
+        "terraform",
+        "bicep",
+        "arm"
+      ],
+      "skills": [
+        "terraform-iac",
+        "azure-services",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/azure-iac-engineer.md"
+    },
+    {
+      "name": "azure-networking-engineer",
+      "description": "Use when designing or fixing Microsoft Azure networking — Virtual Network and subnet layout, Network Security Groups, routes and NAT Gateway, Azure DNS, and load balancing (Load Balancer / Application Gateway / Front Door) — then validating it (Azure). NOT for RBAC/exposure security review (azure-security-reviewer), broad architecture (azure-cloud-architect), DR/failover strategy (azure-reliability-engineer), generic IaC (azure-iac-engineer authors the modules), or AWS/GCP networking (aws-/gcp-networking-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "networking",
+        "virtual-network",
+        "dns",
+        "load-balancing"
+      ],
+      "skills": [
+        "network-design",
+        "azure-services",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/azure-networking-engineer.md"
+    },
+    {
+      "name": "azure-observability-engineer",
+      "description": "Use when instrumenting Microsoft Azure observability — Azure Monitor metrics/dashboards/alert rules, Log Analytics (KQL), and Application Insights distributed tracing, with SLO-driven alerting — then validating it (Azure). NOT for generic non-cloud observability (devops observability-engineer), reliability/DR design (azure-reliability-engineer), networking (azure-networking-engineer), broad architecture (azure-cloud-architect), or AWS/GCP observability (aws-/gcp-observability-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "observability",
+        "azure-monitor",
+        "application-insights",
+        "alerting"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "azure-services",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/azure-observability-engineer.md"
+    },
+    {
+      "name": "azure-reliability-engineer",
+      "description": "Use when hardening a Microsoft Azure workload's resilience — single-zone/zone-redundant/multi-region design, disaster recovery to an RTO/RPO, backups and restore drills, health probes and failover — then validating it (Azure). NOT for day-one architecture (azure-cloud-architect), networking plumbing (azure-networking-engineer), metrics/tracing (azure-observability-engineer), cost (azure-cost-governor), or AWS/GCP reliability (aws-/gcp-reliability-engineer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "reliability",
+        "dr",
+        "zone-redundant",
+        "backups"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "azure-services",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/azure-reliability-engineer.md"
+    },
+    {
+      "name": "azure-security-reviewer",
+      "description": "Use when reviewing Azure configuration for security — RBAC least-privilege (no broad Owner/Contributor, scoped role assignments, managed identities over service-principal secrets), public exposure (open NSG rules, public storage/SQL/Cosmos endpoints), missing encryption (CMK/TLS), and secret handling (Key Vault) — then triaging findings by severity (Azure). Read-only; reports, does not change infra. NOT for building/fixing IaC (use azure-iac-engineer), architecture design (azure-cloud-architect), generic app-code appsec unrelated to Azure config, or AWS/GCP config review (aws-/gcp-security-reviewer).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "azure",
+        "security",
+        "rbac",
+        "encryption",
+        "review"
+      ],
+      "skills": [
+        "appsec-review",
+        "azure-services",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/azure-security-reviewer.md"
     },
     {
       "name": "bash-developer",
@@ -21914,6 +22143,26 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-services/SKILL.md"
+    },
+    {
+      "name": "azure-services",
+      "description": "The substantive Microsoft Azure platform capability — compute (Virtual Machines, App Service, Azure Functions, AKS, Container Apps), storage (Blob, Managed Disks, Files), databases (Azure SQL, Cosmos DB, Database for PostgreSQL/MySQL), data/analytics (Synapse, Data Factory, Event Hubs, Service Bus), networking (Virtual Network, Load Balancer, Application Gateway, Azure DNS, Front Door), identity/IAM (Entra ID, RBAC, managed identities), governance (Management Groups, Subscriptions, Azure Policy), the Azure Well-Architected Framework, regions/availability zones, and tooling (az CLI, ARM/Bicep, Terraform). Use when designing, building, reviewing, securing, costing, or operating anything on Azure — picking the right managed service, applying least-privilege RBAC, choosing zonal vs zone-redundant vs multi-region, or validating az/Bicep/Terraform. Any agent touching Azure (architect, IaC, security reviewer, cost governor, reliability/networking/observability/data engineer) can load it.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "cloud",
+        "virtual-machines",
+        "app-service",
+        "aks",
+        "cosmos-db",
+        "synapse",
+        "virtual-network",
+        "entra-id",
+        "well-architected-framework"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-services/SKILL.md"
     },
     {
       "name": "behavior-preserving-refactoring",
