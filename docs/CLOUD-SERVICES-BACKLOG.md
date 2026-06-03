@@ -90,16 +90,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] aws|analytics|lake-formation|AWS Lake Formation
 - [x] aws|analytics|opensearch-service|Amazon OpenSearch Service
 - [x] aws|analytics|msk|Amazon MSK
-- [ ] aws|analytics|kinesis-data-firehose|Amazon Data Firehose
-- [ ] aws|analytics|data-exchange|AWS Data Exchange
-- [ ] aws|analytics|clean-rooms|AWS Clean Rooms
+- [x] aws|analytics|kinesis-data-firehose|Amazon Data Firehose
+- [x] aws|analytics|data-exchange|AWS Data Exchange
+- [x] aws|analytics|clean-rooms|AWS Clean Rooms
 
 ### ai-ml
-- [ ] aws|ai-ml|sagemaker|Amazon SageMaker
-- [ ] aws|ai-ml|bedrock|Amazon Bedrock
-- [ ] aws|ai-ml|rekognition|Amazon Rekognition
-- [ ] aws|ai-ml|comprehend|Amazon Comprehend
-- [ ] aws|ai-ml|polly|Amazon Polly
+- [x] aws|ai-ml|sagemaker|Amazon SageMaker
+- [x] aws|ai-ml|bedrock|Amazon Bedrock
+- [x] aws|ai-ml|rekognition|Amazon Rekognition
+- [x] aws|ai-ml|comprehend|Amazon Comprehend
+- [x] aws|ai-ml|polly|Amazon Polly
 - [ ] aws|ai-ml|transcribe|Amazon Transcribe
 - [ ] aws|ai-ml|translate|Amazon Translate
 - [ ] aws|ai-ml|textract|Amazon Textract
