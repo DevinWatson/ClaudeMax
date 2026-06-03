@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 345,
-    "skills": 100,
+    "agents": 366,
+    "skills": 101,
     "categories": 16
   },
   "agents": [
@@ -1362,6 +1362,576 @@
       "version": "1.1.0",
       "status": "stable",
       "path": "agents/qa/e2e-test-author.md"
+    },
+    {
+      "name": "elixir-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Elixir — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution (Tasks/GenStage), verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a BEAM app. Not for a single model call (use elixir-ai-engineer) or retrieval pipelines (use elixir-rag-engineer). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-agent-orchestrator.md"
+    },
+    {
+      "name": "elixir-ai-engineer",
+      "description": "Use when building LLM-backed features in Elixir — wiring model calls via langchain/openai/req clients, prompt/response plumbing, structured output parsing, streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a BEAM app. Not for retrieval pipelines (use elixir-rag-engineer), multi-agent workflows (use elixir-agent-orchestrator), or eval harnesses (use elixir-evals-engineer). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-ai-engineer.md"
+    },
+    {
+      "name": "elixir-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Elixir — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized in Phoenix controllers/Plug. Invoke to design or refine Elixir HTTP endpoints. Not for gRPC/protobuf schemas (use elixir-proto-steward) or for system structure (use elixir-architect). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-api-designer.md"
+    },
+    {
+      "name": "elixir-architect",
+      "description": "Use when designing or reviewing the structure of an Elixir system, application, or context — application/supervision-tree boundaries, OTP process design, context and module layout, coupling/cohesion, interface contracts via behaviours, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial on the BEAM or when reviewing an Elixir design proposal. Not for implementing the feature (use elixir-developer) or for HTTP endpoint shape alone (use elixir-api-designer). (Elixir)",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "elixir",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "elixir-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-architect.md"
+    },
+    {
+      "name": "elixir-compliance-reviewer",
+      "description": "Use when checking Elixir code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of BEAM code. Not for finding exploitable vulnerabilities (use elixir-security-reviewer). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "elixir",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "elixir-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-compliance-reviewer.md"
+    },
+    {
+      "name": "elixir-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in Elixir — Pact (pact_elixir) consumer and provider tests, contract publication, and compatibility checks between services. Invoke to add or fix contract tests on the BEAM so a provider change cannot silently break a consumer. Not for in-process integration tests (use elixir-integration-test-architect) or end-to-end flows (use elixir-sdet). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-contract-tester.md"
+    },
+    {
+      "name": "elixir-cost-governor",
+      "description": "Use when reducing the runtime cost of Elixir services — BEAM scheduler/memory tuning, container sizing, process and connection-pool right-sizing, ETS and binary-memory growth, wasteful allocation and N+1 Ecto query patterns, and cloud resource footprint. Invoke to analyze and cut compute/memory cost of BEAM workloads. Not for latency-only profiling unless it lowers cost, and not for resilience design (use elixir-reliability-engineer). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "cost",
+        "beam-tuning"
+      ],
+      "skills": [
+        "cost-optimization",
+        "elixir-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-cost-governor.md"
+    },
+    {
+      "name": "elixir-developer",
+      "description": "Use when turning an Elixir requirement, ticket, or feature into working, tested, incrementally-shipped code on the BEAM, or when fixing a reported Elixir bug. Invoke for building or extending Elixir/Phoenix/OTP features and for diagnosing failures in existing Elixir code. Not for system-level design (use elixir-architect) or for adding tests to code you did not write (use elixir-unit-test-architect). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "beam",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-developer.md"
+    },
+    {
+      "name": "elixir-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Elixir — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality on the BEAM. Not for building the feature (use elixir-ai-engineer) or the retrieval pipeline (use elixir-rag-engineer). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "elixir-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-evals-engineer.md"
+    },
+    {
+      "name": "elixir-integration-test-architect",
+      "description": "Use when testing how Elixir components integrate across real boundaries — the database via Ecto sandbox, HTTP clients, message brokers, or other services — using Phoenix ConnCase/DataCase, the Ecto SQL sandbox, and bypass/mox for external calls. Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use elixir-unit-test-architect) or browser/end-to-end flows (use elixir-sdet). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "integration-testing",
+        "ecto-sandbox"
+      ],
+      "skills": [
+        "integration-testing",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-integration-test-architect.md"
+    },
+    {
+      "name": "elixir-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Elixir — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle on the BEAM. Invoke for MCP server/client work in an Elixir codebase. Not for general LLM feature plumbing (use elixir-ai-engineer) or multi-agent coordination (use elixir-agent-orchestrator). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-mcp-steward.md"
+    },
+    {
+      "name": "elixir-migration-engineer",
+      "description": "Use when migrating Elixir code across a version or framework boundary — Elixir/OTP upgrades, Phoenix or Ecto major versions, deprecated-API replacements, or library swaps — done in safe, verifiable increments. Invoke to plan and execute a BEAM migration or fix breakage it caused. Not for greenfield features (use elixir-developer) or pure restructuring within one version (use elixir-architect). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-migration-engineer.md"
+    },
+    {
+      "name": "elixir-observability-engineer",
+      "description": "Use when instrumenting Elixir services for observability — structured logging, metrics, and distributed tracing via Telemetry, telemetry_metrics, and OpenTelemetry, span/context propagation across processes, and useful dashboards/alerts signals. Invoke to add or fix telemetry on the BEAM. Not for resilience patterns like retries/circuit-breakers (use elixir-reliability-engineer) or cost reduction (use elixir-cost-governor). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-observability-engineer.md"
+    },
+    {
+      "name": "elixir-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by an Elixir application — externalizing prompts from code, templating and parameterizing them (EEx/heredocs/priv files), versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a BEAM codebase. Not for wiring the model call (use elixir-ai-engineer) or scoring output quality (use elixir-evals-engineer). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "elixir",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "elixir-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-prompt-librarian.md"
+    },
+    {
+      "name": "elixir-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Elixir — message and service definitions, field numbering, wire/back-compat rules, and generated-Elixir (protobuf-elixir/grpc) integration. Invoke for .proto schema design or compatibility review in an Elixir codebase. Not for REST/HTTP API design (use elixir-api-designer) or consumer/provider contract tests (use elixir-contract-tester). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-proto-steward.md"
+    },
+    {
+      "name": "elixir-qa-analyst",
+      "description": "Use when planning what to test for an Elixir change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for BEAM work, before or instead of writing tests. Not for writing the tests themselves (use the Elixir test-architect/sdet roles). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "elixir",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "elixir-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-qa-analyst.md"
+    },
+    {
+      "name": "elixir-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Elixir — chunking, embeddings, vector store wiring (pgvector/Ecto), hybrid retrieval + reranking, context assembly, and grounding/citation. Invoke for RAG retrieval quality or wiring on the BEAM. Not for a single model call (use elixir-ai-engineer) or for building an eval harness (use elixir-evals-engineer). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-rag-engineer.md"
+    },
+    {
+      "name": "elixir-reliability-engineer",
+      "description": "Use when hardening an Elixir service against partial failure — supervision strategies and restart intensity, timeouts, retries-with-backoff, circuit breakers, bulkheads via process isolation, and backpressure via GenStage/Broadway, plus graceful degradation and load shedding. Invoke for resilience design or review of BEAM services. Not for emitting telemetry (use elixir-observability-engineer) or triaging a live outage. (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-reliability-engineer.md"
+    },
+    {
+      "name": "elixir-sdet",
+      "description": "Use when building end-to-end or UI/API test automation in Elixir — Wallaby/Phoenix feature tests and HTTP/API suites, page objects, fixtures, data setup, and stable selectors run in CI. Invoke to automate full user/API flows on the BEAM. Not for unit tests (use elixir-unit-test-architect), boundary integration tests (use elixir-integration-test-architect), or consumer/provider contracts (use elixir-contract-tester). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-sdet.md"
+    },
+    {
+      "name": "elixir-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Elixir code or a diff — tracing untrusted input to sinks for injection (SQL via raw Ecto fragments, command, atom exhaustion), broken authn/authz and IDOR, unsafe deserialization (:erlang.binary_to_term), SSRF/path-traversal, secrets exposure, and crypto misuse, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of BEAM code you are authorized to review. Not for regulatory/policy conformance (use elixir-compliance-reviewer). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "elixir",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "elixir-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-security-reviewer.md"
+    },
+    {
+      "name": "elixir-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Elixir code — mapping a function/module's behaviors and writing deterministic ExUnit tests that catch real regressions (boundaries, invalid input, error paths, pattern-match clauses, process behavior). Invoke to raise meaningful unit coverage on the BEAM. Not for cross-boundary integration tests (use elixir-integration-test-architect) or end-to-end automation (use elixir-sdet). (Elixir)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "elixir",
+        "testing",
+        "exunit"
+      ],
+      "skills": [
+        "test-design",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/elixir/elixir-unit-test-architect.md"
     },
     {
       "name": "etl-architect",
@@ -9766,6 +10336,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/qa/e2e-test-authoring/SKILL.md"
+    },
+    {
+      "name": "elixir-idioms",
+      "description": "Use when writing or fixing Elixir/BEAM code — pattern matching and multiple function clauses, immutability, the pipe operator, with-expressions, structs/protocols/behaviours, OTP (GenServer, Supervisor, supervision trees, \"let it crash\"), processes and message passing, Tasks and concurrency, Ecto changesets/queries, and {:ok, _}/{:error, _} error handling. Verifies with mix (mix compile/test, mix format, credo, dialyzer/dialyxir). Any agent touching Elixir (writer, reviewer, debugger, a Phoenix team) can load it.",
+      "category": "languages",
+      "tags": [
+        "elixir",
+        "beam",
+        "otp",
+        "genserver",
+        "ecto",
+        "mix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/elixir-idioms/SKILL.md"
     },
     {
       "name": "eval-suite-design",
