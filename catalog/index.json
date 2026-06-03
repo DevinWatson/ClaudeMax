@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 618,
-    "skills": 113,
+    "agents": 639,
+    "skills": 114,
     "categories": 16
   },
   "agents": [
@@ -4273,6 +4273,577 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/elixir/elixir-unit-test-architect.md"
+    },
+    {
+      "name": "erlang-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Erlang — decomposing into steps/sub-agents (often as processes), routing, handoffs and shared state, parallel-vs-sequential execution, verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a BEAM app. Not for a single model call (use erlang-ai-engineer), retrieval pipelines (use erlang-rag-engineer), or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-agent-orchestrator.md"
+    },
+    {
+      "name": "erlang-ai-engineer",
+      "description": "Use when building LLM-backed features in Erlang — wiring model calls via HTTP clients (hackney/gun) to provider APIs, prompt/response plumbing, structured output parsing, streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a BEAM app. Not for retrieval pipelines (use erlang-rag-engineer), multi-agent workflows (use erlang-agent-orchestrator), eval harnesses (use erlang-evals-engineer), or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-ai-engineer.md"
+    },
+    {
+      "name": "erlang-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Erlang — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized with Cowboy (or Elli/Yaws). Invoke to design or refine Erlang HTTP endpoints. Not for gRPC/protobuf schemas (use erlang-proto-steward), for system structure (use erlang-architect), or for Elixir/Phoenix APIs (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "rest",
+        "api",
+        "cowboy"
+      ],
+      "skills": [
+        "rest-api-design",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-api-designer.md"
+    },
+    {
+      "name": "erlang-architect",
+      "description": "Use when designing or reviewing the structure of an Erlang system, OTP application, or release — process/supervision-tree topology, application and module boundaries, gen_server/gen_statem responsibilities, distribution and clustering shape, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial on the BEAM or when reviewing an Erlang design proposal. Not for implementing the feature (use erlang-developer), for HTTP endpoint shape alone (use erlang-api-designer), or for Elixir systems (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "erlang",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "erlang-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-architect.md"
+    },
+    {
+      "name": "erlang-compliance-reviewer",
+      "description": "Use when checking Erlang code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of BEAM code. Not for finding exploitable vulnerabilities (use erlang-security-reviewer) or for Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "erlang",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "erlang-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-compliance-reviewer.md"
+    },
+    {
+      "name": "erlang-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in Erlang — Pact-style consumer and provider tests, contract publication, and compatibility checks between BEAM services and their consumers. Invoke to add or fix contract tests on the BEAM so a provider change cannot silently break a consumer. Not for in-process integration tests (use erlang-integration-test-architect), end-to-end flows (use erlang-sdet), or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-contract-tester.md"
+    },
+    {
+      "name": "erlang-cost-governor",
+      "description": "Use when reducing the runtime cost of Erlang services — BEAM VM scheduler/memory tuning, process count and mailbox/heap growth, ETS/Mnesia memory footprint, connection-pool and worker-pool right-sizing, binary refc retention, wasteful copying, and cloud resource footprint. Invoke to analyze and cut compute/memory cost of BEAM workloads. Not for latency-only profiling unless it lowers cost, for resilience design (use erlang-reliability-engineer), or for Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "cost",
+        "beam-tuning"
+      ],
+      "skills": [
+        "cost-optimization",
+        "erlang-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-cost-governor.md"
+    },
+    {
+      "name": "erlang-developer",
+      "description": "Use when turning an Erlang requirement, ticket, or feature into working, tested, incrementally-shipped code on the BEAM, or when fixing a reported Erlang bug. Invoke for building or extending Erlang/OTP features and for diagnosing failures in existing Erlang code. Not for system-level design (use erlang-architect), for adding tests to code you did not write (use erlang-unit-test-architect), or for Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "beam",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-developer.md"
+    },
+    {
+      "name": "erlang-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Erlang — assembling datasets, defining eval suites (often as Common Test cases), and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality on the BEAM. Not for building the feature (use erlang-ai-engineer), the retrieval pipeline (use erlang-rag-engineer), or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "erlang-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-evals-engineer.md"
+    },
+    {
+      "name": "erlang-integration-test-architect",
+      "description": "Use when testing how Erlang components integrate across real boundaries — database, HTTP clients, message brokers, distributed nodes, or other services — using Common Test (ct) suites, test fixtures, and ephemeral/containerized dependencies. Invoke for integration tests that exercise wiring, supervision, and I/O rather than a single module. Not for pure EUnit unit tests (use erlang-unit-test-architect), end-to-end flows (use erlang-sdet), or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "integration-testing",
+        "common-test"
+      ],
+      "skills": [
+        "integration-testing",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-integration-test-architect.md"
+    },
+    {
+      "name": "erlang-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Erlang — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle on the BEAM. Invoke for MCP server/client work in an Erlang codebase. Not for general LLM feature plumbing (use erlang-ai-engineer), multi-agent coordination (use erlang-agent-orchestrator), or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-mcp-steward.md"
+    },
+    {
+      "name": "erlang-migration-engineer",
+      "description": "Use when migrating Erlang code across a version or boundary — OTP/Erlang release upgrades, rebar2-to-rebar3 builds, deprecated-API replacements (e.g. erlang:now, random→rand), library swaps, or hot-code-upgrade relups — done in safe, verifiable increments. Invoke to plan and execute a BEAM migration or fix breakage it caused. Not for greenfield features (use erlang-developer), pure restructuring within one version (use erlang-architect), or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-migration-engineer.md"
+    },
+    {
+      "name": "erlang-observability-engineer",
+      "description": "Use when instrumenting Erlang services for observability — structured logging via logger, metrics via telemetry/prometheus.erl, and distributed tracing via OpenTelemetry (otel), span/context propagation across processes and messages, and useful dashboards/alerts signals. Invoke to add or fix telemetry on the BEAM. Not for resilience patterns like retries/circuit-breakers (use erlang-reliability-engineer), cost reduction (use erlang-cost-governor), or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-observability-engineer.md"
+    },
+    {
+      "name": "erlang-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by an Erlang application — externalizing prompts from code, templating and parameterizing them, versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a BEAM codebase. Not for wiring the model call (use erlang-ai-engineer), scoring output quality (use erlang-evals-engineer), or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "erlang",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "erlang-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-prompt-librarian.md"
+    },
+    {
+      "name": "erlang-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Erlang — message and service definitions, field numbering, wire/back-compat rules, and generated-Erlang integration (gpb/grpcbox). Invoke for .proto schema design or compatibility review in a BEAM codebase. Not for REST/HTTP API design (use erlang-api-designer), consumer/provider contract tests (use erlang-contract-tester), or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-proto-steward.md"
+    },
+    {
+      "name": "erlang-qa-analyst",
+      "description": "Use when planning what to test for an Erlang change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for BEAM work, before or instead of writing tests. Not for writing the tests themselves (use the erlang test-architect/sdet roles) or for Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "erlang",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "erlang-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-qa-analyst.md"
+    },
+    {
+      "name": "erlang-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Erlang — chunking, embeddings, vector store wiring (via HTTP clients), hybrid retrieval + reranking, context assembly, and grounding/citation on the BEAM. Invoke for RAG retrieval quality or wiring in an Erlang app. Not for a single model call (use erlang-ai-engineer), an eval harness (use erlang-evals-engineer), or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-rag-engineer.md"
+    },
+    {
+      "name": "erlang-reliability-engineer",
+      "description": "Use when hardening an Erlang service against partial failure — timeouts, retries-with-backoff, circuit breakers (fuse/breaky), bulkheads, backpressure, supervision/restart-strategy tuning, and graceful degradation and load shedding on the BEAM. Invoke for resilience design or review of Erlang/OTP services. Not for emitting telemetry (use erlang-observability-engineer), triaging a live outage, or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-reliability-engineer.md"
+    },
+    {
+      "name": "erlang-sdet",
+      "description": "Use when building end-to-end or API test automation in Erlang — Common Test-driven HTTP/API suites, hackney/gun client flows, page/endpoint helpers, fixtures, data setup, and stable checks run in CI. Invoke to automate full user/API flows on the BEAM. Not for EUnit unit tests (use erlang-unit-test-architect), service integration tests (use erlang-integration-test-architect), consumer/provider contracts (use erlang-contract-tester), or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-sdet.md"
+    },
+    {
+      "name": "erlang-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Erlang code or a diff — tracing untrusted input to sinks for injection (SQL/command/os:cmd), unsafe term decoding (binary_to_term with untrusted data), atom-table exhaustion, broken authn/authz and IDOR, SSRF/path-traversal, distributed-Erlang cookie/trust exposure, secrets exposure, and crypto misuse, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of BEAM code you are authorized to review. Not for regulatory/policy conformance (use erlang-compliance-reviewer) or for Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "erlang",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "erlang-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-security-reviewer.md"
+    },
+    {
+      "name": "erlang-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Erlang code — mapping a module's behaviors and writing deterministic EUnit tests (with meck where mocking is needed) that catch real regressions (boundaries, invalid input, error paths, message handling). Invoke to raise meaningful unit coverage on the BEAM. Not for cross-boundary integration tests (use erlang-integration-test-architect), end-to-end automation (use erlang-sdet), or Elixir code (use the elixir team). (Erlang)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "erlang",
+        "testing",
+        "eunit"
+      ],
+      "skills": [
+        "test-design",
+        "erlang-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/erlang/erlang-unit-test-architect.md"
     },
     {
       "name": "etl-architect",
@@ -17318,6 +17889,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/elixir-idioms/SKILL.md"
+    },
+    {
+      "name": "erlang-idioms",
+      "description": "Use when writing, reviewing, or debugging Erlang/BEAM code — the actor model and lightweight processes, message passing and selective receive, pattern matching and guards, immutability and single-assignment, OTP (gen_server/gen_statem/supervisor/application), \"let it crash\" and supervision trees, links/monitors, ETS/Mnesia, hot code loading, distributed Erlang and clustering, and binaries/bit syntax. Verifies with rebar3 (compile/eunit/ct), dialyzer, elvis, and erlfmt. Runs on the BEAM like Elixir but is a distinct language with distinct syntax and ecosystem. Any agent touching Erlang (writer, reviewer, debugger, a telecom/distributed-systems team) can load it.",
+      "category": "languages",
+      "tags": [
+        "erlang",
+        "beam",
+        "otp",
+        "gen-server",
+        "supervision",
+        "rebar3"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/erlang-idioms/SKILL.md"
     },
     {
       "name": "eval-suite-design",

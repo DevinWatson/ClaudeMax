@@ -29,7 +29,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] perl
 - [x] groovy
 - [x] ocaml
-- [ ] erlang
+- [x] erlang
 - [ ] solidity
 
 ## Web/app frameworks (tailored teams; web category unless noted; new framework skill each)
