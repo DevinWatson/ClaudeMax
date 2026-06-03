@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 969,
-    "skills": 261,
+    "agents": 977,
+    "skills": 269,
     "categories": 17
   },
   "agents": [
@@ -2864,6 +2864,35 @@
       "path": "agents/cloud/aws/services/iot/aws-iot-core-specialist.md"
     },
     {
+      "name": "aws-iot-device-management-specialist",
+      "description": "Use when onboarding, organizing, searching, updating, or remotely accessing large device fleets with AWS IoT Device Management (AWS IoT Device Management) (AWS) — fleet provisioning (templates, claim certs, JITP/JITR, trusted-user flows), thing groups and dynamic thing groups, jobs for remote operations/OTA at scale, fleet indexing and fleet-wide search, and secure tunneling. Pick this for fleet operations at scale. Defer cloud-side device MQTT connectivity, the registry, certs/policies, and the rules engine to aws-iot-core-specialist (the broker this builds on) and on-device/edge runtime to aws-iot-greengrass-specialist. Sibling: industrial/OT telemetry goes to aws-iot-sitewise-specialist, digital twins to aws-iot-twinmaker-specialist. NOT the aws-security-reviewer role; defer multi-service architecture to aws-cloud-architect. For Azure IoT or GCP defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "iot-device-management",
+        "fleet-provisioning",
+        "jobs",
+        "specialist"
+      ],
+      "skills": [
+        "aws-iot-device-management",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/iot/aws-iot-device-management-specialist.md"
+    },
+    {
       "name": "aws-iot-greengrass-specialist",
       "description": "Use when designing, configuring, deploying, or operating AWS IoT Greengrass V2 (AWS IoT Greengrass) (AWS) — the edge runtime (nucleus) on core devices, components (public/custom/Lambda/container), deployments to core devices and thing groups, local pub/sub and the MQTT bridge, stream manager, local ML inference, and offline/local operation at the EDGE. Pick this for on-device/edge compute, local ML, and intermittent-connectivity workloads. Greengrass is the edge side — defer cloud-side device connectivity, the MQTT broker, the device registry, and rules-engine routing to aws-iot-core-specialist (the cloud layer Greengrass connects back to). NOT the aws-security-reviewer role (cross-cutting posture). Defer multi-service architecture to aws-cloud-architect. For GCP/Azure edge (IoT Edge) defer to those clouds.",
       "category": "cloud",
@@ -2891,6 +2920,93 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/iot/aws-iot-greengrass-specialist.md"
+    },
+    {
+      "name": "aws-iot-sitewise-specialist",
+      "description": "Use when modeling, ingesting, computing on, or visualizing industrial/OT equipment telemetry with AWS IoT SiteWise (AWS IoT SiteWise) (AWS) — asset models and hierarchies, measurement/transform/metric properties, SiteWise Edge gateways with OPC-UA/Modbus connectors, tiered time-series storage, and SiteWise Monitor portals/dashboards. Pick this for industrial asset modeling and OT data platforms. Defer cloud-side device MQTT connectivity to aws-iot-core-specialist (the gateway/broker this builds on) and on-device/edge runtime to aws-iot-greengrass-specialist (the SiteWise gateway runs as a Greengrass component). Sibling: digital twins go to aws-iot-twinmaker-specialist, fleet ops to aws-iot-device-management-specialist. NOT the aws-security-reviewer role; defer multi-service architecture to aws-cloud-architect. For Azure IoT or GCP defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "iot-sitewise",
+        "industrial-iot",
+        "opc-ua",
+        "specialist"
+      ],
+      "skills": [
+        "aws-iot-sitewise",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/iot/aws-iot-sitewise-specialist.md"
+    },
+    {
+      "name": "aws-iot-twinmaker-specialist",
+      "description": "Use when building digital twins of physical systems (factories, buildings, sites) with AWS IoT TwinMaker (AWS IoT TwinMaker) (AWS) — workspaces, entities and component types, components bound to data via built-in (SiteWise/Kinesis Video) or custom Lambda data connectors, knowledge-graph relationships, 3D scenes from glTF/glb with tags/rules, and the Grafana TwinMaker plugin. Pick this for digital-twin modeling and 3D visualization. Defer cloud-side device MQTT connectivity to aws-iot-core-specialist and on-device/edge runtime to aws-iot-greengrass-specialist; the underlying OT time-series telemetry usually comes from aws-iot-sitewise-specialist (which this binds to) and fleet ops from aws-iot-device-management-specialist. NOT the aws-security-reviewer role; defer multi-service architecture to aws-cloud-architect. For Azure Digital Twins or GCP defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "iot-twinmaker",
+        "digital-twin",
+        "3d-scenes",
+        "specialist"
+      ],
+      "skills": [
+        "aws-iot-twinmaker",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/iot/aws-iot-twinmaker-specialist.md"
+    },
+    {
+      "name": "aws-ivs-specialist",
+      "description": "Use when delivering turnkey low-latency or real-time interactive live streaming with Amazon IVS (Amazon IVS) (AWS) — low-latency channels (STANDARD/BASIC, stream keys, playback URLs), real-time WebRTC stages for multi-host video, recording to S3, private playback authorization with signed JWTs, IVS Chat with moderation, and EventBridge stream events. Pick this for a managed, turnkey live streaming product. IVS is the turnkey alternative to assembling a pipeline — when you need fine-grained control, custom DRM, or broadcast workflows, defer to the aws-medialive-specialist (encode) plus aws-mediapackage-specialist (origin/packaging) pipeline instead; for file/VOD transcoding defer to aws-mediaconvert-specialist. NOT the aws-security-reviewer role; defer multi-service architecture to aws-cloud-architect. For GCP or Azure live streaming defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "ivs",
+        "live-streaming",
+        "low-latency",
+        "specialist"
+      ],
+      "skills": [
+        "aws-ivs",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/media/aws-ivs-specialist.md"
     },
     {
       "name": "aws-kendra-specialist",
@@ -3217,6 +3333,93 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/migration/aws-mainframe-modernization-specialist.md"
+    },
+    {
+      "name": "aws-mediaconvert-specialist",
+      "description": "Use when transcoding file-based (VOD) video with AWS Elemental MediaConvert (AWS Elemental MediaConvert) (AWS) — transcode jobs, reusable job templates and output presets, input clipping/stitching/captions/audio, output groups (file/HLS/DASH/CMAF/Smooth) for ABR ladders, codecs and QVBR rate control, SPEKE DRM, on-demand vs reserved queues, and S3/EventBridge-triggered pipelines. Pick this for stored-file/VOD transcoding. This is file/VOD only — defer real-time live encoding to aws-medialive-specialist and live origin packaging/DRM to aws-mediapackage-specialist; for a turnkey live streaming product defer to aws-ivs-specialist. NOT the aws-security-reviewer role; defer multi-service architecture to aws-cloud-architect. For GCP Transcoder or Azure Media Services defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "mediaconvert",
+        "transcode",
+        "vod",
+        "specialist"
+      ],
+      "skills": [
+        "aws-mediaconvert",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/media/aws-mediaconvert-specialist.md"
+    },
+    {
+      "name": "aws-medialive-specialist",
+      "description": "Use when encoding live video in real time with AWS Elemental MediaLive (AWS Elemental MediaLive) (AWS) — channels and input attachments, inputs (RTP/RTMP push or pull, MediaConnect, Elemental Link) and input security groups, encoder settings and ABR rendition ladders, output groups feeding a downstream origin, pipeline redundancy (STANDARD two-pipeline vs SINGLE_PIPELINE, input failover), and SCTE-35 schedule actions. Pick this for the live ENCODE stage. MediaLive only encodes — defer origin packaging/just-in-time formats/DRM to aws-mediapackage-specialist (the usual downstream) and file/VOD transcoding to aws-mediaconvert-specialist; for a turnkey low-latency interactive product (no pipeline to assemble) defer to aws-ivs-specialist. NOT the aws-security-reviewer role; defer multi-service architecture to aws-cloud-architect. For GCP or Azure Media Services defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "medialive",
+        "live-encode",
+        "channels",
+        "specialist"
+      ],
+      "skills": [
+        "aws-medialive",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/media/aws-medialive-specialist.md"
+    },
+    {
+      "name": "aws-mediapackage-specialist",
+      "description": "Use when packaging and originating live or VOD video with AWS Elemental MediaPackage (AWS Elemental MediaPackage) (AWS) — channels that ingest an encoder feed, just-in-time origin endpoints (HLS/DASH/CMAF/Smooth), SPEKE DRM (Widevine/PlayReady/FairPlay), time-shifted viewing (startover/catchup/live-to-VOD harvest), CDN authorization, and the v2 channel-groups model. Pick this for the live ORIGIN/packaging stage. MediaPackage packages/originates only — it needs an upstream encoder, so defer real-time encoding to aws-medialive-specialist (the usual upstream) and file/VOD transcoding to aws-mediaconvert-specialist; for a turnkey low-latency interactive product defer to aws-ivs-specialist; front it with aws-cloudfront-specialist. NOT the aws-security-reviewer role; defer multi-service architecture to aws-cloud-architect. For GCP or Azure Media Services defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "mediapackage",
+        "origin",
+        "packaging",
+        "specialist"
+      ],
+      "skills": [
+        "aws-mediapackage",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/media/aws-mediapackage-specialist.md"
     },
     {
       "name": "aws-memorydb-specialist",
@@ -4708,6 +4911,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/compute/aws-wavelength-specialist.md"
+    },
+    {
+      "name": "aws-workspaces-specialist",
+      "description": "Use when provisioning, sizing, securing, or operating persistent managed virtual desktops (VDI) with Amazon WorkSpaces (Amazon WorkSpaces) (AWS) — WorkSpaces tied to a directory (Managed Microsoft AD/AD Connector/Simple AD), bundles (compute type + volumes) and custom images, running modes (AlwaysOn vs AutoStop) and billing, Personal vs Pools vs Core models, VPC networking and IP access control groups, KMS volume encryption, and PCoIP/WSP DCV protocols. Pick this for persistent per-user cloud desktops. WorkSpaces is persistent VDI — for non-persistent application streaming defer to the AppStream 2.0 specialist (coming next). NOT the aws-security-reviewer role (cross-cutting posture); defer directory/AD identity depth to the aws-directory-service work and multi-service architecture to aws-cloud-architect. For Azure Virtual Desktop or GCP defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "workspaces",
+        "vdi",
+        "virtual-desktop",
+        "specialist"
+      ],
+      "skills": [
+        "aws-workspaces",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/end-user-computing/aws-workspaces-specialist.md"
     },
     {
       "name": "aws-x-ray-specialist",
@@ -28271,6 +28503,22 @@
       "path": "skills/cloud/aws-iot-core/SKILL.md"
     },
     {
+      "name": "aws-iot-device-management",
+      "description": "Use when onboarding, organizing, searching, updating, or remotely accessing large device fleets with AWS IoT Device Management — fleet provisioning (provisioning templates, claim certificates, just-in-time provisioning/registration, trusted-user flows), thing groups and dynamic thing groups, jobs for remote operations/OTA at scale, fleet indexing and fleet-wide search/aggregation, and secure tunneling for remote SSH/access to devices behind firewalls (AWS IoT Device Management). Loads the Device Management knowledge: how to onboard devices at scale, organize fleets into groups, run and target jobs, search the fleet, and open secure tunnels, then verify. Consumed by the Device Management specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) building fleet operations.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "iot-device-management",
+        "fleet-provisioning",
+        "jobs",
+        "fleet-indexing",
+        "secure-tunneling"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-iot-device-management/SKILL.md"
+    },
+    {
       "name": "aws-iot-greengrass",
       "description": "Use when designing, provisioning, securing, or operating AWS IoT Greengrass V2 — the edge runtime (Greengrass nucleus) on gateway/edge devices, components (public AWS, custom, and Lambda/Docker container components), deployments to core devices and thing groups, local pub/sub and the MQTT bridge to IoT Core, stream manager, local ML inference, and offline/local operation at the edge (AWS IoT Greengrass). Loads the Greengrass knowledge: how to install the nucleus on an edge device, author and deploy components, run compute/ML locally with cloud sync, and verify components run on the core device. Consumed by the IoT Greengrass specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they build edge compute.",
       "category": "cloud",
@@ -28285,6 +28533,54 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-iot-greengrass/SKILL.md"
+    },
+    {
+      "name": "aws-iot-sitewise",
+      "description": "Use when modeling, ingesting, computing, or visualizing industrial/OT equipment telemetry with AWS IoT SiteWise — asset models and asset hierarchies, measurements/transforms/metrics properties, SiteWise Edge and the SiteWise gateway with OPC-UA/Modbus/EtherNet-IP source connectors, the time-series data store (hot/warm/cold tiers), and SiteWise Monitor portals/projects/dashboards (AWS IoT SiteWise). Loads the SiteWise knowledge: how to define asset models and properties, configure a gateway to collect from industrial protocols, compute metrics/transforms, store time-series, build Monitor dashboards, and verify property values flow. Consumed by the SiteWise specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they build industrial IoT data platforms.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "iot-sitewise",
+        "industrial-iot",
+        "opc-ua",
+        "asset-model",
+        "time-series"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-iot-sitewise/SKILL.md"
+    },
+    {
+      "name": "aws-iot-twinmaker",
+      "description": "Use when building digital twins of real-world systems (factories, buildings, industrial sites) with AWS IoT TwinMaker — workspaces backed by S3 and a role, entities and component types, components that bind twin properties to data via connectors (built-in IoT SiteWise/Kinesis Video connectors or custom Lambda data connectors), knowledge-graph relationships, 3D scenes built from uploaded glTF/glb models with tags/rules, and the Grafana/Amazon Managed Grafana TwinMaker plugin for visualization (AWS IoT TwinMaker). Loads the TwinMaker knowledge: how to model entities/components, bind them to live data sources, author 3D scenes, and verify a twin resolves property values. Consumed by the TwinMaker specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) building digital-twin applications.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "iot-twinmaker",
+        "digital-twin",
+        "knowledge-graph",
+        "3d-scenes",
+        "data-connector"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-iot-twinmaker/SKILL.md"
+    },
+    {
+      "name": "aws-ivs",
+      "description": "Use when delivering turnkey low-latency or real-time interactive live streaming with Amazon IVS (Interactive Video Service) — low-latency channels (STANDARD/BASIC, channel types, ingest stream keys, playback URLs), real-time stages for multi-host WebRTC video (composition/recording), recording live streams to S3, playback authorization with private channels and signed JWTs, the IVS Chat rooms/messaging service with moderation, and EventBridge stream-state events (Amazon IVS). Loads the IVS knowledge: how to create a channel or real-time stage, ingest via RTMPS/WebRTC, embed the player, secure private playback, add chat, and verify a stream is live. Consumed by the IVS specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) building interactive live experiences.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "ivs",
+        "live-streaming",
+        "low-latency",
+        "webrtc",
+        "chat"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-ivs/SKILL.md"
     },
     {
       "name": "aws-kendra",
@@ -28462,6 +28758,54 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-mainframe-modernization/SKILL.md"
+    },
+    {
+      "name": "aws-mediaconvert",
+      "description": "Use when transcoding file-based (VOD) video with AWS Elemental MediaConvert — submitting transcode jobs, reusable job templates and output presets, input clipping/stitching/captions/audio selectors, output groups (file/Apple HLS/DASH ISO/CMAF/Microsoft Smooth) for adaptive bitrate (ABR) renditions, codecs (H.264/H.265/AV1) and rate control, DRM/SPEKE encryption, accelerated transcoding, on-demand vs reserved pricing queues, and event-driven pipelines via EventBridge/S3 (AWS Elemental MediaConvert). Loads the MediaConvert knowledge: how to build job templates and output groups, produce ABR ladders, wire S3-triggered jobs, and verify outputs render. Consumed by the MediaConvert specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) building VOD pipelines.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "mediaconvert",
+        "transcode",
+        "vod",
+        "abr",
+        "hls"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-mediaconvert/SKILL.md"
+    },
+    {
+      "name": "aws-medialive",
+      "description": "Use when encoding live video in real time with AWS Elemental MediaLive — channels and their input attachments, inputs (RTP/RTMP push, RTMP/HLS pull, MediaConnect, Elemental Link/SDI), input security groups, encoder settings (codecs, ABR rendition ladders, audio/captions), output groups feeding a downstream origin (typically MediaPackage, or HLS/RTMP/UDP/MediaConnect), pipeline redundancy (two-pipeline channels and input failover), channel classes (STANDARD vs SINGLE_PIPELINE), and schedule actions/SCTE-35 ad markers (AWS Elemental MediaLive). Loads the MediaLive knowledge: how to build inputs and a redundant live channel, encode ABR renditions to an origin, and verify the channel runs. Consumed by the MediaLive specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) building live pipelines.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "medialive",
+        "live-encode",
+        "channels",
+        "abr",
+        "scte-35"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-medialive/SKILL.md"
+    },
+    {
+      "name": "aws-mediapackage",
+      "description": "Use when packaging and originating live or VOD video with AWS Elemental MediaPackage — channels that ingest an encoder feed, just-in-time packaging into HLS/DASH/CMAF/Microsoft Smooth output endpoints, content DRM via SPEKE (Widevine/PlayReady/FairPlay), time-shifted viewing (startover/catchup/live-to-VOD harvest), origin endpoint manifest/segment settings and CDN authorization, and the v2 channel groups model (AWS Elemental MediaPackage). Loads the MediaPackage knowledge: how to create a channel, attach format-specific origin endpoints, apply SPEKE DRM and CDN auth, and verify a playable manifest. Consumed by the MediaPackage specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) building the origin stage of a live pipeline.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "mediapackage",
+        "origin",
+        "packaging",
+        "drm",
+        "hls"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-mediapackage/SKILL.md"
     },
     {
       "name": "aws-memorydb",
@@ -29228,6 +29572,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-wavelength/SKILL.md"
+    },
+    {
+      "name": "aws-workspaces",
+      "description": "Use when provisioning, sizing, securing, or operating persistent managed virtual desktops (VDI) with Amazon WorkSpaces — WorkSpaces tied to a directory (AWS Managed Microsoft AD, AD Connector, or Simple AD), bundles (compute type Value/Standard/Performance/Power/Graphics + root/user volumes) and custom images, running modes (AlwaysOn vs AutoStop) and billing, WorkSpaces Personal vs the WorkSpaces Pools (non-persistent) and Core models, networking/VPC and IP access control groups, encryption with KMS, and the streaming/client protocols (PCoIP/WSP DCV) (Amazon WorkSpaces). Loads the WorkSpaces knowledge: how to wire a directory, build bundles/images, launch desktops, secure access, and verify a desktop is available. Consumed by the WorkSpaces specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) building managed VDI.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "workspaces",
+        "vdi",
+        "virtual-desktop",
+        "directory",
+        "bundles"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-workspaces/SKILL.md"
     },
     {
       "name": "aws-x-ray",

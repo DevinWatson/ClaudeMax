@@ -168,18 +168,18 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 ### iot
 - [x] aws|iot|iot-core|AWS IoT Core
 - [x] aws|iot|iot-greengrass|AWS IoT Greengrass
-- [ ] aws|iot|iot-sitewise|AWS IoT SiteWise
-- [ ] aws|iot|iot-device-management|AWS IoT Device Management
-- [ ] aws|iot|iot-twinmaker|AWS IoT TwinMaker
+- [x] aws|iot|iot-sitewise|AWS IoT SiteWise
+- [x] aws|iot|iot-device-management|AWS IoT Device Management
+- [x] aws|iot|iot-twinmaker|AWS IoT TwinMaker
 
 ### media
-- [ ] aws|media|mediaconvert|AWS Elemental MediaConvert
-- [ ] aws|media|medialive|AWS Elemental MediaLive
-- [ ] aws|media|mediapackage|AWS Elemental MediaPackage
-- [ ] aws|media|ivs|Amazon IVS
+- [x] aws|media|mediaconvert|AWS Elemental MediaConvert
+- [x] aws|media|medialive|AWS Elemental MediaLive
+- [x] aws|media|mediapackage|AWS Elemental MediaPackage
+- [x] aws|media|ivs|Amazon IVS
 
 ### end-user-computing
-- [ ] aws|end-user-computing|workspaces|Amazon WorkSpaces
+- [x] aws|end-user-computing|workspaces|Amazon WorkSpaces
 - [ ] aws|end-user-computing|appstream|Amazon AppStream 2.0
 
 ### business-apps
