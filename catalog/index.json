@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 801,
-    "skills": 134,
+    "agents": 808,
+    "skills": 135,
     "categories": 17
   },
   "agents": [
@@ -11343,6 +11343,205 @@
       "version": "1.1.0",
       "status": "stable",
       "path": "agents/devops/kubernetes-operator.md"
+    },
+    {
+      "name": "kubernetes-platform-cluster-admin",
+      "description": "Use when operating a Kubernetes cluster as a platform — node-pool and node lifecycle (cordon/drain/upgrade), cluster version upgrades, installing/managing operators and CRDs, StorageClasses/CSI, Helm-packaged platform components, and namespace/quota provisioning — then validating against live cluster state (Kubernetes platform). NOT for deploying a single app's Deployments/Services/manifests (use devops/kubernetes-operator, app-workload level). NOT for platform design (kubernetes-platform-platform-architect), CNI/mesh (kubernetes-platform-networking-engineer), RBAC/policy audit (kubernetes-platform-security-reviewer), cost (kubernetes-platform-cost-governor), cross-cloud IaC (devops/terraform-architect), or AWS/GCP/Azure managed-k8s (EKS/GKE/AKS) teams. Distribution-agnostic.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kubernetes",
+        "platform",
+        "cluster-operation",
+        "node-lifecycle",
+        "upgrade"
+      ],
+      "skills": [
+        "kubernetes-platform",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/kubernetes-platform/kubernetes-platform-cluster-admin.md"
+    },
+    {
+      "name": "kubernetes-platform-cost-governor",
+      "description": "Use when reducing or governing a Kubernetes cluster/platform's cost — idle/over-provisioned node pools, autoscaler min/max bounds (cluster-autoscaler/Karpenter), bin-packing and requests/limits right-sizing, spot/preemptible node strategy, and trimming idle platform components — then verifying with kubectl/metrics (Kubernetes platform). NOT for a single app's resource tuning or manifests (use devops/kubernetes-operator, app-workload level). NOT for platform design (kubernetes-platform-platform-architect), reliability (kubernetes-platform-reliability-engineer), applying the change (kubernetes-platform-cluster-admin), or AWS/GCP/Azure managed-k8s cost teams. Distribution-agnostic.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kubernetes",
+        "platform",
+        "cost",
+        "finops",
+        "autoscaling"
+      ],
+      "skills": [
+        "cost-optimization",
+        "kubernetes-platform",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/kubernetes-platform/kubernetes-platform-cost-governor.md"
+    },
+    {
+      "name": "kubernetes-platform-networking-engineer",
+      "description": "Use when designing or fixing cluster-wide Kubernetes networking as a platform — the CNI (Calico/Cilium), default-deny NetworkPolicies and tenant segmentation, ingress controllers / Gateway API, service mesh (Istio/Linkerd), and CoreDNS/Service reachability — then validating it (Kubernetes platform). NOT for a single app's Service/Ingress manifests (use devops/kubernetes-operator, app-workload level). NOT for RBAC/policy security audit (kubernetes-platform-security-reviewer), platform design (kubernetes-platform-platform-architect), cluster operation/upgrades (kubernetes-platform-cluster-admin), cross-cloud IaC (devops/terraform-architect), or AWS/GCP/Azure managed-k8s (EKS/GKE/AKS) networking teams. Distribution-agnostic.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kubernetes",
+        "platform",
+        "networking",
+        "cni",
+        "service-mesh"
+      ],
+      "skills": [
+        "network-design",
+        "kubernetes-platform",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/kubernetes-platform/kubernetes-platform-networking-engineer.md"
+    },
+    {
+      "name": "kubernetes-platform-observability-engineer",
+      "description": "Use when instrumenting cluster/platform-level Kubernetes observability — cluster and control-plane metrics via Prometheus/metrics-server, Grafana dashboards, node/kubelet/etcd/apiserver golden signals, and SLO-driven alerting (Alertmanager) for the platform — then validating it (Kubernetes platform). NOT for a single app's instrumentation or generic non-cluster observability (use devops/observability-engineer or devops/kubernetes-operator, app-workload level). NOT for reliability/DR (kubernetes-platform-reliability-engineer), networking (kubernetes-platform-networking-engineer), platform design (kubernetes-platform-platform-architect), or AWS/GCP/Azure managed-k8s observability teams. Distribution-agnostic.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kubernetes",
+        "platform",
+        "observability",
+        "prometheus",
+        "grafana"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "kubernetes-platform",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/kubernetes-platform/kubernetes-platform-observability-engineer.md"
+    },
+    {
+      "name": "kubernetes-platform-platform-architect",
+      "description": "Use when designing or reviewing a Kubernetes cluster/platform architecture — control-plane topology (apiserver/etcd/scheduler), node-pool strategy, multi-tenancy and namespace model, cluster-wide networking/storage/autoscaling shape, and operator/CRD extension — at the CLUSTER/PLATFORM level (Kubernetes platform). Produces the platform design and trade-offs, not the manifests. NOT for deploying a single app's Deployments/Services/manifests (use devops/kubernetes-operator, app-workload level). NOT for cluster-day-to-day operation (kubernetes-platform-cluster-admin), CNI/mesh plumbing (kubernetes-platform-networking-engineer), RBAC/policy audit (kubernetes-platform-security-reviewer), generic cross-cloud IaC (devops/terraform-architect), or the AWS/GCP/Azure managed-k8s teams (EKS/GKE/AKS specifics). Distribution-agnostic.",
+      "category": "cloud",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "kubernetes",
+        "platform",
+        "architecture",
+        "control-plane",
+        "multi-tenancy"
+      ],
+      "skills": [
+        "software-architecture",
+        "kubernetes-platform",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/kubernetes-platform/kubernetes-platform-platform-architect.md"
+    },
+    {
+      "name": "kubernetes-platform-reliability-engineer",
+      "description": "Use when hardening a Kubernetes cluster/platform's resilience — control-plane/etcd HA and backups, node-pool spread and topology constraints, PodDisruptionBudgets and safe drains, multi-zone/multi-cluster failover, and disaster recovery to an RTO/RPO — then validating it (Kubernetes platform). NOT for a single app's resilience or manifests (use devops/kubernetes-operator, app-workload level). NOT for platform design (kubernetes-platform-platform-architect), CNI/mesh (kubernetes-platform-networking-engineer), metrics/alerting (kubernetes-platform-observability-engineer), cost (kubernetes-platform-cost-governor), or AWS/GCP/Azure managed-k8s reliability teams. Distribution-agnostic.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kubernetes",
+        "platform",
+        "reliability",
+        "etcd-ha",
+        "disaster-recovery"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "kubernetes-platform",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/kubernetes-platform/kubernetes-platform-reliability-engineer.md"
+    },
+    {
+      "name": "kubernetes-platform-security-reviewer",
+      "description": "Use when reviewing a Kubernetes cluster/platform for security — RBAC least-privilege (no cluster-admin bindings, no wildcard verbs/resources, ServiceAccounts over user identities), Pod Security Standards and admission policy (OPA Gatekeeper/Kyverno), privileged/host-namespace pods, default-deny NetworkPolicy gaps, and CRD/operator RBAC blast radius — then triaging by severity (Kubernetes platform). Read-only; reports, does not change the cluster. NOT for app-code appsec or a single app's manifests (use devops/kubernetes-operator, app-workload level), platform design (kubernetes-platform-platform-architect), fixing config (kubernetes-platform-cluster-admin), or AWS/GCP/Azure managed-k8s security teams. Distribution-agnostic.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "kubernetes",
+        "platform",
+        "security",
+        "rbac",
+        "admission-control"
+      ],
+      "skills": [
+        "appsec-review",
+        "kubernetes-platform",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/kubernetes-platform/kubernetes-platform-security-reviewer.md"
     },
     {
       "name": "laravel-accessibility-specialist",
@@ -23113,6 +23312,26 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/kotlin-idioms/SKILL.md"
+    },
+    {
+      "name": "kubernetes-platform",
+      "description": "The substantive cluster/platform-level Kubernetes capability — operating clusters as a platform, not deploying one app's workloads. Covers control-plane architecture (kube-apiserver, etcd, scheduler, controller-manager), node pools and node lifecycle (cordon/drain/upgrade), multi-tenancy and namespaces, RBAC and ServiceAccounts, network policies and the CNI (Calico, Cilium), ingress and service mesh (Istio, Linkerd), storage classes and CSI, autoscaling (HPA, VPA, cluster-autoscaler, Karpenter), operators and CRDs, Helm packaging, cluster version upgrades and node drains, admission control and policy (OPA Gatekeeper, Kyverno, Pod Security Standards), and tooling (kubectl, k9s, kubeadm). Use when architecting, operating, securing, scaling, upgrading, or governing a Kubernetes cluster/fleet as a platform. NOT for one application's Deployments/Services/manifests (app-workload level); distribution-agnostic — pair with provider knowledge for EKS/GKE/AKS. Any agent operating a cluster as a platform can load it.",
+      "category": "cloud",
+      "tags": [
+        "kubernetes",
+        "platform-engineering",
+        "control-plane",
+        "multi-tenancy",
+        "rbac",
+        "cni",
+        "autoscaling",
+        "admission-control",
+        "helm",
+        "cluster-upgrade"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/kubernetes-platform/SKILL.md"
     },
     {
       "name": "kubernetes-workloads",

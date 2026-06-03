@@ -53,7 +53,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] gcp
 - [x] azure
 - [x] cloudflare
-- [ ] kubernetes-platform
+- [x] kubernetes-platform
 - [ ] supabase
 
 ## Data platforms / databases (data category; tailored teams + skills)
