@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 471,
-    "skills": 106,
+    "agents": 492,
+    "skills": 107,
     "categories": 16
   },
   "agents": [
@@ -7381,6 +7381,576 @@
       "path": "agents/qa/load-test-author.md"
     },
     {
+      "name": "lua-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Lua — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution (coroutines, OpenResty light threads), verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a Lua app. Not for a single model call (use lua-ai-engineer) or retrieval pipelines (use lua-rag-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-agent-orchestrator.md"
+    },
+    {
+      "name": "lua-ai-engineer",
+      "description": "Use when building LLM-backed features in Lua — wiring model calls via HTTP clients (lua-resty-http, OpenResty) or provider SDKs, prompt/response plumbing, structured output parsing, streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a Lua app. Not for retrieval pipelines (use lua-rag-engineer), multi-agent workflows (use lua-agent-orchestrator), or eval harnesses (use lua-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-ai-engineer.md"
+    },
+    {
+      "name": "lua-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Lua — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized in OpenResty/lua-resty or a Lua web framework (lapis, Sailor). Invoke to design or refine Lua HTTP endpoints. Not for protobuf/gRPC schemas (use lua-proto-steward) or for system structure (use lua-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "rest",
+        "api",
+        "openresty"
+      ],
+      "skills": [
+        "rest-api-design",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-api-designer.md"
+    },
+    {
+      "name": "lua-architect",
+      "description": "Use when designing or reviewing the structure of a Lua system, module, or embedded layer — module boundaries, coupling/cohesion, metatable-based contracts, package/require layout, host-integration seams (Neovim plugin, OpenResty app, game scripting), and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Lua or when reviewing a Lua design proposal. Not for implementing the feature (use lua-developer) or for HTTP endpoint shape alone (use lua-api-designer).",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "lua",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "lua-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-architect.md"
+    },
+    {
+      "name": "lua-compliance-reviewer",
+      "description": "Use when checking Lua code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of Lua code. Not for finding exploitable vulnerabilities (use lua-security-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "lua",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "lua-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-compliance-reviewer.md"
+    },
+    {
+      "name": "lua-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts involving Lua services — Pact-style consumer and provider tests, contract publication, and compatibility checks between services. Invoke to add or fix contract tests in Lua so a provider change cannot silently break a consumer. Not for in-process integration tests (use lua-integration-test-architect) or end-to-end flows (use lua-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-contract-tester.md"
+    },
+    {
+      "name": "lua-cost-governor",
+      "description": "Use when reducing the runtime cost of Lua services — GC tuning (collectgarbage step/pause), table reuse and allocation reduction, LuaJIT trace/JIT-friendliness and FFI to cut overhead, worker/connection-pool right-sizing in OpenResty, and cloud resource footprint. Invoke to analyze and cut compute/memory cost of Lua workloads. Not for latency-only profiling unless it lowers cost, and not for resilience design (use lua-reliability-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "cost",
+        "luajit-tuning"
+      ],
+      "skills": [
+        "cost-optimization",
+        "lua-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-cost-governor.md"
+    },
+    {
+      "name": "lua-developer",
+      "description": "Use when turning a Lua requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported bug in existing Lua code. Invoke for building or extending Lua features (standalone, Neovim, OpenResty, game engine) and for diagnosing failures in existing Lua. Not for system-level design (use lua-architect) or for adding tests to code you did not write (use lua-unit-test-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-developer.md"
+    },
+    {
+      "name": "lua-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Lua — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality in Lua. Not for building the feature (use lua-ai-engineer) or the retrieval pipeline (use lua-rag-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "lua-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-evals-engineer.md"
+    },
+    {
+      "name": "lua-integration-test-architect",
+      "description": "Use when testing how Lua components integrate across real boundaries — database, HTTP clients, the embedding host (Neovim, OpenResty/Nginx, Redis), or other services — using busted with real or ephemeral dependencies and harnesses (Test::Nginx, docker-backed services). Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use lua-unit-test-architect) or end-to-end flows (use lua-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "integration-testing",
+        "openresty"
+      ],
+      "skills": [
+        "integration-testing",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-integration-test-architect.md"
+    },
+    {
+      "name": "lua-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Lua — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle in Lua. Invoke for MCP server/client work in a Lua codebase. Not for general LLM feature plumbing (use lua-ai-engineer) or multi-agent coordination (use lua-agent-orchestrator).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-mcp-steward.md"
+    },
+    {
+      "name": "lua-migration-engineer",
+      "description": "Use when migrating Lua code across a version or runtime boundary — Lua 5.1→5.4 upgrades, PUC-Lua↔LuaJIT moves, removed/changed APIs (unpack/table.unpack, setfenv/_ENV, module()), or library/rock replacements — done in safe, verifiable increments. Invoke to plan and execute a Lua migration or fix breakage it caused. Not for greenfield features (use lua-developer) or pure restructuring within one version (use lua-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-migration-engineer.md"
+    },
+    {
+      "name": "lua-observability-engineer",
+      "description": "Use when instrumenting Lua services for observability — structured logging, metrics, and distributed tracing (OpenTelemetry-lua, Prometheus via nginx-lua-prometheus, host loggers), span/context propagation, and useful dashboards/alerts signals. Invoke to add or fix telemetry in Lua. Not for resilience patterns like retries/circuit-breakers (use lua-reliability-engineer) or cost reduction (use lua-cost-governor).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-observability-engineer.md"
+    },
+    {
+      "name": "lua-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a Lua application — externalizing prompts from code, templating and parameterizing them, versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a Lua codebase. Not for wiring the model call (use lua-ai-engineer) or scoring output quality (use lua-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "lua",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "lua-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-prompt-librarian.md"
+    },
+    {
+      "name": "lua-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Lua — message and service definitions, field numbering, wire/back-compat rules, and generated-Lua integration (lua-protobuf, protoc Lua plugins, grpc-lua). Invoke for .proto schema design or compatibility review in a Lua codebase. Not for REST/HTTP API design (use lua-api-designer) or consumer/provider contract tests (use lua-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-proto-steward.md"
+    },
+    {
+      "name": "lua-qa-analyst",
+      "description": "Use when planning what to test for a Lua change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for Lua work, before or instead of writing tests. Not for writing the tests themselves (use the lua test-architect/sdet roles).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "lua",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "lua-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-qa-analyst.md"
+    },
+    {
+      "name": "lua-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Lua — chunking, embeddings, vector store wiring (HTTP clients, Redis vector search), hybrid retrieval + reranking, context assembly, and grounding/citation. Invoke for RAG retrieval quality or wiring in Lua. Not for a single model call (use lua-ai-engineer) or for building an eval harness (use lua-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-rag-engineer.md"
+    },
+    {
+      "name": "lua-reliability-engineer",
+      "description": "Use when hardening a Lua service against partial failure — timeouts, retries-with-backoff, circuit breakers, bulkheads, and backpressure (lua-resty-* utilities, OpenResty timers/locks), plus graceful degradation and load shedding. Invoke for resilience design or review of Lua services. Not for emitting telemetry (use lua-observability-engineer) or triaging a live outage.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-reliability-engineer.md"
+    },
+    {
+      "name": "lua-sdet",
+      "description": "Use when building end-to-end or UI/API test automation driven from Lua — HTTP/API suites against a running service, Neovim plugin end-to-end harnesses, or game-engine scripted flows, with page-object/client layering, fixtures, data setup, and stable selectors run in CI. Invoke to automate full user/API flows in Lua. Not for unit tests (use lua-unit-test-architect), service integration tests (use lua-integration-test-architect), or consumer/provider contracts (use lua-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-sdet.md"
+    },
+    {
+      "name": "lua-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Lua code or a diff — tracing untrusted input to sinks for injection (SQL via db drivers, command, OS, Redis), broken authn/authz and IDOR, unsafe use of load/loadstring/dofile and sandbox escapes, SSRF/path-traversal, secrets exposure, and unsafe FFI/C-boundary use, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of Lua code you are authorized to review. Not for regulatory/policy conformance (use lua-compliance-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "lua",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "lua-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-security-reviewer.md"
+    },
+    {
+      "name": "lua-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Lua code — mapping a unit's behaviors and writing deterministic busted (or luaunit) tests with stubs/spies/mocks that catch real regressions (boundaries, nil/invalid input, error paths, coroutine flow). Invoke to raise meaningful unit coverage in Lua. Not for cross-boundary integration tests (use lua-integration-test-architect) or end-to-end automation (use lua-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "lua",
+        "testing",
+        "busted"
+      ],
+      "skills": [
+        "test-design",
+        "lua-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/lua/lua-unit-test-architect.md"
+    },
+    {
       "name": "market-sizer",
       "description": "Use to estimate market size — TAM/SAM/SOM via top-down AND bottom-up methods, sourced assumptions, and sanity-checking. NOT full financial projections or unit economics (use financial-modeler).",
       "category": "business",
@@ -13692,6 +14262,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/qa/load-test-authoring/SKILL.md"
+    },
+    {
+      "name": "lua-idioms",
+      "description": "Use when writing, reviewing, or debugging Lua — tables as the universal data structure, metatables and metamethods (OOP via __index), first-class functions and closures, the colon method syntax, 1-based indexing and sequence/nil pitfalls, multiple returns and varargs, coroutines, pcall/error handling, the require module system, the C API and LuaJIT FFI, Lua 5.1/5.4 and LuaJIT differences, and common embedding contexts (Neovim, OpenResty/Nginx, Redis, game engines). Verifies with the project's runtime and tools (lua/luajit, busted/luaunit, luacheck, stylua, LuaRocks). Any agent touching Lua (writer, reviewer, debugger, Neovim/OpenResty/game team) can load it.",
+      "category": "languages",
+      "tags": [
+        "lua",
+        "luajit",
+        "metatables",
+        "coroutines",
+        "openresty",
+        "neovim"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/lua-idioms/SKILL.md"
     },
     {
       "name": "market-sizing",
