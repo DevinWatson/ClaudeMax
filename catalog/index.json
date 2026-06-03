@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 261,
-    "skills": 96,
+    "agents": 282,
+    "skills": 97,
     "categories": 16
   },
   "agents": [
@@ -3218,6 +3218,576 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/java/java-unit-test-architect.md"
+    },
+    {
+      "name": "kotlin-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Kotlin — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution via coroutines, verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a Kotlin app. Not for a single model call (use kotlin-ai-engineer) or retrieval pipelines (use kotlin-rag-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-agent-orchestrator.md"
+    },
+    {
+      "name": "kotlin-ai-engineer",
+      "description": "Use when building LLM-backed features in Kotlin — wiring model calls via LangChain4j/Spring AI/Ktor client, prompt/response plumbing, structured output parsing, streaming via Flow, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a Kotlin app. Not for retrieval pipelines (use kotlin-rag-engineer), multi-agent workflows (use kotlin-agent-orchestrator), or eval harnesses (use kotlin-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-ai-engineer.md"
+    },
+    {
+      "name": "kotlin-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Kotlin — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized in Spring WebFlux/MVC or Ktor. Invoke to design or refine Kotlin HTTP endpoints. Not for gRPC/protobuf schemas (use kotlin-proto-steward) or for system structure (use kotlin-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-api-designer.md"
+    },
+    {
+      "name": "kotlin-architect",
+      "description": "Use when designing or reviewing the structure of a Kotlin system, service, or module — component boundaries, coupling/cohesion, interface contracts, module/package layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Kotlin or when reviewing a Kotlin design proposal. Not for implementing the feature (use kotlin-developer) or for REST endpoint shape alone (use kotlin-api-designer).",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "kotlin",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "kotlin-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-architect.md"
+    },
+    {
+      "name": "kotlin-compliance-reviewer",
+      "description": "Use when checking Kotlin code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of Kotlin code. Not for finding exploitable vulnerabilities (use kotlin-security-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "kotlin",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "kotlin-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-compliance-reviewer.md"
+    },
+    {
+      "name": "kotlin-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in Kotlin — Spring Cloud Contract or Pact consumer and provider tests, contract publication, and compatibility checks between services. Invoke to add or fix contract tests in Kotlin so a provider change cannot silently break a consumer. Not for in-process integration tests (use kotlin-integration-test-architect) or end-to-end flows (use kotlin-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-contract-tester.md"
+    },
+    {
+      "name": "kotlin-cost-governor",
+      "description": "Use when reducing the runtime cost of Kotlin services — JVM heap/GC tuning, container memory sizing, coroutine-dispatcher and connection/thread-pool right-sizing, wasteful allocation (boxing, intermediate collections, Flow buffering) and query patterns, and cloud resource footprint. Invoke to analyze and cut compute/memory cost of Kotlin workloads. Not for latency-only profiling unless it lowers cost, and not for resilience design (use kotlin-reliability-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "cost",
+        "jvm-tuning"
+      ],
+      "skills": [
+        "cost-optimization",
+        "kotlin-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-cost-governor.md"
+    },
+    {
+      "name": "kotlin-developer",
+      "description": "Use when turning a Kotlin requirement, ticket, or feature into working, tested, incrementally-shipped code on the JVM, or when fixing a reported Kotlin bug. Invoke for building or extending Kotlin/Spring/Ktor features and for diagnosing failures in existing Kotlin code. Not for system-level design (use kotlin-architect) or for adding tests to code you did not write (use kotlin-unit-test-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "jvm",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-developer.md"
+    },
+    {
+      "name": "kotlin-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Kotlin — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality in Kotlin. Not for building the feature (use kotlin-ai-engineer) or the retrieval pipeline (use kotlin-rag-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "kotlin-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-evals-engineer.md"
+    },
+    {
+      "name": "kotlin-integration-test-architect",
+      "description": "Use when testing how Kotlin components integrate across real boundaries — database, HTTP clients, message brokers, or other services — using Spring Boot test slices, Ktor test host, Testcontainers, or WireMock. Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use kotlin-unit-test-architect) or browser/end-to-end flows (use kotlin-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "integration-testing",
+        "testcontainers"
+      ],
+      "skills": [
+        "integration-testing",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-integration-test-architect.md"
+    },
+    {
+      "name": "kotlin-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Kotlin — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle in Kotlin. Invoke for MCP server/client work in a Kotlin codebase. Not for general LLM feature plumbing (use kotlin-ai-engineer) or multi-agent coordination (use kotlin-agent-orchestrator).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-mcp-steward.md"
+    },
+    {
+      "name": "kotlin-migration-engineer",
+      "description": "Use when migrating Kotlin code across a version or framework boundary — Kotlin language/JVM-target upgrades, Spring Boot/Ktor major versions, Gradle Groovy-to-Kotlin-DSL moves, coroutines API migrations, or library replacements — done in safe, verifiable increments. Invoke to plan and execute a Kotlin migration or fix breakage it caused. Not for greenfield features (use kotlin-developer) or pure restructuring within one version (use kotlin-architect).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-migration-engineer.md"
+    },
+    {
+      "name": "kotlin-observability-engineer",
+      "description": "Use when instrumenting Kotlin services for observability — structured logging, metrics, and distributed tracing via Micrometer/OpenTelemetry/SLF4J, span/coroutine-context propagation, and useful dashboards/alerts signals. Invoke to add or fix telemetry in Kotlin. Not for resilience patterns like retries/circuit-breakers (use kotlin-reliability-engineer) or cost reduction (use kotlin-cost-governor).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-observability-engineer.md"
+    },
+    {
+      "name": "kotlin-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a Kotlin application — externalizing prompts from code, templating and parameterizing them, versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a Kotlin codebase. Not for wiring the model call (use kotlin-ai-engineer) or scoring output quality (use kotlin-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "kotlin",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "kotlin-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-prompt-librarian.md"
+    },
+    {
+      "name": "kotlin-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Kotlin — message and service definitions, field numbering, wire/back-compat rules, and generated-Kotlin (or grpc-kotlin) integration. Invoke for .proto schema design or compatibility review in a Kotlin codebase. Not for REST/HTTP API design (use kotlin-api-designer) or consumer/provider contract tests (use kotlin-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-proto-steward.md"
+    },
+    {
+      "name": "kotlin-qa-analyst",
+      "description": "Use when planning what to test for a Kotlin change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for Kotlin work, before or instead of writing tests. Not for writing the tests themselves (use the kotlin test-architect/sdet roles).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "kotlin",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "kotlin-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-qa-analyst.md"
+    },
+    {
+      "name": "kotlin-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Kotlin — chunking, embeddings, vector store wiring, hybrid retrieval + reranking, context assembly, and grounding/citation via LangChain4j/Spring AI. Invoke for RAG retrieval quality or wiring in Kotlin. Not for a single model call (use kotlin-ai-engineer) or for building an eval harness (use kotlin-evals-engineer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-rag-engineer.md"
+    },
+    {
+      "name": "kotlin-reliability-engineer",
+      "description": "Use when hardening a Kotlin service against partial failure — timeouts, retries-with-backoff, circuit breakers, bulkheads, and backpressure via Resilience4j or coroutine/Flow operators, plus graceful degradation and load shedding. Invoke for resilience design or review of Kotlin services. Not for emitting telemetry (use kotlin-observability-engineer) or triaging a live outage.",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-reliability-engineer.md"
+    },
+    {
+      "name": "kotlin-sdet",
+      "description": "Use when building end-to-end or UI/API test automation in Kotlin — Selenium/Playwright-Kotlin/Ktor-client/REST-assured suites, page objects, fixtures, data setup, and stable selectors run in CI. Invoke to automate full user/API flows in Kotlin. Not for unit tests (use kotlin-unit-test-architect), service integration tests (use kotlin-integration-test-architect), or consumer/provider contracts (use kotlin-contract-tester).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-sdet.md"
+    },
+    {
+      "name": "kotlin-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Kotlin code or a diff — tracing untrusted input to sinks for injection (SQL/JPQL/command/EL), broken authn/authz and IDOR, unsafe deserialization, SSRF/path-traversal, secrets exposure, and crypto misuse, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of Kotlin code you are authorized to review. Not for regulatory/policy conformance (use kotlin-compliance-reviewer).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "kotlin",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "kotlin-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-security-reviewer.md"
+    },
+    {
+      "name": "kotlin-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Kotlin code — mapping a unit's behaviors and writing deterministic JUnit5/Kotest/MockK tests (including coroutine tests via runTest) that catch real regressions (boundaries, invalid input, error paths, nullability). Invoke to raise meaningful unit coverage in Kotlin. Not for cross-service integration tests (use kotlin-integration-test-architect) or end-to-end automation (use kotlin-sdet).",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "kotlin",
+        "testing",
+        "kotest"
+      ],
+      "skills": [
+        "test-design",
+        "kotlin-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/kotlin/kotlin-unit-test-architect.md"
     },
     {
       "name": "kubernetes-operator",
@@ -7727,6 +8297,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/mobile/jetpack-compose-development/SKILL.md"
+    },
+    {
+      "name": "kotlin-idioms",
+      "description": "Use when writing, reviewing, or debugging Kotlin code — null-safety and smart casts, data/sealed classes, coroutines and structured concurrency, Flow, extension and scope functions, immutability (val), generics and variance (in/out), and JVM interop. Verifies with the project's Gradle build (gradlew build/test) and ktlint/detekt. Any agent touching Kotlin (writer, reviewer, debugger, the android team) can load it.",
+      "category": "languages",
+      "tags": [
+        "kotlin",
+        "jvm",
+        "coroutines",
+        "flow",
+        "null-safety",
+        "gradle"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/kotlin-idioms/SKILL.md"
     },
     {
       "name": "kubernetes-workloads",
