@@ -238,14 +238,14 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] gcp|compute|shielded-vms|Shielded VMs
 
 ### data-analytics
-- [ ] gcp|data-analytics|bigquery|BigQuery
-- [ ] gcp|data-analytics|dataflow|Dataflow
-- [ ] gcp|data-analytics|dataform|Dataform
-- [ ] gcp|data-analytics|datastream|Datastream
-- [ ] gcp|data-analytics|cloud-data-fusion|Cloud Data Fusion
-- [ ] gcp|data-analytics|looker|Looker
-- [ ] gcp|data-analytics|managed-airflow|Cloud Composer (Managed Airflow)
-- [ ] gcp|data-analytics|managed-spark|Dataproc (Managed Spark)
+- [x] gcp|data-analytics|bigquery|BigQuery
+- [x] gcp|data-analytics|dataflow|Dataflow
+- [x] gcp|data-analytics|dataform|Dataform
+- [x] gcp|data-analytics|datastream|Datastream
+- [x] gcp|data-analytics|cloud-data-fusion|Cloud Data Fusion
+- [x] gcp|data-analytics|looker|Looker
+- [x] gcp|data-analytics|managed-airflow|Cloud Composer (Managed Airflow)
+- [x] gcp|data-analytics|managed-spark|Dataproc (Managed Spark)
 
 ### databases
 - [ ] gcp|databases|alloydb|AlloyDB for PostgreSQL
