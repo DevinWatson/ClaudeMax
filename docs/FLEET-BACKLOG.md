@@ -21,7 +21,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] c
 - [x] dart
 - [x] clojure
-- [ ] haskell
+- [x] haskell
 - [ ] lua
 - [ ] r
 - [ ] julia
