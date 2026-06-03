@@ -1,6 +1,6 @@
 ---
 name: python-developer
-description: Use when turning a Python requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Python bug. Invoke for general (non-framework) Python features — CLI tools, libraries, scripts, data work — and diagnosing failures in existing Python code. For framework app work (Django, FastAPI, etc.) use the matching framework team (e.g. django-developer). Not for system-level design (use python-architect) or for adding tests to code you did not write (use python-unit-test-architect).
+description: Use when turning a Python requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Python bug. Invoke for general (non-framework) Python features — CLI tools, libraries, scripts, data work — and diagnosing failures in existing Python code. For framework app work use the matching framework team — for Django use django-developer, for FastAPI use fastapi-developer. Not for system-level design (use python-architect) or for adding tests to code you did not write (use python-unit-test-architect).
 model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: languages

@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 721,
-    "skills": 123,
+    "agents": 729,
+    "skills": 124,
     "categories": 16
   },
   "agents": [
@@ -5648,6 +5648,250 @@
       "version": "1.1.0",
       "status": "stable",
       "path": "agents/ai-ml/evals-author.md"
+    },
+    {
+      "name": "fastapi-api-engineer",
+      "description": "Use when designing and building HTTP API endpoints in a FastAPI service — path operations and APIRouter wiring, Pydantic v2 request/response models (separate input/output schemas), correct status codes, a consistent error envelope via exception handlers, pagination/filtering query params, content negotiation, accurate OpenAPI/docs, and versioning, with proper resource modeling (FastAPI). Invoke to design or implement the API contract layer. NOT for system architecture (use fastapi-architect), NOT for general feature work (use fastapi-developer), NOT for security review (use fastapi-security-reviewer). For framework-agnostic Python API shape route to python-api-designer, and for Django use django-api-engineer.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "fastapi",
+        "python",
+        "api",
+        "rest",
+        "pydantic",
+        "openapi"
+      ],
+      "skills": [
+        "rest-api-design",
+        "fastapi-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/fastapi/fastapi-api-engineer.md"
+    },
+    {
+      "name": "fastapi-architect",
+      "description": "Use when shaping the architecture of a FastAPI application or service — module/package boundaries, the layering of routers/services/repositories, the schema (Pydantic) vs ORM (SQLAlchemy/SQLModel) boundary, sync-vs-async strategy and the DB/driver choice, dependency-injection topology, settings/config layering, and the auth/security architecture (FastAPI). Invoke for system-level design and trade-off analysis. NOT for implementing features (use fastapi-developer), NOT for HTTP contract design alone (use fastapi-api-engineer), NOT for performance tuning of existing code (use fastapi-performance-engineer). For framework-agnostic Python system design route to python-architect, and for Django use django-architect.",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "fastapi",
+        "python",
+        "architecture",
+        "async",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "fastapi-framework",
+        "python-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/fastapi/fastapi-architect.md"
+    },
+    {
+      "name": "fastapi-developer",
+      "description": "Use when turning a FastAPI requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported FastAPI bug — a router/path-operation wiring issue, a Pydantic v2 validation/serialization error, a Depends/dependency-resolution failure, a blocking-call-on-async stall, a session/transaction problem, or a config/settings issue (FastAPI). Invoke for building or extending FastAPI features (routers, Pydantic schemas, dependencies, services, DB models, auth wiring). NOT for system-level design (use fastapi-architect), NOT for HTTP contract design alone (use fastapi-api-engineer), NOT for adding tests to code you did not write (use fastapi-test-engineer), NOT for performance tuning of working code (use fastapi-performance-engineer). For general (non-FastAPI) Python work route to python-developer, and for Django use django-developer.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "fastapi",
+        "python",
+        "pydantic",
+        "async",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "fastapi-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/fastapi/fastapi-developer.md"
+    },
+    {
+      "name": "fastapi-migration-engineer",
+      "description": "Use when upgrading a FastAPI service across versions or evolving it safely — the Pydantic v1-to-v2 migration (class Config to model_config, @validator to @field_validator, .dict() to model_dump(), orm_mode to from_attributes), FastAPI/Starlette version upgrades and deprecation fixes (on_event to lifespan), SQLAlchemy 1.x-to-2.0 style moves, sync-to-async route/driver conversions, and reconciling the changes with the dependency lockfile (FastAPI). Invoke for version upgrades and framework-migration work. NOT for routine feature changes (use fastapi-developer), NOT for performance tuning (use fastapi-performance-engineer), NOT for system architecture (use fastapi-architect). For framework-agnostic Python migrations route to python-migration-engineer, and for Django use django-migration-engineer.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "fastapi",
+        "python",
+        "migration",
+        "pydantic",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "fastapi-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/fastapi/fastapi-migration-engineer.md"
+    },
+    {
+      "name": "fastapi-observability-engineer",
+      "description": "Use when instrumenting a FastAPI service for production visibility — structured logging with correlation/request IDs (via middleware), Prometheus/OpenTelemetry metrics (latency/error/throughput, DB time), distributed tracing across path operations, dependencies, and background tasks, and a meaningful health/readiness endpoint (FastAPI). Invoke to add or improve logs, traces, and metrics. NOT for fixing the underlying bug (use fastapi-developer), NOT for query/async performance tuning (use fastapi-performance-engineer), NOT for system architecture (use fastapi-architect). For framework-agnostic Python instrumentation route to python-observability-engineer, and for Django use django-observability-engineer.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "fastapi",
+        "python",
+        "observability",
+        "opentelemetry",
+        "metrics"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "fastapi-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/fastapi/fastapi-observability-engineer.md"
+    },
+    {
+      "name": "fastapi-performance-engineer",
+      "description": "Use when a FastAPI service is slow or its database/runtime cost is high — blocking calls stalling the event loop (sync DB/HTTP/sleep in async handlers), ORM N+1 queries, missing eager-loading, connection-pool exhaustion or sizing, slow Pydantic serialization, weak caching, or threadpool saturation from def handlers — and you need it measured and tuned (FastAPI). Invoke to profile and optimize an existing service. NOT for building new features (use fastapi-developer), NOT for system architecture (use fastapi-architect), NOT for security review (use fastapi-security-reviewer). For framework-agnostic Python performance route to python-performance-engineer, and for Django use django-performance-engineer.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "fastapi",
+        "python",
+        "performance",
+        "async",
+        "sqlalchemy"
+      ],
+      "skills": [
+        "cost-optimization",
+        "fastapi-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/fastapi/fastapi-performance-engineer.md"
+    },
+    {
+      "name": "fastapi-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a FastAPI service or diff — broken or missing auth/security dependencies (unprotected path operations, get_current_user not enforced), broken authorization/IDOR, JWT verification flaws (unverified signature/exp/audience), SQL injection via raw/concatenated queries, mass-assignment through over-broad Pydantic models, permissive CORS, SSRF in server-side fetches, secrets in source, and leaked internals in error responses — with severity-ranked findings (FastAPI). Invoke for an authorized appsec review. NOT for fixing the issues (use fastapi-developer), NOT for performance review (use fastapi-performance-engineer), NOT for HTTP contract design (use fastapi-api-engineer). For framework-agnostic Python review route to python-security-reviewer, and for Django use django-security-reviewer.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "fastapi",
+        "python",
+        "security",
+        "appsec",
+        "jwt"
+      ],
+      "skills": [
+        "appsec-review",
+        "fastapi-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/fastapi/fastapi-security-reviewer.md"
+    },
+    {
+      "name": "fastapi-test-engineer",
+      "description": "Use when adding or improving automated tests for a FastAPI service — endpoint tests with httpx.AsyncClient / TestClient, dependency overrides (app.dependency_overrides) to stub sessions/auth, Pydantic validation and error-envelope tests, async test setup (pytest-asyncio/anyio), database-backed integration tests, and contract checks against /openapi.json (FastAPI). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use fastapi-developer), NOT for performance profiling (use fastapi-performance-engineer), NOT for security review (use fastapi-security-reviewer). For framework-agnostic Python tests route to python-unit-test-architect, and for Django use django-test-engineer.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "fastapi",
+        "python",
+        "testing",
+        "pytest",
+        "httpx"
+      ],
+      "skills": [
+        "test-automation",
+        "fastapi-framework",
+        "python-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/fastapi/fastapi-test-engineer.md"
     },
     {
       "name": "fhir-integration-expert",
@@ -12688,7 +12932,7 @@
     },
     {
       "name": "python-architect",
-      "description": "Use when designing or reviewing the structure of a Python system, service, or package — module/package boundaries, coupling/cohesion, interface contracts (protocols/ABCs), layering, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Python or when reviewing a Python design proposal. Not for implementing the feature (use python-developer), REST endpoint shape alone (use python-api-designer), or framework-specific app architecture (e.g. Django — use django-architect).",
+      "description": "Use when designing or reviewing the structure of a Python system, service, or package — module/package boundaries, coupling/cohesion, interface contracts (protocols/ABCs), layering, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Python or when reviewing a Python design proposal. Not for implementing the feature (use python-developer), REST endpoint shape alone (use python-api-designer), or framework-specific app architecture (for Django use django-architect, for FastAPI use fastapi-architect).",
       "category": "languages",
       "model": "opus",
       "tools": [
@@ -12790,7 +13034,7 @@
     },
     {
       "name": "python-developer",
-      "description": "Use when turning a Python requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Python bug. Invoke for general (non-framework) Python features — CLI tools, libraries, scripts, data work — and diagnosing failures in existing Python code. For framework app work (Django, FastAPI, etc.) use the matching framework team (e.g. django-developer). Not for system-level design (use python-architect) or for adding tests to code you did not write (use python-unit-test-architect).",
+      "description": "Use when turning a Python requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Python bug. Invoke for general (non-framework) Python features — CLI tools, libraries, scripts, data work — and diagnosing failures in existing Python code. For framework app work use the matching framework team — for Django use django-developer, for FastAPI use fastapi-developer. Not for system-level design (use python-architect) or for adding tests to code you did not write (use python-unit-test-architect).",
       "category": "languages",
       "model": "sonnet",
       "tools": [
@@ -20328,6 +20572,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/ai-ml/eval-suite-design/SKILL.md"
+    },
+    {
+      "name": "fastapi-framework",
+      "description": "Use when working in FastAPI (Python) — path operations and routers (APIRouter), Pydantic v2 request/response models and validation, dependency injection (Depends, yield-based deps, sub-dependencies), async/await with async DB drivers and ASGI, automatic OpenAPI/Swagger docs, background tasks, middleware, auth (OAuth2/JWT, security dependencies, scopes), error handling and custom exception handlers, Pydantic Settings config, and SQLAlchemy 2.x / SQLModel integration. Verifies with uvicorn, pytest + httpx/TestClient, ruff, mypy, and schemathesis. TRIGGER on FastAPI routing/router-wiring, Pydantic v2 schema/validation, Depends/DI resolution, async/blocking-call pitfalls in handlers, OpenAPI/response-model questions, OAuth2/JWT security deps, exception-handler/error-envelope design, settings, or ASGI/uvicorn deployment. NOT for general Python language concerns (typing, asyncio internals, packaging — that is python-idioms), NOT for framework-agnostic HTTP contract design, and NOT for Django (use django-framework).",
+      "category": "web",
+      "tags": [
+        "fastapi",
+        "python",
+        "pydantic",
+        "asgi",
+        "async",
+        "api"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/fastapi-framework/SKILL.md"
     },
     {
       "name": "feature-development",

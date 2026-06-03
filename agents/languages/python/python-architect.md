@@ -1,6 +1,6 @@
 ---
 name: python-architect
-description: Use when designing or reviewing the structure of a Python system, service, or package — module/package boundaries, coupling/cohesion, interface contracts (protocols/ABCs), layering, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Python or when reviewing a Python design proposal. Not for implementing the feature (use python-developer), REST endpoint shape alone (use python-api-designer), or framework-specific app architecture (e.g. Django — use django-architect).
+description: Use when designing or reviewing the structure of a Python system, service, or package — module/package boundaries, coupling/cohesion, interface contracts (protocols/ABCs), layering, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Python or when reviewing a Python design proposal. Not for implementing the feature (use python-developer), REST endpoint shape alone (use python-api-designer), or framework-specific app architecture (for Django use django-architect, for FastAPI use fastapi-architect).
 model: opus
 tools: Read, Grep, Glob, Write
 category: languages
