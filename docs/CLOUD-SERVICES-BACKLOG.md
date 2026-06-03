@@ -82,14 +82,14 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 
 ### analytics
 - [x] aws|analytics|athena|Amazon Athena
-- [ ] aws|analytics|emr|Amazon EMR
-- [ ] aws|analytics|kinesis|Amazon Kinesis
-- [ ] aws|analytics|redshift|Amazon Redshift
-- [ ] aws|analytics|quicksight|Amazon QuickSight
-- [ ] aws|analytics|glue|AWS Glue
-- [ ] aws|analytics|lake-formation|AWS Lake Formation
-- [ ] aws|analytics|opensearch-service|Amazon OpenSearch Service
-- [ ] aws|analytics|msk|Amazon MSK
+- [x] aws|analytics|emr|Amazon EMR
+- [x] aws|analytics|kinesis|Amazon Kinesis
+- [x] aws|analytics|redshift|Amazon Redshift
+- [x] aws|analytics|quicksight|Amazon QuickSight
+- [x] aws|analytics|glue|AWS Glue
+- [x] aws|analytics|lake-formation|AWS Lake Formation
+- [x] aws|analytics|opensearch-service|Amazon OpenSearch Service
+- [x] aws|analytics|msk|Amazon MSK
 - [ ] aws|analytics|kinesis-data-firehose|Amazon Data Firehose
 - [ ] aws|analytics|data-exchange|AWS Data Exchange
 - [ ] aws|analytics|clean-rooms|AWS Clean Rooms

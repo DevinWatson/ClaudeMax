@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 897,
-    "skills": 189,
+    "agents": 905,
+    "skills": 197,
     "categories": 17
   },
   "agents": [
@@ -1732,6 +1732,36 @@
       "path": "agents/cloud/aws/services/databases/aws-elasticache-specialist.md"
     },
     {
+      "name": "aws-emr-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon EMR (AWS) — the managed big-data platform for Spark/Hadoop/Hive/Presto/HBase: cluster topology (primary/core/task), instance fleets with On-Demand+Spot and capacity-optimized allocation, managed scaling, EMR on EC2 vs Serverless vs EKS, EMR Studio, bootstrap/custom AMIs, steps, the Glue metastore, EMRFS vs HDFS, and Spot-driven cost. Pick this for big-data clusters; for streaming use aws-kinesis-specialist, warehouse aws-redshift-specialist, BI aws-quicksight-specialist, ETL/cataloging aws-glue-specialist, lake governance aws-lake-formation-specialist, search/logs aws-opensearch-service-specialist, managed Kafka aws-msk-specialist. NOT the AWS role team (aws-cloud-architect / aws-iac-engineer / aws-security-reviewer) for cross-cutting work. NOT data/etl-architect (cloud-agnostic orchestration) or data/sql-optimizer (single-query rewrites) — this owns the EMR cluster/runtime. For GCP Dataproc or Azure HDInsight defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "emr",
+        "analytics",
+        "big-data",
+        "spark",
+        "specialist"
+      ],
+      "skills": [
+        "aws-emr",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/analytics/aws-emr-specialist.md"
+    },
+    {
       "name": "aws-fargate-specialist",
       "description": "Use when designing, building, deploying, or operating AWS Fargate (AWS) — ECS task definitions and services, task CPU/memory sizing, awsvpc networking, task vs execution roles, ALB integration, service autoscaling, Fargate/Fargate Spot capacity, and logging. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the Fargate service end-to-end. Pick this for containerized long-running services/jobs without node management; for raw VMs use aws-ec2-specialist, a single managed web service aws-app-runner-specialist, event functions aws-lambda-specialist, batch jobs aws-batch-specialist; for GCP Cloud Run or Azure Container Apps defer to those clouds' specialists.",
       "category": "cloud",
@@ -1825,6 +1855,36 @@
       "path": "agents/cloud/aws/services/networking/aws-global-accelerator-specialist.md"
     },
     {
+      "name": "aws-glue-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Glue (AWS) — the serverless data-integration, ETL, and cataloging service: the Glue Data Catalog (databases/tables/partitions/schema registry) as a Hive metastore, crawlers, ETL jobs (Spark and Python-shell, worker types/DPUs, Ray, streaming), Glue Studio, DataBrew, workflows/triggers, bookmarks, connections, DynamicFrames, and data-quality rules. Pick this for AWS-native ETL/cataloging. Siblings: aws-emr-specialist (big-data), aws-kinesis-specialist (streaming), aws-redshift-specialist (warehouse), aws-quicksight-specialist (BI), aws-lake-formation-specialist (lake governance), aws-opensearch-service-specialist (search/logs), aws-msk-specialist (managed Kafka). NOT the AWS role team (cross-cutting). NOT data/etl-architect, which designs cloud-agnostic orchestration/modeling — this implements it in Glue jobs/catalog/crawlers. NOT data/sql-optimizer (single-query rewrites). For GCP Dataflow or Azure Data Factory defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "glue",
+        "analytics",
+        "etl",
+        "data-catalog",
+        "specialist"
+      ],
+      "skills": [
+        "aws-glue",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/analytics/aws-glue-specialist.md"
+    },
+    {
       "name": "aws-iac-engineer",
       "description": "Use when writing or refactoring AWS infrastructure as code — Terraform, CDK, CloudFormation, or SAM that provisions AWS resources, then validating it with plan/synth/validate (AWS). NOT for cloud architecture/Well-Architected design (use aws-cloud-architect), IAM/exposure review (aws-security-reviewer), or generic provider-agnostic Terraform language work (terraform-architect — this agent is AWS-specific infra).",
       "category": "cloud",
@@ -1883,6 +1943,66 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/databases/aws-keyspaces-specialist.md"
+    },
+    {
+      "name": "aws-kinesis-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon Kinesis (AWS) — the managed real-time streaming family and AWS-native alternative to Kafka: Data Streams (shards, partition keys, provisioned vs on-demand, retention, KPL/KCL/enhanced fan-out consumers, resharding), Data Firehose (delivery to S3/Redshift/OpenSearch/Splunk, buffering, Parquet/ORC conversion, dynamic partitioning, Lambda transforms), and Managed Service for Apache Flink. Pick this for AWS-native streaming; for managed Kafka use aws-msk-specialist. Siblings: aws-emr-specialist (big-data clusters), aws-redshift-specialist (warehouse), aws-quicksight-specialist (BI), aws-glue-specialist (ETL), aws-lake-formation-specialist (lake governance), aws-opensearch-service-specialist (search/logs). NOT the AWS role team (cross-cutting). NOT data/etl-architect (cloud-agnostic orchestration) or data/sql-optimizer (single-query rewrites). For GCP Pub/Sub or Azure Event Hubs defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "kinesis",
+        "analytics",
+        "streaming",
+        "firehose",
+        "specialist"
+      ],
+      "skills": [
+        "aws-kinesis",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/analytics/aws-kinesis-specialist.md"
+    },
+    {
+      "name": "aws-lake-formation-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Lake Formation (AWS) — the centralized fine-grained governance layer for data lakes on S3 and the Glue Data Catalog: registering S3 locations, the permission model (database/table/column/row/cell grants, named-resource vs LF-Tag-based access control / TBAC), LF-Tag taxonomy, data filters, data-lake admins, removing the IAMAllowedPrincipals legacy mode, blueprints, governed/Iceberg tables, and cross-account sharing via RAM. Pick this for data-lake governance and fine-grained permissions across Athena/Spectrum/EMR/Glue. Siblings: aws-emr-specialist, aws-kinesis-specialist, aws-redshift-specialist, aws-quicksight-specialist, aws-glue-specialist, aws-opensearch-service-specialist, aws-msk-specialist. NOT the AWS role team (cross-cutting) — coordinate with aws-security-reviewer on data-access policy. NOT data/etl-architect (cloud-agnostic orchestration) or data/sql-optimizer (query rewrites). For GCP Dataplex or Azure Purview defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "lake-formation",
+        "analytics",
+        "data-lake",
+        "governance",
+        "specialist"
+      ],
+      "skills": [
+        "aws-lake-formation",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/analytics/aws-lake-formation-specialist.md"
     },
     {
       "name": "aws-lambda-specialist",
@@ -1972,6 +2092,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/databases/aws-memorydb-specialist.md"
+    },
+    {
+      "name": "aws-msk-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon MSK / Managed Streaming for Apache Kafka (AWS) — the AWS managed-infrastructure layer for Kafka: provisioned clusters (broker count/type, EBS storage + auto-scaling, AZ distribution, Kafka version, custom configurations, ZooKeeper/KRaft), MSK Serverless, MSK Connect, MSK Replicator, and the security model (IAM/SASL-SCRAM/mTLS, KMS, TLS, VPC). MSK owns provisioning, brokers, storage, scaling; the Kafka data team (kafka-architect, kafka-administrator, kafka-streams-developer, kafka-performance-engineer, kafka-security-reviewer, kafka-reliability-engineer, kafka-observability-engineer) owns topic/partition/consumer-group/Streams design and Kafka ACLs that run ON this cluster. Pick this for the AWS-managed broker layer; for AWS-native non-Kafka streaming use aws-kinesis-specialist. Other analytics siblings: aws-emr/redshift/quicksight/glue/lake-formation/opensearch-service-specialist. NOT the AWS role team, etl-architect, or sql-optimizer.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "msk",
+        "analytics",
+        "kafka",
+        "managed-kafka",
+        "specialist"
+      ],
+      "skills": [
+        "aws-msk",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/analytics/aws-msk-specialist.md"
     },
     {
       "name": "aws-neptune-specialist",
@@ -2124,6 +2274,36 @@
       "path": "agents/cloud/aws/aws-observability-engineer.md"
     },
     {
+      "name": "aws-opensearch-service-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon OpenSearch Service (AWS) — the managed search, log-analytics, and observability service running OpenSearch/Elasticsearch: managed domains (data/master node topology, UltraWarm/cold tiers, multi-AZ standby, instance/EBS sizing) vs Serverless (collections, OCUs), index design (shards/replicas, mappings, templates, ISM lifecycle/rollover), Dashboards, ingestion (OpenSearch Ingestion, Firehose, Logstash), search/aggregations, k-NN vector search, and the security model (FGAC, IAM/SAML/Cognito, VPC, encryption). Pick this for search and log/observability analytics. Siblings: aws-emr-specialist, aws-kinesis-specialist, aws-redshift-specialist, aws-quicksight-specialist, aws-glue-specialist, aws-lake-formation-specialist, aws-msk-specialist. NOT the AWS role team (cross-cutting). NOT data/etl-architect (cloud-agnostic orchestration) or data/sql-optimizer (query rewrites). For Elastic Cloud on GCP or Azure AI Search defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "opensearch-service",
+        "analytics",
+        "search",
+        "log-analytics",
+        "specialist"
+      ],
+      "skills": [
+        "aws-opensearch-service",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/analytics/aws-opensearch-service-specialist.md"
+    },
+    {
       "name": "aws-outposts-specialist",
       "description": "Use when designing, configuring, deploying, or operating AWS Outposts (AWS) — Outpost rack/server capacity planning, VPC extension on-prem, local gateway and service link, on-prem service placement (EC2/EBS/ECS/EKS/RDS/S3 on Outposts), and data-residency/low-latency hybrid workloads. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns Outposts end-to-end. For AWS-owned 5G edge use aws-wavelength-specialist; for plain in-Region compute use aws-ec2-specialist; for GCP/Azure hybrid (Anthos/Stack) defer to those clouds.",
       "category": "cloud",
@@ -2214,6 +2394,36 @@
       "path": "agents/cloud/aws/services/databases/aws-qldb-specialist.md"
     },
     {
+      "name": "aws-quicksight-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon QuickSight (AWS) — the serverless pay-per-session BI service: SPICE (capacity, scheduled/incremental refresh) vs direct query, datasets (joins, calculated fields, custom SQL, row/column-level security), analyses and dashboards, parameters/controls/themes, Amazon Q generative BI, ML insights/forecasting, embedding (registered/anonymous, namespaces), user/group/folder management, and editions. Pick this for BI and dashboards. Siblings: aws-emr-specialist (big-data), aws-kinesis-specialist (streaming), aws-redshift-specialist (warehouse), aws-glue-specialist (ETL), aws-lake-formation-specialist (lake governance), aws-opensearch-service-specialist (search/logs), aws-msk-specialist (managed Kafka). NOT the AWS role team (cross-cutting). NOT data/etl-architect (cloud-agnostic orchestration) or data/sql-optimizer (query rewrites) — this owns the QuickSight BI layer, not the pipeline behind it. For GCP Looker or Azure Power BI defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "quicksight",
+        "analytics",
+        "business-intelligence",
+        "dashboards",
+        "specialist"
+      ],
+      "skills": [
+        "aws-quicksight",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/analytics/aws-quicksight-specialist.md"
+    },
+    {
       "name": "aws-rds-specialist",
       "description": "Use when designing, configuring, deploying, or operating Amazon RDS (AWS) — managed relational databases (PostgreSQL/MySQL/MariaDB/Oracle/SQL Server): engine/instance-class choice, Multi-AZ HA + failover, read replicas, storage/IOPS, parameter/option groups, backups + PITR, KMS encryption, TLS, IAM auth, and private VPC placement. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), aws-security-reviewer (account posture) own cross-cutting work. Pick a DB sibling instead for: AWS-native cloud relational (aurora), serverless NoSQL KV (dynamodb), Mongo-compatible (documentdb), graph (neptune), cache (elasticache), durable Redis (memorydb), Cassandra (keyspaces). CRITICAL: this specialist owns the MANAGED-SERVICE layer (provisioning/sizing/Multi-AZ/backups/failover/parameter groups/IAM) — engine-internal tuning, schema, and query modeling belong to the postgres data team. For GCP Cloud SQL or Azure SQL/Flexible Server defer to those clouds.",
       "category": "cloud",
@@ -2241,6 +2451,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/databases/aws-rds-specialist.md"
+    },
+    {
+      "name": "aws-redshift-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon Redshift (AWS) — the petabyte-scale managed columnar data warehouse: clusters on RA3 vs DC2, Serverless (RPUs), table design (distribution styles, sort keys, compression), WLM/concurrency scaling, Spectrum over S3, data sharing, materialized views, COPY/UNLOAD, federated/zero-ETL ingestion, and VACUUM/ANALYZE. Pick this for the AWS warehouse — the AWS-managed-layer counterpart to a cloud-agnostic warehouse like Snowflake (the snowflake data team owns Snowflake; this owns Redshift). Siblings: aws-emr-specialist (big-data), aws-kinesis-specialist (streaming), aws-quicksight-specialist (BI), aws-glue-specialist (ETL), aws-lake-formation-specialist (lake governance), aws-opensearch-service-specialist (search/logs), aws-msk-specialist (managed Kafka). NOT the AWS role team (cross-cutting). NOT data/etl-architect (cloud-agnostic orchestration) or data/sql-optimizer (single-query rewrites). For GCP BigQuery or Azure Synapse defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "redshift",
+        "analytics",
+        "data-warehouse",
+        "columnar",
+        "specialist"
+      ],
+      "skills": [
+        "aws-redshift",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/analytics/aws-redshift-specialist.md"
     },
     {
       "name": "aws-reliability-engineer",
@@ -25543,6 +25783,22 @@
       "path": "skills/cloud/aws-elasticache/SKILL.md"
     },
     {
+      "name": "aws-emr",
+      "description": "Use when designing, provisioning, securing, or operating Amazon EMR — the managed big-data platform that runs Apache Spark, Hadoop, Hive, Presto/Trino, HBase, and Flink on managed clusters (Amazon EMR). Loads the EMR knowledge: cluster topology (primary/core/task nodes), instance groups vs instance fleets, On-Demand + Spot mix and allocation strategies, managed scaling and auto-scaling, EMR on EC2 vs EMR Serverless vs EMR on EKS, EMR Studio notebooks, bootstrap actions and custom AMIs, steps and step concurrency, the Glue Data Catalog as the Hive metastore, S3 (EMRFS) vs HDFS storage, spot-driven cost optimization, and the security model (IAM roles, EMRFS authorization, Lake Formation, Kerberos, encryption at rest/in transit). Covers how to size and shape clusters, run Spark/Hive workloads, isolate transient vs long-running clusters, and verify jobs and scaling. Consumed by the EMR specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect).",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "emr",
+        "analytics",
+        "big-data",
+        "spark",
+        "hadoop"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-emr/SKILL.md"
+    },
+    {
       "name": "aws-fargate",
       "description": "Use when designing, building, securing, or operating AWS Fargate — serverless containers on ECS (and EKS), task definitions, services, task/CPU-memory sizing, awsvpc networking, task vs execution roles, load balancer integration, autoscaling, capacity providers (Fargate/Fargate Spot), and logging (AWS Fargate). Loads the Fargate-specific knowledge: how to size a task, split task vs execution roles, wire networking/ALB, autoscale, control cost, and verify a service is healthy. Consumed by the Fargate specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they run containers without managing nodes.",
       "category": "cloud",
@@ -25593,6 +25849,22 @@
       "path": "skills/cloud/aws-global-accelerator/SKILL.md"
     },
     {
+      "name": "aws-glue",
+      "description": "Use when designing, provisioning, securing, or operating AWS Glue — the serverless data-integration, ETL, and cataloging service (AWS Glue). Loads the Glue knowledge: the Glue Data Catalog (databases, tables, partitions, schema registry) as a Hive-compatible metastore, crawlers that infer schema/partitions, ETL jobs (Spark and Python-shell, worker types/DPUs, Ray, streaming), Glue Studio, DataBrew, workflows and triggers, job bookmarks for incremental processing, connections to JDBC/Kafka/MongoDB, DynamicFrames vs DataFrames, data-quality rules, and the security model (IAM job roles, KMS, VPC connections, Lake Formation). Covers crawler/catalog design, job sizing and DPUs, bookmarking for incrementals, cost levers, and verification. Consumed by the Glue specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect).",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "glue",
+        "analytics",
+        "etl",
+        "data-catalog",
+        "crawlers"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-glue/SKILL.md"
+    },
+    {
       "name": "aws-keyspaces",
       "description": "Use when designing, provisioning, securing, or operating Amazon Keyspaces — the serverless, Apache Cassandra-compatible (CQL) wide-column database. Loads the Keyspaces knowledge: keyspaces and tables, the Cassandra data model (partition key + clustering columns) and modeling for CQL access patterns, on-demand vs provisioned throughput with auto scaling, point-in-time recovery, TTL, CQL/driver compatibility and its limitations (no native secondary indexes, lightweight transactions caveats), Multi-Region replication, encryption at rest with KMS, IAM authentication (SigV4) plus service-specific credentials, and VPC (PrivateLink) endpoints. Covers how to model keys for CQL queries, pick a throughput mode, secure access, and verify reads/writes. Consumed by the Keyspaces specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they provision a serverless Cassandra workload. For deep Cassandra engine/CQL modeling defer to Cassandra expertise.",
       "category": "cloud",
@@ -25608,6 +25880,38 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-keyspaces/SKILL.md"
+    },
+    {
+      "name": "aws-kinesis",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Kinesis — the managed real-time streaming family (Amazon Kinesis). Loads the Kinesis knowledge: Kinesis Data Streams (shards, partition keys, provisioned vs on-demand capacity mode, retention, KPL producer and KCL/enhanced fan-out consumers, resharding), Kinesis Data Firehose (delivery to S3/Redshift/OpenSearch/Splunk, buffering, Parquet/ORC conversion, dynamic partitioning, Lambda transforms), and Managed Service for Apache Flink (formerly Kinesis Data Analytics). Covers throughput sizing by shard, ordering and partition-key design, at-least-once delivery and idempotency, the security model (IAM, KMS, VPC endpoints), and cost levers, plus how to choose Streams vs Firehose, process with Flink, and verify ingestion and delivery. Consumed by the Kinesis specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect).",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "kinesis",
+        "analytics",
+        "streaming",
+        "firehose",
+        "flink"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-kinesis/SKILL.md"
+    },
+    {
+      "name": "aws-lake-formation",
+      "description": "Use when designing, provisioning, securing, or operating AWS Lake Formation — the centralized fine-grained governance layer for data lakes on S3 and the Glue Data Catalog (AWS Lake Formation). Loads the Lake Formation knowledge: registering S3 locations via a service-linked role, the permission model (database/table/column/row/cell grants, named-resource vs LF-Tag-based access control / TBAC), LF-Tag taxonomy and policies, data filters for column/row security, data-lake admins and the IAMAllowedPrincipals legacy mode, blueprints, governed tables/transactions (and the shift to Apache Iceberg), cross-account sharing via RAM, and how it enforces permissions for Athena, Redshift Spectrum, EMR, and Glue. Covers migrating from IAM-only, LF-Tag taxonomy design, fine-grained grants, and verifying enforcement. Consumed by the Lake Formation specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect).",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "lake-formation",
+        "analytics",
+        "data-lake",
+        "governance",
+        "permissions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-lake-formation/SKILL.md"
     },
     {
       "name": "aws-lambda",
@@ -25659,6 +25963,22 @@
       "path": "skills/cloud/aws-memorydb/SKILL.md"
     },
     {
+      "name": "aws-msk",
+      "description": "Use when designing, provisioning, securing, or operating Amazon MSK (Managed Streaming for Apache Kafka) — the managed service that runs and scales the Kafka broker infrastructure (Amazon MSK). Loads the MSK knowledge: provisioned clusters (broker count/instance type, EBS storage with provisioned throughput + auto-scaling, AZ distribution, Kafka version, custom configurations, ZooKeeper vs KRaft), MSK Serverless, MSK Connect (managed Kafka Connect), MSK Replicator, the security model (IAM / SASL-SCRAM / mTLS, KMS at rest + TLS in transit, VPC + security groups, multi-VPC connectivity), monitoring, and scaling/cost levers. Covers cluster sizing, broker/storage scaling, the managed-Kafka security model, and verification. This is the AWS managed-infrastructure layer for Kafka — topic/partition/Streams design belongs to the Kafka data team. Consumed by the MSK specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect).",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "msk",
+        "analytics",
+        "kafka",
+        "streaming",
+        "managed-kafka"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-msk/SKILL.md"
+    },
+    {
       "name": "aws-neptune",
       "description": "Use when designing, provisioning, securing, or operating Amazon Neptune — the managed graph database. Loads the Neptune knowledge: property-graph (Apache TinkerPop Gremlin, openCypher) and RDF/SPARQL graph models and when to pick each, the cluster model (a shared distributed storage volume with one writer and up to 15 read replicas), cluster/reader endpoints and failover, Neptune Serverless capacity (NCUs), Neptune Analytics for in-memory graph algorithms, bulk loader from S3, full-text search via OpenSearch integration, automated backups/snapshots with PITR, encryption at rest with KMS and TLS in transit, IAM database authentication and VPC/subnet-group placement. Covers how to size a cluster, choose a graph model and query language, place it privately, encrypt it, load data, and verify queries and failover. Consumed by the Neptune specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they provision a graph database.",
       "category": "cloud",
@@ -25706,6 +26026,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-nitro-enclaves/SKILL.md"
+    },
+    {
+      "name": "aws-opensearch-service",
+      "description": "Use when designing, provisioning, securing, or operating Amazon OpenSearch Service — the managed search, log-analytics, and observability service running OpenSearch/Elasticsearch (Amazon OpenSearch Service). Loads the OpenSearch knowledge: managed domains (dedicated master/manager + data nodes, UltraWarm/cold tiers, instance/EBS sizing, multi-AZ standby), OpenSearch Serverless (collections for search/time-series/vector, OCUs), index design (shards/replicas, mappings, index templates, ISM lifecycle/rollover/aliases), Dashboards, ingestion (OpenSearch Ingestion/Data Prepper, Firehose, Logstash), search/aggregations, k-NN vector search, the security model (FGAC, IAM/SAML/Cognito, VPC, domain access policies, encryption), and scaling/cost levers. Covers domain sizing, index lifecycle, security, and verification. Consumed by the OpenSearch specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect).",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "opensearch-service",
+        "analytics",
+        "search",
+        "log-analytics",
+        "vector-search"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-opensearch-service/SKILL.md"
     },
     {
       "name": "aws-outposts",
@@ -25757,6 +26093,22 @@
       "path": "skills/cloud/aws-qldb/SKILL.md"
     },
     {
+      "name": "aws-quicksight",
+      "description": "Use when designing, provisioning, securing, or operating Amazon QuickSight — the serverless, pay-per-session BI and dashboard service (Amazon QuickSight). Loads the QuickSight knowledge: the SPICE in-memory engine (capacity, scheduled/incremental refresh) vs direct query, data sources (Redshift/Athena/RDS/S3/Glue/SaaS) and datasets (joins, calculated fields, custom SQL, row/column-level security), analyses, dashboards and reports, parameters/controls/filters/themes, Amazon Q generative BI, ML insights/forecasting, embedding (registered/anonymous, namespaces), user/group/folder management (Identity Center/IAM/native, Standard vs Enterprise, authors vs readers), and the security model (VPC, KMS, RLS/CLS, asset permissions). Covers SPICE vs direct-query sizing, dataset modeling, dashboard design, embedding, and verification. Consumed by the QuickSight specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect).",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "quicksight",
+        "analytics",
+        "business-intelligence",
+        "dashboards",
+        "spice"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-quicksight/SKILL.md"
+    },
+    {
       "name": "aws-rds",
       "description": "Use when designing, provisioning, securing, or operating Amazon RDS — the managed relational database service for PostgreSQL, MySQL, MariaDB, Oracle, and SQL Server. Loads the RDS knowledge: choosing an engine and instance class, Multi-AZ for HA and read replicas for scale-out reads, storage (gp3/io2/magnetic) and autoscaling, parameter and option groups, automated backups/snapshots and point-in-time restore, encryption at rest with KMS and in transit with TLS, IAM database authentication, VPC/subnet-group/security-group placement, maintenance and minor-version upgrades, and Performance Insights. Covers how to pick a class, place it privately in a VPC, encrypt it, back it up, and verify failover and connectivity. Consumed by the RDS specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they provision managed relational databases. For engine-internal tuning/modeling defer to the postgres data team.",
       "category": "cloud",
@@ -25772,6 +26124,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-rds/SKILL.md"
+    },
+    {
+      "name": "aws-redshift",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Redshift — the petabyte-scale managed columnar data warehouse (Amazon Redshift). Loads the Redshift knowledge: provisioned clusters (leader + compute nodes, slices) on RA3 vs legacy DC2, Redshift Serverless (RPUs, base capacity, auto-pause), table design (distribution styles KEY/EVEN/ALL/AUTO, sort keys, compression encodings, PK/FK hints), workload management (WLM/automatic WLM, concurrency scaling, short-query acceleration), Spectrum over S3 via the Glue Data Catalog, data sharing, materialized views, COPY/UNLOAD, federated and zero-ETL ingestion, VACUUM/ANALYZE maintenance, the security model (IAM, KMS, VPC, RBAC, column/row security, Lake Formation), and cost levers. Covers how to model tables, load data, tune queries, and verify performance. Consumed by the Redshift specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect).",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "redshift",
+        "analytics",
+        "data-warehouse",
+        "columnar",
+        "spectrum"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-redshift/SKILL.md"
     },
     {
       "name": "aws-route53",
