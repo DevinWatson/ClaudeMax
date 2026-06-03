@@ -1,6 +1,6 @@
 ---
 name: ruby-architect
-description: Use when designing or reviewing the structure of a Ruby system, service, or module — component boundaries, coupling/cohesion, interface contracts, namespace/module layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Ruby or when reviewing a Ruby design proposal. Not for implementing the feature (use ruby-developer) or for REST endpoint shape alone (use ruby-api-designer).
+description: Use when designing or reviewing the structure of a Ruby system, service, or module — component boundaries, coupling/cohesion, interface contracts, namespace/module layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Ruby or when reviewing a Ruby design proposal. For Rails application architecture (engine/app structure, Active Record data model, ERB/Hotwire-vs-API split) use rails-architect instead. Not for implementing the feature (use ruby-developer) or for REST endpoint shape alone (use ruby-api-designer).
 model: opus
 tools: Read, Grep, Glob, Write
 category: languages

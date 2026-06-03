@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 704,
-    "skills": 121,
+    "agents": 713,
+    "skills": 122,
     "categories": 16
   },
   "agents": [
@@ -13774,6 +13774,274 @@
       "path": "agents/ai-ml/rag-architect.md"
     },
     {
+      "name": "rails-accessibility-specialist",
+      "description": "Use for a WCAG 2.2 (A/AA) accessibility audit of a Rails app's server-rendered UI — ERB templates, partials, layouts, view helpers, and Hotwire (Turbo Frames/Streams, Stimulus) interactions — checking semantics, ARIA, keyboard operability and focus management (including Turbo navigation/frame updates), names/labels on form_with fields, and color contrast, with severity-ranked, criterion-mapped findings (Rails). Invoke for an accessibility review of Rails views. NOT for fixing the issues (use rails-developer), NOT for general appsec review (use rails-security-reviewer), NOT for non-UI backend work.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "rails",
+        "accessibility",
+        "a11y",
+        "wcag",
+        "hotwire"
+      ],
+      "skills": [
+        "wcag-audit",
+        "rails-framework",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/rails/rails-accessibility-specialist.md"
+    },
+    {
+      "name": "rails-api-engineer",
+      "description": "Use when designing and building HTTP API endpoints in a Rails app — API-mode or JSON controllers, serializers (jbuilder/active_model_serializers), resource modeling, status codes and error envelopes, pagination, filtering, throttling, and versioning, with strong-parameter input handling (Rails). Invoke to design or implement the API contract layer. NOT for server-rendered ERB/Hotwire UI features (use rails-developer), NOT for system architecture (use rails-architect), NOT for security review (use rails-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rails",
+        "api",
+        "rest",
+        "ruby",
+        "json"
+      ],
+      "skills": [
+        "rest-api-design",
+        "rails-framework",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/rails/rails-api-engineer.md"
+    },
+    {
+      "name": "rails-architect",
+      "description": "Use when shaping the architecture of a Rails app or module — engine/module boundaries and the app structure, the Active Record data model and query strategy, the server-rendered-vs-API-mode split, service-object/concern boundaries, Active Job/Sidekiq and Action Cable topology, and caching strategy (Rails). Invoke for system-level design and trade-off analysis. NOT for implementing features (use rails-developer), NOT for performance tuning of existing code (use rails-performance-engineer), NOT for framework-agnostic Ruby design (route to ruby-architect).",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "rails",
+        "architecture",
+        "ruby",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "rails-framework",
+        "ruby-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/rails/rails-architect.md"
+    },
+    {
+      "name": "rails-developer",
+      "description": "Use when turning a Rails requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Rails bug — a broken Active Record query, an N+1, a migration failure, a controller/strong-params error, a routing problem, or an ERB/Hotwire view issue (Rails). Invoke for building or extending Rails app features (models, controllers, views, Turbo/Stimulus, jobs). NOT for system-level design (use rails-architect), NOT for adding tests to code you did not write (use rails-test-engineer), NOT for query/caching performance tuning of working code (use rails-performance-engineer). For general (non-Rails) Ruby work, route to ruby-developer instead.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rails",
+        "activerecord",
+        "hotwire",
+        "ruby",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "rails-framework",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/rails/rails-developer.md"
+    },
+    {
+      "name": "rails-migration-engineer",
+      "description": "Use when upgrading a Rails app across versions or evolving its schema safely — Rails/Ruby version upgrades and deprecation fixes, writing and reconciling Active Record migrations (data migrations, reversible changes, backfills), zero-downtime schema changes, and resolving schema.rb drift or migration conflicts (Rails). Invoke for version upgrades and migration work. NOT for routine feature schema changes inside a feature (use rails-developer), NOT for query performance tuning (use rails-performance-engineer), NOT for system architecture (use rails-architect).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rails",
+        "migrations",
+        "upgrade",
+        "activerecord",
+        "ruby"
+      ],
+      "skills": [
+        "code-migration",
+        "rails-framework",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/rails/rails-migration-engineer.md"
+    },
+    {
+      "name": "rails-observability-engineer",
+      "description": "Use when instrumenting a Rails app for production visibility — structured logging (lograge/tagged logging), OpenTelemetry tracing across controllers/Active Job/Action Cable, request and database metrics via Active Support notifications, and error reporting (Sentry/OTel) (Rails). Invoke to add or improve logs, traces, and metrics. NOT for fixing the underlying bug (use rails-developer), NOT for query/cache performance tuning (use rails-performance-engineer), NOT for system architecture (use rails-architect).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rails",
+        "observability",
+        "telemetry",
+        "opentelemetry",
+        "ruby"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "rails-framework",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/rails/rails-observability-engineer.md"
+    },
+    {
+      "name": "rails-performance-engineer",
+      "description": "Use when a Rails app is slow or its database cost is high — N+1 queries, missing includes/preload/eager_load, unindexed or full-table Active Record scans, heavy serializers, slow controller actions, or weak caching — and you need it measured and tuned (Rails). Invoke to profile and optimize an existing app via query tuning, query-count reduction, indexing, and Rails caching. NOT for building new features (use rails-developer), NOT for system architecture (use rails-architect), NOT for security review (use rails-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rails",
+        "activerecord",
+        "performance",
+        "caching",
+        "ruby"
+      ],
+      "skills": [
+        "cost-optimization",
+        "rails-framework",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/rails/rails-performance-engineer.md"
+    },
+    {
+      "name": "rails-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a Rails app or diff — mass-assignment via missing/over-broad strong parameters, SQL injection via raw where/find_by_sql/interpolated conditions, CSRF protection gaps, authentication/authorization holes, SSRF in server-side requests, unsafe deserialization, and Brakeman findings — with severity-ranked results (Rails). Invoke for an authorized appsec review. NOT for fixing the issues (use rails-developer), NOT for performance review (use rails-performance-engineer), NOT for HTTP contract design (use rails-api-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "rails",
+        "security",
+        "appsec",
+        "ruby",
+        "brakeman"
+      ],
+      "skills": [
+        "appsec-review",
+        "rails-framework",
+        "ruby-idioms",
+        "match-project-conventions",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/rails/rails-security-reviewer.md"
+    },
+    {
+      "name": "rails-test-engineer",
+      "description": "Use when adding or improving automated tests for a Rails app — model and Active Record query tests, controller/request and system (Capybara) tests, serializer/API tests (status codes, params), migration tests, and query-count assertions — using Minitest (bin/rails test) or RSpec (Rails). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use rails-developer), NOT for performance profiling (use rails-performance-engineer), NOT for security review (use rails-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "rails",
+        "testing",
+        "rspec",
+        "minitest",
+        "ruby"
+      ],
+      "skills": [
+        "test-automation",
+        "rails-framework",
+        "ruby-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/rails/rails-test-engineer.md"
+    },
+    {
       "name": "react-architect",
       "description": "Use for framework-agnostic React design problems — component decomposition, hook composition, state location (lift/colocate, Context vs. external store), effect correctness, and render/re-render behavior. Invoke when a tree re-renders too much, an effect loops or fires wrong, or you need to choose where state lives. NOT for Next.js/RSC/server-actions/routing/caching — route those to nextjs-developer.",
       "category": "web",
@@ -14449,7 +14717,7 @@
     },
     {
       "name": "ruby-architect",
-      "description": "Use when designing or reviewing the structure of a Ruby system, service, or module — component boundaries, coupling/cohesion, interface contracts, namespace/module layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Ruby or when reviewing a Ruby design proposal. Not for implementing the feature (use ruby-developer) or for REST endpoint shape alone (use ruby-api-designer).",
+      "description": "Use when designing or reviewing the structure of a Ruby system, service, or module — component boundaries, coupling/cohesion, interface contracts, namespace/module layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Ruby or when reviewing a Ruby design proposal. For Rails application architecture (engine/app structure, Active Record data model, ERB/Hotwire-vs-API split) use rails-architect instead. Not for implementing the feature (use ruby-developer) or for REST endpoint shape alone (use ruby-api-designer).",
       "category": "languages",
       "model": "opus",
       "tools": [
@@ -14551,7 +14819,7 @@
     },
     {
       "name": "ruby-developer",
-      "description": "Use when turning a Ruby requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Ruby bug. Invoke for building or extending Ruby/Rails/Sinatra features and for diagnosing failures in existing Ruby code. Not for system-level design (use ruby-architect) or for adding tests to code you did not write (use ruby-unit-test-architect).",
+      "description": "Use when turning a Ruby requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Ruby bug. Invoke for building or extending plain-Ruby/Sinatra features and gems and for diagnosing failures in existing Ruby code. For Rails app work (Active Record, controllers, ERB/Hotwire, migrations) use rails-developer instead. Not for system-level design (use ruby-architect) or for adding tests to code you did not write (use ruby-unit-test-architect).",
       "category": "languages",
       "model": "sonnet",
       "tools": [
@@ -20554,6 +20822,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/ai-ml/rag-system-design/SKILL.md"
+    },
+    {
+      "name": "rails-framework",
+      "description": "Use when working in Ruby on Rails — Active Record (associations, migrations, scopes, validations, callbacks, N+1 avoidance via includes/preload/eager_load), MVC and convention-over-configuration, controllers and strong parameters, RESTful routing (resources), Action View/ERB and Hotwire (Turbo/Stimulus), Active Job/Sidekiq, Action Cable, concerns, Rails API mode, caching, and the asset pipeline. Rails renders server-side UI (ERB/Hotwire) AND serves APIs. TRIGGER on Active Record model/migration/scope issues, N+1 problems, controller/strong-params/routing questions, ERB/Hotwire view concerns, Active Job/Action Cable wiring, or bin/rails test/migrate failures. NOT for general Ruby language concerns (metaprogramming, blocks/procs, Enumerable, Bundler — that is ruby-idioms) or framework-agnostic HTTP contract design. Any agent touching Rails (a developer, API engineer, reviewer, accessibility, performance, observability, or migration engineer) can load it.",
+      "category": "web",
+      "tags": [
+        "rails",
+        "activerecord",
+        "hotwire",
+        "ruby",
+        "web"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/rails-framework/SKILL.md"
     },
     {
       "name": "react-native-platform",

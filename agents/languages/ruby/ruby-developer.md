@@ -1,6 +1,6 @@
 ---
 name: ruby-developer
-description: Use when turning a Ruby requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Ruby bug. Invoke for building or extending Ruby/Rails/Sinatra features and for diagnosing failures in existing Ruby code. Not for system-level design (use ruby-architect) or for adding tests to code you did not write (use ruby-unit-test-architect).
+description: Use when turning a Ruby requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Ruby bug. Invoke for building or extending plain-Ruby/Sinatra features and gems and for diagnosing failures in existing Ruby code. For Rails app work (Active Record, controllers, ERB/Hotwire, migrations) use rails-developer instead. Not for system-level design (use ruby-architect) or for adding tests to code you did not write (use ruby-unit-test-architect).
 model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: languages
