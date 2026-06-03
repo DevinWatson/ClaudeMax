@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 713,
-    "skills": 122,
+    "agents": 721,
+    "skills": 123,
     "categories": 16
   },
   "agents": [
@@ -8105,7 +8105,7 @@
     },
     {
       "name": "java-architect",
-      "description": "Use when designing or reviewing the structure of a Java system, service, or module — component boundaries, coupling/cohesion, interface contracts, package/module layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial on the JVM or when reviewing a Java design proposal. Not for implementing the feature (use java-developer) or for REST endpoint shape alone (use java-api-designer).",
+      "description": "Use when designing or reviewing the structure of a general Java system, service, or module — component boundaries, coupling/cohesion, interface contracts, package/module layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial on the JVM or when reviewing a Java design proposal. Not for implementing the feature (use java-developer) or for REST endpoint shape alone (use java-api-designer). For architecting a Spring Boot application specifically — layering, Spring Data JPA strategy, MVC-vs-WebFlux, security topology — route to the spring-boot team (spring-boot-architect) instead.",
       "category": "languages",
       "model": "opus",
       "tools": [
@@ -8207,7 +8207,7 @@
     },
     {
       "name": "java-developer",
-      "description": "Use when turning a Java requirement, ticket, or feature into working, tested, incrementally-shipped code on the JVM, or when fixing a reported Java bug. Invoke for building or extending Java/Spring/Jakarta features and for diagnosing failures in existing Java code. Not for system-level design (use java-architect) or for adding tests to code you did not write (use java-unit-test-architect).",
+      "description": "Use when turning a Java requirement, ticket, or feature into working, tested, incrementally-shipped code on the JVM, or when fixing a reported Java bug. Invoke for building or extending general Java/Jakarta features and for diagnosing failures in existing Java code. Not for system-level design (use java-architect) or for adding tests to code you did not write (use java-unit-test-architect). For Spring Boot application work — controllers, services, Spring Data JPA, Spring Security, @Transactional — route to the spring-boot team (spring-boot-developer) instead.",
       "category": "languages",
       "model": "sonnet",
       "tools": [
@@ -16723,6 +16723,248 @@
       "path": "agents/languages/solidity/solidity-unit-test-architect.md"
     },
     {
+      "name": "spring-boot-api-engineer",
+      "description": "Use when designing and building HTTP API endpoints in a Spring Boot service — @RestController request mapping, @RequestBody/@Valid Bean Validation, ResponseEntity status codes, a consistent error envelope via @RestControllerAdvice, pagination/filtering with Pageable, content negotiation, and versioning, with proper resource modeling (Spring Boot/Spring MVC or WebFlux). Invoke to design or implement the API contract layer. NOT for system architecture (use spring-boot-architect), NOT for general feature work (use spring-boot-developer), NOT for security review (use spring-boot-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "spring-boot",
+        "spring",
+        "api",
+        "rest",
+        "java"
+      ],
+      "skills": [
+        "rest-api-design",
+        "spring-boot-framework",
+        "java-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/spring-boot/spring-boot-api-engineer.md"
+    },
+    {
+      "name": "spring-boot-architect",
+      "description": "Use when shaping the architecture of a Spring Boot application or service — module/package boundaries, the layering of controllers/services/repositories, the persistence and JPA strategy, the MVC-vs-WebFlux choice, configuration/profile layering, security architecture, and bean/dependency topology (Spring Boot). Invoke for system-level design and trade-off analysis. NOT for implementing features (use spring-boot-developer), NOT for performance tuning of existing code (use spring-boot-performance-engineer), NOT for framework-agnostic JVM design (route to java-architect).",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "spring-boot",
+        "spring",
+        "architecture",
+        "java"
+      ],
+      "skills": [
+        "software-architecture",
+        "spring-boot-framework",
+        "java-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/spring-boot/spring-boot-architect.md"
+    },
+    {
+      "name": "spring-boot-developer",
+      "description": "Use when turning a Spring Boot requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Spring Boot bug — a bean-wiring/context-startup failure, a Spring Data JPA query or N+1, a @Transactional rollback problem, a controller/validation error, or a config/profile issue (Spring Boot). Invoke for building or extending Spring Boot features (controllers, services, repositories, entities, security config). NOT for system-level design (use spring-boot-architect), NOT for adding tests to code you did not write (use spring-boot-test-engineer), NOT for performance tuning of working code (use spring-boot-performance-engineer). For general (non-Spring) Java work, route to java-developer instead.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "spring-boot",
+        "spring",
+        "jpa",
+        "java",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "spring-boot-framework",
+        "java-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/spring-boot/spring-boot-developer.md"
+    },
+    {
+      "name": "spring-boot-migration-engineer",
+      "description": "Use when upgrading a Spring Boot service across versions or evolving it safely — Spring Boot 2-to-3 upgrades, the javax-to-jakarta namespace migration, Spring Security config-style migrations (WebSecurityConfigurerAdapter to SecurityFilterChain), deprecation and property-key fixes, dependency-coordinate updates, and reconciling the changes with the build (Spring Boot). Invoke for version upgrades and namespace/migration work. NOT for routine feature changes (use spring-boot-developer), NOT for query performance tuning (use spring-boot-performance-engineer), NOT for system architecture (use spring-boot-architect).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "spring-boot",
+        "migration",
+        "upgrade",
+        "jakarta",
+        "java"
+      ],
+      "skills": [
+        "code-migration",
+        "spring-boot-framework",
+        "java-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/spring-boot/spring-boot-migration-engineer.md"
+    },
+    {
+      "name": "spring-boot-observability-engineer",
+      "description": "Use when instrumenting a Spring Boot service for production visibility — Actuator endpoints (health/info/metrics/prometheus), Micrometer metrics and timers, structured logging with correlation/trace IDs, and distributed tracing (Micrometer Tracing/OpenTelemetry) across controllers, services, and async tasks (Spring Boot). Invoke to add or improve logs, traces, and metrics. NOT for fixing the underlying bug (use spring-boot-developer), NOT for query/JVM performance tuning (use spring-boot-performance-engineer), NOT for system architecture (use spring-boot-architect).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "spring-boot",
+        "observability",
+        "actuator",
+        "micrometer",
+        "java"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "spring-boot-framework",
+        "java-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/spring-boot/spring-boot-observability-engineer.md"
+    },
+    {
+      "name": "spring-boot-performance-engineer",
+      "description": "Use when a Spring Boot service is slow or its database/runtime cost is high — JPA N+1 queries, missing fetch joins/@EntityGraph, unindexed or full-table scans, connection-pool (HikariCP) exhaustion or sizing, slow serialization, weak caching, or JVM/GC pressure — and you need it measured and tuned (Spring Boot). Invoke to profile and optimize an existing service. NOT for building new features (use spring-boot-developer), NOT for system architecture (use spring-boot-architect), NOT for security review (use spring-boot-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "spring-boot",
+        "jpa",
+        "performance",
+        "jvm",
+        "java"
+      ],
+      "skills": [
+        "cost-optimization",
+        "spring-boot-framework",
+        "java-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/spring-boot/spring-boot-performance-engineer.md"
+    },
+    {
+      "name": "spring-boot-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a Spring Boot service or diff — Spring Security misconfiguration (permissive SecurityFilterChain, disabled CSRF on session flows, missing method security), broken authorization/IDOR, SpEL injection in @PreAuthorize, SQL/JPQL injection via native or concatenated queries, unsafe deserialization, mass-assignment, exposed Actuator/management endpoints, and insecure config (secrets in source, permissive CORS) — with severity-ranked findings (Spring Boot). Invoke for an authorized appsec review. NOT for fixing the issues (use spring-boot-developer), NOT for performance review (use spring-boot-performance-engineer), NOT for HTTP contract design (use spring-boot-api-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "spring-boot",
+        "spring-security",
+        "security",
+        "appsec",
+        "java"
+      ],
+      "skills": [
+        "appsec-review",
+        "spring-boot-framework",
+        "java-idioms",
+        "match-project-conventions",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/spring-boot/spring-boot-security-reviewer.md"
+    },
+    {
+      "name": "spring-boot-test-engineer",
+      "description": "Use when adding or improving automated tests for a Spring Boot service — slice tests (@WebMvcTest + MockMvc, @DataJpaTest), full-context @SpringBootTest integration tests, Testcontainers-backed database tests, security and validation tests, and query-count/N+1 assertions (Spring Boot). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use spring-boot-developer), NOT for performance profiling (use spring-boot-performance-engineer), NOT for security review (use spring-boot-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "spring-boot",
+        "spring",
+        "testing",
+        "testcontainers",
+        "java"
+      ],
+      "skills": [
+        "test-automation",
+        "spring-boot-framework",
+        "java-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/spring-boot/spring-boot-test-engineer.md"
+    },
+    {
       "name": "sql-data-modeler",
       "description": "Use when designing or evolving a relational schema — tables, keys and constraints, normalization vs. deliberate denormalization, data types, indexing strategy, partitioning, and safe migration steps. Invoke to create a new schema, change an existing one, or fix a model causing anomalies/bloat. Not for authoring queries against a model (use sql-developer) and not for plan-level tuning of a slow query (use sql-performance-engineer).",
       "category": "languages",
@@ -21122,6 +21364,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/research/source-evaluation/SKILL.md"
+    },
+    {
+      "name": "spring-boot-framework",
+      "description": "Use when working in Spring Boot (Java) — dependency injection and the IoC container, auto-configuration and starters, stereotype annotations (@Component/@Service/@Repository/@RestController), Spring MVC and WebFlux controllers, Spring Data JPA (repositories, @Query methods, N+1 avoidance with fetch joins/@EntityGraph), Bean Validation, Spring Security (auth and method security), externalized configuration and profiles, Actuator, transactions (@Transactional), and testing (@SpringBootTest, MockMvc/WebTestClient, @DataJpaTest, Testcontainers). Verifies with the project's build (mvn verify / gradlew test). TRIGGER on Spring bean wiring or context-startup failures, Spring Data JPA repository/query/N+1 issues, @Transactional rollback problems, Spring Security config/authorization gaps, Actuator exposure, or @SpringBootTest/MockMvc setup. NOT for general Java language concerns (generics, the memory model, build/dependency conflicts — that is java-idioms) or framework-agnostic HTTP contract design.",
+      "category": "web",
+      "tags": [
+        "spring-boot",
+        "spring",
+        "jpa",
+        "spring-security",
+        "java",
+        "web"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/spring-boot-framework/SKILL.md"
     },
     {
       "name": "sql-explain-analysis",

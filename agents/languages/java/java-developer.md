@@ -1,6 +1,6 @@
 ---
 name: java-developer
-description: Use when turning a Java requirement, ticket, or feature into working, tested, incrementally-shipped code on the JVM, or when fixing a reported Java bug. Invoke for building or extending Java/Spring/Jakarta features and for diagnosing failures in existing Java code. Not for system-level design (use java-architect) or for adding tests to code you did not write (use java-unit-test-architect).
+description: Use when turning a Java requirement, ticket, or feature into working, tested, incrementally-shipped code on the JVM, or when fixing a reported Java bug. Invoke for building or extending general Java/Jakarta features and for diagnosing failures in existing Java code. Not for system-level design (use java-architect) or for adding tests to code you did not write (use java-unit-test-architect). For Spring Boot application work — controllers, services, Spring Data JPA, Spring Security, @Transactional — route to the spring-boot team (spring-boot-developer) instead.
 model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: languages

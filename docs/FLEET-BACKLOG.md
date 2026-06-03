@@ -40,7 +40,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] remix
 - [x] django (python web)
 - [x] rails (ruby web)
-- [ ] spring-boot (java web)
+- [x] spring-boot (java web)
 - [ ] fastapi (python web)
 - [ ] express (node web)
 - [ ] nestjs (node web)

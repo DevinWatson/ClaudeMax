@@ -1,6 +1,6 @@
 ---
 name: java-architect
-description: Use when designing or reviewing the structure of a Java system, service, or module — component boundaries, coupling/cohesion, interface contracts, package/module layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial on the JVM or when reviewing a Java design proposal. Not for implementing the feature (use java-developer) or for REST endpoint shape alone (use java-api-designer).
+description: Use when designing or reviewing the structure of a general Java system, service, or module — component boundaries, coupling/cohesion, interface contracts, package/module layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial on the JVM or when reviewing a Java design proposal. Not for implementing the feature (use java-developer) or for REST endpoint shape alone (use java-api-designer). For architecting a Spring Boot application specifically — layering, Spring Data JPA strategy, MVC-vs-WebFlux, security topology — route to the spring-boot team (spring-boot-architect) instead.
 model: opus
 tools: Read, Grep, Glob, Write
 category: languages
