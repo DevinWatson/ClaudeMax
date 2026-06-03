@@ -226,16 +226,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 
 ### application-hosting
 - [x] gcp|application-hosting|app-engine|App Engine
-- [ ] gcp|application-hosting|cloud-run|Cloud Run
-- [ ] gcp|application-hosting|gke|Google Kubernetes Engine
+- [x] gcp|application-hosting|cloud-run|Cloud Run
+- [x] gcp|application-hosting|gke|Google Kubernetes Engine
 
 ### compute
-- [ ] gcp|compute|compute-engine|Compute Engine
-- [ ] gcp|compute|batch|Batch
-- [ ] gcp|compute|migrate-to-containers|Migrate to Containers
-- [ ] gcp|compute|migrate-to-vms|Migrate to Virtual Machines
-- [ ] gcp|compute|vmware-engine|Google Cloud VMware Engine
-- [ ] gcp|compute|shielded-vms|Shielded VMs
+- [x] gcp|compute|compute-engine|Compute Engine
+- [x] gcp|compute|batch|Batch
+- [x] gcp|compute|migrate-to-containers|Migrate to Containers
+- [x] gcp|compute|migrate-to-vms|Migrate to Virtual Machines
+- [x] gcp|compute|vmware-engine|Google Cloud VMware Engine
+- [x] gcp|compute|shielded-vms|Shielded VMs
 
 ### data-analytics
 - [ ] gcp|data-analytics|bigquery|BigQuery

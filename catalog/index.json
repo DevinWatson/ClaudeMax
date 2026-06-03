@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1009,
-    "skills": 301,
+    "agents": 1017,
+    "skills": 309,
     "categories": 17
   },
   "agents": [
@@ -11630,6 +11630,36 @@
       "path": "agents/cloud/gcp/services/application-development/gcp-artifact-registry-specialist.md"
     },
     {
+      "name": "gcp-batch-specialist",
+      "description": "Use when designing, configuring, submitting, or operating Batch (GCP) — the managed batch/HPC job scheduler that runs containerized or script jobs on Compute Engine: the job spec (task groups, task count + parallelism, runnables as container/script, retries, max-run-duration), per-task CPU/memory + machine type + GPUs, provisioning models (standard vs Spot), allocation policies + instance templates + locations, environment + volumes (Cloud Storage/NFS/persistent disk), the job service account + IAM, and task-status logging. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Pick gcp-batch for fire-and-forget batch/HPC fan-out vs gcp-gke / gcp-cloud-run jobs (when already on K8s/serverless) vs gcp-compute-engine MIGs (long-running services). AWS analog is AWS Batch (aws-batch-specialist) — defer that cloud.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "batch",
+        "hpc",
+        "jobs",
+        "compute",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-batch",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/compute/gcp-batch-specialist.md"
+    },
+    {
       "name": "gcp-cloud-architect",
       "description": "Use when designing or reviewing a Google Cloud architecture — selecting managed services, laying out projects/folders/VPCs/regions, and evaluating a design against the Google Cloud Architecture Framework's pillars (GCP). Produces the design and trade-offs, not the IaC. NOT for writing Terraform/Deployment Manager (use gcp-iac-engineer), IAM/exposure auditing (gcp-security-reviewer), cost tuning (gcp-cost-governor), generic IaC across clouds (terraform-architect), or AWS/Azure architecture (aws-/azure-cloud-architect).",
       "category": "cloud",
@@ -11712,6 +11742,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/application-development/gcp-cloud-deploy-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-run-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Cloud Run (GCP) — the serverless CONTAINER platform: services vs jobs, immutable revisions + traffic splitting (canary/blue-green), concurrency (requests per container), scale-to-zero vs min-instances, CPU allocation (always-on vs during-request) + boot, memory/CPU sizing, the per-service service account + invoker IAM, ingress + IAP + VPC connectors/Direct VPC egress, Cloud SQL, and Artifact Registry images. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Cloud Run is serverless CONTAINERS (more control + scale-to-zero) — pick gcp-app-engine for opinionated PaaS and gcp-gke for full KUBERNETES; prefer Cloud Run over App Engine flexible for new container workloads. AWS analogs are App Runner / Fargate (aws-app-runner-specialist); Azure is Container Apps (azure-container-apps) — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-run",
+        "serverless",
+        "containers",
+        "application-hosting",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-run",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-hosting/gcp-cloud-run-specialist.md"
     },
     {
       "name": "gcp-cloud-scheduler-specialist",
@@ -11828,6 +11888,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/application-development/gcp-cloud-workstations-specialist.md"
+    },
+    {
+      "name": "gcp-compute-engine-specialist",
+      "description": "Use when designing, configuring, provisioning, or operating Compute Engine (GCP) — IaaS virtual machines: machine families/types + custom machine types, images + persistent/local-SSD disks + snapshots, managed instance groups (MIGs) with instance templates + autoscaling + autohealing + rolling updates, Spot/preemptible VMs, sole-tenant nodes, the VM service account + scopes + OS Login + startup scripts/metadata, firewall rules, and live migration. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Pick gcp-gke for Kubernetes and gcp-cloud-run/gcp-app-engine for serverless/PaaS; VM boot-integrity hardening (secure boot/vTPM) belongs to gcp-shielded-vms. AWS analog is EC2 (aws-ec2-specialist); Azure is Virtual Machines (azure-virtual-machines) — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "compute-engine",
+        "iaas",
+        "virtual-machines",
+        "compute",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-compute-engine",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/compute/gcp-compute-engine-specialist.md"
     },
     {
       "name": "gcp-cost-governor",
@@ -11975,6 +12065,36 @@
       "path": "agents/cloud/gcp/services/application-development/gcp-eventarc-specialist.md"
     },
     {
+      "name": "gcp-gke-specialist",
+      "description": "Use when designing, configuring, provisioning, or operating Google Kubernetes Engine (GKE, GCP) — the GCP MANAGED-GKE layer: Standard vs Autopilot, cluster topology (zonal/regional, public/private), node pools (machine type, autoscaling, Spot, surge upgrades, node auto-provisioning), release channels + cluster/node upgrades, Workload Identity, and GKE networking (VPC-native, GKE Ingress/Gateway, network policy, Dataplane V2). MUST cross-ref the kubernetes-platform team: this specialist owns the GCP-side cluster lifecycle (provisioning/node pools/Autopilot/upgrades/Workload Identity/GKE networking) while the kubernetes-platform team owns distribution-agnostic CLUSTER-INTERNAL ops (RBAC, app manifests, Helm, policy, service mesh). NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting work. Pick gcp-cloud-run for serverless containers and gcp-app-engine for PaaS. AWS analog is EKS (aws-eks-specialist); Azure is AKS (azure-aks) — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "gke",
+        "kubernetes",
+        "autopilot",
+        "application-hosting",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-gke",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-hosting/gcp-gke-specialist.md"
+    },
+    {
       "name": "gcp-iac-engineer",
       "description": "Use when writing or refactoring GCP infrastructure as code — Terraform or Deployment Manager that provisions Google Cloud resources, then validating it with plan/validate (GCP). NOT for cloud architecture/Architecture-Framework design (use gcp-cloud-architect), IAM/exposure review (gcp-security-reviewer), generic provider-agnostic Terraform language work (terraform-architect — this agent is GCP-specific infra), or AWS/Azure infra (aws-/azure-iac-engineer).",
       "category": "cloud",
@@ -12002,6 +12122,66 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/gcp-iac-engineer.md"
+    },
+    {
+      "name": "gcp-migrate-to-containers-specialist",
+      "description": "Use when planning or executing a Migrate to Containers (M2C, GCP) modernization — converting running VM workloads (on-prem, AWS, Azure, Compute Engine) into containerized workloads on GKE or Cloud Run: the processing cluster + migration source, fit assessment, generating + tuning the migration plan + Dockerfile + Kubernetes manifests (or Cloud Run config), handling stateful data/volumes, building the image to Artifact Registry, and deploying + cutting over. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. This is MODERNIZATION (VM → container) — for lift-and-shift that keeps VMs as VMs use gcp-migrate-to-vms; the target runtime is owned by gcp-gke / gcp-cloud-run. AWS analog is the Application Migration Service / App2Container modernization paths (aws-application-migration-service-specialist) — defer that cloud.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "migrate-to-containers",
+        "modernization",
+        "migration",
+        "compute",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-migrate-to-containers",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/compute/gcp-migrate-to-containers-specialist.md"
+    },
+    {
+      "name": "gcp-migrate-to-vms-specialist",
+      "description": "Use when planning or executing a Migrate to Virtual Machines (M4VM, GCP) lift-and-shift — migrating running VMs (VMware/on-prem, AWS, Azure) onto Compute Engine: the source connection + Migrate Connector, migration groups, replication (initial full + incremental delta sync) for low-downtime cutover, test-clone (validate without touching the source), target VM details (machine type, disks, network, service account, OS adaptation/license), cutover, and rollback. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. This is LIFT-AND-SHIFT (VM stays a VM) — to modernize a workload into containers use gcp-migrate-to-containers; the migrated VM is operated via gcp-compute-engine. AWS analog is the Application Migration Service / MGN (aws-application-migration-service-specialist); Azure is Azure Migrate — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "migrate-to-vms",
+        "lift-and-shift",
+        "migration",
+        "compute",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-migrate-to-vms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/compute/gcp-migrate-to-vms-specialist.md"
     },
     {
       "name": "gcp-networking-engineer",
@@ -12147,6 +12327,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/gcp-security-reviewer.md"
+    },
+    {
+      "name": "gcp-shielded-vms-specialist",
+      "description": "Use when hardening Compute Engine instances with Shielded VM (GCP) — VM boot-integrity protections against rootkits/bootkits and tampering: secure boot (only signed bootloaders/kernels), the virtual TPM (vTPM) for measured boot + cryptographic identity, integrity monitoring (baseline vs measured boot, late-binding) surfaced in Cloud Monitoring/Logging, requiring a UEFI/Shielded-compatible image, enabling it on instances/instance templates/MIGs, and enforcing it org-wide via the constraints/compute.requireShieldedVm Org Policy. NOT the GCP role team (gcp-security-reviewer for org-wide posture, gcp-cloud-architect/gcp-iac-engineer for cross-cutting). This is BOOT-INTEGRITY hardening — the VM lifecycle/sizing/MIG mechanics belong to gcp-compute-engine; do not confuse with Confidential VM (memory encryption). No AWS/Azure 1:1 (closest: AWS NitroTPM / Azure Trusted Launch) — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "shielded-vms",
+        "security",
+        "secure-boot",
+        "compute",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-shielded-vms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/compute/gcp-shielded-vms-specialist.md"
     },
     {
       "name": "gcp-speech-to-text-specialist",
@@ -12357,6 +12567,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/ai-ml/gcp-vision-api-specialist.md"
+    },
+    {
+      "name": "gcp-vmware-engine-specialist",
+      "description": "Use when designing, configuring, provisioning, or operating Google Cloud VMware Engine (GCVE, GCP) — a managed VMware SDDC (vSphere, vCenter, vSAN, NSX-T, HCX) on dedicated bare-metal nodes: private clouds + clusters, node types + cluster sizing/autoscale + node add/remove, NSX-T networking + the VMware Engine network / VPC peering + Private Service Access, HCX workload migration from on-prem vSphere, vSAN storage policies, and private connectivity/IAM. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Pick GCVE to run VMware UNCHANGED — to convert workloads to native Compute Engine use gcp-migrate-to-vms, or to modernize to GKE/Cloud Run use gcp-migrate-to-containers. AWS analog is VMware Cloud on AWS; the Azure equivalent is Azure VMware Solution (azure-vmware-solution) — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "vmware-engine",
+        "gcve",
+        "vmware",
+        "compute",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-vmware-engine",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/compute/gcp-vmware-engine-specialist.md"
     },
     {
       "name": "gcp-workflows-specialist",
@@ -31348,6 +31588,23 @@
       "path": "skills/cloud/gcp-artifact-registry/SKILL.md"
     },
     {
+      "name": "gcp-batch",
+      "description": "Use when designing, provisioning, securing, or operating Batch — Google Cloud's fully managed batch/HPC job scheduler that runs containerized or script jobs on Compute Engine: the job spec (task groups, task count + parallelism, runnables as container or script, retries, max-run-duration), compute resources (machine type, CPU/memory per task, GPUs), provisioning models (standard vs Spot), allocation policies + instance templates + locations, environment + volumes (Cloud Storage / NFS / persistent disk), the job service account + IAM, and logging/monitoring of task status. Loads the Batch knowledge: author a job spec, choose provisioning + parallelism, mount storage, submit the job, and verify tasks succeed. Consumed by the Batch specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they run managed batch/HPC jobs (Batch).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "batch",
+        "hpc",
+        "jobs",
+        "task-groups",
+        "spot",
+        "compute"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-batch/SKILL.md"
+    },
+    {
       "name": "gcp-cloud-build",
       "description": "Use when designing, provisioning, securing, or operating Cloud Build — Google Cloud's managed CI/build service: build configs (cloudbuild.yaml / Dockerfile), build steps (containerized steps, builder images, `args`, `waitFor` for parallelism), substitutions, artifacts and images, triggers (push/PR/tag/manual/Pub-Sub/webhook from GitHub/GitLab/Cloud Source Repositories), the build service account and per-step permissions, private worker pools (private pools) for VPC/private access, machine types, caching, and Artifact Registry integration, plus IAM, timeouts, and cost (Cloud Build). Loads the Cloud Build knowledge: author cloudbuild.yaml, create a trigger, build/push artifacts, secure the build identity, and verify a green build. Consumed by the Cloud Build specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add CI.",
       "category": "cloud",
@@ -31378,6 +31635,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-cloud-deploy/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-run",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Run — Google Cloud's serverless container platform: services (request/HTTP-driven, autoscaling) vs jobs (run-to-completion tasks/task arrays), immutable revisions + traffic splitting (blue-green/canary), concurrency (requests per container), scale-to-zero vs min-instances (warm), CPU allocation (always-on vs only-during-requests) + CPU boost, memory/CPU sizing, the per-service service account + IAM invoker, ingress controls + IAP + VPC connectors / Direct VPC egress, Cloud SQL connections, and Artifact Registry images. Loads the Cloud Run knowledge: deploy a container service or job, set concurrency/scaling, split traffic, scope IAM/ingress, and verify the served endpoint. Consumed by the Cloud Run specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they host serverless containers (Cloud Run).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-run",
+        "serverless",
+        "containers",
+        "autoscaling",
+        "jobs",
+        "application-hosting"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-run/SKILL.md"
     },
     {
       "name": "gcp-cloud-scheduler",
@@ -31445,6 +31719,23 @@
       "path": "skills/cloud/gcp-cloud-workstations/SKILL.md"
     },
     {
+      "name": "gcp-compute-engine",
+      "description": "Use when designing, provisioning, securing, or operating Compute Engine — Google Cloud's IaaS virtual machines: machine families/types (E2/N2/N4/C3 general, C2/H3 compute, M memory, A/G accelerator) + custom machine types, images + boot/persistent/local-SSD disks + snapshots, managed instance groups (MIGs) with instance templates + autoscaling + autohealing + rolling updates (regional/zonal), Spot/preemptible VMs, sole-tenant nodes, the VM service account + scopes + OS Login + metadata/startup scripts, and live migration/maintenance. Loads the Compute Engine knowledge: pick a machine type, provision a VM or a MIG from a template, attach disks, scope IAM/firewall, set autoscaling, and verify the instance is RUNNING + reachable. Consumed by the Compute Engine specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they provision VMs (Compute Engine).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "compute-engine",
+        "iaas",
+        "virtual-machines",
+        "managed-instance-groups",
+        "spot",
+        "compute"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-compute-engine/SKILL.md"
+    },
+    {
       "name": "gcp-document-ai",
       "description": "Use when designing, provisioning, securing, or operating Document AI — Google Cloud's document parsing platform: processors (OCR/Document OCR, Form Parser, specialized parsers like Invoice/Receipt/ID, and custom extractors trained in the Workbench), online and batch document processing, form + entity extraction with confidence scores, human-in-the-loop review, and the Document AI Warehouse for storing/searching processed documents (Document AI). Loads the Document AI knowledge: create a processor, process documents online/batch, extract entities, and verify the output schema. Consumed by the Document AI specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle document-processing workloads.",
       "category": "cloud",
@@ -31493,6 +31784,57 @@
       "path": "skills/cloud/gcp-eventarc/SKILL.md"
     },
     {
+      "name": "gcp-gke",
+      "description": "Use when designing, provisioning, securing, or operating Google Kubernetes Engine (GKE) — Google Cloud's managed Kubernetes: the Standard (you manage node pools) vs Autopilot (Google manages nodes/capacity, pay-per-pod) modes, cluster topology (zonal vs regional control plane, public vs private clusters), node pools (machine type, autoscaling, spot, surge upgrades, node auto-provisioning), release channels + cluster/node version upgrades, Workload Identity (map K8s SAs to Google SAs), GKE networking (VPC-native/alias IPs, GKE Ingress + Gateway API, network policy, Dataplane V2/Cilium), and the GKE add-ons. Loads the GKE knowledge: provision a cluster + node pools (or Autopilot), wire Workload Identity + networking, manage upgrades, and verify nodes/workloads are Ready. Consumed by the GKE specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they provision the managed Kubernetes layer (GKE).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "gke",
+        "kubernetes",
+        "autopilot",
+        "node-pools",
+        "workload-identity",
+        "application-hosting"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-gke/SKILL.md"
+    },
+    {
+      "name": "gcp-migrate-to-containers",
+      "description": "Use when planning or executing a Migrate to Containers (M2C) modernization — Google Cloud's tool that converts running VM workloads (on-prem, AWS, Azure, Compute Engine) into containerized workloads on GKE or Cloud Run: the processing cluster + migration source, fit assessment, extracting a workload into a migration plan + Dockerfile + Kubernetes manifests (Deployment/StatefulSet, PVCs, ConfigMaps), handling data/stateful volumes, building the image to Artifact Registry, and deploying + cutting over to GKE/Cloud Run. Loads the M2C knowledge: assess fit, generate + tune the migration plan, build the container image, deploy to GKE/Cloud Run, and verify the modernized workload serves. Consumed by the Migrate to Containers specialist and by the GCP role team (gcp-cloud-architect / gcp-iac-engineer) when they modernize VMs into containers (Migrate to Containers).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "migrate-to-containers",
+        "modernization",
+        "gke",
+        "cloud-run",
+        "migration",
+        "compute"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-migrate-to-containers/SKILL.md"
+    },
+    {
+      "name": "gcp-migrate-to-vms",
+      "description": "Use when planning or executing a Migrate to Virtual Machines (M4VM) lift-and-shift — Google Cloud's tool for migrating running VMs (VMware/on-prem, AWS, Azure) onto Compute Engine: the source connection + Migrate Connector, migration groups, replication (initial full + incremental delta sync) to keep cutover downtime low, test-clone (validate without touching the source), target VM details (machine type, disks, network, service account, OS adaptation/license), cutover, and rollback. Loads the Migrate to VMs knowledge: connect a source, group + replicate VMs, test-clone, set target details, cut over with minimal downtime, and verify the migrated VM is RUNNING + reachable. Consumed by the Migrate to VMs specialist and by the GCP role team (gcp-cloud-architect / gcp-iac-engineer) when they lift-and-shift VMs to Compute Engine (Migrate to Virtual Machines).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "migrate-to-vms",
+        "lift-and-shift",
+        "compute-engine",
+        "migration",
+        "replication",
+        "compute"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-migrate-to-vms/SKILL.md"
+    },
+    {
       "name": "gcp-pubsub",
       "description": "Use when designing, provisioning, securing, or operating Pub/Sub — Google Cloud's fully managed, global messaging / event-streaming service: topics and subscriptions, push vs pull delivery (incl. StreamingPull and BigQuery / Cloud Storage subscriptions), message ordering (ordering keys), exactly-once delivery, ack deadlines + redelivery, dead-letter topics + retry policy, message retention + seek/replay, schemas (Avro / Protobuf) + schema enforcement, message filtering, flow control, the publisher/subscriber service accounts + IAM, and CMEK. Loads the Pub/Sub knowledge: create a topic + subscription, choose push/pull + ordering/exactly-once, wire dead-letter + schema, and verify end-to-end delivery. Consumed by the Pub/Sub specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add managed messaging (Pub/Sub).",
       "category": "cloud",
@@ -31527,6 +31869,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-services/SKILL.md"
+    },
+    {
+      "name": "gcp-shielded-vms",
+      "description": "Use when hardening Compute Engine instances with Shielded VM — Google Cloud's set of VM boot-integrity protections against rootkits/bootkits and tampering: secure boot (only signed bootloaders/kernels run), the virtual Trusted Platform Module (vTPM) for measured boot + cryptographic identity, integrity monitoring (baseline vs measured boot policies, late-binding) surfaced in Cloud Monitoring/Logging, requiring a Shielded-VM-compatible (UEFI) image, enabling it on instances / instance templates / MIGs, and enforcing it org-wide via the constraints/compute.requireShieldedVm Org Policy. Loads the Shielded VM knowledge: confirm a UEFI image, enable secure boot + vTPM + integrity monitoring, enforce via Org Policy, and verify integrity reports are healthy. Consumed by the Shielded VMs specialist and by the GCP role team (gcp-security-reviewer / gcp-iac-engineer) when they harden VM boot integrity (Shielded VMs).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "shielded-vms",
+        "security",
+        "secure-boot",
+        "vtpm",
+        "integrity-monitoring",
+        "compute"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-shielded-vms/SKILL.md"
     },
     {
       "name": "gcp-speech-to-text",
@@ -31640,6 +31999,24 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-vision-api/SKILL.md"
+    },
+    {
+      "name": "gcp-vmware-engine",
+      "description": "Use when designing, provisioning, securing, or operating Google Cloud VMware Engine (GCVE) — a fully managed VMware SDDC (vSphere, vCenter, vSAN, NSX-T, HCX) running on dedicated bare-metal nodes in Google Cloud: private clouds + clusters, node types (e.g. ve1/ve2 standard, storage-optimized), cluster sizing + autoscale + node add/remove, NSX-T networking + the VMware Engine network / VPC peering + Private Service Access to Google services, HCX for workload migration from on-prem vSphere, vSAN storage policies, and IAM/private connectivity. Loads the GCVE knowledge: provision a private cloud + cluster, wire NSX-T + VPC peering, migrate VMs via HCX, and verify vCenter reachability + VM health. Consumed by the VMware Engine specialist and by the GCP role team (gcp-cloud-architect / gcp-iac-engineer) when they run managed VMware (VMware Engine).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "vmware-engine",
+        "gcve",
+        "vmware",
+        "sddc",
+        "nsx-t",
+        "hcx",
+        "compute"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-vmware-engine/SKILL.md"
     },
     {
       "name": "gcp-workflows",
