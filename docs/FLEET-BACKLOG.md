@@ -26,7 +26,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] r
 - [x] julia
 - [x] zig
-- [ ] perl
+- [x] perl
 - [ ] groovy
 - [ ] ocaml
 - [ ] erlang

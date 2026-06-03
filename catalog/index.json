@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 555,
-    "skills": 110,
+    "agents": 576,
+    "skills": 111,
     "categories": 16
   },
   "agents": [
@@ -8932,6 +8932,575 @@
       "path": "agents/business/okr-planner.md"
     },
     {
+      "name": "perl-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in Perl — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution, verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a Perl app. Not for a single model call (use perl-ai-engineer) or retrieval pipelines (use perl-rag-engineer). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-agent-orchestrator.md"
+    },
+    {
+      "name": "perl-ai-engineer",
+      "description": "Use when building LLM-backed features in Perl — wiring model calls via OpenAI::API/LWP/HTTP::Tiny clients, prompt/response plumbing, structured output parsing, streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a Perl app. Not for retrieval pipelines (use perl-rag-engineer), multi-agent workflows (use perl-agent-orchestrator), or eval harnesses (use perl-evals-engineer). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-ai-engineer.md"
+    },
+    {
+      "name": "perl-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in Perl — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized in Mojolicious or Dancer2. Invoke to design or refine Perl HTTP endpoints. Not for system structure (use perl-architect) or for consumer/provider contract tests (use perl-contract-tester). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-api-designer.md"
+    },
+    {
+      "name": "perl-architect",
+      "description": "Use when designing or reviewing the structure of a Perl system, module, or distribution — module boundaries, coupling/cohesion, role/class layout (Moose/Moo), interface contracts, namespace organization, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in Perl or when reviewing a Perl design proposal. Not for implementing the feature (use perl-developer) or for HTTP endpoint shape alone (use perl-api-designer). (Perl)",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "perl",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "perl-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-architect.md"
+    },
+    {
+      "name": "perl-compliance-reviewer",
+      "description": "Use when checking Perl code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of Perl code. Not for finding exploitable vulnerabilities (use perl-security-reviewer). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "perl",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "perl-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-compliance-reviewer.md"
+    },
+    {
+      "name": "perl-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in Perl — Pact (Pact::Perl) or JSON-Schema-based consumer and provider tests, contract publication, and compatibility checks between services. Invoke to add or fix contract tests in Perl so a provider change cannot silently break a consumer. Not for in-process integration tests (use perl-integration-test-architect) or end-to-end flows (use perl-sdet). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-contract-tester.md"
+    },
+    {
+      "name": "perl-cost-governor",
+      "description": "Use when reducing the runtime cost of Perl services — interpreter memory footprint, process/worker (preforking) sizing, wasteful regex and string-building patterns, slow DBI query patterns, and cloud resource footprint. Invoke to analyze and cut compute/memory cost of Perl workloads. Not for latency-only profiling unless it lowers cost, and not for resilience design (use perl-reliability-engineer). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "cost",
+        "tuning"
+      ],
+      "skills": [
+        "cost-optimization",
+        "perl-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-cost-governor.md"
+    },
+    {
+      "name": "perl-developer",
+      "description": "Use when turning a Perl requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Perl bug. Invoke for building or extending Perl scripts, modules, or apps and for diagnosing failures in existing Perl code. Not for system-level design (use perl-architect) or for adding tests to code you did not write (use perl-unit-test-architect). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-developer.md"
+    },
+    {
+      "name": "perl-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in Perl — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run under prove in CI to catch quality regressions. Invoke to measure or gate LLM output quality in Perl. Not for building the feature (use perl-ai-engineer) or the retrieval pipeline (use perl-rag-engineer). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "perl-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-evals-engineer.md"
+    },
+    {
+      "name": "perl-integration-test-architect",
+      "description": "Use when testing how Perl components integrate across real boundaries — database (DBI/DBIx::Class), HTTP clients, message queues, or other services — using Test::PostgreSQL, Test::Mojo, or live ephemeral resources. Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use perl-unit-test-architect) or browser/end-to-end flows (use perl-sdet). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "integration-testing",
+        "dbi"
+      ],
+      "skills": [
+        "integration-testing",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-integration-test-architect.md"
+    },
+    {
+      "name": "perl-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in Perl — defining tools/resources/prompts, wiring transport (stdio/HTTP) and capability negotiation, and handling MCP message lifecycle in Perl. Invoke for MCP server/client work in a Perl codebase. Not for general LLM feature plumbing (use perl-ai-engineer) or multi-agent coordination (use perl-agent-orchestrator). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-mcp-steward.md"
+    },
+    {
+      "name": "perl-migration-engineer",
+      "description": "Use when migrating Perl code across a version or framework boundary — Perl interpreter upgrades, Perl 5 modernization, framework moves (CGI to Mojolicious/Dancer2), OO migrations (blessed-hash to Moose/Moo), or library/CPAN replacements — done in safe, verifiable increments. Invoke to plan and execute a Perl migration or fix breakage it caused. Not for greenfield features (use perl-developer) or pure restructuring within one version (use perl-architect). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-migration-engineer.md"
+    },
+    {
+      "name": "perl-observability-engineer",
+      "description": "Use when instrumenting Perl services for observability — structured logging (Log::Log4perl/Log::Any), metrics, and distributed tracing via OpenTelemetry::SDK, context propagation, and useful dashboards/alerts signals. Invoke to add or fix telemetry in Perl. Not for resilience patterns like retries/circuit-breakers (use perl-reliability-engineer) or cost reduction (use perl-cost-governor). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-observability-engineer.md"
+    },
+    {
+      "name": "perl-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a Perl application — externalizing prompts from code, templating and parameterizing them (Template Toolkit/Text::Template), versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a Perl codebase. Not for wiring the model call (use perl-ai-engineer) or scoring output quality (use perl-evals-engineer). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "perl",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "perl-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-prompt-librarian.md"
+    },
+    {
+      "name": "perl-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by Perl — message and service definitions, field numbering, wire/back-compat rules, and generated-Perl integration (Google::ProtocolBuffers / Grpc). Invoke for .proto schema design or compatibility review in a Perl codebase. Not for REST/HTTP API design (use perl-api-designer) or consumer/provider contract tests (use perl-contract-tester). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-proto-steward.md"
+    },
+    {
+      "name": "perl-qa-analyst",
+      "description": "Use when planning what to test for a Perl change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for Perl work, before or instead of writing tests. Not for writing the tests themselves (use the perl test-architect/sdet roles). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "perl",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "perl-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-qa-analyst.md"
+    },
+    {
+      "name": "perl-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in Perl — chunking, embeddings, vector store wiring, hybrid retrieval + reranking, context assembly, and grounding/citation. Invoke for RAG retrieval quality or wiring in Perl. Not for a single model call (use perl-ai-engineer) or for building an eval harness (use perl-evals-engineer). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-rag-engineer.md"
+    },
+    {
+      "name": "perl-reliability-engineer",
+      "description": "Use when hardening a Perl service against partial failure — timeouts, retries-with-backoff, circuit breakers, bulkheads, and backpressure (via Retry::Backoff, alarm/Time::HiRes, or event-loop operators), plus graceful degradation and load shedding. Invoke for resilience design or review of Perl services. Not for emitting telemetry (use perl-observability-engineer) or triaging a live outage. (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-reliability-engineer.md"
+    },
+    {
+      "name": "perl-sdet",
+      "description": "Use when building end-to-end or UI/API test automation in Perl — Selenium::Remote::Driver / Playwright or Test::Mojo and LWP/HTTP::Tiny suites, page objects, fixtures, data setup, and stable selectors run in CI. Invoke to automate full user/API flows in Perl. Not for unit tests (use perl-unit-test-architect), service integration tests (use perl-integration-test-architect), or consumer/provider contracts (use perl-contract-tester). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-sdet.md"
+    },
+    {
+      "name": "perl-security-reviewer",
+      "description": "Use for a defensive, code-level security review of Perl code or a diff — tracing untrusted input to sinks for injection (SQL via DBI, shell/command via system/backticks/open, code via eval/string-eval), taint-mode bypasses, regex-DoS from catastrophic backtracking, path-traversal/SSRF, secrets exposure, and crypto misuse, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of Perl code you are authorized to review. Not for regulatory/policy conformance (use perl-compliance-reviewer). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "perl",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "perl-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-security-reviewer.md"
+    },
+    {
+      "name": "perl-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing Perl code — mapping a unit's behaviors and writing deterministic Test2::V0/Test::More tests (with Test::MockModule where needed) that catch real regressions (boundaries, invalid input, error paths, context). Invoke to raise meaningful unit coverage in Perl. Not for cross-boundary integration tests (use perl-integration-test-architect) or end-to-end automation (use perl-sdet). (Perl)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "perl",
+        "testing",
+        "test2"
+      ],
+      "skills": [
+        "test-design",
+        "perl-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/perl/perl-unit-test-architect.md"
+    },
+    {
       "name": "php-agent-orchestrator",
       "description": "Use when designing a multi-agent or multi-step LLM workflow in PHP — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution, verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a PHP app. Not for a single model call (use php-ai-engineer) or retrieval pipelines (use php-rag-engineer).",
       "category": "languages",
@@ -16173,6 +16742,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/business/okr-design/SKILL.md"
+    },
+    {
+      "name": "perl-idioms",
+      "description": "Use when writing, reviewing, or debugging Perl — context (list vs scalar), references and complex data structures, regular expressions, sigils and dereferencing, subroutine signatures, modern OO (Moose/Moo) and Try::Tiny, CPAN/cpanm with local::lib, the Test2/Test::More testing culture, POD, and taint mode. Verifies with perl -c, prove, perlcritic, and perltidy. Any agent touching Perl (writer, reviewer, debugger, sysadmin/bioinformatics work) can load it.",
+      "category": "languages",
+      "tags": [
+        "perl",
+        "references",
+        "regex",
+        "moose",
+        "cpan",
+        "testing"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/perl-idioms/SKILL.md"
     },
     {
       "name": "php-idioms",
