@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1161,
-    "skills": 453,
+    "agents": 1169,
+    "skills": 461,
     "categories": 17
   },
   "agents": [
@@ -5684,6 +5684,35 @@
       "path": "agents/cloud/azure/services/management-governance/azure-arc-specialist.md"
     },
     {
+      "name": "azure-artifacts-specialist",
+      "description": "Use when configuring or operating Azure Artifacts (Azure Artifacts) (Azure) — Azure DevOps' managed package management: npm/NuGet/Maven/Python/Cargo + Universal Packages feeds, project- vs org-scoped feeds, upstream sources, promotion views (@local/@prerelease/@release), retention policies, and feed permissions (Entra + build identity, least privilege). OWNS the Azure Artifacts service end-to-end and verifies a package publishes and restores from a clean cache. NOT the github-actions team, which owns the cross-platform CI/CD estate — this agent owns the package feeds, not the pipeline that pushes to them. Sibling boundaries: pipeline internals to azure-pipelines-specialist; the broader ALM org/project to azure-devops-specialist. Cross-cloud peers (defer): AWS CodeArtifact, GCP Artifact Registry.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-artifacts",
+        "devops",
+        "package-management",
+        "specialist"
+      ],
+      "skills": [
+        "azure-artifacts",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/devops/azure-artifacts-specialist.md"
+    },
+    {
       "name": "azure-attestation-specialist",
       "description": "Use when provisioning, configuring, or operating Microsoft Azure Attestation (Azure Attestation) (Azure) — remote attestation that verifies a platform and the code inside a Trusted Execution Environment before secrets are released: attestation providers, policies (the claims/rules deciding pass/fail for Intel SGX, AMD SEV-SNP confidential VMs, TPM, Trusted Launch), policy signing, and the signed JWT a relying party (e.g. Key Vault secure key release) validates. CONFIGURES the one service end-to-end (create the provider, author + sign policies, wire relying parties) and verifies a genuine TEE attests and a bad measurement is rejected. NOT azure-security-reviewer (cross-cutting: reviews trust/attestation posture) — you set it up; it reviews it. NOT the appsec/threat-modeling security-category agents (code/design-level). Sibling: azure-key-vault-specialist owns the vault that consumes attestation tokens. Confidential-computing peers (defer): AWS Nitro Enclaves attestation, GCP Confidential Space attestation.",
       "category": "cloud",
@@ -6348,6 +6377,35 @@
       "path": "agents/cloud/azure/services/databases/azure-database-for-postgresql-specialist.md"
     },
     {
+      "name": "azure-database-migration-service-specialist",
+      "description": "Use when configuring or operating Azure Database Migration Service (Azure Database Migration Service) (Azure) — managed database migration with minimal downtime: the DMS instance (VNet-injected), online (continuous-sync, near-zero-downtime) vs offline migrations, source/target pairs (SQL Server to Azure SQL DB/MI/VM, PostgreSQL, MySQL, MongoDB to Cosmos DB), pre-migration assessment, schema + data migration, and cutover. OWNS the DMS migration mechanics end-to-end and verifies the task completes and sampled row counts/checksums match. NOT the engine tuner — defers indexes/query plans/parameters to the agents/data engine teams (SQL/Postgres/Mongo). Sibling boundaries: assessment/right-sizing hub to azure-migrate-specialist; DR replication to azure-site-recovery-specialist. Cross-cloud peer (defer): AWS DMS.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-database-migration-service",
+        "migration",
+        "database",
+        "specialist"
+      ],
+      "skills": [
+        "azure-database-migration-service",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/migration/azure-database-migration-service-specialist.md"
+    },
+    {
       "name": "azure-databricks-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Databricks (Azure) — the first-party Spark lakehouse: the workspace (VNet injection / no-public-IP), compute (all-purpose vs job clusters, autoscaling, pools, Photon, serverless), Jobs/Workflows, Unity Catalog governance, Delta Lake tables, and Entra/SCIM identity. OWNS the Azure managed-service layer end-to-end (workspace, networking, Unity Catalog, cost-aware compute, identity) and verifies a job/notebook runs against Delta. DEFERS cloud-agnostic lakehouse/pipeline design to data/etl-architect and query/Spark-SQL rewrites to data/sql-optimizer. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-emr, gcp-managed-spark (Dataproc).",
       "category": "cloud",
@@ -6462,6 +6520,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/security/azure-dedicated-hsm-specialist.md"
+    },
+    {
+      "name": "azure-dev-box-specialist",
+      "description": "Use when configuring or operating Microsoft Dev Box (Microsoft Dev Box) (Azure) — managed, cloud-hosted developer workstations: the dev center, projects, dev box definitions (image + compute/storage SKU), dev box pools (region + network connection), network connections (Entra/hybrid-joined VNets), auto-stop/hibernation schedules, per-user limits, and Intune/Entra device management. OWNS the Dev Box service end-to-end and verifies a developer can self-provision a running box bound to its schedule. NOT the github-actions team, which owns the cross-platform CI/CD estate — this agent owns managed dev workstations, not CI runners. Sibling boundaries: VNet/landing-zone design to the azure networking/platform roles; Intune policy to the endpoint team. Cross-cloud peer (defer): GCP Cloud Workstations.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-dev-box",
+        "devops",
+        "developer-workstation",
+        "specialist"
+      ],
+      "skills": [
+        "azure-dev-box",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/devops/azure-dev-box-specialist.md"
     },
     {
       "name": "azure-devops-specialist",
@@ -7074,6 +7161,35 @@
       "path": "agents/cloud/azure/services/networking/azure-load-balancer-specialist.md"
     },
     {
+      "name": "azure-load-testing-specialist",
+      "description": "Use when configuring or operating Azure Load Testing (Azure Load Testing) (Azure) — the managed load-testing service that runs JMeter/Locust at cloud scale: the load-testing resource, test plans (.jmx/Locust/URL quick tests + data files), load configuration (engine instances/virtual users/ramp-up), app components + server-side metrics correlation (App Insights/Azure Monitor), pass/fail test criteria, and CI/CD integration. OWNS the Azure Load Testing service end-to-end and verifies a run executes and evaluates against its criteria. NOT the github-actions team, which owns the cross-platform CI/CD estate — this agent owns the managed load-testing resource and test plans, not the pipeline orchestrating them. Sibling boundaries: pipeline internals to azure-pipelines-specialist; app/runtime performance tuning to the app team. This is managed load testing (not functional QA).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-load-testing",
+        "devops",
+        "performance",
+        "specialist"
+      ],
+      "skills": [
+        "azure-load-testing",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/devops/azure-load-testing-specialist.md"
+    },
+    {
       "name": "azure-log-analytics-specialist",
       "description": "Use when configuring or operating Azure Log Analytics (Azure Log Analytics) (Azure) — the workspace + KQL query engine behind Azure Monitor/Sentinel/Defender: workspace topology, tables and table plans (Analytics/Basic/Auxiliary), retention + archive, ingestion-time DCR transforms, KQL queries + saved functions, solutions/insights, and cross-workspace queries. OWNS the single-service workspace layer end-to-end (workspace, tables/retention, KQL, transforms) and verifies a KQL query returns expected data. Cross-references azure-monitor-specialist for the collection/alerting umbrella (diagnostic settings/DCRs/alerts). NOT the azure-observability-engineer role, which is cross-cutting (org-wide workspace topology, observability strategy). For SIEM on the workspace defer to azure-microsoft-sentinel-specialist. Cross-cloud peers (defer): aws-cloudwatch (Logs Insights), gcp-cloud-logging.",
       "category": "cloud",
@@ -7191,6 +7307,35 @@
       "path": "agents/cloud/azure/services/databases/azure-managed-instance-for-cassandra-specialist.md"
     },
     {
+      "name": "azure-maps-specialist",
+      "description": "Use when configuring or operating Azure Maps (Azure Maps) (Azure) — the geospatial platform of REST APIs + Web/Android SDKs: the Maps account + Gen2 tier, render (tiles/imagery), route (directions/matrix/traffic), search (geocoding/reverse/POI), geolocation/timezone/weather, Creator (private indoor maps: datasets/tilesets/feature states), and the auth model (Entra/SAS/subscription key). OWNS the Azure Maps service end-to-end and verifies a geocode and a route request return expected results. NOT a generic mapping/GIS consultancy — this agent owns the Azure Maps account, auth, and service wiring. Sibling boundaries: app frontend hosting to azure-static-web-apps-specialist or azure-app-service. Cross-cloud peer (defer): AWS Location Service.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-maps",
+        "web-mobile",
+        "geospatial",
+        "specialist"
+      ],
+      "skills": [
+        "azure-maps",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/web-mobile/azure-maps-specialist.md"
+    },
+    {
       "name": "azure-microsoft-defender-for-cloud-specialist",
       "description": "Use when enabling, configuring, or operating Microsoft Defender for Cloud (Microsoft Defender for Cloud) (Azure) — CSPM (foundational + Defender CSPM), secure score and security recommendations, the regulatory compliance dashboard, and the per-resource-type Defender plans (Servers/CWPP, Storage, SQL, Containers, App Service, Key Vault, ARM, DNS, APIs), plus continuous export and multicloud connectors. CONFIGURES the one service end-to-end (enable plans, drive secure score, map compliance, wire export) and verifies plans are Standard and recommendations populate. NOT azure-security-reviewer, which is cross-cutting (reviews posture, triages findings, audits exposure across the whole estate) — you turn MDC on and tune it; it consumes the output. NOT the appsec/threat-modeling security-category agents (code/design-level). Sibling: azure-microsoft-sentinel-specialist owns SIEM/SOAR (often the export target). Cross-cloud peers (defer): aws-security-hub + aws-guardduty, gcp-security-command-center.",
       "category": "cloud",
@@ -7305,6 +7450,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/security/azure-microsoft-sentinel-specialist.md"
+    },
+    {
+      "name": "azure-migrate-specialist",
+      "description": "Use when configuring or operating Azure Migrate (Azure Migrate) (Azure) — the central discovery/assessment/migration hub: the migration project, the appliance-based discovery, readiness assessments (Azure VM/SQL/Web App right-sizing + cost estimates), dependency analysis (agentless/agent-based) into move groups, and server-migration orchestration. OWNS the Azure Migrate assessment/migration hub end-to-end and verifies discovery and assessments report the expected, ready inventory. NOT the database migration engine — defers database moves to azure-database-migration-service-specialist and DR replication to azure-site-recovery-specialist. Sibling boundaries: target landing-zone design to the azure platform/architect roles. Cross-cloud peer (defer): AWS Migration Hub.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-migrate",
+        "migration",
+        "assessment",
+        "specialist"
+      ],
+      "skills": [
+        "azure-migrate",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/migration/azure-migrate-specialist.md"
     },
     {
       "name": "azure-monitor-specialist",
@@ -7714,6 +7888,35 @@
       "path": "agents/cloud/azure/services/containers/azure-service-fabric-specialist.md"
     },
     {
+      "name": "azure-site-recovery-specialist",
+      "description": "Use when configuring or operating Azure Site Recovery (Azure Site Recovery) (Azure) — disaster-recovery replication and failover orchestration: the Recovery Services vault, replication policies (RPO + app/crash-consistent snapshots + retention), recovery plans (ordered groups + scripts/runbooks), non-disruptive test failover, planned/unplanned failover and failback/reprotect, and RPO/RTO targets. OWNS the ASR DR layer end-to-end and verifies replication is healthy and a test failover boots the workload. NOT the assessment/migration hub — defers discovery/right-sizing to azure-migrate-specialist and database engine migration to azure-database-migration-service-specialist. Sibling boundaries: target region design to the azure platform/architect roles; backup (not DR) to the backup team. Cross-cloud peer (defer): AWS Elastic Disaster Recovery.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-site-recovery",
+        "migration",
+        "disaster-recovery",
+        "specialist"
+      ],
+      "skills": [
+        "azure-site-recovery",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/migration/azure-site-recovery-specialist.md"
+    },
+    {
       "name": "azure-sql-database-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure SQL Database (Azure) — the fully managed PaaS SQL engine for single databases and elastic pools: purchasing models (DTU vs vCore) and tiers (General Purpose/Business Critical/Hyperscale), the serverless auto-pause tier, elastic pools, zone-redundant HA, geo-replication and auto-failover groups, automated backups (PITR + long-term retention), Entra authentication + Azure RBAC, private endpoints/firewall, and TDE/Always Encrypted. OWNS the Azure managed-service layer end-to-end (provisioning, sizing/tier, HA/DR, backups, failover, Entra auth) and DEFERS engine-internal T-SQL/index/query-plan tuning to a SQL Server engine specialist / the data engine teams under agents/data/. For near-100% SQL Server instance features (Agent, cross-DB, CLR, linked servers) defer to azure-sql-managed-instance. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-rds, gcp-cloud-sql.",
       "category": "cloud",
@@ -7770,6 +7973,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/databases/azure-sql-managed-instance-specialist.md"
+    },
+    {
+      "name": "azure-static-web-apps-specialist",
+      "description": "Use when configuring or operating Azure Static Web Apps (Azure Static Web Apps) (Azure) — static frontend + integrated serverless (managed-functions) API hosting: global distribution, per-PR staging environments, built-in auth (Entra/GitHub/custom OIDC) with route-based authorization, staticwebapp.config.json routes/headers/fallback, custom domains + free managed TLS, plan tiers (Free/Standard), and GitHub Actions / Azure Pipelines build-and-deploy. OWNS the Static Web Apps service end-to-end and verifies a deployed build serves the frontend, the API responds, and protected routes challenge. NOT for full server-side apps — defer those to azure-app-service. Sibling boundaries: heavy/stateful backends to a BYO Functions/Container Apps team. Cross-cloud peers (defer): AWS Amplify, GCP Firebase Hosting.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-static-web-apps",
+        "web-mobile",
+        "jamstack",
+        "specialist"
+      ],
+      "skills": [
+        "azure-static-web-apps",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/web-mobile/azure-static-web-apps-specialist.md"
     },
     {
       "name": "azure-stream-analytics-specialist",
@@ -35412,6 +35644,21 @@
       "path": "skills/cloud/azure-arc/SKILL.md"
     },
     {
+      "name": "azure-artifacts",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Artifacts — Azure DevOps' managed package-management service for hosting and sharing npm, NuGet, Maven, Python, and Cargo packages plus Universal Packages (Azure Artifacts). Covers feeds, project- vs organization-scoped feeds, upstream sources (public registry proxying/caching), views (@local/@prerelease/@release for promotion gates), feed permissions (Reader/Contributor/Owner), retention policies, and CI/CD consumption. Loads the knowledge to stand up feeds, wire upstream sources, gate promotion via views, and verify a package publishes and restores. Consumed by the azure-artifacts specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-artifacts",
+        "devops",
+        "package-management",
+        "feeds"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-artifacts/SKILL.md"
+    },
+    {
       "name": "azure-attestation",
       "description": "Use when designing, provisioning, configuring, or operating Microsoft Azure Attestation — the unified remote-attestation service that verifies a platform and the integrity of the code running inside a Trusted Execution Environment before secrets are released (Azure Attestation). Covers remote attestation of TEEs — Intel SGX enclaves, AMD SEV-SNP confidential VMs, TPM boot/runtime measurements, and Trusted Launch guest attestation — attestation providers/endpoints, policies (the claims/rules deciding pass/fail), the signed JWT token a relying party consumes, policy signing, and integration with confidential computing + secret release. Loads the knowledge: create a provider, author and sign policies, wire relying parties, secure access, and verify a token validates. Consumed by the azure-attestation specialist and by the Azure role team (azure-security-reviewer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Attestation).",
       "category": "cloud",
@@ -35721,6 +35968,21 @@
       "path": "skills/cloud/azure-database-for-postgresql/SKILL.md"
     },
     {
+      "name": "azure-database-migration-service",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Database Migration Service (DMS) — Azure's managed service for migrating databases to Azure with minimal downtime (Azure Database Migration Service). Covers the DMS instance, online (continuous-sync, near-zero-downtime) vs offline (one-time) migrations, source/target pairs (SQL Server to Azure SQL DB/MI/VM, PostgreSQL to Azure Database for PostgreSQL, MySQL, MongoDB to Cosmos DB), pre-migration assessment, schema + data migration, and cutover. Loads the knowledge to stand up DMS, configure a migration project/activity, run online or offline, and verify the cutover. Consumed by the azure-database-migration-service specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-database-migration-service",
+        "migration",
+        "database",
+        "dms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-database-migration-service/SKILL.md"
+    },
+    {
       "name": "azure-databricks",
       "description": "Use when designing, provisioning, securing, or operating Azure Databricks — the first-party Apache Spark lakehouse platform on Azure for data engineering, analytics, and ML (Azure Databricks). Covers the Databricks workspace (and VNet injection / secure cluster connectivity), compute (all-purpose vs job clusters, autoscaling, pools, instance types, Photon, serverless), Jobs and Workflows orchestration, notebooks and Repos, Unity Catalog for centralized governance (metastore, catalogs/schemas, lineage, access control), Delta Lake table format (ACID, time travel, OPTIMIZE/Z-ORDER), and Entra ID/SCIM identity with managed identities/credential passthrough. Loads the knowledge: create the workspace, configure compute/Unity Catalog, secure with Entra + VNet injection, and verify a job/notebook runs against Delta. Consumed by the azure-databricks specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure Databricks).",
       "category": "cloud",
@@ -35780,6 +36042,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-dedicated-hsm/SKILL.md"
+    },
+    {
+      "name": "azure-dev-box",
+      "description": "Use when designing, provisioning, configuring, or operating Microsoft Dev Box — Azure's managed, cloud-hosted developer workstation service (Microsoft Dev Box). Covers the dev center, projects, dev box definitions (image + compute/storage SKU), dev box pools (region + network), network connections (Azure AD / hybrid-joined VNets), the developer self-service portal, auto-stop/hibernation schedules, and Intune/Entra device management. Loads the knowledge to stand up a dev center, define images and pools, wire networking, set cost schedules, and verify a developer can self-provision a working box. Consumed by the azure-dev-box specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-dev-box",
+        "devops",
+        "developer-workstation",
+        "virtual-desktop"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-dev-box/SKILL.md"
     },
     {
       "name": "azure-devops",
@@ -36086,6 +36363,21 @@
       "path": "skills/cloud/azure-load-balancer/SKILL.md"
     },
     {
+      "name": "azure-load-testing",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Load Testing — Azure's fully managed load-testing service that runs Apache JMeter and Locust scripts at cloud scale (Azure Load Testing). Covers the load-testing resource, test plans (JMeter .jmx / Locust scripts or URL-based quick tests), load configuration (engine instances/virtual users/ramp-up), app components + server-side metrics correlation (App Insights/Azure Monitor), test criteria/pass-fail thresholds, and CI/CD integration (Azure Pipelines/GitHub Actions). Loads the knowledge to stand up the resource, author a test plan, scale engines, wire metrics, set thresholds, and verify a run. Consumed by the azure-load-testing specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-load-testing",
+        "devops",
+        "performance",
+        "jmeter"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-load-testing/SKILL.md"
+    },
+    {
       "name": "azure-log-analytics",
       "description": "Use when designing, provisioning, configuring, or operating Azure Log Analytics — the log/telemetry data store and KQL query engine behind Azure Monitor, Sentinel, and Defender (Azure Log Analytics). Covers the Log Analytics workspace, tables and table plans (Analytics/Basic/Auxiliary), KQL queries + saved searches/functions, data retention + archive, ingestion-time transformations via DCRs, solutions/insights, and cross-workspace queries. Loads the knowledge to stand up the workspace, model tables/retention, author KQL, and verify data is queryable. Consumed by the azure-log-analytics specialist and by the Azure role team (azure-observability-engineer / azure-cloud-architect / azure-iac-engineer) when operating the managed service (Azure Log Analytics).",
       "category": "cloud",
@@ -36149,6 +36441,21 @@
       "path": "skills/cloud/azure-managed-instance-for-cassandra/SKILL.md"
     },
     {
+      "name": "azure-maps",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Maps — Azure's geospatial platform of REST APIs and web/mobile SDKs for maps, routing, search, and location intelligence (Azure Maps). Covers the Maps account + pricing tier, the render (map tiles/imagery), route (directions/matrix/traffic), search (geocoding/reverse-geocoding/POI), geolocation/timezone, and weather services, the Web/Android SDKs, Creator (private indoor maps + datasets/tilesets/feature states), and data registry. Loads the knowledge to provision the account, choose auth (Entra/SAS/subscription key), call the services, and verify a geocode/route returns. Consumed by the azure-maps specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-maps",
+        "web-mobile",
+        "geospatial",
+        "location"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-maps/SKILL.md"
+    },
+    {
       "name": "azure-microsoft-defender-for-cloud",
       "description": "Use when designing, provisioning, configuring, or operating Microsoft Defender for Cloud — the cloud-native CSPM + CWPP platform that hardens posture and protects workloads across Azure, AWS, GCP, and hybrid (Microsoft Defender for Cloud). Covers Cloud Security Posture Management (free foundational CSPM + Defender CSPM), secure score and security recommendations, regulatory compliance dashboard (MCSB, PCI, CIS, NIST, ISO), the per-resource-type Defender plans (Servers/CWPP, Storage, SQL, Containers/AKS, App Service, Key Vault, ARM, DNS, APIs), agentless scanning and the AMA/MDE agents, multicloud connectors, and exporting alerts/recommendations. Loads the knowledge: enable CSPM, turn on the right Defender plans, drive secure score, map compliance standards, and verify protection. Consumed by the azure-microsoft-defender-for-cloud specialist and by the Azure role team (azure-security-reviewer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Microsoft Defender for Cloud).",
       "category": "cloud",
@@ -36207,6 +36514,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-microsoft-sentinel/SKILL.md"
+    },
+    {
+      "name": "azure-migrate",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Migrate — Azure's central hub for discovering, assessing, and migrating on-premises servers, databases, and web apps to Azure (Azure Migrate). Covers the migration project, the appliance-based discovery, assessment (Azure VM/SQL/Web App readiness, right-sizing, cost estimates), dependency analysis (agentless/agent-based mapping), and migration tooling (server migration, database/web-app migration integrations). Loads the knowledge to stand up a project, run discovery, build assessments, map dependencies, and verify readiness before cutover. Consumed by the azure-migrate specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-migrate",
+        "migration",
+        "assessment",
+        "discovery"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-migrate/SKILL.md"
     },
     {
       "name": "azure-monitor",
@@ -36382,6 +36704,21 @@
       "path": "skills/cloud/azure-services/SKILL.md"
     },
     {
+      "name": "azure-site-recovery",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Site Recovery (ASR) — Azure's disaster-recovery service that replicates workloads to a secondary region (or to Azure from on-prem) and orchestrates failover/failback (Azure Site Recovery). Covers the Recovery Services vault, replication policies (RPO, app-consistent/crash-consistent snapshots, retention), recovery plans (ordered groups + scripts/runbooks), test failover, planned/unplanned failover and failback, and RPO/RTO targets. Loads the knowledge to set up a vault, enable replication, build recovery plans, run a non-disruptive test failover, and verify DR readiness. Consumed by the azure-site-recovery specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-site-recovery",
+        "migration",
+        "disaster-recovery",
+        "replication"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-site-recovery/SKILL.md"
+    },
+    {
       "name": "azure-sql-database",
       "description": "Use when designing, provisioning, securing, or operating Azure SQL Database — Azure's fully managed PaaS relational database engine (SQL Server based) for single databases and elastic pools (Azure SQL Database). Covers purchasing models (DTU vs vCore) and tiers (General Purpose, Business Critical, Hyperscale), the serverless auto-pause tier, elastic pools, zone-redundant HA, geo-replication and auto-failover groups, automated backups (PITR + long-term retention), Entra authentication and Azure RBAC, private endpoints/firewall, and TDE/Always Encrypted. Loads the knowledge: pick a purchasing model/tier and size, choose HA/DR, provision, secure, and verify the database is online and accepts queries. Consumed by the azure-sql-database specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure SQL Database).",
       "category": "cloud",
@@ -36412,6 +36749,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-sql-managed-instance/SKILL.md"
+    },
+    {
+      "name": "azure-static-web-apps",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Static Web Apps — Azure's service for hosting a static frontend with an integrated serverless (managed-functions) API, globally distributed (Azure Static Web Apps). Covers the static frontend + managed/bring-your-own API, global content distribution, staging environments per pull request, built-in authentication (Entra/GitHub/custom OIDC) and route-based authorization, custom domains + free TLS, the staticwebapp.config.json routes/headers, and GitHub Actions / Azure Pipelines build-and-deploy. Loads the knowledge to provision the app, wire the API + auth + routing, add custom domains and PR staging, and verify a deployed build serves and authenticates. Consumed by the azure-static-web-apps specialist and by the Azure role team (azure-platform-engineer / azure-cloud-architect) when operating the managed service.",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-static-web-apps",
+        "web-mobile",
+        "jamstack",
+        "hosting"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-static-web-apps/SKILL.md"
     },
     {
       "name": "azure-stream-analytics",

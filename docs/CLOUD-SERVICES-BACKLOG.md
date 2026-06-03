@@ -424,18 +424,18 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 ### devops
 - [x] azure|devops|azure-devops|Azure DevOps
 - [x] azure|devops|azure-pipelines|Azure Pipelines
-- [ ] azure|devops|azure-artifacts|Azure Artifacts
-- [ ] azure|devops|azure-load-testing|Azure Load Testing
-- [ ] azure|devops|dev-box|Microsoft Dev Box
+- [x] azure|devops|azure-artifacts|Azure Artifacts
+- [x] azure|devops|azure-load-testing|Azure Load Testing
+- [x] azure|devops|dev-box|Microsoft Dev Box
 
 ### migration
-- [ ] azure|migration|azure-migrate|Azure Migrate
-- [ ] azure|migration|azure-site-recovery|Azure Site Recovery
-- [ ] azure|migration|database-migration-service|Azure Database Migration Service
+- [x] azure|migration|azure-migrate|Azure Migrate
+- [x] azure|migration|azure-site-recovery|Azure Site Recovery
+- [x] azure|migration|database-migration-service|Azure Database Migration Service
 
 ### web-mobile
-- [ ] azure|web-mobile|static-web-apps|Azure Static Web Apps
-- [ ] azure|web-mobile|azure-maps|Azure Maps
+- [x] azure|web-mobile|static-web-apps|Azure Static Web Apps
+- [x] azure|web-mobile|azure-maps|Azure Maps
 - [ ] azure|web-mobile|notification-hubs|Azure Notification Hubs
 - [ ] azure|web-mobile|azure-signalr-service|Azure SignalR Service
 - [ ] azure|web-mobile|azure-communication-services|Azure Communication Services
