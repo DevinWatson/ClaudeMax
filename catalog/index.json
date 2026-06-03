@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1145,
-    "skills": 437,
+    "agents": 1153,
+    "skills": 445,
     "categories": 17
   },
   "agents": [
@@ -5597,6 +5597,35 @@
       "path": "agents/cloud/azure/services/networking/azure-application-gateway-specialist.md"
     },
     {
+      "name": "azure-attestation-specialist",
+      "description": "Use when provisioning, configuring, or operating Microsoft Azure Attestation (Azure Attestation) (Azure) — remote attestation that verifies a platform and the code inside a Trusted Execution Environment before secrets are released: attestation providers, policies (the claims/rules deciding pass/fail for Intel SGX, AMD SEV-SNP confidential VMs, TPM, Trusted Launch), policy signing, and the signed JWT a relying party (e.g. Key Vault secure key release) validates. CONFIGURES the one service end-to-end (create the provider, author + sign policies, wire relying parties) and verifies a genuine TEE attests and a bad measurement is rejected. NOT azure-security-reviewer (cross-cutting: reviews trust/attestation posture) — you set it up; it reviews it. NOT the appsec/threat-modeling security-category agents (code/design-level). Sibling: azure-key-vault-specialist owns the vault that consumes attestation tokens. Confidential-computing peers (defer): AWS Nitro Enclaves attestation, GCP Confidential Space attestation.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-attestation",
+        "security",
+        "remote-attestation",
+        "specialist"
+      ],
+      "skills": [
+        "azure-attestation",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/security/azure-attestation-specialist.md"
+    },
+    {
       "name": "azure-backup-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Backup (Azure) — managed backup of VMs, files/folders, Azure Files shares, SQL/SAP HANA in VMs, blobs/disks, and on-prem workloads into a Recovery Services vault or Backup vault: vault types and storage redundancy (LRS/ZRS/GRS), backup policies (frequency + GFS retention), agents/extensions (VM/MARS/MABS-DPM), instant-restore vs vault-tier recovery, cross-region restore, and ransomware protection (soft delete, immutable vault, Multi-User Authorization). OWNS the Azure managed-service layer end-to-end (vault + redundancy, policies, protected items, restore, RBAC) for backup/restore. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-reliability-engineer, who own broad DR/failover strategy and topology, cross-cutting). Cross-cloud peer (defer): aws-backup.",
       "category": "cloud",
@@ -6261,6 +6290,35 @@
       "path": "agents/cloud/azure/services/compute/azure-dedicated-host-specialist.md"
     },
     {
+      "name": "azure-dedicated-hsm-specialist",
+      "description": "Use when provisioning, configuring, securing, or operating Azure Dedicated HSM (Azure Dedicated HSM) (Azure) — single-tenant, bare-metal FIPS 140-2 Level 3 HSM appliances (Thales Luna 7; Payment HSM / payShield 10K for PIN/PCI workloads) deployed into a delegated subnet of your VNet, with full customer ownership (Microsoft has no key access), HA pairing + cross-region DR, partitions/clients over NTLS/STC, and your own backup. CONFIGURES the one service end-to-end (provision the appliance into a delegated subnet, build HA, set up partitions/clients, isolate the network) and verifies a client crypto operation succeeds. NOT azure-security-reviewer, which is cross-cutting (reviews key-management posture) — you stand the appliance up; it reviews it. NOT the appsec/threat-modeling security-category agents (code/design-level). Sibling: azure-key-vault-specialist owns multi-tenant secrets/keys/certs (choose it unless full single-tenant device ownership is required). Cross-cloud peer: aws-cloudhsm.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-dedicated-hsm",
+        "security",
+        "hsm",
+        "specialist"
+      ],
+      "skills": [
+        "azure-dedicated-hsm",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/security/azure-dedicated-hsm-specialist.md"
+    },
+    {
       "name": "azure-digital-twins-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Digital Twins (Azure Digital Twins) (Azure) — building a live, queryable spatial graph of an environment from models: DTDL models (interfaces, properties, telemetry, relationships, components), the twin graph, the Azure Digital Twins query language, ingestion via event routes from IoT Hub/Event Grid (through Azure Functions), event routes/endpoints to push twin change events downstream, ADT Explorer, and Entra data-plane RBAC plus private endpoints. OWNS the ADT instance layer end-to-end and verifies twins update from telemetry and queries return live state. NOT the azure-iot-engineer role (cross-cutting IoT solution architecture). Sibling azure-iot-hub-specialist owns the hub that often feeds ADT; azure-iot-central-specialist owns the managed SaaS app; azure-iot-edge-specialist owns the edge runtime. Cross-cloud peer (defer): aws-iot-twinmaker.",
       "category": "cloud",
@@ -6784,6 +6842,35 @@
       "path": "agents/cloud/azure/services/iot/azure-iot-hub-specialist.md"
     },
     {
+      "name": "azure-key-vault-specialist",
+      "description": "Use when provisioning, configuring, securing, or operating an Azure Key Vault (Azure Key Vault) (Azure) — storing and controlling access to secrets, keys, and certificates: Standard vs Premium (HSM-backed) SKUs, the authorization model (Azure RBAC vs legacy access policies), soft-delete + purge protection, network isolation (firewall/private endpoints), managed-identity app access, key/secret/cert rotation, and Managed HSM. CONFIGURES the one vault end-to-end (provision, RBAC, soft-delete/purge protection, private endpoint, objects, rotation) and verifies authorized access succeeds while unauthorized is denied. NOT azure-security-reviewer, which is cross-cutting (reviews secret-handling posture) — you stand the vault up and lock it down; it reviews it. NOT the appsec/threat-modeling security-category agents (code/design-level). Sibling: azure-dedicated-hsm-specialist owns single-tenant FIPS 140-2 L3 HSM appliances. Cross-cloud peers (defer): aws-kms + aws-secrets-manager, gcp-cloud-kms + gcp-secret-manager.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-key-vault",
+        "security",
+        "secrets",
+        "specialist"
+      ],
+      "skills": [
+        "azure-key-vault",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/security/azure-key-vault-specialist.md"
+    },
+    {
       "name": "azure-load-balancer-specialist",
       "description": "Use when designing, configuring, securing, or operating an Azure Load Balancer (Azure) — the Layer-4 (TCP/UDP) load balancer over a backend pool of VMs/VMSS/IPs: public vs internal (private), Standard vs Basic vs Gateway SKU, frontend IP configurations, backend pools (NIC/IP), health probes (TCP/HTTP/HTTPS), load-balancing rules and HA Ports, inbound NAT rules/pools, outbound rules and SNAT port allocation, session persistence, availability-zone redundancy, and NSG interplay. OWNS the L4 load-balancer managed-service layer end-to-end (SKU, frontends, pools, probes, rules) and verifies traffic reaches healthy backends. NOT the azure-networking-engineer role, which owns cross-cutting load-balancing/topology design (via network-design). For L7 path/host routing, TLS termination, or WAF use Application Gateway, not this. Sibling: azure-virtual-network-specialist owns the VNet. Cross-cloud peers (defer): aws-elb (NLB), gcp-cloud-load-balancing.",
       "category": "cloud",
@@ -6901,6 +6988,35 @@
       "path": "agents/cloud/azure/services/databases/azure-managed-instance-for-cassandra-specialist.md"
     },
     {
+      "name": "azure-microsoft-defender-for-cloud-specialist",
+      "description": "Use when enabling, configuring, or operating Microsoft Defender for Cloud (Microsoft Defender for Cloud) (Azure) — CSPM (foundational + Defender CSPM), secure score and security recommendations, the regulatory compliance dashboard, and the per-resource-type Defender plans (Servers/CWPP, Storage, SQL, Containers, App Service, Key Vault, ARM, DNS, APIs), plus continuous export and multicloud connectors. CONFIGURES the one service end-to-end (enable plans, drive secure score, map compliance, wire export) and verifies plans are Standard and recommendations populate. NOT azure-security-reviewer, which is cross-cutting (reviews posture, triages findings, audits exposure across the whole estate) — you turn MDC on and tune it; it consumes the output. NOT the appsec/threat-modeling security-category agents (code/design-level). Sibling: azure-microsoft-sentinel-specialist owns SIEM/SOAR (often the export target). Cross-cloud peers (defer): aws-security-hub + aws-guardduty, gcp-security-command-center.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-microsoft-defender-for-cloud",
+        "security",
+        "cspm",
+        "specialist"
+      ],
+      "skills": [
+        "azure-microsoft-defender-for-cloud",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/security/azure-microsoft-defender-for-cloud-specialist.md"
+    },
+    {
       "name": "azure-microsoft-entra-id-specialist",
       "description": "Use when designing, configuring, securing, or operating Microsoft Entra ID (Microsoft Entra ID) (Azure) — the workforce cloud identity provider (formerly Azure AD): tenants, users and groups (assigned + dynamic), app registrations and enterprise apps (SSO via OIDC/OAuth/SAML, service principals), Conditional Access, MFA and authentication methods, RBAC and Privileged Identity Management (PIM) for just-in-time elevation, and managed identities. OWNS the Entra tenant identity layer end-to-end and verifies sign-in, Conditional Access evaluation, and PIM activation. CONFIGURES Entra — NOT azure-security-reviewer, which reviews identity posture. NOT the azure-iam-engineer role (cross-cutting IAM strategy). Sibling azure-entra-id-b2c-specialist owns customer/CIAM identity; azure-entra-domain-services-specialist owns managed AD DS; azure-entra-id-governance-specialist owns access reviews/entitlement/lifecycle. Cross-cloud peers (defer): aws-iam + aws-iam-identity-center, gcp-cloud-identity.",
       "category": "cloud",
@@ -6957,6 +7073,64 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/analytics/azure-microsoft-purview-specialist.md"
+    },
+    {
+      "name": "azure-microsoft-sentinel-specialist",
+      "description": "Use when onboarding, configuring, or operating Microsoft Sentinel (Microsoft Sentinel) (Azure) — the cloud-native SIEM + SOAR on a Log Analytics workspace: data connectors (Azure activity, Entra ID, Defender, AWS, GCP, Syslog/CEF), analytics rules (scheduled KQL, NRT, Microsoft security, anomaly, threat-intel) that create incidents, threat hunting, automation rules + SOAR playbooks (Logic Apps), workbooks, UEBA, watchlists. CONFIGURES the one service end-to-end (onboard workspace, wire connectors, author detections + automation) and verifies a rule creates an incident. NOT azure-security-reviewer (cross-cutting: reviews posture, triages findings) — you build and tune the SIEM; it consumes the output. NOT the appsec/threat-modeling security-category agents (code/design-level). Siblings: azure-microsoft-defender-for-cloud-specialist owns CSPM/CWPP; azure-monitor-specialist owns the underlying Log Analytics. Cross-cloud peers (defer): aws-security-hub + aws-detective, gcp-security-command-center.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-microsoft-sentinel",
+        "security",
+        "siem",
+        "specialist"
+      ],
+      "skills": [
+        "azure-microsoft-sentinel",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/security/azure-microsoft-sentinel-specialist.md"
+    },
+    {
+      "name": "azure-monitor-specialist",
+      "description": "Use when configuring or operating Azure Monitor (Azure Monitor) (Azure) — the umbrella observability service: Metrics, the Logs store (Log Analytics workspace + KQL), Application Insights APM, data collection rules + the Azure Monitor Agent, diagnostic settings, metric/log/activity-log alert rules + action groups, autoscale, dashboards/workbooks, and Managed Prometheus + Grafana. OWNS the single-service Monitor layer end-to-end (workspace + App Insights, diagnostic settings/DCRs, alerts + action groups, dashboards) and verifies telemetry flows and an alert fires. NOT the azure-observability-engineer role, which is cross-cutting (org-wide observability strategy, SLOs, workspace topology, dashboards-as-a-platform) — the specialist owns the Monitor config; the role sets direction. Cross-cloud peers (defer): aws-cloudwatch, gcp-cloud-monitoring. For SIEM on the workspace defer to azure-microsoft-sentinel-specialist.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-monitor",
+        "management-governance",
+        "observability",
+        "specialist"
+      ],
+      "skills": [
+        "azure-monitor",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/management-governance/azure-monitor-specialist.md"
     },
     {
       "name": "azure-netapp-files-specialist",
@@ -7078,6 +7252,35 @@
       "path": "agents/cloud/azure/services/ai-ml/azure-openai-specialist.md"
     },
     {
+      "name": "azure-policy-specialist",
+      "description": "Use when authoring, assigning, or operating Azure Policy (Azure Policy) (Azure) — governance that enforces rules and assesses compliance at scale: policy definitions (if/then + effect), initiatives/policy sets, assignments scoped to a management group/subscription/resource group (with parameters + exclusions), the effects (Audit, Deny, DeployIfNotExists, Modify, Append, AuditIfNotExists, Disabled), the compliance dashboard + evaluation cycle, managed-identity remediation tasks, and exemptions. OWNS the single-service Policy layer end-to-end (author definitions/initiatives, assign at the right scope with the right effect, remediate) and verifies compliance state, that Deny blocks violations, and remediation works. Governance peer to azure-resource-manager-specialist (ARM/Bicep IaC) on the same management-governance shelf. NOT the cross-cutting governance/landing-zone strategy owned by azure-cloud-architect. Cross-cloud peers (defer): aws-config (+ SCPs), gcp-org-policy.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-policy",
+        "management-governance",
+        "compliance",
+        "specialist"
+      ],
+      "skills": [
+        "azure-policy",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/management-governance/azure-policy-specialist.md"
+    },
+    {
       "name": "azure-private-link-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Private Link (Azure) — private backbone-only access to PaaS/your own services: Private Endpoints (a private IP for a target sub-resource), Private Link Service (expose your own L4 service), privatelink private DNS zone integration, connection approval (incl. cross-tenant), and disabling public access on the target. OWNS this one service end-to-end (endpoint/link-service + private DNS) and verifies the FQDN resolves privately. NOT the azure-networking-engineer role, which owns cross-cutting topology and DNS strategy (via network-design). For broad VNet/subnet design use azure-virtual-network-specialist. Cross-cloud peers (defer): aws-privatelink, gcp-private-service-connect.",
       "category": "cloud",
@@ -7164,6 +7367,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/azure-reliability-engineer.md"
+    },
+    {
+      "name": "azure-resource-manager-specialist",
+      "description": "Use when authoring, deploying, or operating Azure Resource Manager (Azure Resource Manager) (Azure) deployments — the native control plane and declarative IaC via ARM JSON templates and Bicep: resource groups and the subscription/management-group hierarchy, Bicep modules/parameters/outputs, deployment scopes (RG/subscription/MG/tenant), modes (Incremental vs Complete), deployment stacks with deny-settings, what-if preview, template specs + the Bicep registry, resource locks, and tags. OWNS the single-service ARM/Bicep layer end-to-end (author the template, deploy at the right scope/mode, apply stacks/locks/tags) and verifies the deployment succeeded with no unintended deletes. ARM/Bicep is the NATIVE IaC — a sibling CHOICE to Terraform; the azure-iac-engineer role owns the cross-cutting IaC strategy and (often Terraform) module platform, while this specialist does ARM/Bicep deployments. Governance peer: azure-policy-specialist on the same shelf. Cross-cloud peer (defer): aws-cloudformation (+ CDK).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-resource-manager",
+        "management-governance",
+        "bicep",
+        "specialist"
+      ],
+      "skills": [
+        "azure-resource-manager",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/management-governance/azure-resource-manager-specialist.md"
     },
     {
       "name": "azure-security-reviewer",
@@ -34903,6 +35135,21 @@
       "path": "skills/cloud/azure-application-gateway/SKILL.md"
     },
     {
+      "name": "azure-attestation",
+      "description": "Use when designing, provisioning, configuring, or operating Microsoft Azure Attestation — the unified remote-attestation service that verifies a platform and the integrity of the code running inside a Trusted Execution Environment before secrets are released (Azure Attestation). Covers remote attestation of TEEs — Intel SGX enclaves, AMD SEV-SNP confidential VMs, TPM boot/runtime measurements, and Trusted Launch guest attestation — attestation providers/endpoints, policies (the claims/rules deciding pass/fail), the signed JWT token a relying party consumes, policy signing, and integration with confidential computing + secret release. Loads the knowledge: create a provider, author and sign policies, wire relying parties, secure access, and verify a token validates. Consumed by the azure-attestation specialist and by the Azure role team (azure-security-reviewer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Attestation).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-attestation",
+        "security",
+        "remote-attestation",
+        "confidential-computing"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-attestation/SKILL.md"
+    },
+    {
       "name": "azure-backup",
       "description": "Use when designing, provisioning, securing, or operating Azure Backup — Azure's managed backup service that protects VMs, files/folders, Azure Files shares, SQL/SAP HANA in VMs, and on-prem workloads (via MARS/MABS/DPM) into a Recovery Services vault or Backup vault (Azure Backup). Covers vault types and storage redundancy (LRS/ZRS/GRS), backup policies (frequency/schedule/retention GFS), the workload extensions/agents, instant restore snapshots vs vault-tier recovery, cross-region restore, soft delete and immutable/Multi-User Authorization (MUA) protection against ransomware, Entra/RBAC, and managed identities. Loads the knowledge: pick a vault + redundancy, define policies, enable protection, secure, provision, and verify a backup + restore. Consumed by the azure-backup specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect / azure-reliability-engineer) when standing up the managed service (Azure Backup).",
       "category": "cloud",
@@ -35213,6 +35460,21 @@
       "path": "skills/cloud/azure-dedicated-host/SKILL.md"
     },
     {
+      "name": "azure-dedicated-hsm",
+      "description": "Use when designing, provisioning, securing, or operating Azure Dedicated HSM — single-tenant, bare-metal FIPS 140-2 Level 3 hardware security modules you fully own and administer inside your VNet (Azure Dedicated HSM). Covers the Thales Luna 7 (and Payment HSM / Thales payShield 10K for PIN/EFTPOS/PCI workloads) appliances, the single-tenant ownership model (Microsoft has no key access), VNet/private-IP deployment with subnet delegation, high-availability pairing and cross-region replication, client/partition setup, NTLS/STC client connections, and the migration boundary between Dedicated HSM, Managed HSM, and Key Vault. Loads the knowledge: provision the HSM appliance into a delegated subnet, configure HA, set up partitions and clients, secure access, and verify connectivity. Consumed by the azure-dedicated-hsm specialist and by the Azure role team (azure-security-reviewer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Dedicated HSM).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-dedicated-hsm",
+        "security",
+        "hsm",
+        "fips-140-2-level-3"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-dedicated-hsm/SKILL.md"
+    },
+    {
       "name": "azure-digital-twins",
       "description": "Use when designing, provisioning, securing, or operating Azure Digital Twins — building a live, queryable graph of an environment (buildings, factories, fleets) from models (Azure Digital Twins). Covers DTDL models (interfaces, properties, telemetry, relationships, components), the twin graph (digital twin instances + relationships), the Azure Digital Twins query language, ingesting telemetry via event routes from IoT Hub/Event Grid (often through Azure Functions), event routes/endpoints to push twin change events downstream, ADT Explorer for authoring/visualizing, and Entra/RBAC plus private endpoints. Loads the knowledge: define DTDL models, build the twin graph, wire ingestion and event routes, secure access, and verify twins update and queries return live state. Consumed by the azure-digital-twins specialist and by the Azure role team when standing up the managed service (Azure Digital Twins).",
       "category": "cloud",
@@ -35472,6 +35734,21 @@
       "path": "skills/cloud/azure-iot-hub/SKILL.md"
     },
     {
+      "name": "azure-key-vault",
+      "description": "Use when designing, provisioning, securing, or operating an Azure Key Vault — the managed service for storing and controlling access to secrets, keys, and certificates (Azure Key Vault). Covers the three object types (secrets, keys, certificates with auto-rotation/issuer integration), the two SKUs (Standard software-protected vs Premium HSM-backed FIPS 140-2 Level 2), the authorization model (legacy access policies vs Azure RBAC), data protection (soft-delete + purge protection, versioning), network isolation (firewall, private endpoints), managed identities for app access, rotation, and Managed HSM as the single-tenant option. Loads the knowledge: provision the vault, choose RBAC vs access policies, enable soft-delete/purge protection + private endpoints, store objects, and verify access. Consumed by the azure-key-vault specialist and by the Azure role team (azure-security-reviewer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Key Vault).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-key-vault",
+        "security",
+        "secrets",
+        "keys"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-key-vault/SKILL.md"
+    },
+    {
       "name": "azure-load-balancer",
       "description": "Use when designing, provisioning, securing, or operating an Azure Load Balancer — Azure's high-performance Layer-4 (TCP/UDP) load balancer that distributes traffic across a backend pool of VMs/VMSS/IPs (Azure Load Balancer). Covers public vs internal (private) load balancers, Standard vs Basic vs Gateway SKU, frontend IP configurations, backend pools (NIC or IP based), health probes (TCP/HTTP/HTTPS), load-balancing rules and HA Ports, inbound NAT rules/pools, outbound rules and SNAT port allocation, session persistence/distribution mode, availability-zone redundancy, and NSG interplay. Loads the knowledge: pick SKU and public/internal, define frontends/backend pools/probes/rules, secure, provision, and verify traffic distributes to healthy backends. Consumed by the azure-load-balancer specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Load Balancer).",
       "category": "cloud",
@@ -35535,6 +35812,21 @@
       "path": "skills/cloud/azure-managed-instance-for-cassandra/SKILL.md"
     },
     {
+      "name": "azure-microsoft-defender-for-cloud",
+      "description": "Use when designing, provisioning, configuring, or operating Microsoft Defender for Cloud — the cloud-native CSPM + CWPP platform that hardens posture and protects workloads across Azure, AWS, GCP, and hybrid (Microsoft Defender for Cloud). Covers Cloud Security Posture Management (free foundational CSPM + Defender CSPM), secure score and security recommendations, regulatory compliance dashboard (MCSB, PCI, CIS, NIST, ISO), the per-resource-type Defender plans (Servers/CWPP, Storage, SQL, Containers/AKS, App Service, Key Vault, ARM, DNS, APIs), agentless scanning and the AMA/MDE agents, multicloud connectors, and exporting alerts/recommendations. Loads the knowledge: enable CSPM, turn on the right Defender plans, drive secure score, map compliance standards, and verify protection. Consumed by the azure-microsoft-defender-for-cloud specialist and by the Azure role team (azure-security-reviewer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Microsoft Defender for Cloud).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-microsoft-defender-for-cloud",
+        "security",
+        "cspm",
+        "cwpp"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-microsoft-defender-for-cloud/SKILL.md"
+    },
+    {
       "name": "azure-microsoft-entra-id",
       "description": "Use when designing, provisioning, securing, or operating Microsoft Entra ID (formerly Azure AD) — the cloud identity and access management directory for workforce/organizational identities (Microsoft Entra ID). Covers tenants, users and groups (dynamic + assigned), app registrations and enterprise apps (SSO, service principals, OAuth/OIDC/SAML), Conditional Access policies, multi-factor authentication and authentication methods, single sign-on, role-based access control and Privileged Identity Management (PIM) for just-in-time elevation, managed identities, and external collaboration (B2B guests). Loads the knowledge: model users/groups, register apps and configure SSO, enforce Conditional Access + MFA, assign roles via PIM, and verify sign-in and access work. Consumed by the microsoft-entra-id specialist and by the Azure role team when standing up the managed service (Microsoft Entra ID).",
       "category": "cloud",
@@ -35563,6 +35855,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-microsoft-purview/SKILL.md"
+    },
+    {
+      "name": "azure-microsoft-sentinel",
+      "description": "Use when designing, provisioning, configuring, or operating Microsoft Sentinel — Azure's cloud-native SIEM + SOAR built on a Log Analytics workspace (Microsoft Sentinel). Covers onboarding Sentinel onto a workspace, data connectors (Azure activity, Entra ID, Defender/M365, AWS, GCP, Syslog/CEF, codeless connectors), analytics rules (scheduled KQL, near-real-time, Microsoft security, anomaly, threat intelligence) that create incidents, incident management and entities, threat hunting (hunting queries + livestream + bookmarks + notebooks), automation rules and SOAR playbooks (Logic Apps), workbooks for visualization, UEBA, watchlists, and content hub solutions. Loads the knowledge: onboard the workspace, wire connectors, author analytics rules, build hunting + automation, and verify incidents fire. Consumed by the azure-microsoft-sentinel specialist and by the Azure role team (azure-security-reviewer / azure-observability-engineer / azure-iac-engineer) when standing up the managed service (Microsoft Sentinel).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-microsoft-sentinel",
+        "security",
+        "siem",
+        "soar"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-microsoft-sentinel/SKILL.md"
+    },
+    {
+      "name": "azure-monitor",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Monitor — the umbrella observability platform for collecting, analyzing, and acting on metrics and logs across Azure, hybrid, and multicloud (Azure Monitor). Covers the two telemetry pillars (the Metrics time-series store and the Logs store backed by Log Analytics queried with KQL), Application Insights APM/tracing, data collection rules (DCRs) + the Azure Monitor Agent, alerts (metric/log/activity-log) with action groups (email/SMS/webhook/Logic App), autoscale, dashboards/workbooks, diagnostic settings that route resource logs/metrics, and Managed Prometheus + Grafana. Loads the knowledge: stand up the workspace + App Insights, wire diagnostic settings/DCRs, build alerts + action groups, dashboards, and verify telemetry flows. Consumed by the azure-monitor specialist and by the Azure role team (azure-observability-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Monitor).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-monitor",
+        "management-governance",
+        "observability",
+        "log-analytics"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-monitor/SKILL.md"
     },
     {
       "name": "azure-netapp-files",
@@ -35597,6 +35919,21 @@
       "path": "skills/cloud/azure-openai/SKILL.md"
     },
     {
+      "name": "azure-policy",
+      "description": "Use when designing, provisioning, configuring, or operating Azure Policy — the governance service that enforces organizational rules and assesses compliance across Azure resources at scale (Azure Policy). Covers policy definitions (the JSON if/then rule with an effect), initiatives/policy sets, assignments (scoped to a management group, subscription, or resource group, with exclusions/parameters), the effect types (Audit, Deny, DeployIfNotExists, Modify, Append, AuditIfNotExists, Disabled), the compliance dashboard and evaluation cycle, managed-identity remediation tasks, exemptions, built-in vs custom definitions, and the management-group hierarchy. Loads the knowledge: author definitions/initiatives, assign at the right scope with the right effect, remediate non-compliant resources, and verify compliance. Consumed by the azure-policy specialist and by the Azure role team (azure-security-reviewer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Policy).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-policy",
+        "management-governance",
+        "compliance",
+        "governance"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-policy/SKILL.md"
+    },
+    {
       "name": "azure-private-link",
       "description": "Use when designing, provisioning, securing, or operating Azure Private Link — private, backbone-only connectivity to Azure PaaS and your own services via a private IP in your VNet, with no public-internet exposure (Azure Private Link). Covers Private Endpoints (a private NIC for a target PaaS/service), the Private Link Service (expose your own L4 load-balanced service privately to consumers), private DNS zone integration (privatelink.* zones) so names resolve to the private IP, connection approval workflow, NSG/UDR behavior on endpoints, and cross-tenant/cross-region access. Loads the knowledge: create the endpoint or link service, wire private DNS, approve the connection, lock down public access on the target, and verify private resolution + reachability. Consumed by the azure-private-link specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Private Link).",
       "category": "cloud",
@@ -35625,6 +35962,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-queue-storage/SKILL.md"
+    },
+    {
+      "name": "azure-resource-manager",
+      "description": "Use when designing, authoring, deploying, or operating Azure Resource Manager (ARM) deployments — the native deployment and management layer of Azure and its declarative IaC via ARM JSON templates and Bicep (Azure Resource Manager). Covers the ARM control plane and resource providers, resource groups and the subscription/management-group hierarchy, ARM JSON vs Bicep templates (modules, parameters, outputs), deployment scopes (RG/subscription/MG/tenant), modes (Incremental vs Complete), deployment stacks with deny-settings, what-if preview, template specs and the Bicep registry, resource locks, tags, and the relationship between native IaC and third-party Terraform. Loads the knowledge: author the template/Bicep, deploy at the right scope/mode, apply locks/tags/stacks, and verify the deployment. Consumed by the azure-resource-manager specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect / azure-security-reviewer) when standing up the managed service (Azure Resource Manager).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-resource-manager",
+        "management-governance",
+        "arm",
+        "bicep"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-resource-manager/SKILL.md"
     },
     {
       "name": "azure-service-bus",

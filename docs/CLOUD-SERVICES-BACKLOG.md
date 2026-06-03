@@ -404,16 +404,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] azure|identity|entra-id-governance|Microsoft Entra ID Governance
 
 ### security
-- [ ] azure|security|microsoft-defender-for-cloud|Microsoft Defender for Cloud
-- [ ] azure|security|microsoft-sentinel|Microsoft Sentinel
-- [ ] azure|security|key-vault|Azure Key Vault
-- [ ] azure|security|azure-dedicated-hsm|Azure Dedicated HSM
-- [ ] azure|security|attestation|Azure Attestation
+- [x] azure|security|microsoft-defender-for-cloud|Microsoft Defender for Cloud
+- [x] azure|security|microsoft-sentinel|Microsoft Sentinel
+- [x] azure|security|key-vault|Azure Key Vault
+- [x] azure|security|azure-dedicated-hsm|Azure Dedicated HSM
+- [x] azure|security|attestation|Azure Attestation
 
 ### management-governance
-- [ ] azure|management-governance|azure-monitor|Azure Monitor
-- [ ] azure|management-governance|azure-policy|Azure Policy
-- [ ] azure|management-governance|azure-resource-manager|Azure Resource Manager
+- [x] azure|management-governance|azure-monitor|Azure Monitor
+- [x] azure|management-governance|azure-policy|Azure Policy
+- [x] azure|management-governance|azure-resource-manager|Azure Resource Manager
 - [ ] azure|management-governance|azure-cost-management|Microsoft Cost Management
 - [ ] azure|management-governance|azure-automation|Azure Automation
 - [ ] azure|management-governance|azure-arc|Azure Arc
