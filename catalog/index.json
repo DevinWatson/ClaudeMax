@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 729,
-    "skills": 124,
+    "agents": 737,
+    "skills": 125,
     "categories": 16
   },
   "agents": [
@@ -5648,6 +5648,249 @@
       "version": "1.1.0",
       "status": "stable",
       "path": "agents/ai-ml/evals-author.md"
+    },
+    {
+      "name": "express-api-engineer",
+      "description": "Use when designing and building HTTP API endpoints in an Express (Node/TypeScript) service — Router wiring and route composition, request/response shaping with validated input (zod/express-validator), correct status codes, a consistent error envelope via central error-handling middleware, pagination/filtering query params, content negotiation, versioning, and accurate resource modeling (Express). Invoke to design or implement the API contract layer. NOT for system architecture (use express-architect), NOT for general feature work (use express-developer), NOT for security review (use express-security-reviewer). For framework-agnostic TypeScript API shape route to the typescript language team; Express here is a standalone Node API server, NOT a React meta-framework — for Next.js/Remix route handlers use those teams, and for NestJS use the NestJS team.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "express",
+        "nodejs",
+        "typescript",
+        "api",
+        "rest"
+      ],
+      "skills": [
+        "rest-api-design",
+        "express-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/express/express-api-engineer.md"
+    },
+    {
+      "name": "express-architect",
+      "description": "Use when shaping the architecture of an Express (Node/TypeScript) application or service — module/package boundaries, the layering of routers/controllers/services/repositories, the middleware topology (cross-cutting vs route-level), the validation and error-envelope strategy, the auth/security architecture, the module-system and build choice (CJS vs ESM), and config/settings layering (Express). Invoke for system-level design and trade-off analysis. NOT for implementing features (use express-developer), NOT for HTTP contract design alone (use express-api-engineer), NOT for performance tuning of existing code (use express-performance-engineer). For framework-agnostic TypeScript system design route to the typescript language team (typescript-architect); Express here is a standalone Node API server, NOT a React meta-framework — for Next.js/Remix use those teams, and for NestJS use the NestJS team.",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "express",
+        "nodejs",
+        "typescript",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "express-framework",
+        "typescript-type-system",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/express/express-architect.md"
+    },
+    {
+      "name": "express-developer",
+      "description": "Use when turning an Express (Node/TypeScript) requirement or feature into working, tested code, or when fixing a reported Express bug — a middleware-ordering issue, a Router/mount wiring problem, an undefined request body (missing parser), an async rejection that never reaches the error handler, a validation/zod failure, or an auth-middleware ordering bug (Express). Invoke for building or extending Express features (routers, validation middleware, controllers, services, auth/security middleware). NOT for system-level design (use express-architect), NOT for HTTP contract design alone (use express-api-engineer), NOT for adding tests to code you did not write (use express-test-engineer), NOT for performance tuning of working code (use express-performance-engineer). For general (non-Express) TypeScript work route to typescript-developer; Express here is a standalone Node API server, NOT a React meta-framework — for Next.js/Remix or NestJS use those teams.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "express",
+        "nodejs",
+        "typescript",
+        "middleware",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "express-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/express/express-developer.md"
+    },
+    {
+      "name": "express-migration-engineer",
+      "description": "Use when upgrading an Express (Node/TypeScript) service across versions or evolving it safely — the Express 4-to-5 migration (async errors auto-forwarded to next, path-to-regexp wildcard syntax changes, removed legacy APIs, asyncHandler wrappers becoming redundant), CommonJS-to-ESM module-system moves, replacing deprecated/abandoned middleware, JavaScript-to-TypeScript conversion of handlers, and reconciling changes with the dependency lockfile (Express). Invoke for version upgrades and framework-migration work. NOT for routine feature changes (use express-developer), NOT for performance tuning (use express-performance-engineer), NOT for system architecture (use express-architect). For framework-agnostic TypeScript/Node migrations route to the typescript language team; for NestJS or Next.js/Remix use those teams.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "express",
+        "nodejs",
+        "typescript",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "express-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/express/express-migration-engineer.md"
+    },
+    {
+      "name": "express-observability-engineer",
+      "description": "Use when instrumenting an Express (Node/TypeScript) service for production visibility — structured request logging with correlation/request IDs (via middleware), Prometheus/OpenTelemetry metrics (latency/error/throughput, DB time), distributed tracing across middleware, routes, and downstream calls, and a meaningful health/readiness endpoint (Express). Invoke to add or improve logs, traces, and metrics. NOT for fixing the underlying bug (use express-developer), NOT for event-loop/query performance tuning (use express-performance-engineer), NOT for system architecture (use express-architect). For framework-agnostic TypeScript/Node instrumentation route to the typescript language team; for NestJS or Next.js/Remix use those teams.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "express",
+        "nodejs",
+        "typescript",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "express-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/express/express-observability-engineer.md"
+    },
+    {
+      "name": "express-performance-engineer",
+      "description": "Use when an Express (Node/TypeScript) service is slow or its runtime cost is high — event-loop blocking (sync/CPU-bound work, sync crypto/JSON on the request path) stalling all requests, buffering large payloads instead of streaming, database N+1 queries or connection-pool sizing, redundant middleware on hot routes, weak caching, and memory growth — and you need it measured and tuned (Express). Invoke to profile and optimize an existing service. NOT for building new features (use express-developer), NOT for system architecture (use express-architect), NOT for security review (use express-security-reviewer). For framework-agnostic TypeScript/Node performance route to the typescript language team; for NestJS or Next.js/Remix use those teams.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "express",
+        "nodejs",
+        "typescript",
+        "performance",
+        "event-loop"
+      ],
+      "skills": [
+        "cost-optimization",
+        "express-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/express/express-performance-engineer.md"
+    },
+    {
+      "name": "express-security-reviewer",
+      "description": "Use for a defensive, code-level security review of an Express (Node/TypeScript) service or diff — missing or misordered security middleware (no helmet/cors/rate-limit, auth middleware mounted after the routes it should protect), broken auth/authorization and IDOR, JWT verification flaws (decode-without-verify, unchecked exp/issuer/audience), injection (SQL/NoSQL/command) from unvalidated input, mass-assignment, prototype pollution from unsafe body merges, SSRF in server-side fetches, permissive CORS, secrets in source, and leaked stack traces/internals in error responses — with severity-ranked findings (Express). Invoke for an authorized appsec review. NOT for fixing the issues (use express-developer), NOT for performance review (use express-performance-engineer), NOT for HTTP contract design (use express-api-engineer). For framework-agnostic TypeScript review route to the typescript language team; for NestJS or Next.js/Remix use those teams.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "express",
+        "nodejs",
+        "typescript",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "express-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/express/express-security-reviewer.md"
+    },
+    {
+      "name": "express-test-engineer",
+      "description": "Use when adding or improving automated tests for an Express (Node/TypeScript) service — endpoint tests with supertest against the exported app, middleware and error-handler tests, validation (zod/express-validator) and error-envelope assertions, auth-middleware tests, mocking/stubbing services and data access, and integration tests against a real/throwaway database (Express). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use express-developer), NOT for performance profiling (use express-performance-engineer), NOT for security review (use express-security-reviewer). For framework-agnostic TypeScript tests route to the typescript language team; for Next.js/Remix or NestJS testing use those teams.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "express",
+        "nodejs",
+        "typescript",
+        "testing",
+        "supertest"
+      ],
+      "skills": [
+        "test-automation",
+        "express-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/express/express-test-engineer.md"
     },
     {
       "name": "fastapi-api-engineer",
@@ -18702,7 +18945,7 @@
     },
     {
       "name": "typescript-architect",
-      "description": "Use when designing or reviewing the structure of a TypeScript system, service, or module — component boundaries, coupling/cohesion, interface contracts, package/module layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in TS or when reviewing a TypeScript design proposal. Not for implementing the feature (use typescript-developer) or for REST endpoint shape alone (use typescript-api-designer).",
+      "description": "Use when designing or reviewing the structure of a TypeScript system, service, or module — component boundaries, coupling/cohesion, interface contracts, package/module layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in TS or when reviewing a TypeScript design proposal. Not for implementing the feature (use typescript-developer) or for REST endpoint shape alone (use typescript-api-designer). For the architecture of an Express API server specifically (router/controller/service layering, middleware topology, the error pipeline) use express-architect rather than this agent; for Nest and Next use their respective teams.",
       "category": "languages",
       "model": "opus",
       "tools": [
@@ -18804,7 +19047,7 @@
     },
     {
       "name": "typescript-developer",
-      "description": "Use when turning a TypeScript requirement, ticket, or feature into working, tested, incrementally-shipped code on Node/Deno or the browser, or when fixing a reported TypeScript bug. Invoke for building or extending TS/Express/Nest/Next features and for diagnosing failures in existing TypeScript code. Not for system-level design (use typescript-architect) or for adding tests to code you did not write (use typescript-unit-test-architect).",
+      "description": "Use when turning a TypeScript requirement, ticket, or feature into working, tested, incrementally-shipped code on Node/Deno or the browser, or when fixing a reported TypeScript bug. Invoke for building or extending general TypeScript features and for diagnosing failures in existing TypeScript code. Not for system-level design (use typescript-architect) or for adding tests to code you did not write (use typescript-unit-test-architect). For Express API server work (routers, middleware, handlers, the error pipeline) use express-developer rather than this agent; for Nest and Next use their respective teams.",
       "category": "languages",
       "model": "sonnet",
       "tools": [
@@ -20572,6 +20815,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/ai-ml/eval-suite-design/SKILL.md"
+    },
+    {
+      "name": "express-framework",
+      "description": "Use when working in Express (Node.js, versions 4/5, typically TypeScript) — the middleware pipeline and ordering, routing and Router composition, the request/response lifecycle, error-handling middleware (the 4-argument signature) and async error propagation, body parsing and validation (zod / express-validator), auth middleware (passport/JWT), security middleware (helmet, cors, rate limiting), structured errors, layering routes/controllers/services, TypeScript typing of req/res/handlers, and graceful shutdown. Verifies with tsc, app startup, jest/vitest + supertest, and eslint. TRIGGER on Express middleware-ordering bugs, Router wiring, an error handler not catching async rejections, body parsing/validation, auth/JWT or helmet/cors/rate-limit middleware, error-envelope design, or typed handlers. NOT for general TypeScript type-system concerns (that is typescript-type-system), NOT for framework-agnostic HTTP contract design, NOT for NestJS, and NOT for Next.js/Remix — Express is a standalone Node API server.",
+      "category": "web",
+      "tags": [
+        "express",
+        "nodejs",
+        "typescript",
+        "middleware",
+        "api"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/express-framework/SKILL.md"
     },
     {
       "name": "fastapi-framework",
