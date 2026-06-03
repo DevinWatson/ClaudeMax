@@ -156,18 +156,18 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] aws|security-identity|firewall-manager|AWS Firewall Manager
 - [x] aws|security-identity|iam-identity-center|AWS IAM Identity Center
 - [x] aws|security-identity|private-ca|AWS Private CA
-- [ ] aws|security-identity|verified-permissions|Amazon Verified Permissions
+- [x] aws|security-identity|verified-permissions|Amazon Verified Permissions
 
 ### migration
-- [ ] aws|migration|migration-hub|AWS Migration Hub
-- [ ] aws|migration|dms|AWS Database Migration Service
-- [ ] aws|migration|application-migration-service|AWS Application Migration Service
-- [ ] aws|migration|transfer-family|AWS Transfer Family
-- [ ] aws|migration|mainframe-modernization|AWS Mainframe Modernization
+- [x] aws|migration|migration-hub|AWS Migration Hub
+- [x] aws|migration|dms|AWS Database Migration Service
+- [x] aws|migration|application-migration-service|AWS Application Migration Service
+- [x] aws|migration|transfer-family|AWS Transfer Family
+- [x] aws|migration|mainframe-modernization|AWS Mainframe Modernization
 
 ### iot
-- [ ] aws|iot|iot-core|AWS IoT Core
-- [ ] aws|iot|iot-greengrass|AWS IoT Greengrass
+- [x] aws|iot|iot-core|AWS IoT Core
+- [x] aws|iot|iot-greengrass|AWS IoT Greengrass
 - [ ] aws|iot|iot-sitewise|AWS IoT SiteWise
 - [ ] aws|iot|iot-device-management|AWS IoT Device Management
 - [ ] aws|iot|iot-twinmaker|AWS IoT TwinMaker
