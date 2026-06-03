@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1105,
-    "skills": 397,
+    "agents": 1113,
+    "skills": 405,
     "categories": 17
   },
   "agents": [
@@ -5539,6 +5539,35 @@
       "path": "agents/cloud/azure/services/compute/azure-app-service-specialist.md"
     },
     {
+      "name": "azure-backup-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Backup (Azure) — managed backup of VMs, files/folders, Azure Files shares, SQL/SAP HANA in VMs, blobs/disks, and on-prem workloads into a Recovery Services vault or Backup vault: vault types and storage redundancy (LRS/ZRS/GRS), backup policies (frequency + GFS retention), agents/extensions (VM/MARS/MABS-DPM), instant-restore vs vault-tier recovery, cross-region restore, and ransomware protection (soft delete, immutable vault, Multi-User Authorization). OWNS the Azure managed-service layer end-to-end (vault + redundancy, policies, protected items, restore, RBAC) for backup/restore. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-reliability-engineer, who own broad DR/failover strategy and topology, cross-cutting). Cross-cloud peer (defer): aws-backup.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-backup",
+        "storage",
+        "data-protection",
+        "specialist"
+      ],
+      "skills": [
+        "azure-backup",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/storage/azure-backup-specialist.md"
+    },
+    {
       "name": "azure-batch-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Batch (Azure) — managed large-scale parallel/HPC compute: the Batch account and pools/jobs/tasks model, compute-node pools (dedicated vs low-priority/Spot, VM sizes, OS/container images), autoscale formulas, task scheduling/dependencies and multi-instance MPI tasks, application packages and resource/output files in Storage, task constraints/retries, VNet pools and Entra ID/managed identities, pool allocation modes, and cost. OWNS batch/HPC scheduling end-to-end (account, pools, jobs, tasks, autoscale). For general autoscaling app fleets defer to azure-vm-scale-sets, for single VMs to azure-virtual-machines. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT serverless (azure-functions) or PaaS web (azure-app-service). Cross-cloud peers (defer): aws-batch, gcp-batch.",
       "category": "cloud",
@@ -5824,6 +5853,35 @@
       "path": "agents/cloud/azure/azure-cost-governor.md"
     },
     {
+      "name": "azure-data-box-specialist",
+      "description": "Use when planning, ordering, securing, or operating an Azure Data Box (Azure) — offline physical bulk data transfer of terabytes-to-petabytes into/out of Azure when the network is too slow or costly: the device family (Data Box Disk ~8 TB, Data Box ~100 TB, Data Box Heavy ~1 PB; Gateway/Edge for online), the order → ship → copy (NFS/SMB/REST) → return → ingest workflow, AES-256 encryption and tamper-resistance, the target storage account/blob/file destination, NIST secure erase, RBAC on orders, and chain-of-custody. OWNS the Azure managed-service layer end-to-end (device selection, copy, security/chain-of-custody, destination + ingest verification) for offline migration. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-data-engineer, cross-cutting) and NOT continuous sync (use Gateway/Edge or online tools). Cross-cloud peer (defer): aws-snow-family.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-data-box",
+        "storage",
+        "data-migration",
+        "specialist"
+      ],
+      "skills": [
+        "azure-data-box",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/storage/azure-data-box-specialist.md"
+    },
+    {
       "name": "azure-data-engineer",
       "description": "Use when building Microsoft Azure data systems with Azure-managed services — modeling Azure SQL/Cosmos DB/Database for PostgreSQL-MySQL, ingesting and streaming with Event Hubs/Service Bus, orchestrating with Data Factory, and warehousing/analyzing in Synapse Analytics — then validating it (Azure). NOT for cloud-agnostic or multi-cloud pipeline orchestration design (etl-architect designs provider-neutral/multi-cloud orchestration; this agent is for Azure-managed services like Synapse/Data Factory/Event Hubs specifically), broad architecture (azure-cloud-architect), RBAC/exposure review (azure-security-reviewer), or AWS/GCP data (aws-/gcp-data-engineer).",
       "category": "cloud",
@@ -5853,6 +5911,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/azure-data-engineer.md"
+    },
+    {
+      "name": "azure-data-lake-storage-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Data Lake Storage Gen2 (Azure) — big-data analytics storage built on Blob by enabling the Hierarchical Namespace: HNS (real directories, atomic rename/delete), the DFS endpoint and filesystem semantics, POSIX ACLs layered on Entra RBAC, access tiers and lifecycle on lake data, medallion/zone layout (bronze/silver/gold), and integration with Synapse/Databricks/Fabric — secured via Entra/RBAC + ACLs, managed identities, and private endpoints. OWNS the Azure managed-service layer end-to-end (HNS, filesystems/zones, RBAC + ACLs, tiering/lifecycle, networking) for analytics lake storage. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-data-engineer, cross-cutting) and NOT pipeline/ETL design. Sibling Azure storage specialists own plain blobs (azure-blob-storage), files, and disks. Cross-cloud peers (defer): aws-s3 + lake-formation, gcp-cloud-storage.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-data-lake-storage",
+        "storage",
+        "adls-gen2",
+        "specialist"
+      ],
+      "skills": [
+        "azure-data-lake-storage",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/storage/azure-data-lake-storage-specialist.md"
     },
     {
       "name": "azure-database-for-mysql-specialist",
@@ -6059,6 +6146,35 @@
       "path": "agents/cloud/azure/azure-iac-engineer.md"
     },
     {
+      "name": "azure-load-balancer-specialist",
+      "description": "Use when designing, configuring, securing, or operating an Azure Load Balancer (Azure) — the Layer-4 (TCP/UDP) load balancer over a backend pool of VMs/VMSS/IPs: public vs internal (private), Standard vs Basic vs Gateway SKU, frontend IP configurations, backend pools (NIC/IP), health probes (TCP/HTTP/HTTPS), load-balancing rules and HA Ports, inbound NAT rules/pools, outbound rules and SNAT port allocation, session persistence, availability-zone redundancy, and NSG interplay. OWNS the L4 load-balancer managed-service layer end-to-end (SKU, frontends, pools, probes, rules) and verifies traffic reaches healthy backends. NOT the azure-networking-engineer role, which owns cross-cutting load-balancing/topology design (via network-design). For L7 path/host routing, TLS termination, or WAF use Application Gateway, not this. Sibling: azure-virtual-network-specialist owns the VNet. Cross-cloud peers (defer): aws-elb (NLB), gcp-cloud-load-balancing.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-load-balancer",
+        "networking",
+        "load-balancing",
+        "specialist"
+      ],
+      "skills": [
+        "azure-load-balancer",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-load-balancer-specialist.md"
+    },
+    {
       "name": "azure-machine-learning-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Machine Learning (AZURE) — the managed ML platform for building, training, tuning, deploying, and operating models: workspaces and studio, compute (instances, autoscaling clusters, serverless, AKS), jobs (command/sweep/pipeline) and pipelines, datastores/data assets, the model registry and environments, managed online (real-time) and batch endpoints, AutoML, MLflow, prompt flow, instance sizing/autoscaling, VNet/Private Link, managed identity/RBAC, CMK, and cost. OWNS the managed Azure ML service end-to-end. NOT the language ai-engineer/rag-engineer/evals-engineer roles — those build the app-side LLM/RAG/eval code that calls a model; this provisions/operates the managed service they use. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer) for cross-cutting work. Cross-cloud peers (defer): aws-sagemaker, gcp-vertex-ai.",
       "category": "cloud",
@@ -6116,6 +6232,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/databases/azure-managed-instance-for-cassandra-specialist.md"
+    },
+    {
+      "name": "azure-netapp-files-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure NetApp Files (Azure) — enterprise NFS/SMB/dual-protocol file storage on NetApp ONTAP for high-performance low-latency workloads (SAP HANA, HPC, VDI, databases): the NetApp account → capacity pool → volume hierarchy, service levels (Standard/Premium/Ultra) and QoS (auto/manual), NFSv3/v4.1 and SMB exports, snapshots/snapshot policies, backup, cross-region/zone replication, large volumes, the delegated subnet, and AD/Entra for SMB. OWNS the Azure managed-service layer end-to-end (pool/volume sizing, protocols, snapshots/replication, export/share ACLs, VNet access) for enterprise file shares. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer, cross-cutting). Sibling Azure storage specialists own SMB/NFS on Azure Files (azure-files, lower-cost/lower-perf), blobs, and disks. Cross-cloud peers (defer): aws-fsx, gcp-filestore.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-netapp-files",
+        "storage",
+        "nfs",
+        "specialist"
+      ],
+      "skills": [
+        "azure-netapp-files",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/storage/azure-netapp-files-specialist.md"
     },
     {
       "name": "azure-networking-engineer",
@@ -6206,6 +6351,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/ai-ml/azure-openai-specialist.md"
+    },
+    {
+      "name": "azure-queue-storage-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Queue Storage (Azure) — simple, durable HTTP message queues in a storage account for decoupling components: queues/messages, the visibility-timeout/lease model for at-least-once processing, message size (64 KB)/TTL, peek vs get/delete, poison-message handling via dequeue count, Entra ID/RBAC vs account keys, SAS, managed identities, and private endpoints. OWNS the Azure managed-service layer end-to-end (queues, processing model, poison handling, Entra auth/SAS, networking) for simple queueing. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). For topics, sessions, FIFO, or dead-lettering use Azure Service Bus (richer messaging), not this. Sibling Azure storage specialists own blobs/files/tables. Cross-cloud peers (defer): aws-sqs, gcp-pubsub.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-queue-storage",
+        "storage",
+        "messaging",
+        "specialist"
+      ],
+      "skills": [
+        "azure-queue-storage",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/storage/azure-queue-storage-specialist.md"
     },
     {
       "name": "azure-reliability-engineer",
@@ -6351,6 +6525,35 @@
       "path": "agents/cloud/azure/services/databases/azure-sql-managed-instance-specialist.md"
     },
     {
+      "name": "azure-table-storage-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Table Storage (Azure) — a schemaless NoSQL key-value/wide-column store in a storage account: tables/entities, the PartitionKey + RowKey composite key and partition design, the OData query API and point vs partition vs table-scan cost, batch (entity group) transactions within a partition, optimistic concurrency via ETag, Entra ID/RBAC vs account keys, SAS, managed identities, and private endpoints. OWNS the Azure managed-service layer end-to-end (key design, tables, query patterns, Entra auth/SAS, networking) for cheap NoSQL key-value. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). For SQL queries, secondary indexes, global distribution, or SLA-backed throughput use Cosmos DB (Table API), not this. Sibling Azure storage specialists own blobs/files/queues. Cross-cloud peer (defer): aws-dynamodb.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-table-storage",
+        "storage",
+        "nosql",
+        "specialist"
+      ],
+      "skills": [
+        "azure-table-storage",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/storage/azure-table-storage-specialist.md"
+    },
+    {
       "name": "azure-virtual-machines-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Virtual Machines (Azure) — single-VM IaaS compute: VM sizes/series (B/D/E/F/M/N), Managed Disks (Standard/Premium/Ultra) and OS/data disks, images (Marketplace/custom/Shared Image Gallery), availability zones vs sets, Spot and reserved instances, NICs/NSGs, extensions and cloud-init, Entra ID login and managed identities, disk encryption, and cost. OWNS single-VM IaaS end-to-end (size, disks, image, availability, networking, auth). For horizontal autoscaling fleets defer to azure-vm-scale-sets. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT PaaS web hosting (azure-app-service), serverless (azure-functions), batch/HPC (azure-batch), or VMware private clouds (azure-vmware-solution). Cross-cloud peers (defer): aws-ec2, gcp-compute-engine.",
       "category": "cloud",
@@ -6378,6 +6581,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/compute/azure-virtual-machines-specialist.md"
+    },
+    {
+      "name": "azure-virtual-network-specialist",
+      "description": "Use when designing, configuring, securing, or operating a single Azure Virtual Network (Azure) — the foundational private network: VNet address space (CIDR) and subnets, Network Security Groups (NSGs)/Application Security Groups, user-defined routes/route tables and NAT Gateway for egress, VNet peering and the hub-spoke model, service endpoints vs private endpoints (Private Link) for PaaS, subnet delegation, DNS, and RBAC. OWNS the single-VNet managed-service layer end-to-end (address plan, subnets, NSGs/routes, peering, endpoints) and verifies connectivity. NOT the azure-networking-engineer role, which owns cross-cutting multi-VNet topology, DNS strategy, and load-balancing design (via network-design). Sibling: azure-load-balancer-specialist owns L4 load balancing. Cross-cloud peers (defer): aws-vpc, gcp-vpc.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-virtual-network",
+        "networking",
+        "vnet",
+        "specialist"
+      ],
+      "skills": [
+        "azure-virtual-network",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-virtual-network-specialist.md"
     },
     {
       "name": "azure-vm-scale-sets-specialist",
@@ -33713,6 +33945,21 @@
       "path": "skills/cloud/azure-app-service/SKILL.md"
     },
     {
+      "name": "azure-backup",
+      "description": "Use when designing, provisioning, securing, or operating Azure Backup — Azure's managed backup service that protects VMs, files/folders, Azure Files shares, SQL/SAP HANA in VMs, and on-prem workloads (via MARS/MABS/DPM) into a Recovery Services vault or Backup vault (Azure Backup). Covers vault types and storage redundancy (LRS/ZRS/GRS), backup policies (frequency/schedule/retention GFS), the workload extensions/agents, instant restore snapshots vs vault-tier recovery, cross-region restore, soft delete and immutable/Multi-User Authorization (MUA) protection against ransomware, Entra/RBAC, and managed identities. Loads the knowledge: pick a vault + redundancy, define policies, enable protection, secure, provision, and verify a backup + restore. Consumed by the azure-backup specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect / azure-reliability-engineer) when standing up the managed service (Azure Backup).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-backup",
+        "storage",
+        "data-protection",
+        "recovery-services-vault"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-backup/SKILL.md"
+    },
+    {
       "name": "azure-batch",
       "description": "Use when designing, provisioning, securing, or operating Azure Batch — Microsoft Azure's managed service for large-scale parallel and high-performance batch compute (Azure Batch). Covers the Batch account and its pools/jobs/tasks model, compute-node pools (dedicated vs low-priority/Spot nodes, VM sizes, OS images and container support), autoscale formulas, task scheduling and dependencies and multi-instance/MPI tasks, application packages and resource/output files in Azure Storage, job/task constraints and retries, VNet pools and Entra ID/managed identities and pool allocation modes, and cost. Loads the Batch knowledge: create a pool, submit jobs/tasks with autoscale, secure, and verify tasks complete. Consumed by the azure-batch specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Batch).",
       "category": "cloud",
@@ -33840,6 +34087,36 @@
       "path": "skills/cloud/azure-cosmos-db/SKILL.md"
     },
     {
+      "name": "azure-data-box",
+      "description": "Use when planning, ordering, securing, or operating an Azure Data Box — Azure's offline, physical bulk data-transfer appliance for moving terabytes-to-petabytes into (or out of) Azure when network transfer is too slow or expensive (Azure Data Box). Covers the device family — Data Box Disk (~8 TB SSDs), Data Box (~100 TB), and Data Box Heavy (~1 PB) — plus Data Box Gateway/Edge for online/streaming cases, the order → ship → copy (NFS/SMB/REST) → return → ingest workflow, AES-256 encryption and tamper-resistance, the target storage account/blob/file destination, secure erasure (NIST) after upload, RBAC on orders, and chain-of-custody. Loads the knowledge: pick the right device by data size + timeline, order, copy securely, and verify ingest into the storage account. Consumed by the azure-data-box specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect / azure-data-engineer) when running the managed service (Azure Data Box).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-data-box",
+        "storage",
+        "data-migration",
+        "offline-transfer"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-data-box/SKILL.md"
+    },
+    {
+      "name": "azure-data-lake-storage",
+      "description": "Use when designing, provisioning, securing, or operating Azure Data Lake Storage Gen2 (ADLS Gen2) — big-data analytics storage built on Blob Storage by enabling the Hierarchical Namespace on a storage account (Azure Data Lake Storage). Covers HNS (real directories, atomic directory rename/delete), the DFS endpoint and filesystem (container) semantics, POSIX-style ACLs layered on Entra RBAC, access tiers and lifecycle on lake data, the medallion/zone layout (bronze/silver/gold), integration with Synapse/Databricks/Fabric, Entra ID/RBAC + ACLs, managed identities, and private endpoints. Loads the knowledge: enable HNS, design filesystems/zones, set RBAC + ACLs, provision, and verify directory/file operations. Consumed by the azure-data-lake-storage specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect / azure-data-engineer) when standing up the managed service (Azure Data Lake Storage).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-data-lake-storage",
+        "storage",
+        "adls-gen2",
+        "data-lake"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-data-lake-storage/SKILL.md"
+    },
+    {
       "name": "azure-database-for-mysql",
       "description": "Use when designing, provisioning, securing, or operating Azure Database for MySQL — Azure's fully managed community MySQL PaaS, primarily the Flexible Server deployment (Azure Database for MySQL). Covers compute tiers (Burstable/General Purpose/Business Critical) and storage/IOPS sizing, zone-redundant and same-zone HA, read replicas, automated backups with point-in-time restore, maintenance windows and version upgrades, server parameters, Entra ID authentication and managed identities, VNet integration/private access and firewall, and CMK encryption. Loads the knowledge: pick a tier and size, choose HA/replicas, provision, secure, and verify the server accepts connections. Consumed by the azure-database-for-mysql specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Database for MySQL).",
       "category": "cloud",
@@ -33936,6 +34213,21 @@
       "path": "skills/cloud/azure-functions/SKILL.md"
     },
     {
+      "name": "azure-load-balancer",
+      "description": "Use when designing, provisioning, securing, or operating an Azure Load Balancer — Azure's high-performance Layer-4 (TCP/UDP) load balancer that distributes traffic across a backend pool of VMs/VMSS/IPs (Azure Load Balancer). Covers public vs internal (private) load balancers, Standard vs Basic vs Gateway SKU, frontend IP configurations, backend pools (NIC or IP based), health probes (TCP/HTTP/HTTPS), load-balancing rules and HA Ports, inbound NAT rules/pools, outbound rules and SNAT port allocation, session persistence/distribution mode, availability-zone redundancy, and NSG interplay. Loads the knowledge: pick SKU and public/internal, define frontends/backend pools/probes/rules, secure, provision, and verify traffic distributes to healthy backends. Consumed by the azure-load-balancer specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Load Balancer).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-load-balancer",
+        "networking",
+        "load-balancing",
+        "layer4"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-load-balancer/SKILL.md"
+    },
+    {
       "name": "azure-machine-learning",
       "description": "Use when designing, provisioning, securing, or operating Azure Machine Learning — Microsoft Azure's managed platform for building, training, deploying, and operating ML models (Azure Machine Learning). Covers workspaces and the studio, compute (compute instances, compute clusters, attached/serverless, Kubernetes), jobs (command/sweep/pipeline) and pipelines, datastores and data assets, the model registry and environments, managed online endpoints (real-time) and batch endpoints, AutoML, MLflow tracking/registry integration, prompt flow for LLM apps, plus instance sizing, autoscaling, VNet/Private Link, managed identity/RBAC, CMK, and cost. Loads the Azure ML knowledge: provision a workspace + compute, run training jobs, register models, deploy endpoints, and verify. Consumed by the Azure ML specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed ML platform (Azure Machine Learning).",
       "category": "cloud",
@@ -33969,6 +34261,21 @@
       "path": "skills/cloud/azure-managed-instance-for-cassandra/SKILL.md"
     },
     {
+      "name": "azure-netapp-files",
+      "description": "Use when designing, provisioning, securing, or operating Azure NetApp Files (ANF) — enterprise-grade fully managed NFS/SMB/dual-protocol file storage powered by NetApp ONTAP for high-performance, low-latency workloads like SAP HANA, HPC, VDI, and databases (Azure NetApp Files). Covers the NetApp account → capacity pool → volume hierarchy, service levels (Standard/Premium/Ultra) and pool QoS (auto vs manual), NFSv3/v4.1 and SMB exports, snapshots and snapshot policies, backup, cross-region and cross-zone replication, large volumes, delegated subnets, Entra/AD integration for SMB, and private VNet access. Loads the knowledge: size a capacity pool and volumes by throughput, configure protocols/snapshots/replication, secure, provision, and verify a mount/read-write. Consumed by the azure-netapp-files specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure NetApp Files).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-netapp-files",
+        "storage",
+        "nfs",
+        "smb"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-netapp-files/SKILL.md"
+    },
+    {
       "name": "azure-openai",
       "description": "Use when designing, provisioning, securing, or operating Azure OpenAI Service — Microsoft Azure's managed access to OpenAI models (GPT-4o/4.1/o-series chat + completions, embeddings, DALL-E, Whisper) with enterprise networking, identity, and quotas (Azure OpenAI Service). Covers the Cognitive Services OpenAI resource, model deployments (Standard / Global / Provisioned PTU), capacity and rate limits (TPM/RPM tokens-per-minute), content filters and abuse monitoring, \"On Your Data\" / RAG grounding against Azure AI Search, the Assistants API and function/tool calling, keys vs Entra ID auth and managed identity, Private Link/VNet isolation, and cost. Loads the Azure OpenAI knowledge: provision a resource, create model deployments with quota, secure access, and verify a completion. Consumed by the azure-openai specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure OpenAI Service).",
       "category": "cloud",
@@ -33984,6 +34291,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-openai/SKILL.md"
+    },
+    {
+      "name": "azure-queue-storage",
+      "description": "Use when designing, provisioning, securing, or operating Azure Queue Storage — simple, durable HTTP/HTTPS message queues in a storage account for decoupling application components (Azure Queue Storage). Covers queues and messages, the visibility-timeout / lease model for at-least-once processing, message size (64 KB) and TTL, peek vs get/delete semantics, poison-message handling via dequeue count, Entra ID/RBAC vs account keys and SAS, managed identities, and private endpoints. Loads the knowledge: pick the storage account, create queues, choose visibility timeout and poison thresholds, secure with Entra, provision, and verify enqueue/dequeue/delete round-trips. Consumed by the azure-queue-storage specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Queue Storage).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-queue-storage",
+        "storage",
+        "messaging",
+        "queue"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-queue-storage/SKILL.md"
     },
     {
       "name": "azure-service-fabric",
@@ -34054,6 +34376,21 @@
       "path": "skills/cloud/azure-sql-managed-instance/SKILL.md"
     },
     {
+      "name": "azure-table-storage",
+      "description": "Use when designing, provisioning, securing, or operating Azure Table Storage — a schemaless NoSQL key-value/wide-column store in a storage account for structured non-relational data at low cost (Azure Table Storage). Covers tables and entities, the PartitionKey + RowKey composite primary key and partition design, properties/typing, the OData query/filter API and the cost of point vs partition vs table scans, batch (entity group) transactions within a partition, optimistic concurrency via ETag, Entra ID/RBAC vs account keys and SAS, managed identities, and private endpoints. Loads the knowledge: pick the account, design the key scheme, create tables, secure with Entra, provision, and verify insert/query/delete. Consumed by the azure-table-storage specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Table Storage).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-table-storage",
+        "storage",
+        "nosql",
+        "key-value"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-table-storage/SKILL.md"
+    },
+    {
       "name": "azure-virtual-machines",
       "description": "Use when designing, provisioning, securing, or operating Azure Virtual Machines — Microsoft Azure's IaaS compute for Linux and Windows VMs (Azure Virtual Machines). Covers VM sizes and series (B/D/E/F/M/N GPU families), OS and data disks (Managed Disks, Standard/Premium SSD/Ultra), images (Marketplace, custom, Shared Image Gallery), availability sets vs availability zones, proximity placement, Spot VMs and reserved instances, networking (NICs/NSGs/public IPs), boot diagnostics and extensions, Entra ID/managed identities and disk encryption, and cost. Loads the VM knowledge: pick a size and disks, choose an availability model, provision, secure, and verify the VM boots and is reachable. Consumed by the azure-virtual-machines specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Virtual Machines).",
       "category": "cloud",
@@ -34068,6 +34405,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-virtual-machines/SKILL.md"
+    },
+    {
+      "name": "azure-virtual-network",
+      "description": "Use when designing, provisioning, securing, or operating an Azure Virtual Network (VNet) — the foundational private network in a region where Azure resources run, with isolation, segmentation, and connectivity (Azure Virtual Network). Covers VNet address space (CIDR) and subnets, Network Security Groups (NSGs) and Application Security Groups, user-defined routes (UDRs)/route tables and NAT Gateway for egress, VNet peering (regional/global) and the hub-spoke model, service endpoints vs private endpoints (Private Link) for reaching PaaS privately, subnet delegation, DNS, and Entra/RBAC. Loads the knowledge: plan non-overlapping CIDRs and subnets, apply NSGs/routes, wire peering/endpoints, secure, provision, and verify connectivity. Consumed by the azure-virtual-network specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Virtual Network).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-virtual-network",
+        "networking",
+        "vnet",
+        "subnet"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-virtual-network/SKILL.md"
     },
     {
       "name": "azure-vm-scale-sets",

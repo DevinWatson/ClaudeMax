@@ -352,16 +352,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] azure|storage|blob-storage|Azure Blob Storage
 - [x] azure|storage|azure-files|Azure Files
 - [x] azure|storage|azure-disk-storage|Azure Disk Storage
-- [ ] azure|storage|azure-queue-storage|Azure Queue Storage
-- [ ] azure|storage|table-storage|Azure Table Storage
-- [ ] azure|storage|data-lake-storage|Azure Data Lake Storage
-- [ ] azure|storage|azure-netapp-files|Azure NetApp Files
-- [ ] azure|storage|azure-backup|Azure Backup
-- [ ] azure|storage|azure-data-box|Azure Data Box
+- [x] azure|storage|azure-queue-storage|Azure Queue Storage
+- [x] azure|storage|table-storage|Azure Table Storage
+- [x] azure|storage|data-lake-storage|Azure Data Lake Storage
+- [x] azure|storage|azure-netapp-files|Azure NetApp Files
+- [x] azure|storage|azure-backup|Azure Backup
+- [x] azure|storage|azure-data-box|Azure Data Box
 
 ### networking
-- [ ] azure|networking|virtual-network|Azure Virtual Network
-- [ ] azure|networking|load-balancer|Azure Load Balancer
+- [x] azure|networking|virtual-network|Azure Virtual Network
+- [x] azure|networking|load-balancer|Azure Load Balancer
 - [ ] azure|networking|application-gateway|Azure Application Gateway
 - [ ] azure|networking|vpn-gateway|Azure VPN Gateway
 - [ ] azure|networking|azure-dns|Azure DNS
