@@ -32,18 +32,18 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] aws|compute|batch|AWS Batch
 - [x] aws|compute|app-runner|AWS App Runner
 - [x] aws|compute|ec2-auto-scaling|Amazon EC2 Auto Scaling
-- [ ] aws|compute|ec2-image-builder|EC2 Image Builder
-- [ ] aws|compute|outposts|AWS Outposts
-- [ ] aws|compute|wavelength|AWS Wavelength
-- [ ] aws|compute|nitro-enclaves|AWS Nitro Enclaves
+- [x] aws|compute|ec2-image-builder|EC2 Image Builder
+- [x] aws|compute|outposts|AWS Outposts
+- [x] aws|compute|wavelength|AWS Wavelength
+- [x] aws|compute|nitro-enclaves|AWS Nitro Enclaves
 
 ### containers
-- [ ] aws|containers|ecs|Amazon ECS
-- [ ] aws|containers|eks|Amazon EKS
-- [ ] aws|containers|ecr|Amazon ECR
+- [x] aws|containers|ecs|Amazon ECS
+- [x] aws|containers|eks|Amazon EKS
+- [x] aws|containers|ecr|Amazon ECR
 
 ### storage
-- [ ] aws|storage|s3|Amazon S3
+- [x] aws|storage|s3|Amazon S3
 - [ ] aws|storage|ebs|Amazon EBS
 - [ ] aws|storage|efs|Amazon EFS
 - [ ] aws|storage|fsx|Amazon FSx

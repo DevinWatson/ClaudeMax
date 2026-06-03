@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 857,
-    "skills": 149,
+    "agents": 865,
+    "skills": 157,
     "categories": 17
   },
   "agents": [
@@ -1098,6 +1098,36 @@
       "path": "agents/cloud/aws/services/compute/aws-ec2-auto-scaling-specialist.md"
     },
     {
+      "name": "aws-ec2-image-builder-specialist",
+      "description": "Use when designing, configuring, deploying, or operating EC2 Image Builder (AWS) — image recipes and components, build/test pipelines, infrastructure and distribution configs, golden AMI/container-image factories, and scheduled patch/rebake automation. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns EC2 Image Builder end-to-end. For running the resulting instances use aws-ec2-specialist, for the image registry use aws-ecr-specialist; for GCP/Azure image pipelines defer to those clouds' specialists.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "ec2-image-builder",
+        "golden-ami",
+        "image-pipeline",
+        "compute",
+        "specialist"
+      ],
+      "skills": [
+        "aws-ec2-image-builder",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/compute/aws-ec2-image-builder-specialist.md"
+    },
+    {
       "name": "aws-ec2-specialist",
       "description": "Use when designing, configuring, deploying, or operating Amazon EC2 (AWS) — instance type/family selection and sizing, AMIs and launch templates, EBS storage, security groups, IAM instance profiles, IMDSv2 hardening, capacity (On-Demand/Spot/Reserved), and instance lifecycle. NOT the AWS role team — aws-cloud-architect (multi-service Well-Architected design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the EC2 service end-to-end. For serverless functions use aws-lambda-specialist, for serverless containers aws-fargate/app-runner specialists, for elastic self-healing fleets aws-ec2-auto-scaling-specialist; for GCP Compute Engine or Azure VMs defer to those clouds' specialists.",
       "category": "cloud",
@@ -1126,6 +1156,96 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/compute/aws-ec2-specialist.md"
+    },
+    {
+      "name": "aws-ecr-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon ECR (AWS) — private/public container repositories, tag immutability, lifecycle/pruning policies, repository and registry permissions (incl. cross-account), image scanning (basic/enhanced via Inspector), replication, pull-through cache, and push/pull auth. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns ECR — the image registry — end-to-end. The orchestrators that pull these images are aws-ecs-specialist / aws-eks-specialist / aws-fargate-specialist; for GCP Artifact Registry or Azure ACR defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "ecr",
+        "container-registry",
+        "image-scanning",
+        "containers",
+        "specialist"
+      ],
+      "skills": [
+        "aws-ecr",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/containers/aws-ecr-specialist.md"
+    },
+    {
+      "name": "aws-ecs-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon ECS (AWS) — task definitions, services, Fargate vs EC2 launch types, the execution and task IAM roles, awsvpc networking and service connect, load balancer integration, service autoscaling, and rolling/blue-green deploys. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns ECS end-to-end. Pick ECS for AWS-native orchestration without Kubernetes — for the Kubernetes API use aws-eks-specialist; the underlying serverless capacity is aws-fargate-specialist; the image registry is aws-ecr-specialist; for GCP/Azure containers defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "ecs",
+        "containers",
+        "fargate",
+        "orchestration",
+        "specialist"
+      ],
+      "skills": [
+        "aws-ecs",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/containers/aws-ecs-specialist.md"
+    },
+    {
+      "name": "aws-eks-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon EKS (AWS) — the managed Kubernetes control plane, node groups vs Fargate profiles vs Karpenter, the VPC CNI, IRSA / EKS Pod Identity, managed add-ons, access entries/aws-auth, cluster/node scaling, and the AWS Load Balancer Controller. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the AWS-side EKS plumbing end-to-end. Pick EKS for the Kubernetes API — for AWS-native orchestration use aws-ecs-specialist; serverless pod capacity is aws-fargate-specialist; the registry is aws-ecr-specialist; cluster-internal platform/RBAC/policy belongs to the kubernetes-platform team; for GKE/AKS defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "eks",
+        "kubernetes",
+        "containers",
+        "irsa",
+        "specialist"
+      ],
+      "skills": [
+        "aws-eks",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/containers/aws-eks-specialist.md"
     },
     {
       "name": "aws-elastic-beanstalk-specialist",
@@ -1308,6 +1428,36 @@
       "path": "agents/cloud/aws/aws-networking-engineer.md"
     },
     {
+      "name": "aws-nitro-enclaves-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Nitro Enclaves (AWS) — enclave resource allocation, EIF builds and PCR measurement, vsock wiring, cryptographic attestation, and attestation-gated KMS key release for confidential-computing workloads. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns Nitro Enclaves end-to-end. For the parent instance/fleet use aws-ec2-specialist; for GCP/Azure confidential computing defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "nitro-enclaves",
+        "confidential-computing",
+        "attestation",
+        "compute",
+        "specialist"
+      ],
+      "skills": [
+        "aws-nitro-enclaves",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/compute/aws-nitro-enclaves-specialist.md"
+    },
+    {
       "name": "aws-observability-engineer",
       "description": "Use when instrumenting AWS observability — CloudWatch metrics/logs/alarms/dashboards and X-Ray tracing, with SLO-driven alerting — then validating it (AWS). NOT for generic non-AWS observability (devops observability-engineer), reliability/DR design (aws-reliability-engineer), networking (aws-networking-engineer), or broad architecture (aws-cloud-architect).",
       "category": "cloud",
@@ -1336,6 +1486,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/aws-observability-engineer.md"
+    },
+    {
+      "name": "aws-outposts-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Outposts (AWS) — Outpost rack/server capacity planning, VPC extension on-prem, local gateway and service link, on-prem service placement (EC2/EBS/ECS/EKS/RDS/S3 on Outposts), and data-residency/low-latency hybrid workloads. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns Outposts end-to-end. For AWS-owned 5G edge use aws-wavelength-specialist; for plain in-Region compute use aws-ec2-specialist; for GCP/Azure hybrid (Anthos/Stack) defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "outposts",
+        "hybrid",
+        "on-premises",
+        "compute",
+        "specialist"
+      ],
+      "skills": [
+        "aws-outposts",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/compute/aws-outposts-specialist.md"
     },
     {
       "name": "aws-reliability-engineer",
@@ -1368,6 +1548,36 @@
       "path": "agents/cloud/aws/aws-reliability-engineer.md"
     },
     {
+      "name": "aws-s3-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon S3 (AWS) — buckets, storage classes and lifecycle/Intelligent-Tiering, versioning, Block Public Access, bucket/IAM policies, default + KMS encryption, access points and Object Lambda, replication (CRR/SRR), Object Lock/WORM, static hosting, presigned URLs, and event notifications. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns S3 — object storage — end-to-end. For block storage use the EBS specialist, shared file systems the EFS/FSx specialists; for GCP Cloud Storage or Azure Blob defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "s3",
+        "object-storage",
+        "encryption",
+        "storage",
+        "specialist"
+      ],
+      "skills": [
+        "aws-s3",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/storage/aws-s3-specialist.md"
+    },
+    {
       "name": "aws-security-reviewer",
       "description": "Use when reviewing AWS configuration for security — IAM least-privilege, public exposure (open SGs, public S3/RDS), missing encryption (KMS/TLS), and secret handling — then triaging findings by severity (AWS). Read-only; reports, does not change infra. NOT for building/fixing IaC (use aws-iac-engineer), architecture design (aws-cloud-architect), or generic app-code appsec unrelated to AWS config.",
       "category": "cloud",
@@ -1392,6 +1602,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/aws-security-reviewer.md"
+    },
+    {
+      "name": "aws-wavelength-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Wavelength (AWS) — Wavelength Zone opt-in, VPC extension to the 5G edge, carrier gateway and carrier IPs, edge vs Region component split, and ultra-low-latency mobile/edge workloads. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns Wavelength end-to-end. For your-own-site hybrid use aws-outposts-specialist; for plain in-Region compute use aws-ec2-specialist; for GCP/Azure edge defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "wavelength",
+        "5g",
+        "edge",
+        "compute",
+        "specialist"
+      ],
+      "skills": [
+        "aws-wavelength",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/compute/aws-wavelength-specialist.md"
     },
     {
       "name": "azure-cloud-architect",
@@ -24002,6 +24242,70 @@
       "path": "skills/cloud/aws-ec2-auto-scaling/SKILL.md"
     },
     {
+      "name": "aws-ec2-image-builder",
+      "description": "Use when designing, provisioning, securing, or operating EC2 Image Builder — image recipes, components (build/test/validate), image pipelines, infrastructure configuration, distribution configuration, golden AMI/container image factories, and automated patch/rebake schedules (EC2 Image Builder). Loads the Image Builder knowledge: how to compose recipes from components, run a build/test pipeline, distribute hardened AMIs across regions/accounts, and verify an image actually built and passed tests. Consumed by the EC2 Image Builder specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they automate golden images.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "ec2-image-builder",
+        "golden-ami",
+        "image-pipeline",
+        "hardening",
+        "compute"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-ec2-image-builder/SKILL.md"
+    },
+    {
+      "name": "aws-ecr",
+      "description": "Use when designing, provisioning, securing, or operating Amazon ECR — private and public container/OCI registries, repositories, image tags and immutability, lifecycle policies, repository/registry permissions, image scanning (basic/enhanced via Inspector), cross-account/cross-region replication, pull-through cache, and push/pull auth (Amazon ECR). Loads the ECR knowledge: how to create a repo, lock down access, scan and prune images, replicate, and verify a push/pull works. Consumed by the ECR specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they manage container images.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "ecr",
+        "container-registry",
+        "oci",
+        "image-scanning",
+        "containers"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-ecr/SKILL.md"
+    },
+    {
+      "name": "aws-ecs",
+      "description": "Use when designing, provisioning, securing, or operating Amazon ECS — clusters, task definitions, services, the Fargate vs EC2 launch types, task/execution IAM roles, awsvpc networking and service connect/discovery, load balancer integration, autoscaling, and rolling/blue-green deploys (Amazon ECS). Loads the ECS knowledge: how to write a task definition, run it as a service, scope its two IAM roles, wire networking and a load balancer, scale it, and verify tasks are healthy. Consumed by the ECS specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they run containers.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "ecs",
+        "containers",
+        "fargate",
+        "task-definition",
+        "orchestration"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-ecs/SKILL.md"
+    },
+    {
+      "name": "aws-eks",
+      "description": "Use when designing, provisioning, securing, or operating Amazon EKS — managed Kubernetes control plane, node groups (managed/self-managed) vs Fargate profiles, the VPC CNI, IRSA / EKS Pod Identity, add-ons, cluster autoscaling (Karpenter/Cluster Autoscaler), aws-auth/access entries, and load balancer/ingress controllers (Amazon EKS). Loads the EKS knowledge: how to stand up a cluster, attach compute, map IAM to Kubernetes RBAC, grant pods AWS access via IRSA, scale nodes, and verify the cluster and workloads. Consumed by the EKS specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they run Kubernetes.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "eks",
+        "kubernetes",
+        "containers",
+        "irsa",
+        "orchestration"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-eks/SKILL.md"
+    },
+    {
       "name": "aws-elastic-beanstalk",
       "description": "Use when designing, deploying, securing, or operating AWS Elastic Beanstalk — applications, environments, platforms/solution stacks, environment tiers (web server vs worker), configuration via option settings and .ebextensions/.platform, deployment policies (all-at-once/rolling/immutable/blue-green via swap), managed updates, and the underlying EC2/ASG/ELB it provisions (AWS Elastic Beanstalk). Loads the Beanstalk-specific knowledge: how to pick a platform, configure environments, choose a deployment policy, secure it, and verify health. Consumed by the Beanstalk specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) for PaaS-style app deploys.",
       "category": "cloud",
@@ -24066,6 +24370,54 @@
       "path": "skills/cloud/aws-lightsail/SKILL.md"
     },
     {
+      "name": "aws-nitro-enclaves",
+      "description": "Use when designing, provisioning, securing, or operating AWS Nitro Enclaves — isolated VMs carved from a parent EC2 instance, the vsock channel, enclave images (EIF), cryptographic attestation (PCRs), KMS attestation-based key release, and confidential-computing workloads that process sensitive data with no persistent storage or network (AWS Nitro Enclaves). Loads the Nitro Enclaves knowledge: how to allocate enclave resources, build an EIF, attest it, gate KMS decrypt on attestation, and verify the enclave runs. Consumed by the Nitro Enclaves specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) for confidential computing.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "nitro-enclaves",
+        "confidential-computing",
+        "attestation",
+        "kms",
+        "compute"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-nitro-enclaves/SKILL.md"
+    },
+    {
+      "name": "aws-outposts",
+      "description": "Use when designing, provisioning, securing, or operating AWS Outposts — Outpost racks and servers, capacity (instance/EBS) planning, local gateway and VPC extension, service link to the parent Region, supported on-prem services (EC2/EBS/ECS/EKS/RDS/S3 on Outposts), and data-residency/low-latency workloads (AWS Outposts). Loads the Outposts knowledge: how to size an Outpost order, extend a VPC on-prem, wire the local gateway and service link, and verify capacity and connectivity. Consumed by the Outposts specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they design hybrid on-prem AWS.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "outposts",
+        "hybrid",
+        "on-premises",
+        "data-residency",
+        "compute"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-outposts/SKILL.md"
+    },
+    {
+      "name": "aws-s3",
+      "description": "Use when designing, provisioning, securing, or operating Amazon S3 — buckets, objects/prefixes, storage classes and lifecycle/Intelligent-Tiering, versioning, Block Public Access, bucket/IAM policies and ACLs, default + KMS encryption (SSE-S3/SSE-KMS/DSSE), access points and Object Lambda, replication (CRR/SRR), Object Lock/WORM, static hosting, presigned URLs, and event notifications (Amazon S3). Loads the S3 knowledge: how to create a private encrypted bucket, scope access, control cost with storage classes/lifecycle, replicate, and verify access and encryption. Consumed by the S3 specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle object storage.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "s3",
+        "object-storage",
+        "encryption",
+        "lifecycle",
+        "storage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-s3/SKILL.md"
+    },
+    {
       "name": "aws-services",
       "description": "The substantive AWS platform capability — compute (EC2, Lambda, ECS/Fargate, EKS), storage (S3, EBS, EFS), databases (RDS/Aurora, DynamoDB), networking (VPC, subnets, security groups, ALB/NLB, Route 53, CloudFront), IAM (roles, policies, least privilege), messaging/eventing (SQS, SNS, EventBridge, Kinesis), the Well-Architected Framework's six pillars, regions/AZs & multi-region patterns, and tooling (AWS CLI, CloudFormation/CDK/SAM). Use when designing, building, reviewing, securing, costing, or operating anything on Amazon Web Services — picking the right managed service, applying least-privilege IAM, choosing single- vs multi-AZ/region, or validating CloudFormation/CDK/SAM. Any agent that touches AWS (an architect, IaC engineer, security reviewer, cost governor, reliability/networking/observability/data engineer) can load it.",
       "category": "cloud",
@@ -24083,6 +24435,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-services/SKILL.md"
+    },
+    {
+      "name": "aws-wavelength",
+      "description": "Use when designing, provisioning, securing, or operating AWS Wavelength — Wavelength Zones embedded in telco 5G networks, carrier gateways, VPC extension to the edge, ultra-low-latency mobile/edge workloads, and the subset of services (EC2/EBS/ECS/EKS) available at the edge (AWS Wavelength). Loads the Wavelength knowledge: how to opt into a Zone, extend a VPC with Wavelength subnets, route through the carrier gateway, and verify edge instances and mobile reachability. Consumed by the Wavelength specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they design 5G edge.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "wavelength",
+        "5g",
+        "edge",
+        "low-latency",
+        "compute"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-wavelength/SKILL.md"
     },
     {
       "name": "azure-services",
