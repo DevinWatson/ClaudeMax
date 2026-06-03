@@ -1,6 +1,6 @@
 ---
 name: csharp-architect
-description: Use when designing or reviewing the structure of a C# system, service, or module — component boundaries, coupling/cohesion, interface contracts, project/assembly layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial on .NET or when reviewing a C# design proposal. Not for implementing the feature (use csharp-developer) or for REST endpoint shape alone (use csharp-api-designer).
+description: Use when designing or reviewing the structure of a C# system, service, or module — component boundaries, coupling/cohesion, interface contracts, project/assembly layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial on .NET or when reviewing a C# design proposal. Not for implementing the feature (use csharp-developer) or for REST endpoint shape alone (use csharp-api-designer). For shaping the architecture of an ASP.NET Core application specifically — endpoint/EF Core/DI/security topology — route to dotnet-aspnet-architect instead.
 model: opus
 tools: Read, Grep, Glob, Write
 category: languages

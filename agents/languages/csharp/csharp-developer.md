@@ -1,6 +1,6 @@
 ---
 name: csharp-developer
-description: Use when turning a C# requirement, ticket, or feature into working, tested, incrementally-shipped code on .NET, or when fixing a reported C# bug. Invoke for building or extending C#/ASP.NET Core features and for diagnosing failures in existing C# code. Not for system-level design (use csharp-architect) or for adding tests to code you did not write (use csharp-unit-test-architect).
+description: Use when turning a C# requirement, ticket, or feature into working, tested, incrementally-shipped code on .NET (libraries, console/worker apps, general .NET code), or when fixing a reported C# bug. Invoke for building or extending C# features and for diagnosing failures in existing C# code. Not for system-level design (use csharp-architect) or for adding tests to code you did not write (use csharp-unit-test-architect). For ASP.NET Core application work — minimal-API/MVC endpoints, EF Core, DI/middleware, auth — route to dotnet-aspnet-developer instead.
 model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: languages
