@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1065,
-    "skills": 357,
+    "agents": 1073,
+    "skills": 365,
     "categories": 17
   },
   "agents": [
@@ -5353,6 +5353,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/azure-iac-engineer.md"
+    },
+    {
+      "name": "azure-machine-learning-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Machine Learning (AZURE) — the managed ML platform for building, training, tuning, deploying, and operating models: workspaces and studio, compute (instances, autoscaling clusters, serverless, AKS), jobs (command/sweep/pipeline) and pipelines, datastores/data assets, the model registry and environments, managed online (real-time) and batch endpoints, AutoML, MLflow, prompt flow, instance sizing/autoscaling, VNet/Private Link, managed identity/RBAC, CMK, and cost. OWNS the managed Azure ML service end-to-end. NOT the language ai-engineer/rag-engineer/evals-engineer roles — those build the app-side LLM/RAG/eval code that calls a model; this provisions/operates the managed service they use. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer) for cross-cutting work. Cross-cloud peers (defer): aws-sagemaker, gcp-vertex-ai.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-machine-learning",
+        "ai-ml",
+        "machine-learning",
+        "endpoints",
+        "specialist"
+      ],
+      "skills": [
+        "azure-machine-learning",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "agents/cloud/azure/services/ai-ml/azure-machine-learning-specialist.md"
     },
     {
       "name": "azure-networking-engineer",
@@ -11660,6 +11690,36 @@
       "path": "agents/cloud/gcp/services/application-development/gcp-artifact-registry-specialist.md"
     },
     {
+      "name": "gcp-backup-and-dr-specialist",
+      "description": "Use when designing, configuring, securing, or operating Backup and DR Service (GCP) — centralized application-consistent backup and disaster recovery for Compute Engine VMs, databases, and file systems: backup vaults (immutable, locked retention), backup plans/policies and associations, the management server/appliance, on-demand and scheduled backups, point-in-time and cross-region restore, IAM and CMEK. OWNS the GCP Backup and DR managed service end-to-end. NOT a sibling GCP storage service (Cloud Storage object lifecycle, raw Compute Engine snapshots, Filestore backups) — defer to those specialists. Defer org-wide exposure to gcp-security-reviewer and cross-cutting storage/DR architecture to the GCP role team (gcp-cloud-architect / gcp-iac-engineer). Cross-cloud peer (defer): aws-backup.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "backup-and-dr",
+        "storage",
+        "backup",
+        "disaster-recovery",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-backup-and-dr",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/storage/gcp-backup-and-dr-specialist.md"
+    },
+    {
       "name": "gcp-batch-specialist",
       "description": "Use when designing, configuring, submitting, or operating Batch (GCP) — the managed batch/HPC job scheduler that runs containerized or script jobs on Compute Engine: the job spec (task groups, task count + parallelism, runnables as container/script, retries, max-run-duration), per-task CPU/memory + machine type + GPUs, provisioning models (standard vs Spot), allocation policies + instance templates + locations, environment + volumes (Cloud Storage/NFS/persistent disk), the job service account + IAM, and task-status logging. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Pick gcp-batch for fire-and-forget batch/HPC fan-out vs gcp-gke / gcp-cloud-run jobs (when already on K8s/serverless) vs gcp-compute-engine MIGs (long-running services). AWS analog is AWS Batch (aws-batch-specialist) — defer that cloud.",
       "category": "cloud",
@@ -11926,6 +11986,36 @@
       "path": "agents/cloud/gcp/services/security/gcp-cloud-asset-inventory-specialist.md"
     },
     {
+      "name": "gcp-cloud-billing-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud Billing (GCP) — account-level billing and cost management: billing accounts (self-serve vs invoiced), project-to-account links, budgets and threshold alerts (with Pub/Sub automation), billing data and pricing exports to BigQuery, cost breakdown by project/service/SKU/label, committed-use/sustained-use discounts and credits, and billing IAM. OWNS the GCP Cloud Billing service (billing/budgets/cost data) end-to-end. NOT the resource hierarchy and org-policy guardrails (gcp-resource-manager-specialist), nor workforce identity (gcp-cloud-identity-specialist). Defer org-wide IAM/exposure to gcp-security-reviewer and cross-cutting FinOps/architecture to the GCP role team (gcp-cloud-architect / gcp-iac-engineer). Cross-cloud peers (defer): aws-billing/cost-management, azure-cost-management.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-billing",
+        "management",
+        "cost",
+        "budgets",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-billing",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/management/gcp-cloud-billing-specialist.md"
+    },
+    {
       "name": "gcp-cloud-build-specialist",
       "description": "Use when designing, configuring, deploying, or operating Cloud Build (GCP) — the managed CI/build service: cloudbuild.yaml build configs and steps (builder images, args, waitFor), substitutions, artifacts/images, triggers (push/PR/tag/manual/Pub-Sub from GitHub/GitLab/Cloud Source Repos), the build service account + Secret Manager, private worker pools for VPC access, machine types, caching, and Artifact Registry, plus IAM, timeouts, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Cloud Build BUILDS artifacts; defer continuous DELIVERY/promotion (delivery pipelines, rollouts, canary) to gcp-cloud-deploy-specialist — together they are the GCP-native CI/CD chain. Both are bound vs the cross-platform devops CI/CD team (github-actions): use those for cross-platform/GitHub-Actions pipelines, this for GCP-native builds. AWS=CodeBuild; Azure=Azure Pipelines — defer those clouds.",
       "category": "cloud",
@@ -12072,6 +12162,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/networking/gcp-cloud-dns-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-identity-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud Identity (GCP) — workforce identity-as-a-service: managed user accounts and the org domain, groups (the backbone of IAM grants), SSO/SAML/OIDC with external IdPs, directory provisioning (Google Cloud Directory Sync from AD/LDAP, SCIM), device management and context-aware access, MFA/2SV enforcement, and delegated admin roles. OWNS the GCP Cloud Identity managed workforce-identity service end-to-end. NOT customer/end-user auth (gcp-identity-platform-specialist) and NOT GCP authorization bindings/Workload Identity Federation (the gcp-iam-specialist). Defer org-wide posture to gcp-security-reviewer and cross-cutting identity architecture to the GCP role team (gcp-cloud-architect / gcp-security-reviewer). Cross-cloud peers (defer): aws-iam-identity-center, azure-entra-id.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-identity",
+        "management",
+        "identity",
+        "sso",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-identity",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/management/gcp-cloud-identity-specialist.md"
     },
     {
       "name": "gcp-cloud-interconnect-specialist",
@@ -13174,6 +13294,65 @@
       "path": "agents/cloud/gcp/services/security/gcp-identity-aware-proxy-specialist.md"
     },
     {
+      "name": "gcp-identity-platform-specialist",
+      "description": "Use when designing, configuring, securing, or operating Identity Platform (GCP) — customer identity and access management (CIAM): email/password and social/federated providers, OIDC and SAML enterprise SSO, MFA (SMS/TOTP), multi-tenancy (per-tenant user pools), the customer user store, ID/refresh token issuance and server-side verification, blocking functions and custom claims. OWNS the GCP Identity Platform CIAM service (the enterprise Firebase Auth) end-to-end. NOT workforce/employee identity (gcp-cloud-identity-specialist) and NOT GCP authorization bindings (the gcp-iam-specialist). Defer org-wide posture to gcp-security-reviewer and cross-cutting auth architecture to the GCP role team (gcp-cloud-architect / gcp-security-reviewer). Cross-cloud peers (defer): aws-cognito, azure-entra-external-id.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "identity-platform",
+        "management",
+        "ciam",
+        "authentication",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-identity-platform",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/management/gcp-identity-platform-specialist.md"
+    },
+    {
+      "name": "gcp-infrastructure-manager-specialist",
+      "description": "Use when designing, configuring, securing, or operating Infrastructure Manager (GCP) — the managed Terraform service that provisions GCP infra from Terraform configs: deployments and revisions, sourcing config from Cloud Storage or Git, previews (plan), apply/lock, Google-managed state, the runner service account, input variables and outputs. OWNS the GCP Infrastructure Manager managed-Terraform service (operating deployments). NOT authoring the Terraform/HCL itself or general Terraform language work — that is the gcp-iac-engineer role and terraform-architect (this service runs their configs). NOT the resource hierarchy/org policy (gcp-resource-manager-specialist) or the governed solutions catalog (gcp-service-catalog-specialist). Defer org-wide exposure to gcp-security-reviewer and architecture to the GCP role team (gcp-cloud-architect). Cross-cloud peer (defer): aws-cloudformation.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "infrastructure-manager",
+        "management",
+        "terraform",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-infrastructure-manager",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/management/gcp-infrastructure-manager-specialist.md"
+    },
+    {
       "name": "gcp-looker-specialist",
       "description": "Use when designing, configuring, securing, or operating Looker (GCP) — the BI and embedded analytics platform built on LookML: models/explores/views/dimensions/measures, derived tables and PDTs with datagroup caching, Looks and dashboards, the SQL Runner, scheduled deliveries, the API/SDK, signed/SSO embedded analytics, and Git-backed LookML projects, plus database connections, roles/model-sets/groups and row-level access filters, and cost. This specialist OWNS the managed BI / semantic-layer service. It is the GCP analog of **aws-quicksight** (defer to it for AWS BI). NOT data/etl-architect, which DESIGNS cloud-agnostic metrics/pipelines, and NOT data/sql-optimizer, which tunes individual queries — this owns the Looker/LookML platform. Defer the underlying BigQuery warehouse to gcp-bigquery-specialist. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
       "category": "cloud",
@@ -13563,6 +13742,36 @@
       "path": "agents/cloud/gcp/gcp-reliability-engineer.md"
     },
     {
+      "name": "gcp-resource-manager-specialist",
+      "description": "Use when designing, configuring, securing, or operating Resource Manager (GCP) — the resource hierarchy and governance: organization → folders → projects → resources, creating/moving/deleting projects and folders, organization policies (boolean/list/custom constraints) as guardrails, tags (for conditional IAM/policy) and labels (for allocation), liens, and how IAM/policies inherit downward. OWNS the GCP Resource Manager hierarchy-and-governance service end-to-end (landing-zone structure, org policy). NOT account-level billing/budgets (gcp-cloud-billing-specialist) and NOT IAM role bindings/custom roles themselves (the gcp-iam-specialist — this service places the policies/hierarchy IAM attaches to). Defer org-wide posture to gcp-security-reviewer and architecture to the GCP role team (gcp-cloud-architect / gcp-security-reviewer). Cross-cloud peer (defer): aws-organizations.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "resource-manager",
+        "management",
+        "hierarchy",
+        "org-policy",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-resource-manager",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/management/gcp-resource-manager-specialist.md"
+    },
+    {
       "name": "gcp-secret-manager-specialist",
       "description": "Use when configuring, securing, or operating Secret Manager (GCP) — the managed secret store: secrets and immutable versions (latest alias), replication (automatic vs user-managed multi-region), CMEK payload encryption, rotation (period + Pub/Sub + function), expiration, consumer wiring (Cloud Run/Functions mounts, GKE CSI, client libraries), and least-privilege secret-level accessor IAM. CONFIGURES the one GCP Secret Manager service end-to-end. NOT cross-cutting security posture/review/triage — defer to the gcp-security-reviewer role (read-only audit) and to the security-category agents (appsec-auditor / threat-modeler) for app-level secret usage/threat modeling. Sibling GCP security specialists own their service: iam, cloud-kms (CMEK keys), security-command-center, certificate-authority-service, certificate-manager, binary-authorization. Cross-cloud peers (defer): aws-secrets-manager, azure-key-vault (secrets). NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer) for architecture or broad IaC.",
       "category": "cloud",
@@ -13677,6 +13886,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/security/gcp-sensitive-data-protection-specialist.md"
+    },
+    {
+      "name": "gcp-service-catalog-specialist",
+      "description": "Use when designing, configuring, securing, or operating Service Catalog (GCP) — a curated, governed catalog of approved internal solutions admins publish for org users to discover and self-service deploy: catalogs, versioned solutions (backed by Terraform configs / Deployment Manager templates / Marketplace solutions), sharing to projects/folders/org, admin (producer) vs consumer IAM, and launching a solution as a tracked deployment. OWNS the GCP Service Catalog (Private Catalog) governed self-service service end-to-end. NOT the managed-Terraform execution engine (gcp-infrastructure-manager-specialist) and NOT the resource hierarchy/org policy (gcp-resource-manager-specialist). Defer org-wide posture to gcp-security-reviewer and architecture to the GCP role team (gcp-cloud-architect / gcp-iac-engineer). Cross-cloud peer (defer): aws-service-catalog.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "service-catalog",
+        "management",
+        "governance",
+        "self-service",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-service-catalog",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/management/gcp-service-catalog-specialist.md"
     },
     {
       "name": "gcp-shielded-vms-specialist",
@@ -32373,6 +32612,23 @@
       "path": "skills/cloud/aws-x-ray/SKILL.md"
     },
     {
+      "name": "azure-machine-learning",
+      "description": "Use when designing, provisioning, securing, or operating Azure Machine Learning — Microsoft Azure's managed platform for building, training, deploying, and operating ML models (Azure Machine Learning). Covers workspaces and the studio, compute (compute instances, compute clusters, attached/serverless, Kubernetes), jobs (command/sweep/pipeline) and pipelines, datastores and data assets, the model registry and environments, managed online endpoints (real-time) and batch endpoints, AutoML, MLflow tracking/registry integration, prompt flow for LLM apps, plus instance sizing, autoscaling, VNet/Private Link, managed identity/RBAC, CMK, and cost. Loads the Azure ML knowledge: provision a workspace + compute, run training jobs, register models, deploy endpoints, and verify. Consumed by the Azure ML specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed ML platform (Azure Machine Learning).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-machine-learning",
+        "ai-ml",
+        "machine-learning",
+        "training",
+        "endpoints",
+        "mlops"
+      ],
+      "version": "0.1.0",
+      "status": "experimental",
+      "path": "skills/cloud/azure-machine-learning/SKILL.md"
+    },
+    {
       "name": "azure-services",
       "description": "The substantive Microsoft Azure platform capability — compute (Virtual Machines, App Service, Azure Functions, AKS, Container Apps), storage (Blob, Managed Disks, Files), databases (Azure SQL, Cosmos DB, Database for PostgreSQL/MySQL), data/analytics (Synapse, Data Factory, Event Hubs, Service Bus), networking (Virtual Network, Load Balancer, Application Gateway, Azure DNS, Front Door), identity/IAM (Entra ID, RBAC, managed identities), governance (Management Groups, Subscriptions, Azure Policy), the Azure Well-Architected Framework, regions/availability zones, and tooling (az CLI, ARM/Bicep, Terraform). Use when designing, building, reviewing, securing, costing, or operating anything on Azure — picking the right managed service, applying least-privilege RBAC, choosing zonal vs zone-redundant vs multi-region, or validating az/Bicep/Terraform. Any agent touching Azure (architect, IaC, security reviewer, cost governor, reliability/networking/observability/data engineer) can load it.",
       "category": "cloud",
@@ -33045,6 +33301,23 @@
       "path": "skills/cloud/gcp-artifact-registry/SKILL.md"
     },
     {
+      "name": "gcp-backup-and-dr",
+      "description": "Use when designing, provisioning, securing, or operating Backup and DR Service — Google Cloud's centralized, application-consistent backup and disaster-recovery service for Compute Engine VMs, databases, and file systems (Backup and DR Service). Covers backup vaults (immutable, with enforced retention/locks), backup plans and policies (schedules, retention, templates), backup/recovery appliances, protected resources and resource backup configs, on-demand and scheduled backups, point-in-time and cross-region restore, plus IAM, CMEK, cost, and limits. Loads the Backup and DR knowledge: create a vault, attach a plan, protect resources, restore, and verify. Consumed by the Backup and DR specialist and by the GCP role team (gcp-cloud-architect / gcp-iac-engineer) when providing managed backup/DR (Backup and DR Service).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "backup-and-dr",
+        "storage",
+        "backup",
+        "disaster-recovery",
+        "backup-vault",
+        "retention"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-backup-and-dr/SKILL.md"
+    },
+    {
       "name": "gcp-batch",
       "description": "Use when designing, provisioning, securing, or operating Batch — Google Cloud's fully managed batch/HPC job scheduler that runs containerized or script jobs on Compute Engine: the job spec (task groups, task count + parallelism, runnables as container or script, retries, max-run-duration), compute resources (machine type, CPU/memory per task, GPUs), provisioning models (standard vs Spot), allocation policies + instance templates + locations, environment + volumes (Cloud Storage / NFS / persistent disk), the job service account + IAM, and logging/monitoring of task status. Loads the Batch knowledge: author a job spec, choose provisioning + parallelism, mount storage, submit the job, and verify tasks succeed. Consumed by the Batch specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they run managed batch/HPC jobs (Batch).",
       "category": "cloud",
@@ -33178,6 +33451,23 @@
       "path": "skills/cloud/gcp-cloud-asset-inventory/SKILL.md"
     },
     {
+      "name": "gcp-cloud-billing",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Billing — Google Cloud's account-level billing, budgeting, and cost-management system (Cloud Billing). Covers billing accounts (self-serve vs invoiced) and project-to-account links, budgets and threshold alerts (with Pub/Sub for programmatic responses), Cloud Billing data and pricing exports to BigQuery, cost breakdown by project/service/SKU/label, committed-use and sustained-use discounts, credits, billing IAM roles, and quota/limits. Loads the Cloud Billing knowledge: link projects, set budgets/alerts, export to BigQuery, analyze cost, and verify. Consumed by the Cloud Billing specialist and by the GCP role team (gcp-cloud-architect / gcp-iac-engineer) when standing up billing and cost governance (Cloud Billing).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-billing",
+        "management",
+        "cost",
+        "budgets",
+        "finops",
+        "bigquery-export"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-billing/SKILL.md"
+    },
+    {
       "name": "gcp-cloud-build",
       "description": "Use when designing, provisioning, securing, or operating Cloud Build — Google Cloud's managed CI/build service: build configs (cloudbuild.yaml / Dockerfile), build steps (containerized steps, builder images, `args`, `waitFor` for parallelism), substitutions, artifacts and images, triggers (push/PR/tag/manual/Pub-Sub/webhook from GitHub/GitLab/Cloud Source Repositories), the build service account and per-step permissions, private worker pools (private pools) for VPC/private access, machine types, caching, and Artifact Registry integration, plus IAM, timeouts, and cost (Cloud Build). Loads the Cloud Build knowledge: author cloudbuild.yaml, create a trigger, build/push artifacts, secure the build identity, and verify a green build. Consumed by the Cloud Build specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add CI.",
       "category": "cloud",
@@ -33258,6 +33548,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-cloud-dns/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-identity",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Identity — Google Cloud's identity-as-a-service for managing workforce users, groups, and devices and acting as an identity provider for Google services (Cloud Identity). Covers managed user accounts and the organization domain, groups and group-based access (the backbone of IAM grants), single sign-on (SSO/SAML/OIDC) with external IdPs, directory and user/group provisioning (SCIM, Google Cloud Directory Sync from on-prem AD/LDAP), device management and context-aware access, MFA/2SV and security policies, plus admin roles and limits. Loads the Cloud Identity knowledge: set up the domain, provision users/groups, federate SSO, enforce MFA/device policy, and verify. Consumed by the Cloud Identity specialist and by the GCP role team (gcp-cloud-architect / gcp-security-reviewer) when establishing workforce identity (Cloud Identity).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-identity",
+        "management",
+        "identity",
+        "sso",
+        "groups",
+        "workforce-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-identity/SKILL.md"
     },
     {
       "name": "gcp-cloud-interconnect",
@@ -33830,6 +34137,39 @@
       "path": "skills/cloud/gcp-identity-aware-proxy/SKILL.md"
     },
     {
+      "name": "gcp-identity-platform",
+      "description": "Use when designing, provisioning, securing, or operating Identity Platform — Google Cloud's customer identity and access management (CIAM) service for adding sign-up, sign-in, and auth to your apps (Identity Platform). The enterprise-grade evolution of Firebase Auth: covers email/password and many social/federated providers, OIDC and SAML enterprise SSO, multi-factor authentication (SMS/TOTP), multi-tenancy (per-tenant user pools and providers), the user store and account management, ID/refresh token issuance and verification, blocking functions and custom claims, plus IAM, quotas, and cost. Loads the Identity Platform knowledge: enable providers, configure MFA and tenants, integrate the SDK, verify tokens, and verify end to end. Consumed by the Identity Platform specialist and by the GCP role team (gcp-cloud-architect / gcp-security-reviewer) when adding customer auth (Identity Platform).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "identity-platform",
+        "management",
+        "ciam",
+        "authentication",
+        "mfa",
+        "multi-tenancy"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-identity-platform/SKILL.md"
+    },
+    {
+      "name": "gcp-infrastructure-manager",
+      "description": "Use when designing, provisioning, securing, or operating Infrastructure Manager — Google Cloud's managed Terraform service that provisions and manages GCP infrastructure from Terraform configurations (Infrastructure Manager). Covers deployments (a managed Terraform stack), revisions and revision history, sourcing config from Cloud Storage or a Git repo (Developer Connect / Secure Source Manager), previews (plan), apply/lock/unlock, managed Terraform state in a Google-managed bucket, the service account that runs Terraform, input variables, deletion, plus IAM, quotas, and cost. Loads the Infrastructure Manager knowledge: create a deployment from config, preview, apply, inspect state/outputs, and verify. Consumed by the Infrastructure Manager specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when running managed Terraform deployments (Infrastructure Manager).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "infrastructure-manager",
+        "management",
+        "terraform",
+        "iac",
+        "deployments"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-infrastructure-manager/SKILL.md"
+    },
+    {
       "name": "gcp-looker",
       "description": "Use when designing, provisioning, securing, or operating Looker — Google Cloud's enterprise business intelligence and embedded analytics platform built on LookML, its semantic modeling language (models, explores, views, dimensions/measures, derived tables, PDTs), with Looks, dashboards, the SQL Runner, scheduled deliveries, the API/SDK, embedded analytics (signed/SSO embed), and Git-backed LookML projects, plus connections, user/group/role permissions and access filters, and cost. Loads the Looker knowledge: model LookML, build explores and dashboards, configure database connections and row-level access, embed analytics, and verify a query and dashboard render correctly. Consumed by the Looker specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle BI/semantic-layer workloads (Looker).",
       "category": "cloud",
@@ -33995,6 +34335,23 @@
       "path": "skills/cloud/gcp-recaptcha/SKILL.md"
     },
     {
+      "name": "gcp-resource-manager",
+      "description": "Use when designing, provisioning, securing, or operating Resource Manager — Google Cloud's service for managing the resource hierarchy and applying governance across it (Resource Manager). Covers the hierarchy (organization → folders → projects → resources), creating/moving/deleting projects and folders, the organization node and Cloud Identity link, organization policies (org policy constraints, boolean and list, custom constraints) for guardrails, labels and tags (with tag-based IAM/policy), liens to prevent deletion, and how IAM and policies inherit down the tree, plus quotas and limits. Loads the Resource Manager knowledge: shape the hierarchy, apply org policies, label/tag, and verify inheritance. Consumed by the Resource Manager specialist and by the GCP role team (gcp-cloud-architect / gcp-security-reviewer) when designing the landing-zone hierarchy and governance (Resource Manager).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "resource-manager",
+        "management",
+        "hierarchy",
+        "org-policy",
+        "governance",
+        "landing-zone"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-resource-manager/SKILL.md"
+    },
+    {
       "name": "gcp-secret-manager",
       "description": "Use when designing, provisioning, securing, or operating Secret Manager — Google Cloud's managed service for storing, versioning, accessing, and rotating secrets like API keys, passwords, certificates, and connection strings (Secret Manager). Covers secrets and immutable secret versions (add/access/disable/destroy, version aliases and \"latest\"), replication policy (automatic vs user-managed multi-region), CMEK encryption of secret payloads, rotation (rotation period + Pub/Sub topic notifications wired to a rotation function), expiration/TTL, access via client libraries / Cloud Run + GKE secret integration / gcloud, least-privilege accessor IAM, audit logging, plus cost and limits. Loads the Secret Manager knowledge: create secrets with the right replication, add versions, set rotation, grant least-privilege accessors, and verify access. Consumed by the Secret Manager specialist and by the GCP role team (gcp-security-reviewer / gcp-cloud-architect) when wiring secret storage (Secret Manager).",
       "category": "cloud",
@@ -34042,6 +34399,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-sensitive-data-protection/SKILL.md"
+    },
+    {
+      "name": "gcp-service-catalog",
+      "description": "Use when designing, provisioning, securing, or operating Service Catalog — Google Cloud's service for publishing a curated, governed catalog of approved internal solutions that admins make available for org users to discover and deploy (Service Catalog). Covers catalogs (the container), solutions and their versions (Terraform configs / Deployment Manager templates / Cloud Marketplace solutions), sharing catalogs to projects/folders/org, IAM admin vs end-user (consumer) roles, launching/deploying a solution as an enrolled deployment, governance so users deploy only approved/compliant patterns, plus quotas and limits. Loads the Service Catalog knowledge: create a catalog, add governed solutions, share it, deploy as a consumer, and verify. Consumed by the Service Catalog specialist and by the GCP role team (gcp-cloud-architect / gcp-iac-engineer) when standing up a self-service governed catalog (Service Catalog).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "service-catalog",
+        "management",
+        "governance",
+        "self-service",
+        "internal-solutions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-service-catalog/SKILL.md"
     },
     {
       "name": "gcp-services",

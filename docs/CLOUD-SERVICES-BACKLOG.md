@@ -296,22 +296,22 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 ### storage
 - [x] gcp|storage|cloud-storage|Cloud Storage
 - [x] gcp|storage|filestore|Filestore
-- [ ] gcp|storage|backup-and-dr|Backup and DR Service
+- [x] gcp|storage|backup-and-dr|Backup and DR Service
 
 ### management
-- [ ] gcp|management|cloud-billing|Cloud Billing
-- [ ] gcp|management|cloud-identity|Cloud Identity
-- [ ] gcp|management|identity-platform|Identity Platform
-- [ ] gcp|management|infrastructure-manager|Infrastructure Manager
-- [ ] gcp|management|resource-manager|Resource Manager
-- [ ] gcp|management|service-catalog|Service Catalog
+- [x] gcp|management|cloud-billing|Cloud Billing
+- [x] gcp|management|cloud-identity|Cloud Identity
+- [x] gcp|management|identity-platform|Identity Platform
+- [x] gcp|management|infrastructure-manager|Infrastructure Manager
+- [x] gcp|management|resource-manager|Resource Manager
+- [x] gcp|management|service-catalog|Service Catalog
 
 ---
 
 ## Azure
 
 ### ai-ml
-- [ ] azure|ai-ml|azure-machine-learning|Azure Machine Learning
+- [x] azure|ai-ml|azure-machine-learning|Azure Machine Learning
 - [ ] azure|ai-ml|azure-openai|Azure OpenAI Service
 - [ ] azure|ai-ml|azure-ai-search|Azure AI Search
 - [ ] azure|ai-ml|azure-ai-vision|Azure AI Vision
