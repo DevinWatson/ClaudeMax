@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 678,
-    "skills": 118,
+    "agents": 687,
+    "skills": 119,
     "categories": 16
   },
   "agents": [
@@ -671,6 +671,258 @@
       "version": "1.1.0",
       "status": "stable",
       "path": "agents/security/appsec-auditor.md"
+    },
+    {
+      "name": "astro-accessibility-specialist",
+      "description": "Use for a WCAG accessibility audit of an Astro site — semantic structure of `.astro` markup, keyboard and focus management (including across view-transition/`<ClientRouter>` navigation), ARIA usage in islands and slots, color contrast, and forms — with severity-ranked findings (Astro). Invoke for an accessibility review of rendered pages and islands. NOT for fixing the issues (use astro-developer), NOT for security review (use astro-security-reviewer), NOT for performance (use astro-performance-engineer). NOT for Next.js (use nextjs-accessibility-specialist) or a SPA framework's a11y review.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "astro",
+        "accessibility",
+        "wcag",
+        "a11y"
+      ],
+      "skills": [
+        "wcag-audit",
+        "astro-framework",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/astro/astro-accessibility-specialist.md"
+    },
+    {
+      "name": "astro-ai-engineer",
+      "description": "Use when building LLM/AI features into an Astro site — streaming chat and completions rendered in an interactive island, tool calling, RAG retrieval, and prompt orchestration wired through SSR endpoints/server routes with provider calls kept server-side (Astro). Invoke to design and implement AI-powered product features. NOT for generic content/UI features (use astro-developer), NOT for system architecture (use astro-architect), NOT for component-API design (use astro-component-architect), NOT for security review of those endpoints (use astro-security-reviewer). NOT for Next.js (use nextjs-ai-engineer) or a SPA framework's AI work.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "astro",
+        "ai",
+        "llm",
+        "rag"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "astro-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/astro/astro-ai-engineer.md"
+    },
+    {
+      "name": "astro-architect",
+      "description": "Use when shaping the architecture of an Astro site or module — page/island topology and hydration boundaries, content-collection modeling and the content vs data strategy, the static-vs-SSR-adapter-vs-hybrid output decision, file-based routing structure, which UI framework(s) to use for islands, and cross-island state strategy (Astro). Invoke for system-level design and trade-off analysis. NOT for implementing features (use astro-developer), NOT for designing a single component's/design-system API (use astro-component-architect), NOT for performance tuning of existing code (use astro-performance-engineer). NOT for architecting a SPA-first app (route to react-architect/vue-architect/the Svelte team) or Next.js architecture (use nextjs-architect) — Astro is the islands/content meta-framework.",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "astro",
+        "architecture",
+        "islands",
+        "content-collections"
+      ],
+      "skills": [
+        "software-architecture",
+        "astro-framework",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/astro/astro-architect.md"
+    },
+    {
+      "name": "astro-component-architect",
+      "description": "Use when designing the API surface of reusable Astro primitives — the `Astro.props` and slot (default/named) contract of `.astro` components, the island boundary and `client:*` posture of a reusable interactive component, content-collection schema design (Zod schemas, content vs data), and the layout/theming strategy — and implementing those primitives (Astro). Invoke for component/island/content-collection API design and design-system work. NOT for app-level structure and output-mode strategy (use astro-architect), NOT for product feature implementation (use astro-developer), NOT for performance tuning (use astro-performance-engineer). NOT for Next.js (use the Next.js team) or designing a SPA framework's component library in isolation.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "astro",
+        "design-system",
+        "components",
+        "content-collections"
+      ],
+      "skills": [
+        "software-architecture",
+        "astro-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/astro/astro-component-architect.md"
+    },
+    {
+      "name": "astro-developer",
+      "description": "Use when turning an Astro requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Astro bug — an island that isn't interactive (missing/wrong `client:*`), an over-hydration/too-much-JS issue, a `.astro` script-vs-template error, a content-collection schema/typing bug, or a routing/`getStaticPaths`/output-mode problem (Astro). Invoke for building or extending pages, `.astro` components, islands, and content collections. NOT for system-level design (use astro-architect), NOT for design-system/component-API design (use astro-component-architect), NOT for adding tests to code you did not write (use astro-test-engineer), NOT for Core Web Vitals tuning (use astro-performance-engineer). NOT for the internals of a hydrated React/Vue/Svelte island or a Next.js app (route to that framework's developer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "astro",
+        "islands",
+        "content-collections",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "astro-framework",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/astro/astro-developer.md"
+    },
+    {
+      "name": "astro-observability-engineer",
+      "description": "Use when instrumenting an Astro site for production visibility — client-side error reporting and RUM/Web Vitals from islands, server-side logging/tracing in SSR endpoints and server routes (`Astro.request`), structured logging, and OpenTelemetry browser/server tracing across the static-vs-SSR boundary (Astro). Invoke to add or improve logs, traces, and metrics. NOT for fixing the underlying bug (use astro-developer), NOT for Core Web Vitals tuning (use astro-performance-engineer), NOT for system architecture (use astro-architect). NOT for Next.js (use nextjs-observability-engineer) or a SPA framework's instrumentation.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "astro",
+        "observability",
+        "telemetry",
+        "rum"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "astro-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/astro/astro-observability-engineer.md"
+    },
+    {
+      "name": "astro-performance-engineer",
+      "description": "Use when an Astro site is slow or failing Core Web Vitals — large LCP, layout shift, slow INP, too much shipped client JS, over-hydrated islands, or unoptimized images — and you need it measured and tuned (Astro). Invoke to profile and optimize an existing site via downgrading `client:load`→`client:visible`/`idle`, splitting or removing islands, `astro:assets` image optimization, prerendering, and shipping less client JS. NOT for building new features (use astro-developer), NOT for system architecture (use astro-architect), NOT for component-API design (use astro-component-architect), NOT for accessibility review (use astro-accessibility-specialist). NOT for Next.js (use nextjs-performance-engineer) or a SPA framework's perf work.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "astro",
+        "performance",
+        "web-vitals",
+        "hydration"
+      ],
+      "skills": [
+        "web-vitals-optimization",
+        "astro-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/astro/astro-performance-engineer.md"
+    },
+    {
+      "name": "astro-security-reviewer",
+      "description": "Use for a defensive, code-level security review of an Astro site or diff — XSS via `set:html`/unescaped content, secret/token exposure in client-shipped island bundles, unsafe handling of user input in SSR endpoints/`Astro.request` (and missing auth on server routes), unsafe `client:only`/dynamic component injection, and unvalidated content/API/LLM responses driving the DOM — with severity-ranked findings (Astro). Invoke for an authorized appsec review. NOT for fixing the issues (use astro-developer), NOT for accessibility review (use astro-accessibility-specialist), NOT for performance (use astro-performance-engineer). NOT for Next.js (use nextjs-security-reviewer) or a SPA framework's review.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "astro",
+        "security",
+        "appsec",
+        "xss",
+        "ssr"
+      ],
+      "skills": [
+        "appsec-review",
+        "astro-framework",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/astro/astro-security-reviewer.md"
+    },
+    {
+      "name": "astro-test-engineer",
+      "description": "Use when adding or improving automated tests for an Astro site — unit tests for `.astro`/island logic and content-collection schemas with Vitest, island/component tests, and end-to-end flows covering routing, hydration, and rendered output with Playwright (Astro). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use astro-developer), NOT for performance profiling (use astro-performance-engineer), NOT for security review (use astro-security-reviewer). NOT for Next.js (use nextjs-test-engineer) or a SPA framework's test work.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "astro",
+        "testing",
+        "vitest",
+        "playwright"
+      ],
+      "skills": [
+        "test-automation",
+        "astro-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/astro/astro-test-engineer.md"
     },
     {
       "name": "bash-developer",
@@ -18649,6 +18901,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/business/assumption-hygiene/SKILL.md"
+    },
+    {
+      "name": "astro-framework",
+      "description": "Use when working in Astro — the islands architecture and partial hydration (client:load/idle/visible/media/only), `.astro` components and the script-vs-template split, type-safe content collections (content/data, schemas, MDX), framework-agnostic UI islands (React/Vue/Svelte/Solid), the file-based router, output modes (static vs server SSR adapters vs hybrid), view transitions, and Astro's zero-JS-by-default performance model. TRIGGER on hydration/`client:*` questions, \"my island isn't interactive\"/over-hydration issues, `.astro` frontmatter-vs-template confusion, content-collection schema/typing errors, SSR-adapter vs static output decisions, view-transition wiring, or `astro build`/`astro check` errors. NOT for framework-agnostic UI concerns (CSS/layout, generic a11y), and NOT for the internal authoring model of a hydrated React/Vue/Svelte island — that is the host framework's boundary (Astro is the islands/content meta-framework around them). Any agent touching Astro can load it.",
+      "category": "web",
+      "tags": [
+        "astro",
+        "islands",
+        "partial-hydration",
+        "content-collections",
+        "ssr",
+        "view-transitions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/astro-framework/SKILL.md"
     },
     {
       "name": "behavior-preserving-refactoring",

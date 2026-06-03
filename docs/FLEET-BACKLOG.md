@@ -36,7 +36,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] vue
 - [x] svelte
 - [x] angular
-- [ ] astro
+- [x] astro
 - [ ] remix
 - [ ] django (python web)
 - [ ] rails (ruby web)
