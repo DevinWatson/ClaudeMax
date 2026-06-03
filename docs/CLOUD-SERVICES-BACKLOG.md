@@ -206,16 +206,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] gcp|ai-ml|vision-api|Vision API
 - [x] gcp|ai-ml|speech-to-text|Speech-to-Text
 - [x] gcp|ai-ml|text-to-speech|Text-to-Speech
-- [ ] gcp|ai-ml|translation|Cloud Translation
-- [ ] gcp|ai-ml|cloud-tpu|Cloud TPU
-- [ ] gcp|ai-ml|enterprise-knowledge-graph|Enterprise Knowledge Graph
+- [x] gcp|ai-ml|translation|Cloud Translation
+- [x] gcp|ai-ml|cloud-tpu|Cloud TPU
+- [x] gcp|ai-ml|enterprise-knowledge-graph|Enterprise Knowledge Graph
 
 ### application-development
-- [ ] gcp|application-development|api-gateway|API Gateway
-- [ ] gcp|application-development|apigee|Apigee
-- [ ] gcp|application-development|application-integration|Application Integration
-- [ ] gcp|application-development|cloud-build|Cloud Build
-- [ ] gcp|application-development|cloud-deploy|Cloud Deploy
+- [x] gcp|application-development|api-gateway|API Gateway
+- [x] gcp|application-development|apigee|Apigee
+- [x] gcp|application-development|application-integration|Application Integration
+- [x] gcp|application-development|cloud-build|Cloud Build
+- [x] gcp|application-development|cloud-deploy|Cloud Deploy
 - [ ] gcp|application-development|cloud-scheduler|Cloud Scheduler
 - [ ] gcp|application-development|cloud-tasks|Cloud Tasks
 - [ ] gcp|application-development|cloud-workstations|Cloud Workstations

@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 993,
-    "skills": 285,
+    "agents": 1001,
+    "skills": 293,
     "categories": 17
   },
   "agents": [
@@ -11485,6 +11485,93 @@
       "path": "agents/domain/game-balance-designer.md"
     },
     {
+      "name": "gcp-api-gateway-specialist",
+      "description": "Use when designing, configuring, deploying, or operating API Gateway (GCP) — the lightweight, fully managed gateway that fronts Cloud Functions / Cloud Run / App Engine / HTTP backends from an OpenAPI 2.0 spec: the API, immutable API Config, and Gateway resources, backend routing (x-google-backend), API-key and JWT (Firebase/Auth0/Google) auth, CORS, per-method quotas, the Gateway service account, IAM, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Pick API Gateway for LIGHTWEIGHT managed routing/auth in front of serverless; defer FULL API management (rich policies, developer portal, monetization, analytics) to gcp-apigee-specialist. Both ↔ aws-api-gateway-specialist / azure-api-management-specialist — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "api-gateway",
+        "application-development",
+        "openapi",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-api-gateway",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-development/gcp-api-gateway-specialist.md"
+    },
+    {
+      "name": "gcp-apigee-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Apigee (GCP) — the FULL API management platform: the org, environments and environment groups, API proxies (proxy/target endpoints, flows), policies (OAuth2/API-key/JWT, quota, spike arrest, caching, mediation/fault), shared flows, API products, developers/apps, the developer portal, monetization, analytics, Apigee X vs hybrid, networking, IAM, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Pick Apigee for full lifecycle API management (rich policies, portal, monetization, large API programs); defer LIGHTWEIGHT managed routing/auth in front of serverless to gcp-api-gateway-specialist (cheaper). Both ↔ aws-api-gateway-specialist / azure-api-management-specialist — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "apigee",
+        "application-development",
+        "api-management",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-apigee",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-development/gcp-apigee-specialist.md"
+    },
+    {
+      "name": "gcp-application-integration-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Application Integration (GCP) — the iPaaS for connecting apps and automating business processes: integration flows on a visual canvas, triggers (API/scheduler/Pub-Sub/event), tasks (data mapping, REST/SOAP, connector tasks, conditions/loops, sub-integrations, suspend/approval), the Integration Connectors fabric to SaaS/databases/Google services, variables, authentication profiles, error handling, regions, IAM, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. This owns low-code iPaaS integration — defer code-defined GCP workflow orchestration to the Workflows specialist and event routing/delivery to the Eventarc/Pub-Sub specialists. The AWS equivalent is AWS AppFlow/Step Functions; Azure is Logic Apps — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "application-integration",
+        "application-development",
+        "ipaas",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-application-integration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-development/gcp-application-integration-specialist.md"
+    },
+    {
       "name": "gcp-cloud-architect",
       "description": "Use when designing or reviewing a Google Cloud architecture — selecting managed services, laying out projects/folders/VPCs/regions, and evaluating a design against the Google Cloud Architecture Framework's pillars (GCP). Produces the design and trade-offs, not the IaC. NOT for writing Terraform/Deployment Manager (use gcp-iac-engineer), IAM/exposure auditing (gcp-security-reviewer), cost tuning (gcp-cost-governor), generic IaC across clouds (terraform-architect), or AWS/Azure architecture (aws-/azure-cloud-architect).",
       "category": "cloud",
@@ -11509,6 +11596,93 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/gcp-cloud-architect.md"
+    },
+    {
+      "name": "gcp-cloud-build-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Cloud Build (GCP) — the managed CI/build service: cloudbuild.yaml build configs and steps (builder images, args, waitFor), substitutions, artifacts/images, triggers (push/PR/tag/manual/Pub-Sub from GitHub/GitLab/Cloud Source Repos), the build service account + Secret Manager, private worker pools for VPC access, machine types, caching, and Artifact Registry, plus IAM, timeouts, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Cloud Build BUILDS artifacts; defer continuous DELIVERY/promotion (delivery pipelines, rollouts, canary) to gcp-cloud-deploy-specialist — together they are the GCP-native CI/CD chain. Both are bound vs the cross-platform devops CI/CD team (github-actions): use those for cross-platform/GitHub-Actions pipelines, this for GCP-native builds. AWS=CodeBuild; Azure=Azure Pipelines — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-build",
+        "application-development",
+        "ci",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-build",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-development/gcp-cloud-build-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-deploy-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Cloud Deploy (GCP) — the managed continuous-delivery service: delivery pipelines, targets (GKE/Cloud Run/GKE Enterprise), the promotion sequence + approvals, releases and rollouts, Skaffold render/deploy, canary/progressive strategies (phases, verify), automation rules, deploy hooks, rollback, and the per-target execution service account, plus IAM, multi-environment promotion, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Cloud Deploy DELIVERS/promotes artifacts; defer BUILDING them (cloudbuild.yaml, triggers, images) to gcp-cloud-build-specialist — together they are the GCP-native CI/CD chain. Both are bound vs the cross-platform devops CI/CD team (github-actions): use those for cross-platform/GitHub-Actions delivery, this for GCP-native delivery. AWS=CodeDeploy/CodePipeline; Azure=Azure Pipelines — defer those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-deploy",
+        "application-development",
+        "continuous-delivery",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-deploy",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/application-development/gcp-cloud-deploy-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-tpu-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Cloud TPU (GCP) — Google's ML accelerators: choosing the generation (v5e/v5p), slice topology and Pods, single- vs multi-host slices and Multislice, TPU VMs vs queued resources, the JAX/PyTorch-XLA/TF runtime, spot/reservations, VPC placement, IAM, CMEK, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. This owns the ACCELERATOR hardware — defer training orchestration, the model registry, endpoints, and pipelines to gcp-vertex-ai-specialist (which can run on TPUs); generic GPU/Compute VMs belong to the compute specialist. NOT the language ai-engineer/rag-engineer roles, which write model code; this provisions and operates the accelerator. The AWS equivalent is AWS Trainium/Inferentia; Azure uses ND-series GPUs — defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-tpu",
+        "ai-ml",
+        "accelerators",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-tpu",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/ai-ml/gcp-cloud-tpu-specialist.md"
     },
     {
       "name": "gcp-cost-governor",
@@ -11596,6 +11770,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/ai-ml/gcp-document-ai-specialist.md"
+    },
+    {
+      "name": "gcp-enterprise-knowledge-graph-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Enterprise Knowledge Graph (GCP) — managed entity reconciliation (record linkage / entity resolution) and knowledge-graph construction over BigQuery: schema mapping source columns to the entity schema, running reconciliation jobs that cluster records into resolved entities, building/querying the graph, and the Knowledge Graph search/lookup API, plus BigQuery I/O, IAM, CMEK/VPC-SC, residency, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. This owns ENTITY RECONCILIATION / KG construction — defer generic ML modeling, training, and serving to gcp-vertex-ai-specialist and BigQuery warehouse design to the data specialist. NOT the language ai-engineer/rag-engineer roles, which build app-side code. No direct AWS/Azure equivalent — defer cross-cloud work to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "enterprise-knowledge-graph",
+        "ai-ml",
+        "entity-reconciliation",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-enterprise-knowledge-graph",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/ai-ml/gcp-enterprise-knowledge-graph-specialist.md"
     },
     {
       "name": "gcp-iac-engineer",
@@ -11801,6 +12004,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/ai-ml/gcp-text-to-speech-specialist.md"
+    },
+    {
+      "name": "gcp-translation-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Cloud Translation (GCP) — pretrained machine translation: Basic (v2) text/HTML translation + language detection vs Advanced (v3) glossaries, batch + document translation, and AutoML custom models, plus model/edition selection, regional endpoints, IAM, CMEK/VPC-SC, residency, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. This is text→text translation — defer speech to gcp-speech-to-text-specialist/gcp-text-to-speech-specialist and arbitrary custom NLP model training/serving to gcp-vertex-ai-specialist. NOT the language ai-engineer/rag-engineer roles, which build app-side LLM code; this owns the managed service. The AWS equivalent is Amazon Translate; Azure is Azure AI Translator — defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "translation",
+        "ai-ml",
+        "machine-translation",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-translation",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/ai-ml/gcp-translation-specialist.md"
     },
     {
       "name": "gcp-vertex-ai-specialist",
@@ -30804,6 +31036,103 @@
       "path": "skills/domain/game-balance/SKILL.md"
     },
     {
+      "name": "gcp-api-gateway",
+      "description": "Use when designing, provisioning, securing, or operating API Gateway — Google Cloud's lightweight, fully managed gateway that fronts serverless and HTTP backends from an OpenAPI 2.0 (Swagger) config: the API, API Config, and Gateway resources, routing to Cloud Functions / Cloud Run / App Engine / HTTP backends, authentication (API keys, JWT/Firebase/Auth0/Google ID tokens via security definitions), CORS, quotas, and monitoring, plus regions, IAM, and cost (API Gateway). Loads the API Gateway knowledge: author the OpenAPI config, deploy an API Config + Gateway, wire backends and auth, secure the identity, and verify a routed request. Consumed by the API Gateway specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they front an API.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "api-gateway",
+        "application-development",
+        "openapi",
+        "serverless",
+        "api-keys"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-api-gateway/SKILL.md"
+    },
+    {
+      "name": "gcp-apigee",
+      "description": "Use when designing, provisioning, securing, or operating Apigee — Google Cloud's full API management platform: the Apigee organization, environments and environment groups, API proxies (proxy/target endpoints, flows, conditional flows), policies (OAuth2/API key/JWT verification, quota, spike arrest, traffic management, mediation/transformation, fault handling), shared flows and flow hooks, the developer portal, API products, developer apps and API keys, analytics, and deployment, plus Apigee X vs hybrid, networking/peering, IAM, and cost (Apigee). Loads the Apigee knowledge: build a proxy with policies, publish an API product + portal, secure with OAuth2/keys, deploy to an environment, and verify a managed call. Consumed by the Apigee specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they manage APIs at scale.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "apigee",
+        "application-development",
+        "api-management",
+        "api-proxy",
+        "oauth2"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-apigee/SKILL.md"
+    },
+    {
+      "name": "gcp-application-integration",
+      "description": "Use when designing, provisioning, securing, or operating Application Integration — Google Cloud's iPaaS (integration platform as a service) for connecting apps and automating business processes: integration flows on a visual canvas, triggers (API/scheduler/Pub-Sub/Cloud-Pub-Sub/event), tasks (data mapping, REST/SOAP calls, connector tasks, conditions/loops, sub-integrations, suspend/approval), the Integration Connectors fabric (managed connectors to SaaS, databases, and Google services), variables, authentication profiles, and error handling, plus regions, IAM, and cost (Application Integration). Loads the Application Integration knowledge: build an integration flow with a trigger and tasks, attach connectors and auth profiles, secure the identity, publish, and verify an execution. Consumed by the Application Integration specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add integration.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "application-integration",
+        "application-development",
+        "ipaas",
+        "connectors",
+        "integration-flow"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-application-integration/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-build",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Build — Google Cloud's managed CI/build service: build configs (cloudbuild.yaml / Dockerfile), build steps (containerized steps, builder images, `args`, `waitFor` for parallelism), substitutions, artifacts and images, triggers (push/PR/tag/manual/Pub-Sub/webhook from GitHub/GitLab/Cloud Source Repositories), the build service account and per-step permissions, private worker pools (private pools) for VPC/private access, machine types, caching, and Artifact Registry integration, plus IAM, timeouts, and cost (Cloud Build). Loads the Cloud Build knowledge: author cloudbuild.yaml, create a trigger, build/push artifacts, secure the build identity, and verify a green build. Consumed by the Cloud Build specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add CI.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-build",
+        "application-development",
+        "ci",
+        "build-triggers",
+        "cloudbuild-yaml"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-build/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-deploy",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Deploy — Google Cloud's managed continuous-delivery service: delivery pipelines, targets (GKE / Cloud Run / GKE Enterprise / Anthos), the promotion sequence and approvals, releases and rollouts, Skaffold-based render/deploy, canary and progressive deployment strategies (phases, percentages, verify), automation rules, deploy hooks, rollback, and the per-target execution service account, plus IAM, multi-environment promotion, and cost (Cloud Deploy). Loads the Cloud Deploy knowledge: define a delivery pipeline + targets with Skaffold, create a release, promote/approve through environments with a canary strategy, secure the identity, and verify a rollout. Consumed by the Cloud Deploy specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add continuous delivery.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-deploy",
+        "application-development",
+        "continuous-delivery",
+        "delivery-pipeline",
+        "skaffold"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-deploy/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-tpu",
+      "description": "Use when designing, provisioning, securing, or operating Cloud TPU — Google Cloud's custom ML accelerators: TPU generations (v5e, v5p, and their predecessors), single TPU VMs vs multi-host Pods and slices, topologies and chips/cores, the runtime (JAX, PyTorch/XLA, TensorFlow), TPU VM vs queued resources, Multislice training, the TPU runtime image, plus regions/zones, preemptible/spot and reservations, IAM, networking, and cost (Cloud TPU). Loads the Cloud TPU knowledge: choose the generation and slice topology, provision a TPU VM or queued resource, run a JAX/PyTorch/TF workload, secure the identity, and verify the accelerator runs a step. Consumed by the Cloud TPU specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add accelerators.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-tpu",
+        "ai-ml",
+        "accelerators",
+        "jax",
+        "pytorch",
+        "training"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-tpu/SKILL.md"
+    },
+    {
       "name": "gcp-document-ai",
       "description": "Use when designing, provisioning, securing, or operating Document AI — Google Cloud's document parsing platform: processors (OCR/Document OCR, Form Parser, specialized parsers like Invoice/Receipt/ID, and custom extractors trained in the Workbench), online and batch document processing, form + entity extraction with confidence scores, human-in-the-loop review, and the Document AI Warehouse for storing/searching processed documents (Document AI). Loads the Document AI knowledge: create a processor, process documents online/batch, extract entities, and verify the output schema. Consumed by the Document AI specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle document-processing workloads.",
       "category": "cloud",
@@ -30818,6 +31147,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-document-ai/SKILL.md"
+    },
+    {
+      "name": "gcp-enterprise-knowledge-graph",
+      "description": "Use when designing, provisioning, securing, or operating Enterprise Knowledge Graph (EKG) — Google Cloud's managed service for entity reconciliation and knowledge-graph construction: running entity reconciliation jobs that cluster and link records (people, organizations, etc.) across BigQuery datasets into resolved entities, building a knowledge graph from the reconciled entities, and the Knowledge Graph search/lookup API backed by Google's public KG, plus schema mapping, BigQuery I/O, IAM, residency, and cost (Enterprise Knowledge Graph). Loads the EKG knowledge: configure schema mapping, run a reconciliation job over BigQuery, construct/query the graph, secure the identity, and verify resolved entities. Consumed by the EKG specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add entity resolution.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "enterprise-knowledge-graph",
+        "ai-ml",
+        "entity-reconciliation",
+        "bigquery",
+        "knowledge-graph"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-enterprise-knowledge-graph/SKILL.md"
     },
     {
       "name": "gcp-services",
@@ -30870,6 +31215,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-text-to-speech/SKILL.md"
+    },
+    {
+      "name": "gcp-translation",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Translation — Google Cloud's pretrained machine translation service: the Basic edition (v2, simple text/HTML translation + language detection) and the Advanced edition (v3, glossaries, batch document and text translation, custom AutoML translation models, model selection, and Cloud Storage I/O), plus language support, format handling, IAM, residency, and cost (Cloud Translation). Loads the Translation knowledge: pick Basic vs Advanced, translate text/documents synchronously or in batch, attach glossaries and custom models, secure the identity, and verify an accurate translation. Consumed by the Cloud Translation specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add translation.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "translation",
+        "ai-ml",
+        "machine-translation",
+        "glossary",
+        "localization"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-translation/SKILL.md"
     },
     {
       "name": "gcp-vertex-ai",
