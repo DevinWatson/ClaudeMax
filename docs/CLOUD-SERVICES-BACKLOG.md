@@ -342,16 +342,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 ### databases
 - [x] azure|databases|azure-sql-database|Azure SQL Database
 - [x] azure|databases|sql-managed-instance|Azure SQL Managed Instance
-- [ ] azure|databases|cosmos-db|Azure Cosmos DB
-- [ ] azure|databases|azure-database-for-postgresql|Azure Database for PostgreSQL
-- [ ] azure|databases|azure-database-for-mysql|Azure Database for MySQL
-- [ ] azure|databases|azure-cache-for-redis|Azure Cache for Redis
-- [ ] azure|databases|managed-instance-for-cassandra|Azure Managed Instance for Apache Cassandra
+- [x] azure|databases|cosmos-db|Azure Cosmos DB
+- [x] azure|databases|azure-database-for-postgresql|Azure Database for PostgreSQL
+- [x] azure|databases|azure-database-for-mysql|Azure Database for MySQL
+- [x] azure|databases|azure-cache-for-redis|Azure Cache for Redis
+- [x] azure|databases|managed-instance-for-cassandra|Azure Managed Instance for Apache Cassandra
 
 ### storage
-- [ ] azure|storage|blob-storage|Azure Blob Storage
-- [ ] azure|storage|azure-files|Azure Files
-- [ ] azure|storage|azure-disk-storage|Azure Disk Storage
+- [x] azure|storage|blob-storage|Azure Blob Storage
+- [x] azure|storage|azure-files|Azure Files
+- [x] azure|storage|azure-disk-storage|Azure Disk Storage
 - [ ] azure|storage|azure-queue-storage|Azure Queue Storage
 - [ ] azure|storage|table-storage|Azure Table Storage
 - [ ] azure|storage|data-lake-storage|Azure Data Lake Storage

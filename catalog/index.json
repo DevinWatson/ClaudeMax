@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1097,
-    "skills": 389,
+    "agents": 1105,
+    "skills": 397,
     "categories": 17
   },
   "agents": [
@@ -5568,6 +5568,35 @@
       "path": "agents/cloud/azure/services/compute/azure-batch-specialist.md"
     },
     {
+      "name": "azure-blob-storage-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Blob Storage (Azure) — scalable object storage in a storage account: account kind/SKU and redundancy (LRS/ZRS/GRS/GZRS/RA-GRS), containers and block/append/page blobs, access tiers (hot/cool/cold/archive) + rehydration, lifecycle management, immutability (WORM/legal hold), versioning/soft delete/change feed, blob index tags, Entra ID/RBAC vs account keys, SAS (user-delegation/service/account), managed identities, private endpoints, and CMK. OWNS the Azure managed-service layer end-to-end (account SKU/redundancy, containers, tiering/lifecycle, data protection, Entra auth/SAS, networking) for object storage. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Sibling Azure storage specialists own files (azure-files) and disks (azure-disk-storage). Cross-cloud peers (defer): aws-s3, gcp-cloud-storage.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-blob-storage",
+        "storage",
+        "object-storage",
+        "specialist"
+      ],
+      "skills": [
+        "azure-blob-storage",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/storage/azure-blob-storage-specialist.md"
+    },
+    {
       "name": "azure-bot-service-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Bot Service (AZURE) — the managed platform that registers a Bot Framework bot and connects it to channels: the Azure Bot resource + messaging endpoint, channels (Teams, Web Chat, Direct Line, telephony, SMS), Direct Line App Service Extension, Entra ID app-registration / managed-identity app type and OAuth connection settings, hosting on App Service/Functions, tiers and channel billing, and cost. OWNS the managed service end-to-end (bot resource, channels, identity, endpoint wiring, scaling). NOT the app-side dialog/LLM logic or the bot code, and NOT the language ai-engineer/evals-engineer roles that build/eval it. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer). Pairs with azure-ai-language (CLU) and azure-openai (LLM bots). NOT sibling Azure AI services (search/vision/speech/document-intelligence/translator). Cross-cloud peer (defer): aws-lex.",
       "category": "cloud",
@@ -5596,6 +5625,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/ai-ml/azure-bot-service-specialist.md"
+    },
+    {
+      "name": "azure-cache-for-redis-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Cache for Redis (Azure) — the managed in-memory Redis cache/store PaaS: tiers (Basic/Standard/Premium/Enterprise/Enterprise Flash), clustering/sharding, persistence (RDB/AOF), zone redundancy, passive/active geo-replication, eviction policies + maxmemory, Enterprise modules (RediSearch/RedisJSON/RedisTimeSeries/RedisBloom), Entra (microsoft-identity) auth + access keys, managed identities, private endpoints/VNet, and TLS. OWNS the Azure managed-service layer end-to-end (tier/sizing, clustering, persistence, HA/geo-replication, eviction, Entra auth, networking) and DEFERS Redis data-structure/command/application-level design to the redis data team under agents/data/. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Sibling Azure DB specialists own their engines. Cross-cloud peers (defer): aws-elasticache, gcp-memorystore.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-cache-for-redis",
+        "databases",
+        "redis",
+        "specialist"
+      ],
+      "skills": [
+        "azure-cache-for-redis",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/databases/azure-cache-for-redis-specialist.md"
     },
     {
       "name": "azure-cloud-architect",
@@ -5711,6 +5769,35 @@
       "path": "agents/cloud/azure/services/containers/azure-container-registry-specialist.md"
     },
     {
+      "name": "azure-cosmos-db-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Cosmos DB (Azure) — the globally distributed multi-model NoSQL PaaS: API choice (NoSQL/Core, MongoDB, Cassandra, Gremlin, Table), partition-key design, RU/s throughput (provisioned/autoscale/serverless), the five consistency levels, turnkey global distribution + multi-region writes, continuous/periodic backups (PITR), Entra ID/RBAC + key auth, managed identities, private endpoints, and CMK. OWNS the Azure managed-service layer end-to-end (account/API, partition strategy, throughput, consistency, region topology, backups, Entra auth, networking) and DEFERS app data modeling and per-API (Mongo/Cassandra/Gremlin) query tuning to the data engine teams under agents/data/ (Mongo API modeling → the mongodb data team). NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-dynamodb, gcp-firestore.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-cosmos-db",
+        "databases",
+        "nosql",
+        "specialist"
+      ],
+      "skills": [
+        "azure-cosmos-db",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/databases/azure-cosmos-db-specialist.md"
+    },
+    {
       "name": "azure-cost-governor",
       "description": "Use when reducing or governing Microsoft Azure spend — finding idle/over-provisioned resources, right-sizing, picking pricing models (Reservations / Savings Plans / Spot VMs / Synapse serverless vs dedicated pools), cutting egress and un-lifecycled storage cost, and verifying with Cost Management / the az CLI (Azure). NOT for architecture design (azure-cloud-architect), reliability/DR (azure-reliability-engineer), writing the IaC change itself (azure-iac-engineer), or AWS/GCP cost (aws-/gcp-cost-governor).",
       "category": "cloud",
@@ -5768,6 +5855,64 @@
       "path": "agents/cloud/azure/azure-data-engineer.md"
     },
     {
+      "name": "azure-database-for-mysql-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Database for MySQL (Azure) — the managed community MySQL PaaS (Flexible Server): compute tiers (Burstable/General Purpose/Business Critical) and storage/IOPS sizing, zone-redundant/same-zone HA, read replicas, automated backups + PITR, maintenance windows and major-version upgrades, server parameters, Entra ID auth + managed identities, VNet/private access and firewall, and CMK. OWNS the Azure managed-service layer end-to-end (provisioning, sizing/tier, HA/replicas, backups, parameters, Entra auth, networking) and DEFERS engine-internal SQL/query/index/InnoDB tuning and schema design to the mysql data team under agents/data/. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Sibling Azure DB specialists own their engines. Cross-cloud peers (defer): aws-rds, gcp-cloud-sql.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-database-for-mysql",
+        "databases",
+        "mysql",
+        "specialist"
+      ],
+      "skills": [
+        "azure-database-for-mysql",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/databases/azure-database-for-mysql-specialist.md"
+    },
+    {
+      "name": "azure-database-for-postgresql-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Database for PostgreSQL (Azure) — the managed community PostgreSQL PaaS (Flexible Server): compute tiers (Burstable/General Purpose/Memory Optimized) and storage/IOPS sizing, zone-redundant/same-zone HA, read replicas, automated backups + PITR, maintenance windows and major-version upgrades, extensions and server parameters, PgBouncer pooling, Entra ID auth + managed identities, VNet/private access and firewall, and CMK. OWNS the Azure managed-service layer end-to-end (provisioning, sizing/tier, HA/replicas, backups, parameters, Entra auth, networking) and DEFERS engine-internal SQL/query/index/vacuum tuning and schema design to the postgres data team under agents/data/. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Sibling Azure DB specialists own their engines. Cross-cloud peers (defer): aws-rds, gcp-cloud-sql.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-database-for-postgresql",
+        "databases",
+        "postgresql",
+        "specialist"
+      ],
+      "skills": [
+        "azure-database-for-postgresql",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/databases/azure-database-for-postgresql-specialist.md"
+    },
+    {
       "name": "azure-dedicated-host-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Dedicated Host (Azure) — single-tenant physical servers dedicated to one subscription for VM placement: host groups (zone + fault-domain count + automatic placement), host SKUs/families, maintenance control, capacity reservations, BYOL/Azure Hybrid Benefit licensing, and placing VMs onto hosts. OWNS the dedicated-hardware/host layer end-to-end (host group, host SKU, placement, licensing, host-level isolation). For the VMs that run on the host (size/disks/image/auth) cross-ref azure-virtual-machines. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT scale-set autoscaling (azure-vm-scale-sets) or VMware private clouds (azure-vmware-solution). Cross-cloud peers (defer): AWS EC2 Dedicated Hosts, GCP sole-tenant nodes.",
       "category": "cloud",
@@ -5795,6 +5940,64 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/compute/azure-dedicated-host-specialist.md"
+    },
+    {
+      "name": "azure-disk-storage-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Disk Storage (Azure) — managed disks as block storage for VMs: disk types (Ultra Disk, Premium SSD v2, Premium SSD, Standard SSD, Standard HDD), provisioned IOPS/throughput and bursting, sizing/resize, host caching, snapshots and images (incremental snapshots), shared disks, LRS/ZRS disks, server-side encryption (platform/customer-managed keys via disk encryption sets, double encryption), Azure Disk Encryption (in-guest), and disk-access private endpoints. OWNS the Azure managed-service layer end-to-end (disk type/size, performance, redundancy, snapshots, encryption, attachment) for VM block storage; cross-ref azure-virtual-machines for the compute side. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Sibling Azure storage specialists own object storage (azure-blob-storage) and file shares (azure-files). Cross-cloud peers (defer): aws-ebs, gcp-persistent-disk.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-disk-storage",
+        "storage",
+        "managed-disks",
+        "specialist"
+      ],
+      "skills": [
+        "azure-disk-storage",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/storage/azure-disk-storage-specialist.md"
+    },
+    {
+      "name": "azure-files-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Files (Azure) — managed SMB and NFS file shares in a storage account: tiers (Premium FileStorage SSD vs Standard transaction-optimized/hot/cool HDD), SMB vs NFS 4.1, identity-based SMB auth (Entra ID Kerberos / on-prem AD DS / Entra Domain Services) + NTFS ACLs, Azure File Sync (cloud tiering to on-prem caches), share snapshots and soft delete, large file shares, private endpoints/VNet, and CMK. OWNS the Azure managed-service layer end-to-end (account/share, tier/protocol, identity-based access, sync/snapshots, networking) for shared file storage. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Sibling Azure storage specialists own object storage (azure-blob-storage) and VM disks (azure-disk-storage). Cross-cloud peers (defer): aws-efs / aws-fsx, gcp-filestore.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-files",
+        "storage",
+        "file-share",
+        "specialist"
+      ],
+      "skills": [
+        "azure-files",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/storage/azure-files-specialist.md"
     },
     {
       "name": "azure-functions-specialist",
@@ -5884,6 +6087,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/ai-ml/azure-machine-learning-specialist.md"
+    },
+    {
+      "name": "azure-managed-instance-for-cassandra-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Managed Instance for Apache Cassandra (Azure) — managed open-source Apache Cassandra / DataStax-compatible clusters on dedicated VMs: cluster/datacenter/node topology, SKU and disk sizing, multi-datacenter and multi-region replication, hybrid clusters joining self-hosted/on-prem rings, managed repair/patching, backups, Cassandra/CQL auth and Entra-managed governance, VNet injection/private networking, and encryption. OWNS the Azure managed-service layer end-to-end (cluster/datacenter sizing, node count, replication topology, hybrid joins, repair/backups, VNet, access) and DEFERS CQL data modeling / keyspace and partition design to the cassandra data team under agents/data/. This is real Apache Cassandra on VMs, not the Cosmos DB Cassandra API (defer that RU-model path to azure-cosmos-db-specialist). NOT the Azure role team (cross-cutting). Cross-cloud peer (defer): aws-keyspaces / self-managed Cassandra.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-managed-instance-for-cassandra",
+        "databases",
+        "cassandra",
+        "specialist"
+      ],
+      "skills": [
+        "azure-managed-instance-for-cassandra",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/databases/azure-managed-instance-for-cassandra-specialist.md"
     },
     {
       "name": "azure-networking-engineer",
@@ -33497,6 +33729,22 @@
       "path": "skills/cloud/azure-batch/SKILL.md"
     },
     {
+      "name": "azure-blob-storage",
+      "description": "Use when designing, provisioning, securing, or operating Azure Blob Storage — Azure's massively scalable object storage in a storage account (Azure Blob Storage). Covers storage account kinds/SKUs and redundancy (LRS/ZRS/GRS/GZRS/RA-GRS), containers and the three blob types (block/append/page), access tiers (hot/cool/cold/archive) and rehydration, lifecycle management, immutability (WORM/legal hold), versioning/soft delete/change feed, blob index tags, Entra ID/RBAC vs account keys, SAS (user-delegation/service/account), managed identities, private endpoints, and CMK encryption. Loads the knowledge: pick an account SKU/redundancy and tiers, configure lifecycle and protection, provision, secure, and verify uploads/downloads work. Consumed by the azure-blob-storage specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Blob Storage).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-blob-storage",
+        "storage",
+        "object-storage",
+        "blob",
+        "lifecycle"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-blob-storage/SKILL.md"
+    },
+    {
       "name": "azure-bot-service",
       "description": "Use when designing, provisioning, securing, or operating Azure Bot Service — Microsoft Azure's managed platform for building and connecting conversational bots across channels (Azure Bot Service). Covers the Azure Bot resource (registration) and its messaging endpoint, the Bot Framework SDK/Composer, channels (Web Chat / Direct Line, Microsoft Teams, telephony, email, SMS), Direct Line / Direct Line App Service Extension, authentication via Entra ID app registration / managed identity and OAuth connection settings, integration with Azure AI Language CLU and Azure OpenAI for NLU/LLM bots, hosting on App Service/Functions, tiers and channel billing, and cost. Loads the knowledge: provision a bot resource + channels, wire the messaging endpoint, secure it, and verify a conversation. Consumed by the azure-bot-service specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Bot Service).",
       "category": "cloud",
@@ -33511,6 +33759,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-bot-service/SKILL.md"
+    },
+    {
+      "name": "azure-cache-for-redis",
+      "description": "Use when designing, provisioning, securing, or operating Azure Cache for Redis — Azure's fully managed in-memory Redis cache/data store PaaS (Azure Cache for Redis). Covers the tiers (Basic, Standard, Premium, Enterprise, Enterprise Flash), clustering/sharding, data persistence (RDB/AOF), zone redundancy, active geo-replication, eviction policies and maxmemory, modules (RediSearch/RedisJSON/RedisTimeSeries/RedisBloom on Enterprise), Entra ID/microsoft-identity auth and access keys, managed identities, private endpoints/VNet, and TLS. Loads the knowledge: pick a tier and size, choose clustering/persistence/geo-replication, provision, secure, and verify the cache answers PING/SET/GET. Consumed by the azure-cache-for-redis specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Cache for Redis).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-cache-for-redis",
+        "databases",
+        "redis",
+        "cache",
+        "in-memory"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-cache-for-redis/SKILL.md"
     },
     {
       "name": "azure-container-apps",
@@ -33560,6 +33824,54 @@
       "path": "skills/cloud/azure-container-registry/SKILL.md"
     },
     {
+      "name": "azure-cosmos-db",
+      "description": "Use when designing, provisioning, securing, or operating Azure Cosmos DB — Azure's globally distributed, multi-model NoSQL/relational PaaS database (Azure Cosmos DB). Covers the API surface (NoSQL/Core, MongoDB, Cassandra, Gremlin/graph, Table), partition-key design, RU/s throughput (provisioned, autoscale, serverless), the five consistency levels (strong→eventual), turnkey global distribution with multi-region writes, automatic and continuous backups (PITR), Entra ID/RBAC and key-based auth, managed identities, private endpoints, and CMK encryption. Loads the knowledge: choose an API and partition key, size throughput, pick consistency and regions, provision, secure, and verify the account answers reads/writes. Consumed by the azure-cosmos-db specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Cosmos DB).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-cosmos-db",
+        "databases",
+        "nosql",
+        "multi-model",
+        "global-distribution"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-cosmos-db/SKILL.md"
+    },
+    {
+      "name": "azure-database-for-mysql",
+      "description": "Use when designing, provisioning, securing, or operating Azure Database for MySQL — Azure's fully managed community MySQL PaaS, primarily the Flexible Server deployment (Azure Database for MySQL). Covers compute tiers (Burstable/General Purpose/Business Critical) and storage/IOPS sizing, zone-redundant and same-zone HA, read replicas, automated backups with point-in-time restore, maintenance windows and version upgrades, server parameters, Entra ID authentication and managed identities, VNet integration/private access and firewall, and CMK encryption. Loads the knowledge: pick a tier and size, choose HA/replicas, provision, secure, and verify the server accepts connections. Consumed by the azure-database-for-mysql specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Database for MySQL).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-database-for-mysql",
+        "databases",
+        "mysql",
+        "flexible-server",
+        "paas"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-database-for-mysql/SKILL.md"
+    },
+    {
+      "name": "azure-database-for-postgresql",
+      "description": "Use when designing, provisioning, securing, or operating Azure Database for PostgreSQL — Azure's fully managed community PostgreSQL PaaS, primarily the Flexible Server deployment (Azure Database for PostgreSQL). Covers compute tiers (Burstable/General Purpose/Memory Optimized) and storage/IOPS sizing, zone-redundant and same-zone HA, read replicas, automated backups with point-in-time restore, maintenance windows and version upgrades, extensions and server parameters, connection pooling (PgBouncer), Entra ID authentication and managed identities, VNet integration/private access and firewall, and CMK encryption. Loads the knowledge: pick a tier and size, choose HA/replicas, provision, secure, and verify the server accepts connections. Consumed by the azure-database-for-postgresql specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Database for PostgreSQL).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-database-for-postgresql",
+        "databases",
+        "postgresql",
+        "flexible-server",
+        "paas"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-database-for-postgresql/SKILL.md"
+    },
+    {
       "name": "azure-dedicated-host",
       "description": "Use when designing, provisioning, securing, or operating Azure Dedicated Host — single-tenant physical servers dedicated to one Azure subscription for VM placement, used for compliance, licensing (Bring-Your-Own-License / Azure Hybrid Benefit), and host-level isolation/control (Azure Dedicated Host). Covers host groups, host SKUs/families (Dsv3/Esv3/Fsv2 etc.), availability-zone placement, fault domains, host-level maintenance control, automatic vs manual VM placement, capacity reservations, and the relationship to Azure Virtual Machines that run on the host. Loads the knowledge: choose a host SKU and group, place hosts in zones/fault domains, provision, secure, and verify hosts are allocated and VMs land on them. Consumed by the azure-dedicated-host specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Dedicated Host).",
       "category": "cloud",
@@ -33574,6 +33886,38 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-dedicated-host/SKILL.md"
+    },
+    {
+      "name": "azure-disk-storage",
+      "description": "Use when designing, provisioning, securing, or operating Azure Disk Storage — Azure managed disks attached as block storage to virtual machines (Azure Disk Storage). Covers disk types (Ultra Disk, Premium SSD v2, Premium SSD, Standard SSD, Standard HDD), performance tiers and provisioned IOPS/throughput, bursting, disk sizing and resize, snapshots and images, incremental snapshots, shared disks, host caching, zone-redundant (ZRS) disks, server-side encryption with platform or customer-managed keys, Azure Disk Encryption (in-guest), and disk-access private endpoints. Loads the knowledge: pick a disk type and size, configure performance/snapshots/encryption, provision, attach, secure, and verify the disk is attached and readable/writable. Consumed by the azure-disk-storage specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Disk Storage).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-disk-storage",
+        "storage",
+        "managed-disks",
+        "block-storage",
+        "snapshots"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-disk-storage/SKILL.md"
+    },
+    {
+      "name": "azure-files",
+      "description": "Use when designing, provisioning, securing, or operating Azure Files — Azure's fully managed file shares accessible over SMB and NFS in a storage account (Azure Files). Covers the tiers (Premium FileStorage on SSD vs Standard transaction-optimized/hot/cool on HDD), SMB vs NFS 4.1 protocols, identity-based SMB auth (Entra ID Kerberos / on-prem AD DS / Entra Domain Services) and NTFS ACLs, Azure File Sync (cloud tiering to on-prem caches), snapshots and soft delete, large file shares, private endpoints and the network model, and CMK encryption. Loads the knowledge: pick a tier and protocol, size the share, configure sync/snapshots, provision, secure, and verify a mount read/write. Consumed by the azure-files specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Files).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-files",
+        "storage",
+        "file-share",
+        "smb",
+        "nfs"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-files/SKILL.md"
     },
     {
       "name": "azure-functions",
@@ -33607,6 +33951,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-machine-learning/SKILL.md"
+    },
+    {
+      "name": "azure-managed-instance-for-cassandra",
+      "description": "Use when designing, provisioning, securing, or operating Azure Managed Instance for Apache Cassandra — Azure's managed service running open-source Apache Cassandra / DataStax-compatible clusters on dedicated VMs (Azure Managed Instance for Apache Cassandra). Covers cluster/datacenter/node topology, SKU and disk sizing, multi-datacenter and multi-region replication, hybrid clusters that join on-prem/self-hosted Cassandra rings, automated repair and patching, backups, Cassandra/CQL authentication and Entra-integrated management, VNet injection/private networking, and encryption. Loads the knowledge: size the cluster and datacenters, choose replication, provision, secure, and verify the cluster is healthy and answers CQL. Consumed by the azure-managed-instance-for-cassandra specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Managed Instance for Apache Cassandra).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-managed-instance-for-cassandra",
+        "databases",
+        "cassandra",
+        "nosql",
+        "wide-column"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-managed-instance-for-cassandra/SKILL.md"
     },
     {
       "name": "azure-openai",
