@@ -108,16 +108,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] aws|ai-ml|personalize|Amazon Personalize
 - [x] aws|ai-ml|forecast|Amazon Forecast
 - [x] aws|ai-ml|fraud-detector|Amazon Fraud Detector
-- [ ] aws|ai-ml|q-developer|Amazon Q Developer
+- [x] aws|ai-ml|q-developer|Amazon Q Developer
 
 ### developer-tools
-- [ ] aws|developer-tools|codebuild|AWS CodeBuild
-- [ ] aws|developer-tools|codedeploy|AWS CodeDeploy
-- [ ] aws|developer-tools|codepipeline|AWS CodePipeline
-- [ ] aws|developer-tools|codeartifact|AWS CodeArtifact
-- [ ] aws|developer-tools|x-ray|AWS X-Ray
-- [ ] aws|developer-tools|codecatalyst|Amazon CodeCatalyst
-- [ ] aws|developer-tools|codeguru|Amazon CodeGuru
+- [x] aws|developer-tools|codebuild|AWS CodeBuild
+- [x] aws|developer-tools|codedeploy|AWS CodeDeploy
+- [x] aws|developer-tools|codepipeline|AWS CodePipeline
+- [x] aws|developer-tools|codeartifact|AWS CodeArtifact
+- [x] aws|developer-tools|x-ray|AWS X-Ray
+- [x] aws|developer-tools|codecatalyst|Amazon CodeCatalyst
+- [x] aws|developer-tools|codeguru|Amazon CodeGuru
 
 ### application-integration
 - [ ] aws|application-integration|sns|Amazon SNS

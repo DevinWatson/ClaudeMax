@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 921,
-    "skills": 213,
+    "agents": 929,
+    "skills": 221,
     "categories": 17
   },
   "agents": [
@@ -1250,6 +1250,186 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/networking/aws-cloudfront-specialist.md"
+    },
+    {
+      "name": "aws-codeartifact-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS CodeArtifact (AWS) — the managed package-registry service for npm, PyPI, Maven, NuGet, Cargo, Ruby, Swift, and generic formats: domains and repositories, upstream repositories and external connections (npmjs/PyPI/Maven Central) with caching, package origin controls against dependency confusion, repository/domain resource policies, authorization tokens and client configuration, KMS encryption, asset dedup, and cost. These specialists own the AWS-NATIVE dev/CI-CD services; CodeArtifact is the package registry the CodeBuild/CodePipeline chain publishes to (cross-ref aws-codebuild-specialist). NOT the devops / github-actions team — they own general, cross-platform CI/CD and non-AWS registries (GitHub Packages, Artifactory, Nexus); this owns the AWS-managed CodeArtifact service. NOT the AWS role team for cross-cutting work. For GCP Artifact Registry or Azure Artifacts defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "codeartifact",
+        "developer-tools",
+        "package-registry",
+        "artifacts",
+        "specialist"
+      ],
+      "skills": [
+        "aws-codeartifact",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/developer-tools/aws-codeartifact-specialist.md"
+    },
+    {
+      "name": "aws-codebuild-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS CodeBuild (AWS) — the managed CI/build service: build projects, the buildspec (phases/artifacts/reports/batch), source providers, compute types and environment images (managed/custom/ARM/GPU/Lambda compute), local/S3 caching, secrets and env, VPC builds, reserved fleets, test reporting, service-role IAM, and per-minute cost. These specialists own the AWS-NATIVE dev/CI-CD services; CodeBuild is the build link in the CodePipeline → CodeBuild → CodeDeploy chain (cross-ref aws-codepipeline-specialist for orchestration and aws-codedeploy-specialist for release). NOT the devops / github-actions team — they own general, cross-platform CI/CD (GitHub Actions, GitLab CI, Jenkins) and pipeline strategy; this specialist owns the AWS-managed CodeBuild service specifically. NOT the AWS role team (aws-cloud-architect/aws-iac-engineer/aws-security-reviewer) for cross-cutting work. For GCP Cloud Build or Azure Pipelines defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "codebuild",
+        "developer-tools",
+        "ci",
+        "build",
+        "specialist"
+      ],
+      "skills": [
+        "aws-codebuild",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/developer-tools/aws-codebuild-specialist.md"
+    },
+    {
+      "name": "aws-codecatalyst-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon CodeCatalyst (AWS) — the unified software-development service combining source repos, CI/CD workflows, cloud development environments, issues, and packages via blueprints: spaces and projects, blueprints (project/custom), source repositories (native or linked GitHub), workflows (actions, on-demand/fleet compute, environments), Dev Environments (cloud IDEs, devfiles), AWS account connections via IAM roles, identity/PATs, billing tiers, and cost. These specialists own the AWS-NATIVE dev/CI-CD services; CodeCatalyst is the UNIFIED dev platform spanning the lifecycle (versus the discrete CodeBuild/CodeDeploy/CodePipeline blocks — cross-ref those). NOT the devops / github-actions team — they own general, cross-platform CI/CD and dev-platform strategy; this owns the AWS-managed CodeCatalyst service. NOT the AWS role team for cross-cutting work. For GitLab/Azure DevOps or GCP equivalents defer elsewhere.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "codecatalyst",
+        "developer-tools",
+        "unified-dev",
+        "devops",
+        "specialist"
+      ],
+      "skills": [
+        "aws-codecatalyst",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/developer-tools/aws-codecatalyst-specialist.md"
+    },
+    {
+      "name": "aws-codedeploy-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS CodeDeploy (AWS) — the managed deployment service for EC2/on-premises, ECS, and Lambda: applications and deployment groups, the AppSpec file and lifecycle hooks, in-place vs blue/green deployments, all-at-once/canary/linear rollout, traffic shifting via ELB/alias/task sets, CloudWatch-alarm auto-rollback, the CodeDeploy agent, and service-role IAM. These specialists own the AWS-NATIVE dev/CI-CD services; CodeDeploy is the deploy link in the CodePipeline → CodeBuild → CodeDeploy chain (cross-ref aws-codepipeline-specialist for orchestration and aws-codebuild-specialist for the build). NOT the devops / github-actions team — they own general, cross-platform CI/CD and deploy strategy (GitHub Actions, Argo, Spinnaker); this specialist owns the AWS-managed CodeDeploy service specifically. NOT the AWS role team (aws-cloud-architect/aws-iac-engineer/aws-security-reviewer) for cross-cutting work. For GCP or Azure deployment services defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "codedeploy",
+        "developer-tools",
+        "deployment",
+        "blue-green",
+        "specialist"
+      ],
+      "skills": [
+        "aws-codedeploy",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/developer-tools/aws-codedeploy-specialist.md"
+    },
+    {
+      "name": "aws-codeguru-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon CodeGuru (AWS) — the ML-powered developer tool for automated code review (CodeGuru Reviewer / CodeGuru Security) and runtime application profiling (CodeGuru Profiler): repository associations and PR/full code reviews, recommendations and security detectors with suppression, profiling groups and the agent, flame graphs/heap-summary, anomaly detection and cost-of-inefficiency recommendations, supported languages/repos, IAM, KMS, and cost. These specialists own the AWS-NATIVE dev/CI-CD and dev-tooling services; CodeGuru is the AWS-native AI code-REVIEW and runtime-PROFILING tool (cross-ref the observability roles for metrics/logs and the language security-reviewer roles for deep app code). NOT the devops / github-actions team — they own general, cross-platform CI/CD; review/profiling via CodeGuru belongs here. NOT the AWS role team for cross-cutting work. For GCP/Azure code-review/profiling tools defer elsewhere.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "codeguru",
+        "developer-tools",
+        "code-review",
+        "profiling",
+        "specialist"
+      ],
+      "skills": [
+        "aws-codeguru",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/developer-tools/aws-codeguru-specialist.md"
+    },
+    {
+      "name": "aws-codepipeline-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS CodePipeline (AWS) — the managed continuous-delivery orchestrator that models a release as stages of actions (source → build → test → deploy): stages/actions and providers (CodeConnections source, CodeBuild build, CodeDeploy/ECS/CloudFormation deploy, manual approval), input/output artifacts and the S3 artifact store, V1 vs V2 pipeline types, triggers/filters and variables, parallel actions, cross-account/region, and service-role IAM. These specialists own the AWS-NATIVE dev/CI-CD services; CodePipeline orchestrates the CodePipeline → CodeBuild → CodeDeploy chain (cross-ref aws-codebuild-specialist and aws-codedeploy-specialist). NOT the devops / github-actions team — they own general, cross-platform CI/CD orchestration and strategy (GitHub Actions, GitLab CI, Jenkins); this owns the AWS-managed CodePipeline service. NOT the AWS role team for cross-cutting work. For GCP Cloud Deploy or Azure Pipelines defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "codepipeline",
+        "developer-tools",
+        "cd",
+        "pipeline",
+        "specialist"
+      ],
+      "skills": [
+        "aws-codepipeline",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/developer-tools/aws-codepipeline-specialist.md"
     },
     {
       "name": "aws-comprehend-specialist",
@@ -2694,6 +2874,35 @@
       "path": "agents/cloud/aws/services/networking/aws-privatelink-specialist.md"
     },
     {
+      "name": "aws-q-developer-specialist",
+      "description": "Use when enabling, configuring, deploying, or operating Amazon Q Developer (AWS) — AWS's managed generative-AI coding assistant across IDEs, the CLI, the console, and the web: subscription tiers (Free/Pro), IAM Identity Center licensing, inline suggestions and reference tracking, agentic developers (/dev, /test, /doc, /review), code transformation (Java/.NET upgrades), customizations from private repos, security scanning, profiles, and data handling. NOT the language ai-engineer/rag-engineer/evals-engineer roles — those build app-side LLM/RAG/eval code; this specialist owns rolling out and administering the managed assistant (licensing, profiles, customizations, surfaces). It is a managed coding-assistant product, not a model you train (SageMaker) or a raw foundation model (aws-bedrock-specialist). NOT the AWS role team (aws-cloud-architect/aws-iac-engineer/aws-security-reviewer) for cross-cutting work. For GitHub Copilot or GCP/Azure equivalents defer elsewhere.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "q-developer",
+        "ai-ml",
+        "coding-assistant",
+        "specialist"
+      ],
+      "skills": [
+        "aws-q-developer",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/ai-ml/aws-q-developer-specialist.md"
+    },
+    {
       "name": "aws-qldb-specialist",
       "description": "Use when maintaining, verifying, exporting, or MIGRATING Amazon QLDB (AWS) — the managed immutable ledger with a cryptographically verifiable journal: tables/indexes, document revisions and history(), PartiQL, digests/proofs verification, journal export to S3 / Kinesis streaming, KMS encryption, STANDARD permissions mode, and least-privilege IAM. IMPORTANT: QLDB is deprecated (AWS end-of-support) — do NOT recommend it for new builds; steer net-new verifiable/audit work to aws-aurora (PostgreSQL audit/history) and surface migration. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. Pick a DB sibling instead for: managed relational (rds), AWS-native relational + the recommended QLDB replacement (aurora), serverless NoSQL KV (dynamodb), time-series (timestream), DynamoDB cache (dax), Mongo-compatible (documentdb), graph (neptune). This specialist owns the QLDB service end-to-end. For GCP/Azure ledger/verifiable patterns defer to those clouds.",
       "category": "cloud",
@@ -3324,6 +3533,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/compute/aws-wavelength-specialist.md"
+    },
+    {
+      "name": "aws-x-ray-specialist",
+      "description": "Use when designing, instrumenting, configuring, or operating AWS X-Ray (AWS) — the managed distributed-tracing service: traces, segments and subsegments, trace-header/context propagation, the X-Ray daemon vs the ADOT/OpenTelemetry collector, SDK/auto-instrumentation, the service map, sampling rules, filter expressions and groups, annotations vs metadata, Insights/anomaly detection, integration with Lambda/API Gateway/ECS/EKS/EC2, IAM, KMS, and cost. These specialists own the AWS-NATIVE dev/CI-CD and dev-tooling services; X-Ray is the AWS-native distributed TRACING service (cross-ref the observability/monitoring roles for metrics/logs/dashboards, and aws-cloud-architect for system-wide observability design). NOT the devops / github-actions team — they own general, cross-platform CI/CD; tracing instrumentation and the X-Ray managed service belong here. NOT the AWS role team for cross-cutting work. For GCP Cloud Trace or Azure Monitor/Application Insights distributed tracing defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "x-ray",
+        "developer-tools",
+        "tracing",
+        "observability",
+        "specialist"
+      ],
+      "skills": [
+        "aws-x-ray",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/developer-tools/aws-x-ray-specialist.md"
     },
     {
       "name": "azure-cloud-architect",
@@ -26032,6 +26271,102 @@
       "path": "skills/cloud/aws-cloudfront/SKILL.md"
     },
     {
+      "name": "aws-codeartifact",
+      "description": "Use when designing, provisioning, securing, or operating AWS CodeArtifact — the managed software-artifact repository service for storing and sharing packages across npm, PyPI, Maven, NuGet, Cargo, Ruby, Swift, and generic formats with upstream proxying to public registries (AWS CodeArtifact). Loads the CodeArtifact knowledge: domains and repositories, package formats and namespaces, upstream repositories and external connections (npmjs/PyPI/Maven Central), package origin controls, repository/domain policies and resource permissions, authorization tokens and client configuration (npm/pip/twine/mvn/dotnet), KMS encryption, asset storage and deduplication, cost levers, quotas, and verification by publishing and resolving a package. The 2nd consumer is the AWS role team (aws-iac-engineer / aws-cloud-architect) provisioning a private package registry. Consumed by the CodeArtifact specialist.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "codeartifact",
+        "developer-tools",
+        "package-registry",
+        "artifacts",
+        "devtools"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-codeartifact/SKILL.md"
+    },
+    {
+      "name": "aws-codebuild",
+      "description": "Use when designing, provisioning, securing, or operating AWS CodeBuild — the fully managed continuous-integration service that compiles source, runs tests, and produces deployable artifacts on managed or self-hosted compute without running your own build servers (AWS CodeBuild). Loads the CodeBuild knowledge: build projects, the buildspec (phases, env, artifacts, reports, batch builds), source providers, compute types and environment images (managed/custom/ARM/GPU/Lambda compute), local/S3 caching, environment variables and secrets, VPC builds, reserved-capacity fleets, build reports/test reporting, IAM service roles, cost levers, concurrency limits, and verification by running a build and inspecting logs/artifacts. The 2nd consumer is the AWS role team (aws-iac-engineer / aws-cloud-architect) provisioning CI compute. Consumed by the CodeBuild specialist.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "codebuild",
+        "developer-tools",
+        "ci",
+        "build",
+        "devtools"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-codebuild/SKILL.md"
+    },
+    {
+      "name": "aws-codecatalyst",
+      "description": "Use when designing, provisioning, securing, or operating Amazon CodeCatalyst — the unified software-development service that brings projects, source repositories, CI/CD workflows, cloud development environments, and issue tracking together with blueprints (Amazon CodeCatalyst). Loads the CodeCatalyst knowledge: spaces and projects, blueprints (project and custom), source repositories (native or linked GitHub), workflows (actions, compute/fleets, environments, source/build/test/deploy), Dev Environments (cloud IDEs, devfiles), environments and AWS account connections via IAM roles, issues/planning, packages, the personal access token and identity model, billing tiers, limits, and verification by running a workflow and launching a dev environment. The 2nd consumer is the AWS role team (aws-iac-engineer / aws-cloud-architect) standing up a unified dev platform. Consumed by the CodeCatalyst specialist.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "codecatalyst",
+        "developer-tools",
+        "devops",
+        "unified-dev",
+        "devtools"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-codecatalyst/SKILL.md"
+    },
+    {
+      "name": "aws-codedeploy",
+      "description": "Use when designing, provisioning, securing, or operating AWS CodeDeploy — the managed deployment service that automates application releases to EC2/on-premises, ECS, and Lambda with controlled rollout strategies and automatic rollback (AWS CodeDeploy). Loads the CodeDeploy knowledge: applications and deployment groups, compute platforms (EC2/on-prem, ECS, Lambda), the AppSpec file (hooks/lifecycle events), deployment strategies (in-place vs blue/green, all-at-once/canary/linear), traffic shifting and rollback/alarms, the CodeDeploy agent, target groups/load balancers, IAM service roles, deployment configs, cost/limits, and verification by running a deployment and confirming healthy traffic shift. The 2nd consumer is the AWS role team (aws-iac-engineer / aws-cloud-architect) provisioning release automation. Consumed by the CodeDeploy specialist.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "codedeploy",
+        "developer-tools",
+        "deployment",
+        "blue-green",
+        "devtools"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-codedeploy/SKILL.md"
+    },
+    {
+      "name": "aws-codeguru",
+      "description": "Use when designing, provisioning, securing, or operating Amazon CodeGuru — the developer tool that uses ML to find code-quality and security issues in pull requests (CodeGuru Reviewer) and to find the most expensive lines of running code (CodeGuru Profiler) (Amazon CodeGuru). Loads the CodeGuru knowledge: CodeGuru Reviewer (repository associations, full and incremental code reviews, recommendations, security detectors / CodeGuru Security, suppression), CodeGuru Profiler (profiling groups, the agent, flame graphs, heap summary, anomaly detection and recommendations, latency/CPU/cost insight), supported languages/repos (GitHub/CodeCommit/Bitbucket/S3), IAM roles, KMS, cost/pricing, limits, and verification by running a review on a PR and profiling a running app. The 2nd consumer is the AWS role team (aws-cloud-architect / observability roles) wiring automated review and runtime profiling. Consumed by the CodeGuru specialist.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "codeguru",
+        "developer-tools",
+        "code-review",
+        "profiling",
+        "devtools"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-codeguru/SKILL.md"
+    },
+    {
+      "name": "aws-codepipeline",
+      "description": "Use when designing, provisioning, securing, or operating AWS CodePipeline — the managed continuous-delivery service that models a release as ordered stages of actions (source → build → test → deploy) with artifacts flowing between them (AWS CodePipeline). Loads the CodePipeline knowledge: pipelines, stages and actions (source/build/test/deploy/approval/invoke), action providers (CodeCommit/GitHub via CodeConnections, CodeBuild, CodeDeploy, ECS, CloudFormation, Lambda), artifact store (S3) and input/output artifacts, V1 vs V2 pipeline types and triggers/filters, parallel actions and run order, manual approvals, variables/namespaces, cross-account/cross-region, IAM service roles, cost/limits, and verification by executing the pipeline and confirming each stage succeeds. The 2nd consumer is the AWS role team (aws-iac-engineer / aws-cloud-architect) provisioning delivery automation. Consumed by the CodePipeline specialist.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "codepipeline",
+        "developer-tools",
+        "cd",
+        "pipeline",
+        "devtools"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-codepipeline/SKILL.md"
+    },
+    {
       "name": "aws-comprehend",
       "description": "Use when designing, provisioning, securing, or operating Amazon Comprehend — the managed natural-language-processing service that extracts insight from text without building models (Amazon Comprehend). Loads the Comprehend knowledge: the built-in detect APIs (entities, key phrases, dominant language, sentiment and targeted sentiment, syntax/POS, and PII detection/redaction), synchronous single-document vs real-time-endpoint vs asynchronous batch analysis jobs over S3, custom models (custom entity recognition and custom document classification, trained on your labeled data and served via real-time endpoints measured in inference units), Comprehend Medical for clinical text/PHI, IAM/KMS security and VPC, cost (per unit of text for built-ins, training + endpoint inference units for custom), quotas/TPS, and verification by running detection. The 2nd consumer is the AWS role team (aws-iac-engineer / aws-cloud-architect). Consumed by the Comprehend specialist.",
       "category": "cloud",
@@ -26732,6 +27067,22 @@
       "path": "skills/cloud/aws-privatelink/SKILL.md"
     },
     {
+      "name": "aws-q-developer",
+      "description": "Use when enabling, configuring, securing, or operating Amazon Q Developer — AWS's generative-AI coding assistant for IDEs, the CLI, the console, and the web, including inline code suggestions, the chat/agentic developer agents, code transformation/upgrades, and customizations trained on your private code (Amazon Q Developer). Loads the Q Developer knowledge: the subscription tiers (Free vs Pro) and IAM Identity Center licensing, IDE/CLI/console surfaces, inline suggestions and reference tracking, agentic capabilities (/dev feature development, /test, /doc, /review), code transformation (Java/.NET upgrades), customizations from private repos, security scanning, profiles, admin controls, data handling/opt-out, and verification by exercising suggestions and agents on real code. The 2nd consumer is the AWS role team (aws-iac-engineer / aws-cloud-architect) wiring identity, licensing, and admin guardrails. Consumed by the Q Developer specialist.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "q-developer",
+        "ai-ml",
+        "coding-assistant",
+        "generative-ai",
+        "devtools"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-q-developer/SKILL.md"
+    },
+    {
       "name": "aws-qldb",
       "description": "Use when designing, provisioning, securing, or operating Amazon QLDB — the fully managed ledger database with a cryptographically verifiable, immutable, append-only journal. Loads the QLDB knowledge: the journal as source of truth, materialized tables and indexes, document revisions and history(), the PartiQL query language, cryptographic verification (digests, proofs, block/document hashes), on-demand export and Kinesis streaming, KMS encryption, and least-privilege IAM. IMPORTANT: AWS has announced end-of-support for Amazon QLDB — treat it as deprecated, do NOT recommend it for new builds, and surface migration to Amazon Aurora PostgreSQL (with verifiable/audit patterns) for net-new work. Consumed by the QLDB specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when maintaining or migrating existing ledgers.",
       "category": "cloud",
@@ -27063,6 +27414,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-wavelength/SKILL.md"
+    },
+    {
+      "name": "aws-x-ray",
+      "description": "Use when designing, instrumenting, securing, or operating AWS X-Ray — the managed distributed-tracing service that collects traces across microservices to render a service map, latency/error analysis, and root-cause insight (AWS X-Ray). Loads the X-Ray knowledge: traces, segments and subsegments, the trace header and context propagation, the X-Ray daemon vs ADOT/OpenTelemetry collector, the SDK and auto-instrumentation, the service map, sampling rules, trace and group filter expressions, annotations vs metadata, insights and anomaly detection, integration with Lambda/API Gateway/ECS/EKS/EC2, IAM permissions, cost levers, retention/limits, and verification by generating traffic and confirming traces and the service map populate. The 2nd consumer is the AWS role team (aws-cloud-architect / observability roles) instrumenting distributed systems. Consumed by the X-Ray specialist.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "x-ray",
+        "developer-tools",
+        "tracing",
+        "observability",
+        "devtools"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-x-ray/SKILL.md"
     },
     {
       "name": "azure-services",
