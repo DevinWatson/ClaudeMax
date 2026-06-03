@@ -14,7 +14,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 ## Languages (21-role teams under agents/languages/<lang>/, new <lang>-idioms skill each)
 - [x] kotlin
 - [x] swift
-- [ ] php
+- [x] php
 - [ ] scala
 - [ ] elixir
 - [ ] cpp
