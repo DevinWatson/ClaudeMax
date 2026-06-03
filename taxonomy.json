@@ -42,8 +42,14 @@
     {
       "id": "devops",
       "title": "DevOps & Infrastructure",
-      "summary": "CI/CD, containers, orchestration, IaC, cloud platforms, observability.",
+      "summary": "CI/CD, containers, orchestration, IaC, and observability.",
       "examples": ["dockerfile-author", "kubernetes-operator", "terraform-architect"]
+    },
+    {
+      "id": "cloud",
+      "title": "Cloud Platforms",
+      "summary": "Cloud provider platform specialists — architecture, IaC, security, cost, reliability, networking, data, and observability for a specific cloud.",
+      "examples": ["aws-cloud-architect", "gcp-iac-engineer", "azure-security-reviewer"]
     },
     {
       "id": "security",
