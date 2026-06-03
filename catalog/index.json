@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 881,
-    "skills": 173,
+    "agents": 889,
+    "skills": 181,
     "categories": 17
   },
   "agents": [
@@ -925,6 +925,36 @@
       "path": "agents/web/astro/astro-test-engineer.md"
     },
     {
+      "name": "aws-api-gateway-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon API Gateway (AWS) — the managed API front door: HTTP/REST/WebSocket APIs, routes + integrations (Lambda proxy, VPC link to ALB/NLB), stages + canary, authorizers (Cognito/JWT/Lambda/IAM), API keys + usage plans + throttling, request validation, custom domains + ACM, WAF, mTLS, CORS, caching, logging. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the API Gateway service itself. It is the managed API FRONT DOOR — for raw L7 load balancing use an ALB, for GraphQL use AppSync. Pick a networking sibling instead for: the private network (vpc), CDN (cloudfront), DNS (route53), on-prem links (direct-connect). For GCP Apigee or Azure API Management defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "api-gateway",
+        "rest-api",
+        "http-api",
+        "websocket",
+        "specialist"
+      ],
+      "skills": [
+        "aws-api-gateway",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/networking/aws-api-gateway-specialist.md"
+    },
+    {
       "name": "aws-app-runner-specialist",
       "description": "Use when designing, building, deploying, or operating AWS App Runner (AWS) — services from an ECR image or source repo, automatic HTTPS endpoints, autoscaling (MaxConcurrency/min/max), instance CPU/memory sizing, VPC connectors for private egress, instance vs access roles, custom domains, and auto-deploy on push. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the App Runner service end-to-end. Pick this for a single managed HTTP/HTTPS web service or API with minimal infra; for sidecars/non-HTTP/fine-grained networking use aws-fargate-specialist, event functions aws-lambda-specialist, PaaS stacks aws-elastic-beanstalk-specialist; for GCP Cloud Run or Azure Container Apps defer to those clouds' specialists.",
       "category": "cloud",
@@ -1072,6 +1102,36 @@
       "path": "agents/cloud/aws/aws-cloud-architect.md"
     },
     {
+      "name": "aws-cloudfront-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon CloudFront (AWS) — the global CDN/edge: distributions, origins (S3/ALB/origin groups), cache behaviors and path patterns, cache/origin-request/response-headers policies and TTLs, Origin Access Control (OAC) for private S3, viewer/origin TLS + ACM (us-east-1), WAF and geo-restriction, CloudFront Functions vs Lambda@Edge, invalidations, and access logs. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), aws-security-reviewer (account posture) own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the CloudFront CDN service itself (distributions/behaviors/edge config and APIs). Pick a networking sibling instead for: the private network (vpc), DNS (route53), the API front door (api-gateway), on-prem links (direct-connect). For Cloudflare/Fastly or Azure CDN/Front Door defer to those.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "cloudfront",
+        "cdn",
+        "edge",
+        "caching",
+        "specialist"
+      ],
+      "skills": [
+        "aws-cloudfront",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/networking/aws-cloudfront-specialist.md"
+    },
+    {
       "name": "aws-cost-governor",
       "description": "Use when reducing or governing AWS spend — finding idle/over-provisioned resources, right-sizing, picking pricing models (Savings Plans/Reserved/Spot), cutting data-transfer and un-lifecycled storage cost, and verifying with Cost Explorer/CLI (AWS). NOT for architecture design (aws-cloud-architect), reliability/DR (aws-reliability-engineer), or writing the IaC change itself (aws-iac-engineer).",
       "category": "cloud",
@@ -1158,6 +1218,66 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/storage/aws-datasync-specialist.md"
+    },
+    {
+      "name": "aws-dax-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon DynamoDB Accelerator (DAX) (AWS) — the managed in-memory write-through cache that fronts DynamoDB for microsecond reads: cluster + node-type sizing, multi-AZ replica nodes, item/query cache TTLs via parameter groups, write-through and eventual-consistency caveats, the DAX client wiring, VPC subnet/security groups, cluster IAM role to DynamoDB, and encryption at rest/in transit. CRITICAL: DAX ACCELERATES DynamoDB — coordinate with the aws-dynamodb-specialist, which owns the table/key/index data model; this specialist owns the cache layer. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. Pick a DB sibling instead for: the DynamoDB table itself (dynamodb), other caches like Redis/Memcached (elasticache) or durable Redis (memorydb), relational (rds/aurora), time-series (timestream), ledger (qldb). For GCP/Azure caching defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "dax",
+        "dynamodb",
+        "in-memory-cache",
+        "low-latency",
+        "specialist"
+      ],
+      "skills": [
+        "aws-dax",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/databases/aws-dax-specialist.md"
+    },
+    {
+      "name": "aws-direct-connect-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Direct Connect (AWS) — the dedicated private on-prem-to-AWS link: dedicated vs hosted connections, the cross-connect/LOA-CFA, virtual interfaces (private/public/transit VIFs), Direct Connect gateway for multi-VPC/Region, BGP + ASNs, Link Aggregation Groups (LAG), MACsec + IPsec-over-DX encryption, and resilience models. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the Direct Connect service itself. It is the DEDICATED on-prem link — for internet-based hybrid links use Site-to-Site VPN. Pick a networking sibling instead for: the private network (vpc), CDN (cloudfront), DNS (route53), the API front door (api-gateway). For GCP Interconnect or Azure ExpressRoute defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "direct-connect",
+        "hybrid-networking",
+        "vif",
+        "bgp",
+        "specialist"
+      ],
+      "skills": [
+        "aws-direct-connect",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/networking/aws-direct-connect-specialist.md"
     },
     {
       "name": "aws-documentdb-specialist",
@@ -1884,6 +2004,36 @@
       "path": "agents/cloud/aws/services/compute/aws-outposts-specialist.md"
     },
     {
+      "name": "aws-qldb-specialist",
+      "description": "Use when maintaining, verifying, exporting, or MIGRATING Amazon QLDB (AWS) — the managed immutable ledger with a cryptographically verifiable journal: tables/indexes, document revisions and history(), PartiQL, digests/proofs verification, journal export to S3 / Kinesis streaming, KMS encryption, STANDARD permissions mode, and least-privilege IAM. IMPORTANT: QLDB is deprecated (AWS end-of-support) — do NOT recommend it for new builds; steer net-new verifiable/audit work to aws-aurora (PostgreSQL audit/history) and surface migration. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. Pick a DB sibling instead for: managed relational (rds), AWS-native relational + the recommended QLDB replacement (aurora), serverless NoSQL KV (dynamodb), time-series (timestream), DynamoDB cache (dax), Mongo-compatible (documentdb), graph (neptune). This specialist owns the QLDB service end-to-end. For GCP/Azure ledger/verifiable patterns defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "qldb",
+        "ledger",
+        "immutable",
+        "deprecated",
+        "specialist"
+      ],
+      "skills": [
+        "aws-qldb",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/databases/aws-qldb-specialist.md"
+    },
+    {
       "name": "aws-rds-specialist",
       "description": "Use when designing, configuring, deploying, or operating Amazon RDS (AWS) — managed relational databases (PostgreSQL/MySQL/MariaDB/Oracle/SQL Server): engine/instance-class choice, Multi-AZ HA + failover, read replicas, storage/IOPS, parameter/option groups, backups + PITR, KMS encryption, TLS, IAM auth, and private VPC placement. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), aws-security-reviewer (account posture) own cross-cutting work. Pick a DB sibling instead for: AWS-native cloud relational (aurora), serverless NoSQL KV (dynamodb), Mongo-compatible (documentdb), graph (neptune), cache (elasticache), durable Redis (memorydb), Cassandra (keyspaces). CRITICAL: this specialist owns the MANAGED-SERVICE layer (provisioning/sizing/Multi-AZ/backups/failover/parameter groups/IAM) — engine-internal tuning, schema, and query modeling belong to the postgres data team. For GCP Cloud SQL or Azure SQL/Flexible Server defer to those clouds.",
       "category": "cloud",
@@ -1941,6 +2091,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/aws-reliability-engineer.md"
+    },
+    {
+      "name": "aws-route53-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon Route 53 (AWS) — scalable DNS: public/private hosted zones, record types (A/AAAA/CNAME/alias/MX/TXT/NS/CAA), alias vs CNAME, routing policies (simple/weighted/latency/failover/geolocation/geoproximity/multivalue), health checks + DNS failover, traffic-flow policies, domain registration, DNSSEC signing, and query logging. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), aws-security-reviewer (account posture) own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the Route 53 DNS service itself (zones/records/routing/health-checks and APIs). Pick a networking sibling instead for: the private network (vpc), CDN/edge (cloudfront), the API front door (api-gateway), on-prem links (direct-connect). For GCP Cloud DNS or Azure DNS defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "route53",
+        "dns",
+        "routing-policy",
+        "health-check",
+        "specialist"
+      ],
+      "skills": [
+        "aws-route53",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/networking/aws-route53-specialist.md"
     },
     {
       "name": "aws-s3-glacier-specialist",
@@ -2093,6 +2273,66 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/storage/aws-storage-gateway-specialist.md"
+    },
+    {
+      "name": "aws-timestream-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon Timestream (AWS) — the serverless time-series database for IoT/metrics/telemetry: database+table design, dimensions vs multi-measure records, the memory-store/magnetic-store retention split, scheduled-query rollups, the time-series query language, KMS encryption, interface VPC endpoint, and least-privilege IAM. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), aws-security-reviewer (account posture) own cross-cutting work. Pick a DB sibling instead for: managed relational (rds), AWS-native relational (aurora), serverless NoSQL KV (dynamodb), immutable ledger (qldb), DynamoDB read cache (dax), Mongo-compatible (documentdb), graph (neptune), cache (elasticache), durable Redis (memorydb), Cassandra (keyspaces). This specialist owns the Timestream service end-to-end (it is serverless, no engine team). For GCP Bigtable or Azure Data Explorer time-series defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "timestream",
+        "time-series",
+        "telemetry",
+        "serverless",
+        "specialist"
+      ],
+      "skills": [
+        "aws-timestream",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/databases/aws-timestream-specialist.md"
+    },
+    {
+      "name": "aws-vpc-specialist",
+      "description": "Use when designing, configuring, deploying, or operating an Amazon VPC (AWS) — the foundational private network: CIDR planning, public/private/isolated subnets across AZs, route tables, IGW/egress-only-IGW, NAT gateways, security groups vs network ACLs, peering and Transit Gateway, gateway/interface VPC endpoints (PrivateLink), DNS, and flow logs. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), aws-security-reviewer (account posture) own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology (DNS + LB + multi-service connectivity) — this specialist owns the VPC service itself (CIDR/subnet/route/SG/NACL/endpoint config and APIs). Pick a networking sibling instead for: CDN/edge (cloudfront), DNS (route53), the API front door (api-gateway), dedicated on-prem links (direct-connect). For GCP VPC or Azure VNet defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "vpc",
+        "networking",
+        "subnets",
+        "security-groups",
+        "specialist"
+      ],
+      "skills": [
+        "aws-vpc",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/networking/aws-vpc-specialist.md"
     },
     {
       "name": "aws-wavelength-specialist",
@@ -24668,6 +24908,23 @@
       "path": "skills/web/astro-framework/SKILL.md"
     },
     {
+      "name": "aws-api-gateway",
+      "description": "Use when designing, provisioning, securing, or operating Amazon API Gateway — the AWS managed front door for HTTP, REST, and WebSocket APIs. Loads the API Gateway knowledge: REST vs HTTP vs WebSocket API types, resources/methods/routes and integrations (Lambda proxy, HTTP proxy, AWS service, VPC link to private ALB/NLB), stages and stage variables, deployments and canary releases, authorizers (IAM, Cognito, Lambda/JWT), API keys + usage plans + throttling/quotas, request/response mapping and validation, custom domains + ACM + base-path mapping, WAF, mutual TLS, CORS, caching, and access/execution logging. Covers how to define an API and integrations, attach an authorizer, throttle with usage plans, map a custom domain, and verify routing and auth. Consumed by the API Gateway specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology via network-design — this owns the API Gateway service itself.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "api-gateway",
+        "rest-api",
+        "http-api",
+        "websocket",
+        "authorizer",
+        "usage-plan"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-api-gateway/SKILL.md"
+    },
+    {
       "name": "aws-app-runner",
       "description": "Use when designing, building, securing, or operating AWS App Runner — services from a container image (ECR) or source repo (auto-build), automatic HTTPS endpoints, autoscaling configurations (concurrency/min/max), instance CPU/memory sizing, VPC connectors for private egress, instance vs access roles, custom domains, observability, and auto-deploy on push (AWS App Runner). Loads the App Runner-specific knowledge: how to choose source, size and autoscale, scope its roles, reach private resources, and verify the service. Consumed by the App Runner specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) for fully managed web-service hosting.",
       "category": "cloud",
@@ -24733,6 +24990,23 @@
       "path": "skills/cloud/aws-batch/SKILL.md"
     },
     {
+      "name": "aws-cloudfront",
+      "description": "Use when designing, provisioning, securing, or operating Amazon CloudFront — the AWS global content delivery network (CDN) that caches and serves content from edge locations. Loads the CloudFront knowledge: distributions, origins (S3, custom/ALB, origin groups for failover), cache behaviors and path patterns, cache policies / origin-request policies / response-headers policies, TTLs and invalidations, Origin Access Control (OAC) for private S3, viewer + origin protocol/TLS and ACM certificates, WAF and geo-restriction, CloudFront Functions vs Lambda@Edge, and access logs. Covers how to define origins and behaviors, lock S3 to OAC, attach TLS/WAF, tune caching, and verify cache hits and origin shielding. Consumed by the CloudFront specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology via network-design — this owns the CloudFront CDN service itself.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "cloudfront",
+        "cdn",
+        "edge",
+        "caching",
+        "oac",
+        "tls"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-cloudfront/SKILL.md"
+    },
+    {
       "name": "aws-datasync",
       "description": "Use when designing, configuring, securing, or operating AWS DataSync — online data transfer and synchronization between on-prem/other-cloud storage and AWS (and AWS-to-AWS): tasks and task executions, source/destination locations (NFS, SMB, HDFS, object storage / other clouds, S3, EFS, FSx for Windows/Lustre/ONTAP/OpenZFS), the DataSync agent (VM/EC2/appliance for on-prem), scheduling, filters/includes-excludes, bandwidth throttling, data-integrity verification, transfer modes, and encryption in transit (DataSync). Loads the DataSync knowledge: how to define source/dest locations, deploy an agent, build a task with filters/schedule, throttle bandwidth, and verify a transfer completed with integrity. Consumed by the DataSync specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they implement data migration/sync.",
       "category": "cloud",
@@ -24749,6 +25023,39 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-datasync/SKILL.md"
+    },
+    {
+      "name": "aws-dax",
+      "description": "Use when designing, provisioning, securing, or operating Amazon DynamoDB Accelerator (DAX) — the fully managed, in-memory write-through cache that sits in front of DynamoDB to deliver microsecond read latency. Loads the DAX knowledge: the cluster of nodes (primary + read replicas across AZs), node type sizing, the item cache and query cache with separate TTLs, write-through semantics and eventual-consistency caveats, the DAX SDK/client (drop-in for DynamoDB), subnet groups + security groups (VPC-only), parameter groups, cluster IAM role to reach DynamoDB, encryption at rest/in transit, and least-privilege IAM. Covers how to size nodes, place the cluster privately, set cache TTLs, and verify cache hits and failover. Consumed by the DAX specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect). DAX accelerates DynamoDB — pair it with the DynamoDB knowledge; it is not a standalone database.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "dax",
+        "dynamodb",
+        "in-memory-cache",
+        "write-through",
+        "low-latency"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-dax/SKILL.md"
+    },
+    {
+      "name": "aws-direct-connect",
+      "description": "Use when designing, provisioning, securing, or operating AWS Direct Connect — the dedicated private network link between on-premises/colo and AWS that bypasses the public internet. Loads the Direct Connect knowledge: dedicated vs hosted connections, DX locations and the cross-connect/LOA-CFA, virtual interfaces (private VIF to a VGW/DX gateway, public VIF to AWS public services, transit VIF to a Transit Gateway), DX gateway for multi-VPC/Region, BGP peering and ASNs, Link Aggregation Groups (LAG), VLAN tagging, MACsec + IPsec-over-DX encryption, resilience models, and CloudWatch metrics. Covers how to order a connection, create VIFs and BGP, attach a DX gateway, encrypt, and verify the link and routes. Consumed by the Direct Connect specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology via network-design — this owns the Direct Connect service itself.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "direct-connect",
+        "hybrid-networking",
+        "vif",
+        "bgp",
+        "lag",
+        "macsec"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-direct-connect/SKILL.md"
     },
     {
       "name": "aws-documentdb",
@@ -25097,6 +25404,23 @@
       "path": "skills/cloud/aws-outposts/SKILL.md"
     },
     {
+      "name": "aws-qldb",
+      "description": "Use when designing, provisioning, securing, or operating Amazon QLDB — the fully managed ledger database with a cryptographically verifiable, immutable, append-only journal. Loads the QLDB knowledge: the journal as source of truth, materialized tables and indexes, document revisions and history(), the PartiQL query language, cryptographic verification (digests, proofs, block/document hashes), on-demand export and Kinesis streaming, KMS encryption, and least-privilege IAM. IMPORTANT: AWS has announced end-of-support for Amazon QLDB — treat it as deprecated, do NOT recommend it for new builds, and surface migration to Amazon Aurora PostgreSQL (with verifiable/audit patterns) for net-new work. Consumed by the QLDB specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when maintaining or migrating existing ledgers.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "qldb",
+        "ledger",
+        "immutable",
+        "partiql",
+        "deprecated",
+        "audit"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-qldb/SKILL.md"
+    },
+    {
       "name": "aws-rds",
       "description": "Use when designing, provisioning, securing, or operating Amazon RDS — the managed relational database service for PostgreSQL, MySQL, MariaDB, Oracle, and SQL Server. Loads the RDS knowledge: choosing an engine and instance class, Multi-AZ for HA and read replicas for scale-out reads, storage (gp3/io2/magnetic) and autoscaling, parameter and option groups, automated backups/snapshots and point-in-time restore, encryption at rest with KMS and in transit with TLS, IAM database authentication, VPC/subnet-group/security-group placement, maintenance and minor-version upgrades, and Performance Insights. Covers how to pick a class, place it privately in a VPC, encrypt it, back it up, and verify failover and connectivity. Consumed by the RDS specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they provision managed relational databases. For engine-internal tuning/modeling defer to the postgres data team.",
       "category": "cloud",
@@ -25112,6 +25436,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-rds/SKILL.md"
+    },
+    {
+      "name": "aws-route53",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Route 53 — the AWS scalable DNS and domain service. Loads the Route 53 knowledge: public and private hosted zones, record types (A/AAAA, CNAME, alias, MX, TXT, NS, SRV, CAA), alias records for AWS targets (CloudFront/ALB/S3) vs CNAME, routing policies (simple, weighted, latency, failover, geolocation, geoproximity, multivalue), health checks and DNS failover, traffic flow policies, domain registration and transfers, DNSSEC signing, query logging, and least-privilege IAM. Covers how to create zones and records, pick a routing policy, wire health-check failover, sign with DNSSEC, and verify resolution. Consumed by the Route 53 specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology via network-design — this owns the Route 53 DNS service itself.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "route53",
+        "dns",
+        "hosted-zone",
+        "routing-policy",
+        "health-check",
+        "dnssec"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-route53/SKILL.md"
     },
     {
       "name": "aws-s3",
@@ -25199,6 +25540,40 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-storage-gateway/SKILL.md"
+    },
+    {
+      "name": "aws-timestream",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Timestream — the serverless time-series database for IoT, application metrics, and operational telemetry. Loads the Timestream knowledge: the LiveAnalytics two-tier storage (in-memory store for recent/fast writes and queries, magnetic store for long-term cheap reads), databases and tables, retention policies per tier, dimensions vs measures and multi-measure records, scheduled queries for rollups/downsampling, the time-series query language and built-in functions (interpolation, smoothing), KMS encryption, and least-privilege IAM. Covers how to size the memory/magnetic retention split, write and query records, encrypt, and verify ingestion and query latency. Consumed by the Timestream specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they provision time-series telemetry stores. For general-purpose relational/NoSQL workloads pick RDS/DynamoDB instead.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "timestream",
+        "time-series",
+        "telemetry",
+        "iot",
+        "metrics",
+        "serverless"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-timestream/SKILL.md"
+    },
+    {
+      "name": "aws-vpc",
+      "description": "Use when designing, provisioning, securing, or operating an Amazon VPC — the foundational private virtual network in which AWS resources run. Loads the VPC knowledge: CIDR planning, public/private/isolated subnets across AZs, route tables, Internet Gateway and egress-only IGW, NAT gateways, security groups (stateful) vs network ACLs (stateless), VPC peering and Transit Gateway, gateway and interface VPC endpoints (PrivateLink), DNS (resolver, private hosted zones), and flow logs. Covers how to lay out CIDRs and subnets, route public and private traffic, scope SGs/NACLs least-privilege, reach AWS APIs privately via endpoints, and verify reachability. Consumed by the VPC specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology via network-design — this owns the VPC service itself.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "vpc",
+        "networking",
+        "subnets",
+        "security-groups",
+        "routing",
+        "endpoints"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-vpc/SKILL.md"
     },
     {
       "name": "aws-wavelength",

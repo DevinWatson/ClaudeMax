@@ -62,16 +62,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] aws|databases|elasticache|Amazon ElastiCache
 - [x] aws|databases|memorydb|Amazon MemoryDB
 - [x] aws|databases|keyspaces|Amazon Keyspaces
-- [ ] aws|databases|timestream|Amazon Timestream
-- [ ] aws|databases|qldb|Amazon QLDB
-- [ ] aws|databases|dax|DynamoDB Accelerator (DAX)
+- [x] aws|databases|timestream|Amazon Timestream
+- [x] aws|databases|qldb|Amazon QLDB
+- [x] aws|databases|dax|DynamoDB Accelerator (DAX)
 
 ### networking
-- [ ] aws|networking|vpc|Amazon VPC
-- [ ] aws|networking|cloudfront|Amazon CloudFront
-- [ ] aws|networking|route53|Amazon Route 53
-- [ ] aws|networking|api-gateway|Amazon API Gateway
-- [ ] aws|networking|direct-connect|AWS Direct Connect
+- [x] aws|networking|vpc|Amazon VPC
+- [x] aws|networking|cloudfront|Amazon CloudFront
+- [x] aws|networking|route53|Amazon Route 53
+- [x] aws|networking|api-gateway|Amazon API Gateway
+- [x] aws|networking|direct-connect|AWS Direct Connect
 - [ ] aws|networking|vpn|AWS VPN
 - [ ] aws|networking|transit-gateway|AWS Transit Gateway
 - [ ] aws|networking|global-accelerator|AWS Global Accelerator
