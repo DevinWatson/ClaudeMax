@@ -120,16 +120,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] aws|developer-tools|codeguru|Amazon CodeGuru
 
 ### application-integration
-- [ ] aws|application-integration|sns|Amazon SNS
-- [ ] aws|application-integration|sqs|Amazon SQS
-- [ ] aws|application-integration|eventbridge|Amazon EventBridge
-- [ ] aws|application-integration|step-functions|AWS Step Functions
-- [ ] aws|application-integration|appflow|Amazon AppFlow
-- [ ] aws|application-integration|mq|Amazon MQ
-- [ ] aws|application-integration|appsync|AWS AppSync
+- [x] aws|application-integration|sns|Amazon SNS
+- [x] aws|application-integration|sqs|Amazon SQS
+- [x] aws|application-integration|eventbridge|Amazon EventBridge
+- [x] aws|application-integration|step-functions|AWS Step Functions
+- [x] aws|application-integration|appflow|Amazon AppFlow
+- [x] aws|application-integration|mq|Amazon MQ
+- [x] aws|application-integration|appsync|AWS AppSync
 
 ### management-governance
-- [ ] aws|management-governance|cloudwatch|Amazon CloudWatch
+- [x] aws|management-governance|cloudwatch|Amazon CloudWatch
 - [ ] aws|management-governance|cloudformation|AWS CloudFormation
 - [ ] aws|management-governance|cloudtrail|AWS CloudTrail
 - [ ] aws|management-governance|config|AWS Config

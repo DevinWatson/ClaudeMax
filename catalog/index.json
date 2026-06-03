@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 929,
-    "skills": 221,
+    "agents": 937,
+    "skills": 229,
     "categories": 17
   },
   "agents": [
@@ -985,6 +985,66 @@
       "path": "agents/cloud/aws/services/compute/aws-app-runner-specialist.md"
     },
     {
+      "name": "aws-appflow-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon AppFlow (AWS) — no-code SaaS data integration: connector profiles for SaaS sources/targets (Salesforce, ServiceNow, SAP, etc.) and AWS targets (S3/Redshift/EventBridge), flows with field mappings/transforms/filters/validations, on-demand/scheduled/event triggers, incremental pulls, KMS, PrivateLink, and Glue registration. Pick this to move data between a SaaS app and AWS without writing connectors. NOT for fan-out (aws-sns-specialist), pull queues (aws-sqs-specialist), event routing (aws-eventbridge-specialist), workflow orchestration (aws-step-functions-specialist), broker messaging (aws-mq-specialist), or GraphQL (aws-appsync-specialist); for general ETL/pipeline orchestration defer to aws-glue / data engineering. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting architecture, broad IaC, and account-wide security. For GCP/Azure SaaS integration defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "appflow",
+        "saas-integration",
+        "data-integration",
+        "no-code",
+        "specialist"
+      ],
+      "skills": [
+        "aws-appflow",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/application-integration/aws-appflow-specialist.md"
+    },
+    {
+      "name": "aws-appsync-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS AppSync (AWS) — managed GraphQL (and Merged) APIs: schemas (SDL), unit/pipeline resolvers (APPSYNC_JS and VTL), data sources (DynamoDB, Lambda, RDS Data API, OpenSearch, HTTP, EventBridge, None), real-time subscriptions, caching, authorization modes (Cognito/OIDC/IAM/Lambda/API key) and field-level auth, WAF, and observability. Pick this to build a managed GraphQL API. NOT for REST/HTTP/WebSocket APIs (defer to aws-api-gateway), fan-out (aws-sns-specialist), pull queues (aws-sqs-specialist), event routing (aws-eventbridge-specialist), workflow orchestration (aws-step-functions-specialist), broker messaging (aws-mq-specialist), or SaaS data integration (aws-appflow-specialist). NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting architecture, broad IaC, and account-wide security. For GCP/Azure managed GraphQL defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "appsync",
+        "graphql",
+        "api",
+        "resolvers",
+        "specialist"
+      ],
+      "skills": [
+        "aws-appsync",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/application-integration/aws-appsync-specialist.md"
+    },
+    {
       "name": "aws-athena-specialist",
       "description": "Use when designing, configuring, deploying, or operating Amazon Athena (AWS) — the serverless SQL-on-S3 query engine (Trino/Presto, billed per TB scanned): Glue Data Catalog tables/SerDes and crawlers, external tables over S3 with partitioning + partition projection, workgroups (isolation, result location, data-scanned limits, cost controls), CTAS/INSERT INTO ETL, federated Lambda connectors, and the columnar/compression/partition levers that cut bytes scanned. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. NOT data/etl-architect, which owns cloud-agnostic pipeline orchestration and warehouse modeling — this specialist owns the serverless Athena engine, workgroups, partitions, and bytes-scanned tuning. NOT data/sql-optimizer, which rewrites a single slow query in general SQL — this specialist owns the Athena-specific engine/catalog/storage layout that makes queries cheap and fast. For Redshift/EMR, GCP BigQuery, or Azure Synapse defer to those.",
       "category": "cloud",
@@ -1250,6 +1310,37 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/networking/aws-cloudfront-specialist.md"
+    },
+    {
+      "name": "aws-cloudwatch-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon CloudWatch (AWS) — metrics (standard/custom/high-resolution), metric math and anomaly detection, metric and composite alarms with actions, Logs (log groups, retention, metric/subscription filters), Logs Insights queries, dashboards, the CloudWatch agent and EMF, Container/Lambda Insights and Application Signals, and Synthetics canaries. Pick this to implement CloudWatch metrics/logs/alarms/dashboards. NOT the platform observability-engineer role, which owns cross-cutting observability strategy (SLOs, tracing architecture, tool selection across the stack) — this specialist owns the CloudWatch-native config that implements it. NOT distributed-tracing internals (defer to aws-x-ray). NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own multi-service architecture, broad IaC, and account-wide security posture. For GCP Cloud Monitoring/Logging or Azure Monitor defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "cloudwatch",
+        "observability",
+        "metrics",
+        "logs",
+        "alarms",
+        "specialist"
+      ],
+      "skills": [
+        "aws-cloudwatch",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/management-governance/aws-cloudwatch-specialist.md"
     },
     {
       "name": "aws-codeartifact-specialist",
@@ -2062,6 +2153,36 @@
       "path": "agents/cloud/aws/services/analytics/aws-emr-specialist.md"
     },
     {
+      "name": "aws-eventbridge-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon EventBridge (AWS) — event buses (default/custom/partner), rules with event patterns + targets + input transformers, the schema registry, EventBridge Pipes (source→filter→enrich→target), EventBridge Scheduler (cron/rate/one-time), archives/replay, per-target DLQ + retry, and cross-account bus policies. Pick this to route/transform/filter events between services or to schedule jobs. NOT for one-to-many push fan-out (aws-sns-specialist), point-to-point pull queues (aws-sqs-specialist), multi-step workflow orchestration (aws-step-functions-specialist), broker-protocol JMS/AMQP messaging (aws-mq-specialist), GraphQL APIs (aws-appsync-specialist), or no-code SaaS data integration (aws-appflow-specialist). NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting multi-service architecture, broad IaC, and account-wide security. For GCP Eventarc/Cloud Scheduler or Azure Event Grid defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "eventbridge",
+        "events",
+        "event-bus",
+        "scheduler",
+        "specialist"
+      ],
+      "skills": [
+        "aws-eventbridge",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/application-integration/aws-eventbridge-specialist.md"
+    },
+    {
       "name": "aws-fargate-specialist",
       "description": "Use when designing, building, deploying, or operating AWS Fargate (AWS) — ECS task definitions and services, task CPU/memory sizing, awsvpc networking, task vs execution roles, ALB integration, service autoscaling, Fargate/Fargate Spot capacity, and logging. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the Fargate service end-to-end. Pick this for containerized long-running services/jobs without node management; for raw VMs use aws-ec2-specialist, a single managed web service aws-app-runner-specialist, event functions aws-lambda-specialist, batch jobs aws-batch-specialist; for GCP Cloud Run or Azure Container Apps defer to those clouds' specialists.",
       "category": "cloud",
@@ -2542,6 +2663,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/databases/aws-memorydb-specialist.md"
+    },
+    {
+      "name": "aws-mq-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon MQ (AWS) — managed ActiveMQ (Classic) and RabbitMQ brokers for lift-and-shift / standard-protocol messaging (JMS, AMQP, MQTT, STOMP, OpenWire): engine + instance sizing, single-instance/active-standby/cluster HA, configuration revisions, users/auth, VPC + security groups, KMS/TLS, and maintenance windows. Pick this for broker-protocol compatibility (existing JMS/AMQP apps). NOT for cloud-native pub/sub fan-out (aws-sns-specialist) or pull queues (aws-sqs-specialist) — prefer those for new AWS-native messaging; NOT for Kafka streaming (aws-msk-specialist). NOT for event routing (aws-eventbridge-specialist), workflow orchestration (aws-step-functions-specialist), GraphQL (aws-appsync-specialist), or SaaS data integration (aws-appflow-specialist). NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting architecture, broad IaC, and account-wide security. For GCP/Azure brokers defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "mq",
+        "message-broker",
+        "activemq",
+        "rabbitmq",
+        "specialist"
+      ],
+      "skills": [
+        "aws-mq",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/application-integration/aws-mq-specialist.md"
     },
     {
       "name": "aws-msk-specialist",
@@ -3260,6 +3411,96 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/storage/aws-snow-family-specialist.md"
+    },
+    {
+      "name": "aws-sns-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon SNS (AWS) — pub/sub topics (standard and FIFO), subscriptions to SQS/Lambda/HTTP/email/SMS/mobile push, fan-out, per-subscription filter policies, message attributes, FIFO ordering/dedup, dead-letter queues, KMS encryption, and least-privilege topic policies. Pick this for one-to-many push fan-out. NOT for point-to-point pull queues (aws-sqs-specialist), event routing/transformation/scheduling (aws-eventbridge-specialist), multi-step workflow orchestration (aws-step-functions-specialist), broker-protocol JMS/AMQP messaging (aws-mq-specialist), GraphQL APIs (aws-appsync-specialist), or no-code SaaS data integration (aws-appflow-specialist). NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting multi-service architecture, broad IaC, and account-wide security. For GCP Pub/Sub or Azure Service Bus/Event Grid defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "sns",
+        "messaging",
+        "pub-sub",
+        "fan-out",
+        "specialist"
+      ],
+      "skills": [
+        "aws-sns",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/application-integration/aws-sns-specialist.md"
+    },
+    {
+      "name": "aws-sqs-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon SQS (AWS) — point-to-point message queues (standard and FIFO), visibility timeout, long polling, retention, delivery delay, dead-letter queues and redrive, FIFO message-group ordering/dedup, batching, KMS encryption, and least-privilege queue policies. Pick this to decouple producers and consumers with a pull queue. NOT for one-to-many push fan-out (aws-sns-specialist), event routing/transformation/scheduling (aws-eventbridge-specialist), multi-step workflow orchestration (aws-step-functions-specialist), broker-protocol JMS/AMQP messaging (aws-mq-specialist), GraphQL APIs (aws-appsync-specialist), or no-code SaaS data integration (aws-appflow-specialist). NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting multi-service architecture, broad IaC, and account-wide security. For GCP Pub/Sub or Azure Service Bus/Storage Queues defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "sqs",
+        "messaging",
+        "queue",
+        "fifo",
+        "specialist"
+      ],
+      "skills": [
+        "aws-sqs",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/application-integration/aws-sqs-specialist.md"
+    },
+    {
+      "name": "aws-step-functions-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Step Functions (AWS) — state machines in Amazon States Language (ASL), Standard vs Express workflows, state types (Task/Choice/Parallel/Map/distributed Map/Wait/Pass), optimized and SDK service integrations, sync and waitForTaskToken callbacks, Retry/Catch error handling and timeouts, input/output processing, and least-privilege execution roles. Pick this to orchestrate a multi-step workflow with retries and compensation. NOT for fan-out (aws-sns-specialist), pull queues (aws-sqs-specialist), event routing (aws-eventbridge-specialist), broker messaging (aws-mq-specialist), GraphQL (aws-appsync-specialist), or SaaS data integration (aws-appflow-specialist). NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting architecture, broad IaC, and account-wide security. For GCP Workflows or Azure Logic Apps/Durable Functions defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "step-functions",
+        "orchestration",
+        "workflow",
+        "state-machine",
+        "specialist"
+      ],
+      "skills": [
+        "aws-step-functions",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/application-integration/aws-step-functions-specialist.md"
     },
     {
       "name": "aws-storage-gateway-specialist",
@@ -26141,6 +26382,38 @@
       "path": "skills/cloud/aws-app-runner/SKILL.md"
     },
     {
+      "name": "aws-appflow",
+      "description": "Use when designing, provisioning, securing, or operating Amazon AppFlow — no-code SaaS data integration: connector profiles for SaaS sources/targets (Salesforce, ServiceNow, Slack, Zendesk, SAP, Marketo, Google Analytics, etc.) and AWS targets (S3, Redshift, EventBridge), flows with field mappings/transformations/filters/validations, trigger types (run-on-demand, scheduled, event-triggered), incremental pulls, data catalog integration, KMS encryption, and PrivateLink connectivity (Amazon AppFlow). Loads the AppFlow knowledge: how to create a connector profile, build a mapped/filtered flow, schedule or event-trigger it, and verify a run landed correct records. Consumed by the AppFlow specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they integrate SaaS data.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "appflow",
+        "saas-integration",
+        "data-integration",
+        "no-code",
+        "application-integration"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-appflow/SKILL.md"
+    },
+    {
+      "name": "aws-appsync",
+      "description": "Use when designing, provisioning, securing, or operating AWS AppSync — managed GraphQL (and Merged/federated) APIs: schemas (SDL), resolvers (VTL and JavaScript/APPSYNC_JS, unit vs pipeline), data sources (DynamoDB, Lambda, RDS Data API, OpenSearch, HTTP, EventBridge, None), real-time GraphQL subscriptions over WebSockets, server-side and per-resolver caching, authorization modes (API key, IAM, Cognito User Pools, OIDC, Lambda authorizer) and field-level auth, WAF, and CloudWatch/X-Ray observability (AWS AppSync). Loads the AppSync knowledge: how to define a schema, wire resolvers to data sources, secure with an auth mode, enable subscriptions/caching, and verify a query/mutation/subscription. Consumed by the AppSync specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they build GraphQL APIs.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "appsync",
+        "graphql",
+        "api",
+        "resolvers",
+        "application-integration"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-appsync/SKILL.md"
+    },
+    {
       "name": "aws-athena",
       "description": "Use when designing, provisioning, securing, or operating Amazon Athena — the serverless query service that runs SQL directly on data in S3 (Amazon Athena). Loads the Athena knowledge: the Trino/Presto SQL engine (engine v3), pay-per-scan model, the AWS Glue Data Catalog and crawlers, external tables over S3 with SerDes (Parquet/ORC/JSON/CSV) and partitioning + partition projection, workgroups (isolation, result location, data-scanned limits, cost controls), CTAS/INSERT INTO ETL, federated queries via Lambda connectors, views, and the columnar/partition/compression levers that cut bytes scanned. Covers how to register schemas, partition and format data for cheap fast scans, isolate workloads with workgroups, secure with IAM + Lake Formation, and verify results and bytes scanned. Consumed by the Athena specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect).",
       "category": "cloud",
@@ -26269,6 +26542,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-cloudfront/SKILL.md"
+    },
+    {
+      "name": "aws-cloudwatch",
+      "description": "Use when designing, provisioning, securing, or operating Amazon CloudWatch — metrics (standard, custom, high-resolution), namespaces/dimensions and statistics, metric math and anomaly detection, alarms (metric, composite) and actions (SNS/Auto Scaling/EC2/SSM OpsItems), Logs (log groups/streams, retention, subscription filters, metric filters), Logs Insights queries, dashboards, the CloudWatch agent and EMF embedded metrics, Container Insights / Lambda Insights / Application Signals, Synthetics canaries, and Events via EventBridge (Amazon CloudWatch). Loads the CloudWatch knowledge: how to publish/collect metrics and logs, build alarms + dashboards, query with Logs Insights, and verify they fire and render. Consumed by the CloudWatch specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they wire up observability.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "cloudwatch",
+        "observability",
+        "metrics",
+        "logs",
+        "alarms",
+        "management-governance"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-cloudwatch/SKILL.md"
     },
     {
       "name": "aws-codeartifact",
@@ -26678,6 +26968,22 @@
       "path": "skills/cloud/aws-emr/SKILL.md"
     },
     {
+      "name": "aws-eventbridge",
+      "description": "Use when designing, provisioning, securing, or operating Amazon EventBridge — event buses (default, custom, partner/SaaS), rules with event patterns, targets and input transformers, the schema registry/discovery, EventBridge Pipes (source→filter→enrich→target), EventBridge Scheduler (cron/rate/one-time, flexible time windows), archives and replay, dead-letter queues and retry policy, and resource/bus policies for cross-account events (Amazon EventBridge). Loads the EventBridge knowledge: how to route events with patterns, fan out to targets, schedule jobs, build a pipe, and verify delivery. Consumed by the EventBridge specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they wire event-driven routing.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "eventbridge",
+        "events",
+        "event-bus",
+        "scheduler",
+        "application-integration"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-eventbridge/SKILL.md"
+    },
+    {
       "name": "aws-fargate",
       "description": "Use when designing, building, securing, or operating AWS Fargate — serverless containers on ECS (and EKS), task definitions, services, task/CPU-memory sizing, awsvpc networking, task vs execution roles, load balancer integration, autoscaling, capacity providers (Fargate/Fargate Spot), and logging (AWS Fargate). Loads the Fargate-specific knowledge: how to size a task, split task vs execution roles, wire networking/ALB, autoscale, control cost, and verify a service is healthy. Consumed by the Fargate specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they run containers without managing nodes.",
       "category": "cloud",
@@ -26920,6 +27226,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-memorydb/SKILL.md"
+    },
+    {
+      "name": "aws-mq",
+      "description": "Use when designing, provisioning, securing, or operating Amazon MQ — managed message brokers for Apache ActiveMQ (Classic) and RabbitMQ, broker engines and instance sizing, single-instance vs active/standby and cluster (RabbitMQ) deployment modes for HA, standard messaging protocols (JMS, AMQP 0-9-1 and 1.0, MQTT, STOMP, OpenWire, WebSocket), broker configuration (revisions), users/groups and authentication, VPC placement + security groups, KMS encryption in transit/at rest, CloudWatch metrics, and maintenance windows/patching (Amazon MQ). Loads the Amazon MQ knowledge: how to stand up an HA broker, connect over a standard protocol, secure it in a VPC, and verify produce/consume. Consumed by the Amazon MQ specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they lift-and-shift broker workloads.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "mq",
+        "message-broker",
+        "activemq",
+        "rabbitmq",
+        "application-integration"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-mq/SKILL.md"
     },
     {
       "name": "aws-msk",
@@ -27266,6 +27588,54 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-snow-family/SKILL.md"
+    },
+    {
+      "name": "aws-sns",
+      "description": "Use when designing, provisioning, securing, or operating Amazon SNS — standard and FIFO topics, subscriptions (SQS, Lambda, HTTP/S, email, SMS, mobile push, Kinesis Data Firehose), pub/sub fan-out, message filtering with subscription filter policies, message attributes, ordering and deduplication on FIFO, dead-letter queues (redrive policy), delivery retries/status logging, KMS encryption, and access/topic policies (Amazon SNS). Loads the SNS knowledge: how to create an encrypted topic, fan a message out to many subscribers, filter per subscription, dead-letter undeliverable messages, and verify delivery. Consumed by the SNS specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they wire pub/sub messaging.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "sns",
+        "messaging",
+        "pub-sub",
+        "fan-out",
+        "application-integration"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-sns/SKILL.md"
+    },
+    {
+      "name": "aws-sqs",
+      "description": "Use when designing, provisioning, securing, or operating Amazon SQS — standard vs FIFO queues, visibility timeout, message retention, short vs long polling, dead-letter queues and redrive (policy + redrive allow policy), delivery delay and per-message timers, FIFO message group ordering and deduplication, batching, SSE-KMS encryption, and queue access policies (Amazon SQS). Loads the SQS knowledge: how to create an encrypted queue with a DLQ, tune visibility timeout and long polling, preserve order with FIFO, and verify send/receive/delete and dead-lettering. Consumed by the SQS specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they wire decoupled queues.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "sqs",
+        "messaging",
+        "queue",
+        "fifo",
+        "application-integration"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-sqs/SKILL.md"
+    },
+    {
+      "name": "aws-step-functions",
+      "description": "Use when designing, provisioning, securing, or operating AWS Step Functions — state machines authored in Amazon States Language (ASL), Standard vs Express workflows, state types (Task, Choice, Parallel, Map/distributed Map, Wait, Pass, Succeed/Fail), optimized and AWS SDK service integrations, sync vs async and waitForTaskToken callbacks, error handling with Retry/Catch and timeouts, input/output processing (InputPath/Parameters/ResultSelector/ResultPath/OutputPath, JSONata), execution history, and CloudWatch/X-Ray observability (AWS Step Functions). Loads the Step Functions knowledge: how to model a reliable workflow with retries and compensation, pick Standard vs Express, and verify an execution. Consumed by the Step Functions specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they orchestrate workflows.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "step-functions",
+        "orchestration",
+        "workflow",
+        "state-machine",
+        "application-integration"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-step-functions/SKILL.md"
     },
     {
       "name": "aws-storage-gateway",
