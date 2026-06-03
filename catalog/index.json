@@ -2,7 +2,7 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 233,
+    "agents": 249,
     "skills": 96,
     "categories": 16
   },
@@ -1502,8 +1502,88 @@
       "path": "agents/qa/flake-hunter.md"
     },
     {
-      "name": "flutter-pro",
-      "description": "Use for Flutter/Dart development — widget tree composition, state management (Provider/Riverpod/Bloc), build/rendering performance, platform channels, and pub/pubspec dependency management. NOT for native SwiftUI/Kotlin or React Native.",
+      "name": "flutter-accessibility-specialist",
+      "description": "Use for an accessibility audit of Flutter UI — Semantics labels/hints/roles, screen-reader (TalkBack/VoiceOver) support, text scaling, contrast, focus order, hit targets, and Reduce Motion, mapped to WCAG with severity-ranked findings (Flutter). Invoke for a read-only a11y review. NOT for implementing the fixes (use flutter-developer), NOT for security review (use flutter-security-reviewer), and NOT for React Native.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "flutter",
+        "dart",
+        "accessibility",
+        "wcag",
+        "a11y"
+      ],
+      "skills": [
+        "wcag-audit",
+        "flutter-development",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/flutter/flutter-accessibility-specialist.md"
+    },
+    {
+      "name": "flutter-ai-engineer",
+      "description": "Use when integrating LLM/AI features into a Flutter app — prompt and tool-call plumbing, streaming responses into Flutter state, on-device vs hosted inference, and grounding/eval of model output (Flutter). Invoke for building AI-backed Flutter features. NOT for non-AI feature work (use flutter-developer), NOT for app architecture (use flutter-architect), and NOT for React Native.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "flutter",
+        "dart",
+        "ai",
+        "llm"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "flutter-development",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/flutter/flutter-ai-engineer.md"
+    },
+    {
+      "name": "flutter-architect",
+      "description": "Use when shaping the architecture of a Flutter app or module — module/package boundaries, state-management and navigation topology, the platform-channel/plugin strategy, and layering decisions (Flutter). Invoke for system-level design and trade-off analysis. NOT for implementing features (use flutter-developer), NOT for performance tuning of existing code (use flutter-performance-engineer), and NOT for React Native.",
+      "category": "mobile",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "flutter",
+        "dart",
+        "architecture"
+      ],
+      "skills": [
+        "software-architecture",
+        "flutter-development",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/flutter/flutter-architect.md"
+    },
+    {
+      "name": "flutter-developer",
+      "description": "Use when turning a Flutter requirement, ticket, or feature into working, tested, incrementally-shipped Dart code, or when fixing a reported Flutter bug or crash (Flutter). Invoke for building or extending widgets, state, and navigation, and for diagnosing failures in existing Flutter code. NOT for system-level design (use flutter-architect), NOT for adding tests to code you did not write (use flutter-test-engineer), and NOT for React Native.",
       "category": "mobile",
       "model": "sonnet",
       "tools": [
@@ -1518,17 +1598,162 @@
         "flutter",
         "dart",
         "riverpod",
-        "bloc"
+        "feature-development"
       ],
       "skills": [
-        "reproduce-then-fix",
+        "feature-development",
+        "flutter-development",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/flutter/flutter-developer.md"
+    },
+    {
+      "name": "flutter-observability-engineer",
+      "description": "Use when instrumenting a Flutter app for production visibility — structured logging, metrics, crash and analytics reporting (Sentry/Crashlytics/Firebase), and trace context across async/isolate/platform-channel boundaries (Flutter). Invoke for adding telemetry and diagnostics to running code. NOT for fixing performance with DevTools (use flutter-performance-engineer), NOT for feature logic (use flutter-developer), and NOT for React Native.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "flutter",
+        "dart",
+        "observability",
+        "sentry",
+        "telemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
         "flutter-development",
         "match-project-conventions",
         "verify-by-running"
       ],
-      "version": "1.1.0",
+      "version": "1.0.0",
       "status": "stable",
-      "path": "agents/mobile/flutter-pro.md"
+      "path": "agents/mobile/flutter/flutter-observability-engineer.md"
+    },
+    {
+      "name": "flutter-performance-engineer",
+      "description": "Use when a Flutter app is slow, janky, memory-heavy, or battery-hungry — diagnosing and fixing jank, excessive rebuilds, expensive build/layout/paint, raster-thread overload (shader/jank), and memory growth with DevTools evidence (Flutter). Invoke for measured performance work on existing code. NOT for building new features (use flutter-developer) and NOT for React Native.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "flutter",
+        "dart",
+        "performance",
+        "devtools",
+        "profiling"
+      ],
+      "skills": [
+        "mobile-performance",
+        "flutter-development",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/flutter/flutter-performance-engineer.md"
+    },
+    {
+      "name": "flutter-release-engineer",
+      "description": "Use when building, signing, and shipping a Flutter app — signing for both stores, versioning, flutter build (appbundle/ipa), Fastlane, TestFlight and Play Console/internal-track submission, flavors, and release automation (Flutter). Invoke for release pipeline and distribution work. NOT for feature code (use flutter-developer) and NOT for React Native.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "flutter",
+        "dart",
+        "release",
+        "fastlane",
+        "testflight"
+      ],
+      "skills": [
+        "mobile-release-management",
+        "flutter-development",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/flutter/flutter-release-engineer.md"
+    },
+    {
+      "name": "flutter-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a Flutter/Dart app or diff — insecure data-at-rest (shared_preferences vs flutter_secure_storage misuse), TLS/pinning gaps, deep-link/URI handling, secrets bundled in the app, platform-channel/plugin exposure, and crypto misuse, with severity-ranked findings (Flutter). Invoke for an authorized appsec review. NOT for fixing the issues (use flutter-developer), NOT for accessibility review (use flutter-accessibility-specialist), and NOT for React Native.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "flutter",
+        "dart",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "flutter-development",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/flutter/flutter-security-reviewer.md"
+    },
+    {
+      "name": "flutter-test-engineer",
+      "description": "Use when adding or strengthening automated tests for Flutter code — flutter_test unit tests, widget tests, golden/snapshot tests, and integration_test end-to-end flows, including closing coverage gaps in code you did not write (Flutter). Invoke for test authoring and test-suite hardening. NOT for shipping features (use flutter-developer), NOT for triaging a production crash fix (use flutter-developer), and NOT for React Native.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "flutter",
+        "dart",
+        "testing",
+        "integration-test",
+        "golden"
+      ],
+      "skills": [
+        "test-automation",
+        "flutter-development",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/flutter/flutter-test-engineer.md"
     },
     {
       "name": "frontend-performance",
@@ -3880,8 +4105,33 @@
       "path": "agents/web/react-architect.md"
     },
     {
-      "name": "react-native-pro",
-      "description": "Use for cross-platform React Native mobile specifics — native modules/bridging (TurboModules/JSI), platform-specific code, navigation (React Navigation), Hermes/Metro performance, and Expo vs bare workflow. NOT for web React patterns (use react-architect) and NOT for pure native iOS/Android UI.",
+      "name": "react-native-accessibility-specialist",
+      "description": "Use for an accessibility audit of React Native UI — accessibility roles/labels/hints/states, screen-reader (VoiceOver/TalkBack) support, Dynamic Type/font scaling, contrast, focus order, hit targets, and Reduce Motion, mapped to WCAG with severity-ranked findings (React Native). Invoke for a read-only a11y review. NOT for implementing the fixes (use react-native-developer), NOT for security review (use react-native-security-reviewer), and NOT for Flutter.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "react-native",
+        "accessibility",
+        "wcag",
+        "a11y"
+      ],
+      "skills": [
+        "wcag-audit",
+        "react-native-platform",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/react-native/react-native-accessibility-specialist.md"
+    },
+    {
+      "name": "react-native-ai-engineer",
+      "description": "Use when integrating LLM/AI features into a React Native app — prompt and tool-call plumbing, streaming responses into RN state, on-device vs hosted inference, and grounding/eval of model output (React Native). Invoke for building AI-backed RN features. NOT for non-AI feature work (use react-native-developer), NOT for app architecture (use react-native-architect), and NOT for Flutter.",
       "category": "mobile",
       "model": "sonnet",
       "tools": [
@@ -3894,19 +4144,216 @@
       ],
       "tags": [
         "react-native",
-        "mobile",
-        "expo",
-        "hermes"
+        "ai",
+        "llm"
       ],
       "skills": [
-        "reproduce-then-fix",
+        "llm-application-engineering",
         "react-native-platform",
         "match-project-conventions",
         "verify-by-running"
       ],
-      "version": "1.1.0",
+      "version": "1.0.0",
       "status": "stable",
-      "path": "agents/mobile/react-native-pro.md"
+      "path": "agents/mobile/react-native/react-native-ai-engineer.md"
+    },
+    {
+      "name": "react-native-architect",
+      "description": "Use when shaping the architecture of a React Native app or module — module boundaries, state-management and navigation topology, the JS↔native/TurboModules strategy, and Expo-managed-vs-bare/monorepo decisions (React Native). Invoke for system-level design and trade-off analysis. NOT for implementing features (use react-native-developer), NOT for performance tuning of existing code (use react-native-performance-engineer), and NOT for Flutter.",
+      "category": "mobile",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "react-native",
+        "typescript",
+        "architecture"
+      ],
+      "skills": [
+        "software-architecture",
+        "react-native-platform",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/react-native/react-native-architect.md"
+    },
+    {
+      "name": "react-native-developer",
+      "description": "Use when turning a React Native requirement, ticket, or feature into working, tested, incrementally-shipped JS/TS code, or when fixing a reported React Native bug or crash (React Native). Invoke for building or extending screens, components, state, and native navigation, and for diagnosing failures in existing RN code. NOT for system-level design (use react-native-architect), NOT for adding tests to code you did not write (use react-native-test-engineer), and NOT for Flutter.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "react-native",
+        "typescript",
+        "expo",
+        "metro",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "react-native-platform",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/react-native/react-native-developer.md"
+    },
+    {
+      "name": "react-native-observability-engineer",
+      "description": "Use when instrumenting a React Native app for production visibility — structured logging, metrics, crash and analytics reporting (Sentry/Crashlytics/Firebase), and trace context across async/native boundaries (React Native). Invoke for adding telemetry and diagnostics to running code. NOT for fixing performance with a profiler (use react-native-performance-engineer), NOT for feature logic (use react-native-developer), and NOT for Flutter.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "react-native",
+        "observability",
+        "sentry",
+        "telemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "react-native-platform",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/react-native/react-native-observability-engineer.md"
+    },
+    {
+      "name": "react-native-performance-engineer",
+      "description": "Use when a React Native app is slow, janky, memory-heavy, or battery-hungry — diagnosing and fixing list/scroll hitches, excessive re-renders, bridge/JS-thread contention, slow startup (Hermes/TTI), and native memory growth with profiler evidence (React Native). Invoke for measured performance work on existing code. NOT for building new features (use react-native-developer) and NOT for Flutter.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "react-native",
+        "performance",
+        "hermes",
+        "flipper",
+        "profiling"
+      ],
+      "skills": [
+        "mobile-performance",
+        "react-native-platform",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/react-native/react-native-performance-engineer.md"
+    },
+    {
+      "name": "react-native-release-engineer",
+      "description": "Use when building, signing, and shipping a React Native app — provisioning/signing for both stores, versioning, Fastlane and EAS Build/Submit, TestFlight and Play Console/internal-track submission, OTA updates (EAS Update/CodePush), and release automation (React Native). Invoke for release pipeline and distribution work. NOT for feature code (use react-native-developer) and NOT for Flutter.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "react-native",
+        "release",
+        "fastlane",
+        "eas",
+        "testflight"
+      ],
+      "skills": [
+        "mobile-release-management",
+        "react-native-platform",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/react-native/react-native-release-engineer.md"
+    },
+    {
+      "name": "react-native-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a React Native app or diff — insecure data-at-rest (AsyncStorage/SecureStore/Keychain misuse), TLS/pinning gaps, deep-link/URL handling, secrets bundled in JS, native-module/bridge exposure, and crypto misuse, with severity-ranked findings (React Native). Invoke for an authorized appsec review. NOT for fixing the issues (use react-native-developer), NOT for accessibility review (use react-native-accessibility-specialist), and NOT for Flutter.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "react-native",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "react-native-platform",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/react-native/react-native-security-reviewer.md"
+    },
+    {
+      "name": "react-native-test-engineer",
+      "description": "Use when adding or strengthening automated tests for React Native code — Jest unit tests, React Native Testing Library component tests, and Detox end-to-end flows, including closing coverage gaps in code you did not write (React Native). Invoke for test authoring and test-suite hardening. NOT for shipping features (use react-native-developer), NOT for triaging a production crash fix (use react-native-developer), and NOT for Flutter.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "react-native",
+        "testing",
+        "jest",
+        "detox",
+        "testing-library"
+      ],
+      "skills": [
+        "test-automation",
+        "react-native-platform",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/react-native/react-native-test-engineer.md"
     },
     {
       "name": "refactoring-specialist",
