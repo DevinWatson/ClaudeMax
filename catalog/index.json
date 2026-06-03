@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 217,
-    "skills": 95,
+    "agents": 233,
+    "skills": 96,
     "categories": 16
   },
   "agents": [
@@ -108,8 +108,34 @@
       "path": "agents/creative/analogy-finder.md"
     },
     {
-      "name": "android-kotlin-pro",
-      "description": "Use for native Android development in Kotlin + Jetpack Compose — composables, state hoisting, lifecycle, coroutines/Flow, Navigation, and Gradle builds. NOT for cross-platform RN/Flutter or iOS/SwiftUI.",
+      "name": "android-accessibility-specialist",
+      "description": "Use for an accessibility audit of Android Compose UI — TalkBack semantics/contentDescription, touch-target sizing, contrast, font scaling, focus order, and Reduce Motion, mapped to WCAG with severity-ranked findings (Android Jetpack Compose). Invoke for a read-only a11y review. NOT for implementing the fixes (use android-developer), NOT for security review (use android-security-reviewer), and NOT for iOS/SwiftUI.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "android",
+        "kotlin",
+        "jetpack-compose",
+        "accessibility",
+        "wcag"
+      ],
+      "skills": [
+        "wcag-audit",
+        "jetpack-compose-development",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/android/android-accessibility-specialist.md"
+    },
+    {
+      "name": "android-ai-engineer",
+      "description": "Use when integrating LLM/AI features into an Android app — prompt and tool-call plumbing, streaming responses into Compose state via Flow, on-device (Gemini Nano/MediaPipe/TFLite) vs hosted inference, and grounding/eval of model output (Android Jetpack Compose). Invoke for building AI-backed Android features. NOT for non-AI feature work (use android-developer), NOT for app architecture (use android-architect), and NOT for iOS/SwiftUI.",
       "category": "mobile",
       "model": "sonnet",
       "tools": [
@@ -124,17 +150,221 @@
         "android",
         "kotlin",
         "jetpack-compose",
-        "gradle"
+        "ai",
+        "llm"
       ],
       "skills": [
-        "reproduce-then-fix",
+        "llm-application-engineering",
         "jetpack-compose-development",
         "match-project-conventions",
         "verify-by-running"
       ],
-      "version": "1.1.0",
+      "version": "1.0.0",
       "status": "stable",
-      "path": "agents/mobile/android-kotlin-pro.md"
+      "path": "agents/mobile/android/android-ai-engineer.md"
+    },
+    {
+      "name": "android-architect",
+      "description": "Use when shaping the architecture of an Android app or module — module/Gradle boundaries, UDF/state topology, navigation graph, DI strategy, and minSdk/layering decisions (Android Jetpack Compose). Invoke for system-level design and trade-off analysis. NOT for implementing features (use android-developer), NOT for performance tuning of existing code (use android-performance-engineer), and NOT for iOS/SwiftUI.",
+      "category": "mobile",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "android",
+        "kotlin",
+        "jetpack-compose",
+        "architecture"
+      ],
+      "skills": [
+        "software-architecture",
+        "jetpack-compose-development",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/android/android-architect.md"
+    },
+    {
+      "name": "android-developer",
+      "description": "Use when turning an Android requirement, ticket, or feature into working, tested, incrementally-shipped Kotlin + Jetpack Compose code, or when fixing a reported Android bug or crash (Android Jetpack Compose). Invoke for building or extending composables, state, and navigation, and for diagnosing failures in existing Android code. NOT for system-level design (use android-architect), NOT for adding tests to code you did not write (use android-test-engineer), and NOT for iOS/SwiftUI.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "android",
+        "kotlin",
+        "jetpack-compose",
+        "gradle",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "jetpack-compose-development",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/android/android-developer.md"
+    },
+    {
+      "name": "android-observability-engineer",
+      "description": "Use when instrumenting an Android app for production visibility — structured logging, metrics/traces, crash and analytics reporting (Crashlytics/Firebase), and trace context across coroutines (Android Jetpack Compose). Invoke for adding telemetry and diagnostics to running code. NOT for fixing performance with the profiler (use android-performance-engineer), NOT for feature logic (use android-developer), and NOT for iOS/SwiftUI.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "android",
+        "kotlin",
+        "jetpack-compose",
+        "observability",
+        "telemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "jetpack-compose-development",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/android/android-observability-engineer.md"
+    },
+    {
+      "name": "android-performance-engineer",
+      "description": "Use when an Android app is slow, janky, memory-heavy, or battery-hungry — diagnosing and fixing excessive recomposition, scroll jank, startup latency, leaks, and main-thread stalls with profiler/Macrobenchmark evidence (Android Jetpack Compose). Invoke for measured performance work on existing code. NOT for building new features (use android-developer) and NOT for iOS/SwiftUI.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "android",
+        "kotlin",
+        "jetpack-compose",
+        "performance",
+        "profiling"
+      ],
+      "skills": [
+        "mobile-performance",
+        "jetpack-compose-development",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/android/android-performance-engineer.md"
+    },
+    {
+      "name": "android-release-engineer",
+      "description": "Use when building, signing, and shipping an Android app — keystore signing, versioning, Gradle assembleRelease/bundleRelease, R8/ProGuard config, App Bundle, and Play Console / internal-track distribution and automation (Android Jetpack Compose). Invoke for release pipeline and distribution work. NOT for feature code (use android-developer) and NOT for iOS/SwiftUI / App Store.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "android",
+        "kotlin",
+        "release",
+        "gradle",
+        "play-store"
+      ],
+      "skills": [
+        "mobile-release-management",
+        "jetpack-compose-development",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/android/android-release-engineer.md"
+    },
+    {
+      "name": "android-security-reviewer",
+      "description": "Use for a defensive, code-level security review of an Android Kotlin/Compose app or diff — insecure data-at-rest (SharedPreferences/Keystore misuse), exported components and intent/deep-link handling, network TLS/pinning gaps, WebView misuse, secrets exposure, and crypto misuse, with severity-ranked findings (Android Jetpack Compose). Invoke for an authorized appsec review. NOT for fixing the issues (use android-developer), NOT for accessibility review (use android-accessibility-specialist), and NOT for iOS/SwiftUI.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "android",
+        "kotlin",
+        "jetpack-compose",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "jetpack-compose-development",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/android/android-security-reviewer.md"
+    },
+    {
+      "name": "android-test-engineer",
+      "description": "Use when adding or strengthening automated tests for Android code — JUnit unit tests, ViewModel/Flow tests, Compose UI tests (createComposeRule), and Espresso instrumented flows, including closing coverage gaps in code you did not write (Android Jetpack Compose). Invoke for test authoring and test-suite hardening. NOT for shipping features (use android-developer), NOT for triaging a production crash fix (use android-developer), and NOT for iOS/SwiftUI.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "android",
+        "kotlin",
+        "jetpack-compose",
+        "testing",
+        "junit",
+        "espresso"
+      ],
+      "skills": [
+        "test-automation",
+        "jetpack-compose-development",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/android/android-test-engineer.md"
     },
     {
       "name": "api-designer",
@@ -5085,8 +5315,34 @@
       "path": "agents/languages/sql/sql-security-reviewer.md"
     },
     {
-      "name": "swiftui-pro",
-      "description": "Use for native iOS development in Swift/SwiftUI — view composition, @State/@Observable state management, navigation, Swift concurrency (async/await, actors), SwiftUI performance, and Xcode/xcodebuild tooling. NOT for cross-platform RN/Flutter or store submission.",
+      "name": "swiftui-accessibility-specialist",
+      "description": "Use for an accessibility audit of SwiftUI UI — VoiceOver labels/traits/hints, Dynamic Type, contrast, focus order, hit targets, and Reduce Motion, mapped to WCAG with severity-ranked findings (SwiftUI). Invoke for a read-only a11y review. NOT for implementing the fixes (use swiftui-developer), NOT for security review (use swiftui-security-reviewer), and NOT for Android Jetpack Compose.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "ios",
+        "swift",
+        "swiftui",
+        "accessibility",
+        "wcag"
+      ],
+      "skills": [
+        "wcag-audit",
+        "swiftui-development",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/swiftui/swiftui-accessibility-specialist.md"
+    },
+    {
+      "name": "swiftui-ai-engineer",
+      "description": "Use when integrating LLM/AI features into a SwiftUI app — prompt and tool-call plumbing, streaming responses into SwiftUI state, on-device vs hosted inference, and grounding/eval of model output (SwiftUI). Invoke for building AI-backed iOS features. NOT for non-AI feature work (use swiftui-developer), NOT for app architecture (use swiftui-architect), and NOT for Android Jetpack Compose.",
       "category": "mobile",
       "model": "sonnet",
       "tools": [
@@ -5101,17 +5357,222 @@
         "ios",
         "swift",
         "swiftui",
-        "xcode"
+        "ai",
+        "llm"
       ],
       "skills": [
-        "reproduce-then-fix",
+        "llm-application-engineering",
         "swiftui-development",
         "match-project-conventions",
         "verify-by-running"
       ],
-      "version": "1.1.0",
+      "version": "1.0.0",
       "status": "stable",
-      "path": "agents/mobile/swiftui-pro.md"
+      "path": "agents/mobile/swiftui/swiftui-ai-engineer.md"
+    },
+    {
+      "name": "swiftui-architect",
+      "description": "Use when shaping the architecture of a SwiftUI app or module — module boundaries, state-ownership and navigation topology, the observation/dependency strategy, and target/layering decisions (SwiftUI). Invoke for system-level design and trade-off analysis. NOT for implementing features (use swiftui-developer), NOT for performance tuning of existing code (use swiftui-performance-engineer), and NOT for Android Jetpack Compose.",
+      "category": "mobile",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "ios",
+        "swift",
+        "swiftui",
+        "architecture"
+      ],
+      "skills": [
+        "software-architecture",
+        "swiftui-development",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/swiftui/swiftui-architect.md"
+    },
+    {
+      "name": "swiftui-developer",
+      "description": "Use when turning a SwiftUI requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported SwiftUI bug or crash (SwiftUI). Invoke for building or extending Swift/SwiftUI views, state, and navigation, and for diagnosing failures in existing SwiftUI code. NOT for system-level design (use swiftui-architect), NOT for adding tests to code you did not write (use swiftui-test-engineer), and NOT for Android Jetpack Compose.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ios",
+        "swift",
+        "swiftui",
+        "xcode",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "swiftui-development",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/swiftui/swiftui-developer.md"
+    },
+    {
+      "name": "swiftui-observability-engineer",
+      "description": "Use when instrumenting a SwiftUI app for production visibility — structured logging (OSLog/Logger), signposts/metrics, crash and analytics reporting, and trace context across async work (SwiftUI). Invoke for adding telemetry and diagnostics to running code. NOT for fixing performance with Instruments (use swiftui-performance-engineer), NOT for feature logic (use swiftui-developer), and NOT for Android Jetpack Compose.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ios",
+        "swift",
+        "swiftui",
+        "observability",
+        "oslog",
+        "telemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "swiftui-development",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/swiftui/swiftui-observability-engineer.md"
+    },
+    {
+      "name": "swiftui-performance-engineer",
+      "description": "Use when a SwiftUI app is slow, janky, memory-heavy, or battery-hungry — diagnosing and fixing scroll hitches, excessive view re-evaluation, retain cycles, and main-thread stalls with Instruments evidence (SwiftUI). Invoke for measured performance work on existing code. NOT for building new features (use swiftui-developer) and NOT for Android Jetpack Compose.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ios",
+        "swift",
+        "swiftui",
+        "performance",
+        "instruments"
+      ],
+      "skills": [
+        "mobile-performance",
+        "swiftui-development",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/swiftui/swiftui-performance-engineer.md"
+    },
+    {
+      "name": "swiftui-release-engineer",
+      "description": "Use when building, signing, and shipping a SwiftUI iOS app — provisioning/signing, versioning, fastlane/xcodebuild archive and export, TestFlight/App Store Connect submission, and release automation (SwiftUI). Invoke for release pipeline and distribution work. NOT for feature code (use swiftui-developer) and NOT for Android Jetpack Compose / Play Store.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ios",
+        "swift",
+        "swiftui",
+        "release",
+        "fastlane",
+        "testflight"
+      ],
+      "skills": [
+        "mobile-release-management",
+        "swiftui-development",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/swiftui/swiftui-release-engineer.md"
+    },
+    {
+      "name": "swiftui-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a SwiftUI/Swift app or diff — insecure data-at-rest (Keychain/UserDefaults misuse), ATS/TLS and pinning gaps, deep-link/URL handling, secrets exposure, and crypto misuse, with severity-ranked findings (SwiftUI). Invoke for an authorized appsec review. NOT for fixing the issues (use swiftui-developer), NOT for accessibility review (use swiftui-accessibility-specialist), and NOT for Android Jetpack Compose.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "ios",
+        "swift",
+        "swiftui",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "swiftui-development",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/swiftui/swiftui-security-reviewer.md"
+    },
+    {
+      "name": "swiftui-test-engineer",
+      "description": "Use when adding or strengthening automated tests for SwiftUI code — XCTest/Swift Testing unit tests, view-model and snapshot tests, and XCUITest UI flows, including closing coverage gaps in code you did not write (SwiftUI). Invoke for test authoring and test-suite hardening. NOT for shipping features (use swiftui-developer), NOT for triaging a production crash fix (use swiftui-developer), and NOT for Android Jetpack Compose.",
+      "category": "mobile",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "ios",
+        "swift",
+        "swiftui",
+        "testing",
+        "xctest"
+      ],
+      "skills": [
+        "test-automation",
+        "swiftui-development",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/mobile/swiftui/swiftui-test-engineer.md"
     },
     {
       "name": "tax-rules-analyst",
@@ -6612,6 +7073,24 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/ai-ml/mcp-integration/SKILL.md"
+    },
+    {
+      "name": "mobile-performance",
+      "description": "Use when diagnosing or fixing mobile-client performance — profile first, then attack the right axis. Covers frame rate / jank during scroll and animation, app startup / cold-launch time, list and scroll smoothness, memory growth & retain cycles / leaks, battery / energy drain, and binary / app-size. TRIGGER on a dropped-frames or stutter report, slow launch, janky list, OOM or rising memory, excessive battery use, or a bloated app download. Language/framework-agnostic — the framework specifics (which profiler, which lifecycle, which fix) come from the composed framework capability. NOT for store submission/signing (use mobile-release-management) or for writing new features.",
+      "category": "mobile",
+      "tags": [
+        "performance",
+        "jank",
+        "frame-rate",
+        "startup",
+        "memory",
+        "battery",
+        "app-size",
+        "profiling"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/mobile/mobile-performance/SKILL.md"
     },
     {
       "name": "mobile-release-management",
