@@ -54,7 +54,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] azure
 - [x] cloudflare
 - [x] kubernetes-platform
-- [ ] supabase
+- [x] supabase
 
 ## Data platforms / databases (data category; tailored teams + skills)
 - [ ] postgres
