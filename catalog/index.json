@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 822,
-    "skills": 137,
+    "agents": 829,
+    "skills": 138,
     "categories": 17
   },
   "agents": [
@@ -12516,6 +12516,209 @@
       "path": "agents/mobile/mobile-release-manager.md"
     },
     {
+      "name": "mongodb-architect",
+      "description": "Use when designing or reviewing the architecture of a MongoDB deployment — how the replica-set/sharded-cluster topology, shard-key and partitioning strategy, document model boundaries, read/write-concern and read-preference posture, index baseline, and Atlas-vs-self-managed choice fit together for the workload and RTO/RPO (MongoDB). Produces the design and trade-offs, not the implementation. NOT for applying changes (mongodb-dba), aggregation/index/engine tuning (mongodb-performance-engineer), HA/replication execution (mongodb-reliability-engineer), security review (mongodb-security-reviewer), document schema craft (mongodb-data-modeler), monitoring (mongodb-observability-engineer); NOT for relational PostgreSQL architecture (the postgres team), AWS/GCP/Azure managed DW/pipeline or managed-DB architecture (cloud data-engineers) or Supabase BaaS (supabase-architect), cloud-agnostic pipeline orchestration (etl-architect), or single-SQL-query rewrites (sql-optimizer — MongoDB is not SQL).",
+      "category": "data",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "mongodb",
+        "architecture",
+        "topology",
+        "sharding",
+        "replica-set",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "mongodb-administration",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/mongodb/mongodb-architect.md"
+    },
+    {
+      "name": "mongodb-data-modeler",
+      "description": "Use when modeling the document schema for a MongoDB database — collection and document design, embedding vs referencing for each relationship, the bucket/outlier/computed/subset schema patterns, the index design for the access patterns (single/compound/multikey/text/wildcard, ESR ordering, covered queries), and shard-key implications of the model (MongoDB). Designs the document schema; does not execute or operate the engine. NOT for applying/operating the engine (mongodb-dba), deployment architecture (mongodb-architect), aggregation/index/engine performance tuning (mongodb-performance-engineer), HA (mongodb-reliability-engineer), security review (mongodb-security-reviewer), monitoring (mongodb-observability-engineer); NOT for relational/normalized schema modeling on PostgreSQL (postgres-data-modeler — relational, not document), managed cloud DW modeling (cloud data-engineers) or Supabase schema (supabase team), or single-SQL-query rewrites (sql-optimizer — MongoDB is not SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "mongodb",
+        "data-modeling",
+        "document-modeling",
+        "schema-patterns",
+        "indexing"
+      ],
+      "skills": [
+        "mongodb-administration",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/mongodb/mongodb-data-modeler.md"
+    },
+    {
+      "name": "mongodb-dba",
+      "description": "Use when administering and operating a MongoDB deployment — creating/managing indexes and collections, configuring replica sets and read/write concerns, managing users/roles/auth, taking and restoring backups (mongodump/mongorestore, Atlas backup/PITR), running balancer/chunk maintenance, and routine day-to-day operations via mongosh — then validating against the deployment (MongoDB). NOT for deployment architecture (mongodb-architect), aggregation/index/engine performance tuning (mongodb-performance-engineer), HA/replication/failover hardening (mongodb-reliability-engineer), security review (mongodb-security-reviewer), document-schema modeling (mongodb-data-modeler), monitoring instrumentation (mongodb-observability-engineer); NOT for relational PostgreSQL ops (the postgres team), managed cloud DW ops (cloud data-engineers) or Supabase admin (supabase team), pipeline orchestration (etl-architect), or single-SQL-query rewrites (sql-optimizer — MongoDB is not SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "mongodb",
+        "dba",
+        "operations",
+        "backup",
+        "roles",
+        "indexes"
+      ],
+      "skills": [
+        "mongodb-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/mongodb/mongodb-dba.md"
+    },
+    {
+      "name": "mongodb-observability-engineer",
+      "description": "Use when instrumenting a MongoDB deployment's observability — the database profiler and slow-query log, serverStatus/currentOp/$indexStats signals, exporters/metrics for connection saturation, replication lag, oplog window, WiredTiger cache pressure, scan-vs-index ratio and operation latency, and SLO-driven alerting on those signals (or via Atlas monitoring/alerts) — then validating it (MongoDB). NOT for deployment architecture (mongodb-architect), routine ops (mongodb-dba), aggregation/index/engine performance tuning (mongodb-performance-engineer), HA/recovery design (mongodb-reliability-engineer), security review (mongodb-security-reviewer), document-schema modeling (mongodb-data-modeler); NOT for relational PostgreSQL observability (the postgres team), AWS/GCP/Azure managed-DB monitoring or Supabase observability (their observability-engineers), generic app observability (devops observability-engineer), or single-SQL-query rewrites (sql-optimizer — MongoDB is not SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "mongodb",
+        "observability",
+        "profiler",
+        "metrics",
+        "alerting",
+        "replication-lag"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "mongodb-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/mongodb/mongodb-observability-engineer.md"
+    },
+    {
+      "name": "mongodb-performance-engineer",
+      "description": "Use when tuning the performance of a MongoDB deployment — the index strategy across the workload (single/compound/multikey/text/wildcard and the ESR rule, covered queries, dropping unused indexes), aggregation-pipeline optimization (stage order, $match/$sort pushdown, memory limits), WiredTiger cache and engine config, shard-key/targeting review, and workload profiling — then validating with explain(\"executionStats\") (MongoDB). Owns aggregation/index/engine tuning. NOT for rewriting an isolated single SQL query — MongoDB is not SQL, and sql-optimizer owns single SQL-query rewrites; this owns the MongoDB aggregation/index/engine layer. NOT for deployment architecture (mongodb-architect), routine ops (mongodb-dba), HA (mongodb-reliability-engineer), security review (mongodb-security-reviewer), document-schema modeling (mongodb-data-modeler), monitoring (mongodb-observability-engineer); NOT for relational PostgreSQL tuning (the postgres team), or managed cloud DW/Supabase tuning.",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "mongodb",
+        "performance",
+        "indexing",
+        "esr",
+        "aggregation",
+        "explain"
+      ],
+      "skills": [
+        "mongodb-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/mongodb/mongodb-performance-engineer.md"
+    },
+    {
+      "name": "mongodb-reliability-engineer",
+      "description": "Use when hardening a MongoDB deployment's resilience — replica-set elections and member topology, oplog sizing for the replication window, read/write-concern durability (w:\"majority\"), point-in-time recovery and backup/restore drills (mongodump --oplog, Atlas PITR), replication-lag limits, sharded-cluster failover, and graceful degradation to a defined RTO/RPO — then validating it with a tested drill (MongoDB). NOT for deployment architecture (mongodb-architect), routine ops (mongodb-dba), aggregation/index/engine performance tuning (mongodb-performance-engineer), security review (mongodb-security-reviewer), document-schema modeling (mongodb-data-modeler), monitoring instrumentation (mongodb-observability-engineer); NOT for relational PostgreSQL reliability (the postgres team), AWS/GCP/Azure managed-DB or Supabase reliability (their reliability-engineers), pipeline orchestration resilience (etl-architect), or single-SQL-query rewrites (sql-optimizer — MongoDB is not SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "mongodb",
+        "reliability",
+        "replica-set",
+        "failover",
+        "pitr",
+        "backups"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "mongodb-administration",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/mongodb/mongodb-reliability-engineer.md"
+    },
+    {
+      "name": "mongodb-security-reviewer",
+      "description": "Use when reviewing a MongoDB deployment for security — user/role design and least privilege, over-broad built-in roles and unnecessary admin/cluster grants, authentication and TLS posture (SCRAM/x.509, encryption in transit/at rest), network exposure and IP allowlisting, injection-prone unsanitized query operators, and field-level data exposure — then triaging findings by severity (MongoDB). Read-only; reports, does not change anything. NOT for fixing or building the deployment (mongodb-dba), architecture (mongodb-architect), performance tuning (mongodb-performance-engineer), HA (mongodb-reliability-engineer), document-schema modeling (mongodb-data-modeler), monitoring (mongodb-observability-engineer); NOT for relational PostgreSQL security (the postgres team), AWS/GCP/Azure managed-DB/IAM or Supabase auth review (their security-reviewers), pipeline review (etl-architect), or single-SQL-query rewrites (sql-optimizer — MongoDB is not SQL).",
+      "category": "data",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "mongodb",
+        "security",
+        "roles",
+        "auth",
+        "tls",
+        "review"
+      ],
+      "skills": [
+        "appsec-review",
+        "mongodb-administration",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/data/mongodb/mongodb-security-reviewer.md"
+    },
+    {
       "name": "naming-specialist",
       "description": "Use when naming a product, feature, company, or project — elicits positioning and constraints, generates candidates across naming styles (descriptive, evocative, invented, metaphor, compound), then screens for pronounceability, memorability, collisions, and caveated domain/trademark risk.",
       "category": "creative",
@@ -23940,6 +24143,26 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/mobile/mobile-release-management/SKILL.md"
+    },
+    {
+      "name": "mongodb-administration",
+      "description": "The substantive MongoDB capability — document data modeling and schema design (embedding vs referencing, the bucket/outlier/computed/subset patterns), the aggregation pipeline, indexes (single/compound/multikey/text/wildcard and the ESR rule), sharding and shard-key selection, replica sets (elections, oplog, read preference, read/write concerns), change streams, multi-document transactions, Atlas vs self-managed operations, performance analysis via explain plans, and tooling (mongosh, mongodump/mongorestore). Use when modeling, indexing, aggregating, sharding, replicating, securing, tuning, or operating a MongoDB deployment (Atlas or self-managed). Any agent operating MongoDB can load it. NOT for relational/SQL engines (PostgreSQL), managed cloud DW/pipelines (BigQuery/Synapse/Redshift), Supabase BaaS, cloud-agnostic pipeline orchestration design, or isolated single-SQL-query rewrites.",
+      "category": "data",
+      "tags": [
+        "mongodb",
+        "document-modeling",
+        "aggregation-pipeline",
+        "indexing",
+        "sharding",
+        "replica-set",
+        "change-streams",
+        "transactions",
+        "atlas",
+        "mongosh"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/data/mongodb-administration/SKILL.md"
     },
     {
       "name": "naming",
