@@ -5380,8 +5380,8 @@
         "match-project-conventions",
         "verify-by-running"
       ],
-      "version": "0.1.0",
-      "status": "experimental",
+      "version": "1.0.0",
+      "status": "stable",
       "path": "agents/cloud/azure/services/ai-ml/azure-machine-learning-specialist.md"
     },
     {
@@ -32624,8 +32624,8 @@
         "endpoints",
         "mlops"
       ],
-      "version": "0.1.0",
-      "status": "experimental",
+      "version": "1.0.0",
+      "status": "stable",
       "path": "skills/cloud/azure-machine-learning/SKILL.md"
     },
     {

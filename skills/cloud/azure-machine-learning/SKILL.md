@@ -4,10 +4,10 @@ description: Use when designing, provisioning, securing, or operating Azure Mach
 allowed-tools: Read, Grep, Glob, Bash
 category: cloud
 tags: [azure, azure-machine-learning, ai-ml, machine-learning, training, endpoints, mlops]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 license: MIT
-status: experimental
+status: stable
 ---
 
 # Azure Machine Learning

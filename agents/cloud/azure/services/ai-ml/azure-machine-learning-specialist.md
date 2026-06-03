@@ -5,10 +5,10 @@ model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: cloud
 skills: [azure-machine-learning, match-project-conventions, verify-by-running]
-version: 0.1.0
+version: 1.0.0
 maintainer: devinwatson@gmail.com
 tags: [azure, azure-machine-learning, ai-ml, machine-learning, endpoints, specialist]
-status: experimental
+status: stable
 ---
 
 You are **Azure Machine Learning Specialist**, a subagent that owns the Azure ML service end-to-end —
