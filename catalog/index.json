@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 737,
-    "skills": 125,
+    "agents": 745,
+    "skills": 126,
     "categories": 16
   },
   "agents": [
@@ -10996,6 +10996,249 @@
       "path": "agents/creative/narrative-designer.md"
     },
     {
+      "name": "nestjs-api-engineer",
+      "description": "Use when designing and building HTTP API endpoints in a NestJS (Node/TypeScript) service — controller/route composition, request/response shaping with validated DTOs (class-validator + ValidationPipe, or zod), correct status codes via @HttpCode/exceptions, a consistent error envelope via an exception filter, pagination/filtering query params, content negotiation, versioning (URI/header/media-type), and accurate resource modeling (NestJS). Invoke to design or implement the API contract layer. NOT for system architecture (use nestjs-architect), NOT for general feature work (use nestjs-developer), NOT for security review (use nestjs-security-reviewer). For framework-agnostic TypeScript API shape route to the typescript language team; for an Express API server (minimal/unopinionated, hand-wired routes) use express-api-engineer — NestJS here is the opinionated DI/decorator framework.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "nestjs",
+        "nodejs",
+        "typescript",
+        "api",
+        "rest"
+      ],
+      "skills": [
+        "rest-api-design",
+        "nestjs-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nestjs/nestjs-api-engineer.md"
+    },
+    {
+      "name": "nestjs-architect",
+      "description": "Use when shaping the architecture of a NestJS (Node/TypeScript) application or service — the module graph and feature/shared/core-module boundaries, the DI strategy (providers, custom providers, injection tokens, dynamic modules, injection scopes), the enhancer topology (global vs controller vs handler guards/interceptors/pipes/filters), the validation and error-envelope strategy, the auth/security architecture, the transport choice (HTTP vs microservices vs GraphQL), and the data-layer/ORM and config layering (NestJS). Invoke for system-level design and trade-off analysis. NOT for implementing features (use nestjs-developer), NOT for HTTP contract design alone (use nestjs-api-engineer), NOT for performance tuning of existing code (use nestjs-performance-engineer). For framework-agnostic TypeScript system design route to the typescript language team (typescript-architect); for an Express API server (minimal/unopinionated) use express-architect — NestJS here is the opinionated DI/decorator framework.",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "nestjs",
+        "nodejs",
+        "typescript",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "nestjs-framework",
+        "typescript-type-system",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nestjs/nestjs-architect.md"
+    },
+    {
+      "name": "nestjs-developer",
+      "description": "Use when turning a NestJS (Node/TypeScript) requirement or feature into working, tested code, or when fixing a reported NestJS bug — a `Nest can't resolve dependencies` DI/provider error, a module import/export wiring problem, a guard/interceptor/pipe/filter that runs in the wrong place or not at all, a `ValidationPipe`/DTO not rejecting bad input, an injection-scope surprise, or a dynamic-module config issue. Invoke for building or extending NestJS features (modules, controllers, providers, DTOs, enhancers). NOT for system-level design (use nestjs-architect), NOT for HTTP contract design alone (use nestjs-api-engineer), NOT for adding tests to code you did not write (use nestjs-test-engineer), NOT for performance tuning of working code (use nestjs-performance-engineer). For general (non-NestJS) TypeScript work route to typescript-developer; for an Express API server (minimal/unopinionated) use express-developer — NestJS here is the opinionated DI/decorator framework.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "nestjs",
+        "nodejs",
+        "typescript",
+        "dependency-injection",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "nestjs-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nestjs/nestjs-developer.md"
+    },
+    {
+      "name": "nestjs-migration-engineer",
+      "description": "Use when upgrading a NestJS (Node/TypeScript) service across major versions or evolving it safely — NestJS major-version upgrades (breaking changes in @nestjs/* packages, Express-vs-Fastify adapter and RxJS bumps, deprecated decorator/API removals), CommonJS-to-ESM moves, migrating an Express app onto Nest or restructuring providers/modules, swapping the validation or ORM stack (e.g. TypeORM↔Prisma, class-validator pipe changes), and reconciling changes with the dependency lockfile (NestJS). Invoke for version upgrades and framework-migration work. NOT for routine feature changes (use nestjs-developer), NOT for performance tuning (use nestjs-performance-engineer), NOT for system architecture (use nestjs-architect). For framework-agnostic TypeScript/Node migrations route to the typescript language team; for an Express API server (minimal/unopinionated) use express-migration-engineer — NestJS here is the opinionated DI/decorator framework.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "nestjs",
+        "nodejs",
+        "typescript",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "nestjs-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nestjs/nestjs-migration-engineer.md"
+    },
+    {
+      "name": "nestjs-observability-engineer",
+      "description": "Use when instrumenting a NestJS (Node/TypeScript) service for production visibility — structured request logging with correlation/request IDs (via middleware or an interceptor), Prometheus/OpenTelemetry metrics (latency/error/throughput, DB time), distributed tracing across guards, interceptors, handlers, and downstream calls, the Nest Logger / pino integration, and meaningful health/readiness endpoints via @nestjs/terminus (NestJS). Invoke to add or improve logs, traces, and metrics. NOT for fixing the underlying bug (use nestjs-developer), NOT for event-loop/query performance tuning (use nestjs-performance-engineer), NOT for system architecture (use nestjs-architect). For framework-agnostic TypeScript/Node instrumentation route to the typescript language team; for an Express API server (minimal/unopinionated) use express-observability-engineer — NestJS here is the opinionated DI/decorator framework.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "nestjs",
+        "nodejs",
+        "typescript",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "nestjs-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nestjs/nestjs-observability-engineer.md"
+    },
+    {
+      "name": "nestjs-performance-engineer",
+      "description": "Use when a NestJS (Node/TypeScript) service is slow or its runtime cost is high — event-loop blocking (sync/CPU-bound work on the request path) stalling all requests, request-scoped providers forcing per-request instantiation overhead, database N+1 queries (TypeORM lazy relations, GraphQL resolvers without DataLoader) or connection-pool sizing, heavy global interceptors on hot routes, weak caching (CacheModule/cache-manager keys/TTLs), buffering large payloads instead of streaming, and memory growth — and you need it measured and tuned (NestJS). Invoke to profile and optimize an existing service. NOT for building new features (use nestjs-developer), NOT for system architecture (use nestjs-architect), NOT for security review (use nestjs-security-reviewer). For framework-agnostic TypeScript/Node performance route to the typescript language team; for an Express API server (minimal/unopinionated) use express-performance-engineer — NestJS here is the opinionated DI/decorator framework.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "nestjs",
+        "nodejs",
+        "typescript",
+        "performance",
+        "event-loop"
+      ],
+      "skills": [
+        "cost-optimization",
+        "nestjs-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nestjs/nestjs-performance-engineer.md"
+    },
+    {
+      "name": "nestjs-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a NestJS (Node/TypeScript) service or diff — misbound/missing guards (a route unprotected because the auth guard isn't bound at the right scope or `APP_GUARD` isn't registered), authorization/roles gaps and IDOR, JWT flaws (decode-without-verify, unchecked exp/issuer/audience), validation-pipe gaps (no global ValidationPipe / missing whitelist letting mass-assignment through), injection (SQL/NoSQL/command), SSRF, permissive CORS, secrets in source, and internals leaked when no exception filter sanitizes errors — severity-ranked (NestJS). Invoke for an authorized appsec review. NOT for fixing the issues (use nestjs-developer), NOT for performance review (use nestjs-performance-engineer), NOT for HTTP contract design (use nestjs-api-engineer). For framework-agnostic TypeScript review route to the typescript language team; for an Express API server (minimal/unopinionated) use express-security-reviewer — NestJS here is the opinionated DI/decorator framework.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "nestjs",
+        "nodejs",
+        "typescript",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "nestjs-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nestjs/nestjs-security-reviewer.md"
+    },
+    {
+      "name": "nestjs-test-engineer",
+      "description": "Use when adding or improving automated tests for a NestJS (Node/TypeScript) service — unit tests of providers/services via Test.createTestingModule with .overrideProvider mocks, controller/e2e tests with supertest against an initialized Nest app, guard/interceptor/pipe/filter tests, DTO/ValidationPipe and error-envelope assertions, and integration tests against a real/throwaway database (NestJS). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use nestjs-developer), NOT for performance profiling (use nestjs-performance-engineer), NOT for security review (use nestjs-security-reviewer). For framework-agnostic TypeScript tests route to the typescript language team; for an Express API server (minimal/unopinionated) use express-test-engineer — NestJS here is the opinionated DI/decorator framework.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "nestjs",
+        "nodejs",
+        "typescript",
+        "testing",
+        "supertest"
+      ],
+      "skills": [
+        "test-automation",
+        "nestjs-framework",
+        "typescript-type-system",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/nestjs/nestjs-test-engineer.md"
+    },
+    {
       "name": "nextjs-accessibility-specialist",
       "description": "Use for a WCAG accessibility audit of a Next.js App Router app — semantic structure, keyboard and focus management across client navigation, ARIA usage, color contrast, and forms — with severity-ranked findings (Next.js). Invoke for an accessibility review of rendered routes and components. NOT for fixing the issues (use nextjs-developer), NOT for security review (use nextjs-security-reviewer), NOT for performance (use nextjs-performance-engineer).",
       "category": "web",
@@ -18945,7 +19188,7 @@
     },
     {
       "name": "typescript-architect",
-      "description": "Use when designing or reviewing the structure of a TypeScript system, service, or module — component boundaries, coupling/cohesion, interface contracts, package/module layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in TS or when reviewing a TypeScript design proposal. Not for implementing the feature (use typescript-developer) or for REST endpoint shape alone (use typescript-api-designer). For the architecture of an Express API server specifically (router/controller/service layering, middleware topology, the error pipeline) use express-architect rather than this agent; for Nest and Next use their respective teams.",
+      "description": "Use when designing or reviewing the structure of a TypeScript system, service, or module — component boundaries, coupling/cohesion, interface contracts, package/module layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in TS or when reviewing a TypeScript design proposal. Not for implementing the feature (use typescript-developer) or for REST endpoint shape alone (use typescript-api-designer). For the architecture of an Express API server specifically (router/controller/service layering, middleware topology, the error pipeline) use express-architect; for NestJS architecture (the module graph, DI strategy, the enhancer topology) use nestjs-architect; for Next use that team.",
       "category": "languages",
       "model": "opus",
       "tools": [
@@ -19047,7 +19290,7 @@
     },
     {
       "name": "typescript-developer",
-      "description": "Use when turning a TypeScript requirement, ticket, or feature into working, tested, incrementally-shipped code on Node/Deno or the browser, or when fixing a reported TypeScript bug. Invoke for building or extending general TypeScript features and for diagnosing failures in existing TypeScript code. Not for system-level design (use typescript-architect) or for adding tests to code you did not write (use typescript-unit-test-architect). For Express API server work (routers, middleware, handlers, the error pipeline) use express-developer rather than this agent; for Nest and Next use their respective teams.",
+      "description": "Use when turning a TypeScript requirement, ticket, or feature into working, tested, incrementally-shipped code on Node/Deno or the browser, or when fixing a reported TypeScript bug. Invoke for building or extending general TypeScript features and for diagnosing failures in existing TypeScript code. Not for system-level design (use typescript-architect) or for adding tests to code you did not write (use typescript-unit-test-architect). For Express API server work (routers, middleware, handlers, the error pipeline) use express-developer; for NestJS (modules, controllers, providers/DI, the guard/interceptor/pipe/filter pipeline) use nestjs-developer; for Next use that team.",
       "category": "languages",
       "model": "sonnet",
       "tools": [
@@ -21349,6 +21592,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/creative/narrative-structure/SKILL.md"
+    },
+    {
+      "name": "nestjs-framework",
+      "description": "Use when working in NestJS (Node.js, TypeScript) — the module system and the DI container (providers, custom providers, injection scopes, dynamic modules), controllers and the decorator/routing model, services, the request lifecycle (middleware → guards → interceptors → pipes → handler → filters), validation pipes (class-validator or zod), DTOs, the module graph, microservices and GraphQL options, TypeORM/Prisma/Mongoose integration, the ConfigModule, and testing with @nestjs/testing + supertest. Verifies with nest build/tsc, jest unit + e2e, and eslint. TRIGGER on NestJS DI/provider-resolution errors, module import/export wiring, enhancer (guard/interceptor/pipe/filter) ordering, ValidationPipe/DTO gaps, dynamic-module config, microservice/GraphQL wiring, or ORM integration. NOT for general TypeScript type-system concerns (typescript-type-system), NOT for framework-agnostic HTTP contract design, and NOT for Express — Express is a minimal/unopinionated server, NestJS is an opinionated DI/decorator framework.",
+      "category": "web",
+      "tags": [
+        "nestjs",
+        "nodejs",
+        "typescript",
+        "dependency-injection",
+        "decorators",
+        "api"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/nestjs-framework/SKILL.md"
     },
     {
       "name": "nextjs-app-router",

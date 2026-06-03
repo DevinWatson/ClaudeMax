@@ -43,7 +43,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] spring-boot (java web)
 - [x] fastapi (python web)
 - [x] express (node web)
-- [ ] nestjs (node web)
+- [x] nestjs (node web)
 - [ ] laravel (php web)
 - [ ] phoenix (elixir web)
 - [ ] dotnet-aspnet (csharp web)
