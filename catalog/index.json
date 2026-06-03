@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 366,
-    "skills": 101,
+    "agents": 387,
+    "skills": 102,
     "categories": 16
   },
   "agents": [
@@ -627,6 +627,597 @@
       "version": "1.1.0",
       "status": "stable",
       "path": "agents/creative/copy-ideator.md"
+    },
+    {
+      "name": "cpp-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in C++ — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution, verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across a C++ app. Not for a single model call (use cpp-ai-engineer) or retrieval pipelines (use cpp-rag-engineer). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-agent-orchestrator.md"
+    },
+    {
+      "name": "cpp-ai-engineer",
+      "description": "Use when building LLM-backed features in C++ — wiring model calls via llama.cpp or an HTTP client SDK, prompt/response plumbing, structured output parsing, streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in a C++ app. Not for retrieval pipelines (use cpp-rag-engineer), multi-agent workflows (use cpp-agent-orchestrator), or eval harnesses (use cpp-evals-engineer). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-ai-engineer.md"
+    },
+    {
+      "name": "cpp-api-designer",
+      "description": "Use when designing or implementing a REST/HTTP API in C++ — resource modeling, URL and verb design, status codes, pagination, versioning, error envelopes, and idempotency, realized in a C++ web framework (Crow, Drogon, or similar). Invoke to design or refine C++ HTTP endpoints. Not for gRPC/protobuf schemas (use cpp-proto-steward) or for system structure (use cpp-architect). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "rest",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-api-designer.md"
+    },
+    {
+      "name": "cpp-architect",
+      "description": "Use when designing or reviewing the structure of a C++ system, service, library, or module — component boundaries, coupling/cohesion, interface and ownership contracts, header/translation-unit and target layout, ABI stability, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in C++ or when reviewing a C++ design proposal. Not for implementing the feature (use cpp-developer) or for REST endpoint shape alone (use cpp-api-designer). (C++)",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "cpp-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-architect.md"
+    },
+    {
+      "name": "cpp-compliance-reviewer",
+      "description": "Use when checking C++ code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of C++ code. Not for finding exploitable vulnerabilities (use cpp-security-reviewer). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "cpp-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-compliance-reviewer.md"
+    },
+    {
+      "name": "cpp-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts for C++ services — Pact (pact-cpp) consumer and provider tests, contract publication, and compatibility checks between services. Invoke to add or fix contract tests for a C++ service so a provider change cannot silently break a consumer. Not for in-process integration tests (use cpp-integration-test-architect) or end-to-end flows (use cpp-sdet). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "contract-testing",
+        "pact"
+      ],
+      "skills": [
+        "contract-testing",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-contract-tester.md"
+    },
+    {
+      "name": "cpp-cost-governor",
+      "description": "Use when reducing the runtime cost of C++ services — allocation and copy reduction, memory-footprint and container right-sizing, thread-pool and connection-pool sizing, cache-friendly data layout, build/link-time bloat, and cloud resource footprint. Invoke to analyze and cut compute/memory cost of C++ workloads. Not for latency-only profiling unless it lowers cost, and not for resilience design (use cpp-reliability-engineer). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "cost",
+        "performance"
+      ],
+      "skills": [
+        "cost-optimization",
+        "cpp-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-cost-governor.md"
+    },
+    {
+      "name": "cpp-developer",
+      "description": "Use when turning a C++ requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported C++ bug. Invoke for building or extending C++ features and for diagnosing failures (crashes, leaks, UB) in existing C++ code. Not for system-level design (use cpp-architect) or for adding tests to code you did not write (use cpp-unit-test-architect). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-developer.md"
+    },
+    {
+      "name": "cpp-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in C++ — assembling datasets, defining eval suites, and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality in C++. Not for building the feature (use cpp-ai-engineer) or the retrieval pipeline (use cpp-rag-engineer). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "cpp-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-evals-engineer.md"
+    },
+    {
+      "name": "cpp-integration-test-architect",
+      "description": "Use when testing how C++ components integrate across real boundaries — database, HTTP clients, message brokers, IPC, or other services — using ctest fixtures, Testcontainers, or local service harnesses. Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use cpp-unit-test-architect) or browser/end-to-end flows (use cpp-sdet). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "integration-testing",
+        "testcontainers"
+      ],
+      "skills": [
+        "integration-testing",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-integration-test-architect.md"
+    },
+    {
+      "name": "cpp-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in C++ — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle in C++. Invoke for MCP server/client work in a C++ codebase. Not for general LLM feature plumbing (use cpp-ai-engineer) or multi-agent coordination (use cpp-agent-orchestrator). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-mcp-steward.md"
+    },
+    {
+      "name": "cpp-migration-engineer",
+      "description": "Use when migrating C++ code across a standard or framework boundary — C++ standard upgrades (C++11/14 to 17/20/23), compiler/toolchain moves, build-system migrations (Make/Autotools to CMake), package-manager moves (to Conan/vcpkg), or library replacements — done in safe, verifiable increments. Invoke to plan and execute a C++ migration or fix breakage it caused. Not for greenfield features (use cpp-developer) or pure restructuring within one standard (use cpp-architect). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-migration-engineer.md"
+    },
+    {
+      "name": "cpp-observability-engineer",
+      "description": "Use when instrumenting C++ services for observability — structured logging, metrics, and distributed tracing via OpenTelemetry-cpp (and spdlog/Prometheus), span/context propagation, and useful dashboards/alerts signals. Invoke to add or fix telemetry in C++. Not for resilience patterns like retries/circuit-breakers (use cpp-reliability-engineer) or cost reduction (use cpp-cost-governor). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "observability",
+        "opentelemetry"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-observability-engineer.md"
+    },
+    {
+      "name": "cpp-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by a C++ application — externalizing prompts from code, templating and parameterizing them, versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in a C++ codebase. Not for wiring the model call (use cpp-ai-engineer) or scoring output quality (use cpp-evals-engineer). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "cpp-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-prompt-librarian.md"
+    },
+    {
+      "name": "cpp-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by C++ — message and service definitions, field numbering, wire/back-compat rules, and generated-C++ integration. Invoke for .proto schema design or compatibility review in a C++ codebase. Not for REST/HTTP API design (use cpp-api-designer) or consumer/provider contract tests (use cpp-contract-tester). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-proto-steward.md"
+    },
+    {
+      "name": "cpp-qa-analyst",
+      "description": "Use when planning what to test for a C++ change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for C++ work, before or instead of writing tests. Not for writing the tests themselves (use the cpp test-architect/sdet roles). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "cpp-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-qa-analyst.md"
+    },
+    {
+      "name": "cpp-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in C++ — chunking, embeddings, vector store wiring (FAISS or a vector DB client), hybrid retrieval + reranking, context assembly, and grounding/citation. Invoke for RAG retrieval quality or wiring in C++. Not for a single model call (use cpp-ai-engineer) or for building an eval harness (use cpp-evals-engineer). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-rag-engineer.md"
+    },
+    {
+      "name": "cpp-reliability-engineer",
+      "description": "Use when hardening a C++ service against partial failure — timeouts, retries-with-backoff, circuit breakers, bulkheads, and backpressure, plus graceful degradation and load shedding. Invoke for resilience design or review of C++ services. Not for emitting telemetry (use cpp-observability-engineer) or triaging a live outage. (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-reliability-engineer.md"
+    },
+    {
+      "name": "cpp-sdet",
+      "description": "Use when building end-to-end or UI/API test automation driven from C++ — HTTP/API client suites, harnesses, fixtures, data setup, and stable flows run in CI. Invoke to automate full user/API flows for a C++ system. Not for unit tests (use cpp-unit-test-architect), component integration tests (use cpp-integration-test-architect), or consumer/provider contracts (use cpp-contract-tester). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-sdet.md"
+    },
+    {
+      "name": "cpp-security-reviewer",
+      "description": "Use for a defensive, code-level security review of C++ code or a diff — memory-safety defects (buffer overflows, use-after-free, double-free, use-after-move, out-of-bounds, uninitialized reads), undefined behaviour, integer overflow, unsafe casts, injection (SQL/command), unsafe deserialization, path traversal, secrets exposure, and crypto misuse, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of C++ code you are authorized to review. Not for regulatory/policy conformance (use cpp-compliance-reviewer). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "security",
+        "memory-safety"
+      ],
+      "skills": [
+        "appsec-review",
+        "cpp-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-security-reviewer.md"
+    },
+    {
+      "name": "cpp-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing C++ code — mapping a unit's behaviors and writing deterministic GoogleTest/Catch2 tests (with GoogleMock) that catch real regressions (boundaries, invalid input, error paths, ownership/lifetime, concurrency). Invoke to raise meaningful unit coverage in C++. Not for cross-component integration tests (use cpp-integration-test-architect) or end-to-end automation (use cpp-sdet). (C++)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "cpp",
+        "cpp17",
+        "testing",
+        "googletest",
+        "catch2"
+      ],
+      "skills": [
+        "test-design",
+        "cpp-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/cpp/cpp-unit-test-architect.md"
     },
     {
       "name": "csharp-agent-orchestrator",
@@ -10186,6 +10777,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/devops/cost-optimization/SKILL.md"
+    },
+    {
+      "name": "cpp-idioms",
+      "description": "Use when writing, reviewing, or debugging modern C++ (C++17/20/23) — RAII and ownership, smart pointers (unique_ptr/shared_ptr), move semantics and the rule of 0/3/5, const-correctness, references vs pointers, templates and concepts, the STL and ranges, std::optional/variant/expected, value categories, and the undefined-behaviour/lifetime/aliasing hazards that make C++ unsafe. Verifies with the project's build and sanitizers (CMake build, ctest, clang-tidy, clang-format, ASan/UBSan/valgrind). Any agent touching C++ (writer, reviewer, debugger, systems/embedded/game team) can load it.",
+      "category": "languages",
+      "tags": [
+        "cpp",
+        "cpp17",
+        "raii",
+        "smart-pointers",
+        "templates",
+        "undefined-behaviour"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/cpp-idioms/SKILL.md"
     },
     {
       "name": "csharp-idioms",

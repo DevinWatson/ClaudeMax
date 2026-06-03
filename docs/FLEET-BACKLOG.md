@@ -17,7 +17,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] php
 - [x] scala
 - [x] elixir
-- [ ] cpp
+- [x] cpp
 - [ ] c
 - [ ] dart
 - [ ] clojure
