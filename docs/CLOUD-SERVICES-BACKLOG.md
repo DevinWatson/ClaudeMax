@@ -370,16 +370,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] azure|networking|traffic-manager|Azure Traffic Manager
 - [x] azure|networking|expressroute|Azure ExpressRoute
 - [x] azure|networking|azure-bastion|Azure Bastion
-- [ ] azure|networking|ddos-protection|Azure DDoS Protection
-- [ ] azure|networking|private-link|Azure Private Link
-- [ ] azure|networking|virtual-wan|Azure Virtual WAN
-- [ ] azure|networking|cdn|Azure CDN
+- [x] azure|networking|ddos-protection|Azure DDoS Protection
+- [x] azure|networking|private-link|Azure Private Link
+- [x] azure|networking|virtual-wan|Azure Virtual WAN
+- [x] azure|networking|cdn|Azure CDN
 
 ### analytics
-- [ ] azure|analytics|azure-synapse-analytics|Azure Synapse Analytics
-- [ ] azure|analytics|azure-databricks|Azure Databricks
-- [ ] azure|analytics|hdinsight|Azure HDInsight
-- [ ] azure|analytics|data-factory|Azure Data Factory
+- [x] azure|analytics|azure-synapse-analytics|Azure Synapse Analytics
+- [x] azure|analytics|azure-databricks|Azure Databricks
+- [x] azure|analytics|hdinsight|Azure HDInsight
+- [x] azure|analytics|data-factory|Azure Data Factory
 - [ ] azure|analytics|stream-analytics|Azure Stream Analytics
 - [ ] azure|analytics|event-hubs|Azure Event Hubs
 - [ ] azure|analytics|data-explorer|Azure Data Explorer

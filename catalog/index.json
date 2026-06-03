@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1121,
-    "skills": 413,
+    "agents": 1129,
+    "skills": 421,
     "categories": 17
   },
   "agents": [
@@ -5743,6 +5743,35 @@
       "path": "agents/cloud/azure/services/databases/azure-cache-for-redis-specialist.md"
     },
     {
+      "name": "azure-cdn-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure CDN (Azure) — edge content delivery and caching: CDN profiles and endpoints, provider SKUs (Microsoft / Edgio), origins and origin groups, caching behavior/TTL and query-string modes, compression, custom domains with managed TLS, the Rules engine, and purge/preload. OWNS this one service end-to-end (profile, endpoint, origins, caching/rules, custom domain) and verifies cache HIT/MISS, TTL, and HTTPS behavior. NOT the azure-networking-engineer role, which owns cross-cutting edge strategy (via network-design). Azure CDN has NO WAF — for WAF/bot/path-based routing use azure-front-door-specialist (the global edge CDN+WAF+L7 option). Cross-cloud peers (defer): aws-cloudfront, gcp-cloud-cdn.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-cdn",
+        "networking",
+        "caching",
+        "specialist"
+      ],
+      "skills": [
+        "azure-cdn",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-cdn-specialist.md"
+    },
+    {
       "name": "azure-cloud-architect",
       "description": "Use when designing or reviewing a Microsoft Azure architecture — selecting managed services, laying out management-groups/subscriptions/resource-groups/VNets/regions, and evaluating a design against the Azure Well-Architected Framework's pillars (Azure). Produces the design and trade-offs, not the IaC. NOT for writing Bicep/ARM/Terraform (use azure-iac-engineer), RBAC/exposure auditing (azure-security-reviewer), cost tuning (azure-cost-governor), generic IaC across clouds (terraform-architect), or AWS/GCP architecture (aws-/gcp-cloud-architect).",
       "category": "cloud",
@@ -5971,6 +6000,35 @@
       "path": "agents/cloud/azure/azure-data-engineer.md"
     },
     {
+      "name": "azure-data-factory-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Data Factory (Azure) — managed cloud ETL/ELT orchestration: the factory, pipelines/activities (Copy, control flow), datasets and linked services, integration runtimes (Azure/Self-Hosted/SSIS), mapping data flows, triggers (schedule/tumbling/event), Git + CI/CD, and managed VNet/private endpoints. OWNS the Azure managed-service layer end-to-end (factory, linked services/datasets, pipelines/data flows, integration runtimes, triggers, identity/networking) and verifies a pipeline run succeeds. DEFERS cloud-agnostic pipeline/data-model design to data/etl-architect and transform/query rewrites to data/sql-optimizer. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-glue, gcp-data-fusion.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-data-factory",
+        "analytics",
+        "etl",
+        "specialist"
+      ],
+      "skills": [
+        "azure-data-factory",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/analytics/azure-data-factory-specialist.md"
+    },
+    {
       "name": "azure-data-lake-storage-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Data Lake Storage Gen2 (Azure) — big-data analytics storage built on Blob by enabling the Hierarchical Namespace: HNS (real directories, atomic rename/delete), the DFS endpoint and filesystem semantics, POSIX ACLs layered on Entra RBAC, access tiers and lifecycle on lake data, medallion/zone layout (bronze/silver/gold), and integration with Synapse/Databricks/Fabric — secured via Entra/RBAC + ACLs, managed identities, and private endpoints. OWNS the Azure managed-service layer end-to-end (HNS, filesystems/zones, RBAC + ACLs, tiering/lifecycle, networking) for analytics lake storage. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-data-engineer, cross-cutting) and NOT pipeline/ETL design. Sibling Azure storage specialists own plain blobs (azure-blob-storage), files, and disks. Cross-cloud peers (defer): aws-s3 + lake-formation, gcp-cloud-storage.",
       "category": "cloud",
@@ -6056,6 +6114,64 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/databases/azure-database-for-postgresql-specialist.md"
+    },
+    {
+      "name": "azure-databricks-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Databricks (Azure) — the first-party Spark lakehouse: the workspace (VNet injection / no-public-IP), compute (all-purpose vs job clusters, autoscaling, pools, Photon, serverless), Jobs/Workflows, Unity Catalog governance, Delta Lake tables, and Entra/SCIM identity. OWNS the Azure managed-service layer end-to-end (workspace, networking, Unity Catalog, cost-aware compute, identity) and verifies a job/notebook runs against Delta. DEFERS cloud-agnostic lakehouse/pipeline design to data/etl-architect and query/Spark-SQL rewrites to data/sql-optimizer. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-emr, gcp-managed-spark (Dataproc).",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-databricks",
+        "analytics",
+        "spark",
+        "specialist"
+      ],
+      "skills": [
+        "azure-databricks",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/analytics/azure-databricks-specialist.md"
+    },
+    {
+      "name": "azure-ddos-protection-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure DDoS Protection (Azure) — managed always-on L3/L4 mitigation for public IPs: the Network Protection vs IP Protection tiers, DDoS protection plans, VNet/public-IP association, adaptive mitigation policies, metrics/diagnostics/alerts, and cost-protection. OWNS this one service end-to-end (plan, tier, associations, telemetry/alerts, WAF pairing) and verifies mitigation engages. NOT the azure-networking-engineer role, which owns cross-cutting edge topology (via network-design). DDoS is L3/L4 only — for HTTP-flood/WAF protection use azure-front-door-specialist or azure-application-gateway-specialist (WAF). Cross-cloud peer (defer): aws-shield.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-ddos-protection",
+        "networking",
+        "ddos",
+        "specialist"
+      ],
+      "skills": [
+        "azure-ddos-protection",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-ddos-protection-specialist.md"
     },
     {
       "name": "azure-dedicated-host-specialist",
@@ -6288,6 +6404,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/compute/azure-functions-specialist.md"
+    },
+    {
+      "name": "azure-hdinsight-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure HDInsight (Azure) — managed open-source big-data clusters (Hadoop, Spark, Kafka, HBase, Interactive Query/LLAP): cluster type and head/worker/zookeeper topology, VM SKU sizing + autoscale, ADLS Gen2 + VNet, the Enterprise Security Package (Entra Domain Services + Ranger), and Kafka broker/partition / HBase region design. OWNS the Azure managed-service layer end-to-end (cluster type, node sizing, storage/VNet, ESP, autoscale, lifecycle) and verifies a job/topic/table works. DEFERS cloud-agnostic pipeline design to data/etl-architect and query/SQL rewrites to data/sql-optimizer; for Kafka event/streaming topic/consumer design cross-ref the kafka data team. NOT the Azure role team (cross-cutting). Cross-cloud peer (defer): aws-emr.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-hdinsight",
+        "analytics",
+        "hadoop",
+        "specialist"
+      ],
+      "skills": [
+        "azure-hdinsight",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/analytics/azure-hdinsight-specialist.md"
     },
     {
       "name": "azure-iac-engineer",
@@ -6527,6 +6672,35 @@
       "path": "agents/cloud/azure/services/ai-ml/azure-openai-specialist.md"
     },
     {
+      "name": "azure-private-link-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Private Link (Azure) — private backbone-only access to PaaS/your own services: Private Endpoints (a private IP for a target sub-resource), Private Link Service (expose your own L4 service), privatelink private DNS zone integration, connection approval (incl. cross-tenant), and disabling public access on the target. OWNS this one service end-to-end (endpoint/link-service + private DNS) and verifies the FQDN resolves privately. NOT the azure-networking-engineer role, which owns cross-cutting topology and DNS strategy (via network-design). For broad VNet/subnet design use azure-virtual-network-specialist. Cross-cloud peers (defer): aws-privatelink, gcp-private-service-connect.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-private-link",
+        "networking",
+        "private-endpoint",
+        "specialist"
+      ],
+      "skills": [
+        "azure-private-link",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-private-link-specialist.md"
+    },
+    {
       "name": "azure-queue-storage-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Queue Storage (Azure) — simple, durable HTTP message queues in a storage account for decoupling components: queues/messages, the visibility-timeout/lease model for at-least-once processing, message size (64 KB)/TTL, peek vs get/delete, poison-message handling via dequeue count, Entra ID/RBAC vs account keys, SAS, managed identities, and private endpoints. OWNS the Azure managed-service layer end-to-end (queues, processing model, poison handling, Entra auth/SAS, networking) for simple queueing. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). For topics, sessions, FIFO, or dead-lettering use Azure Service Bus (richer messaging), not this. Sibling Azure storage specialists own blobs/files/tables. Cross-cloud peers (defer): aws-sqs, gcp-pubsub.",
       "category": "cloud",
@@ -6699,6 +6873,35 @@
       "path": "agents/cloud/azure/services/databases/azure-sql-managed-instance-specialist.md"
     },
     {
+      "name": "azure-synapse-analytics-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Synapse Analytics (Azure) — the unified warehouse+big-data analytics platform: the workspace, dedicated SQL pools (DWU sizing + table distribution) and serverless SQL pools (pay-per-TB lake query), Apache Spark pools, Synapse Pipelines, the default ADLS Gen2, and Synapse Link. OWNS the Azure managed-service layer end-to-end (workspace, pool type/sizing/distribution, Entra/private networking, pause). DEFERS cloud-agnostic warehouse/lakehouse design to data/etl-architect and query/SQL rewrites to data/sql-optimizer. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-redshift + aws-emr, gcp-bigquery.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-synapse-analytics",
+        "analytics",
+        "data-warehouse",
+        "specialist"
+      ],
+      "skills": [
+        "azure-synapse-analytics",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/analytics/azure-synapse-analytics-specialist.md"
+    },
+    {
       "name": "azure-table-storage-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Table Storage (Azure) — a schemaless NoSQL key-value/wide-column store in a storage account: tables/entities, the PartitionKey + RowKey composite key and partition design, the OData query API and point vs partition vs table-scan cost, batch (entity group) transactions within a partition, optimistic concurrency via ETag, Entra ID/RBAC vs account keys, SAS, managed identities, and private endpoints. OWNS the Azure managed-service layer end-to-end (key design, tables, query patterns, Entra auth/SAS, networking) for cheap NoSQL key-value. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). For SQL queries, secondary indexes, global distribution, or SLA-backed throughput use Cosmos DB (Table API), not this. Sibling Azure storage specialists own blobs/files/queues. Cross-cloud peer (defer): aws-dynamodb.",
       "category": "cloud",
@@ -6813,6 +7016,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/networking/azure-virtual-network-specialist.md"
+    },
+    {
+      "name": "azure-virtual-wan-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Virtual WAN (Azure) — managed global transit hub-and-spoke networking: the Virtual WAN resource and per-region virtual hubs, hub connections (VNet/site-to-site VPN/point-to-site/ExpressRoute), Routing Intent / hub route tables and inter-hub transit, and secured virtual hubs (integrated Azure Firewall). OWNS this one service end-to-end (WAN, hubs, connections, routing, secured hubs) and verifies spoke↔branch and inter-hub transit. NOT the azure-networking-engineer role, which owns cross-cutting topology decisions (via network-design). For a single hand-built hub VNet use azure-virtual-network-specialist; for branch/on-prem tunnels alone use azure-vpn-gateway-specialist / azure-expressroute-specialist. Cross-cloud peer (defer): aws-transit-gateway.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-virtual-wan",
+        "networking",
+        "hub-spoke",
+        "specialist"
+      ],
+      "skills": [
+        "azure-virtual-wan",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/networking/azure-virtual-wan-specialist.md"
     },
     {
       "name": "azure-vm-scale-sets-specialist",
@@ -34286,6 +34518,21 @@
       "path": "skills/cloud/azure-cache-for-redis/SKILL.md"
     },
     {
+      "name": "azure-cdn",
+      "description": "Use when designing, provisioning, securing, or operating Azure CDN — content delivery that caches and accelerates static and dynamic content from origins through globally distributed edge POPs (Azure CDN). Covers CDN profiles and endpoints, provider SKUs (Azure CDN from Microsoft / Standard from Edgio (formerly Verizon/Akamai)), origins and origin groups, caching rules and cache-control/expiration behavior, query-string caching modes, compression, custom domains with managed TLS, the Standard/Premium Rules engine for request/response manipulation and redirects, geo-filtering, and purge/preload. Loads the knowledge: create the profile + endpoint, point at origins, set caching/rules, add custom domain + TLS, and verify cache HIT/MISS and TTLs. Consumed by the azure-cdn specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure CDN).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-cdn",
+        "networking",
+        "caching",
+        "content-delivery"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-cdn/SKILL.md"
+    },
+    {
       "name": "azure-container-apps",
       "description": "Use when designing, provisioning, securing, or operating Azure Container Apps — Azure's serverless container platform for microservices and event-driven apps built on Kubernetes + KEDA without exposing the cluster (Azure Container Apps). Covers the Container Apps environment (the shared boundary/VNet/Log Analytics), apps and containers, revisions and traffic splitting (blue/green, canary), ingress (external/internal, HTTP and TCP), KEDA-based autoscaling (HTTP, queue, custom) including scale-to-zero, Dapr sidecars for service invocation/pub-sub/state, jobs (manual/scheduled/event), managed identities, ACR pulls, secrets, and consumption vs dedicated plans. Loads the knowledge: define the environment and app, set scaling/ingress/revisions, provision, secure, and verify the app is healthy and reachable. Consumed by the azure-container-apps specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Container Apps).",
       "category": "cloud",
@@ -34364,6 +34611,21 @@
       "path": "skills/cloud/azure-data-box/SKILL.md"
     },
     {
+      "name": "azure-data-factory",
+      "description": "Use when designing, provisioning, securing, or operating Azure Data Factory — the managed cloud ETL/ELT and data-integration orchestration service (Azure Data Factory). Covers the factory, pipelines and activities (Copy, Lookup, ForEach, control flow), datasets and linked services, integration runtimes (Azure/AutoResolve, Self-Hosted for on-prem/private, Azure-SSIS), mapping data flows (Spark-backed transforms), triggers (schedule/tumbling-window/event), Git + CI/CD with ARM, and managed VNet + private endpoints. Loads the knowledge: create the factory, define linked services/datasets, build pipelines/data flows, pick integration runtimes, secure with Entra/managed identity, and verify a pipeline run. Consumed by the azure-data-factory specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure Data Factory).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-data-factory",
+        "analytics",
+        "etl",
+        "orchestration"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-data-factory/SKILL.md"
+    },
+    {
       "name": "azure-data-lake-storage",
       "description": "Use when designing, provisioning, securing, or operating Azure Data Lake Storage Gen2 (ADLS Gen2) — big-data analytics storage built on Blob Storage by enabling the Hierarchical Namespace on a storage account (Azure Data Lake Storage). Covers HNS (real directories, atomic directory rename/delete), the DFS endpoint and filesystem (container) semantics, POSIX-style ACLs layered on Entra RBAC, access tiers and lifecycle on lake data, the medallion/zone layout (bronze/silver/gold), integration with Synapse/Databricks/Fabric, Entra ID/RBAC + ACLs, managed identities, and private endpoints. Loads the knowledge: enable HNS, design filesystems/zones, set RBAC + ACLs, provision, and verify directory/file operations. Consumed by the azure-data-lake-storage specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect / azure-data-engineer) when standing up the managed service (Azure Data Lake Storage).",
       "category": "cloud",
@@ -34409,6 +34671,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-database-for-postgresql/SKILL.md"
+    },
+    {
+      "name": "azure-databricks",
+      "description": "Use when designing, provisioning, securing, or operating Azure Databricks — the first-party Apache Spark lakehouse platform on Azure for data engineering, analytics, and ML (Azure Databricks). Covers the Databricks workspace (and VNet injection / secure cluster connectivity), compute (all-purpose vs job clusters, autoscaling, pools, instance types, Photon, serverless), Jobs and Workflows orchestration, notebooks and Repos, Unity Catalog for centralized governance (metastore, catalogs/schemas, lineage, access control), Delta Lake table format (ACID, time travel, OPTIMIZE/Z-ORDER), and Entra ID/SCIM identity with managed identities/credential passthrough. Loads the knowledge: create the workspace, configure compute/Unity Catalog, secure with Entra + VNet injection, and verify a job/notebook runs against Delta. Consumed by the azure-databricks specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure Databricks).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-databricks",
+        "analytics",
+        "spark",
+        "lakehouse"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-databricks/SKILL.md"
+    },
+    {
+      "name": "azure-ddos-protection",
+      "description": "Use when designing, provisioning, securing, or operating Azure DDoS Protection — the managed always-on distributed-denial-of-service mitigation that protects public IPs and virtual networks at the Azure network edge (Azure DDoS Protection). Covers the Network Protection and IP Protection tiers, DDoS protection plans, enabling protection on VNets/public IPs, adaptive tuning and mitigation policies (per-IP detection thresholds), telemetry/metrics/attack analytics and alerting, the SLA/cost-protection guarantee, and integration with Azure Firewall/WAF for layer-7. Loads the knowledge: pick the tier, create the plan, associate VNets/IPs, tune policies, wire metrics+alerts, and verify mitigation. Consumed by the azure-ddos-protection specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure DDoS Protection).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-ddos-protection",
+        "networking",
+        "ddos",
+        "security"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-ddos-protection/SKILL.md"
     },
     {
       "name": "azure-dedicated-host",
@@ -34535,6 +34827,22 @@
       "path": "skills/cloud/azure-functions/SKILL.md"
     },
     {
+      "name": "azure-hdinsight",
+      "description": "Use when designing, provisioning, securing, or operating Azure HDInsight — the managed open-source big-data service that runs full Apache cluster distributions (Hadoop, Spark, Kafka, HBase, Interactive Query/LLAP) on Azure (Azure HDInsight). Covers cluster types and the head/worker/zookeeper node topology, VM SKU sizing and autoscale (load-based and schedule-based), ADLS Gen2 as the cluster's default/linked storage, deployment into a VNet, Enterprise Security Package (Entra Domain Services + Apache Ranger for Kerberized multi-user clusters), Kafka broker/partition layout and HBase region design, and script actions/edge nodes for customization. Loads the knowledge: pick the cluster type, size nodes, attach storage + VNet, secure with ESP, and verify a job/topic/table works. Consumed by the azure-hdinsight specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure HDInsight).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-hdinsight",
+        "analytics",
+        "hadoop",
+        "spark",
+        "kafka"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-hdinsight/SKILL.md"
+    },
+    {
       "name": "azure-load-balancer",
       "description": "Use when designing, provisioning, securing, or operating an Azure Load Balancer — Azure's high-performance Layer-4 (TCP/UDP) load balancer that distributes traffic across a backend pool of VMs/VMSS/IPs (Azure Load Balancer). Covers public vs internal (private) load balancers, Standard vs Basic vs Gateway SKU, frontend IP configurations, backend pools (NIC or IP based), health probes (TCP/HTTP/HTTPS), load-balancing rules and HA Ports, inbound NAT rules/pools, outbound rules and SNAT port allocation, session persistence/distribution mode, availability-zone redundancy, and NSG interplay. Loads the knowledge: pick SKU and public/internal, define frontends/backend pools/probes/rules, secure, provision, and verify traffic distributes to healthy backends. Consumed by the azure-load-balancer specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Load Balancer).",
       "category": "cloud",
@@ -34613,6 +34921,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-openai/SKILL.md"
+    },
+    {
+      "name": "azure-private-link",
+      "description": "Use when designing, provisioning, securing, or operating Azure Private Link — private, backbone-only connectivity to Azure PaaS and your own services via a private IP in your VNet, with no public-internet exposure (Azure Private Link). Covers Private Endpoints (a private NIC for a target PaaS/service), the Private Link Service (expose your own L4 load-balanced service privately to consumers), private DNS zone integration (privatelink.* zones) so names resolve to the private IP, connection approval workflow, NSG/UDR behavior on endpoints, and cross-tenant/cross-region access. Loads the knowledge: create the endpoint or link service, wire private DNS, approve the connection, lock down public access on the target, and verify private resolution + reachability. Consumed by the azure-private-link specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Private Link).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-private-link",
+        "networking",
+        "private-endpoint",
+        "dns"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-private-link/SKILL.md"
     },
     {
       "name": "azure-queue-storage",
@@ -34698,6 +35021,21 @@
       "path": "skills/cloud/azure-sql-managed-instance/SKILL.md"
     },
     {
+      "name": "azure-synapse-analytics",
+      "description": "Use when designing, provisioning, securing, or operating Azure Synapse Analytics — the unified analytics platform combining data warehousing, big-data Spark, and integration over a data lake (Azure Synapse Analytics). Covers the Synapse workspace, dedicated SQL pools (provisioned MPP data warehouse with DWU sizing and distribution strategy) and serverless SQL pools (query files in the lake pay-per-TB), Apache Spark pools (autoscaling notebooks), Synapse Pipelines (ADF-based orchestration), Synapse Studio, the linked Data Lake Storage Gen2 default storage, and Synapse Link (near-real-time HTAP from Cosmos DB/SQL). Loads the knowledge: create the workspace, choose pools, size/distribute, secure with Entra/managed identity, and verify queries/jobs. Consumed by the azure-synapse-analytics specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure Synapse Analytics).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-synapse-analytics",
+        "analytics",
+        "data-warehouse",
+        "spark"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-synapse-analytics/SKILL.md"
+    },
+    {
       "name": "azure-table-storage",
       "description": "Use when designing, provisioning, securing, or operating Azure Table Storage — a schemaless NoSQL key-value/wide-column store in a storage account for structured non-relational data at low cost (Azure Table Storage). Covers tables and entities, the PartitionKey + RowKey composite primary key and partition design, properties/typing, the OData query/filter API and the cost of point vs partition vs table scans, batch (entity group) transactions within a partition, optimistic concurrency via ETag, Entra ID/RBAC vs account keys and SAS, managed identities, and private endpoints. Loads the knowledge: pick the account, design the key scheme, create tables, secure with Entra, provision, and verify insert/query/delete. Consumed by the azure-table-storage specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure Table Storage).",
       "category": "cloud",
@@ -34757,6 +35095,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-virtual-network/SKILL.md"
+    },
+    {
+      "name": "azure-virtual-wan",
+      "description": "Use when designing, provisioning, securing, or operating Azure Virtual WAN — the managed global transit networking service that connects VNets, branches, and users through Microsoft-managed regional hubs in a hub-and-spoke / any-to-any model (Azure Virtual WAN). Covers the Virtual WAN resource and virtual hubs (one per region), hub connections (VNet connections, site-to-site VPN, point-to-site VPN, ExpressRoute), the hub route tables / routing intent and inter-hub global transit, secured virtual hubs (integrated Azure Firewall / Routing Intent for private+internet traffic inspection), and hub capacity/scale units. Loads the knowledge: create the WAN + hubs, attach connections, design routing, secure hubs, and verify branch/VNet-to-VNet transit. Consumed by the azure-virtual-wan specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure Virtual WAN).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-virtual-wan",
+        "networking",
+        "hub-spoke",
+        "global-transit"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-virtual-wan/SKILL.md"
     },
     {
       "name": "azure-vm-scale-sets",
