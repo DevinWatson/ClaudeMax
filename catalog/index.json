@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 985,
-    "skills": 277,
+    "agents": 993,
+    "skills": 285,
     "categories": 17
   },
   "agents": [
@@ -923,6 +923,37 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/web/astro/astro-test-engineer.md"
+    },
+    {
+      "name": "aws-amplify-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Amplify (AWS) — fullstack web/mobile hosting + CI/CD with Git branch deploys, the Amplify Gen 2 code-first backend (Cognito auth, AppSync/DynamoDB data, S3 storage, Lambda functions), build settings (amplify.yml), custom domains/CDN, SSR/SSG hosting, PR preview environments, and secrets/env vars. NOT the web framework teams under agents/web/ (react/next/vue/angular/astro/etc) — those BUILD the application; this specialist owns Amplify hosting + backend provisioning that the app deploys onto. NOT general container hosting (aws-app-runner) or static-site-on-S3+CloudFront when no managed backend/CI-CD is needed. NOT the AWS role team (aws-cloud-architect/aws-iac-engineer/aws-security-reviewer) for cross-cutting architecture, broad IaC, or account-wide security. For GCP/Azure fullstack platforms defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "amplify",
+        "fullstack",
+        "hosting",
+        "ci-cd",
+        "specialized",
+        "specialist"
+      ],
+      "skills": [
+        "aws-amplify",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/specialized/aws-amplify-specialist.md"
     },
     {
       "name": "aws-api-gateway-specialist",
@@ -11537,6 +11568,36 @@
       "path": "agents/cloud/gcp/gcp-data-engineer.md"
     },
     {
+      "name": "gcp-document-ai-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Document AI (GCP) — document parsing via processors (Document OCR, Form Parser, specialized Invoice/Receipt/ID parsers, and custom extractors trained in the Workbench), online and batch processing, form + entity extraction with confidence scores, human-in-the-loop review, and the Document AI Warehouse, plus IAM, CMEK/VPC-SC, residency, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting work. This is pretrained/custom DOCUMENT parsing (structure, forms, entities) — defer single-IMAGE labeling/OCR to gcp-vision-api-specialist, video to gcp-vertex-ai-vision-specialist, and arbitrary custom model training/serving to gcp-vertex-ai-specialist. NOT the language ai-engineer/rag-engineer roles (those build app-side code). The AWS equivalent is Amazon Textract; Azure is Document Intelligence (Form Recognizer) — defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "document-ai",
+        "ai-ml",
+        "ocr",
+        "document-parsing",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-document-ai",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/ai-ml/gcp-document-ai-specialist.md"
+    },
+    {
       "name": "gcp-iac-engineer",
       "description": "Use when writing or refactoring GCP infrastructure as code — Terraform or Deployment Manager that provisions Google Cloud resources, then validating it with plan/validate (GCP). NOT for cloud architecture/Architecture-Framework design (use gcp-cloud-architect), IAM/exposure review (gcp-security-reviewer), generic provider-agnostic Terraform language work (terraform-architect — this agent is GCP-specific infra), or AWS/Azure infra (aws-/azure-iac-engineer).",
       "category": "cloud",
@@ -11680,6 +11741,187 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/gcp-security-reviewer.md"
+    },
+    {
+      "name": "gcp-speech-to-text-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Cloud Speech-to-Text (GCP) — pretrained ASR: synchronous, asynchronous (long-running from Cloud Storage), and streaming transcription, model selection (latest_long/short, telephony, medical, chirp), language/encoding config, model adaptation (phrase sets/boost/custom classes), speaker diarization, punctuation, word timestamps, plus v2 recognizers, IAM, CMEK/VPC-SC, residency, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting work. This is pretrained ASR (audio→text) — defer the reverse (text→audio) to gcp-text-to-speech-specialist, and arbitrary custom audio model training/serving to gcp-vertex-ai-specialist. NOT the language ai-engineer/rag-engineer roles (those build app-side code). The AWS equivalent is Amazon Transcribe; Azure is Azure AI Speech (STT) — defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "speech-to-text",
+        "ai-ml",
+        "asr",
+        "transcription",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-speech-to-text",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/ai-ml/gcp-speech-to-text-specialist.md"
+    },
+    {
+      "name": "gcp-text-to-speech-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Cloud Text-to-Speech (GCP) — pretrained speech synthesis: synthesizing audio from text or SSML, voice selection across Standard, WaveNet, Neural2, Studio, and Chirp 3 HD voices, language/locale + gender, SSML control (prosody/breaks/say-as/emphasis), audio encoding/sample rate, speaking rate/pitch/volume tuning, and long-audio synthesis to Cloud Storage, plus IAM, CMEK, residency, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting work. This is pretrained TTS (text→audio) — defer the reverse (audio→text) to gcp-speech-to-text-specialist, and arbitrary custom audio model training/serving to gcp-vertex-ai-specialist. NOT the language ai-engineer/rag-engineer roles (those build app-side code). The AWS equivalent is Amazon Polly; Azure is Azure AI Speech (TTS) — defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "text-to-speech",
+        "ai-ml",
+        "tts",
+        "speech-synthesis",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-text-to-speech",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/ai-ml/gcp-text-to-speech-specialist.md"
+    },
+    {
+      "name": "gcp-vertex-ai-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Vertex AI (GCP) — the unified ML platform for custom training (containers/distributed/HP tuning), Pipelines (KFP/TFX), the Model Registry, online endpoints + batch prediction, the Feature Store, Generative AI (Gemini, Model Garden, tuning, grounding/RAG), AutoML, plus accelerator sizing, autoscaling, service accounts/IAM, CMEK/VPC-SC, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. This is the flagship platform; defer streaming video to gcp-vertex-ai-vision-specialist and notebooks to gcp-vertex-ai-workbench-specialist; pretrained-API tasks (image/doc/speech) belong to those API specialists, not Vertex custom models. NOT the language ai-engineer/rag-engineer/evals-engineer roles — those build app-side LLM/RAG/eval code; this owns the managed GCP service. The AWS equivalent is Amazon SageMaker; Azure is Azure ML — defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "vertex-ai",
+        "ai-ml",
+        "machine-learning",
+        "training",
+        "prediction",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-vertex-ai",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/ai-ml/gcp-vertex-ai-specialist.md"
+    },
+    {
+      "name": "gcp-vertex-ai-vision-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Vertex AI Vision (GCP) — ingesting and analyzing live/recorded video streams: streams, application graphs (ingest → model nodes → sinks), pre-built and imported custom vision models (occupancy/PPE/object/person+vehicle), the Vision Warehouse for searchable media, and BigQuery/Pub/Sub outputs, plus `vaictl` ingest, machine/region sizing, IAM, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting work. This is a Vertex AI sub-capability for VIDEO streams — defer custom model training to gcp-vertex-ai-specialist (models are trained there then imported), single-IMAGE labeling/OCR to gcp-vision-api-specialist, and document structure to gcp-document-ai-specialist. NOT the language ai-engineer roles (those build app-side code). The AWS equivalent is Amazon Rekognition (Video) / Kinesis Video Streams — defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "vertex-ai-vision",
+        "ai-ml",
+        "video-analytics",
+        "streaming",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-vertex-ai-vision",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/ai-ml/gcp-vertex-ai-vision-specialist.md"
+    },
+    {
+      "name": "gcp-vertex-ai-workbench-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Vertex AI Workbench (GCP) — managed JupyterLab notebook instances for data science/ML development: instance creation, machine type + GPU selection, idle-shutdown and auto-upgrade, custom containers/conda environments, BigQuery/Cloud Storage integration, private-IP/VPC networking, CMEK, and least-privilege service-account scoping. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting work. This is a Vertex AI sub-capability for INTERACTIVE notebooks — defer training jobs, pipelines, endpoints, and model serving to gcp-vertex-ai-specialist (heavy work runs there, not in the notebook), and pretrained image/doc/speech tasks to those API specialists. NOT the language ai-engineer/rag-engineer roles (those build app code). The AWS equivalent is SageMaker Studio/Notebook instances; Azure is Azure ML compute instances — defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "vertex-ai-workbench",
+        "ai-ml",
+        "jupyterlab",
+        "notebooks",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-vertex-ai-workbench",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/ai-ml/gcp-vertex-ai-workbench-specialist.md"
+    },
+    {
+      "name": "gcp-vision-api-specialist",
+      "description": "Use when designing, configuring, deploying, or operating the Cloud Vision API (GCP) — pretrained image understanding: label detection, OCR (text/document text), object localization, face/landmark/logo detection, image properties, crop hints, web detection, and SafeSearch moderation, with single-image annotate and async batch from Cloud Storage, plus API-key vs service-account auth, CMEK, residency, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting work. This is pretrained single-IMAGE analysis — defer document STRUCTURE (forms/entities) to gcp-document-ai-specialist, VIDEO streams to gcp-vertex-ai-vision-specialist, and CUSTOM image models (training/serving) to gcp-vertex-ai-specialist. NOT the language ai-engineer roles (those build app-side code). The AWS equivalent is Amazon Rekognition (Image); Azure is Azure AI Vision — defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "vision-api",
+        "ai-ml",
+        "image-analysis",
+        "ocr",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-vision-api",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/ai-ml/gcp-vision-api-specialist.md"
     },
     {
       "name": "geospatial-analyst",
@@ -27754,6 +27996,23 @@
       "path": "skills/web/astro-framework/SKILL.md"
     },
     {
+      "name": "aws-amplify",
+      "description": "Use when designing, provisioning, securing, or operating AWS Amplify — fullstack web/mobile hosting and CI/CD with Git-based branch deploys, the Amplify Gen 2 code-first backend (auth via Cognito, data via AppSync/DynamoDB, storage via S3, functions via Lambda), build settings, custom domains/CDN, SSR/SSG hosting for Next.js/Nuxt and SPA frameworks, preview environments, and environment variables/secrets (AWS Amplify). Loads the Amplify knowledge: stand up a hosted app, define a Gen 2 backend, wire branch-based environments, secure access, and verify a deploy. Consumed by the AWS Amplify specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they handle fullstack hosting.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "amplify",
+        "fullstack",
+        "hosting",
+        "ci-cd",
+        "ssr",
+        "specialized"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-amplify/SKILL.md"
+    },
+    {
       "name": "aws-api-gateway",
       "description": "Use when designing, provisioning, securing, or operating Amazon API Gateway — the AWS managed front door for HTTP, REST, and WebSocket APIs. Loads the API Gateway knowledge: REST vs HTTP vs WebSocket API types, resources/methods/routes and integrations (Lambda proxy, HTTP proxy, AWS service, VPC link to private ALB/NLB), stages and stage variables, deployments and canary releases, authorizers (IAM, Cognito, Lambda/JWT), API keys + usage plans + throttling/quotas, request/response mapping and validation, custom domains + ACM + base-path mapping, WAF, mutual TLS, CORS, caching, and access/execution logging. Covers how to define an API and integrations, attach an authorizer, throttle with usage plans, map a custom domain, and verify routing and auth. Consumed by the API Gateway specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology via network-design — this owns the API Gateway service itself.",
       "category": "cloud",
@@ -30545,6 +30804,22 @@
       "path": "skills/domain/game-balance/SKILL.md"
     },
     {
+      "name": "gcp-document-ai",
+      "description": "Use when designing, provisioning, securing, or operating Document AI — Google Cloud's document parsing platform: processors (OCR/Document OCR, Form Parser, specialized parsers like Invoice/Receipt/ID, and custom extractors trained in the Workbench), online and batch document processing, form + entity extraction with confidence scores, human-in-the-loop review, and the Document AI Warehouse for storing/searching processed documents (Document AI). Loads the Document AI knowledge: create a processor, process documents online/batch, extract entities, and verify the output schema. Consumed by the Document AI specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle document-processing workloads.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "document-ai",
+        "ai-ml",
+        "ocr",
+        "document-parsing",
+        "entity-extraction"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-document-ai/SKILL.md"
+    },
+    {
       "name": "gcp-services",
       "description": "The substantive GCP platform capability — compute (Compute Engine, Cloud Run, GKE, Cloud Functions), storage (Cloud Storage, Persistent Disk), databases (Cloud SQL, Spanner, Firestore, Bigtable), data/analytics (BigQuery, Dataflow, Pub/Sub), networking (VPC, Cloud Load Balancing, Cloud DNS, Cloud CDN), IAM (roles, service accounts, least privilege, workload identity), the Google Cloud Architecture Framework, regions/zones & multi-region patterns, and tooling (gcloud CLI, Deployment Manager/Terraform). Use when designing, building, reviewing, securing, costing, or operating anything on Google Cloud — picking the right managed service, applying least-privilege IAM, choosing zonal vs regional vs multi-region, or validating gcloud/Deployment Manager/Terraform. Any agent that touches GCP (an architect, IaC engineer, security reviewer, cost governor, reliability/networking/observability/data engineer) can load it.",
       "category": "cloud",
@@ -30563,6 +30838,103 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-services/SKILL.md"
+    },
+    {
+      "name": "gcp-speech-to-text",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Speech-to-Text — Google Cloud's pretrained automatic speech recognition (ASR) service: synchronous, asynchronous (long-running from Cloud Storage), and streaming transcription, recognition models (latest_long/latest_short, telephony, medical, chirp), language/locale config, model adaptation (phrase sets/boost/custom classes), speaker diarization, punctuation, word timestamps, and profanity filtering (Speech-to-Text). Loads the Speech-to-Text knowledge: pick a model, transcribe sync/async/streaming, tune accuracy with adaptation, secure the identity, and verify a transcript. Consumed by the Speech-to-Text specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add ASR.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "speech-to-text",
+        "ai-ml",
+        "asr",
+        "transcription",
+        "streaming"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-speech-to-text/SKILL.md"
+    },
+    {
+      "name": "gcp-text-to-speech",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Text-to-Speech — Google Cloud's pretrained speech synthesis service: synthesizing natural audio from text or SSML, voice selection across Standard, WaveNet, Neural2, Studio, and Chirp 3 HD voices, language/locale + gender, SSML control (prosody, breaks, say-as, emphasis), audio encoding/format and sample rate, speaking rate/pitch/volume tuning, and long-audio synthesis to Cloud Storage (Text-to-Speech). Loads the Text-to-Speech knowledge: pick a voice, synthesize from text/SSML, tune output, secure the identity, and verify playable audio. Consumed by the Text-to-Speech specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add speech synthesis.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "text-to-speech",
+        "ai-ml",
+        "tts",
+        "speech-synthesis",
+        "ssml"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-text-to-speech/SKILL.md"
+    },
+    {
+      "name": "gcp-vertex-ai",
+      "description": "Use when designing, provisioning, securing, or operating Vertex AI — Google Cloud's unified ML platform for custom training (custom/pre-built containers, distributed, hyperparameter tuning), Vertex AI Pipelines (KFP/TFX), the Model Registry, online prediction endpoints and batch prediction, the Feature Store, Generative AI (Gemini, Model Garden, tuning, RAG/grounding), and AutoML, plus accelerator/machine sizing, autoscaling, IAM/service accounts, VPC-SC/CMEK, and cost (Vertex AI). Loads the Vertex AI knowledge: run a training job, register a model, deploy an endpoint or batch job, call Gemini/Model Garden, and verify a prediction. Consumed by the Vertex AI specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle ML platform workloads.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "vertex-ai",
+        "ai-ml",
+        "machine-learning",
+        "training",
+        "prediction",
+        "gemini"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-vertex-ai/SKILL.md"
+    },
+    {
+      "name": "gcp-vertex-ai-vision",
+      "description": "Use when designing, provisioning, securing, or operating Vertex AI Vision — Google Cloud's platform for ingesting and analyzing live and recorded video streams: streams, applications (the processing graph of ingest → models → output), pre-built and custom vision models (occupancy/PPE/object detection, person/vehicle counting), the Vision Warehouse for searchable media storage and analytics, and BigQuery/Pub/Sub sinks (Vertex AI Vision). Loads the Vertex AI Vision knowledge: register a stream, build an application graph, attach models, store results in the Warehouse, and verify analytics. Consumed by the Vertex AI Vision specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they handle video-analytics workloads.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "vertex-ai-vision",
+        "ai-ml",
+        "video-analytics",
+        "streaming",
+        "vision-warehouse"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-vertex-ai-vision/SKILL.md"
+    },
+    {
+      "name": "gcp-vertex-ai-workbench",
+      "description": "Use when designing, provisioning, securing, or operating Vertex AI Workbench — Google Cloud's managed JupyterLab notebook environment for data science and ML development: instances (managed JupyterLab 3 instances), machine type + GPU selection, idle-shutdown and auto-upgrade, custom containers/conda environments, integration with Cloud Storage/BigQuery/Vertex AI training, networking (VPC, private IP, no public IP), and IAM/service-account scoping (Vertex AI Workbench). Loads the Workbench knowledge: create a notebook instance, scope its identity, enable idle shutdown, and verify the kernel runs. Consumed by the Vertex AI Workbench specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they provision notebook environments.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "vertex-ai-workbench",
+        "ai-ml",
+        "jupyterlab",
+        "notebooks",
+        "data-science"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-vertex-ai-workbench/SKILL.md"
+    },
+    {
+      "name": "gcp-vision-api",
+      "description": "Use when designing, provisioning, securing, or operating the Cloud Vision API — Google Cloud's pretrained image-understanding REST/SDK service: label detection, OCR (text + document text detection), object localization, face and landmark/logo detection, image properties, crop hints, web detection, and SafeSearch (explicit-content) moderation, with single-image annotate and batch async annotation from Cloud Storage (Vision API). Loads the Vision API knowledge: enable the API, call the right feature(s), batch large jobs, secure the key/service account, and verify annotations. Consumed by the Vision API specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add image analysis.",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "vision-api",
+        "ai-ml",
+        "image-analysis",
+        "ocr",
+        "safesearch"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-vision-api/SKILL.md"
     },
     {
       "name": "geospatial-analysis",

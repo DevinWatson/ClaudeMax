@@ -192,20 +192,20 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] aws|specialized|braket|Amazon Braket
 - [x] aws|specialized|ground-station|AWS Ground Station
 - [x] aws|specialized|gamelift|Amazon GameLift
-- [ ] aws|specialized|amplify|AWS Amplify
+- [x] aws|specialized|amplify|AWS Amplify
 
 ---
 
 ## GCP
 
 ### ai-ml
-- [ ] gcp|ai-ml|vertex-ai|Vertex AI
-- [ ] gcp|ai-ml|vertex-ai-vision|Vertex AI Vision
-- [ ] gcp|ai-ml|vertex-ai-workbench|Vertex AI Workbench
-- [ ] gcp|ai-ml|document-ai|Document AI
-- [ ] gcp|ai-ml|vision-api|Vision API
-- [ ] gcp|ai-ml|speech-to-text|Speech-to-Text
-- [ ] gcp|ai-ml|text-to-speech|Text-to-Speech
+- [x] gcp|ai-ml|vertex-ai|Vertex AI
+- [x] gcp|ai-ml|vertex-ai-vision|Vertex AI Vision
+- [x] gcp|ai-ml|vertex-ai-workbench|Vertex AI Workbench
+- [x] gcp|ai-ml|document-ai|Document AI
+- [x] gcp|ai-ml|vision-api|Vision API
+- [x] gcp|ai-ml|speech-to-text|Speech-to-Text
+- [x] gcp|ai-ml|text-to-speech|Text-to-Speech
 - [ ] gcp|ai-ml|translation|Cloud Translation
 - [ ] gcp|ai-ml|cloud-tpu|Cloud TPU
 - [ ] gcp|ai-ml|enterprise-knowledge-graph|Enterprise Knowledge Graph
