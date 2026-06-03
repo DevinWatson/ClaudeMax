@@ -72,16 +72,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] aws|networking|route53|Amazon Route 53
 - [x] aws|networking|api-gateway|Amazon API Gateway
 - [x] aws|networking|direct-connect|AWS Direct Connect
-- [ ] aws|networking|vpn|AWS VPN
-- [ ] aws|networking|transit-gateway|AWS Transit Gateway
-- [ ] aws|networking|global-accelerator|AWS Global Accelerator
-- [ ] aws|networking|cloud-map|AWS Cloud Map
-- [ ] aws|networking|privatelink|AWS PrivateLink
-- [ ] aws|networking|elastic-load-balancing|Elastic Load Balancing
-- [ ] aws|networking|network-firewall|AWS Network Firewall
+- [x] aws|networking|vpn|AWS VPN
+- [x] aws|networking|transit-gateway|AWS Transit Gateway
+- [x] aws|networking|global-accelerator|AWS Global Accelerator
+- [x] aws|networking|cloud-map|AWS Cloud Map
+- [x] aws|networking|privatelink|AWS PrivateLink
+- [x] aws|networking|elastic-load-balancing|Elastic Load Balancing
+- [x] aws|networking|network-firewall|AWS Network Firewall
 
 ### analytics
-- [ ] aws|analytics|athena|Amazon Athena
+- [x] aws|analytics|athena|Amazon Athena
 - [ ] aws|analytics|emr|Amazon EMR
 - [ ] aws|analytics|kinesis|Amazon Kinesis
 - [ ] aws|analytics|redshift|Amazon Redshift

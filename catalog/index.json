@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 889,
-    "skills": 181,
+    "agents": 897,
+    "skills": 189,
     "categories": 17
   },
   "agents": [
@@ -985,6 +985,36 @@
       "path": "agents/cloud/aws/services/compute/aws-app-runner-specialist.md"
     },
     {
+      "name": "aws-athena-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon Athena (AWS) — the serverless SQL-on-S3 query engine (Trino/Presto, billed per TB scanned): Glue Data Catalog tables/SerDes and crawlers, external tables over S3 with partitioning + partition projection, workgroups (isolation, result location, data-scanned limits, cost controls), CTAS/INSERT INTO ETL, federated Lambda connectors, and the columnar/compression/partition levers that cut bytes scanned. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. NOT data/etl-architect, which owns cloud-agnostic pipeline orchestration and warehouse modeling — this specialist owns the serverless Athena engine, workgroups, partitions, and bytes-scanned tuning. NOT data/sql-optimizer, which rewrites a single slow query in general SQL — this specialist owns the Athena-specific engine/catalog/storage layout that makes queries cheap and fast. For Redshift/EMR, GCP BigQuery, or Azure Synapse defer to those.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "athena",
+        "analytics",
+        "serverless-sql",
+        "presto",
+        "specialist"
+      ],
+      "skills": [
+        "aws-athena",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/analytics/aws-athena-specialist.md"
+    },
+    {
       "name": "aws-aurora-specialist",
       "description": "Use when designing, configuring, deploying, or operating Amazon Aurora (AWS) — the AWS-native cloud relational engine (PostgreSQL/MySQL-compatible): cluster topology (writer + readers), cluster/reader/custom endpoints, Serverless v2 (ACUs), Global Database, fast clone/backtrack, backups + PITR, KMS encryption, TLS, IAM auth, RDS Proxy, and private VPC placement. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. Pick a DB sibling instead for: managed off-the-shelf relational engines (rds), serverless NoSQL KV (dynamodb), Mongo-compatible (documentdb), graph (neptune), cache (elasticache), durable Redis (memorydb), Cassandra (keyspaces). CRITICAL: this specialist owns the MANAGED-SERVICE/cluster layer (provisioning/sizing/readers/Serverless/backups/failover/parameter groups/IAM) — engine-internal tuning, schema, and query modeling belong to the postgres data team. For GCP AlloyDB/Cloud SQL or Azure defer to those clouds.",
       "category": "cloud",
@@ -1100,6 +1130,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/aws-cloud-architect.md"
+    },
+    {
+      "name": "aws-cloud-map-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Cloud Map (AWS) — the cloud service-discovery registry: namespaces (public DNS, private DNS within a VPC, or API-only HTTP), services and registered instances, custom metadata/attributes, auto-managed Route 53 records (A/AAAA/SRV/CNAME) with health checks, the DiscoverInstances attribute-based query API, and ECS service discovery / Service Connect integration. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the Cloud Map service itself. It is a service-discovery REGISTRY — for general/public DNS zones and records use the Route 53 specialist, for the private network the VPC specialist, and for the load balancers that front services the Elastic Load Balancing specialist. For GCP Service Directory or Azure equivalents defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "cloud-map",
+        "networking",
+        "service-discovery",
+        "microservices",
+        "specialist"
+      ],
+      "skills": [
+        "aws-cloud-map",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/networking/aws-cloud-map-specialist.md"
     },
     {
       "name": "aws-cloudfront-specialist",
@@ -1612,6 +1672,36 @@
       "path": "agents/cloud/aws/services/compute/aws-elastic-beanstalk-specialist.md"
     },
     {
+      "name": "aws-elastic-load-balancing-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Elastic Load Balancing (AWS) — the managed L4/L7 load balancers: ALB (L7 host/path/header routing, listeners + rules, OIDC/Cognito auth, WAF), NLB (L4 TCP/UDP/TLS, static IPs, source-IP preservation, PrivateLink backing), GWLB (L3 GENEVE appliance insertion), legacy Classic LB, target groups, health checks, TLS termination with ACM, cross-zone, stickiness, deregistration delay, and access logs. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the load-balancing service itself. The LB lives in a VPC (VPC specialist) and is a raw L4/L7 balancer — for a managed API front door use the API Gateway specialist, for static-anycast edge acceleration the Global Accelerator specialist. For GCP/Azure load balancers defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "elastic-load-balancing",
+        "networking",
+        "alb",
+        "nlb",
+        "specialist"
+      ],
+      "skills": [
+        "aws-elastic-load-balancing",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/networking/aws-elastic-load-balancing-specialist.md"
+    },
+    {
       "name": "aws-elasticache-specialist",
       "description": "Use when designing, configuring, deploying, or operating Amazon ElastiCache (AWS) — the managed in-memory cache (Redis OSS/Valkey or Memcached): engine choice, node types + sizing, cluster topology (shards + replicas, cluster mode), Multi-AZ failover, reader endpoint, ElastiCache Serverless, snapshots, KMS at-rest + TLS in-transit encryption, Redis AUTH/ACLs/RBAC, and private VPC placement. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. Pick a DB sibling instead for: a DURABLE Redis primary (memorydb), managed relational (rds), AWS-native cloud relational (aurora), serverless NoSQL KV (dynamodb), Mongo-compatible (documentdb), graph (neptune), Cassandra (keyspaces). CRITICAL: this specialist owns the MANAGED-SERVICE layer (engine/node selection/topology/Multi-AZ/backups/IAM) — engine-internal data-structure, eviction/TTL, and command tuning belong to the redis data team. For GCP Memorystore or Azure Cache for Redis defer to those clouds.",
       "category": "cloud",
@@ -1703,6 +1793,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/storage/aws-fsx-specialist.md"
+    },
+    {
+      "name": "aws-global-accelerator-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Global Accelerator (AWS) — the edge service that fronts apps with two static anycast IPs and routes users over the AWS backbone to the nearest healthy regional endpoint: standard vs custom-routing accelerators, BYOIP, TCP/UDP listeners, endpoint groups per region with traffic dials, weighted endpoints (ALB/NLB/EIP/EC2), client affinity, and fast regional failover. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the Global Accelerator service itself. It accelerates TCP/UDP with static IPs over the backbone — for HTTP caching/edge logic use the CloudFront specialist, for latency/geo DNS routing the Route 53 specialist, and for the load balancers it fronts the Elastic Load Balancing specialist. For GCP anycast LB or Azure Front Door defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "global-accelerator",
+        "networking",
+        "anycast",
+        "failover",
+        "specialist"
+      ],
+      "skills": [
+        "aws-global-accelerator",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/networking/aws-global-accelerator-specialist.md"
     },
     {
       "name": "aws-iac-engineer",
@@ -1884,6 +2004,36 @@
       "path": "agents/cloud/aws/services/databases/aws-neptune-specialist.md"
     },
     {
+      "name": "aws-network-firewall-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Network Firewall (AWS) — the managed stateful VPC firewall and IDS/IPS: firewall endpoints per AZ in a dedicated subnet, firewall policy, stateless rule groups (5-tuple, first) vs stateful rule groups (5-tuple / domain-list egress allow-listing / native Suricata IPS), rule order, the centralized-inspection VPC pattern with TGW appliance-mode or GWLB, TLS inspection, managed rule groups, and alert/flow/TLS logging. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the Network Firewall service itself. The firewall sits in a VPC, routed to via the VPC specialist's route tables and the Transit Gateway specialist's appliance-mode attachments; coarse 5-tuple filtering is also done by VPC security groups/NACLs. For GCP Cloud NGFW or Azure Firewall defer to those.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "network-firewall",
+        "networking",
+        "ids-ips",
+        "suricata",
+        "specialist"
+      ],
+      "skills": [
+        "aws-network-firewall",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/networking/aws-network-firewall-specialist.md"
+    },
+    {
       "name": "aws-networking-engineer",
       "description": "Use when designing or fixing AWS networking — VPC and subnet layout, security groups/NACLs, route tables and NAT, Route 53 DNS, and ALB/NLB load balancing — then validating it (AWS). NOT for IAM/exposure security review (aws-security-reviewer), broad architecture (aws-cloud-architect), DR/failover strategy (aws-reliability-engineer), or generic IaC (aws-iac-engineer authors the modules).",
       "category": "cloud",
@@ -2002,6 +2152,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/compute/aws-outposts-specialist.md"
+    },
+    {
+      "name": "aws-privatelink-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS PrivateLink (AWS) — private VPC connectivity to AWS services, partner SaaS, or your own services without the internet: interface endpoints (ENIs + private DNS + endpoint policies) vs gateway endpoints (S3/DynamoDB), endpoint services backed by an NLB with allow-listed principals and acceptance, the consumer/provider model, and private-DNS domain verification. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the PrivateLink service itself. Pick a connectivity sibling for: hub-and-spoke routing (transit-gateway), IPsec tunnels (vpn), the private network + endpoint placement/SGs (vpc), or dedicated circuits (direct-connect); the NLB backing an endpoint service is owned by the Elastic Load Balancing specialist. For GCP PSC or Azure Private Link defer to those.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "privatelink",
+        "networking",
+        "vpc-endpoints",
+        "endpoint-service",
+        "specialist"
+      ],
+      "skills": [
+        "aws-privatelink",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/networking/aws-privatelink-specialist.md"
     },
     {
       "name": "aws-qldb-specialist",
@@ -2305,6 +2485,36 @@
       "path": "agents/cloud/aws/services/databases/aws-timestream-specialist.md"
     },
     {
+      "name": "aws-transit-gateway-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Transit Gateway (AWS) — the regional hub-and-spoke router: VPC/VPN/Direct-Connect-gateway/peering/Connect attachments, TGW route tables with association vs propagation, route-table segmentation (isolated vs shared-services domains), blackhole/static routes, ECMP, appliance-mode for stateful inspection, inter-region peering, multicast, and RAM cross-account sharing. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology — this specialist owns the Transit Gateway service itself. Pick a connectivity sibling instead for: IPsec/remote-access tunnels (vpn), private service access (privatelink), a single private network (vpc), or dedicated private circuits (direct-connect). For GCP Network Connectivity Center or Azure Virtual WAN defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "transit-gateway",
+        "networking",
+        "hub-and-spoke",
+        "segmentation",
+        "specialist"
+      ],
+      "skills": [
+        "aws-transit-gateway",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/networking/aws-transit-gateway-specialist.md"
+    },
+    {
       "name": "aws-vpc-specialist",
       "description": "Use when designing, configuring, deploying, or operating an Amazon VPC (AWS) — the foundational private network: CIDR planning, public/private/isolated subnets across AZs, route tables, IGW/egress-only-IGW, NAT gateways, security groups vs network ACLs, peering and Transit Gateway, gateway/interface VPC endpoints (PrivateLink), DNS, and flow logs. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), aws-security-reviewer (account posture) own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology (DNS + LB + multi-service connectivity) — this specialist owns the VPC service itself (CIDR/subnet/route/SG/NACL/endpoint config and APIs). Pick a networking sibling instead for: CDN/edge (cloudfront), DNS (route53), the API front door (api-gateway), dedicated on-prem links (direct-connect). For GCP VPC or Azure VNet defer to those clouds.",
       "category": "cloud",
@@ -2333,6 +2543,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/networking/aws-vpc-specialist.md"
+    },
+    {
+      "name": "aws-vpn-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS VPN (AWS) — encrypted IPsec connectivity into a VPC: Site-to-Site VPN (customer gateways, VGW vs Transit Gateway attachments, two HA tunnels, static vs BGP routing, IKEv1/IKEv2 + IPsec parameters), AWS Client VPN (managed OpenVPN, mutual-TLS/SAML/AD auth, authorization rules, routes, split vs full tunnel), accelerated VPN, and tunnel health. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), aws-security-reviewer (account posture) own cross-cutting work. NOT the aws-networking-engineer role, which composes [[network-design]] for cross-cutting topology (DNS + LB + multi-service connectivity) — this specialist owns the VPN service itself. Pick a connectivity sibling instead for: hub-and-spoke routing (transit-gateway), private service access (privatelink), the private network (vpc), or dedicated private circuits (direct-connect). For GCP Cloud VPN or Azure VPN Gateway defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "vpn",
+        "networking",
+        "ipsec",
+        "client-vpn",
+        "specialist"
+      ],
+      "skills": [
+        "aws-vpn",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/networking/aws-vpn-specialist.md"
     },
     {
       "name": "aws-wavelength-specialist",
@@ -24941,6 +25181,22 @@
       "path": "skills/cloud/aws-app-runner/SKILL.md"
     },
     {
+      "name": "aws-athena",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Athena — the serverless query service that runs SQL directly on data in S3 (Amazon Athena). Loads the Athena knowledge: the Trino/Presto SQL engine (engine v3), pay-per-scan model, the AWS Glue Data Catalog and crawlers, external tables over S3 with SerDes (Parquet/ORC/JSON/CSV) and partitioning + partition projection, workgroups (isolation, result location, data-scanned limits, cost controls), CTAS/INSERT INTO ETL, federated queries via Lambda connectors, views, and the columnar/partition/compression levers that cut bytes scanned. Covers how to register schemas, partition and format data for cheap fast scans, isolate workloads with workgroups, secure with IAM + Lake Formation, and verify results and bytes scanned. Consumed by the Athena specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect).",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "athena",
+        "analytics",
+        "serverless-sql",
+        "presto",
+        "s3"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-athena/SKILL.md"
+    },
+    {
       "name": "aws-aurora",
       "description": "Use when designing, provisioning, securing, or operating Amazon Aurora — the AWS-native, cloud-optimized relational engine compatible with PostgreSQL and MySQL. Loads the Aurora knowledge: the cluster model (a shared distributed storage volume with one writer and up to 15 reader instances), the cluster/reader/custom endpoints, Aurora Serverless v2 autoscaling capacity (ACUs), Global Database for cross-Region replication and low-latency reads, fast clone and backtrack, continuous backup to S3 with PITR, encryption at rest with KMS and TLS in transit, IAM database authentication, RDS Proxy connection pooling, and VPC placement. Covers how to size a cluster, place it privately, encrypt it, add readers/auto-scale, and verify writer/reader failover. Consumed by the Aurora specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect). For engine-internal tuning/modeling defer to the postgres data team.",
       "category": "cloud",
@@ -24988,6 +25244,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-batch/SKILL.md"
+    },
+    {
+      "name": "aws-cloud-map",
+      "description": "Use when designing, provisioning, securing, or operating AWS Cloud Map — the cloud service-discovery registry that maps logical service names to dynamic backend locations (AWS Cloud Map). Loads the Cloud Map knowledge: namespaces (public DNS, private DNS within a VPC, or API-only HTTP), services and registered instances, attributes/custom metadata, DNS records auto-managed in Route 53 (A/AAAA/SRV/CNAME) with health-check integration, the DiscoverInstances API for attribute-based queries, and tight integration with ECS service discovery and ECS Service Connect. Covers how to register dynamic instances, discover them by DNS or API with health filtering, attach custom metadata, and verify discovery resolves only healthy targets. Consumed by the AWS Cloud Map specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology — this owns the Cloud Map service itself.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "cloud-map",
+        "networking",
+        "service-discovery",
+        "dns",
+        "microservices"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-cloud-map/SKILL.md"
     },
     {
       "name": "aws-cloudfront",
@@ -25238,6 +25510,22 @@
       "path": "skills/cloud/aws-elastic-beanstalk/SKILL.md"
     },
     {
+      "name": "aws-elastic-load-balancing",
+      "description": "Use when designing, provisioning, securing, or operating Elastic Load Balancing — the managed L4/L7 load balancers that distribute traffic across targets in a VPC (Elastic Load Balancing / ELB). Loads the ELB knowledge: Application Load Balancer (L7 host/path/header routing, listeners + rules, OIDC/Cognito auth, WAF), Network Load Balancer (L4 TCP/UDP/TLS, static IPs, source-IP preservation, PrivateLink backing), Gateway Load Balancer (L3 GENEVE appliance insertion), legacy Classic LB, target groups (instance/IP/Lambda), health checks, TLS termination with ACM, cross-zone, stickiness, deregistration delay, and access logs. Covers how to pick ALB vs NLB vs GWLB, route by content, terminate TLS, health-check correctly, and verify distribution and failover. Consumed by the ELB specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology — this owns the load-balancing service itself.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "elastic-load-balancing",
+        "networking",
+        "alb",
+        "nlb",
+        "target-groups"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-elastic-load-balancing/SKILL.md"
+    },
+    {
       "name": "aws-elasticache",
       "description": "Use when designing, provisioning, securing, or operating Amazon ElastiCache — the managed in-memory cache/datastore service for Redis OSS / Valkey and Memcached. Loads the ElastiCache knowledge: choosing the engine (Redis/Valkey for rich types, replication, persistence-ish, and clustering vs Memcached for simple multi-threaded caching), node types (cache.t/m/r families) and sizing, cluster topology (shards + replicas, cluster mode enabled/disabled), Multi-AZ with automatic failover, ElastiCache Serverless, replication groups and reader endpoints, snapshots/backups, encryption at rest with KMS and in transit with TLS, AUTH / Redis ACLs and RBAC, and VPC/subnet-group/security-group placement. Covers how to pick an engine, size nodes, place it privately, secure it, and verify connectivity and failover. Consumed by the ElastiCache specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect). For engine-internal data-structure/eviction tuning defer to the redis data team.",
       "category": "cloud",
@@ -25287,6 +25575,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-fsx/SKILL.md"
+    },
+    {
+      "name": "aws-global-accelerator",
+      "description": "Use when designing, provisioning, securing, or operating AWS Global Accelerator — the edge service that fronts apps with static anycast IPs and routes users over the AWS backbone to the nearest healthy regional endpoint (AWS Global Accelerator). Loads the GA knowledge: standard vs custom-routing accelerators, two static anycast IPs (BYOIP), TCP/UDP listeners, endpoint groups per region with traffic dials and per-endpoint weights, endpoint types (ALB/NLB/EIP/EC2), client affinity, health checks and fast regional failover, and the difference from CloudFront (TCP/UDP + static IPs vs HTTP caching). Covers how to get stable entry IPs, multi-region active/active or failover, weighted traffic shifting, and verify routing and failover. Consumed by the AWS Global Accelerator specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology — this owns the Global Accelerator service itself.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "global-accelerator",
+        "networking",
+        "anycast",
+        "edge",
+        "failover"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-global-accelerator/SKILL.md"
     },
     {
       "name": "aws-keyspaces",
@@ -25372,6 +25676,22 @@
       "path": "skills/cloud/aws-neptune/SKILL.md"
     },
     {
+      "name": "aws-network-firewall",
+      "description": "Use when designing, provisioning, securing, or operating AWS Network Firewall — the managed, stateful VPC firewall and IDS/IPS (AWS Network Firewall). Loads the Network Firewall knowledge: the firewall + per-AZ firewall endpoints in a dedicated subnet, firewall policy, stateless rule groups (5-tuple, evaluated first) vs stateful rule groups (5-tuple / domain-list / native Suricata IPS), rule evaluation order and default actions, the centralized-inspection VPC pattern with Transit Gateway/GWLB and appliance-mode routing, TLS inspection, alert/flow/TLS logging, and managed rule groups. Covers how to route VPC traffic through the firewall, write stateless + stateful + Suricata rules, build egress domain filtering, and verify allowed traffic passes while denied traffic is dropped and logged. Consumed by the AWS Network Firewall specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology — this owns the Network Firewall service itself.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "network-firewall",
+        "networking",
+        "ids-ips",
+        "suricata",
+        "egress-filtering"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-network-firewall/SKILL.md"
+    },
+    {
       "name": "aws-nitro-enclaves",
       "description": "Use when designing, provisioning, securing, or operating AWS Nitro Enclaves — isolated VMs carved from a parent EC2 instance, the vsock channel, enclave images (EIF), cryptographic attestation (PCRs), KMS attestation-based key release, and confidential-computing workloads that process sensitive data with no persistent storage or network (AWS Nitro Enclaves). Loads the Nitro Enclaves knowledge: how to allocate enclave resources, build an EIF, attest it, gate KMS decrypt on attestation, and verify the enclave runs. Consumed by the Nitro Enclaves specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) for confidential computing.",
       "category": "cloud",
@@ -25402,6 +25722,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-outposts/SKILL.md"
+    },
+    {
+      "name": "aws-privatelink",
+      "description": "Use when designing, provisioning, securing, or operating AWS PrivateLink — private connectivity from a VPC to AWS services, partner SaaS, or your own services without the internet (AWS PrivateLink). Loads the PrivateLink knowledge: interface VPC endpoints (ENIs with private IPs + private DNS) vs gateway endpoints (S3/DynamoDB, route-table based, free), VPC endpoint services backed by a Network Load Balancer with allow-listed principals and acceptance, the consumer/provider model across accounts, endpoint policies, private-DNS names and domain verification, and why PrivateLink avoids the overlapping-CIDR and transitive-routing limits of peering/TGW. Covers how to consume a service privately, publish your own service, scope access by principal/policy, and verify private resolution and reachability. Consumed by the AWS PrivateLink specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology — this owns the PrivateLink service itself.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "privatelink",
+        "networking",
+        "vpc-endpoints",
+        "endpoint-service",
+        "nlb"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-privatelink/SKILL.md"
     },
     {
       "name": "aws-qldb",
@@ -25559,6 +25895,22 @@
       "path": "skills/cloud/aws-timestream/SKILL.md"
     },
     {
+      "name": "aws-transit-gateway",
+      "description": "Use when designing, provisioning, securing, or operating AWS Transit Gateway — the regional hub-and-spoke router that interconnects many VPCs, VPNs, and on-prem links (AWS Transit Gateway). Loads the TGW knowledge: attachments (VPC, VPN, Direct Connect gateway, peering, Connect/GRE), TGW route tables and association vs propagation, blackhole routes, ECMP, appliance-mode for stateful inspection, inter-region peering, multicast, RAM sharing across accounts, and segmentation via multiple route tables (isolated vs shared domains). Covers how to replace a mesh of VPC peerings with a hub, isolate environments with route-table segmentation, route on-prem via VPN/DX, peer regions, and verify routes propagate and traffic flows. Consumed by the AWS Transit Gateway specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology — this owns the Transit Gateway service itself.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "transit-gateway",
+        "networking",
+        "hub-and-spoke",
+        "routing",
+        "segmentation"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-transit-gateway/SKILL.md"
+    },
+    {
       "name": "aws-vpc",
       "description": "Use when designing, provisioning, securing, or operating an Amazon VPC — the foundational private virtual network in which AWS resources run. Loads the VPC knowledge: CIDR planning, public/private/isolated subnets across AZs, route tables, Internet Gateway and egress-only IGW, NAT gateways, security groups (stateful) vs network ACLs (stateless), VPC peering and Transit Gateway, gateway and interface VPC endpoints (PrivateLink), DNS (resolver, private hosted zones), and flow logs. Covers how to lay out CIDRs and subnets, route public and private traffic, scope SGs/NACLs least-privilege, reach AWS APIs privately via endpoints, and verify reachability. Consumed by the VPC specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology via network-design — this owns the VPC service itself.",
       "category": "cloud",
@@ -25574,6 +25926,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-vpc/SKILL.md"
+    },
+    {
+      "name": "aws-vpn",
+      "description": "Use when designing, provisioning, securing, or operating AWS VPN — encrypted IPsec connectivity into a VPC (AWS VPN). Loads the VPN knowledge: Site-to-Site VPN (customer gateways, virtual private gateways vs Transit Gateway attachments, IPsec tunnels with two endpoints per connection for HA, static vs BGP/dynamic routing, IKEv1/IKEv2, tunnel options and phase-1/phase-2 parameters), AWS Client VPN (managed OpenVPN endpoints, mutual TLS / SAML / AD auth, authorization rules, route tables, split vs full tunnel), accelerated VPN over Global Accelerator, DPD/dead-peer detection, and CloudWatch tunnel metrics. Covers how to terminate on-prem links, achieve tunnel HA, route via BGP, scope authorization, and verify tunnels are UP and routes propagate. Consumed by the AWS VPN specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect); the aws-networking-engineer composes cross-cutting topology — this owns the VPN service itself.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "vpn",
+        "networking",
+        "ipsec",
+        "site-to-site",
+        "client-vpn"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-vpn/SKILL.md"
     },
     {
       "name": "aws-wavelength",
