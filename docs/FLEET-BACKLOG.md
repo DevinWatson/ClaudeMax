@@ -23,7 +23,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] clojure
 - [x] haskell
 - [x] lua
-- [ ] r
+- [x] r
 - [ ] julia
 - [ ] zig
 - [ ] perl

@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 492,
-    "skills": 107,
+    "agents": 513,
+    "skills": 108,
     "categories": 16
   },
   "agents": [
@@ -9579,6 +9579,577 @@
       "path": "agents/languages/python/python-unit-test-architect.md"
     },
     {
+      "name": "r-agent-orchestrator",
+      "description": "Use when designing a multi-agent or multi-step LLM workflow in R — decomposing into steps/sub-agents, routing, handoffs and shared state, parallel-vs-sequential execution (future/furrr), verification/critic steps, and end-to-end cost/latency control. Invoke to coordinate a planner+workers or chain tools across an R app. Not for a single model call (use r-ai-engineer) or retrieval pipelines (use r-rag-engineer). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "agents",
+        "orchestration"
+      ],
+      "skills": [
+        "agent-orchestration",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-agent-orchestrator.md"
+    },
+    {
+      "name": "r-ai-engineer",
+      "description": "Use when building LLM-backed features in R — wiring model calls via ellmer/openai or raw httr2, prompt/response plumbing, structured output parsing, streaming, tool/function calling, and token/error/timeout handling. Invoke for a single model integration in an R app or Shiny tool. Not for retrieval pipelines (use r-rag-engineer), multi-agent workflows (use r-agent-orchestrator), or eval harnesses (use r-evals-engineer). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "llm",
+        "ai"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-ai-engineer.md"
+    },
+    {
+      "name": "r-api-designer",
+      "description": "Use when designing or implementing an HTTP API or interactive app surface in R — plumber REST endpoints or Shiny app modules and reactivity — covering resource/route modeling, status codes, request/response shape, pagination, versioning, and error envelopes. Invoke to design or refine R HTTP/Shiny surfaces. Not for protobuf/gRPC schemas (use r-proto-steward) or system structure (use r-architect). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "plumber",
+        "shiny",
+        "api"
+      ],
+      "skills": [
+        "rest-api-design",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-api-designer.md"
+    },
+    {
+      "name": "r-architect",
+      "description": "Use when designing or reviewing the structure of an R system, package, or analysis pipeline — module/package boundaries, coupling/cohesion, function and object-system contracts, package layout, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial in R or when reviewing an R design proposal. Not for implementing the feature (use r-developer) or for endpoint shape alone (use r-api-designer). (R)",
+      "category": "languages",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "r",
+        "architecture",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "r-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-architect.md"
+    },
+    {
+      "name": "r-compliance-reviewer",
+      "description": "Use when checking R code against a regulatory or policy standard — PCI-DSS, HIPAA, GDPR, SOC 2, or an internal control — verifying data handling, logging/PII, retention, access control, and auditability/reproducibility, with severity-ranked gaps mapped to the control. Invoke for compliance/control conformance review of R code. Not for finding exploitable vulnerabilities (use r-security-reviewer). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "r",
+        "compliance",
+        "governance"
+      ],
+      "skills": [
+        "compliance-review",
+        "r-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-compliance-reviewer.md"
+    },
+    {
+      "name": "r-contract-tester",
+      "description": "Use when verifying consumer/provider API contracts in R — capturing a consumer's expectations against a plumber provider (or an external API the R code consumes) with httptest2/webmockr fixtures and provider verification, plus compatibility checks. Invoke to add or fix contract tests in R so a provider change cannot silently break a consumer. Not for in-process integration tests (use r-integration-test-architect) or end-to-end flows (use r-sdet). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "contract-testing",
+        "plumber"
+      ],
+      "skills": [
+        "contract-testing",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-contract-tester.md"
+    },
+    {
+      "name": "r-cost-governor",
+      "description": "Use when reducing the runtime cost of R workloads — memory footprint and copy-on-modify waste, slow loops that should vectorize or move to data.table/Rcpp, parallelization (future/parallel) overhead, container sizing, and wasteful query/IO patterns. Invoke to analyze and cut compute/memory cost of R jobs and services. Not for latency-only profiling unless it lowers cost, and not for resilience design (use r-reliability-engineer). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "cost",
+        "performance"
+      ],
+      "skills": [
+        "cost-optimization",
+        "r-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-cost-governor.md"
+    },
+    {
+      "name": "r-developer",
+      "description": "Use when turning an R requirement, ticket, or feature into working, tested, incrementally-shipped code — scripts, analyses, or package functions — or when fixing a reported R bug. Invoke for building or extending R/tidyverse/Shiny features and for diagnosing failures in existing R code. Not for system-level design (use r-architect) or for adding tests to code you did not write (use r-unit-test-architect). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "feature-development",
+        "tidyverse"
+      ],
+      "skills": [
+        "feature-development",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-developer.md"
+    },
+    {
+      "name": "r-evals-engineer",
+      "description": "Use when building an evaluation harness for LLM features in R — assembling datasets, defining eval suites (testthat-driven), and writing scoring rubrics (graded/LLM-as-judge) that run in CI to catch quality regressions. Invoke to measure or gate LLM output quality in R. Not for building the feature (use r-ai-engineer) or the retrieval pipeline (use r-rag-engineer). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "evals",
+        "llm"
+      ],
+      "skills": [
+        "eval-suite-design",
+        "llm-eval-rubric",
+        "r-idioms",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-evals-engineer.md"
+    },
+    {
+      "name": "r-integration-test-architect",
+      "description": "Use when testing how R components integrate across real boundaries — databases (DBI/dbplyr), HTTP clients (httr2), file/data sources, or a Shiny server — using testthat with real or faked dependencies. Invoke for integration tests that exercise wiring and I/O rather than a single unit. Not for pure unit tests (use r-unit-test-architect) or browser/end-to-end flows (use r-sdet). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "integration-testing",
+        "dbi"
+      ],
+      "skills": [
+        "integration-testing",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-integration-test-architect.md"
+    },
+    {
+      "name": "r-mcp-steward",
+      "description": "Use when building or integrating a Model Context Protocol server or client in R — defining tools/resources/prompts, wiring transport and capability negotiation, and handling MCP message lifecycle in R. Invoke for MCP server/client work in an R codebase. Not for general LLM feature plumbing (use r-ai-engineer) or multi-agent coordination (use r-agent-orchestrator). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "mcp",
+        "integration"
+      ],
+      "skills": [
+        "mcp-integration",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-mcp-steward.md"
+    },
+    {
+      "name": "r-migration-engineer",
+      "description": "Use when migrating R code across a version or framework boundary — R version upgrades, base-to-tidyverse (or tidyverse major-version) moves, packrat-to-renv, deprecated-package replacements, or S3-to-S4/R6 reworks — done in safe, verifiable increments. Invoke to plan and execute an R migration or fix breakage it caused. Not for greenfield features (use r-developer) or pure restructuring within one version (use r-architect). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "migration",
+        "upgrade"
+      ],
+      "skills": [
+        "code-migration",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-migration-engineer.md"
+    },
+    {
+      "name": "r-observability-engineer",
+      "description": "Use when instrumenting R services for observability — structured logging (logger/futile.logger), metrics, and tracing for plumber APIs and Shiny apps, request/session context, and useful dashboards/alert signals. Invoke to add or fix telemetry in R. Not for resilience patterns like retries/circuit-breakers (use r-reliability-engineer) or cost reduction (use r-cost-governor). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "observability",
+        "logging"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-observability-engineer.md"
+    },
+    {
+      "name": "r-prompt-librarian",
+      "description": "Use when organizing and versioning the prompts used by an R application — externalizing prompts from code into resources/templates, templating and parameterizing them (glue/whisker), versioning, and structuring a reusable prompt library. Invoke to curate prompt assets in an R codebase. Not for wiring the model call (use r-ai-engineer) or scoring output quality (use r-evals-engineer). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "r",
+        "prompts",
+        "llm"
+      ],
+      "skills": [
+        "prompt-library-management",
+        "r-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-prompt-librarian.md"
+    },
+    {
+      "name": "r-proto-steward",
+      "description": "Use when designing or evolving Protocol Buffers / gRPC schemas consumed by R — message and service definitions, field numbering, wire/back-compat rules, and generated-R integration (RProtoBuf / protolite). Invoke for .proto schema design or compatibility review in an R codebase. Not for REST/HTTP or Shiny surface design (use r-api-designer) or consumer/provider contract tests (use r-contract-tester). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "protobuf",
+        "grpc"
+      ],
+      "skills": [
+        "protobuf-schema-design",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-proto-steward.md"
+    },
+    {
+      "name": "r-qa-analyst",
+      "description": "Use when planning what to test for an R change or feature and how risky the gaps are — building a test strategy, enumerating scenarios and coverage gaps, and triaging defects by severity. Invoke to produce a test plan or risk assessment for R work, before or instead of writing tests. Not for writing the tests themselves (use the R test-architect/sdet roles). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "r",
+        "qa",
+        "test-strategy"
+      ],
+      "skills": [
+        "test-strategy-design",
+        "severity-triage",
+        "r-idioms"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-qa-analyst.md"
+    },
+    {
+      "name": "r-rag-engineer",
+      "description": "Use when building or fixing a retrieval-augmented generation pipeline in R — chunking, embeddings, vector store wiring, hybrid retrieval + reranking, context assembly, and grounding/citation via ellmer/httr2 and a vector backend. Invoke for RAG retrieval quality or wiring in R. Not for a single model call (use r-ai-engineer) or for building an eval harness (use r-evals-engineer). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "rag",
+        "retrieval"
+      ],
+      "skills": [
+        "rag-system-design",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-rag-engineer.md"
+    },
+    {
+      "name": "r-reliability-engineer",
+      "description": "Use when hardening an R service against partial failure — timeouts, retries-with-backoff, circuit breakers, and graceful degradation for plumber APIs, Shiny apps, and external calls (httr2/DBI), plus condition handling and load shedding. Invoke for resilience design or review of R services. Not for emitting telemetry (use r-observability-engineer) or triaging a live outage. (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "reliability",
+        "resilience"
+      ],
+      "skills": [
+        "reliability-engineering",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-reliability-engineer.md"
+    },
+    {
+      "name": "r-sdet",
+      "description": "Use when building end-to-end or UI/API test automation in R — shinytest2 for Shiny apps, httr2-driven API suites, fixtures, data setup, and stable selectors run in CI. Invoke to automate full user/API flows in R. Not for unit tests (use r-unit-test-architect), component integration tests (use r-integration-test-architect), or consumer/provider contracts (use r-contract-tester). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "test-automation",
+        "e2e"
+      ],
+      "skills": [
+        "test-automation",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-sdet.md"
+    },
+    {
+      "name": "r-security-reviewer",
+      "description": "Use for a defensive, code-level security review of R code or a diff — tracing untrusted input to sinks for injection (SQL via paste'd queries, command injection via system/eval, code injection via eval(parse())), unsafe deserialization (readRDS/load of untrusted data), path traversal, secrets exposure, and Shiny input/authz flaws, with severity-ranked findings and minimal remediations. Invoke for an appsec audit of R code you are authorized to review. Not for regulatory/policy conformance (use r-compliance-reviewer). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "r",
+        "security",
+        "appsec"
+      ],
+      "skills": [
+        "appsec-review",
+        "r-idioms",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-security-reviewer.md"
+    },
+    {
+      "name": "r-unit-test-architect",
+      "description": "Use when adding or expanding unit tests for existing R code — mapping a unit's behaviors and writing deterministic testthat tests (with mocks/fixtures) that catch real regressions (boundaries, invalid input, NA/NULL paths, error conditions). Invoke to raise meaningful unit coverage in R. Not for cross-boundary integration tests (use r-integration-test-architect) or end-to-end automation (use r-sdet). (R)",
+      "category": "languages",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "r",
+        "testing",
+        "testthat"
+      ],
+      "skills": [
+        "test-design",
+        "r-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/languages/r/r-unit-test-architect.md"
+    },
+    {
       "name": "rag-architect",
       "description": "Use when designing or fixing a retrieval-augmented generation system — chunking strategy, embedding-model choice, vector store and retrieval (hybrid BM25+dense, filtering, reranking), context assembly, grounding/citation, and RAG evaluation (retrieval recall@k/MRR/nDCG plus answer quality). It owns the retrieval system. NOT for wording the generation prompt alone (use prompt-engineer) and NOT for building a general eval harness (use evals-author).",
       "category": "ai-ml",
@@ -14554,6 +15125,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/python-idioms/SKILL.md"
+    },
+    {
+      "name": "r-idioms",
+      "description": "Use when writing or fixing R code — vectorized expressions over loops, data frames and tibbles, the tidyverse (dplyr/tidyr/purrr pipelines with |> and %>%), factors, the apply family and functional style, NA/NULL handling, the S3/S4/R5/R6 object systems, environments and lazy evaluation/NSE, package structure (DESCRIPTION/NAMESPACE/roxygen2), reproducibility with renv, and Rcpp for performance. Verifies with Rscript, testthat, lintr, styler, and R CMD check. Any agent touching R (writer, reviewer, debugger, a data-science or Shiny team) can load it.",
+      "category": "languages",
+      "tags": [
+        "r",
+        "tidyverse",
+        "vectorization",
+        "data-frames",
+        "reproducibility"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/languages/r-idioms/SKILL.md"
     },
     {
       "name": "rag-system-design",
