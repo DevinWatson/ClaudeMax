@@ -54,14 +54,14 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] aws|storage|snow-family|AWS Snow Family
 
 ### databases
-- [ ] aws|databases|rds|Amazon RDS
-- [ ] aws|databases|aurora|Amazon Aurora
-- [ ] aws|databases|dynamodb|Amazon DynamoDB
-- [ ] aws|databases|documentdb|Amazon DocumentDB
-- [ ] aws|databases|neptune|Amazon Neptune
-- [ ] aws|databases|elasticache|Amazon ElastiCache
-- [ ] aws|databases|memorydb|Amazon MemoryDB
-- [ ] aws|databases|keyspaces|Amazon Keyspaces
+- [x] aws|databases|rds|Amazon RDS
+- [x] aws|databases|aurora|Amazon Aurora
+- [x] aws|databases|dynamodb|Amazon DynamoDB
+- [x] aws|databases|documentdb|Amazon DocumentDB
+- [x] aws|databases|neptune|Amazon Neptune
+- [x] aws|databases|elasticache|Amazon ElastiCache
+- [x] aws|databases|memorydb|Amazon MemoryDB
+- [x] aws|databases|keyspaces|Amazon Keyspaces
 - [ ] aws|databases|timestream|Amazon Timestream
 - [ ] aws|databases|qldb|Amazon QLDB
 - [ ] aws|databases|dax|DynamoDB Accelerator (DAX)

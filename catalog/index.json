@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 873,
-    "skills": 165,
+    "agents": 881,
+    "skills": 173,
     "categories": 17
   },
   "agents": [
@@ -955,6 +955,36 @@
       "path": "agents/cloud/aws/services/compute/aws-app-runner-specialist.md"
     },
     {
+      "name": "aws-aurora-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon Aurora (AWS) — the AWS-native cloud relational engine (PostgreSQL/MySQL-compatible): cluster topology (writer + readers), cluster/reader/custom endpoints, Serverless v2 (ACUs), Global Database, fast clone/backtrack, backups + PITR, KMS encryption, TLS, IAM auth, RDS Proxy, and private VPC placement. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. Pick a DB sibling instead for: managed off-the-shelf relational engines (rds), serverless NoSQL KV (dynamodb), Mongo-compatible (documentdb), graph (neptune), cache (elasticache), durable Redis (memorydb), Cassandra (keyspaces). CRITICAL: this specialist owns the MANAGED-SERVICE/cluster layer (provisioning/sizing/readers/Serverless/backups/failover/parameter groups/IAM) — engine-internal tuning, schema, and query modeling belong to the postgres data team. For GCP AlloyDB/Cloud SQL or Azure defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "aurora",
+        "relational-database",
+        "managed-database",
+        "serverless-v2",
+        "specialist"
+      ],
+      "skills": [
+        "aws-aurora",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/databases/aws-aurora-specialist.md"
+    },
+    {
       "name": "aws-backup-specialist",
       "description": "Use when designing, configuring, deploying, or operating AWS Backup (AWS) — centralized, policy-driven backup orchestration across EBS, EFS, FSx, S3, RDS/Aurora, DynamoDB, EC2 and more: backup plans (schedules, lifecycle to cold storage, retention), vaults and Vault Lock (immutable WORM), tag/ARN resource selection, cross-Region/account copy, KMS encryption, restore testing, and Backup Audit Manager. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad Terraform/CDK), aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns AWS Backup — centralized data protection — end-to-end (the protected stores themselves are owned by the ebs/efs/fsx/s3 specialists). Pick a sibling instead for: data transfer/sync (datasync), offline bulk (snow-family), hybrid on-prem access (storage-gateway). For Azure Backup / GCP Backup-DR defer to those clouds.",
       "category": "cloud",
@@ -1128,6 +1158,65 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/storage/aws-datasync-specialist.md"
+    },
+    {
+      "name": "aws-documentdb-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon DocumentDB (AWS) — the managed MongoDB-compatible document database: cluster topology (primary + replicas), cluster/reader endpoints + failover, instance-based vs Elastic (sharded) clusters, instance sizing, backups + PITR, KMS encryption, TLS, in-database RBAC users, and private VPC placement. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. Pick a DB sibling instead for: managed relational engines (rds), AWS-native cloud relational (aurora), serverless NoSQL KV (dynamodb), graph (neptune), cache (elasticache), durable Redis (memorydb), Cassandra (keyspaces). CRITICAL: this specialist owns the MANAGED-SERVICE/cluster layer (provisioning/sizing/replicas/backups/failover/IAM) — engine-internal document modeling, indexes, and aggregation tuning belong to the mongodb data team. For self-managed Mongo, GCP, or Azure Cosmos DB (Mongo API) defer to those.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "documentdb",
+        "document-database",
+        "mongodb-compatible",
+        "specialist"
+      ],
+      "skills": [
+        "aws-documentdb",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/databases/aws-documentdb-specialist.md"
+    },
+    {
+      "name": "aws-dynamodb-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon DynamoDB (AWS) — the serverless NoSQL key-value/document database: table + key design (partition/sort key), single-table design, GSIs/LSIs, on-demand vs provisioned capacity + auto scaling, Streams, DAX, global tables, PITR/backups, TTL, KMS encryption, fine-grained IAM (leading-key conditions), and VPC endpoints. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. Pick a DB sibling instead for: managed relational engines (rds), AWS-native cloud relational (aurora), Mongo-compatible doc (documentdb), graph (neptune), cache (elasticache), durable Redis (memorydb), Cassandra (keyspaces). DynamoDB is serverless and has no separate engine team — this specialist owns BOTH the managed service AND the access-pattern/key data model. For GCP Bigtable/Firestore or Azure Cosmos DB defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "dynamodb",
+        "nosql",
+        "key-value",
+        "serverless",
+        "specialist"
+      ],
+      "skills": [
+        "aws-dynamodb",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/databases/aws-dynamodb-specialist.md"
     },
     {
       "name": "aws-ebs-specialist",
@@ -1403,6 +1492,36 @@
       "path": "agents/cloud/aws/services/compute/aws-elastic-beanstalk-specialist.md"
     },
     {
+      "name": "aws-elasticache-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon ElastiCache (AWS) — the managed in-memory cache (Redis OSS/Valkey or Memcached): engine choice, node types + sizing, cluster topology (shards + replicas, cluster mode), Multi-AZ failover, reader endpoint, ElastiCache Serverless, snapshots, KMS at-rest + TLS in-transit encryption, Redis AUTH/ACLs/RBAC, and private VPC placement. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. Pick a DB sibling instead for: a DURABLE Redis primary (memorydb), managed relational (rds), AWS-native cloud relational (aurora), serverless NoSQL KV (dynamodb), Mongo-compatible (documentdb), graph (neptune), Cassandra (keyspaces). CRITICAL: this specialist owns the MANAGED-SERVICE layer (engine/node selection/topology/Multi-AZ/backups/IAM) — engine-internal data-structure, eviction/TTL, and command tuning belong to the redis data team. For GCP Memorystore or Azure Cache for Redis defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "elasticache",
+        "in-memory",
+        "cache",
+        "redis",
+        "specialist"
+      ],
+      "skills": [
+        "aws-elasticache",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/databases/aws-elasticache-specialist.md"
+    },
+    {
       "name": "aws-fargate-specialist",
       "description": "Use when designing, building, deploying, or operating AWS Fargate (AWS) — ECS task definitions and services, task CPU/memory sizing, awsvpc networking, task vs execution roles, ALB integration, service autoscaling, Fargate/Fargate Spot capacity, and logging. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the Fargate service end-to-end. Pick this for containerized long-running services/jobs without node management; for raw VMs use aws-ec2-specialist, a single managed web service aws-app-runner-specialist, event functions aws-lambda-specialist, batch jobs aws-batch-specialist; for GCP Cloud Run or Azure Container Apps defer to those clouds' specialists.",
       "category": "cloud",
@@ -1496,6 +1615,36 @@
       "path": "agents/cloud/aws/aws-iac-engineer.md"
     },
     {
+      "name": "aws-keyspaces-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon Keyspaces (AWS) — the serverless Cassandra-compatible (CQL) wide-column database: keyspaces + tables, partition/clustering key modeling for CQL access patterns, on-demand vs provisioned throughput + auto scaling, PITR, TTL, Multi-Region replication, KMS encryption, IAM (SigV4) auth + service-specific credentials, and PrivateLink VPC endpoints. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. Pick a DB sibling instead for: managed relational (rds), AWS-native cloud relational (aurora), serverless NoSQL KV (dynamodb), Mongo-compatible doc (documentdb), graph (neptune), cache (elasticache), durable Redis (memorydb). Keyspaces is serverless and has no AWS engine team — this specialist owns the managed service AND CQL key modeling; for DEEP Cassandra engine/CQL modeling defer to Cassandra expertise. For self-managed Cassandra, GCP, or Azure (Cosmos DB Cassandra API) defer to those.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "keyspaces",
+        "cassandra",
+        "cql",
+        "serverless",
+        "specialist"
+      ],
+      "skills": [
+        "aws-keyspaces",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/databases/aws-keyspaces-specialist.md"
+    },
+    {
       "name": "aws-lambda-specialist",
       "description": "Use when designing, building, deploying, or operating AWS Lambda (AWS) — function sizing (memory/timeout), runtimes/container images, triggers and event source mappings, concurrency (reserved/provisioned), cold-start tuning, layers, execution roles, secrets/env, and versions/aliases. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), and aws-security-reviewer (account-wide posture) own cross-cutting work; this specialist owns the Lambda service end-to-end. Pick this for short event-driven/glue/API-backend work; for long-running VMs use aws-ec2-specialist, for serverless containers aws-fargate/app-runner specialists, batch fleets aws-batch-specialist; for GCP Cloud Functions or Azure Functions defer to those clouds' specialists.",
       "category": "cloud",
@@ -1554,6 +1703,65 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/compute/aws-lightsail-specialist.md"
+    },
+    {
+      "name": "aws-memorydb-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon MemoryDB (AWS) — the durable Redis OSS/Valkey-compatible in-memory database: cluster topology (shards + replicas across AZs), node sizing, cluster mode + resharding, automatic failover, Serverless, snapshots, always-on KMS + TLS encryption, ACLs/RBAC + IAM auth, and private VPC placement. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. Pick a DB sibling instead for: an EPHEMERAL cache (elasticache), managed relational (rds), AWS-native cloud relational (aurora), serverless NoSQL KV (dynamodb), Mongo-compatible (documentdb), graph (neptune), Cassandra (keyspaces). CRITICAL: this specialist owns the MANAGED-SERVICE layer (topology/durability/Multi-AZ/backups/IAM) — engine-internal data-structure and command tuning belong to the redis data team. Choose MemoryDB over ElastiCache when Redis is your durable system of record. For GCP/Azure managed Redis defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "memorydb",
+        "in-memory",
+        "durable-redis",
+        "specialist"
+      ],
+      "skills": [
+        "aws-memorydb",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/databases/aws-memorydb-specialist.md"
+    },
+    {
+      "name": "aws-neptune-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon Neptune (AWS) — the managed graph database: choosing a graph model (property graph with Gremlin/openCypher vs RDF/SPARQL), cluster topology (writer + read replicas), cluster/reader endpoints + failover, Neptune Serverless (NCUs), the S3 bulk loader, OpenSearch full-text integration, backups + PITR, KMS encryption, TLS, IAM database authentication, and private VPC placement. NOT the AWS role team — aws-cloud-architect, aws-iac-engineer, aws-security-reviewer own cross-cutting work. Pick a DB sibling instead for: managed relational (rds), AWS-native cloud relational (aurora), serverless NoSQL KV (dynamodb), Mongo-compatible doc (documentdb), cache (elasticache), durable Redis (memorydb), Cassandra (keyspaces). Neptune is the only AWS graph DB — this specialist owns the service AND graph-model guidance. For GCP or Azure (Cosmos DB Gremlin API) graph defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "neptune",
+        "graph-database",
+        "gremlin",
+        "sparql",
+        "specialist"
+      ],
+      "skills": [
+        "aws-neptune",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/databases/aws-neptune-specialist.md"
     },
     {
       "name": "aws-networking-engineer",
@@ -1674,6 +1882,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/compute/aws-outposts-specialist.md"
+    },
+    {
+      "name": "aws-rds-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon RDS (AWS) — managed relational databases (PostgreSQL/MySQL/MariaDB/Oracle/SQL Server): engine/instance-class choice, Multi-AZ HA + failover, read replicas, storage/IOPS, parameter/option groups, backups + PITR, KMS encryption, TLS, IAM auth, and private VPC placement. NOT the AWS role team — aws-cloud-architect (multi-service design), aws-iac-engineer (broad IaC), aws-security-reviewer (account posture) own cross-cutting work. Pick a DB sibling instead for: AWS-native cloud relational (aurora), serverless NoSQL KV (dynamodb), Mongo-compatible (documentdb), graph (neptune), cache (elasticache), durable Redis (memorydb), Cassandra (keyspaces). CRITICAL: this specialist owns the MANAGED-SERVICE layer (provisioning/sizing/Multi-AZ/backups/failover/parameter groups/IAM) — engine-internal tuning, schema, and query modeling belong to the postgres data team. For GCP Cloud SQL or Azure SQL/Flexible Server defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "rds",
+        "relational-database",
+        "managed-database",
+        "specialist"
+      ],
+      "skills": [
+        "aws-rds",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/databases/aws-rds-specialist.md"
     },
     {
       "name": "aws-reliability-engineer",
@@ -24447,6 +24684,23 @@
       "path": "skills/cloud/aws-app-runner/SKILL.md"
     },
     {
+      "name": "aws-aurora",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Aurora — the AWS-native, cloud-optimized relational engine compatible with PostgreSQL and MySQL. Loads the Aurora knowledge: the cluster model (a shared distributed storage volume with one writer and up to 15 reader instances), the cluster/reader/custom endpoints, Aurora Serverless v2 autoscaling capacity (ACUs), Global Database for cross-Region replication and low-latency reads, fast clone and backtrack, continuous backup to S3 with PITR, encryption at rest with KMS and TLS in transit, IAM database authentication, RDS Proxy connection pooling, and VPC placement. Covers how to size a cluster, place it privately, encrypt it, add readers/auto-scale, and verify writer/reader failover. Consumed by the Aurora specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect). For engine-internal tuning/modeling defer to the postgres data team.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "aurora",
+        "relational-database",
+        "managed-database",
+        "serverless-v2",
+        "postgres",
+        "mysql"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-aurora/SKILL.md"
+    },
+    {
       "name": "aws-backup",
       "description": "Use when designing, configuring, securing, or operating AWS Backup — centralized, policy-driven backup orchestration across services (EBS, EFS, FSx, S3, RDS/Aurora, DynamoDB, EC2/AMI, and more): backup plans (rules, schedules, lifecycle to cold storage, retention), backup vaults and Vault Lock (immutable WORM/compliance), resource selection by tag/ARN, cross-Region and cross-account copy, KMS encryption, restore testing, and Backup Audit Manager for compliance reporting (AWS Backup). Loads the Backup knowledge: how to define a backup plan, assign resources, lock vaults for ransomware/compliance protection, copy off-Region/account, and verify backups and restores. Consumed by the AWS Backup specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they implement centralized data protection.",
       "category": "cloud",
@@ -24495,6 +24749,39 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-datasync/SKILL.md"
+    },
+    {
+      "name": "aws-documentdb",
+      "description": "Use when designing, provisioning, securing, or operating Amazon DocumentDB — the managed, MongoDB-compatible document database. Loads the DocumentDB knowledge: the cluster model (a shared distributed storage volume with one primary and up to 15 replica instances), cluster/reader endpoints and failover, instance-based vs Elastic Clusters (sharded) deployments, MongoDB API/driver compatibility and its limitations, instance class sizing, automated backups/snapshots with PITR, encryption at rest with KMS and TLS in transit, in-database users + role-based access control, VPC/subnet-group placement and security groups, and change streams. Covers how to size a cluster, place it privately, encrypt it, add replicas, and verify connectivity and failover. Consumed by the DocumentDB specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect). For engine-internal modeling/query tuning defer to the mongodb data team.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "documentdb",
+        "document-database",
+        "mongodb-compatible",
+        "managed-database",
+        "encryption"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-documentdb/SKILL.md"
+    },
+    {
+      "name": "aws-dynamodb",
+      "description": "Use when designing, provisioning, securing, or operating Amazon DynamoDB — the fully serverless NoSQL key-value and document database. Loads the DynamoDB knowledge: tables and the primary key (partition key, optional sort key), single-table design, global and local secondary indexes (GSI/LSI), on-demand vs provisioned capacity with auto scaling, DynamoDB Streams and change data capture, DynamoDB Accelerator (DAX) caching, global tables for multi-Region active-active, point-in-time recovery and on-demand backups, TTL expiry, encryption at rest with KMS, fine-grained IAM (including leading-key conditions) and VPC endpoints. Covers how to pick keys/indexes, choose a capacity mode, secure access, and verify reads/writes and throttling. Consumed by the DynamoDB specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they provision serverless NoSQL.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "dynamodb",
+        "nosql",
+        "key-value",
+        "serverless",
+        "gsi",
+        "streams"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-dynamodb/SKILL.md"
     },
     {
       "name": "aws-ebs",
@@ -24644,6 +24931,23 @@
       "path": "skills/cloud/aws-elastic-beanstalk/SKILL.md"
     },
     {
+      "name": "aws-elasticache",
+      "description": "Use when designing, provisioning, securing, or operating Amazon ElastiCache — the managed in-memory cache/datastore service for Redis OSS / Valkey and Memcached. Loads the ElastiCache knowledge: choosing the engine (Redis/Valkey for rich types, replication, persistence-ish, and clustering vs Memcached for simple multi-threaded caching), node types (cache.t/m/r families) and sizing, cluster topology (shards + replicas, cluster mode enabled/disabled), Multi-AZ with automatic failover, ElastiCache Serverless, replication groups and reader endpoints, snapshots/backups, encryption at rest with KMS and in transit with TLS, AUTH / Redis ACLs and RBAC, and VPC/subnet-group/security-group placement. Covers how to pick an engine, size nodes, place it privately, secure it, and verify connectivity and failover. Consumed by the ElastiCache specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect). For engine-internal data-structure/eviction tuning defer to the redis data team.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "elasticache",
+        "in-memory",
+        "cache",
+        "redis",
+        "valkey",
+        "memcached"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-elasticache/SKILL.md"
+    },
+    {
       "name": "aws-fargate",
       "description": "Use when designing, building, securing, or operating AWS Fargate — serverless containers on ECS (and EKS), task definitions, services, task/CPU-memory sizing, awsvpc networking, task vs execution roles, load balancer integration, autoscaling, capacity providers (Fargate/Fargate Spot), and logging (AWS Fargate). Loads the Fargate-specific knowledge: how to size a task, split task vs execution roles, wire networking/ALB, autoscale, control cost, and verify a service is healthy. Consumed by the Fargate specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they run containers without managing nodes.",
       "category": "cloud",
@@ -24678,6 +24982,23 @@
       "path": "skills/cloud/aws-fsx/SKILL.md"
     },
     {
+      "name": "aws-keyspaces",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Keyspaces — the serverless, Apache Cassandra-compatible (CQL) wide-column database. Loads the Keyspaces knowledge: keyspaces and tables, the Cassandra data model (partition key + clustering columns) and modeling for CQL access patterns, on-demand vs provisioned throughput with auto scaling, point-in-time recovery, TTL, CQL/driver compatibility and its limitations (no native secondary indexes, lightweight transactions caveats), Multi-Region replication, encryption at rest with KMS, IAM authentication (SigV4) plus service-specific credentials, and VPC (PrivateLink) endpoints. Covers how to model keys for CQL queries, pick a throughput mode, secure access, and verify reads/writes. Consumed by the Keyspaces specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they provision a serverless Cassandra workload. For deep Cassandra engine/CQL modeling defer to Cassandra expertise.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "keyspaces",
+        "cassandra",
+        "cql",
+        "wide-column",
+        "serverless",
+        "nosql"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-keyspaces/SKILL.md"
+    },
+    {
       "name": "aws-lambda",
       "description": "Use when designing, building, securing, or operating AWS Lambda — functions, runtimes, handlers, triggers/event sources, memory/timeout sizing, concurrency (reserved/provisioned), cold starts, layers, container images, execution roles, environment/secrets, and packaging/deploy (AWS Lambda). Loads the Lambda-specific knowledge: how to size and tune a function, wire event sources, scope its execution role, control concurrency and cost, and verify an invocation. Consumed by the Lambda specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they touch serverless compute.",
       "category": "cloud",
@@ -24710,6 +25031,40 @@
       "path": "skills/cloud/aws-lightsail/SKILL.md"
     },
     {
+      "name": "aws-memorydb",
+      "description": "Use when designing, provisioning, securing, or operating Amazon MemoryDB — the durable, Redis OSS / Valkey-compatible in-memory database. Loads the MemoryDB knowledge: how MemoryDB differs from ElastiCache (a multi-AZ transactional log makes it a durable primary database, not just a cache), the cluster model (shards/node groups each with a primary + up to 5 replicas across AZs), node types (db.t/r families) and sizing, cluster mode and online resharding, microsecond reads / single-digit-ms durable writes, MemoryDB Serverless, automatic failover, snapshots, encryption at rest with KMS and in transit with TLS, ACLs / RBAC users and IAM authentication, and VPC/subnet-group/security-group placement. Covers how to size shards/replicas, place it privately, secure it, and verify durability, connectivity, and failover. Consumed by the MemoryDB specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect). For engine-internal data-structure/command tuning defer to the redis data team.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "memorydb",
+        "in-memory",
+        "durable-redis",
+        "valkey",
+        "redis",
+        "managed-database"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-memorydb/SKILL.md"
+    },
+    {
+      "name": "aws-neptune",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Neptune — the managed graph database. Loads the Neptune knowledge: property-graph (Apache TinkerPop Gremlin, openCypher) and RDF/SPARQL graph models and when to pick each, the cluster model (a shared distributed storage volume with one writer and up to 15 read replicas), cluster/reader endpoints and failover, Neptune Serverless capacity (NCUs), Neptune Analytics for in-memory graph algorithms, bulk loader from S3, full-text search via OpenSearch integration, automated backups/snapshots with PITR, encryption at rest with KMS and TLS in transit, IAM database authentication and VPC/subnet-group placement. Covers how to size a cluster, choose a graph model and query language, place it privately, encrypt it, load data, and verify queries and failover. Consumed by the Neptune specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they provision a graph database.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "neptune",
+        "graph-database",
+        "gremlin",
+        "sparql",
+        "opencypher",
+        "managed-database"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-neptune/SKILL.md"
+    },
+    {
       "name": "aws-nitro-enclaves",
       "description": "Use when designing, provisioning, securing, or operating AWS Nitro Enclaves — isolated VMs carved from a parent EC2 instance, the vsock channel, enclave images (EIF), cryptographic attestation (PCRs), KMS attestation-based key release, and confidential-computing workloads that process sensitive data with no persistent storage or network (AWS Nitro Enclaves). Loads the Nitro Enclaves knowledge: how to allocate enclave resources, build an EIF, attest it, gate KMS decrypt on attestation, and verify the enclave runs. Consumed by the Nitro Enclaves specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) for confidential computing.",
       "category": "cloud",
@@ -24740,6 +25095,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-outposts/SKILL.md"
+    },
+    {
+      "name": "aws-rds",
+      "description": "Use when designing, provisioning, securing, or operating Amazon RDS — the managed relational database service for PostgreSQL, MySQL, MariaDB, Oracle, and SQL Server. Loads the RDS knowledge: choosing an engine and instance class, Multi-AZ for HA and read replicas for scale-out reads, storage (gp3/io2/magnetic) and autoscaling, parameter and option groups, automated backups/snapshots and point-in-time restore, encryption at rest with KMS and in transit with TLS, IAM database authentication, VPC/subnet-group/security-group placement, maintenance and minor-version upgrades, and Performance Insights. Covers how to pick a class, place it privately in a VPC, encrypt it, back it up, and verify failover and connectivity. Consumed by the RDS specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they provision managed relational databases. For engine-internal tuning/modeling defer to the postgres data team.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "rds",
+        "relational-database",
+        "managed-database",
+        "postgres",
+        "mysql",
+        "encryption"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-rds/SKILL.md"
     },
     {
       "name": "aws-s3",
