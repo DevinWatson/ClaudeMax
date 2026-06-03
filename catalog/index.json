@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1033,
-    "skills": 325,
+    "agents": 1041,
+    "skills": 333,
     "categories": 17
   },
   "agents": [
@@ -11776,6 +11776,36 @@
       "path": "agents/cloud/gcp/gcp-cloud-architect.md"
     },
     {
+      "name": "gcp-cloud-armor-specialist",
+      "description": "Use when designing, configuring, securing, or operating Google Cloud Armor (GCP) — the edge WAF and DDoS service: security policies and prioritized rules (allow/deny/throttle by IP/geo/CEL) on external Application Load Balancer backend services, preconfigured OWASP WAF rules, rate limiting/rate-based-ban, reCAPTCHA bot management, and Adaptive Protection. OWNS the GCP Cloud Armor service end-to-end. NOT cross-cutting multi-service network topology — defer to the platform networking-engineer role (which uses network-design). The load balancer the policy attaches to belongs to gcp-cloud-load-balancing-specialist; edge caching on that backend belongs to gcp-cloud-cdn-specialist. NOT a sibling networking specialist (Cloud DNS, VPN, Interconnect, NAT, NGFW). Cross-cloud peers (defer for those): aws-waf + aws-shield and azure-ddos. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-armor",
+        "networking",
+        "waf",
+        "ddos",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-armor",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/networking/gcp-cloud-armor-specialist.md"
+    },
+    {
       "name": "gcp-cloud-build-specialist",
       "description": "Use when designing, configuring, deploying, or operating Cloud Build (GCP) — the managed CI/build service: cloudbuild.yaml build configs and steps (builder images, args, waitFor), substitutions, artifacts/images, triggers (push/PR/tag/manual/Pub-Sub from GitHub/GitLab/Cloud Source Repos), the build service account + Secret Manager, private worker pools for VPC access, machine types, caching, and Artifact Registry, plus IAM, timeouts, and cost. NOT the GCP role team (gcp-cloud-architect/gcp-iac-engineer/gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security. Cloud Build BUILDS artifacts; defer continuous DELIVERY/promotion (delivery pipelines, rollouts, canary) to gcp-cloud-deploy-specialist — together they are the GCP-native CI/CD chain. Both are bound vs the cross-platform devops CI/CD team (github-actions): use those for cross-platform/GitHub-Actions pipelines, this for GCP-native builds. AWS=CodeBuild; Azure=Azure Pipelines — defer those clouds.",
       "category": "cloud",
@@ -11803,6 +11833,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/application-development/gcp-cloud-build-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-cdn-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud CDN (GCP) — the edge caching service on an external Application Load Balancer backend (service or bucket): cache modes (CACHE_ALL_STATIC / USE_ORIGIN_HEADERS / FORCE_CACHE_ALL), TTLs, cache keys, signed URLs/cookies, negative caching, and invalidation. OWNS the GCP Cloud CDN service end-to-end. NOT cross-cutting multi-service network topology — defer to the platform networking-engineer role (which uses network-design). The fronting load balancer itself belongs to gcp-cloud-load-balancing-specialist (Cloud CDN attaches to its backend); WAF/DDoS at the edge belongs to gcp-cloud-armor-specialist. NOT a sibling networking specialist (DNS, VPN, Interconnect, NAT, NGFW). Cross-cloud peers (defer for those): aws-cloudfront and azure-cdn. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-cdn",
+        "networking",
+        "caching",
+        "edge",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-cdn",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/networking/gcp-cloud-cdn-specialist.md"
     },
     {
       "name": "gcp-cloud-data-fusion-specialist",
@@ -11862,6 +11922,156 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/application-development/gcp-cloud-deploy-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-dns-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud DNS (GCP) — the managed authoritative DNS service: public and private managed zones, record sets (A/AAAA/CNAME/MX/TXT/SRV/etc.) and TTLs, DNSSEC for public zones, routing policies (weighted/geolocation/failover) with health checks, and DNS peering/forwarding/server policies for hybrid and split-horizon resolution. OWNS the GCP Cloud DNS service end-to-end. NOT cross-cutting multi-service network topology — defer to the platform networking-engineer role (which uses network-design). NOT a sibling networking specialist (Cloud Load Balancing, CDN, VPN, Interconnect, NAT, Armor, NGFW). Cross-cloud peers (defer for those): aws-route53 and azure-dns. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-dns",
+        "networking",
+        "dns",
+        "dnssec",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-dns",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/networking/gcp-cloud-dns-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-interconnect-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud Interconnect (GCP) — the private high-bandwidth hybrid connectivity service: Dedicated Interconnect (direct colocation circuits) vs Partner Interconnect (via a service provider), VLAN attachments, Cloud Router BGP sessions, redundant edge-availability-domain topologies for the 99.9%/99.99% SLA, and MACsec encryption. OWNS the GCP Cloud Interconnect service end-to-end. NOT cross-cutting multi-service network topology — defer to the platform networking-engineer role (which uses network-design). Internet-based IPsec hybrid connectivity belongs to gcp-cloud-vpn-specialist (the sibling). NOT another sibling networking specialist (Cloud DNS, Load Balancing, CDN, NAT, Armor, NGFW). Cross-cloud peers (defer for those): aws-direct-connect and azure-expressroute. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-interconnect",
+        "networking",
+        "hybrid",
+        "bgp",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-interconnect",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/networking/gcp-cloud-interconnect-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-load-balancing-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud Load Balancing (GCP) — the managed load balancers: global and regional Application Load Balancers (HTTP/S) and Network Load Balancers (TCP/UDP/SSL, proxy and passthrough), forwarding rules, target proxies, URL maps, backend services and backend buckets, health checks, SSL certs and policies, session affinity, balancing modes, and CDN/Armor attachment. OWNS the GCP Cloud Load Balancing service end-to-end. NOT cross-cutting multi-service network topology — defer to the platform networking-engineer role (which uses network-design). Edge caching on a backend belongs to gcp-cloud-cdn-specialist; WAF/DDoS on a backend belongs to gcp-cloud-armor-specialist. NOT a sibling networking specialist (Cloud DNS, VPN, Interconnect, NAT, NGFW). Cross-cloud peers (defer for those): aws-elb and azure-load-balancer. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-load-balancing",
+        "networking",
+        "backend-service",
+        "health-check",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-load-balancing",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/networking/gcp-cloud-load-balancing-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-nat-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud NAT (GCP) — the distributed managed NAT service that gives instances without external IPs outbound internet egress: NAT gateway on a Cloud Router per region/VPC, subnet/range selection, NAT IP allocation (auto vs manual/static), static vs dynamic port allocation, timeout tuning, endpoint-independent mapping, and NAT logging. OWNS the GCP Cloud NAT service end-to-end. NOT cross-cutting multi-service network topology — defer to the platform networking-engineer role (which uses network-design). NOT a sibling networking specialist (Cloud DNS, Load Balancing, CDN, VPN, Interconnect, Armor, NGFW). Cross-cloud peer (defer for that): aws-nat-gateway. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-nat",
+        "networking",
+        "egress",
+        "port-allocation",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-nat",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/networking/gcp-cloud-nat-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-ngfw-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud Next Generation Firewall (GCP) — the distributed stateful firewall managed via hierarchical (org/folder) plus global/regional network firewall policies: ingress/egress rules by priority targeted via secure tags/service accounts, address groups, FQDN/geo/Threat-Intel matches, and the Enterprise-tier Layer-7 IPS. OWNS the GCP Cloud NGFW service end-to-end. NOT cross-cutting multi-service network topology — defer to the platform networking-engineer role (which uses network-design). VPC-level design and basic VPC firewall rules sit with gcp-vpc-specialist; edge WAF/DDoS at the load balancer belongs to gcp-cloud-armor-specialist. NOT another sibling networking specialist (Cloud DNS, Load Balancing, CDN, VPN, Interconnect, NAT). Cross-cloud peers (defer): aws-network-firewall and azure-firewall. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-ngfw",
+        "networking",
+        "firewall-policy",
+        "intrusion-prevention",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-ngfw",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/networking/gcp-cloud-ngfw-specialist.md"
     },
     {
       "name": "gcp-cloud-run-specialist",
@@ -12009,6 +12219,36 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/gcp/services/ai-ml/gcp-cloud-tpu-specialist.md"
+    },
+    {
+      "name": "gcp-cloud-vpn-specialist",
+      "description": "Use when designing, configuring, securing, or operating Cloud VPN (GCP) — the managed IPsec VPN service connecting a peer network to a VPC over the internet: HA VPN (two interfaces, 99.99% SLA) vs Classic VPN, VPN gateways and external VPN gateways, IKEv2/IPsec tunnels and PSKs, Cloud Router BGP with redundant two-tunnel topologies, and route advertisements. OWNS the GCP Cloud VPN service end-to-end. NOT cross-cutting multi-service network topology — defer to the platform networking-engineer role (which uses network-design). Private (non-internet) high-bandwidth hybrid connectivity belongs to gcp-cloud-interconnect-specialist (the sibling). NOT another sibling networking specialist (Cloud DNS, Load Balancing, CDN, NAT, Armor, NGFW). Cross-cloud peers (defer for those): aws-vpn and azure-vpn-gateway. NOT the GCP role team (gcp-cloud-architect / gcp-iac-engineer / gcp-security-reviewer) for cross-cutting architecture, broad IaC, or org-wide security.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "gcp",
+        "cloud-vpn",
+        "networking",
+        "ipsec",
+        "ha-vpn",
+        "specialist"
+      ],
+      "skills": [
+        "gcp-cloud-vpn",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/gcp/services/networking/gcp-cloud-vpn-specialist.md"
     },
     {
       "name": "gcp-cloud-workstations-specialist",
@@ -32136,6 +32376,23 @@
       "path": "skills/cloud/gcp-bigtable/SKILL.md"
     },
     {
+      "name": "gcp-cloud-armor",
+      "description": "Use when designing, provisioning, securing, or operating Google Cloud Armor — Google Cloud's edge web application firewall (WAF) and DDoS protection that attaches security policies to external Application Load Balancer backend services to filter, rate-limit, and block traffic at Google's network edge before it reaches origins. Loads the Cloud Armor knowledge: build security policies and rules (allow/deny/throttle/redirect by IP/CIDR/geo/expression), use preconfigured WAF rules (OWASP CRS for SQLi/XSS/LFI/RCE), configure rate limiting and bot management (reCAPTCHA), enable adaptive protection and edge security, plus IAM and cost/scaling levers. Consumed by the Cloud Armor specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add WAF/DDoS to a web edge (Google Cloud Armor).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-armor",
+        "networking",
+        "waf",
+        "ddos",
+        "security-policy",
+        "rate-limiting"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-armor/SKILL.md"
+    },
+    {
       "name": "gcp-cloud-build",
       "description": "Use when designing, provisioning, securing, or operating Cloud Build — Google Cloud's managed CI/build service: build configs (cloudbuild.yaml / Dockerfile), build steps (containerized steps, builder images, `args`, `waitFor` for parallelism), substitutions, artifacts and images, triggers (push/PR/tag/manual/Pub-Sub/webhook from GitHub/GitLab/Cloud Source Repositories), the build service account and per-step permissions, private worker pools (private pools) for VPC/private access, machine types, caching, and Artifact Registry integration, plus IAM, timeouts, and cost (Cloud Build). Loads the Cloud Build knowledge: author cloudbuild.yaml, create a trigger, build/push artifacts, secure the build identity, and verify a green build. Consumed by the Cloud Build specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add CI.",
       "category": "cloud",
@@ -32150,6 +32407,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-cloud-build/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-cdn",
+      "description": "Use when designing, provisioning, securing, or operating Cloud CDN — Google Cloud's edge content delivery network that caches content at Google's globally distributed edge points of presence in front of an external Application Load Balancer backend (backend service or backend bucket). Loads the Cloud CDN knowledge: enable CDN on a load-balancer backend, choose cache modes (CACHE_ALL_STATIC, USE_ORIGIN_HEADERS, FORCE_CACHE_ALL), tune TTLs and cache keys, serve private content with signed URLs/signed cookies, run cache invalidation, and verify cache hit behavior, plus IAM and cost/scaling levers. Consumed by the Cloud CDN specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they add edge caching to a web delivery foundation (Cloud CDN).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-cdn",
+        "networking",
+        "caching",
+        "edge",
+        "signed-urls",
+        "load-balancing"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-cdn/SKILL.md"
     },
     {
       "name": "gcp-cloud-data-fusion",
@@ -32182,6 +32456,91 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-cloud-deploy/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-dns",
+      "description": "Use when designing, provisioning, securing, or operating Cloud DNS — Google Cloud's scalable, authoritative, low-latency managed DNS service running on Google's global anycast name servers. Loads the Cloud DNS knowledge: create public and private managed zones, manage record sets (A/AAAA/CNAME/MX/TXT/SRV/etc.), enable DNSSEC for public zones, configure routing policies (weighted round-robin, geolocation, failover) and health checks, set up DNS peering/forwarding and split-horizon, plus IAM, logging, and cost/scaling levers. Consumed by the Cloud DNS specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they build name resolution for a platform (Cloud DNS).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-dns",
+        "networking",
+        "dns",
+        "dnssec",
+        "managed-zones",
+        "routing-policy"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-dns/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-interconnect",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Interconnect — Google Cloud's high-bandwidth, low-latency, private hybrid connectivity between an on-premises network and a VPC, via Dedicated Interconnect (direct physical connections at a colocation) or Partner Interconnect (through a supported service provider). Loads the Cloud Interconnect knowledge: choose Dedicated vs Partner and capacity, order interconnects and create VLAN attachments, attach Cloud Routers with BGP for dynamic routing, configure redundancy/SLA topologies and MACsec, plus IAM and cost/scaling levers. Consumed by the Cloud Interconnect specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they build private hybrid connectivity (Cloud Interconnect).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-interconnect",
+        "networking",
+        "hybrid",
+        "vlan-attachment",
+        "bgp",
+        "cloud-router"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-interconnect/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-load-balancing",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Load Balancing — Google Cloud's managed, software-defined load balancers spanning global and regional Application Load Balancers (HTTP/S) and Network Load Balancers (TCP/UDP/SSL, proxy and passthrough). Loads the Cloud Load Balancing knowledge: choose the right LB type, build forwarding rules, target proxies, URL maps, backend services and backend buckets, configure health checks, SSL/TLS certificates and policies, session affinity, capacity/balancing modes, Cloud CDN and Cloud Armor attachment, plus IAM and cost/scaling levers. Consumed by the Cloud Load Balancing specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they front a service with a load balancer (Cloud Load Balancing).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-load-balancing",
+        "networking",
+        "backend-service",
+        "health-check",
+        "ssl",
+        "application-load-balancer"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-load-balancing/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-nat",
+      "description": "Use when designing, provisioning, securing, or operating Cloud NAT — Google Cloud's distributed, software-defined managed network address translation that gives instances and resources without external IPs outbound internet (and some Google API) connectivity without exposing them to inbound connections. Loads the Cloud NAT knowledge: attach a NAT gateway to a Cloud Router per region/VPC, choose subnets/ranges to NAT, manage NAT IP allocation (auto vs manual) and static vs dynamic port allocation, tune timeouts and per-VM port limits, enable endpoint-independent mapping and logging, plus IAM and cost/scaling levers. Consumed by the Cloud NAT specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they enable private-instance egress (Cloud NAT).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-nat",
+        "networking",
+        "egress",
+        "nat-gateway",
+        "cloud-router",
+        "port-allocation"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-nat/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-ngfw",
+      "description": "Use when designing, provisioning, securing, or operating Cloud Next Generation Firewall (Cloud NGFW) — Google Cloud's fully distributed, stateful, cloud-native network firewall enforced at each VM/interface, managed through global and regional network firewall policies plus hierarchical (org/folder) policies, with FQDN/geo/Threat Intelligence objects and a Layer-7 intrusion prevention service (IPS). Loads the Cloud NGFW knowledge: write firewall policies and rules (ingress/egress, priority, target by tag/secure-tag/service-account), use address groups, FQDN, geolocation and Threat Intelligence matches, enable the Enterprise tier IPS and TLS inspection with packet mirroring/endpoints, plus IAM, logging, and cost/scaling levers. Consumed by the Cloud NGFW specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they build network segmentation and intrusion prevention (Cloud Next Generation Firewall).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-ngfw",
+        "networking",
+        "firewall-policy",
+        "intrusion-prevention",
+        "secure-tags",
+        "segmentation"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-ngfw/SKILL.md"
     },
     {
       "name": "gcp-cloud-run",
@@ -32265,6 +32624,23 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/gcp-cloud-tpu/SKILL.md"
+    },
+    {
+      "name": "gcp-cloud-vpn",
+      "description": "Use when designing, provisioning, securing, or operating Cloud VPN — Google Cloud's managed IPsec VPN that securely connects an on-premises or other-cloud network to a VPC over the public internet, via HA VPN (99.99% SLA, two interfaces) or Classic VPN (single tunnel, legacy). Loads the Cloud VPN knowledge: choose HA vs Classic, create VPN gateways and tunnels, attach Cloud Routers for dynamic BGP routing (or static routes), configure IKE versions/PSKs and redundant tunnel topologies, plus IAM and cost/scaling levers. Consumed by the Cloud VPN specialist and by the GCP role team (gcp-iac-engineer / gcp-cloud-architect) when they build encrypted hybrid connectivity (Cloud VPN).",
+      "category": "cloud",
+      "tags": [
+        "gcp",
+        "cloud-vpn",
+        "networking",
+        "ipsec",
+        "ha-vpn",
+        "bgp",
+        "cloud-router"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/gcp-cloud-vpn/SKILL.md"
     },
     {
       "name": "gcp-cloud-workstations",

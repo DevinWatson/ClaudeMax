@@ -258,14 +258,14 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 
 ### networking
 - [x] gcp|networking|vpc|Virtual Private Cloud (VPC)
-- [ ] gcp|networking|cloud-cdn|Cloud CDN
-- [ ] gcp|networking|cloud-dns|Cloud DNS
-- [ ] gcp|networking|cloud-load-balancing|Cloud Load Balancing
-- [ ] gcp|networking|cloud-interconnect|Cloud Interconnect
-- [ ] gcp|networking|cloud-nat|Cloud NAT
-- [ ] gcp|networking|cloud-vpn|Cloud VPN
-- [ ] gcp|networking|cloud-armor|Google Cloud Armor
-- [ ] gcp|networking|cloud-ngfw|Cloud Next Generation Firewall
+- [x] gcp|networking|cloud-cdn|Cloud CDN
+- [x] gcp|networking|cloud-dns|Cloud DNS
+- [x] gcp|networking|cloud-load-balancing|Cloud Load Balancing
+- [x] gcp|networking|cloud-interconnect|Cloud Interconnect
+- [x] gcp|networking|cloud-nat|Cloud NAT
+- [x] gcp|networking|cloud-vpn|Cloud VPN
+- [x] gcp|networking|cloud-armor|Google Cloud Armor
+- [x] gcp|networking|cloud-ngfw|Cloud Next Generation Firewall
 - [ ] gcp|networking|cloud-router|Cloud Router
 - [ ] gcp|networking|cloud-service-mesh|Cloud Service Mesh
 - [ ] gcp|networking|media-cdn|Media CDN
