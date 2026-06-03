@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 1129,
-    "skills": 421,
+    "agents": 1137,
+    "skills": 429,
     "categories": 17
   },
   "agents": [
@@ -5510,6 +5510,35 @@
       "path": "agents/cloud/azure/services/containers/azure-aks-specialist.md"
     },
     {
+      "name": "azure-api-management-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure API Management / APIM (Azure) — the managed full API gateway: the instance/gateway, APIs + operations, products + subscriptions, the policy engine (JWT validation, rate-limit/quota, caching, CORS, transformation, mocking), the developer portal, versions vs revisions, backends + Key Vault named values, and tier/unit sizing (Consumption/Developer/Basic/Standard/Premium with VNet/multi-region/self-hosted gateway). OWNS the Azure managed-service layer end-to-end (instance, APIs/products/policies/subscriptions, versions/revisions, managed-identity/RBAC). DEFERS API contract/domain design to web/api-designer. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-api-gateway, gcp-apigee.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-api-management",
+        "integration",
+        "api-gateway",
+        "specialist"
+      ],
+      "skills": [
+        "azure-api-management",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/integration/azure-api-management-specialist.md"
+    },
+    {
       "name": "azure-app-service-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure App Service (Azure) — PaaS hosting for web apps/APIs: App Service plans and tiers (Basic/Standard/Premium v3/Isolated v2 ASE), code vs custom-container deployment, deployment slots and slot swaps with warm-up, autoscale and scale-up, custom domains and managed TLS, app settings/connection strings and Key Vault references, VNet integration/Private Endpoints/Access Restrictions, Easy Auth/Entra ID and managed identities, and cost. OWNS PaaS web/API hosting end-to-end (plan, app, slots, scaling, domains/TLS, auth). For serverless event functions defer to azure-functions, for general containers to azure-container-apps, for raw VMs to azure-virtual-machines. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-elastic-beanstalk, gcp-app-engine.",
       "category": "cloud",
@@ -6000,6 +6029,35 @@
       "path": "agents/cloud/azure/azure-data-engineer.md"
     },
     {
+      "name": "azure-data-explorer-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Data Explorer / ADX / Kusto (Azure) — the managed fast KQL analytics engine for time-series, log, and telemetry data: clusters and databases, ingestion (batch vs streaming, Event Hubs/IoT/Event Grid connectors, mappings), tables/update policies, materialized views, hot-cache + retention policies, and SKU/node sizing. OWNS the Azure managed-service layer end-to-end (cluster/database, ingestion, caching/retention, materialized views, SKU sizing, principals/managed-identity). DEFERS KQL query-logic tuning to data/sql-optimizer and cloud-agnostic analytics design to data/etl-architect. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-opensearch / aws-timestream, gcp-bigquery.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-data-explorer",
+        "analytics",
+        "kql",
+        "specialist"
+      ],
+      "skills": [
+        "azure-data-explorer",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/analytics/azure-data-explorer-specialist.md"
+    },
+    {
       "name": "azure-data-factory-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Data Factory (Azure) — managed cloud ETL/ELT orchestration: the factory, pipelines/activities (Copy, control flow), datasets and linked services, integration runtimes (Azure/Self-Hosted/SSIS), mapping data flows, triggers (schedule/tumbling/event), Git + CI/CD, and managed VNet/private endpoints. OWNS the Azure managed-service layer end-to-end (factory, linked services/datasets, pipelines/data flows, integration runtimes, triggers, identity/networking) and verifies a pipeline run succeeds. DEFERS cloud-agnostic pipeline/data-model design to data/etl-architect and transform/query rewrites to data/sql-optimizer. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-glue, gcp-data-fusion.",
       "category": "cloud",
@@ -6261,6 +6319,64 @@
       "path": "agents/cloud/azure/services/networking/azure-dns-specialist.md"
     },
     {
+      "name": "azure-event-grid-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Event Grid (Azure) — the managed event-routing / pub-sub service for reactive event-driven architectures: system/custom/partner topics and event domains (multi-tenant fan-out), event subscriptions + handlers (Functions/Webhook/Service Bus/Event Hubs/Storage Queue), the EventGridSchema vs CloudEvents 1.0 schema, event-type/subject/advanced filtering, and retry + dead-letter to Blob. OWNS the Azure managed-service layer end-to-end (topics/domains, subscriptions/filters/handlers, retry/dead-letter, RBAC/managed-identity). DEFERS cloud-agnostic event-driven architecture design to the architecture teams. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT high-throughput streaming ingestion (azure-event-hubs) or enterprise queues/topics (azure-service-bus). Cross-cloud peers (defer): aws-eventbridge, gcp-eventarc.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-event-grid",
+        "integration",
+        "eventing",
+        "specialist"
+      ],
+      "skills": [
+        "azure-event-grid",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/integration/azure-event-grid-specialist.md"
+    },
+    {
+      "name": "azure-event-hubs-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Event Hubs (Azure) — the managed big-data event-ingestion and Kafka-compatible streaming platform: namespaces, hubs and partition count, consumer groups, Capture to Blob/ADLS, the Kafka endpoint, and Throughput/Processing/Capacity Unit sizing across Standard/Premium/Dedicated. OWNS the Azure managed-service layer end-to-end (namespace, hubs/partitions, consumer groups, Capture, throughput sizing, RBAC/managed-identity). The Kafka protocol surface and topic-design conventions belong to the kafka data team — this agent owns the Azure managed service, not the Kafka client semantics. DEFERS cloud-agnostic streaming design to data/etl-architect. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-kinesis / aws-msk, gcp-pubsub.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-event-hubs",
+        "analytics",
+        "streaming",
+        "specialist"
+      ],
+      "skills": [
+        "azure-event-hubs",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/analytics/azure-event-hubs-specialist.md"
+    },
+    {
       "name": "azure-expressroute-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure ExpressRoute (Azure) — private, dedicated connectivity linking on-premises to Azure through a connectivity provider, bypassing the public internet: circuits (provider/Direct, bandwidth tiers, Local/Standard/Premium SKUs, metered vs unlimited), peerings (private peering for VNets, Microsoft peering for M365/PaaS) with BGP, the ExpressRoute gateway + connections, Global Reach, FastPath, redundancy, and IPsec/MACsec encryption. OWNS this one service end-to-end (circuits, peerings, gateway, connections) and verifies the circuit is Provisioned, BGP routes are learned, and traffic flows privately. NOT the azure-networking-engineer role, which owns cross-cutting hybrid topology (via network-design). Sibling boundary: for encrypted connectivity OVER the public internet use azure-vpn-gateway-specialist (this is private dedicated connectivity). Cross-cloud peers (defer): aws-direct-connect, gcp-interconnect.",
       "category": "cloud",
@@ -6494,6 +6610,35 @@
       "path": "agents/cloud/azure/services/networking/azure-load-balancer-specialist.md"
     },
     {
+      "name": "azure-logic-apps-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Logic Apps (Azure) — the managed serverless workflow-automation / iPaaS service: workflow definitions (triggers + actions), the 400+ connectors, Consumption (multi-tenant, per-execution) vs Standard (single-tenant, VNet, stateful/stateless) hosting, control flow + run-after error handling, and B2B/EDI via integration accounts (AS2/X12/EDIFACT). OWNS the Azure managed-service layer end-to-end (workflow, hosting model, connectors/triggers, B2B/EDI, managed-identity/RBAC). DEFERS cloud-agnostic integration/orchestration design to the architecture teams. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT enterprise message brokering (route queues/topics to azure-service-bus) or event routing (azure-event-grid). Cross-cloud peer (defer): aws-step-functions, gcp-workflows.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-logic-apps",
+        "integration",
+        "workflow",
+        "specialist"
+      ],
+      "skills": [
+        "azure-logic-apps",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/integration/azure-logic-apps-specialist.md"
+    },
+    {
       "name": "azure-machine-learning-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Machine Learning (AZURE) — the managed ML platform for building, training, tuning, deploying, and operating models: workspaces and studio, compute (instances, autoscaling clusters, serverless, AKS), jobs (command/sweep/pipeline) and pipelines, datastores/data assets, the model registry and environments, managed online (real-time) and batch endpoints, AutoML, MLflow, prompt flow, instance sizing/autoscaling, VNet/Private Link, managed identity/RBAC, CMK, and cost. OWNS the managed Azure ML service end-to-end. NOT the language ai-engineer/rag-engineer/evals-engineer roles — those build the app-side LLM/RAG/eval code that calls a model; this provisions/operates the managed service they use. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer) for cross-cutting work. Cross-cloud peers (defer): aws-sagemaker, gcp-vertex-ai.",
       "category": "cloud",
@@ -6551,6 +6696,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/databases/azure-managed-instance-for-cassandra-specialist.md"
+    },
+    {
+      "name": "azure-microsoft-purview-specialist",
+      "description": "Use when designing, configuring, securing, or operating Microsoft Purview (Azure) — the unified data-governance platform for cataloging, classifying, and tracking lineage across hybrid/multi-cloud estates: the account and Data Map, collections (governance hierarchy + scoped RBAC), data-source registration and scanning (scan rule sets, schedules, self-hosted IR for private sources), classification/sensitivity labels, the catalog + business glossary, and end-to-end lineage. OWNS the Azure managed-service layer end-to-end (account, Data Map, collections, scanning, classification, catalog, lineage, managed-identity). DEFERS cloud-agnostic governance policy and data-modeling intent to data/etl-architect. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). Cross-cloud peers (defer): aws-glue-data-catalog / aws-lake-formation, gcp-dataplex.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-microsoft-purview",
+        "analytics",
+        "data-governance",
+        "specialist"
+      ],
+      "skills": [
+        "azure-microsoft-purview",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/analytics/azure-microsoft-purview-specialist.md"
     },
     {
       "name": "azure-netapp-files-specialist",
@@ -6786,6 +6960,35 @@
       "path": "agents/cloud/azure/azure-security-reviewer.md"
     },
     {
+      "name": "azure-service-bus-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Service Bus (Azure) — the managed enterprise messaging broker for reliable, ordered, transactional messaging: namespaces, queues (point-to-point) and topics + subscriptions (pub/sub with filter rules), sessions (FIFO), dead-letter queues, TTL/duplicate-detection, peek-lock vs receive-and-delete, and Basic/Standard/Premium (Messaging Unit) sizing. OWNS the Azure managed-service layer end-to-end (namespace, queues/topics/subscriptions, delivery semantics, MU sizing, RBAC/managed-identity). DEFERS cloud-agnostic messaging/event-driven design to the architecture teams. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT discrete event routing (azure-event-grid) or workflow orchestration (azure-logic-apps). Cross-cloud peers (defer): aws-sqs + aws-sns, gcp-pubsub.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-service-bus",
+        "integration",
+        "messaging",
+        "specialist"
+      ],
+      "skills": [
+        "azure-service-bus",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/integration/azure-service-bus-specialist.md"
+    },
+    {
       "name": "azure-service-fabric-specialist",
       "description": "Use when designing, configuring, securing, or operating Azure Service Fabric (Azure) — the distributed-systems platform for microservices and stateful services on a cluster: node types (VM Scale Set backed, durability/reliability tiers, seed nodes), the application/service model, programming models (Reliable Services stateless/stateful, Reliable Actors, guest executables, containers), monitored health-based rolling upgrades, partitioning/replication and placement constraints, the Naming/Failover/Cluster Resource Managers, X.509/Entra security, and managed clusters. OWNS the Service Fabric platform end-to-end (cluster, node types, application/service model, upgrades, stateful partitioning). For most new microservice/container workloads prefer azure-aks or azure-container-apps. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting).",
       "category": "cloud",
@@ -6871,6 +7074,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/azure/services/databases/azure-sql-managed-instance-specialist.md"
+    },
+    {
+      "name": "azure-stream-analytics-specialist",
+      "description": "Use when designing, configuring, securing, or operating Azure Stream Analytics (Azure) — the managed real-time SQL stream-processing service: streaming jobs, inputs (Event Hubs/IoT/Blob) and outputs, the SAQL query with windowing (tumbling/hopping/sliding/session), event-time ordering and late/out-of-order policy, partition-parallelism, and Streaming Unit (SU) sizing. OWNS the Azure managed-service layer end-to-end (job, inputs/outputs, query, ordering, SU sizing, managed-identity/RBAC). DEFERS cloud-agnostic streaming-pipeline design to data/etl-architect and query-logic rewrites to data/sql-optimizer. NOT the Azure role team (azure-cloud-architect/azure-iac-engineer/azure-security-reviewer, cross-cutting). NOT the event-source service (route ingestion to azure-event-hubs). Cross-cloud peer (defer): aws-kinesis-data-analytics, gcp-dataflow.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "azure",
+        "azure-stream-analytics",
+        "analytics",
+        "streaming",
+        "specialist"
+      ],
+      "skills": [
+        "azure-stream-analytics",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/azure/services/analytics/azure-stream-analytics-specialist.md"
     },
     {
       "name": "azure-synapse-analytics-specialist",
@@ -34393,6 +34625,21 @@
       "path": "skills/cloud/azure-aks/SKILL.md"
     },
     {
+      "name": "azure-api-management",
+      "description": "Use when designing, provisioning, securing, or operating Azure API Management (APIM) — the managed full API gateway for publishing, securing, transforming, and governing APIs (Azure API Management). Covers the APIM instance and gateway, APIs and operations, products (bundles + subscription approval), the policy engine (inbound/backend/outbound/on-error: auth/JWT validation, rate-limit/quota, caching, CORS, transformation, mocking), subscriptions and keys, the developer portal, versions and revisions, backends and named values, and the tiers (Consumption/Developer/Basic/Standard/Premium with VNet, multi-region, self-hosted gateway). Loads the knowledge: provision the instance, import APIs, bundle products, author policies, secure with Entra/managed identity + subscriptions, and verify a gateway call. Consumed by the azure-api-management specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure API Management).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-api-management",
+        "integration",
+        "api-gateway",
+        "apim"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-api-management/SKILL.md"
+    },
+    {
       "name": "azure-app-service",
       "description": "Use when designing, provisioning, securing, or operating Azure App Service — Microsoft Azure's PaaS for hosting web apps, APIs, and backends (Azure App Service). Covers App Service plans and tiers (Free/Shared/Basic/Standard/Premium v3/Isolated v2 ASE), Web Apps for Windows/Linux and code vs custom-container deployment, deployment slots and slot swaps with warm-up, autoscale and manual scale (out and up), custom domains and managed TLS certificates, app settings/connection strings and Key Vault references, deployment (zip/Run-From-Package, CI/CD, containers), VNet integration and Private Endpoints and Access Restrictions, Entra ID / Easy Auth and managed identities, and cost. Loads the App Service knowledge: pick a plan and runtime, configure slots and scaling, secure, and verify the app serves. Consumed by the azure-app-service specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed service (Azure App Service).",
       "category": "cloud",
@@ -34611,6 +34858,21 @@
       "path": "skills/cloud/azure-data-box/SKILL.md"
     },
     {
+      "name": "azure-data-explorer",
+      "description": "Use when designing, provisioning, securing, or operating Azure Data Explorer (ADX / Kusto) — the managed fast analytics engine for time-series, log, and telemetry data queried with KQL (Azure Data Explorer). Covers clusters and databases, the Kusto Query Language (KQL), ingestion (batch vs streaming, Event Hubs/IoT/Event Grid connectors, the ingestion wizard, queued vs direct), tables/update policies, materialized views, caching/retention policies, partitioning and the hot/cold cache tiers, and engine/data-management roles. Loads the knowledge: create the cluster and database, define tables and ingestion mappings, set caching/retention and materialized views, secure with Entra/managed identity, size SKU/cache, and verify ingest and a KQL query. Consumed by the azure-data-explorer specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure Data Explorer).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-data-explorer",
+        "analytics",
+        "kql",
+        "time-series"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-data-explorer/SKILL.md"
+    },
+    {
       "name": "azure-data-factory",
       "description": "Use when designing, provisioning, securing, or operating Azure Data Factory — the managed cloud ETL/ELT and data-integration orchestration service (Azure Data Factory). Covers the factory, pipelines and activities (Copy, Lookup, ForEach, control flow), datasets and linked services, integration runtimes (Azure/AutoResolve, Self-Hosted for on-prem/private, Azure-SSIS), mapping data flows (Spark-backed transforms), triggers (schedule/tumbling-window/event), Git + CI/CD with ARM, and managed VNet + private endpoints. Loads the knowledge: create the factory, define linked services/datasets, build pipelines/data flows, pick integration runtimes, secure with Entra/managed identity, and verify a pipeline run. Consumed by the azure-data-factory specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure Data Factory).",
       "category": "cloud",
@@ -34750,6 +35012,36 @@
       "path": "skills/cloud/azure-dns/SKILL.md"
     },
     {
+      "name": "azure-event-grid",
+      "description": "Use when designing, provisioning, securing, or operating Azure Event Grid — the managed event-routing / pub-sub service for reactive, event-driven architectures (Azure Event Grid). Covers system topics (events from Azure services like Storage/Resource Groups), custom topics, partner topics, and event domains (multi-tenant topic fan-out), event subscriptions and handlers (Functions, Webhooks, Service Bus, Event Hubs, Storage Queues, Hybrid Connections), the EventGridSchema vs CloudEvents 1.0 schemas, subject/event-type filtering and advanced filters, retry + dead-letter to Blob, and delivery/throughput characteristics. Loads the knowledge: create the topic/domain, define subscriptions with filters and handlers, configure retry/dead-letter, secure with Entra/managed identity, and verify event delivery. Consumed by the azure-event-grid specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure Event Grid).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-event-grid",
+        "integration",
+        "eventing",
+        "pub-sub"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-event-grid/SKILL.md"
+    },
+    {
+      "name": "azure-event-hubs",
+      "description": "Use when designing, provisioning, securing, or operating Azure Event Hubs — the managed big-data event-ingestion and streaming platform with a Kafka-compatible endpoint (Azure Event Hubs). Covers namespaces, event hubs (topics) and partitions, consumer groups and checkpointing, the partition/ordering model, Capture (auto-archive to Blob/ADLS), the Kafka protocol endpoint, Throughput Units / Processing Units / Capacity Units across Standard/Premium/Dedicated tiers, auto-inflate, and Schema Registry. Loads the knowledge: create the namespace and hubs, choose partition count and consumer groups, enable Capture, secure with Entra/managed identity and Schema Registry, size throughput, and verify ingest/consume. Consumed by the azure-event-hubs specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure Event Hubs).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-event-hubs",
+        "analytics",
+        "streaming",
+        "kafka"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-event-hubs/SKILL.md"
+    },
+    {
       "name": "azure-expressroute",
       "description": "Use when designing, provisioning, securing, or operating Azure ExpressRoute — Azure's private, dedicated connectivity linking on-premises networks to Azure through a connectivity provider, bypassing the public internet for predictable bandwidth, low latency, and high reliability (Azure ExpressRoute). Covers circuits (provider/Direct, bandwidth tiers, Local/Standard/Premium SKUs, metered vs unlimited), peerings (private peering for VNets, Microsoft peering for M365/PaaS) with BGP, the ExpressRoute gateway and connections, Global Reach, FastPath, redundancy, and IPsec/MACsec encryption. Loads the knowledge: order/provision the circuit, configure peerings and BGP, deploy the gateway and connections, secure, and verify BGP routes are learned and traffic flows privately. Consumed by the azure-expressroute specialist and by the Azure role team (azure-networking-engineer / azure-cloud-architect / azure-iac-engineer) when standing up the managed service (Azure ExpressRoute).",
       "category": "cloud",
@@ -34858,6 +35150,21 @@
       "path": "skills/cloud/azure-load-balancer/SKILL.md"
     },
     {
+      "name": "azure-logic-apps",
+      "description": "Use when designing, provisioning, securing, or operating Azure Logic Apps — the managed serverless workflow-automation and iPaaS integration service (Azure Logic Apps). Covers workflow definitions (triggers + actions, the Workflow Definition Language), the 400+ managed and custom connectors, the Consumption (multi-tenant, per-execution) vs Standard (single-tenant, App Service / Functions runtime, VNet, stateful/stateless) hosting models, control flow (conditions, switch, scopes, until, parallel branches, run-after), integration accounts and B2B/EDI (AS2, X12, EDIFACT), and on-prem connectivity via the data gateway. Loads the knowledge: create the workflow, pick Consumption vs Standard, wire triggers/connectors, add B2B/EDI where needed, secure with Entra/managed identity, and verify a run. Consumed by the azure-logic-apps specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure Logic Apps).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-logic-apps",
+        "integration",
+        "workflow",
+        "ipaas"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-logic-apps/SKILL.md"
+    },
+    {
       "name": "azure-machine-learning",
       "description": "Use when designing, provisioning, securing, or operating Azure Machine Learning — Microsoft Azure's managed platform for building, training, deploying, and operating ML models (Azure Machine Learning). Covers workspaces and the studio, compute (compute instances, compute clusters, attached/serverless, Kubernetes), jobs (command/sweep/pipeline) and pipelines, datastores and data assets, the model registry and environments, managed online endpoints (real-time) and batch endpoints, AutoML, MLflow tracking/registry integration, prompt flow for LLM apps, plus instance sizing, autoscaling, VNet/Private Link, managed identity/RBAC, CMK, and cost. Loads the Azure ML knowledge: provision a workspace + compute, run training jobs, register models, deploy endpoints, and verify. Consumed by the Azure ML specialist and by the Azure role team (azure-iac-engineer / azure-cloud-architect) when standing up the managed ML platform (Azure Machine Learning).",
       "category": "cloud",
@@ -34889,6 +35196,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-managed-instance-for-cassandra/SKILL.md"
+    },
+    {
+      "name": "azure-microsoft-purview",
+      "description": "Use when designing, provisioning, securing, or operating Microsoft Purview — the unified data-governance platform for cataloging, classifying, and tracking lineage across hybrid and multi-cloud data estates (Microsoft Purview). Covers the Purview account and the unified Data Map, collections (the governance hierarchy + scoped RBAC), data sources and scanning (scan rule sets, scheduled scans, self-hosted integration runtime for private sources), classification and sensitivity labels, the Data Catalog and business glossary, and end-to-end data lineage. Loads the knowledge: create the account, register sources and run scans, organize collections, configure classification/labels and lineage, secure with Entra/managed identity, and verify a scan and catalog search. Consumed by the microsoft-purview specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Microsoft Purview).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-microsoft-purview",
+        "analytics",
+        "data-governance",
+        "catalog"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-microsoft-purview/SKILL.md"
     },
     {
       "name": "azure-netapp-files",
@@ -34951,6 +35273,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-queue-storage/SKILL.md"
+    },
+    {
+      "name": "azure-service-bus",
+      "description": "Use when designing, provisioning, securing, or operating Azure Service Bus — the managed enterprise messaging broker for reliable, ordered, transactional messaging (Azure Service Bus). Covers namespaces, queues (point-to-point) and topics + subscriptions (publish/subscribe with subscription filters/rules), sessions (FIFO + correlated processing), dead-letter queues, message TTL, duplicate detection, peek-lock vs receive-and-delete, scheduled/deferred messages, transactions, auto-forwarding, and the Basic/Standard/Premium tiers (Premium = dedicated Messaging Units, VNet, large messages, geo-DR). Loads the knowledge: create the namespace, define queues/topics + subscriptions and filters, configure sessions/dead-letter/dedup, secure with Entra/managed identity, size MUs, and verify send/receive. Consumed by the azure-service-bus specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure Service Bus).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-service-bus",
+        "integration",
+        "messaging",
+        "queues"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-service-bus/SKILL.md"
     },
     {
       "name": "azure-service-fabric",
@@ -35019,6 +35356,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/azure-sql-managed-instance/SKILL.md"
+    },
+    {
+      "name": "azure-stream-analytics",
+      "description": "Use when designing, provisioning, securing, or operating Azure Stream Analytics — the managed real-time stream-processing service that runs SQL-like queries over streaming data (Azure Stream Analytics). Covers streaming jobs, the Stream Analytics Query Language (SAQL), inputs (Event Hubs, IoT Hub, Blob/ADLS) and outputs (SQL, Synapse, Blob, Cosmos DB, Event Hubs, Power BI), windowing (tumbling/hopping/sliding/session/snapshot), event ordering and watermarks (event-time vs arrival-time, late/out-of-order policies), reference data joins, and Streaming Units (SU) scaling with partition-aligned parallelism. Loads the knowledge: create the job, wire inputs/outputs, author the SAQL query with windowing, secure with Entra/managed identity, size SUs, and verify the job runs. Consumed by the azure-stream-analytics specialist and by the Azure role team (azure-cloud-architect / azure-iac-engineer / azure-security-reviewer) when standing up the managed service (Azure Stream Analytics).",
+      "category": "cloud",
+      "tags": [
+        "azure",
+        "azure-stream-analytics",
+        "analytics",
+        "streaming",
+        "real-time"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/azure-stream-analytics/SKILL.md"
     },
     {
       "name": "azure-synapse-analytics",

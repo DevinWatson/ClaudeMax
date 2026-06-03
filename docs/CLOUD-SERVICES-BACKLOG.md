@@ -380,16 +380,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] azure|analytics|azure-databricks|Azure Databricks
 - [x] azure|analytics|hdinsight|Azure HDInsight
 - [x] azure|analytics|data-factory|Azure Data Factory
-- [ ] azure|analytics|stream-analytics|Azure Stream Analytics
-- [ ] azure|analytics|event-hubs|Azure Event Hubs
-- [ ] azure|analytics|data-explorer|Azure Data Explorer
-- [ ] azure|analytics|microsoft-purview|Microsoft Purview
+- [x] azure|analytics|stream-analytics|Azure Stream Analytics
+- [x] azure|analytics|event-hubs|Azure Event Hubs
+- [x] azure|analytics|data-explorer|Azure Data Explorer
+- [x] azure|analytics|microsoft-purview|Microsoft Purview
 
 ### integration
-- [ ] azure|integration|logic-apps|Azure Logic Apps
-- [ ] azure|integration|service-bus|Azure Service Bus
-- [ ] azure|integration|api-management|Azure API Management
-- [ ] azure|integration|event-grid|Azure Event Grid
+- [x] azure|integration|logic-apps|Azure Logic Apps
+- [x] azure|integration|service-bus|Azure Service Bus
+- [x] azure|integration|api-management|Azure API Management
+- [x] azure|integration|event-grid|Azure Event Grid
 
 ### iot
 - [ ] azure|iot|iot-hub|Azure IoT Hub
