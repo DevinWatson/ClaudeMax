@@ -45,7 +45,7 @@ are read-only; architect on opus; new agents experimental→promote to stable af
 - [x] express (node web)
 - [x] nestjs (node web)
 - [x] laravel (php web)
-- [ ] phoenix (elixir web)
+- [x] phoenix (elixir web)
 - [ ] dotnet-aspnet (csharp web)
 
 ## Cloud platforms (NEW taxonomy category `cloud`; per-platform teams + new capability skills)

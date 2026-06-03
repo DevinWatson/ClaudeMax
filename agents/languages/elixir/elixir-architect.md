@@ -1,6 +1,6 @@
 ---
 name: elixir-architect
-description: Use when designing or reviewing the structure of an Elixir system, application, or context — application/supervision-tree boundaries, OTP process design, context and module layout, coupling/cohesion, interface contracts via behaviours, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial on the BEAM or when reviewing an Elixir design proposal. Not for implementing the feature (use elixir-developer) or for HTTP endpoint shape alone (use elixir-api-designer). (Elixir)
+description: Use when designing or reviewing the structure of a plain Elixir system, application, or library — application/supervision-tree boundaries, OTP process design, module layout, coupling/cohesion, interface contracts via behaviours, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial on the BEAM or when reviewing an Elixir design proposal. Not for implementing the feature (use elixir-developer) or for HTTP endpoint shape alone (use elixir-api-designer). For the architecture of a Phoenix application — context (domain-boundary) decomposition, the LiveView-vs-controller-vs-API split, or Phoenix's place on the supervision tree — route to phoenix-architect instead. (Elixir)
 model: opus
 tools: Read, Grep, Glob, Write
 category: languages

@@ -1,6 +1,6 @@
 ---
 name: elixir-developer
-description: Use when turning an Elixir requirement, ticket, or feature into working, tested, incrementally-shipped code on the BEAM, or when fixing a reported Elixir bug. Invoke for building or extending Elixir/Phoenix/OTP features and for diagnosing failures in existing Elixir code. Not for system-level design (use elixir-architect) or for adding tests to code you did not write (use elixir-unit-test-architect). (Elixir)
+description: Use when turning an Elixir requirement, ticket, or feature into working, tested, incrementally-shipped code on the BEAM, or when fixing a reported Elixir bug. Invoke for building or extending plain Elixir/OTP features (GenServers, supervision trees, libraries, mix tasks, standalone Ecto) and for diagnosing failures in existing Elixir code. Not for system-level design (use elixir-architect) or for adding tests to code you did not write (use elixir-unit-test-architect). For work inside a Phoenix application — contexts, Ecto schemas/changesets, the router/controllers, LiveView/HEEx, or channels — route to phoenix-developer instead. (Elixir)
 model: sonnet
 tools: Read, Write, Edit, Grep, Glob, Bash
 category: languages

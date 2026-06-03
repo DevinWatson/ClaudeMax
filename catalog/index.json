@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 754,
-    "skills": 127,
+    "agents": 763,
+    "skills": 128,
     "categories": 16
   },
   "agents": [
@@ -4537,7 +4537,7 @@
     },
     {
       "name": "elixir-architect",
-      "description": "Use when designing or reviewing the structure of an Elixir system, application, or context — application/supervision-tree boundaries, OTP process design, context and module layout, coupling/cohesion, interface contracts via behaviours, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial on the BEAM or when reviewing an Elixir design proposal. Not for implementing the feature (use elixir-developer) or for HTTP endpoint shape alone (use elixir-api-designer). (Elixir)",
+      "description": "Use when designing or reviewing the structure of a plain Elixir system, application, or library — application/supervision-tree boundaries, OTP process design, module layout, coupling/cohesion, interface contracts via behaviours, and trade-offs against quality attributes, recorded as an ADR. Invoke before building something non-trivial on the BEAM or when reviewing an Elixir design proposal. Not for implementing the feature (use elixir-developer) or for HTTP endpoint shape alone (use elixir-api-designer). For the architecture of a Phoenix application — context (domain-boundary) decomposition, the LiveView-vs-controller-vs-API split, or Phoenix's place on the supervision tree — route to phoenix-architect instead. (Elixir)",
       "category": "languages",
       "model": "opus",
       "tools": [
@@ -4639,7 +4639,7 @@
     },
     {
       "name": "elixir-developer",
-      "description": "Use when turning an Elixir requirement, ticket, or feature into working, tested, incrementally-shipped code on the BEAM, or when fixing a reported Elixir bug. Invoke for building or extending Elixir/Phoenix/OTP features and for diagnosing failures in existing Elixir code. Not for system-level design (use elixir-architect) or for adding tests to code you did not write (use elixir-unit-test-architect). (Elixir)",
+      "description": "Use when turning an Elixir requirement, ticket, or feature into working, tested, incrementally-shipped code on the BEAM, or when fixing a reported Elixir bug. Invoke for building or extending plain Elixir/OTP features (GenServers, supervision trees, libraries, mix tasks, standalone Ecto) and for diagnosing failures in existing Elixir code. Not for system-level design (use elixir-architect) or for adding tests to code you did not write (use elixir-unit-test-architect). For work inside a Phoenix application — contexts, Ecto schemas/changesets, the router/controllers, LiveView/HEEx, or channels — route to phoenix-developer instead. (Elixir)",
       "category": "languages",
       "model": "sonnet",
       "tools": [
@@ -12956,6 +12956,274 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/languages/perl/perl-unit-test-architect.md"
+    },
+    {
+      "name": "phoenix-accessibility-specialist",
+      "description": "Use for a WCAG 2.2 (A/AA) accessibility audit of a Phoenix app's server-rendered UI — HEEx templates, layouts, function/live components, view modules, and LiveView interactions (live navigation, stream/diff DOM updates, phx-* event-driven changes) — checking semantics, ARIA, keyboard operability and focus management (including focus across LiveView patches and live navigation), names/labels on form fields (Phoenix.HTML.Form/to_form), and color contrast, with severity-ranked, criterion-mapped findings (Phoenix). Invoke for an accessibility review of Phoenix HEEx/LiveView views. NOT for fixing the issues (use phoenix-developer), NOT for general appsec review (use phoenix-security-reviewer), NOT for non-UI backend work.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "phoenix",
+        "accessibility",
+        "a11y",
+        "wcag",
+        "liveview"
+      ],
+      "skills": [
+        "wcag-audit",
+        "phoenix-framework",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/phoenix/phoenix-accessibility-specialist.md"
+    },
+    {
+      "name": "phoenix-api-engineer",
+      "description": "Use when designing and building HTTP API endpoints in a Phoenix app — JSON controllers and views (or absinthe/GraphQL), resource modeling, status codes and error envelopes, pagination, filtering, throttling, and versioning, with changeset-validated input handling (Phoenix). Invoke to design or implement the API contract layer. NOT for server-rendered LiveView/HEEx UI features (use phoenix-developer), NOT for system architecture (use phoenix-architect), NOT for security review (use phoenix-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "phoenix",
+        "api",
+        "rest",
+        "elixir",
+        "json"
+      ],
+      "skills": [
+        "rest-api-design",
+        "phoenix-framework",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/phoenix/phoenix-api-engineer.md"
+    },
+    {
+      "name": "phoenix-architect",
+      "description": "Use when shaping the architecture of a Phoenix app or module — context (domain-boundary) decomposition, the Ecto data model and query strategy, the LiveView-vs-controller-vs-API split, the supervision-tree topology (Endpoint/Repo/PubSub/Presence/GenServers), channel/PubSub real-time topology, umbrella structure, and release strategy (Phoenix). Invoke for system-level design and trade-off analysis. NOT for implementing features (use phoenix-developer), NOT for performance tuning of existing code (use phoenix-performance-engineer), NOT for framework-agnostic Elixir/OTP system design (route to elixir-architect).",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "phoenix",
+        "architecture",
+        "elixir",
+        "design"
+      ],
+      "skills": [
+        "software-architecture",
+        "phoenix-framework",
+        "elixir-idioms",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/phoenix/phoenix-architect.md"
+    },
+    {
+      "name": "phoenix-developer",
+      "description": "Use when turning a Phoenix requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Phoenix bug — a broken Ecto query, an N+1/missing preload, a migration failure, a changeset/validation error, a router/plug/controller problem, or a LiveView/HEEx view issue (Phoenix). Invoke for building or extending Phoenix app features (contexts, schemas, controllers, LiveViews, channels). NOT for system-level design (use phoenix-architect), NOT for adding tests to code you did not write (use phoenix-test-engineer), NOT for query/payload performance tuning of working code (use phoenix-performance-engineer). For general (non-Phoenix) Elixir/OTP work, route to elixir-developer instead.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "phoenix",
+        "ecto",
+        "liveview",
+        "elixir",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "phoenix-framework",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/phoenix/phoenix-developer.md"
+    },
+    {
+      "name": "phoenix-migration-engineer",
+      "description": "Use when upgrading a Phoenix app across versions or evolving its schema safely — Phoenix/LiveView/Elixir/OTP version upgrades and deprecation fixes (router, LiveView API, HEEx, deps), writing and reconciling Ecto migrations (data migrations via Repo.transaction/Ecto.Multi, reversible change/up/down, backfills), zero-downtime schema changes, and resolving migration conflicts or pending-migration drift (Phoenix). Invoke for version upgrades and migration work. NOT for routine feature schema changes inside a feature (use phoenix-developer), NOT for query performance tuning (use phoenix-performance-engineer), NOT for system architecture (use phoenix-architect).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "phoenix",
+        "migrations",
+        "upgrade",
+        "ecto",
+        "elixir"
+      ],
+      "skills": [
+        "code-migration",
+        "phoenix-framework",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/phoenix/phoenix-migration-engineer.md"
+    },
+    {
+      "name": "phoenix-observability-engineer",
+      "description": "Use when instrumenting a Phoenix app for production visibility — :telemetry events and Telemetry.Metrics (endpoint, router, LiveView, Ecto repo query), structured logging with metadata/request IDs (LoggerJSON or Logger metadata), OpenTelemetry tracing across controllers/LiveView/channels/Ecto, and error reporting (Sentry/OTel) (Phoenix). Invoke to add or improve telemetry, logs, traces, and metrics. NOT for fixing the underlying bug (use phoenix-developer), NOT for query/payload performance tuning (use phoenix-performance-engineer), NOT for system architecture (use phoenix-architect).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "phoenix",
+        "observability",
+        "telemetry",
+        "opentelemetry",
+        "elixir"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "phoenix-framework",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/phoenix/phoenix-observability-engineer.md"
+    },
+    {
+      "name": "phoenix-performance-engineer",
+      "description": "Use when a Phoenix app is slow or its database/socket cost is high — N+1 queries and missing preload/join, unindexed or full-table Ecto scans, oversized LiveView payloads and diffs (assigns that should be temporary_assigns or streams), heavy mount/render, slow controller actions, or weak caching — and you need it measured and tuned (Phoenix). Invoke to profile and optimize an existing app via query tuning, query-count reduction, indexing, LiveView payload reduction, and caching. NOT for building new features (use phoenix-developer), NOT for system architecture (use phoenix-architect), NOT for security review (use phoenix-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "phoenix",
+        "ecto",
+        "performance",
+        "liveview",
+        "elixir"
+      ],
+      "skills": [
+        "cost-optimization",
+        "phoenix-framework",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/phoenix/phoenix-performance-engineer.md"
+    },
+    {
+      "name": "phoenix-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a Phoenix app or diff — SQL injection via raw Ecto (fragment/raw queries with interpolation), CSRF gaps on state-changing actions, missing LiveView authentication/authorization on mount/on_mount, atom exhaustion via String.to_atom on params/socket/channel input, HEEx XSS via raw/1 on untrusted input, mass-assignment via over-broad changeset cast, broken object-level authorization, SSRF, and unsafe deserialization — with severity-ranked results (Phoenix). Invoke for an authorized appsec review. NOT for fixing the issues (use phoenix-developer), NOT for performance review (use phoenix-performance-engineer), NOT for HTTP contract design (use phoenix-api-engineer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "phoenix",
+        "security",
+        "appsec",
+        "elixir",
+        "liveview"
+      ],
+      "skills": [
+        "appsec-review",
+        "phoenix-framework",
+        "elixir-idioms",
+        "match-project-conventions",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/phoenix/phoenix-security-reviewer.md"
+    },
+    {
+      "name": "phoenix-test-engineer",
+      "description": "Use when adding or improving automated tests for a Phoenix app — context and Ecto query tests, controller/request tests (Phoenix.ConnTest), LiveView tests (Phoenix.LiveViewTest — render_click/render_submit/render_change, element selection, handle_info), channel tests, changeset and migration tests, and query-count assertions — with ExUnit (Phoenix). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use phoenix-developer), NOT for performance profiling (use phoenix-performance-engineer), NOT for security review (use phoenix-security-reviewer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "phoenix",
+        "testing",
+        "exunit",
+        "liveview",
+        "elixir"
+      ],
+      "skills": [
+        "test-automation",
+        "phoenix-framework",
+        "elixir-idioms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/phoenix/phoenix-test-engineer.md"
     },
     {
       "name": "php-agent-orchestrator",
@@ -21990,6 +22258,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/languages/perl-idioms/SKILL.md"
+    },
+    {
+      "name": "phoenix-framework",
+      "description": "Use when working in Phoenix (Elixir) — Ecto (schemas, changesets, composable queries, migrations, preload/N+1), contexts as domain boundaries, the Endpoint/Router and plugs, controllers and views, LiveView (mount/handle_event/handle_info, assigns, temporary_assigns, streams) and HEEx templates/components, channels/PubSub/Presence, the request lifecycle, telemetry, OTP integration (Phoenix on a supervision tree), and releases. Phoenix renders server-side LiveView/HEEx UI AND serves APIs/channels. TRIGGER on Ecto schema/changeset/query/migration or N+1 issues, context boundary questions, router/plug/controller concerns, LiveView/HEEx view work, channel/PubSub/Presence wiring, telemetry, or mix test/mix phx.routes failures. NOT for general Elixir language concerns (pattern matching, OTP/GenServer design, the pipe operator, with — that is elixir-idioms) or framework-agnostic HTTP contract design. Verifies with mix (mix test, mix phx.routes, mix format, credo, dialyzer). Any agent touching Phoenix can load it.",
+      "category": "web",
+      "tags": [
+        "phoenix",
+        "elixir",
+        "liveview",
+        "ecto",
+        "heex",
+        "web"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/phoenix-framework/SKILL.md"
     },
     {
       "name": "php-idioms",
