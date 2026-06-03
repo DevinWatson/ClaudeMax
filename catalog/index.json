@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 669,
-    "skills": 117,
+    "agents": 678,
+    "skills": 118,
     "categories": 16
   },
   "agents": [
@@ -365,6 +365,259 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/mobile/android/android-test-engineer.md"
+    },
+    {
+      "name": "angular-accessibility-specialist",
+      "description": "Use for a WCAG accessibility audit of a modern Angular (16+/17+) app — semantic structure, keyboard and focus management across client-side router navigation, ARIA usage in components and content projection, color contrast, and reactive/template-driven forms — with severity-ranked findings (Angular). Invoke for an accessibility review of rendered components and routes. NOT for fixing the issues (use angular-developer), NOT for security review (use angular-security-reviewer), NOT for performance (use angular-performance-engineer). NOT for Vue (use vue-accessibility-specialist) or React/Next.js.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "angular",
+        "accessibility",
+        "wcag",
+        "a11y"
+      ],
+      "skills": [
+        "wcag-audit",
+        "angular-framework",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/angular/angular-accessibility-specialist.md"
+    },
+    {
+      "name": "angular-ai-engineer",
+      "description": "Use when building LLM/AI features into a modern Angular (16+/17+) app — streaming chat and completions rendered reactively via signals/observables, tool calling, RAG retrieval, and prompt orchestration wired through services and a backend (Angular). Invoke to design and implement AI-powered product features. NOT for generic UI features (use angular-developer), NOT for system architecture (use angular-architect), NOT for component-API design (use angular-component-architect), NOT for security review of those endpoints (use angular-security-reviewer). NOT for Vue (use vue-ai-engineer) or React/Next.js.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "angular",
+        "ai",
+        "llm",
+        "rag"
+      ],
+      "skills": [
+        "llm-application-engineering",
+        "angular-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/angular/angular-ai-engineer.md"
+    },
+    {
+      "name": "angular-architect",
+      "description": "Use when shaping the architecture of a modern Angular (16+/17+) app or module — component/service topology, state-management strategy (signals vs RxJS-backed services vs a state library), DI/provider scoping, router structure and lazy loading, reactivity and change-detection boundaries (OnPush/zoneless), and standalone-vs-NgModule and Nx-monorepo decisions (Angular). Invoke for system-level design and trade-off analysis. NOT for implementing features (use angular-developer), NOT for designing a single component's/directive's/service's API (use angular-component-architect), NOT for performance tuning of existing code (use angular-performance-engineer). NOT for React/Next.js architecture (use those teams) or Vue (use vue-architect).",
+      "category": "web",
+      "model": "opus",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write"
+      ],
+      "tags": [
+        "angular",
+        "architecture",
+        "signals",
+        "dependency-injection"
+      ],
+      "skills": [
+        "software-architecture",
+        "angular-framework",
+        "match-project-conventions"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/angular/angular-architect.md"
+    },
+    {
+      "name": "angular-component-architect",
+      "description": "Use when designing the API surface of reusable modern Angular (16+/17+) components, directives, services, or a design-system/component library — the signal input/output/model contract, content-projection (`ng-content`/slot) shape, exported template/host API, directive selectors and host bindings, service/injection-token signatures, and theming/variant strategy — and implementing those primitives (Angular). Invoke for component/directive/service API design and design-system work. NOT for app-level structure and state-management strategy (use angular-architect), NOT for product feature implementation (use angular-developer), NOT for performance tuning (use angular-performance-engineer). NOT for Vue (use vue-component-architect) or React/Next.js.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "angular",
+        "design-system",
+        "components",
+        "directives",
+        "services"
+      ],
+      "skills": [
+        "software-architecture",
+        "angular-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/angular/angular-component-architect.md"
+    },
+    {
+      "name": "angular-developer",
+      "description": "Use when turning a modern Angular (16+/17+) requirement, ticket, or feature into working, tested, incrementally-shipped code, or when fixing a reported Angular bug — a signal/reactivity or change-detection \"view not updating\" issue, a standalone-component/template error, an input/output/model contract bug, a DI/injection-context error, an RxJS subscription/leak, or a router/forms wiring problem (Angular). Invoke for building or extending components, directives, services, signals, and routes. NOT for system-level design (use angular-architect), NOT for component/directive/service-API design (use angular-component-architect), NOT for adding tests to code you did not write (use angular-test-engineer), NOT for Core Web Vitals tuning (use angular-performance-engineer). NOT for React/Next.js (use those teams) or Vue (use vue-developer).",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "angular",
+        "signals",
+        "standalone",
+        "feature-development"
+      ],
+      "skills": [
+        "feature-development",
+        "angular-framework",
+        "match-project-conventions",
+        "verify-by-running",
+        "reproduce-then-fix"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/angular/angular-developer.md"
+    },
+    {
+      "name": "angular-observability-engineer",
+      "description": "Use when instrumenting a modern Angular (16+/17+) app for production visibility — client-side error reporting via a global `ErrorHandler` and HTTP interceptors, router-navigation and component-render timing, structured client logging, RUM/Web Vitals reporting, and OpenTelemetry browser tracing (Angular). Invoke to add or improve logs, traces, and metrics. NOT for fixing the underlying bug (use angular-developer), NOT for Core Web Vitals tuning (use angular-performance-engineer), NOT for system architecture (use angular-architect). NOT for Vue (use vue-observability-engineer) or React/Next.js.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "angular",
+        "observability",
+        "telemetry",
+        "rum"
+      ],
+      "skills": [
+        "observability-instrumentation",
+        "angular-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/angular/angular-observability-engineer.md"
+    },
+    {
+      "name": "angular-performance-engineer",
+      "description": "Use when a modern Angular (16+/17+) app is slow or failing Core Web Vitals — large LCP, layout shift, slow INP, heavy bundles, excessive change-detection cycles, or costly reactivity — and you need it measured and tuned (Angular). Invoke to profile and optimize an existing app via OnPush/zoneless change detection, signals, `@defer`, `trackBy`/`@for` track, route-level lazy loading, and bundle/budget reduction. NOT for building new features (use angular-developer), NOT for system architecture (use angular-architect), NOT for component-API design (use angular-component-architect), NOT for accessibility review (use angular-accessibility-specialist). NOT for Vue (use vue-performance-engineer) or React/Next.js.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "angular",
+        "performance",
+        "web-vitals",
+        "change-detection"
+      ],
+      "skills": [
+        "web-vitals-optimization",
+        "angular-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/angular/angular-performance-engineer.md"
+    },
+    {
+      "name": "angular-security-reviewer",
+      "description": "Use for a defensive, code-level security review of a modern Angular (16+/17+) app or diff — XSS via `innerHTML`/`bypassSecurityTrust*` and unsafe DomSanitizer use, unsafe dynamic URLs/resource bindings, secret/token exposure in client bundles, insecure client-side auth guards/interceptors, and unsafe handling of API/LLM responses — with severity-ranked findings (Angular). Invoke for an authorized appsec review. NOT for fixing the issues (use angular-developer), NOT for accessibility review (use angular-accessibility-specialist), NOT for performance (use angular-performance-engineer). NOT for Vue (use vue-security-reviewer) or React/Next.js.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob"
+      ],
+      "tags": [
+        "angular",
+        "security",
+        "appsec",
+        "xss"
+      ],
+      "skills": [
+        "appsec-review",
+        "angular-framework",
+        "severity-triage"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/angular/angular-security-reviewer.md"
+    },
+    {
+      "name": "angular-test-engineer",
+      "description": "Use when adding or improving automated tests for a modern Angular (16+/17+) app — component/unit tests with TestBed and Karma/Jasmine or Jest, service and signal/RxJS tests, harness-based component tests, and end-to-end flows covering routing and rendering (Angular). Invoke to raise coverage on code you did not necessarily write, harden against regressions, or stabilize flaky suites. NOT for building features (use angular-developer), NOT for performance profiling (use angular-performance-engineer), NOT for security review (use angular-security-reviewer). NOT for Vue (use vue-test-engineer) or React/Next.js.",
+      "category": "web",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "angular",
+        "testing",
+        "testbed",
+        "karma",
+        "jest"
+      ],
+      "skills": [
+        "test-automation",
+        "angular-framework",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/web/angular/angular-test-engineer.md"
     },
     {
       "name": "api-designer",
@@ -18348,6 +18601,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/creative/analogy-mapping/SKILL.md"
+    },
+    {
+      "name": "angular-framework",
+      "description": "Use when working in modern Angular (16+/17+) — standalone components and the template model, signals and the new reactivity (signal/computed/effect, signal inputs/model, RxJS↔signal interop), dependency injection and providers (inject(), provideX), RxJS and observables, reactive vs template-driven forms, the router and lazy loading, change detection (zoneless/OnPush), NgModule→standalone migration, and the Angular CLI/schematics. TRIGGER on signal/reactivity bugs, change-detection or \"view not updating\" issues, standalone-vs-NgModule questions, DI/provider/injection-context errors, RxJS subscription/leak problems, form-control wiring, router/lazy-load setup, or ng build / tsc / ng test / ng lint errors. NOT for framework-agnostic UI concerns (CSS/layout, generic accessibility) and NOT for React/Next.js or Vue — those are separate framework boundaries. Any agent touching Angular (an Angular role, a reviewer of an Angular PR, an Nx team) can load it.",
+      "category": "web",
+      "tags": [
+        "angular",
+        "signals",
+        "rxjs",
+        "standalone",
+        "dependency-injection",
+        "change-detection"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/web/angular-framework/SKILL.md"
     },
     {
       "name": "appsec-review",
