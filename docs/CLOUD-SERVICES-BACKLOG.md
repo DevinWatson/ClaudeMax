@@ -138,16 +138,16 @@ Resume: take the next N unchecked `[ ]` lines, build, then check them off `[x]`.
 - [x] aws|management-governance|control-tower|AWS Control Tower
 - [x] aws|management-governance|service-catalog|AWS Service Catalog
 - [x] aws|management-governance|compute-optimizer|AWS Compute Optimizer
-- [ ] aws|management-governance|proton|AWS Proton
+- [x] aws|management-governance|proton|AWS Proton
 
 ### security-identity
-- [ ] aws|security-identity|iam|AWS IAM
-- [ ] aws|security-identity|cognito|Amazon Cognito
-- [ ] aws|security-identity|guardduty|Amazon GuardDuty
-- [ ] aws|security-identity|macie|Amazon Macie
-- [ ] aws|security-identity|kms|AWS KMS
-- [ ] aws|security-identity|secrets-manager|AWS Secrets Manager
-- [ ] aws|security-identity|shield|AWS Shield
+- [x] aws|security-identity|iam|AWS IAM
+- [x] aws|security-identity|cognito|Amazon Cognito
+- [x] aws|security-identity|guardduty|Amazon GuardDuty
+- [x] aws|security-identity|macie|Amazon Macie
+- [x] aws|security-identity|kms|AWS KMS
+- [x] aws|security-identity|secrets-manager|AWS Secrets Manager
+- [x] aws|security-identity|shield|AWS Shield
 - [ ] aws|security-identity|waf|AWS WAF
 - [ ] aws|security-identity|inspector|Amazon Inspector
 - [ ] aws|security-identity|detective|Amazon Detective

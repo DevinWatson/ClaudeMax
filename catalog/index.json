@@ -2,8 +2,8 @@
   "schema": "claudemax/catalog@1",
   "taxonomyVersion": "1.0.0",
   "counts": {
-    "agents": 945,
-    "skills": 237,
+    "agents": 953,
+    "skills": 245,
     "categories": 17
   },
   "agents": [
@@ -1583,6 +1583,35 @@
       "path": "agents/cloud/aws/services/developer-tools/aws-codepipeline-specialist.md"
     },
     {
+      "name": "aws-cognito-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon Cognito (AWS) — user pools (sign-up/sign-in, password policy, MFA, attributes, groups), app clients and the hosted UI, OAuth 2.0/OIDC flows, social + SAML/OIDC federation, Lambda triggers, JWT issuance/verification, and identity pools that exchange tokens for temporary AWS IAM credentials, for end-user/customer application auth. Pick this to implement app authentication and authorization. NOT the aws-security-reviewer role, which owns cross-cutting account-wide security posture, review, and findings triage — this specialist owns configuring/operating Cognito itself. NOT the security category appsec/threat-modeling agents. NOT aws-iam, which governs AWS principals (users/roles/policies) — Cognito is for your application's end users (the identity pool's roles are IAM, which the iam specialist owns). Siblings: kms, secrets-manager, guardduty. For GCP Identity Platform/Firebase Auth or Azure AD B2C / Entra External ID defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "cognito",
+        "authentication",
+        "user-pools",
+        "specialist"
+      ],
+      "skills": [
+        "aws-cognito",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-cognito-specialist.md"
+    },
+    {
       "name": "aws-comprehend-specialist",
       "description": "Use when designing, configuring, deploying, or operating Amazon Comprehend (AWS) — the managed NLP service for extracting insight from text: built-in detection (entities, key phrases, language, sentiment/targeted sentiment, syntax, PII detection/redaction), sync vs async-S3-job vs real-time-endpoint analysis, custom entity recognition and custom document classification trained on your labeled data, Comprehend Medical for clinical/PHI text, and the IAM/KMS/cost/quota config around them. NOT the language ai-engineer/rag-engineer/evals-engineer roles — those build app-side NLP/LLM/eval code; this specialist owns the managed AWS NLP service (operations, custom models, endpoints, data-access roles, throughput). For custom transformer/LLM training defer to aws-sagemaker-specialist; for generative text defer to aws-bedrock-specialist. NOT the AWS role team for cross-cutting work; for GCP Natural Language AI or Azure AI Language defer to those clouds.",
       "category": "cloud",
@@ -2516,6 +2545,34 @@
       "path": "agents/cloud/aws/services/analytics/aws-glue-specialist.md"
     },
     {
+      "name": "aws-guardduty-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon GuardDuty (AWS) — enabling detectors per region, protection plans (S3, EKS/Runtime Monitoring, Malware Protection, RDS, Lambda), tuning findings with suppression filters and threat/trusted-IP lists, the org delegated-administrator + auto-enable model, and exporting findings to EventBridge/S3/Security Hub for response. Pick this to configure and operate AWS-native threat detection. NOT the aws-security-reviewer role, which owns cross-cutting account-wide security posture, review, and findings triage across services — this specialist owns configuring/operating GuardDuty itself. NOT the security category appsec/threat-modeling agents. Siblings: macie=sensitive data classification (not threat detection), iam=identities/authz, kms=keys, secrets-manager=secrets, cognito=app auth, shield=DDoS. For GCP Security Command Center threat detection or Microsoft Defender for Cloud defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "guardduty",
+        "threat-detection",
+        "specialist"
+      ],
+      "skills": [
+        "aws-guardduty",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-guardduty-specialist.md"
+    },
+    {
       "name": "aws-iac-engineer",
       "description": "Use when writing or refactoring AWS infrastructure as code — Terraform, CDK, CloudFormation, or SAM that provisions AWS resources, then validating it with plan/synth/validate (AWS). NOT for cloud architecture/Well-Architected design (use aws-cloud-architect), IAM/exposure review (aws-security-reviewer), or generic provider-agnostic Terraform language work (terraform-architect — this agent is AWS-specific infra).",
       "category": "cloud",
@@ -2544,6 +2601,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/aws-iac-engineer.md"
+    },
+    {
+      "name": "aws-iam-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS IAM (AWS) — users/groups/roles and trust policies, managed/inline policies and policy evaluation, permission boundaries, instance profiles, federation/OIDC and IAM Roles Anywhere, and IAM Access Analyzer (external + unused access) for least-privilege right-sizing. Pick this to author and right-size IAM identities and authorization policies for AWS principals. NOT the aws-security-reviewer role, which owns cross-cutting account-wide security posture, review, and findings triage — this specialist owns configuring/operating IAM itself. NOT the security category appsec/threat-modeling agents (application-layer security). NOT amazon-cognito (end-user/customer app auth, not AWS principals). Siblings: kms=encryption keys, secrets-manager=secret lifecycle, guardduty=threat detection. For GCP IAM or Azure RBAC/Entra ID defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "iam",
+        "identity",
+        "authorization",
+        "specialist"
+      ],
+      "skills": [
+        "aws-iam",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-iam-specialist.md"
     },
     {
       "name": "aws-kendra-specialist",
@@ -2666,6 +2752,35 @@
       "path": "agents/cloud/aws/services/analytics/aws-kinesis-specialist.md"
     },
     {
+      "name": "aws-kms-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS KMS (AWS) — customer managed keys (symmetric/asymmetric/HMAC), key policies + grants and IAM, envelope encryption and data keys, automatic + on-demand rotation, aliases, multi-region keys, custom key stores (CloudHSM/XKS), imported key material (BYOK), and condition keys like kms:ViaService / EncryptionContext. Pick this to design and operate encryption keys and envelope encryption. NOT the aws-security-reviewer role, which owns cross-cutting account-wide security posture, review, and findings triage — this specialist owns configuring/operating KMS itself. NOT the security category appsec/threat-modeling agents. Siblings: secrets-manager=secret values/lifecycle (KMS encrypts those secrets, it does not store them), iam=identities/authz, guardduty=threat detection, macie=data classification, cognito=app auth, shield=DDoS. For GCP Cloud KMS or Azure Key Vault keys defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "kms",
+        "encryption",
+        "keys",
+        "specialist"
+      ],
+      "skills": [
+        "aws-kms",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-kms-specialist.md"
+    },
+    {
       "name": "aws-lake-formation-specialist",
       "description": "Use when designing, configuring, deploying, or operating AWS Lake Formation (AWS) — the centralized fine-grained governance layer for data lakes on S3 and the Glue Data Catalog: registering S3 locations, the permission model (database/table/column/row/cell grants, named-resource vs LF-Tag-based access control / TBAC), LF-Tag taxonomy, data filters, data-lake admins, removing the IAMAllowedPrincipals legacy mode, blueprints, governed/Iceberg tables, and cross-account sharing via RAM. Pick this for data-lake governance and fine-grained permissions across Athena/Spectrum/EMR/Glue. Siblings: aws-emr-specialist, aws-kinesis-specialist, aws-redshift-specialist, aws-quicksight-specialist, aws-glue-specialist, aws-opensearch-service-specialist, aws-msk-specialist. NOT the AWS role team (cross-cutting) — coordinate with aws-security-reviewer on data-access policy. NOT data/etl-architect (cloud-agnostic orchestration) or data/sql-optimizer (query rewrites). For GCP Dataplex or Azure Purview defer to those clouds.",
       "category": "cloud",
@@ -2784,6 +2899,34 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/compute/aws-lightsail-specialist.md"
+    },
+    {
+      "name": "aws-macie-specialist",
+      "description": "Use when designing, configuring, deploying, or operating Amazon Macie (AWS) — enabling Macie per region, S3 bucket posture/inventory, automated sensitive data discovery, scheduled/one-time classification jobs, managed + custom data identifiers and allow lists, and exporting sensitive-data + policy findings to S3/EventBridge/Security Hub, plus the org delegated-administrator model. Pick this to configure and operate sensitive data discovery and classification in S3. NOT the aws-security-reviewer role, which owns cross-cutting account-wide security posture, review, and findings triage across services — this specialist owns configuring/operating Macie itself. NOT the security category appsec/threat-modeling agents. Siblings: guardduty=threat detection (not data classification), iam=identities/authz, kms=keys, secrets-manager=secrets, cognito=app auth, shield=DDoS. For GCP Sensitive Data Protection (DLP) or Microsoft Purview defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "macie",
+        "data-classification",
+        "specialist"
+      ],
+      "skills": [
+        "aws-macie",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-macie-specialist.md"
     },
     {
       "name": "aws-memorydb-specialist",
@@ -3205,6 +3348,35 @@
       "path": "agents/cloud/aws/services/networking/aws-privatelink-specialist.md"
     },
     {
+      "name": "aws-proton-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Proton (AWS) — environment + service templates (CloudFormation/Terraform), template bundles/versions and template sync from Git, environments and account connections, services/service instances and service pipelines, and self-service infrastructure provisioning for platform engineering teams. Pick this to author and vend Proton templates and run the platform catalog. NOT the aws-iac-engineer role, which owns hand-authored multi-service Terraform/CloudFormation and broad IaC across the account — this specialist owns the Proton-native template/catalog layer that lets developers self-serve from a curated set. NOT the AWS role team (aws-cloud-architect / aws-security-reviewer) for multi-service architecture or account-wide security posture. For GCP (no direct equivalent) or Azure Deployment Environments / Service Catalog defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "proton",
+        "platform-engineering",
+        "templates",
+        "specialist"
+      ],
+      "skills": [
+        "aws-proton",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/management-governance/aws-proton-specialist.md"
+    },
+    {
       "name": "aws-q-developer-specialist",
       "description": "Use when enabling, configuring, deploying, or operating Amazon Q Developer (AWS) — AWS's managed generative-AI coding assistant across IDEs, the CLI, the console, and the web: subscription tiers (Free/Pro), IAM Identity Center licensing, inline suggestions and reference tracking, agentic developers (/dev, /test, /doc, /review), code transformation (Java/.NET upgrades), customizations from private repos, security scanning, profiles, and data handling. NOT the language ai-engineer/rag-engineer/evals-engineer roles — those build app-side LLM/RAG/eval code; this specialist owns rolling out and administering the managed assistant (licensing, profiles, customizations, surfaces). It is a managed coding-assistant product, not a model you train (SageMaker) or a raw foundation model (aws-bedrock-specialist). NOT the AWS role team (aws-cloud-architect/aws-iac-engineer/aws-security-reviewer) for cross-cutting work. For GitHub Copilot or GCP/Azure equivalents defer elsewhere.",
       "category": "cloud",
@@ -3535,6 +3707,35 @@
       "path": "agents/cloud/aws/services/ai-ml/aws-sagemaker-specialist.md"
     },
     {
+      "name": "aws-secrets-manager-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Secrets Manager (AWS) — storing secrets with KMS encryption, automatic rotation (managed or Lambda rotation functions), versions and staging labels, resource policies and cross-account access, cross-region replication, cached retrieval (caching library / Lambda extension), and recovery windows on deletion. Pick this to manage the secret lifecycle (store/rotate/retrieve). NOT the aws-security-reviewer role, which owns cross-cutting account-wide security posture, review, and findings triage — this specialist owns configuring/operating Secrets Manager itself. NOT the security category appsec/threat-modeling agents. Siblings: kms=encryption keys (encrypts the secret; does not store it), iam=identities/authz, guardduty=threat detection, macie=data classification, cognito=app auth, shield=DDoS. For non-rotating plain config prefer SSM Parameter Store, not this. For GCP Secret Manager or Azure Key Vault secrets defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "secrets-manager",
+        "secrets",
+        "rotation",
+        "specialist"
+      ],
+      "skills": [
+        "aws-secrets-manager",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-secrets-manager-specialist.md"
+    },
+    {
       "name": "aws-security-reviewer",
       "description": "Use when reviewing AWS configuration for security — IAM least-privilege, public exposure (open SGs, public S3/RDS), missing encryption (KMS/TLS), and secret handling — then triaging findings by severity (AWS). Read-only; reports, does not change infra. NOT for building/fixing IaC (use aws-iac-engineer), architecture design (aws-cloud-architect), or generic app-code appsec unrelated to AWS config.",
       "category": "cloud",
@@ -3589,6 +3790,35 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "agents/cloud/aws/services/management-governance/aws-service-catalog-specialist.md"
+    },
+    {
+      "name": "aws-shield-specialist",
+      "description": "Use when designing, configuring, deploying, or operating AWS Shield (AWS) — Shield Standard vs Advanced, subscribing to Advanced and adding per-resource protections (CloudFront, Route 53, Global Accelerator, ELB, Elastic IPs), associating AWS WAF web ACLs + rate-based rules, automatic application-layer (L7) DDoS mitigation, health-based detection with Route 53 health checks, SRT engagement, and cost protection. Pick this to configure and operate DDoS protection on edge resources. NOT the aws-security-reviewer role, which owns cross-cutting account-wide security posture, review, and findings triage — this specialist owns configuring/operating Shield itself. NOT the security category appsec/threat-modeling agents. Shield stops DDoS; granular application-layer filtering rules are AWS WAF — cross-ref the aws-waf specialist for L7 rule design. Siblings: iam, kms, secrets-manager, guardduty, macie, cognito. For GCP Cloud Armor or Azure DDoS Protection defer to those clouds.",
+      "category": "cloud",
+      "model": "sonnet",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "tags": [
+        "aws",
+        "shield",
+        "ddos",
+        "edge-protection",
+        "specialist"
+      ],
+      "skills": [
+        "aws-shield",
+        "match-project-conventions",
+        "verify-by-running"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "agents/cloud/aws/services/security-identity/aws-shield-specialist.md"
     },
     {
       "name": "aws-snow-family-specialist",
@@ -26929,6 +27159,22 @@
       "path": "skills/cloud/aws-codepipeline/SKILL.md"
     },
     {
+      "name": "aws-cognito",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Cognito — user pools (sign-up/sign-in, password policy, MFA, account recovery, attributes, groups), app clients and the hosted UI, OAuth 2.0 / OIDC flows and scopes, federation with social and SAML/OIDC identity providers, Lambda triggers (pre-sign-up, pre/post-authentication, custom message, token generation), JWT (ID/access/refresh) tokens and verification, identity pools (federated identities exchanging tokens for temporary AWS IAM credentials), and the managed login experience — for end-user/customer application authentication and authorization (Amazon Cognito). Loads the Cognito knowledge: stand up user/identity pools, wire federation and triggers, and verify auth flows issue valid tokens. Consumed by the Cognito specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they add app auth.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "cognito",
+        "authentication",
+        "user-pools",
+        "oauth",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-cognito/SKILL.md"
+    },
+    {
       "name": "aws-comprehend",
       "description": "Use when designing, provisioning, securing, or operating Amazon Comprehend — the managed natural-language-processing service that extracts insight from text without building models (Amazon Comprehend). Loads the Comprehend knowledge: the built-in detect APIs (entities, key phrases, dominant language, sentiment and targeted sentiment, syntax/POS, and PII detection/redaction), synchronous single-document vs real-time-endpoint vs asynchronous batch analysis jobs over S3, custom models (custom entity recognition and custom document classification, trained on your labeled data and served via real-time endpoints measured in inference units), Comprehend Medical for clinical text/PHI, IAM/KMS security and VPC, cost (per unit of text for built-ins, training + endpoint inference units for custom), quotas/TPS, and verification by running detection. The 2nd consumer is the AWS role team (aws-iac-engineer / aws-cloud-architect). Consumed by the Comprehend specialist.",
       "category": "cloud",
@@ -27402,6 +27648,37 @@
       "path": "skills/cloud/aws-glue/SKILL.md"
     },
     {
+      "name": "aws-guardduty",
+      "description": "Use when designing, provisioning, securing, or operating Amazon GuardDuty — continuous threat detection from data sources (VPC Flow Logs, DNS query logs, CloudTrail management + S3 data events, EKS audit logs), protection plans (S3 Protection, EKS/Runtime Monitoring, Malware Protection for EC2/S3, RDS Protection, Lambda Protection), findings (types, severity, sample findings) and finding format, threat intel + trusted IP lists, suppression rules and filters, delegated administrator and organization auto-enable, and exporting findings to EventBridge / S3 / Security Hub for response (Amazon GuardDuty). Loads the GuardDuty knowledge: enable detectors and protection plans org-wide, tune findings, and verify detection fires and routes. Consumed by the GuardDuty specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they enable threat detection.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "guardduty",
+        "threat-detection",
+        "findings",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-guardduty/SKILL.md"
+    },
+    {
+      "name": "aws-iam",
+      "description": "Use when designing, provisioning, securing, or operating AWS Identity and Access Management — users, groups, roles (and trust policies / AssumeRole), managed and inline policies, the IAM policy evaluation logic (explicit deny > allow > implicit deny, SCPs, permission boundaries, session/resource policies), permission boundaries, instance profiles, federation/OIDC and IAM Roles Anywhere, access keys vs roles, IAM Access Analyzer (external + unused access), credential reports, and last-accessed data for least-privilege right-sizing (AWS IAM). Loads the IAM knowledge: model identities and authorization, write and evaluate policies, scope trust, and verify effective permissions. Consumed by the IAM specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they wire up access control.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "iam",
+        "identity",
+        "authorization",
+        "policies",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-iam/SKILL.md"
+    },
+    {
       "name": "aws-kendra",
       "description": "Use when designing, provisioning, securing, or operating Amazon Kendra — the managed intelligent enterprise-search service that returns ranked passages/answers from your content (Amazon Kendra). Loads the Kendra knowledge: the index (Developer vs Enterprise edition, capacity units), data sources and connectors (S3, SharePoint, Confluence, Salesforce, databases, web crawler, custom) with sync schedules, document attributes/facets and field mappings, relevance tuning (boosting attributes/freshness/authority), the Query/Retrieve APIs and FAQ/document/answer result types, custom synonyms and query suggestions, user-context filtering / token-based access control for document-level security, incremental learning and feedback, IAM/KMS/VPC security, cost (index capacity-hours + connector scans, edition-based) and quotas, and verification by running a query. The 2nd consumer is the AWS role team (aws-iac-engineer / aws-cloud-architect). Consumed by the Kendra specialist.",
       "category": "cloud",
@@ -27467,6 +27744,22 @@
       "path": "skills/cloud/aws-kinesis-data-firehose/SKILL.md"
     },
     {
+      "name": "aws-kms",
+      "description": "Use when designing, provisioning, securing, or operating AWS Key Management Service — customer managed keys (CMKs) vs AWS managed vs AWS owned keys, symmetric vs asymmetric (RSA/ECC) and HMAC keys, key policies (the root authority on a key) plus IAM and grants, key usage (encrypt/decrypt, sign/verify, generate-data-key), envelope encryption and data keys, automatic + on-demand key rotation, aliases, multi-region keys (primary/replica), key stores (CloudHSM / external key store XKS), import of key material (BYOK), deletion with mandatory waiting period, and condition keys like kms:ViaService / EncryptionContext (AWS KMS). Loads the KMS knowledge: create and scope keys, wire envelope encryption and rotation, and verify encrypt/decrypt + access. Consumed by the KMS specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they design encryption.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "kms",
+        "encryption",
+        "keys",
+        "envelope-encryption",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-kms/SKILL.md"
+    },
+    {
       "name": "aws-lake-formation",
       "description": "Use when designing, provisioning, securing, or operating AWS Lake Formation — the centralized fine-grained governance layer for data lakes on S3 and the Glue Data Catalog (AWS Lake Formation). Loads the Lake Formation knowledge: registering S3 locations via a service-linked role, the permission model (database/table/column/row/cell grants, named-resource vs LF-Tag-based access control / TBAC), LF-Tag taxonomy and policies, data filters for column/row security, data-lake admins and the IAMAllowedPrincipals legacy mode, blueprints, governed tables/transactions (and the shift to Apache Iceberg), cross-account sharing via RAM, and how it enforces permissions for Athena, Redshift Spectrum, EMR, and Glue. Covers migrating from IAM-only, LF-Tag taxonomy design, fine-grained grants, and verifying enforcement. Consumed by the Lake Formation specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect).",
       "category": "cloud",
@@ -27529,6 +27822,22 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-lightsail/SKILL.md"
+    },
+    {
+      "name": "aws-macie",
+      "description": "Use when designing, provisioning, securing, or operating Amazon Macie — automated sensitive data discovery and classification in S3, the S3 bucket inventory and security posture (public access, encryption, sharing), sensitive data discovery jobs (one-time/scheduled), managed data identifiers and custom data identifiers (regex + keywords + proximity), allow lists, sensitive data findings vs policy findings, sample/automated sensitive data discovery, findings export to S3 / EventBridge / Security Hub, and the organization delegated-administrator model (Amazon Macie). Loads the Macie knowledge: enable Macie, run classification jobs, tune identifiers, and verify sensitive data is detected and findings route. Consumed by the Macie specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they add data classification.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "macie",
+        "data-classification",
+        "sensitive-data",
+        "s3",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-macie/SKILL.md"
     },
     {
       "name": "aws-memorydb",
@@ -27725,6 +28034,23 @@
       "path": "skills/cloud/aws-privatelink/SKILL.md"
     },
     {
+      "name": "aws-proton",
+      "description": "Use when designing, provisioning, securing, or operating AWS Proton — environment templates and service templates (CloudFormation/Terraform), template versions and bundles, environments (provisioned by platform teams) and services + service instances (deployed by developers), template sync from Git, service pipelines, environment account connections, and component support — for self-service infrastructure provisioning by platform engineering teams (AWS Proton). Loads the Proton knowledge: author and publish templates, register environments, let developers deploy services from a curated catalog, and verify provisioning succeeds. Consumed by the Proton specialist and by the AWS role team (aws-iac-engineer / aws-cloud-architect) when they stand up self-service platforms.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "proton",
+        "platform-engineering",
+        "templates",
+        "environments",
+        "iac",
+        "management-governance"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-proton/SKILL.md"
+    },
+    {
       "name": "aws-q-developer",
       "description": "Use when enabling, configuring, securing, or operating Amazon Q Developer — AWS's generative-AI coding assistant for IDEs, the CLI, the console, and the web, including inline code suggestions, the chat/agentic developer agents, code transformation/upgrades, and customizations trained on your private code (Amazon Q Developer). Loads the Q Developer knowledge: the subscription tiers (Free vs Pro) and IAM Identity Center licensing, IDE/CLI/console surfaces, inline suggestions and reference tracking, agentic capabilities (/dev feature development, /test, /doc, /review), code transformation (Java/.NET upgrades), customizations from private repos, security scanning, profiles, admin controls, data handling/opt-out, and verification by exercising suggestions and agents on real code. The 2nd consumer is the AWS role team (aws-iac-engineer / aws-cloud-architect) wiring identity, licensing, and admin guardrails. Consumed by the Q Developer specialist.",
       "category": "cloud",
@@ -27890,6 +28216,21 @@
       "path": "skills/cloud/aws-sagemaker/SKILL.md"
     },
     {
+      "name": "aws-secrets-manager",
+      "description": "Use when designing, provisioning, securing, or operating AWS Secrets Manager — storing secrets (database credentials, API keys, OAuth tokens, arbitrary key/value or binary), KMS encryption of secret values, automatic rotation via Lambda rotation functions (including managed rotation for RDS/Aurora/Redshift/DocumentDB), secret versions and staging labels (AWSCURRENT/AWSPENDING/AWSPREVIOUS), resource policies and cross-account access, replication of secrets to other regions, retrieval (GetSecretValue, the AWS-managed cache/agent, and the Lambda extension), and recovery windows on deletion (AWS Secrets Manager). Loads the Secrets Manager knowledge: store secrets, wire rotation and cross-account/region access, and verify retrieval + rotation. Consumed by the Secrets Manager specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they manage secrets.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "secrets-manager",
+        "secrets",
+        "rotation",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-secrets-manager/SKILL.md"
+    },
+    {
       "name": "aws-service-catalog",
       "description": "Use when designing, provisioning, securing, or operating AWS Service Catalog — portfolios and products (CloudFormation/Terraform-backed provisioned products), product versions, launch constraints (the assumed role at launch), template/stack-set/notification/tag-update constraints, TagOptions for standardized tagging, access control via IAM principals and portfolio sharing (including org/Organizations sharing), provisioning parameters and provisioned-product lifecycle, and the AppRegistry application association (AWS Service Catalog). Loads the Service Catalog knowledge: how to curate approved products, set launch/governance constraints, share portfolios, let users self-serve, and verify a product provisions under the launch role. Consumed by the Service Catalog specialist and by the AWS role team (aws-cloud-architect / aws-security-reviewer) for curated, governed provisioning.",
       "category": "cloud",
@@ -27923,6 +28264,21 @@
       "version": "1.0.0",
       "status": "stable",
       "path": "skills/cloud/aws-services/SKILL.md"
+    },
+    {
+      "name": "aws-shield",
+      "description": "Use when designing, provisioning, securing, or operating AWS Shield — Shield Standard (always-on, free, layer 3/4 DDoS protection) vs Shield Advanced (subscription), protected resources (CloudFront, Route 53, Global Accelerator, ELB/ALB/NLB, Elastic IPs), the DDoS Response Team (DRT/SRT) and engagement, proactive engagement, health-based detection with Route 53 health checks, automatic application-layer (L7) DDoS mitigation, association of AWS WAF web ACLs and rate-based rules for L7 defense, cost protection / DDoS scaling credits, and Shield Advanced findings and global threat dashboards (AWS Shield). Loads the Shield knowledge: subscribe and protect resources, wire WAF + health-based detection, and verify protections and metrics. Consumed by the Shield specialist and by the AWS role team (aws-iac-engineer / aws-security-reviewer) when they harden edge resources.",
+      "category": "cloud",
+      "tags": [
+        "aws",
+        "shield",
+        "ddos",
+        "edge-protection",
+        "security-identity"
+      ],
+      "version": "1.0.0",
+      "status": "stable",
+      "path": "skills/cloud/aws-shield/SKILL.md"
     },
     {
       "name": "aws-snow-family",
